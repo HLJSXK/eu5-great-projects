@@ -47,10 +47,10 @@
 | `unique_wonders_site/**`、对应 `.github/workflows` | 归 GP；没有调用远端 Pages 发布 |
 | Wonder/cropper 的前后端模块、测试 | 迁入 `great_projects_editor_web/` 及 GP `tests/` |
 | 共同的编辑器事务/作业/验证基础设施 | 各仓库本地维护一份，从原版本派生；不建立依赖 TV 的包装器 |
-| `docs/**/ED_*`、奇观设计/指南/风险卡 | 归 GP；保留原有归档状态 |
+| `docs/**/ED_*`、Great Project 设计/宣传稿、奇观设计/指南/风险卡 | 归 GP；保留原有归档状态 |
 | 混合领域的旧编辑器方案和手册 | 明确标注为拆分前历史资料；当前命令以各自 README / CLAUDE 为准 |
 
-TV 的 5,457 项受控删除全部映射到 GP，没有未登记的删除。35 个实际 generic actions 与 11 个语言目录一起移交。
+TV 的 5,464 项受控删除全部映射到 GP，没有未登记的删除。35 个实际 generic actions 与 11 个语言目录一起移交。
 
 来源清单包含原路径、新路径、迁移类别、原 Git blob、原 Windows 工作树 SHA-256；
 最终交付文件另有 SHA-256 快照。两种哈希不混为一谈：原工作树可能有 CRLF，而 Git 保存 LF。
@@ -58,6 +58,7 @@ TV 的 5,457 项受控删除全部映射到 GP，没有未登记的删除。35 �
 
 私有 `generate_wonder_image.local.json` 只作为忽略的本机配置转移；不进入 Git、清单内容或日志。
 没有调用付费图像 API，没有重新生成图像内容。
+最终名称审计额外移交 ED 封面、其生成记录/样式参考、宣传稿和独特增益设计稿共 7 项，列于 results.json；它们不改变经过 clone 验证的玩法或生成输出。
 
 ## 3. 共同生成器如何拆开
 

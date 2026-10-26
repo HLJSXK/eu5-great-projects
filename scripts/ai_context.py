@@ -102,7 +102,7 @@ def load_routes() -> dict[str, Any]:
             routes[key] = [dict(row, _origin="base") for row in rows] + [dict(row, _origin="local") for row in routes.get(key, [])]
     if not isinstance(routes, dict):
         raise SystemExit(f"[ERROR] Missing or invalid route config: {_rel(ROUTES_FILE)}")
-    routes.setdefault("mod_roots", ["src", "src"])
+    routes.setdefault("mod_roots", ["src"])
     routes.setdefault("core_reads", [])
     routes.setdefault("domain_routes", [])
     routes.setdefault("filename_routes", [])

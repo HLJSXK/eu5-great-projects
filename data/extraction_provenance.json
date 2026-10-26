@@ -45238,7 +45238,7 @@
     {
       "source": "assets/generated_icons/_style_refs/01_ed_module_cover_construction_center.png",
       "target": "assets/generated_icons/_style_refs/01_ed_module_cover_construction_center.png",
-      "ownership": "local-fork",
+      "ownership": "move",
       "source_blob": "eb89b8bdb3f352fe81fe2b538cfdde5f555838e6",
       "working_sha256": "b62a039aec3768bf38802c5ba33e8383b7875943183b20f3a86052a1e446b73f",
       "disposition": "retained"
@@ -45414,7 +45414,7 @@
     {
       "source": "assets/generated_icons/_style_refs/02_ed_module_cover_tv_victory_prosperity_tree.png",
       "target": "assets/generated_icons/_style_refs/02_ed_module_cover_tv_victory_prosperity_tree.png",
-      "ownership": "local-fork",
+      "ownership": "move",
       "source_blob": "269e9602bc97914660e353db31ea57a009199b14",
       "working_sha256": "56e1104600fb25ac51d607ec20e94f9e696fcfbf2928c9a631daf406e19e4d89",
       "disposition": "retained"
@@ -45433,6 +45433,46 @@
       "ownership": "local-fork",
       "source_blob": "6808ed6454430c561fd2a798555df8a85801779a",
       "working_sha256": "028bb9296f7b0c471f1e7358a07ba50c420f51485cf867c16a2b49b083fc284e",
+      "disposition": "retained"
+    },
+    {
+      "source": "assets/cover/ED.png",
+      "target": "assets/cover/ED.png",
+      "ownership": "move",
+      "source_blob": "3217200d38e676ba9973bc7ec0b1e3b01387a826",
+      "working_sha256": "948834c4f4e64cb6c1ecfb269b74089c8522c34b80222c1b74090015d321cd8f",
+      "disposition": "retained"
+    },
+    {
+      "source": "assets/generated_icons/tv_victory_path_icons_ed_module_cover.png",
+      "target": "assets/generated_icons/tv_victory_path_icons_ed_module_cover.png",
+      "ownership": "move",
+      "source_blob": "488a38d9d1736a7273d453577a73cd07f1375faa",
+      "working_sha256": "116328604e54e23d870c84e3a22098fbe7c3baca2ca20184d8b898002d087711",
+      "disposition": "retained"
+    },
+    {
+      "source": "data/generated_icons/tv_victory_path_icons_ed_module_cover.json",
+      "target": "data/generated_icons/tv_victory_path_icons_ed_module_cover.json",
+      "ownership": "move",
+      "source_blob": "6afac56e2012d98917f2c94902b59bd20d0c3151",
+      "working_sha256": "5a9c93eb8697adf7ae740c7952cd7f7c4e716ad2f37081aecc111cb63585a363",
+      "disposition": "retained"
+    },
+    {
+      "source": "docs/marketing/great_project_video_script.md",
+      "target": "docs/marketing/great_project_video_script.md",
+      "ownership": "move",
+      "source_blob": "0520d811afb5371bd0171ea8d7757db113ea1e58",
+      "working_sha256": "21b5385674553d680a414b184ca26ff63be36a4744f96d9803d1d29443fe3345",
+      "disposition": "retained"
+    },
+    {
+      "source": "docs/design/Great_Project_Unique_Buff_Proposal.md",
+      "target": "docs/design/Great_Project_Unique_Buff_Proposal.md",
+      "ownership": "move",
+      "source_blob": "354f4102a6d434612ab0a7a4a1d77e36494533e2",
+      "working_sha256": "586099b4a74e7d956c35718c55ceadf3b5fc876556b37e6be3f633719f0fb2ae",
       "disposition": "retained"
     }
   ],
@@ -45469,6 +45509,11 @@
       "path": "README.md",
       "sha256": "ae7c818217ade420a660f4af6e2104ab817e17b50e6e7dce3087712e84d59363",
       "bytes": 1171
+    },
+    {
+      "path": "assets/cover/ED.png",
+      "sha256": "948834c4f4e64cb6c1ecfb269b74089c8522c34b80222c1b74090015d321cd8f",
+      "bytes": 696841
     },
     {
       "path": "assets/generated_icons/_style_refs/01_building_icon_construction_center.png",
@@ -45604,6 +45649,11 @@
       "path": "assets/generated_icons/_style_refs/icon_goods_marble.dds",
       "sha256": "028bb9296f7b0c471f1e7358a07ba50c420f51485cf867c16a2b49b083fc284e",
       "bytes": 634896
+    },
+    {
+      "path": "assets/generated_icons/tv_victory_path_icons_ed_module_cover.png",
+      "sha256": "116328604e54e23d870c84e3a22098fbe7c3baca2ca20184d8b898002d087711",
+      "bytes": 2429849
     },
     {
       "path": "assets/generated_icons/tv_wonder_admiralty_gun_foundry.png",
@@ -50186,6 +50236,11 @@
       "bytes": 223564
     },
     {
+      "path": "data/generated_icons/tv_victory_path_icons_ed_module_cover.json",
+      "sha256": "e331c53e4acecbb28d67687767378bb79ad3e5632dd550b9034472a9e841413c",
+      "bytes": 8186
+    },
+    {
       "path": "data/generated_icons/tv_wonder_admiralty_gun_foundry.json",
       "sha256": "35f009c2d855ef5870ebcd40ae75bd13bf862bace2f91c9f4b372da2eb3807ff",
       "bytes": 6755
@@ -52941,6 +52996,11 @@
       "bytes": 4104
     },
     {
+      "path": "docs/design/Great_Project_Unique_Buff_Proposal.md",
+      "sha256": "e976d9fd0c947d5d3fd8b4f42c441be367016c90ab7ff101e6d1f236020935f8",
+      "bytes": 19002
+    },
+    {
       "path": "docs/design/Historical_Image_Postprocessing_Pipeline.md",
       "sha256": "a54f63a59e4efc9f322542f06ead24f3603cb0c617a1bb1097255a7ce743ed4f",
       "bytes": 4612
@@ -53146,6 +53206,11 @@
       "bytes": 77
     },
     {
+      "path": "docs/marketing/great_project_video_script.md",
+      "sha256": "6a066cf4aa75c85a7644808dbd5626115a5747931b192dd313a97720418a35d2",
+      "bytes": 9496
+    },
+    {
       "path": "docs/technical/ED_AI_Implementation.md",
       "sha256": "f0e8fb637ec63a2755764e06f081811ddded22542b280994b12d351a81c09455",
       "bytes": 6236
@@ -53287,8 +53352,8 @@
     },
     {
       "path": "docs/technical/Repository_Split.md",
-      "sha256": "15f0e61117911eeb93f12b30dfd8cecd533d9d53a39ea1e14c91d5abf97e2a80",
-      "bytes": 14592
+      "sha256": "cb108b507fa90287f6c00c8c6823e0aefde7495bd9c1b7618500e64fd55e3510",
+      "bytes": 14828
     },
     {
       "path": "docs/technical/Towards_Victory_Editor_Web_Assessment.md",
@@ -53387,8 +53452,8 @@
     },
     {
       "path": "docs/technical/split_validation/results.json",
-      "sha256": "47ed403da8d2e506b75c0680cca9d20d94134e56d7e6815fb8e9bc97220b21f3",
-      "bytes": 3298
+      "sha256": "78bad5fe6bf3ba8bd10ccb8f7d9c3b36308722dfd548ff47957996635b0df8a1",
+      "bytes": 3960
     },
     {
       "path": "docs/technical/split_validation/tv-browser.txt",
@@ -53772,8 +53837,8 @@
     },
     {
       "path": "scripts/ai_context.py",
-      "sha256": "e11e33cd28c0fe423993af53da71978151348abd9a58d1a2d79849eef8672231",
-      "bytes": 20291
+      "sha256": "8b9edc1176845563d250e27100ec128e1e4eb536c04c798528b941181ac47a2a",
+      "bytes": 20284
     },
     {
       "path": "scripts/bootstrap_base.py",
@@ -74022,10 +74087,10 @@
     }
   ],
   "counts": {
-    "source_records": 5679,
-    "source_records_retained": 5671,
+    "source_records": 5684,
+    "source_records_retained": 5676,
     "source_records_excluded": 8,
-    "moved_records": 5457,
-    "final_files_excluding_manifest": 5716
+    "moved_records": 5464,
+    "final_files_excluding_manifest": 5721
   }
 }

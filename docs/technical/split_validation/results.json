@@ -94,16 +94,26 @@
     "clean_after_verification": true,
     "remotes": [],
     "git_object_alternates": false,
-    "shared_base": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-base"
+    "shared_base": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-base",
+    "post_test_changes": "Audit evidence, seven ED-owned media/document files, and single-root context fallback; no gameplay or generation changes."
   },
   "deployment": "not performed",
   "remote_publication": "not performed",
   "ownership_audit": {
-    "tv_tracked_deletions": 5457,
-    "mapped_in_gp": 5457,
+    "tv_tracked_deletions": 5464,
+    "mapped_in_gp": 5464,
     "unmapped": 0,
     "actual_gp_generic_actions": 35,
     "localization_languages": 11,
-    "private_config_moved_ignored": true
+    "private_config_moved_ignored": true,
+    "final_name_audit_additions": [
+      "assets/cover/ED.png",
+      "assets/generated_icons/tv_victory_path_icons_ed_module_cover.png",
+      "assets/generated_icons/_style_refs/01_ed_module_cover_construction_center.png",
+      "assets/generated_icons/_style_refs/02_ed_module_cover_tv_victory_prosperity_tree.png",
+      "data/generated_icons/tv_victory_path_icons_ed_module_cover.json",
+      "docs/marketing/great_project_video_script.md",
+      "docs/design/Great_Project_Unique_Buff_Proposal.md"
+    ]
   }
 }
