@@ -1,0 +1,8 @@
+{
+  "source_log": "C:/Users/Hades/Documents/Paradox Interactive/Europa Universalis V/logs/error.log",
+  "output_log": "docs/error_log/error.log",
+  "vanilla_filters": ".eu5-base/vanilla_error_filters.txt",
+  "interval_seconds": 1.0,
+  "include_rotated_logs": true,
+  "protected_markers": ["tv_", "glorp", "cmf", "cmm"]
+}

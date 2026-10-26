@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/坎儿井_ai_cartoon.png",
+  "source_sha256": "5b3c38a937572e6bd9d222b8f0173ec12b024f6d667d5f02fea625d5162ce140",
+  "reference": "assets/historical/坎儿井.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:2017-07-23_Turpan_Karez_Folk_Park_25_anagoria.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Anagoria",
+    "date": "2017-07-23",
+    "note": "题材近似：吐鲁番坎儿井井口辘轳（与波斯坎儿井同类技术），不是库姆；去展板。"
+  }
+}

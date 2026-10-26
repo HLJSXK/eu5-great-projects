@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/德里红堡_ai_cartoon.png",
+  "source_sha256": "27874941c708ac9f82d2ffa59c66bb28f0691544fb08dc7eaedaa2c13f8172b8",
+  "reference": "assets/historical/德里红堡.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Red_Fort_in_Delhi_03-2016_img3.jpg",
+    "license": "FAL",
+    "artist": "A.Savin",
+    "date": "2016-03-20",
+    "note": "拉合尔门与城墙，现状照片，Free Art License。"
+  }
+}

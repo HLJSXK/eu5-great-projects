@@ -1,0 +1,269 @@
+﻿# Scripted player operations for AI. Root/current scope is a country.
+# No generic-action actor context is fabricated. Engine progress remains shared.
+tv_wonder_ai_appoint_engineer_effect = {
+	clear_saved_scope = target
+	ordered_character = {
+		limit = { tv_wonder_ai_engineer_candidate_trigger = yes }
+		order_by = { value = adm add = mil }
+		max = 1
+		check_range_bounds = no
+		save_scope_as = target
+	}
+	if = {
+		limit = { NOT = { exists = scope:target } }
+		create_character = { age = 30 save_scope_as = target }
+	}
+	tv_engineering_appoint_great_engineer_effect = yes
+	cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_appoint_engineering_leader arg2 = tv_engineering_department }
+	clear_saved_scope = target
+}
+
+tv_wonder_ai_select_proposal_effect = {
+
+	set_local_variable = { name = tv_wonder_ai_slot_1_size value = 0 }
+	if = {
+		limit = {
+			has_variable = tv_wonder_proposal_slot_1
+			has_global_variable_map = tv_wonder_id_to_size
+		}
+		if = {
+			limit = { is_key_in_global_variable_map = { name = tv_wonder_id_to_size target = var:tv_wonder_proposal_slot_1 } }
+			set_local_variable = { name = tv_wonder_ai_slot_1_size value = "global_variable_map(tv_wonder_id_to_size|var:tv_wonder_proposal_slot_1)" }
+		}
+	}
+
+	set_local_variable = { name = tv_wonder_ai_slot_2_size value = 0 }
+	if = {
+		limit = {
+			has_variable = tv_wonder_proposal_slot_2
+			has_global_variable_map = tv_wonder_id_to_size
+		}
+		if = {
+			limit = { is_key_in_global_variable_map = { name = tv_wonder_id_to_size target = var:tv_wonder_proposal_slot_2 } }
+			set_local_variable = { name = tv_wonder_ai_slot_2_size value = "global_variable_map(tv_wonder_id_to_size|var:tv_wonder_proposal_slot_2)" }
+		}
+	}
+
+	set_local_variable = { name = tv_wonder_ai_slot_3_size value = 0 }
+	if = {
+		limit = {
+			has_variable = tv_wonder_proposal_slot_3
+			has_global_variable_map = tv_wonder_id_to_size
+		}
+		if = {
+			limit = { is_key_in_global_variable_map = { name = tv_wonder_id_to_size target = var:tv_wonder_proposal_slot_3 } }
+			set_local_variable = { name = tv_wonder_ai_slot_3_size value = "global_variable_map(tv_wonder_id_to_size|var:tv_wonder_proposal_slot_3)" }
+		}
+	}
+	if = {
+		limit = { monthly_balance >= 900 }
+		if = {
+			limit = { local_var:tv_wonder_ai_slot_1_size = 3 }
+			tv_wonder_select_proposal_slot_1_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_1 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_2_size = 3 }
+			tv_wonder_select_proposal_slot_2_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_2 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_3_size = 3 }
+			tv_wonder_select_proposal_slot_3_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_3 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_1_size = 2 }
+			tv_wonder_select_proposal_slot_1_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_1 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_2_size = 2 }
+			tv_wonder_select_proposal_slot_2_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_2 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_3_size = 2 }
+			tv_wonder_select_proposal_slot_3_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_3 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_1_size = 1 }
+			tv_wonder_select_proposal_slot_1_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_1 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_2_size = 1 }
+			tv_wonder_select_proposal_slot_2_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_2 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_3_size = 1 }
+			tv_wonder_select_proposal_slot_3_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_3 arg2 = tv_engineering_department }
+		}
+
+		else_if = { limit = { gold >= 1000 } tv_wonder_bribe_proposal_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_bribe_proposal arg2 = tv_engineering_department } }
+		else_if = { limit = { prestige >= 10 } tv_wonder_refute_proposal_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_refute_proposal arg2 = tv_engineering_department } }
+	}
+	else_if = {
+		limit = { monthly_balance >= 600 }
+		if = {
+			limit = { local_var:tv_wonder_ai_slot_1_size = 2 }
+			tv_wonder_select_proposal_slot_1_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_1 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_2_size = 2 }
+			tv_wonder_select_proposal_slot_2_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_2 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_3_size = 2 }
+			tv_wonder_select_proposal_slot_3_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_3 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_1_size = 1 }
+			tv_wonder_select_proposal_slot_1_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_1 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_2_size = 1 }
+			tv_wonder_select_proposal_slot_2_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_2 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_3_size = 1 }
+			tv_wonder_select_proposal_slot_3_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_3 arg2 = tv_engineering_department }
+		}
+
+		else_if = { limit = { gold >= 1000 } tv_wonder_bribe_proposal_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_bribe_proposal arg2 = tv_engineering_department } }
+		else_if = { limit = { prestige >= 10 } tv_wonder_refute_proposal_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_refute_proposal arg2 = tv_engineering_department } }
+	}
+	else_if = {
+		limit = { monthly_balance >= 300 }
+		if = {
+			limit = { local_var:tv_wonder_ai_slot_1_size = 1 }
+			tv_wonder_select_proposal_slot_1_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_1 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_2_size = 1 }
+			tv_wonder_select_proposal_slot_2_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_2 arg2 = tv_engineering_department }
+		}
+		else_if = {
+			limit = { local_var:tv_wonder_ai_slot_3_size = 1 }
+			tv_wonder_select_proposal_slot_3_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_proposal_slot_3 arg2 = tv_engineering_department }
+		}
+
+		else_if = { limit = { gold >= 1000 } tv_wonder_bribe_proposal_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_bribe_proposal arg2 = tv_engineering_department } }
+		else_if = { limit = { prestige >= 10 } tv_wonder_refute_proposal_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_refute_proposal arg2 = tv_engineering_department } }
+	}
+	remove_local_variable = tv_wonder_ai_slot_1_size
+	remove_local_variable = tv_wonder_ai_slot_2_size
+	remove_local_variable = tv_wonder_ai_slot_3_size
+}
+
+tv_wonder_ai_debate_effect = {
+	if = {
+		limit = { tv_wonder_ai_can_accept_any_demand_trigger = yes }
+		random_list = {
+			1 = { trigger = { tv_wonder_ai_can_accept_nobles_demand_trigger = yes } tv_wonder_accept_nobles_demand_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_accept_nobles_demand arg2 = tv_engineering_department } }
+			1 = { trigger = { tv_wonder_ai_can_accept_burghers_demand_trigger = yes } tv_wonder_accept_burghers_demand_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_accept_burghers_demand arg2 = tv_engineering_department } }
+			1 = { trigger = { tv_wonder_ai_can_accept_clergy_demand_trigger = yes } tv_wonder_accept_clergy_demand_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_accept_clergy_demand arg2 = tv_engineering_department } }
+		}
+	}
+	else = {
+		random_list = {
+
+			1 = {
+				if = { limit = { gold >= 1000 } tv_wonder_bribe_nobles_demand_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_bribe_nobles_demand arg2 = tv_engineering_department } }
+				else_if = { limit = { prestige >= 10 } tv_wonder_refute_nobles_demand_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_refute_nobles_demand arg2 = tv_engineering_department } }
+			}
+
+			1 = {
+				if = { limit = { gold >= 1000 } tv_wonder_bribe_burghers_demand_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_bribe_burghers_demand arg2 = tv_engineering_department } }
+				else_if = { limit = { prestige >= 10 } tv_wonder_refute_burghers_demand_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_refute_burghers_demand arg2 = tv_engineering_department } }
+			}
+
+			1 = {
+				if = { limit = { gold >= 1000 } tv_wonder_bribe_clergy_demand_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_bribe_clergy_demand arg2 = tv_engineering_department } }
+				else_if = { limit = { prestige >= 10 } tv_wonder_refute_clergy_demand_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_refute_clergy_demand arg2 = tv_engineering_department } }
+			}
+		}
+	}
+}
+
+tv_wonder_ai_build_labor_camps_effect = {
+	save_scope_as = tv_wonder_ai_country
+	set_variable = { name = tv_wonder_ai_labor_camp_target value = 5 }
+	if = { limit = { var:tv_wonder_locked_size ?= 2 } set_variable = { name = tv_wonder_ai_labor_camp_target value = 10 } }
+	else_if = { limit = { var:tv_wonder_locked_size ?= 3 } set_variable = { name = tv_wonder_ai_labor_camp_target value = 15 } }
+	clamp_variable = { name = tv_wonder_ai_labor_camp_target min = 0 max = var:tv_wonder_organization_site_level_cap }
+	set_local_variable = { name = tv_wonder_ai_camp_budget value = { value = gold divide = 1000 floor = yes max = 15 } }
+	# The building link is dynamic: write a country scratch value across that
+	# boundary instead of trying to export a nested local variable.
+	set_variable = { name = tv_wonder_ai_site_camp_count value = 0 }
+	var:tv_wonder_site ?= {
+		"building(building_type:tv_wonder_labor_camp|scope:tv_wonder_ai_country)" ?= {
+			scope:tv_wonder_ai_country = {
+				set_variable = { name = tv_wonder_ai_site_camp_count value = { value = prev.building_level add = prev.building_levels_under_construction } }
+			}
+		}
+	}
+	set_local_variable = { name = tv_wonder_ai_camp_count value = var:tv_wonder_ai_site_camp_count }
+	remove_variable = tv_wonder_ai_site_camp_count
+	# Bounded by the snapshot, never by a building level which changes asynchronously.
+	while = {
+		limit = {
+			local_var:tv_wonder_ai_camp_budget > 0
+			local_var:tv_wonder_ai_camp_count < var:tv_wonder_ai_labor_camp_target
+			can_pay_price = price:tv_wonder_labor_camp_price
+		}
+		var:tv_wonder_site = {
+			construct_building = { building_type = building_type:tv_wonder_labor_camp instant = no owner = scope:tv_wonder_ai_country payer = scope:tv_wonder_ai_country }
+		}
+		change_local_variable = { name = tv_wonder_ai_camp_budget subtract = 1 }
+		change_local_variable = { name = tv_wonder_ai_camp_count add = 1 }
+		cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_labor_camp arg2 = tv_engineering_department }
+	}
+	remove_local_variable = tv_wonder_ai_camp_budget
+	remove_local_variable = tv_wonder_ai_camp_count
+	clear_saved_scope = tv_wonder_ai_country
+}
+
+
+
+# One mutually exclusive branch per monthly invocation. Selection and acceptance
+# are separate operations; passive monthly progress and event choices are shared.
+tv_engineering_department_ai_monthly_effect = {
+	if = {
+		limit = { var:tv_wonder_stage ?= { this >= 1 } NOT = { tv_wonder_has_great_engineer_trigger = yes } }
+		tv_wonder_ai_appoint_engineer_effect = yes
+	}
+	else_if = {
+		limit = { tv_wonder_has_open_proposal_trigger = yes monthly_balance >= 300 }
+		if = { limit = { var:tv_wonder_proposal ?= { this >= 1 } } tv_wonder_accept_proposal_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_accept_proposal arg2 = tv_engineering_department } }
+		else = { tv_wonder_ai_select_proposal_effect = yes }
+	}
+	else_if = {
+		limit = { tv_wonder_in_debate_trigger = yes }
+		tv_wonder_ai_debate_effect = yes
+	}
+	else_if = {
+		limit = { var:tv_wonder_stage ?= 2 tv_wonder_can_select_construction_site_trigger = yes }
+		tv_wonder_select_construction_site_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_select_construction_site arg2 = tv_engineering_department }
+	}
+	else_if = {
+		limit = { var:tv_wonder_stage ?= 2 tv_wonder_can_start_survey_trigger = yes NOT = { has_variable = tv_wonder_survey_site } }
+		clear_saved_scope = target
+		random_owned_location = {
+			limit = { tv_wonder_location_can_host_locked_wonder_trigger = yes }
+			save_scope_as = target
+		}
+		if = { limit = { exists = scope:target } tv_wonder_start_survey_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_start_survey arg2 = tv_engineering_department } }
+		clear_saved_scope = target
+	}
+	else_if = {
+		limit = { tv_wonder_ai_can_finish_construction_trigger = yes }
+		tv_wonder_finish_construction_effect = yes cmf_log_with_args = { action = tv_engineering_department_ai_log arg1 = tv_wonder_finish_construction arg2 = tv_engineering_department }
+	}
+	else_if = {
+		limit = { var:tv_wonder_stage ?= 3 tv_wonder_organization_logistics_unlocked_trigger = yes gold >= 1000 }
+		tv_wonder_ai_build_labor_camps_effect = yes
+	}
+	else_if = {
+        limit = { tv_wonder_ritual_can_preview_trigger = yes }
+        tv_wonder_ai_ritual_effect = yes
+    }
+    else_if = {
+        limit = { var:tv_wonder_stage ?= 0 has_variable = tv_wonder_concept_in_progress has_variable = tv_wonder_has_plain_wonder monthly_balance >= 300 }
+        random = { chance = 10 tv_wonder_ai_reritual_effect = yes }
+    }
+}

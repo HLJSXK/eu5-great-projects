@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/贝宁城墙_ai_cartoon.png",
+  "source_sha256": "e37c3899ba42e4f4172fb90848da102d98929cddf53f68c2131531ffbafa8539",
+  "reference": "assets/historical/贝宁城墙.webp",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

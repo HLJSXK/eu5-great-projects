@@ -1,0 +1,48 @@
+﻿tv_hydraulic_artisan_guild_privilege = {
+	estate = burghers_estate
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		always = no
+	}
+
+	on_activate = {
+	}
+
+	can_revoke = {
+		always = no
+	}
+
+	country_modifier = {
+		burghers_estate_target_satisfaction = 0.025
+		global_burghers_estate_power = 0.25
+		peasants_estate_target_satisfaction = -0.025
+	}
+}
+
+tv_hagia_great_church_endowment_privilege = {
+	estate = clergy_estate
+
+	potential = {
+		always = no
+	}
+
+	allow = {
+		always = no
+	}
+
+	on_activate = {
+	}
+
+	can_revoke = {
+		always = no
+	}
+
+	country_modifier = {
+		clergy_estate_target_satisfaction = 0.025
+		global_clergy_estate_power = 0.10
+	}
+}

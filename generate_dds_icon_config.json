@@ -1,0 +1,753 @@
+{
+  "api": {
+    "endpoint": "https://www.packyapi.com/v1/images/edits",
+    "generations_endpoint": "https://www.packyapi.com/v1/images/generations",
+    "edits_endpoint": "https://www.packyapi.com/v1/images/edits",
+    "api_key_env": [
+      "PACKY_API_KEY",
+      "PACKY_SORA_TOKEN"
+    ],
+    "api_key": "",
+    "proxy_url": "http://127.0.0.1:7897",
+    "timeout_seconds": 180,
+    "max_attempts": 4,
+    "retry_initial_delay_seconds": 3,
+    "retry_max_delay_seconds": 30,
+    "retry_backoff_multiplier": 2
+  },
+  "generation_target": "wonder_building_icons",
+  "prompt_refinement": {
+    "enabled": true,
+    "style_rules": "Match the palette, brush feel, lighting, icon density, and framing discipline of the selected target's reference image. Keep the final subject and asset meaning driven by the selected batch entry, not the reference subject.",
+    "composition_rules": "Use the reference only as a style guide. Keep the result in the same visual family, but make it visibly distinct at a glance by changing the silhouette, crop, object arrangement, and ornament placement. Do not mirror the reference composition or reuse its exact outline."
+  },
+  "image": {
+    "model": "gpt-image-2",
+    "natural_prompt": "Minimalist victory iconography with marble, bronze, and path-specific theme-color accents.",
+    "quality": "high",
+    "output_format": "png",
+    "response_format": "url",
+    "n": 1,
+    "background": "opaque",
+    "moderation": "auto",
+    "user": "towards_victory"
+  },
+  "historical_images": {
+    "endpoint": "https://fluxionai.space/v1/images/edits",
+    "model": "gpt-image-2.5-sunburst",
+    "api_key_env": "IMAGE_API_KEY",
+    "overwrite": false,
+    "images": [
+      {
+        "source": "assets/historical/北京皇家粮仓.jpg",
+        "output": "北京皇家粮仓_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/博洛尼亚大学.jpg",
+        "output": "博洛尼亚大学_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/埃奇米阿津主教座堂.jpg",
+        "output": "埃奇米阿津主教座堂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/埃斯科里亚尔修道院.jpg",
+        "output": "埃斯科里亚尔修道院_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/奥斯曼朝觐道路.webp",
+        "output": "奥斯曼朝觐道路_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/奥格斯堡银行.jpg",
+        "output": "奥格斯堡银行_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/巴士底狱.png",
+        "output": "巴士底狱_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/巴库圣火庙.jpg",
+        "output": "巴库圣火庙_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/巴黎圣母院.jpg",
+        "output": "巴黎圣母院_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/布达拉宫.jpg",
+        "output": "布达拉宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/比萨斜塔.jpg",
+        "output": "比萨斜塔_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/波尔多港.jpg",
+        "output": "波尔多港_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/贝伦塔.jpg",
+        "output": "贝伦塔_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/贝宁城墙.webp",
+        "output": "贝宁城墙_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/贝尔格莱德要塞.jpg",
+        "output": "贝尔格莱德要塞_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/贝希斯敦铭文.jpeg",
+        "output": "贝希斯敦铭文_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/阿姆斯特丹运河圈.webp",
+        "output": "阿姆斯特丹运河圈_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/阿尔及尔海盗港.jpg",
+        "output": "阿尔及尔海盗港_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/阿尔罕布拉宫.webp",
+        "output": "阿尔罕布拉宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/阿育陀耶外国使馆区.jpg",
+        "output": "阿育陀耶外国使馆区_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/布尔萨皇家铸币所.jpg",
+        "output": "布尔萨皇家铸币所_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/布哈拉卡兰宣礼塔.jpg",
+        "output": "布哈拉卡兰宣礼塔_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/布里哈迪希瓦拉神庙.jpg",
+        "output": "布里哈迪希瓦拉神庙_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/布列斯特海军港.jpg",
+        "output": "布列斯特海军港_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/布列斯特犹太会堂区.jpg",
+        "output": "布列斯特犹太会堂区_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/长白山祭坛.jpg",
+        "output": "长白山祭坛_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/长城九边.jpg",
+        "output": "长城九边_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/大报恩寺琉璃塔.jpg",
+        "output": "大报恩寺琉璃塔_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/达达尼尔海峡要塞.jpg",
+        "output": "达达尼尔海峡要塞_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/大津巴布韦石城.jpg",
+        "output": "大津巴布韦石城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/德累斯顿艺术馆.jpg",
+        "output": "德累斯顿艺术馆_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/德里红堡.jpg",
+        "output": "德里红堡_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/冬宫.jpg",
+        "output": "冬宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/洞窟修道院.jpg",
+        "output": "洞窟修道院_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/东印度公司.jpg",
+        "output": "东印度公司_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/都江堰.jpg",
+        "output": "都江堰_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/恩德伦宫廷学校.jpg",
+        "output": "恩德伦宫廷学校_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/法罗斯灯塔.png",
+        "output": "法罗斯灯塔_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/法塔赫布尔西格里.jpg",
+        "output": "法塔赫布尔西格里_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/梵蒂冈档案馆.jpg",
+        "output": "梵蒂冈档案馆_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/凡尔赛宫.jpg",
+        "output": "凡尔赛宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/费尔干纳王宫.jpg",
+        "output": "费尔干纳王宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/非斯古城.jpg",
+        "output": "非斯古城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/芬恩花园.jpg",
+        "output": "芬恩花园_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/枫丹白露宫.jpg",
+        "output": "枫丹白露宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/格但斯克港.jpg",
+        "output": "格但斯克港_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/广州十三行.jpg",
+        "output": "广州十三行_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/海德堡大学.jpg",
+        "output": "海德堡大学_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/汉萨城市厅.jpg",
+        "output": "汉萨城市厅_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/汉萨商会.jpg",
+        "output": "汉萨商会_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/荷兰围海工程.jpg",
+        "output": "荷兰围海工程_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/皇家海军船坞.jpg",
+        "output": "皇家海军船坞_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/姬路城.jpg",
+        "output": "姬路城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/江南贡院.jpg",
+        "output": "江南贡院_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/杰内大清真寺.jpg",
+        "output": "杰内大清真寺_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/景德镇官窑.jpg",
+        "output": "景德镇官窑_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/景福宫.jpg",
+        "output": "景福宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/京杭大运河.jpg",
+        "output": "京杭大运河_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/巨石阵.jpg",
+        "output": "巨石阵_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/卡尔卡松城堡.jpg",
+        "output": "卡尔卡松城堡_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/卡霍基亚土丘城.jpg",
+        "output": "卡霍基亚土丘城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/卡拉拉大理石矿.jpg",
+        "output": "卡拉拉大理石矿_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/卡利卡特港市.jpg",
+        "output": "卡利卡特港市_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/凯鲁万圣城.jpg",
+        "output": "凯鲁万圣城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/坎儿井.jpg",
+        "output": "坎儿井_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/科尔马旧城.jpg",
+        "output": "科尔马旧城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/科隆大教堂.jpg",
+        "output": "科隆大教堂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/科纳克太阳神庙.jpg",
+        "output": "科纳克太阳神庙_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/孔雀王座.jpg",
+        "output": "孔雀王座_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/拉利贝拉岩石教堂群.jpg",
+        "output": "拉利贝拉岩石教堂群_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/雷吉斯坦广场.jpg",
+        "output": "雷吉斯坦广场_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/里昂丝绸工坊区.jpg",
+        "output": "里昂丝绸工坊区_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/卢浮宫.jpg",
+        "output": "卢浮宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/伦敦塔.jpg",
+        "output": "伦敦塔_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/罗马引水道.jpg",
+        "output": "罗马引水道_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/马尔堡城堡.jpg",
+        "output": "马尔堡城堡_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/马拉盖天文台.jpg",
+        "output": "马拉盖天文台_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/马六甲港.jpg",
+        "output": "马六甲港_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/马丘比丘.jpg",
+        "output": "马丘比丘_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/马丘比丘梯田.jpg",
+        "output": "马丘比丘梯田_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/马赛旧港.jpg",
+        "output": "马赛旧港_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/麦加禁寺扩建.png",
+        "output": "麦加禁寺扩建_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/梅黛奥拉修道院.jpg",
+        "output": "梅黛奥拉修道院_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/美泉宫.jpg",
+        "output": "美泉宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/米兰兵工厂.jpg",
+        "output": "米兰兵工厂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/米兰大教堂.jpg",
+        "output": "米兰大教堂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/明龙江船厂.jpg",
+        "output": "明龙江船厂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/莫高窟.jpg",
+        "output": "莫高窟_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/莫斯科克里姆林宫.jpg",
+        "output": "莫斯科克里姆林宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/慕尼黑皇家啤酒厂.jpg",
+        "output": "慕尼黑皇家啤酒厂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/纳里卡拉要塞.jpg",
+        "output": "纳里卡拉要塞_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/纽伦堡帝国城堡.jpg",
+        "output": "纽伦堡帝国城堡_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/萨格里什航海学校.jpg",
+        "output": "萨格里什航海学校_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/萨那古城.jpg",
+        "output": "萨那古城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/三一修道院.jpg",
+        "output": "三一修道院_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/桑科雷大学.jpg",
+        "output": "桑科雷大学_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/圣地亚哥朝圣路.jpg",
+        "output": "圣地亚哥朝圣路_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/升龙文庙国子监.jpg",
+        "output": "升龙文庙国子监_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/圣米歇尔山.jpg",
+        "output": "圣米歇尔山_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/圣母百花大教堂.jpg",
+        "output": "圣母百花大教堂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/圣乔治银行.jpg",
+        "output": "圣乔治银行_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/圣索菲亚大教堂.jpg",
+        "output": "圣索菲亚大教堂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/圣瓦西里大教堂.jpg",
+        "output": "圣瓦西里大教堂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/圣亚彼得大教堂.jpg",
+        "output": "圣亚彼得大教堂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/苏伊士古运河尝试.jpg",
+        "output": "苏伊士古运河尝试_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/苏州古典园林.jpg",
+        "output": "苏州古典园林_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/塔什干老城集市.png",
+        "output": "塔什干老城集市_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/泰姬陵.jpg",
+        "output": "泰姬陵_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/特奥蒂瓦坎圣城.jpg",
+        "output": "特奥蒂瓦坎圣城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/特诺奇蒂特兰堤道.jpg",
+        "output": "特诺奇蒂特兰堤道_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/天坛.jpg",
+        "output": "天坛_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/托莱多兵工厂.jpg",
+        "output": "托莱多兵工厂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/托普卡帕宫.jpg",
+        "output": "托普卡帕宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/瓦拉纳西河坛群.jpg",
+        "output": "瓦拉纳西河坛群_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/瓦维尔城堡.jpg",
+        "output": "瓦维尔城堡_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/维尔纽斯大学.jpg",
+        "output": "维尔纽斯大学_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/维利奇卡盐矿.jpg",
+        "output": "维利奇卡盐矿_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/威尼斯军港.jpg",
+        "output": "威尼斯军港_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/吴哥窟.jpg",
+        "output": "吴哥窟_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/吴哥水利工程.jpg",
+        "output": "吴哥水利工程_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/西安钟鼓楼.jpg",
+        "output": "西安钟鼓楼_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/西班牙白银舰队.jpg",
+        "output": "西班牙白银舰队_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/希瓦古城.jpg",
+        "output": "希瓦古城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/选帝会议殿.jpg",
+        "output": "选帝会议殿_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/亚琛大教堂.jpg",
+        "output": "亚琛大教堂_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/岩石圆顶圣殿.jpg",
+        "output": "岩石圆顶圣殿_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/耶路撒冷圣城.jpg",
+        "output": "耶路撒冷圣城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/伊比利亚宗教裁判所.jpg",
+        "output": "伊比利亚宗教裁判所_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/伊斯法罕王家广场.jpg",
+        "output": "伊斯法罕王家广场_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/印加皇家道路网.jpg",
+        "output": "印加皇家道路网_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/云南卫所屯田带.jpg",
+        "output": "云南卫所屯田带_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/扎波罗热塞契.jpg",
+        "output": "扎波罗热塞契_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/扎莫希奇理想城市.jpg",
+        "output": "扎莫希奇理想城市_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/智慧宫.jpg",
+        "output": "智慧宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/舟山烽火台网.jpg",
+        "output": "舟山烽火台网_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/紫禁城.jpg",
+        "output": "紫禁城_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/琥珀宫.jpg",
+        "output": "琥珀宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/帕特农神庙.jpg",
+        "output": "帕特农神庙_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/曼谷大皇宫.jpg",
+        "output": "曼谷大皇宫_ai_cartoon.png"
+      },
+      {
+        "source": "assets/historical/郑王庙.jpg",
+        "output": "郑王庙_ai_cartoon.png"
+      }
+    ]
+  },
+  "style_reference": {
+    "required": true,
+    "notes": "Each output target must provide one or more same-type DDS/PNG references. The reference controls style only; the generated content follows image.natural_prompt.",
+    "upload_field_name": "image",
+    "write_converted_pngs": true,
+    "temporary_png_dir": "assets/generated_icons/_style_refs"
+  },
+  "output": {
+    "name": "tv_victory_path_icons",
+    "artifact_stem": "{name}_{target}",
+    "overwrite": false,
+    "keep_png": true,
+    "write_metadata": true,
+    "png_dir": "assets/generated_icons",
+    "metadata_dir": "data/generated_icons",
+    "targets": {
+      "trade_good_icon": {
+        "path": "src/main_menu/gfx/interface/icons/trade_goods/{name}.dds",
+        "width": 128,
+        "height": 128,
+        "resize": "cover",
+        "dds_format": "DXT5",
+        "circle_crop": true,
+        "circle_crop_feather_px": 8,
+        "max_file_size_bytes": 100000,
+        "image_size": "1024x1024",
+        "style_reference_paths": [
+          "assets/generated_icons/_style_refs/01_icon_goods_marble.png"
+        ]
+      },
+      "trade_good_illustration": {
+        "path": "src/main_menu/gfx/interface/icons/trade_goods/illustrations/{name}.dds",
+        "width": 1080,
+        "height": 440,
+        "resize": "cover",
+        "dds_format": "DXT5",
+        "circle_crop": false,
+        "circle_crop_feather_px": 0,
+        "max_file_size_bytes": 1000000,
+        "image_size": "2160x880",
+        "style_reference_paths": [
+          "assets/generated_icons/_style_refs/icon_goods_marble.dds"
+        ]
+      },
+      "ed_module_cover": {
+        "path": "src/.metadata/thumbnail.png",
+        "width": 512,
+        "height": 512,
+        "resize": "cover",
+        "output_format": "png",
+        "circle_crop": false,
+        "circle_crop_feather_px": 0,
+        "max_file_size_bytes": 1000000,
+        "image_size": "1024x1024",
+        "style_reference_paths": [
+          "assets/generated_icons/_style_refs/construction_center.dds",
+          "src/.metadata/thumbnail.png"
+        ],
+        "image": {
+          "natural_prompt": "Create a square Steam Workshop cover illustration for the standalone Engineering Department sub-mod of Towards Victory, in the epic historical key-art style of a AAA grand strategy game box cover, not a flat clean icon. Show a monumental wonder rising from a grand construction site at golden-hour dusk: scaffolding, a crane or hoist, pale marble blocks, and restrained bronze and gold accents, wrapped in atmospheric haze, dust, and dramatic warm light so it feels like a real moment of history being built. Use the two uploaded references only for guidance: take the construction-site motifs from the building icon reference, and take the painterly atmosphere, dramatic lighting, and epic mood from the tree-background reference. Compose off-center on a rule-of-thirds grid, with the wonder and its scaffolding positioned toward the lower third or one side of the frame. Leave the center of the composition calm, uncluttered, and free of important detail (open sky, drifting haze, or a soft receding backdrop) because a game title will later be overlaid there.",
+          "negative_prompt": "text, letters, numbers, logo, watermark, UI frame, flat clean vector icon, simple centered icon composition, subject or main detail placed in the exact center, symmetrical center-locked framing, realistic photo, crowd of tiny unreadable details, finished/completed monument with no construction elements, blank empty background, flat lighting, low contrast"
+        }
+      }
+    }
+  },
+  "wonder_building_icons": {
+    "output_dir": "src/main_menu/gfx/interface/icons/buildings",
+    "artifact_stem": "{name}",
+    "include_generic": true,
+    "include_unique": true,
+    "style_reference_paths": [
+      "assets/generated_icons/_style_refs/construction_center.dds"
+    ],
+    "target": {
+      "width": 128,
+      "height": 128,
+      "resize": "cover",
+      "dds_format": "DXT5",
+      "mipmaps": true,
+      "mipmap_min_dimension": 2,
+      "circle_crop": true,
+      "circle_crop_feather_px": 8,
+      "max_file_size_bytes": 100000,
+      "image_size": "1024x1024",
+      "local_template": {
+        "enabled": false
+      }
+    },
+    "icon_rules": "Match vanilla Europa Universalis V building icons: simple painterly brushwork, compact centered crop, clear 128px silhouette, and a restrained palette of 3-4 colors. Use one main architectural symbol plus at most 1-2 tiny supporting shapes. Keep the icon readable after circular crop and mipmap downsizing. No text, letters, numbers, logo, UI frame, full landscape, crowd, or detailed narrative scene.",
+    "prompt_prefix": "Create a compact vanilla-style Europa Universalis V wonder building icon for",
+    "overrides": {
+      "tv_wonder_royal_pleasure_gardens": {
+        "icon_prompt": "an ornate premodern royal garden pavilion above a compact reflecting pool, flanked by two clipped cypress trees, ivory stone and deep garden green with restrained gold accents"
+      },
+      "tv_wonder_scholars_landscape_garden": {
+        "icon_prompt": "a white plaster moon gate framing one dramatic Taihu scholar rock and a small black-tiled Jiangnan pavilion, ink black, warm white, moss green, and muted stone gray"
+      },
+      "tv_wonder_botanical_exchange_garden": {
+        "icon_prompt": "a compact premodern garden pavilion sheltering one rare flowering tree, with two tiny terracotta specimen pots, warm timber, leaf green, blossom red, and pale stone"
+      },
+      "tv_wonder_classics_examination_yard": {
+        "icon_prompt": "a formal East Asian timber merit gate backed by one tiled examination hall and two tiny sealed manuscript bundles, vermilion, dark tile, parchment ivory, and muted gold"
+      },
+      "tv_wonder_open_merit_hall": {
+        "icon_prompt": "a broad open-fronted East Asian examination hall with a welcoming central stair and two small candidate desks, pale timber, blue-gray tile, ivory paper, and restrained red accents"
+      },
+      "tv_wonder_practical_statecraft_academy": {
+        "icon_prompt": "a compact tiled statecraft academy hall paired with one small wooden abacus and one brass surveying compass, sober red timber, slate blue, parchment ivory, and aged brass"
+      },
+      "tv_wonder_unique_suzhou_classical_gardens_inaugurated": {
+        "icon_prompt": "an iconic Suzhou waterside pavilion with upturned black-tile eaves, one pale Taihu scholar rock, and a lotus pool arc, ink black, white plaster, jade green, and soft lotus pink"
+      },
+      "tv_wonder_unique_fin_garden_inaugurated": {
+        "icon_prompt": "a Safavid Persian garden pavilion centered above a bright turquoise qanat-fed pool, framed by two slender cypress trees, turquoise, sand-colored plaster, deep green, and cobalt tile"
+      },
+      "tv_wonder_unique_jiangnan_examination_hall_inaugurated": {
+        "icon_prompt": "a monumental Jiangnan examination gate with a dark tiled roof, compressed rows of candidate cells behind it, and one sealed scroll bundle, vermilion, charcoal tile, parchment ivory, and muted gold"
+      },
+      "tv_wonder_unique_thang_long_temple_of_literature_inaugurated": {
+        "icon_prompt": "the red timber literary pavilion of Thang Long raised on four white stone piers beneath a tiled roof, with one small scholar stele on a stone tortoise, vermilion, white stone, moss green, and dark tile"
+      },
+      "tv_wonder_unique_maragheh_observatory_inaugurated": {
+        "icon_prompt": "a compact Ilkhanid brick observatory tower with a domed viewing platform, paired with one large brass astrolabe ring and a tiny open star chart without markings, warm brick, lapis blue, brass, and parchment ivory"
+      },
+      "tv_wonder_unique_xian_bell_and_drum_towers_inaugurated": {
+        "icon_prompt": "the Xi'an Bell Tower and Drum Tower as one balanced pair of tiered Ming Chinese timber silhouettes, with a single bronze bell and red drum accent, vermilion, teal tile, aged bronze, and warm gold"
+      },
+      "tv_wonder_unique_behistun_inscription_inaugurated": {
+        "icon_prompt": "a steep ochre rock face bearing one simplified Achaemenid royal relief of the standing king and attendants, with carved stone texture but no legible cuneiform, sandstone ochre, charcoal shadow, faded blue, and muted red"
+      },
+      "tv_wonder_unique_beijing_imperial_granaries_inaugurated": {
+        "icon_prompt": "a massive Ming imperial brick granary with a long gray tiled roof and high stone plinth, accompanied by one grain sack and one wooden measuring scoop, brick gray, dark tile, wheat gold, and muted red"
+      },
+      "tv_wonder_unique_bursa_imperial_mint_inaugurated": {
+        "icon_prompt": "a compact early Ottoman domed stone mint with one heavy coin die and striking hammer over two blank metal coins, pale stone, copper, silver, and deep green accents"
+      },
+      "tv_wonder_unique_enderun_palace_school_inaugurated": {
+        "icon_prompt": "an elegant Ottoman palace-school arcade with a small central dome, paired with one closed manuscript and one ceremonial training bow, cream stone, turquoise tile, burgundy, and restrained gold"
+      },
+      "tv_wonder_unique_ayutthaya_foreign_quarters_inaugurated": {
+        "icon_prompt": "an Ayutthayan riverside embassy and customs pavilion with a steep Siamese roof, one tiny foreign merchant sail, and two compact cargo bales, teak brown, gilded red, river blue, and ivory"
+      },
+      "tv_wonder_unique_yunnan_weisuo_colonies_inaugurated": {
+        "icon_prompt": "a fortified Ming frontier farmstead with one square watchtower rising above tiled barracks, a narrow terraced field, and a tiny grain cart, earth brown, muted red, rice green, and gray tile"
+      },
+      "tv_wonder_unique_zhoushan_beacon_network_inaugurated": {
+        "icon_prompt": "a rugged Ming coastal stone-and-timber beacon tower crowned by a bright signal fire, with two tiny answering beacon flames behind it, charcoal stone, weathered timber, sea blue, and ember orange"
+      }
+    }
+  }
+}

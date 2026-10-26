@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/波尔多港_ai_cartoon.png",
+  "source_sha256": "69297a50b34fa6ca9c95e257e7ed2071392e32090dad48ffb0574d9dfb42a8dd",
+  "reference": "assets/historical/波尔多港.jpg",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

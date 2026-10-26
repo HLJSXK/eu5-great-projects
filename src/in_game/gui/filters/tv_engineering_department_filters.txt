@@ -1,0 +1,11 @@
+﻿# BUILDING_TYPE
+# root is the building_type
+# scope:target is the country to filter
+
+tv_wonder_labor_camp_only = {
+	scope = building_type
+	tag = building
+	trigger = {
+		this = building_type:tv_wonder_labor_camp
+	}
+}

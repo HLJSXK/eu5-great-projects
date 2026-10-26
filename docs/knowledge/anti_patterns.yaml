@@ -1,0 +1,635 @@
+- id: card_common_list_missing_fixed_vertical_size_overlaps_in_vbox
+  pattern: ''
+  detectability: advisory
+  bad: Stacking multiple *_card_common instances directly in a vbox (or wrapping each in a plain `widget = { ... }`) without
+    giving each instance an explicit `layoutpolicy_vertical = fixed` plus a numeric `minimumsize`/`maximumsize` height --
+    e.g. gen_tv_wonder_ceremony_cards_gui.py's ready/stage cards had no vertical policy or size at all, only `layoutpolicy_horizontal
+    = expanding` on an outer wrapper widget.
+  correction: A plain `widget` (unlike `hbox`/`vbox`) does not auto-size vertically from its child content in this codebase's
+    GUI convention; every other stacked card usage in tv_engineering_department.gui (7467-7472, 7495-7499, 7542-7545, 7635-7638,
+    1646-1650) sets `layoutpolicy_vertical = fixed` with an explicit `minimumsize`/`maximumsize` height directly on the card_common
+    instantiation itself (no extra wrapper widget). Without it, every card collapses to zero height and the vbox stacks them
+    all at the same position, reading as cards 'piled on top of each other' instead of listed in sequence.
+  category: gui
+  scope: any
+  source: src/in_game/gui/panels/organization/tv_engineering_department.gui:7467-7472,1646-1650 (working fixed-height precedents)
+  notes: Found 2026-07-11 alongside card_common_untitled_card_missing_common_header_blockoverride in the same ceremony-card
+    fragment; the two bugs compounded visually (the leaked header content from the missing common_header override was what
+    was actually visible piled up at the top of the collapsed card stack).
+- id: card_common_shrinking_height_chain_broken_by_one_fixed_height_wrapper
+  pattern: ''
+  detectability: advisory
+  bad: A card_common instance declares auto/flexible height at the outermost level (`maximumsize = { W -1 }`, no explicit
+    layoutpolicy_vertical needed there) and the first nested content wrapper correctly uses `layoutpolicy_vertical = shrinking`
+    + `size = { W -1 }` + `set_parent_size_to_minimum = yes` on its vbox, but a DEEPER nested wrapper widget inside that same
+    content reverts to a hardcoded fixed height (e.g. `widget = { size = { 462 330 } vbox = { ... } }` with no shrinking policy)
+    -- found in tv_engineering_department.gui's outer Ceremony card (TV_ENGINEERING_CEREMONY_CARD_TITLE), whose inner `widget
+    = { size = { 462 330 } ... }` wrapped the Pharos/Hagia ritual-status area and the newly generated 1-9 ceremony stage cards.
+  correction: The auto-height chain (`layoutpolicy_vertical = shrinking` + `size = { W -1 }` on the wrapper widget, `set_parent_size_to_minimum
+    = yes` + `layoutpolicy_vertical = shrinking` on its vbox) must be applied at EVERY nesting level between the outermost
+    flexible card_common and the actual variable-height content, not just the first level. A single fixed-height wrapper anywhere
+    in that chain caps the measured content at its hardcoded number regardless of how much content is actually rendered inside
+    it, so variable-count child lists (like a growing stack of ceremony stage cards) silently overflow past the outer card's
+    computed bounds instead of stretching it taller.
+  category: gui
+  scope: any
+  source: src/in_game/gui/panels/organization/tv_engineering_department.gui:8115-8137 (outer card + first-level shrinking
+    wrapper, both correct) vs. :8220-8226 (second-level wrapper, hardcoded `size = { 462 330 }`, fixed 2026-07-11 to `layoutpolicy_vertical
+    = shrinking` + `size = { 462 -1 }` + `set_parent_size_to_minimum = yes` on its vbox)
+  notes: 'Reported by the user: the ceremony stage cards (now correctly stacked in sequence per card_common_list_missing_fixed_vertical_size_overlaps_in_vbox)
+    still didn''t stretch the outer Ceremony card taller, because that card''s ritual-status content sat inside a hardcoded
+    330px-tall widget dating from when this area only ever held the much shorter Pharos/Hagia step text. The generated ceremony
+    cards fragment itself needed no change; only the hand-maintained wrapper one level up in tv_engineering_department.gui
+    did.'
+- id: card_common_text_wrapped_in_expanding_widget_blows_out_fixed_card
+  pattern: ''
+  detectability: advisory
+  bad: Wrapping a `text_multi` in an extra `widget = { layoutpolicy_horizontal = expanding text_multi = { layoutpolicy_horizontal
+    = fixed max_width = N autoresize = yes ... } } }` inside a card_common bottom-content row -- e.g. gen_tv_wonder_ceremony_cards_gui.py's
+    stage cards, observed rendering the text column at ~375px against a nominal 380 max_width and pulling the whole fixed-500-wide
+    card wider than its declared minimumsize/maximumsize.
+  correction: Do not sandwich text_multi inside an extra `layoutpolicy_horizontal = expanding` generic `widget`. Place text_multi
+    directly as the hbox child instead, with `layoutpolicy_horizontal = expanding`, `max_width`, and `autoresize = yes` set
+    on the text_multi itself -- matching the verified working precedent at tv_engineering_department.gui:8422-8428 (the Pharos
+    stage-1 text row). Also keep max_width comfortably below the row's real budget (card width minus card_common_bottom_margin
+    minus the icon column minus hbox spacing gaps), not flush against it -- this project settled on a shared `TEXT_MAX_WIDTH
+    = 340` constant in wonder_ceremony_lib-adjacent gen_tv_wonder_ceremony_cards_gui.py for a 500px card with a 60px icon
+    column.
+  category: gui
+  scope: any
+  source: src/in_game/gui/panels/organization/tv_engineering_department.gui:8422-8428 (working direct-hbox-child text_multi
+    precedent) vs. scripts/in_game/gui/panels/organization/gen_tv_wonder_ceremony_cards_gui.py (first draft, extra expanding
+    wrapper widget)
+  notes: Found 2026-07-11, reported by the user as the ceremony stage cards' right-side text visibly overflowing the card
+    at ~375px. This is the same failure class already documented in docs/technical/EU5_Modding_Knowledge_Base.md (an expanding
+    child pulling its natural width back into the row and blowing out a bounded parent, historically observed at 548.3px against
+    a 470px-bounded card) -- confirms the anti-pattern recurs even when max_width nominally fits the arithmetic budget, because
+    the expanding wrapper widget does not respect the ancestor's declared size clamp at all. See docs/knowledge/risk_cards/wonders.md
+    rule 11 and rule 22.
+- id: card_common_untitled_card_missing_common_header_blockoverride
+  pattern: ''
+  detectability: needs_parser
+  bad: Instantiating tv_engineering_department_card_common (or any similarly-templated *_card_common type with a `common_header`
+    icon+text block) with `blockoverride "header_size" { size = { -1 0 } }` to zero out the header row, but not also `blockoverride
+    "common_header" {}` -- e.g. gen_tv_wonder_ceremony_cards_gui.py's first draft overrode header_size/header_decor_templates/common_header_back_decor
+    only.
+  correction: 'Forcing the header widget''s declared size to 0 does not suppress its child content: the default `common_header_icon`/`common_header_text_full`
+    block (an icon plus a literal placeholder title) still gets created and renders, overflowing the zero-height parent and
+    appearing as a leaked duplicate icon+title above the card''s real content. Add `blockoverride "common_header" {}` alongside
+    header_size/header_decor_templates, matching the verified in-repo precedent at tv_engineering_department.gui:7547-7549
+    and :7640-7642.'
+  category: gui
+  scope: any
+  source: src/in_game/gui/panels/organization/tv_engineering_department.gui:7547-7549,7640-7642 (working untitled-card precedent)
+    vs. scripts/in_game/gui/panels/organization/gen_tv_wonder_ceremony_cards_gui.py (first draft, missing the common_header
+    override)
+  notes: 'Found 2026-07-11 fixing the Unique Wonder Ceremony card fragment: all 9 cards (the ready card + 8 stage cards) leaked
+    the default ''Card title header'' placeholder icon+text once above the whole card group. common_header_back_decor was
+    already empty by default in the type, so overriding it again was a no-op that didn''t address the real leak.'
+- id: ceremony_cost_gold_must_use_scaled_gold_not_flat_add_gold
+  pattern: ''
+  detectability: advisory
+  bad: Rendering a `country_reward` gold cost via bare `add_gold = <N>` (a flat literal amount) when the design intent is
+    an economy-scaled loss.
+  correction: '`data/cost_reward_units.yaml`''s `country_reward` catalog originally had an id `gold` (value: 1) that `wonder_ceremony_lib.py:CEREMONY_COST_COUNTRY_REWARD_EFFECTS`
+    mapped straight to bare `add_gold = <value>`. The user clarified the intended semantics was always ''lose gold at scale=1''
+    — i.e. the vanilla `change_gold_effect = { scale = <N> }` scripted effect (which computes the actual gold delta from the
+    country''s `capital_wealth`/`country_economical_base`), matching the sibling `scaled_gold` catalog entry already used
+    everywhere else in the Wonder Ritual system (Pharos/Hagia/tv_wonder_ritual_effects.txt/tv_academy_philosophy_debate_effects.txt
+    all use `change_gold_effect = { scale = ±1..±5 }`, never bare `add_gold` for a scaled cost). Renamed the catalog id from
+    `gold` to `scaled_gold` (same base value=1, so no `ceremony_cost_computed_value` magnitude changed) and added an explicit
+    `scaled_gold` branch in `ceremony_cost_effect_lines()` that renders `change_gold_effect = { scale = <value> }` instead
+    of going through the flat-scalar `CEREMONY_COST_COUNTRY_REWARD_EFFECTS` map. Do not add a new flat-literal `gold` cost
+    id back to this catalog — any gold-flavored ceremony cost must render through `change_gold_effect`, consistent with `docs/knowledge/anti_patterns.yaml`
+    rule `flat_gold_cost_when_dynamic_event_cost_intended`''s general guidance that dynamic/repeatable costs should scale
+    with the economy, not use a flat literal.'
+  category: script
+  scope: any
+  source: 'data/cost_reward_units.yaml country_reward.scaled_gold; scripts_engineering_department/wonder_ceremony_lib.py:CEREMONY_COST_COUNTRY_REWARD_EFFECTS,ceremony_cost_effect_lines;
+    data/unique_wonders.yaml ceremony.stages[*].cost (43 stages renamed type: gold -> type: scaled_gold)'
+  notes: '2026-07-15: user flagged this immediately after the exactly-1-cost-per-stage fix landed: ''所有的gold代价直接写了数值，其实原始数据的含义是失去scale=1的gold''.
+    Confirmed via the sibling scaled_gold usage across Pharos/Hagia/philosophy-debate effects that change_gold_effect with
+    small integer scale (±1 to ±5) is the established convention for gold costs tied to economy scale, and that add_gold''s
+    value-block form has no scale sub-key at all (scale is a change_gold_effect macro parameter, not part of add_gold''s syntax).
+    Renamed the catalog id and added the dedicated render branch rather than inventing new add_gold syntax.'
+- id: ceremony_locked_flag_conflates_first_confirm_with_expansion_reuse
+  pattern: ''
+  detectability: advisory
+  bad: 'Gating GUI text on a generic state flag (`tv_wonder_ceremony_locked`, meaning only ''the ceremony style choice is
+    now finalized/uneditable'') as if it uniquely identified one specific cause of that state (here: ''this style was auto-reused
+    from an earlier expansion''), when the same flag is set identically for the unrelated first-time-confirm case.'
+  correction: '`tv_wonder_ceremony_locked` is set to 1 inside every generic ritual''s `tv_wonder_mechanics_start_*_ritual_effect`
+    (tv_wonder_ritual_effects.txt, ~60 near-identical call sites, one per wonder/style) as soon as the player confirms and
+    the ritual actually starts — this happens identically whether the wonder is being built for the very first time or is
+    a resumed/expanded project reusing an earlier ceremony choice. The GUI card at `tv_engineering_department.gui`''s ceremony
+    section showed `TV_ENGINEERING_CEREMONY_LOCKED_BY_EXPANSION_TEXT` (''this is an expansion of an existing wonder, so it
+    reuses its prior ceremony'') whenever `tv_wonder_ceremony_locked.IsSet` and the wonder is not unique — with no check for
+    whether it was actually an expansion — so every normal first-time generic wonder ceremony wrongly displayed the expansion
+    message after confirming. The real distinguishing signal is `tv_wonder_project_mode ?= 2` (already the established ''this
+    project is a resume/expansion'' marker used elsewhere, e.g. `tv_wonder_project_base_level`''s snapshot guard, docs/knowledge/risk_cards/wonders.md
+    rule 29), which persists unchanged from proposal time through the ceremony stage (only cleared on abandon/reset, never
+    on normal completion). Fixed by ANDing `tv_wonder_project_mode == 2` into the expansion text''s visibility and adding
+    a sibling `TV_ENGINEERING_CEREMONY_STYLE_CONFIRMED_TEXT` card (visible when locked but project_mode != 2) so the first-time-confirm
+    case gets its own accurate message instead of silently falling through to the expansion one. General lesson: when a boolean
+    ''locked/confirmed/done'' flag is set from multiple different code paths for different reasons, GUI text that narrates
+    *why* it''s locked must check the specific reason''s own variable, not just the shared flag.'
+  category: gui
+  scope: any
+  source: src_engineering_department/in_game/gui/panels/organization/tv_engineering_department.gui ceremony style card; src_engineering_department/in_game/common/scripted_effects/tv_wonder_ritual_effects.txt
+    tv_wonder_mechanics_start_*_ritual_effect; docs/knowledge/risk_cards/wonders.md rule 29; 2026-07-16
+  notes: '2026-07-16: user reported that after locking in a ceremony for what was actually a brand-new (non-expansion) generic
+    wonder, the panel inexplicably showed ''这是对已有奇观的扩建...'' (this is an expansion of an existing wonder...). Traced `tv_wonder_ceremony_locked`
+    to ~60 set sites, all inside per-ritual ''start'' effects triggered by the confirm button for ANY generic ceremony, not
+    specifically expansions. The GUI text''s visibility only checked this shared flag plus non-unique, with no `tv_wonder_project_mode
+    ?= 2` (the actual resume/expansion marker) guard. Also fixed a related missing-prompt gap reported in the same session:
+    the row of three ceremony-style-choice buttons had no heading text at all (''从如下三个仪式中选择一个'' never existed — confirmed
+    via `git log -S` across all localization history, not a regression) — added `TV_ENGINEERING_CEREMONY_CHOOSE_STYLE_PROMPT`
+    as a new text_multi above the button row, visible under the same `Not(ceremony_locked)` condition as the buttons themselves.
+    validate.py --changed --fix --ai-report passed with 0 errors/warnings after both fixes.'
+- id: cmm_mod_id_too_long_breaks_menu_visibility
+  pattern: ''
+  detectability: advisory
+  bad: Using an unnecessarily long Community Mod Menu `mod_id` so the same namespace is repeated inside every generated setting
+    id, callback flag, and cache key, and the mod stops appearing in the in-game CMM list
+  correction: Keep the CMM namespace short and distinct from gameplay ids. Use a compact registration id such as `tv_ed` for
+    `cmm_register_*`, and keep gameplay-facing aliases under the longer `tv_engineering_department_*` namespace. The CMM `mod_id`
+    is just the registration prefix; it does not need to match the gameplay mod id.
+  category: gui
+  scope: any
+  source: reference_mods/3692202776/loading_screen/data_binding/cmm_macros_view.txt:145; reference_mods/3692202776/loading_screen/data_binding/cmm_macros_settings.txt:112;
+    src_engineering_department/in_game/common/scripted_effects/tv_engineering_department_cmm_effects.txt:4; src_engineering_department/in_game/common/scripted_guis/tv_engineering_department_cmm_scripted_gui.txt:1
+  notes: '2026-08-03: the Engineering Department CMM integration used the gameplay id `tv_engineering_department` as the CMM
+    namespace at first. That namespace was then repeated in every generated setting key and callback flag and the project
+    did not show up in the in-game menu. Shortening the CMM id to `tv_ed` fixed the visibility issue without changing the
+    gameplay aliases.'
+- id: country_trigger_reused_inside_io_monthly_change
+  pattern: ''
+  only_in_paths:
+  - international_organizations
+  bad: Calling a country-scoped scripted_trigger from an IO variable monthly_change when that trigger depends on root, prev,
+    caller-specific saved scopes, or country variables
+  correction: Write the monthly_change condition in IO scope, or create a separate IO-scoped trigger. Use leader_country ?=
+    { ... } for country state, compare IO variables directly against leader_country.var:X from the IO scope, and inline ownership/state
+    checks whose prev/root chain must point at the leader country.
+  category: scope
+  scope: international_organization
+  source: 'fixed in src/in_game/common/international_organizations/tv_engineering_department.txt; runtime reports: Engineering
+    Department construction progressed while materials stockpile never decreased; Engineering Department survey active state
+    passed in country pulse but survey progress did not advance from IO monthly_change'
+  notes: monthly_change evaluates from the international organization/variable context. A nested leader_country block does
+    not make root inside a called scripted_trigger become the country, and caller-sensitive prev/root chains can differ from
+    the same trigger's country-pulse behavior. In Engineering Department survey progress, reusing tv_wonder_survey_active_trigger
+    inside the IO variable monthly_change silently prevented the visible IO progress variable from gaining monthly progress;
+    inlining the active-survey conditions under leader_country preserved monthly_change as the tooltip-visible source.
+- id: event_option_effect_block_unknown_effect
+  pattern: ''
+  validator: check_event_option_effect_blocks
+  detectability: lint
+  only_in_paths:
+  - events
+  bad: Putting `effect = { ... }` as a direct child of an event `option = { ... }`
+  correction: Write effect calls directly in the option block, alongside `name` and optional `trigger` / `hidden_effect`.
+    Use `hidden_effect = { ... }` only when the option chain should be hidden from the tooltip.
+  category: event
+  scope: country
+  source: 'runtime error.log: jomini_effect.cpp:556, events/tv_wonder_unique_alhambra_ritual_events.txt:24; fixed 2026-07-07'
+  notes: EU5 parses event option contents as an effect list. A direct child named effect is treated as an effect command named
+    `effect`, which does not exist, producing 'Unknown effect effect'.
+- id: generic_action_effect_reads_newly_set_variable
+  detectability: needs_parser
+  pattern: ''
+  only_in_paths:
+  - generic_actions
+  - scripted_effects
+  - gui/panels/organization
+  bad: A visible generic action calls an effect that initializes persistent variables and then compares `var:X` later in the
+    same visible effect chain, assuming action tooltip pre-evaluation commits the earlier writes
+  correction: Hide action widgets until their prerequisite state exists, re-check prerequisites inside the action effect,
+    and make reusable effects safe under pre-evaluation. For derived display/helper values, compute and compare `local_var:X`
+    scratch values first, then write persistent display variables as outputs. For nullable persistent state, use `has_variable`
+    / `var:X ?= ...` or branch from already-existing state instead of directly comparing variables set earlier in the same
+    chain.
+  category: script
+  scope: any
+  source: 'runtime error.log: tv_wonder_select_construction_site -> tv_wonder_update_wonder_level_effect (tv_wonder_body_units/function_units/decoration_units
+    unset during action hover); tv_wonder_select_construction_site -> tv_wonder_update_construction_progress_display_effect
+    (tv_wonder_remaining_progress unset after announcing a completed survey); tv_establish_science_io -> tv_academy_philosophy_refresh_timeline_effect
+    (tv_academy_debate_node_N_index unset during select-trigger pre-evaluation)'
+  notes: EU5 generic action card and tooltip rendering can pre-evaluate the action effect without committing preceding set_variable
+    writes. A helper that initializes construction variables or Academy timeline display variables and then immediately reads
+    them with direct var:X comparisons can spam Failed to fetch variable / Invalid left side errors while the card is merely
+    visible, hovered, or clicked. Even a display refresh that sets a variable to 0 before comparing it needs optional reads
+    or local scratch comparisons if it is reachable from a visible generic action.
+- id: gui_generator_rewrite_silently_dropped_generic_wonder_confirm_buttons
+  pattern: ''
+  detectability: advisory
+  bad: 'A GUI generator rewrite that adds a new bespoke UI path (here: the unique-wonder ceremony framework''s Pharos/Hagia
+    bespoke confirm buttons) deletes the generic-case code block it''s replacing without checking whether the generic case
+    still needs its own equivalent.'
+  correction: 'Every player-facing generic_action in this mod''s Engineering Department panel (including `tv_wonder_confirm_ceremony`/`_scaled_gold`/`_prestige`)
+    is reachable ONLY through an explicitly hand-authored widget in this generator — these are not vanilla-surfaced generic
+    actions with an automatic fallback UI. Commit 5a56683e (''add unique ceremony framework and update UI elements'', 2026-07-12)
+    rewrote `scripts_engineering_department/in_game/gui/panels/organization/gen_tv_engineering_department_wonder_mechanics_gui.py`''s
+    `TV_WONDER_MECHANICS_HOLD_BUTTONS` section to add the two bespoke Pharos/Hagia `hold_button()` calls (wonder id 101/102
+    specifically), and in the same edit deleted the pre-existing generic-wonder block (`not_special_unique_locked_expr()`/`selected_ritual_cost_visible()`
+    + three `hold_button()` calls for `tv_wonder_confirm_ceremony`/`_scaled_gold`/`_prestige` gated to ''any locked wonder
+    that is not Pharos/Hagia'') without adding a replacement. The underlying generic_actions, their `allow=` trigger chains,
+    and the cache-effect pipeline that populates `tv_wonder_selected_ritual_*` variables were all still fully correct and
+    functional — the regression was pure GUI wiring: no widget anywhere called `left_action = { action_name = "tv_wonder_confirm_ceremony..."
+    }` for a non-unique wonder, so the button silently vanished for every generic wonder after choosing a ceremony style,
+    while Pharos/Hagia (the only two wonders exercised by the accompanying test) kept working — masking the regression from
+    `scripts_engineering_department/test_wonder_mechanics_rules.py`, which only asserted the Pharos/Hagia buttons exist and
+    (over-broadly) that the shared button-must NOT appear at all, never asserting a generic-wonder path still worked. Fixed
+    by restoring the generic hold-button block, reusing the already-present `generic_wonder_locked_expr()` helper (a cleaner
+    equivalent to the deleted `not_special_unique_locked_expr()`, added by a later commit for the ceremony-style-choice buttons)
+    instead of re-adding a redundant helper, and narrowing the test''s blanket ''must not be emitted'' assertions to ''must
+    be emitted, gated on `tv_wonder_locked_is_unique`'' so Pharos/Hagia and generic wonders can''t double-render buttons.
+    General lesson: when a generator rewrite adds a bespoke special-case path, explicitly verify (or write a test asserting)
+    that the generic/default case this special-case is carved out of still has its own working path — do not assume deleting
+    the special case''s old home also means the generic case has nowhere else to live.'
+  category: gui
+  scope: any
+  source: scripts_engineering_department/in_game/gui/panels/organization/gen_tv_engineering_department_wonder_mechanics_gui.py
+    TV_WONDER_MECHANICS_HOLD_BUTTONS; scripts_engineering_department/test_wonder_mechanics_rules.py validate_generated_ceremony_gui;
+    git commit 5a56683e (introduced the regression, 2026-07-12); src_engineering_department/in_game/common/generic_actions/tv_engineering_department_wonder_mechanics_actions.txt
+    tv_wonder_confirm_ceremony/_scaled_gold/_prestige; 2026-07-16
+  notes: '2026-07-16: after the ceremony-style two-variable comparison bug was fixed (see [[preceding_has_variable_does_not_guard_a_later_raw_two_variable_comparison]]),
+    user reported the bottom execute/confirm button for a generic wonder''s ceremony no longer appeared after choosing a style
+    (''这个问题是解决了，为什么底部用于执行的按钮又不显示了''), again not knowing which commit broke it. Dispatched a dedicated read-only investigation
+    (Explore agent) to trace the full allow=/cache chain end to end rather than guessing; it confirmed the generic_action/effect/trigger/cache
+    pipeline was internally consistent (regenerated the relevant generators in-memory and byte-matched the committed .txt
+    output) and isolated the actual break to `git log -S` on the GUI generator, finding commit 5a56683e deleted the generic-wonder
+    hold-button block. Restored it (reusing `generic_wonder_locked_expr()` rather than the original deleted helper, since
+    a newer commit had already added an equivalent for the style-choice buttons), regenerated+merged the GUI fragment, and
+    updated the test''s over-broad ''must never appear'' assertions to the correct ''must appear, gated away from Pharos/Hagia''
+    shape. `test_wonder_mechanics_rules.py` and `validate.py --changed --fix --ai-report` both passed after the fix.'
+- id: io_creation_in_visible_option_effect_breaks_tooltip_preview
+  pattern: ''
+  detectability: advisory
+  bad: Calling an effect that runs `create_international_organization` (with nested `add_country_to_international_organization`
+    / `set_leader_country`) directly inside a normal (non-`immediate`) event `option = { ... }` effect chain, especially when
+    it is the option's only/first effect.
+  correction: Event option effect chains are pre-evaluated to render the option's tooltip before the player confirms. `add_country_to_international_organization`
+    and `set_leader_country` each render their own tooltip line (`THIRD_ADD_TO_INTERNATIONAL_ORGANIZATION_EFFECT`, `SET_LEADER_EFFECT`)
+    by promoting an `INTERNATIONAL_ORGANIZATION` scope — but during preview the option's own `create_international_organization`
+    block has not actually run yet, so that promote returns nullptr and the engine logs `Promote 'INTERNATIONAL_ORGANIZATION'
+    returned nullptr` for both `GetName` and `GetLeaderTitle`, with a `Data error in loc string` for each of the two effect
+    tooltip keys. Move the whole IO-creation call (and any join/leader-assignment nested inside the same `create_international_organization`
+    block) to the event's `immediate` block instead, so the IO is real, committed state by the time the option renders its
+    tooltip. `immediate` runs unconditionally and is not tooltip-previewed the way option effects are. Keep the option itself
+    for player-facing acknowledgment/hidden bookkeeping (e.g. clearing a pending flag) only.
+  category: events
+  scope: any
+  source: src_engineering_department/in_game/events/tv_engineering_department_standalone_events.txt tv_engineering_department_standalone.1;
+    src_engineering_department/in_game/common/scripted_effects/tv_engineering_department_effects.txt tv_engineering_department_create_effect;
+    docs/error_log/error.log pdx_data_callstack.cpp:53, pdx_data_localize_helper.cpp:290, pdx_data_localize.cpp:173, 2026-07-16
+  notes: '2026-07-16: user reported that the Engineering Department submod''s game-start onboarding event should move IO creation
+    to `immediate`, because the current country''s join/become-leader would fail to find the target IO during pre-evaluation.
+    error.log confirmed two nullptr promotes for `INTERNATIONAL_ORGANIZATION.GetName`/`GetLeaderTitle` against loc strings
+    `THIRD_ADD_TO_INTERNATIONAL_ORGANIZATION_EFFECT`/`SET_LEADER_EFFECT`. The event (`tv_engineering_department_standalone.1`,
+    single option, no prior `immediate` block) called `tv_engineering_department_create_effect = yes` directly as the option''s
+    first effect; that scripted effect''s `else` branch creates the IO and nests `add_country_to_international_organization
+    = prev` / `set_leader_country = prev` inside the same `create_international_organization = { ... }` block, matching rule
+    19''s existing guidance to keep IO-scoped helpers out of the creation block root — but rule 19 did not cover the fact
+    that the creation call itself, when left in a visible option rather than `immediate`, still triggers a preview-time nullptr
+    for the vanilla join/leader tooltip text. Fixed by moving `tv_engineering_department_create_effect = yes` into the event''s
+    `immediate` block and leaving the option with only its existing `hidden_effect` (pending-flag cleanup). validate.py --changed
+    --fix passed with 0 errors/warnings.'
+- id: io_member_tenure_manual_cooldown
+  pattern: ''
+  detectability: advisory
+  bad: Creating custom monthly variables, cooldowns, or date stamps only to know how long a country has belonged to an international
+    organization
+  correction: Use the native country-scoped `years_in_international_organization = { international_organization = <io scope>
+    value >= N }` trigger, or the script value form `country.years_in_international_organization(io)` for scoring.
+  category: scope
+  scope: international_organization
+  source: reference_game_files/game/in_game/common/parliament_issues/11_union_issue.txt:9-12; reference_game_files/game/in_game/common/country_interactions/negotiate_succession_law.txt:181
+  notes: EU5 already tracks country membership tenure per IO instance. In IO member iterators, `root` or `prev` can point
+    the tenure check back to the current IO, avoiding extra monthly state and cleanup work.
+- id: io_parliament_tab_visible_not_overrideable
+  pattern: blockoverride\s+"organization_parliament_tab_visible"
+  bad: Trying to hide an IO parliament tab with blockoverride "organization_parliament_tab_visible"
+  correction: Set has_parliament = no on the international_organization type. Keep law requires_vote behavior as a separate
+    design decision.
+  category: gui
+  scope: international_organization
+  source: reference_game_files/game/in_game/gui/panels/organization/common.gui:383-384; reference_game_files/game/in_game/common/international_organizations/readme.txt:126
+  notes: The vanilla organization panel comments out the would-be parliament visible block and binds the tab directly to InternationalOrganizationsView.GetInternationalOrganization.HasParliament.
+    There is no block to override.
+- id: ritual_content_event_text_dict_letter_key_collides_with_desc
+  pattern: ''
+  detectability: advisory
+  bad: 'In a scripts_engineering_department/unique_wonder_ritual_content/<key>.py module''s per-event localization dict, storing
+    option-letter text directly alongside `"t"`/`"d"` keys (e.g. `{"t": ..., "d": ..., "a": ..., "d": "Install the Alms Prefect."}`)
+    whenever an event has 4+ options and therefore reaches option letter `"d"`.'
+  correction: 'Nest per-event option text under its own `"options"` sub-dict (`{"t": ..., "d": ..., "options": {"a": ...,
+    "d": ...}}`) and read `text["options"][letter]` in `build_localization`''s option loop. Never let the `for letter in ("a",...,"e")`
+    option loop check `letter in text` directly against the same dict that holds the `"t"`/`"d"` keys.'
+  category: localization
+  scope: any
+  source: scripts_engineering_department/unique_wonder_ritual_content/st_peters_basilica.py build_localization; error.log
+    pdx_localize.cpp:221 duplicate key tv_engineering_department.1678/1679/1680/1681.d, 2026-07-10
+  notes: Python dict literals silently keep only the last `"d"` key, so the event's real long-form description (e.g. ASSIGNMENT_EVENT_ID's
+    5-role summary) was discarded entirely and replaced by the 4th option's text ("Install the Alms Prefect.") before it ever
+    reached the generator. Separately, the option loop's `if letter in text` matched the dict's own `"d"` desc key even on
+    events with fewer than 4 real options (OPENING/SCANDAL/REWARD), re-emitting the description a second time under the `.d`
+    key and producing the exact 'Duplicate localization key ... defined in both X and X' engine warning. bank_of_saint_george.py
+    and dome_of_the_rock.py were unaffected because their option loops only check `("a","b","c")` and never reach letter `"d"`.
+- id: tv_io_appointed_leader_forbidden
+  pattern: appointed_leader\.
+  bad: appointed_leader.adm, appointed_leader.dip, appointed_leader.artist_skill, etc. in TV IO monthly_change or monthly_effect
+    blocks
+  correction: 'Use leader_country.var:tv_xxx_leader_char.attribute instead. Example: value = leader_country.var:tv_academy_leader_char.adm.
+    Always guard with international_organization_has_leader = yes and leader_country = { has_variable = tv_xxx_leader_char
+    }.'
+  category: scope
+  scope: any
+  source: src/in_game/common/international_organizations/tv_academy_of_sciences.txt:87 (leader_country.var:tv_academy_leader_char.adm);
+    src/in_game/common/international_organizations/tv_arts_exhibition.txt:49 (leader_country.var:tv_arts_exhibition_leader_char.artist_skill)
+  notes: appointed_leader accesses the leader via the vanilla IO leader mechanism, which in our design is decoupled from the
+    great person character. The great person is stored as a country variable on leader_country; chained access leader_country.var:tv_xxx_leader_char.attribute
+    is the correct pattern.
+- id: tv_io_chooses_new_leader_forbidden
+  pattern: international_organization_chooses_new_leader
+  bad: Calling international_organization_chooses_new_leader anywhere in TV IO-related code (leader management actions, on_action,
+    events, effects)
+  correction: Never call international_organization_chooses_new_leader on TV IO types. The leader_country is locked to the
+    founding country via on_creation and never reassigned. The great person character is tracked via independent country variables.
+    This effect triggers the vanilla EU5 leader-election process, which violates the no-elections design.
+  category: script
+  scope: any
+  source: src/in_game/common/international_organizations/tv_diplomatic_alliance.txt (leader_change_trigger_type = none), tv_arts_exhibition.txt
+    (leader_change_trigger_type = none), tv_academy_of_sciences.txt (leader_change_trigger_type = none)
+  notes: international_organization_chooses_new_leader re-runs the leader selection process, which with leader_change_trigger_type
+    = none still evaluates the leader = {} block and may reassign the engine-internal leader state in ways inconsistent with
+    the design. The design deliberately omits this call to fully prevent any automatic leader change.
+- id: tv_io_initial_laws_seeded
+  pattern: (?:^\s*default:\s*true\s*$|(?s:tv_trade_league\s*=\s*\{.*?\blaws\s*=\s*\{\s*\w))
+  detectability: lint
+  only_in_paths:
+  - trade_league_laws.yaml
+  - tv_trade_league.txt
+  bad: Trade League starts with enacted laws or generated default policies
+  correction: 'Keep Trade League lawless at creation: do not emit a laws block with policy mappings in the IO type, and do
+    not mark generated Trade League policies as default. Diplomatic Alliance is a separate design exception that explicitly
+    seeds baseline no-effect policies.'
+  category: script
+  scope: international_organization
+  source: user design clarification (2026-05-25); reference_game_files/game/main_menu/setup/start/15_international_organizations.txt:288
+  notes: AI generated default level-1 Trade League policies into tv_trade_league's IO definition. This violated the Trade
+    League design that policies are enacted later through votes. Vanilla setup shows an IO can explicitly start with laws
+    = {  }; Diplomatic Alliance intentionally uses a non-empty laws block for its baseline tier-0 state.
+- id: tv_io_missing_opinion_bias
+  pattern: ''
+  detectability: advisory
+  only_in_paths:
+  - international_organizations
+  - biases
+  bad: Defining a TV international organization without a matching io_opinion_<io_type> bias
+  correction: Add src/in_game/common/biases/<io_type>_biases.txt with io_opinion_<io_type> = { value = <opinion> } and localize
+    the same key.
+  category: script
+  scope: international_organization
+  source: reference_game_files/game/in_game/common/international_organizations/readme.txt:6
+  notes: EU5 applies automatic member opinions through io_opinion_<key>; missing the bias logs 'International Organization
+    Type needs an opinion of other members'.
+- id: tv_io_monthly_effect_block_forbidden
+  pattern: ''
+  validator: check_tv_io_monthly_effect_blocks
+  detectability: lint
+  only_in_paths:
+  - international_organizations
+  bad: Defining a monthly_effect block on a TV international_organization type
+  correction: Do not use IO monthly_effect blocks. Keep visible typed-variable monthly arithmetic in the variable's monthly_change,
+    and move maintenance/completion side effects to registered country monthly pulses or explicit lifecycle hooks.
+  category: script
+  scope: international_organization
+  source: user project rule, 2026-06-24
+  notes: TV IO monthly_effect blocks have severe performance costs even when the body is hidden. IO variable monthly_change
+    remains the correct place for visible variable breakdowns; side-effect maintenance should be routed through country pulses
+    that first do cheap membership/leader checks.
+- id: tv_io_unique_scope_link
+  pattern: international_organization:(tv_arts_exhibition|tv_diplomatic_alliance|tv_academy_of_sciences)
+  bad: international_organization:tv_arts_exhibition (or tv_diplomatic_alliance, tv_academy_of_sciences) scope link
+  correction: Use every_international_organizations_member_of = { limit = { international_organization_type = international_organization_type:<io_type>
+    } ... }. The international_organization:type_name syntax requires unique = yes and produces a runtime error for non-unique
+    types.
+  category: scope
+  scope: any
+  source: src/in_game/common/international_organizations/tv_diplomatic_alliance.txt:3 (unique = no)
+  notes: All three TV IO types have unique = no. Using international_organization:X on non-unique types causes 'does not lead
+    to a unique international organization' and the scope resolves to null, silently skipping all effects.
+- id: tv_io_unique_yes_forbidden
+  pattern: ^\s*unique\s*=\s*yes
+  only_in_paths:
+  - international_organizations
+  bad: unique = yes on a TV IO type definition (tv_arts_exhibition, tv_diplomatic_alliance, tv_academy_of_sciences)
+  correction: All three TV IOs are non-unique (unique = no). Never add unique = yes. Use every_international_organizations_member_of
+    = { limit = { international_organization_type = international_organization_type:<io_type> } ... } to scope to them from
+    country scope.
+  category: scope
+  scope: any
+  source: src/in_game/common/international_organizations/tv_diplomatic_alliance.txt:3 (unique = no)
+  notes: Adding unique = yes would collapse per-country IO instances into one shared instance, breaking the independent-per-country
+    design. It also makes international_organization:type_name syntax appear to work, masking the underlying design violation.
+- id: unique_wonder_base_key_reassignment_requires_mechanic_key_match
+  pattern: ''
+  detectability: needs_parser
+  only_in_paths:
+  - data/unique_wonders.yaml
+  bad: Changing a unique wonder's `base_key` in data/unique_wonders.yaml (e.g. to fix a failing site-rule check from scripts_engineering_department/audit_unique_wonder_site_requirements.py)
+    without also updating that wonder's `mechanic_key` field to the same value
+  correction: scripts_engineering_department/wonder_mechanics/_core.py's load_unique_wonders() hard-requires mechanic_key
+    == base_key for every unique wonder entry and raises ValueError(f"Unique wonder {key} must keep mechanic_key = {base_key}")
+    otherwise, failing every downstream generator (gen_tv_wonder_module_buildings.py, gen_tv_wonder_finalization_effects.py,
+    gen_tv_engineering_department_wonder_mechanics_*.py, gen_location_window.py, etc.) that calls load_unique_wonders(). Before
+    regenerating after a base_key change, check that the generic wonder entries for the old and new base_key in data/wonders.yaml
+    share compatible size/category/pop_type/final_buildings level count (they need not be byte-identical, just structurally
+    compatible), then update both base_key and mechanic_key together to the new value.
+  category: workflow
+  scope: any
+  source: data/unique_wonders.yaml unique_walls_of_benin base_key reassignment (great_wall -> star_fortress_city) after scripts_engineering_department/audit_unique_wonder_site_requirements.py
+    flagged the wonder's city-rank location as incompatible with great_wall's rural/town-only trigger, 2026-07
+  notes: 'Confirmed both great_wall and star_fortress_city in data/wonders.yaml are size: small, category: military_category,
+    pop_type: soldiers, with the same maintenance key and a 3-level final_buildings progression, so the reassignment was mechanically
+    safe once mechanic_key was updated to match. This does not generalize automatically -- always diff the two base wonder
+    entries in data/wonders.yaml before reassigning, since a mismatch in final_buildings level count or category would need
+    the unique wonder''s own overrides (final_buildings, initial_level) reconciled too.'
+- id: unique_wonder_ceremony_stage_cost_must_have_exactly_one_entry
+  pattern: cost:\s*\n(\s*- catalog:.*\n.*\n.*\n){2,}
+  detectability: lint
+  bad: Authoring `ceremony.stages[i].cost` in `data/unique_wonders.yaml` with 2 entries (e.g. one `country_reward`/`local_reward`/`character_reward`
+    resource cost plus one `country_modifier`/`local_modifier` debuff) instead of exactly 1.
+  correction: The Unique Wonder Ceremony's 8-stage design (docs/knowledge/risk_cards/wonders.md rule 20) requires **exactly
+    one** authored cost per stage — odd steps (1/3/5/7) at ×1 magnitude, even steps (2/4/6/8) at ×2 magnitude via `ceremony_cost_stage_multiplier`
+    — with steps 2/4/8 additionally carrying the one-time/local-building/national reward channels. `_validate_ceremony_stage_cost`
+    in `scripts_engineering_department/wonder_mechanics/_core.py` previously allowed `1-2` entries, which let 120 of 121 wonders
+    (740 of 968 stages) drift to 2 costs per stage during initial authoring; the generator (`wonder_ceremony_lib.py:ceremony_cost_effect_lines`)
+    faithfully emitted every authored entry, so players saw 2 cost lines in the pay-option tooltip instead of 1. Fixed by
+    tightening the validator to `len(items) != 1` (hard error) and re-authoring all 120 wonders via a per-wonder judgment
+    pass (matching each stage's narrative flavor to the single cost that fits best) through `scripts_engineering_department/wonder_mechanics/merge_ceremony_cost_options.py`.
+    When authoring or reviewing new `ceremony.stages[i].cost` entries, always author (and expect) exactly 1 `{catalog, type}`
+    per stage — the validator now rejects 0, 2, or more.
+  category: script
+  scope: any
+  source: data/unique_wonders.yaml ceremony.stages[*].cost; scripts_engineering_department/wonder_mechanics/_core.py:_validate_ceremony_stage_cost;
+    scripts_engineering_department/wonder_mechanics/merge_ceremony_cost_options.py; docs/knowledge/risk_cards/wonders.md rule
+    20
+  notes: '2026-07-15: user reported ''很多步骤有两个代价'' (many steps have two costs) against the original 1-cost-per-step / 2-4-8-reward-channel
+    / odd-1x-even-2x design. Confirmed 740/968 ceremony stages had 2 cost entries. User directed a per-stage judgment pass
+    (pick whichever cost fits that stage''s own title/desc narrative) rather than a mechanical positional rule, since the
+    2-cost pairs had no consistent catalog ordering. Fanned out 10 parallel agents (one per ~12-wonder batch) to decide per
+    stage, merged via merge_ceremony_cost_options.py, then tightened the schema validator so this can''t silently reappear.'
+- id: unreleased_project_compatibility_layer
+  pattern: ''
+  detectability: advisory
+  bad: Adding or preserving compatibility layers, legacy save migrations, alias variables, wrapper launchers, duplicate old/new
+    paths, or defensive fallback branches for a previous internal implementation
+  correction: Treat this unreleased project as mutable. Date-based YYMMDD versions identify builds; they do not create compatibility
+    contracts. Update all callers, generators, data, and docs to the current architecture, delete stale branches/state, and
+    prefer direct efficient refactors over compatibility shims. Only add compatibility when the user explicitly requests it
+    for a named external consumer.
+  category: workflow
+  scope: any
+  source: Project owner directive, 2026-06-07
+  notes: There are no shipped saves or public APIs to protect. Compatibility code creates hot-path cost, hides call-order
+    bugs, and teaches future agents to preserve obsolete structures.
+- id: variable_map_rebuild_on_read_path
+  pattern: ''
+  detectability: advisory
+  bad: Calling a variable-map/global-map rebuild effect, including an if-needed rebuild router, from GUI refresh, country
+    cache refresh, tooltip/projection, selection, monthly read, or other hot/read paths as a compatibility fallback
+  correction: 'Build global variable-map indexes only at lifecycle points: startup, save-load initialization, data-change
+    regeneration, or explicit initialization. If a read misses a map, fix the current lifecycle hook or the call order that
+    reads before initialization; do not add if-needed routers, old-schema repair, or legacy state preservation.'
+  category: performance
+  scope: variable_map
+  source: Engineering Department global wonder-map lifecycle fix, 2026-06-11
+  notes: Engineering Department briefly added tv_wonder_index_rebuild_global_maps_if_needed_effect with a map-version gate,
+    then called it from cache/module refresh paths. That violated the no-compatibility policy, hid lifecycle/call-order bugs,
+    and charged hot paths for defensive global-map checks.
+- id: wonder_ceremony_card_icon_global_stage_mapping
+  pattern: ''
+  detectability: advisory
+  bad: Using GetConceptTexture, a wonder-display concept, any mod DDS, or one global stage-number-to-icon table for an eight-stage
+    ceremony card.
+  correction: Use a real piechart with a centered built-in @icon_name! font icon, selected from each ceremony.stages[i].icon
+    field. Every stage also needs a non-empty icon_rationale tied to its own title/description; generate the current icon
+    through its stage-and-wonder-id localization key, never from a fixed eight-icon sequence.
+  category: gui
+  scope: any
+  source: reference_game_files/game/in_game/gui/shared/cards.gui:4168 (piechart + pieslices); reference_game_files/game/main_menu/gui/shared/font_icons.gui
+    (verified font icon declarations); reference_game_files/game/in_game/gui/build_location_lateralview.gui:789 (dynamic inline
+    icon-name syntax); scripts/in_game/gui/panels/organization/gen_tv_wonder_ceremony_cards_gui.py
+  notes: The first fragment repeated one wonder illustration across all eight cards. A later correction overgeneralized that
+    failure into a global eight-stage icon map, so different wonders again showed the same designs. The canonical fix keeps
+    the real piechart but makes icon selection explicit per wonder and per stage in data, with a short rationale that can
+    be reviewed alongside the flavor text.
+- id: wonder_existing_wonder_location_never_seeded_as_surveyed
+  pattern: ''
+  detectability: advisory
+  bad: tv_wonder_initialize_existing_unique_wonders_effect (generate_location_display_effects() in gen_tv_engineering_department_wonder_mechanics_effects.py,
+    output src_engineering_department/in_game/common/scripted_effects/tv_wonder_location_display_effects.txt) instant-constructs
+    the final building for an initial_level>0 unique wonder and registers it as a priority-expansion candidate, but never
+    wrote tv_wonder_surveyed / tv_wonder_survey_scale_competence / tv_wonder_survey_logistics_competence / tv_wonder_survey_organization_competence
+    / tv_wonder_survey_scale_tier on that location for the wonder's id.
+  correction: 'tv_wonder_surveyed is a shared gate used in three places: (1) this init effect''s own re-run guard (it fires
+    on both on_game_start and on_game_load, so it must skip re-registering the priority candidate once done), (2) tv_wonder_mechanics_copy_completed_survey_from_location_effect''s
+    guard for restoring saved competence into the country''s active project, and (3) tv_wonder_selected_survey_already_cached_trigger,
+    which tv_wonder_mechanics_start_survey_effect checks to decide whether reassigning the survey site to this location should
+    restore cached values or start a fresh survey from 0. Because the existing-wonder priority-resume path (tv_wonder_prepare_priority_project_effect)
+    never runs a real survey, tv_wonder_surveyed for that wonder id is never set by the normal survey-completion effect (tv_wonder_mechanics_complete_survey_effect,
+    gated on tv_wonder_survey_active which the resume path never sets) -- so reassigning the survey site to that location
+    always takes the ''fresh survey'' branch and resets competence to 0/0/0, even though the resume-proposal fallback in tv_wonder_prepare_priority_project_effect
+    had shown 85/85/85 (100 fixed-tier scale seed after this fix) moments earlier. Fix: seed tv_wonder_surveyed=1 plus the
+    four competence/tier maps (scale=100, logistics=85, organization=85, scale_tier=6) for that wonder id, in the SAME already-not-yet-surveyed
+    guarded block that calls append_register_existing_unique_priority_candidate (append_existing_unique_wonders_initialization_effect
+    in gen_tv_engineering_department_wonder_mechanics_effects.py). Seeding it there, atomically with the one-time candidate
+    registration, satisfies all three consumers at once: registration only ever happens once (across every future game_load),
+    and both the priority-resume copy and the reassign-survey-site cached branch find real saved data instead of falling through
+    to a country-scope default or a from-scratch survey.'
+  category: scripted_effects
+  scope: wonders
+  source: scripts_engineering_department/in_game/common/scripted_effects/gen_tv_engineering_department_wonder_mechanics_effects.py:append_existing_unique_wonders_initialization_effect
+    (writes into generate_location_display_effects() -> src_engineering_department/in_game/common/scripted_effects/tv_wonder_location_display_effects.txt,
+    NOT the file's own OUT_FILE/generate()); tv_wonder_survey_effects.txt:11146-11166 tv_wonder_mechanics_start_survey_effect;
+    tv_engineering_department_wonder_mechanics_triggers.txt:30658 tv_wonder_selected_survey_already_cached_trigger
+  notes: User recalled the original design intent was to seed the location as 'already surveyed' at game start, but it was
+    never implemented; the reason turned out not to be a genuine architectural conflict (the same tv_wonder_surveyed map's
+    three consumers are all compatible once seeded atomically with registration), just a missed step in the original generator.
+    Also a reminder that gen_tv_engineering_department_wonder_mechanics_effects.py holds multiple independent generate_*()
+    entry points (generate(), generate_proposal_effects(), generate_survey_effects(), generate_ritual_effects(), generate_location_display_effects())
+    feeding DIFFERENT output files via separate thin wrapper scripts (gen_tv_wonder_proposal_effects.py, gen_tv_wonder_survey_effects.py,
+    gen_tv_wonder_ritual_effects.py, gen_tv_wonder_location_display_effects.py) -- editing a function in this file and regenerating
+    via its own OUT_FILE/main() can produce a byte-identical no-op diff if that function is only reachable from a sibling
+    generate_*() used by a different wrapper script; always trace which generate_*() a target function feeds before assuming
+    `python gen_<file>.py` regenerates it.
+- id: wonder_fixed_modifier_thousand_scaled_value
+  pattern: ''
+  detectability: lint
+  validator: wonder_engine_scaled_fixed_modifiers
+  only_in_paths:
+  - wonder
+  bad: Setting fixed-value wonder modifiers such as global_pop_conversion_speed, local_pop_assimilation_speed, local_manpower,
+    or local_sailors above 0.5
+  correction: Keep these fixed-value entries at or below 0.5. If a percentage bonus was intended, use the matching *_modifier
+    percent modifier instead.
+  category: modifier
+  scope: wonder
+  source: User-reported EU5 engine behavior, 2026-06-13; modifier ids verified in reference_game_files/game/main_menu/common/modifier_type_definitions/00_modifier_types.txt:4553-4564,
+    4609-4619, 5080-5092
+  notes: EU5 multiplies these fixed-value modifier values by 1000 in game. scripts/validate.py checks wonder paths in src/
+    and data/ for direct YAML/script assignments to global_pop_assimilation_speed, global_pop_conversion_speed, local_pop_assimilation_speed,
+    local_pop_conversion_speed, local_manpower, and local_sailors; percent *_modifier variants are intentionally excluded.
+- id: wonder_ritual_choice_branch_retry_reward_template_trap
+  pattern: ''
+  detectability: advisory
+  bad: Writing a new unique-wonder ritual whose narrative shape is 'choice -> deterministic branch marking a fixed subset
+    of tracked entities at risk -> one retry/incident event offering pay-a-cost-to-fully-resolve vs. accept-narrower-for-free
+    -> threshold-scaled reward', even after removing `random_list` dice and renaming every variable
+  correction: Design each wonder's state representation, time structure, and decision shape independently from its own `data/unique_wonder_ritual_specs.yaml`
+    design_ir/mechanic_signature, not from a template shared with sibling wonders. When authoring more than one wonder ritual
+    in the same batch, assign each to an isolated agent/context with no visibility into sibling implementations or into scripts_engineering_department/unique_wonder_ritual_content/_entity_ritual.py,
+    so the natural 'copy the pattern already in this file' shortcut is unavailable. Run scripts_engineering_department/audit_unique_wonder_ritual_mechanic_similarity.py
+    after the batch and treat any pair scoring combined_ratio >= 0.15 as a real finding to investigate, not just a number
+    to beat.
+  category: workflow
+  scope: any
+  source: docs/knowledge/risk_cards/wonders.md rules 12-13; scripts_engineering_department/audit_unique_wonder_ritual_mechanic_similarity.py
+  notes: 'Confirmed twice on the same 3-4 wonders: first when Alhambra/Dome of the Rock/Bank of Saint George/St. Peter''s
+    Basilica all routed through the shared _entity_ritual.py dice engine (combined_ratio up to ~0.7+), then again 2026-07
+    when Dome/Bank/St Peter''s each got an independent bespoke rewrite that removed the dice but still converged on the same
+    higher-level template (combined_ratio 0.48-0.71). Resolved 2026-07 by a second rewrite of all four wonders (including
+    Alhambra, whose dice-driven _entity_ritual usage was itself a second instance of template reuse), each authored by an
+    isolated subagent with no visibility into siblings: effects-file combined_ratio among Dome/Bank/St Peter''s dropped to
+    0.18-0.32.'
+- id: wonder_ritual_cleanup_stale_after_entity_ritual_rename
+  pattern: ''
+  detectability: advisory
+  bad: Trusting a generated wonder ritual/mechanics file at face value after `scripts_engineering_department/unique_wonder_ritual_content/<key>.py`
+    row-set or variable-naming conventions change, instead of re-running every generator registered against it
+  correction: When error.log reports `Variable 'tv_wonder_<unique_key>_<...>_status' is used but is never set` (or a matching
+    `_favorable_count`/`_narrowed`/`_started`/`_completed`/`_ritual_phase`/`_ritual_row_set_index` variant) for one of the
+    bespoke unique wonders (Dome of the Rock, Bank of Saint George, St. Peter's Basilica), diff the flagged names against
+    the wonder's own content module (`entity_status_var`/`favorable_count_var`/`narrowed_var`/`_stage_var` in `scripts_engineering_department/unique_wonder_ritual_content/_entity_ritual.py`
+    and `<key>.py`) before assuming a runtime bug. Re-run `gen_tv_wonder_ritual_effects.py` (owns `tv_wonder_ritual_effects.txt`,
+    `data/generated_files.yaml`); it regenerates `tv_wonder_mechanics_clear_selected_ritual_runtime_effect` from each wonder's
+    live `runtime_variables` list in `data/unique_wonders.yaml` and drops any stale entries left over from a prior naming
+    convention. Do not hand-patch the generated file.
+  category: workflow
+  scope: any
+  source: 'runtime error.log, 2026-07-09: jomini_effect.cpp reported tv_wonder_dome_of_the_rock_custody_duties_*, tv_wonder_dome_of_the_rock_sanctuary_access_groups_*,
+    tv_wonder_dome_of_the_rock_ritual_row_set_index/ritual_phase, and the matching st_peters_basilica/bank_of_saint_george
+    variants as used but never set'
+  notes: Dome of the Rock, Bank of Saint George, and St. Peter's Basilica were reworked 2026-07 from the shared `_entity_ritual`
+    row-set naming (`sanctuary_access_groups`, `custody_duties`, `sacred_official_candidates`, `apostolic_service_duties`,
+    `charter_options`, `public_credit_pledges`, plus `ritual_row_set_index`/`ritual_phase`) to bespoke short-form naming (`access`,
+    `duty`, `role`, `assigned_role`, `ritual_stage`), and `data/unique_wonders.yaml`'s `ritual.runtime_variables` lists were
+    updated to match — but `src/in_game/common/scripted_effects/tv_wonder_ritual_effects.txt` (generated by `gen_tv_wonder_ritual_effects.py`)
+    had not been regenerated since, so its `tv_wonder_mechanics_clear_selected_ritual_runtime_effect` cleanup effect still
+    emitted `remove_variable` calls for the old long-form names. Those names are never set (false 'used but never set' warnings)
+    and, worse, the *real* current-name status/favorable_count/narrowed/started/completed/ritual_stage variables were never
+    cleaned up on ritual reset, leaking state across a ritual restart. Fixed by re-running the generator with no data changes;
+    always re-run generators after editing a content module's naming helpers even when no runtime error has been observed
+    yet.

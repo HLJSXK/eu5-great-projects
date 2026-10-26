@@ -1,0 +1,57 @@
+﻿# Towards Victory - Engineering Department support-exhaustion reprieve costs
+# Root: the country that owns the wonder project. See docs/design/Wonder_Support_Reprieve.md.
+
+# Bribe: one year of trade and tax income.
+tv_wonder_support_reprieve_bribe_cost = {
+	value = monthly_income_trade_and_tax
+	multiply = 12
+	min = 100
+}
+
+tv_wonder_support_reprieve_bribe_payment = {
+	value = tv_wonder_support_reprieve_bribe_cost
+	multiply = -1
+}
+
+tv_wonder_support_reprieve_estate_count = {
+	value = 0
+	if = {
+		limit = { country_has_estate = estate_type:nobles_estate }
+		add = 1
+	}
+	if = {
+		limit = { country_has_estate = estate_type:clergy_estate }
+		add = 1
+	}
+	if = {
+		limit = { country_has_estate = estate_type:burghers_estate }
+		add = 1
+	}
+	if = {
+		limit = { country_has_estate = estate_type:peasants_estate }
+		add = 1
+	}
+	if = {
+		limit = { country_has_estate = estate_type:dhimmi_estate }
+		add = 1
+	}
+	if = {
+		limit = { country_has_estate = estate_type:tribes_estate }
+		add = 1
+	}
+	if = {
+		limit = { country_has_estate = estate_type:cossacks_estate }
+		add = 1
+	}
+	min = 1
+}
+
+tv_wonder_support_reprieve_estate_share = {
+	value = tv_wonder_support_reprieve_bribe_cost
+	divide = tv_wonder_support_reprieve_estate_count
+}
+
+tv_wonder_support_reprieve_political_influence_cost = 50
+tv_wonder_support_reprieve_political_influence_payment = -50
+tv_wonder_support_reprieve_prestige_cost = 25
+tv_wonder_support_reprieve_prestige_payment = -25

@@ -1,0 +1,21 @@
+﻿# Direct row selection: the GUI passes the numeric registry ID as target_1.
+# Eligibility and registry membership are revalidated by the shared effect.
+tv_wonder_select_priority_candidate = {
+	scope = country
+	saved_scopes = { target_1 }
+	is_shown = {
+		has_variable = tv_engineering_department_member
+	}
+	is_valid = {
+		has_variable = tv_engineering_department_member
+		tv_wonder_has_open_proposal_trigger = yes
+		has_variable = tv_wonder_priority_found
+		exists = scope:target_1
+	}
+	effect = {
+		if = {
+			limit = { has_variable = tv_engineering_department_member }
+			hidden_effect = { tv_wonder_select_priority_candidate_effect = yes }
+		}
+	}
+}

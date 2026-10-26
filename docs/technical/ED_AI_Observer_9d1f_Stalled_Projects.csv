@@ -1,0 +1,10 @@
+﻿site,site_name,site_name_zh,tag,wonder_id,wonder_label,start_year,end_year,observations,max_sample_gap_years,large_support_rebounds,later_completed_unit_or_level_growth_observed,endpoint_camp_built,endpoint_camp_employed,endpoint_camp_queued,endpoint_laborers_raw
+11378,dzogon,佐钦,AMD,19,大水渠,1770,1840,7,20,2,False,7,0.0,4,69.72124
+6305,khiva,希瓦,MOS,188,希瓦古城,1780,1840,7,10,4,False,0,0.0,15,8.219439999999999
+6802,bursa,布尔萨,TUR,232,布尔萨皇家铸币所,1590,1650,6,20,2,True,0,0.0,10,36.58695
+3079,rome,罗马,NAP,112,圣亚彼得大教堂,1600,1640,4,20,1,True,0,0.0,10,58.35621999999999
+14951,angkor,吴哥,KHM,132,吴哥水利工程,1450,1490,3,30,1,True,0,0.0,10,43.92161
+5097,yuryev_polsky,尤里耶夫‑波利斯基,VLR,55,园林群,1770,1810,3,30,1,False,5,0.0,0,11.60134
+2759,lagos,拉古什,CAS,167,萨格里什航海学校,1800,1840,3,20,0,False,10,0.0,0,3.47625
+2294,lyon,里昂,BOU,196,里昂丝绸工坊区,1750,1780,4,10,2,True,0,0.0,5,6.8794200000000005
+21812,tenochtitlan,特诺奇蒂特兰,TEP,131,特奥蒂瓦坎圣城,1710,1740,3,20,1,True,6,0.0,4,11.33541

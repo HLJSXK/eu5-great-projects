@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/马六甲港_ai_cartoon.png",
+  "source_sha256": "77284e0b1fa9243311d290702cd75abcca684adec54977e1743121c59ab7ebca",
+  "reference": "assets/historical/马六甲港.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Gezicht_op_Malakka,_RP-P-1988-59.jpg",
+    "license": "CC0",
+    "artist": "Rijksmuseum",
+    "date": "ca. 1775 - ca. 1800",
+    "note": "题材近似：约 1775–1800 年荷兰时期马六甲港铜版画，不是 15 世纪苏丹国港口；去图注。"
+  }
+}

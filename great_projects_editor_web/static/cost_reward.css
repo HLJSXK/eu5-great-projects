@@ -1,0 +1,213 @@
+/* Cost/reward + task-pool editor. The panel is a fixed head / scrolling body / log drawer stack;
+   the head and the log drawer come from shared.css, this file owns the body and the table. */
+
+.tool-cost-reward .tool-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+  padding: 12px 16px 14px;
+}
+
+.tool-cost-reward #cr-tabs { flex: 0 0 auto; }
+
+/* One scroll container owns the rows: the table area. The tab chips, the filter bar and the section
+   heading stay put above it, so a sticky <thead> only ever scrolls against the rows it describes. */
+.tool-cost-reward #panels {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tool-cost-reward #panels > * { flex: 0 0 auto; }
+
+.tool-cost-reward #panels h2 {
+  margin: 0;
+  color: var(--workspace-ink);
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+/* Filter + counters ride above the table. */
+.cost-reward-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 7px 10px;
+  border: 1px solid var(--workspace-line);
+  border-radius: var(--workspace-radius-md);
+  background: var(--workspace-panel);
+  box-shadow: var(--workspace-shadow);
+}
+
+.cost-reward-search,
+.cost-reward-only-dirty {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--workspace-muted);
+  font-size: 0.82rem;
+}
+
+#cr-filter {
+  width: min(26rem, 60vw);
+  padding: 5px 9px;
+  border: 1px solid var(--workspace-line-strong);
+  border-radius: 6px;
+  background: var(--workspace-bg-strong);
+  color: var(--workspace-text);
+  font-size: 0.84rem;
+}
+
+#cr-filter:focus {
+  outline: 2px solid var(--workspace-accent-soft);
+  border-color: var(--workspace-accent);
+}
+
+.cost-reward-summary { color: var(--workspace-muted); font-size: 0.8rem; }
+
+.tool-cost-reward .hint { margin: 0; color: var(--workspace-muted); font-size: 0.8rem; }
+
+.tool-cost-reward .task-pool-notice {
+  padding: 7px 10px;
+  border: 1px solid var(--workspace-warm-soft);
+  border-radius: var(--workspace-radius-md);
+  background: var(--workspace-warm-soft);
+  color: #7c3f1d;
+}
+
+.tool-cost-reward section {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.table-wrap {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid var(--workspace-line);
+  border-radius: var(--workspace-radius-md);
+  background: var(--workspace-panel);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--workspace-line);
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.82rem;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--workspace-subtle);
+  color: var(--workspace-ink);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+tbody tr:hover > td { background: rgba(15, 108, 117, 0.03); }
+
+td.readonly { color: var(--workspace-muted); }
+
+td.wrap-cell { max-width: 22rem; white-space: pre-wrap; }
+
+tr.dirty-row > td { background: var(--workspace-warm-soft); }
+tr.dirty-row > td:first-child { box-shadow: inset 3px 0 var(--workspace-warm); }
+
+.value-note {
+  display: block;
+  max-width: 22rem;
+  margin-top: 4px;
+  color: var(--workspace-faint);
+  font-size: 0.74rem;
+  line-height: 1.35;
+}
+
+.long-text-cell { min-width: 14rem; max-width: 26rem; white-space: pre-wrap; }
+
+.long-text-content { display: block; max-height: 4rem; overflow: hidden; }
+
+.long-text-cell details { margin-top: 4px; }
+.long-text-cell details[open] .long-text-content { max-height: none; }
+
+.long-text-expanded { margin-top: 4px; }
+
+.long-text-actions { display: flex; gap: 5px; margin-top: 4px; }
+
+.copy-text-button,
+.expand-text-button,
+.long-text-cell summary {
+  padding: 2px 7px;
+  border: 1px solid var(--workspace-line);
+  border-radius: 5px;
+  background: var(--workspace-bg-strong);
+  color: var(--workspace-muted);
+  font-size: 0.74rem;
+  cursor: pointer;
+}
+
+.copy-text-button:hover,
+.expand-text-button:hover,
+.long-text-cell summary:hover { border-color: var(--workspace-accent); color: var(--workspace-accent-strong); }
+
+.copy-fallback { position: fixed; left: -10000px; top: 0; }
+
+.editable-long-text textarea { max-height: 4rem; overflow: hidden; }
+.editable-long-text.expanded textarea { max-height: 20rem; overflow: auto; }
+
+.tool-cost-reward input[type="number"] {
+  width: 6rem;
+  padding: 4px 7px;
+  border: 1px solid var(--workspace-line-strong);
+  border-radius: 6px;
+  background: var(--workspace-bg-strong);
+  color: var(--workspace-text);
+}
+
+.tool-cost-reward input[type="checkbox"] { width: 1rem; height: 1rem; accent-color: var(--workspace-accent); }
+
+.tool-cost-reward select,
+.tool-cost-reward textarea {
+  padding: 4px 7px;
+  border: 1px solid var(--workspace-line-strong);
+  border-radius: 6px;
+  background: var(--workspace-bg-strong);
+  color: var(--workspace-text);
+  font-size: 0.82rem;
+}
+
+.tool-cost-reward textarea { width: 18rem; min-height: 2.2rem; resize: vertical; }
+
+.tool-cost-reward input:focus,
+.tool-cost-reward select:focus,
+.tool-cost-reward textarea:focus {
+  outline: 2px solid var(--workspace-accent-soft);
+  border-color: var(--workspace-accent);
+}
+
+@media (max-width: 900px) {
+  .tool-cost-reward .tool-body { padding: 10px 12px 14px; }
+  .tool-cost-reward #panels { overflow-y: auto; }
+  .table-wrap { overflow: visible; }
+  #cr-filter { width: 100%; }
+  .tool-cost-reward textarea { width: 100%; }
+}

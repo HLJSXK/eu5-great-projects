@@ -1,0 +1,1445 @@
+{
+ "scope": "第三批源图（41–136，按拼音顺序接第二批），均来自 Wikimedia Commons。转载或发布时需按各条 license 署名；CC BY-SA 衍生作品须以相同协议发布。note 中标“题材近似”的条目，源图并非该工程本体，提示词已禁止伪装成目标。",
+ "images": [
+  {
+   "index": 41,
+   "name": "凡尔赛宫",
+   "source": "assets/historical/凡尔赛宫.jpg",
+   "note": "Pierre Patel 1668 年凡尔赛宫鸟瞰油画；早于后期扩建，提示词禁止改成后来的宫殿格局。",
+   "commons_title": "File:Chateau de Versailles 1668 Pierre Patel.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Chateau_de_Versailles_1668_Pierre_Patel.jpg",
+   "license": "Public domain",
+   "artist": "Pierre Patel",
+   "date": "circa 1668",
+   "original_size": [
+    2866,
+    2081
+   ]
+  },
+  {
+   "index": 42,
+   "name": "费尔干纳王宫",
+   "source": "assets/historical/费尔干纳王宫.jpg",
+   "note": "浩罕胡达雅尔汗宫（19 世纪），作为费尔干纳王宫的代表建筑。",
+   "commons_title": "File:Khudayar Khan Palace, Kokand, Uzbekistan (Дворец Худояр-хана, Коканд, Узбекистан).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Khudayar_Khan_Palace,_Kokand,_Uzbekistan_(%D0%94%D0%B2%D0%BE%D1%80%D0%B5%D1%86_%D0%A5%D1%83%D0%B4%D0%BE%D1%8F%D1%80-%D1%85%D0%B0%D0%BD%D0%B0,_%D0%9A%D0%BE%D0%BA%D0%B0%D0%BD%D0%B4,_%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD).jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Petar Milošević",
+   "date": "2025-08-30 09:43:52",
+   "original_size": [
+    10368,
+    4480
+   ]
+  },
+  {
+   "index": 43,
+   "name": "非斯古城",
+   "source": "assets/historical/非斯古城.jpg",
+   "note": "非斯舒瓦拉皮革染坊与老城街区。",
+   "commons_title": "File:Fez Chouara Tannery (54239949701).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fez_Chouara_Tannery_(54239949701).jpg",
+   "license": "CC BY 2.0",
+   "artist": "Jorge Franganillo",
+   "date": "Taken on 27 December 2024, 12:28",
+   "original_size": [
+    5966,
+    3977
+   ]
+  },
+  {
+   "index": 44,
+   "name": "芬恩花园",
+   "source": "assets/historical/芬恩花园.jpg",
+   "note": "卡尚芬恩花园中轴水渠与亭阁。",
+   "commons_title": "File:Jardín de Fin, Kashan, Irán, 2016-09-19, DD 22.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jard%C3%ADn_de_Fin,_Kashan,_Ir%C3%A1n,_2016-09-19,_DD_22.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Diego Delso",
+   "date": "2016-09-19 11:45:59",
+   "original_size": [
+    8651,
+    5770
+   ]
+  },
+  {
+   "index": 45,
+   "name": "枫丹白露宫",
+   "source": "assets/historical/枫丹白露宫.jpg",
+   "note": "19 世纪末彩色照相（photochrom），白马庭院与马蹄形阶梯；需去边框。",
+   "commons_title": "File:Palais de Fontainebleau. La Cour des Adieux LCCN2017659790.tif",
+   "page": "https://commons.wikimedia.org/wiki/File:Palais_de_Fontainebleau._La_Cour_des_Adieux_LCCN2017659790.tif",
+   "license": "Public domain",
+   "artist": "Photoglob Co., publisher",
+   "date": "1890",
+   "original_size": [
+    7244,
+    5350
+   ]
+  },
+  {
+   "index": 46,
+   "name": "格但斯克港",
+   "source": "assets/historical/格但斯克港.jpg",
+   "note": "格但斯克木制起重机城门（Żuraw）；去现代游船和遮阳伞。",
+   "commons_title": "File:Żuraw in Gdańsk.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:%C5%BBuraw_in_Gda%C5%84sk.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "DerHexer",
+   "date": "2010-07-15",
+   "original_size": [
+    4288,
+    2848
+   ]
+  },
+  {
+   "index": 47,
+   "name": "广州十三行",
+   "source": "assets/historical/广州十三行.jpg",
+   "note": "约 1780 年中国外销画《广州十三行》。",
+   "commons_title": "File:The Hongs of Canton 1780.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Hongs_of_Canton_1780.jpg",
+   "license": "Public domain",
+   "artist": "Unknown authorUnknown author",
+   "date": "2018-08-20 12:32:04",
+   "original_size": [
+    3200,
+    1885
+   ]
+  },
+  {
+   "index": 48,
+   "name": "海德堡大学",
+   "source": "assets/historical/海德堡大学.jpg",
+   "note": "海德堡大学老楼（18 世纪重建）。",
+   "commons_title": "File:Heidelberg, Alte Universität v S, 5.jpeg",
+   "page": "https://commons.wikimedia.org/wiki/File:Heidelberg,_Alte_Universit%C3%A4t_v_S,_5.jpeg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Renardo la vulpo",
+   "date": "2020-08-10",
+   "original_size": [
+    4864,
+    3056
+   ]
+  },
+  {
+   "index": 49,
+   "name": "汉萨城市厅",
+   "source": "assets/historical/汉萨城市厅.jpg",
+   "note": "吕贝克市政厅；源图为竖幅，提示词要求横向延展。",
+   "commons_title": "File:Lübeck - Rathaus 03.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck_-_Rathaus_03.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Architraveller",
+   "date": "2007-05-01 14:42:20",
+   "original_size": [
+    1684,
+    2199
+   ]
+  },
+  {
+   "index": 50,
+   "name": "汉萨商会",
+   "source": "assets/historical/汉萨商会.jpg",
+   "note": "题材近似：卑尔根布吕根汉萨商站（汉萨四大商站之一），不是汉堡。",
+   "commons_title": "File:Bryggen, Old Wharf of Bergen - 2013.08 - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Bryggen,_Old_Wharf_of_Bergen_-_2013.08_-_panoramio.jpg",
+   "license": "CC BY 3.0",
+   "artist": "rheins",
+   "date": "Taken on 28 August 2013",
+   "original_size": [
+    4483,
+    3362
+   ]
+  },
+  {
+   "index": 51,
+   "name": "荷兰围海工程",
+   "source": "assets/historical/荷兰围海工程.jpg",
+   "note": "题材近似：小孩堤防排水风车群，代表围垦排水体系，不是海堤合龙工程本身。",
+   "commons_title": "File:The windmills of Kinderdijk.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:The_windmills_of_Kinderdijk.JPG",
+   "license": "CC BY-SA 3.0 nl",
+   "artist": "Tarod",
+   "date": "2012-08-09 18:18:57",
+   "original_size": [
+    3901,
+    2601
+   ]
+  },
+  {
+   "index": 52,
+   "name": "皇家海军船坞",
+   "source": "assets/historical/皇家海军船坞.jpg",
+   "note": "题材近似：18 世纪德特福德皇家船坞画作，不是朴次茅斯。",
+   "commons_title": "File:A view of the Royal Dockyard at Deptford by Robert Dodd.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:A_view_of_the_Royal_Dockyard_at_Deptford_by_Robert_Dodd.jpg",
+   "license": "Public domain",
+   "artist": "Robert Dodd / John &amp; Josiah Boydell",
+   "date": "25 March 1789",
+   "original_size": [
+    3200,
+    1869
+   ]
+  },
+  {
+   "index": 53,
+   "name": "姬路城",
+   "source": "assets/historical/姬路城.jpg",
+   "note": "姬路城天守群。",
+   "commons_title": "File:Himeji Castle 0804 1.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Himeji_Castle_0804_1.jpg",
+   "license": "Public domain",
+   "artist": "Gorgo",
+   "date": "7 August 2004",
+   "original_size": [
+    2256,
+    1684
+   ]
+  },
+  {
+   "index": 54,
+   "name": "江南贡院",
+   "source": "assets/historical/江南贡院.jpg",
+   "note": "题材近似：19 世纪广州贡院“龙门”老照片，不是南京江南贡院；去除照片说明文字。",
+   "commons_title": "File:Exam Cells Canton.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Exam_Cells_Canton.jpg",
+   "license": "Public domain",
+   "artist": "Unknown authorUnknown author",
+   "date": "1902",
+   "original_size": [
+    771,
+    609
+   ]
+  },
+  {
+   "index": 55,
+   "name": "杰内大清真寺",
+   "source": "assets/historical/杰内大清真寺.jpg",
+   "note": "杰内大清真寺东立面。",
+   "commons_title": "File:MaliDjennéMosquée.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:MaliDjenn%C3%A9Mosqu%C3%A9e.JPG",
+   "license": "CC BY-SA 3.0",
+   "artist": "BluesyPete",
+   "date": "2007-11-26 13:24:38",
+   "original_size": [
+    4521,
+    2094
+   ]
+  },
+  {
+   "index": 56,
+   "name": "景德镇官窑",
+   "source": "assets/historical/景德镇官窑.jpg",
+   "note": "题材近似：景德镇古窑民俗博览区的传统窑房（镇窑），并非明代御窑遗构；去灯笼与牌匾。",
+   "commons_title": "File:Changjiang, Jingdezhen, Jiangxi, China - panoramio (31).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Changjiang,_Jingdezhen,_Jiangxi,_China_-_panoramio_(31).jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "ping lin",
+   "date": "Taken on 29 March 2014",
+   "original_size": [
+    3264,
+    2448
+   ]
+  },
+  {
+   "index": 57,
+   "name": "景福宫",
+   "source": "assets/historical/景福宫.jpg",
+   "note": "景福宫勤政殿。",
+   "commons_title": "File:Geunjeongjeon Seoul.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Geunjeongjeon_Seoul.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "kallerna",
+   "date": "2022-12-07 07:43:51",
+   "original_size": [
+    5150,
+    3290
+   ]
+  },
+  {
+   "index": 58,
+   "name": "京杭大运河",
+   "source": "assets/historical/京杭大运河.jpg",
+   "note": "威廉·亚历山大 1793 年水彩：马戛尔尼使团官船经斜坡道从一段运河拖升至另一段。",
+   "commons_title": "File:William Alexander - Barges of the Embassy Being Raised from One Canal to Another on Their Way from Han-Tcheou-Foo to Tchu-San, 16 November 1793 - B1986.29.317 - Yale Center for British Art.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:William_Alexander_-_Barges_of_the_Embassy_Being_Raised_from_One_Canal_to_Another_on_Their_Way_from_Han-Tcheou-Foo_to_Tchu-San,_16_November_1793_-_B1986.29.317_-_Yale_Center_for_British_Art.jpg",
+   "license": "CC0",
+   "artist": "William Alexander",
+   "date": "1793",
+   "original_size": [
+    1920,
+    1351
+   ]
+  },
+  {
+   "index": 59,
+   "name": "巨石阵",
+   "source": "assets/historical/巨石阵.jpg",
+   "note": "巨石阵石圈。",
+   "commons_title": "File:Stonehenge, Condado de Wiltshire, Inglaterra, 2014-08-12, DD 18.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Stonehenge,_Condado_de_Wiltshire,_Inglaterra,_2014-08-12,_DD_18.JPG",
+   "license": "CC BY-SA 4.0",
+   "artist": "Diego Delso",
+   "date": "2014-08-12 15:42:39",
+   "original_size": [
+    5265,
+    2786
+   ]
+  },
+  {
+   "index": 60,
+   "name": "卡尔卡松城堡",
+   "source": "assets/historical/卡尔卡松城堡.jpg",
+   "note": "卡尔卡松城堡（伯爵堡）与城墙。",
+   "commons_title": "File:Cité de Carcassonne et Église Saint-Gimer (2).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Cit%C3%A9_de_Carcassonne_et_%C3%89glise_Saint-Gimer_(2).jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Lynx1211",
+   "date": "2022-04-24 19:52:06",
+   "original_size": [
+    4492,
+    2995
+   ]
+  },
+  {
+   "index": 61,
+   "name": "卡霍基亚土丘城",
+   "source": "assets/historical/卡霍基亚土丘城.jpg",
+   "note": "卡霍基亚僧侣丘；以现代木阶替换为土坡，不额外发明栅栏和木阵。",
+   "commons_title": "File:Monks Mound - Summer 2024.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Monks_Mound_-_Summer_2024.jpg",
+   "license": "CC BY 4.0",
+   "artist": "Skubasteve834",
+   "date": "2024-05-20 16:58:53",
+   "original_size": [
+    6550,
+    4367
+   ]
+  },
+  {
+   "index": 62,
+   "name": "卡拉拉大理石矿",
+   "source": "assets/historical/卡拉拉大理石矿.jpg",
+   "note": "卡拉拉大理石采石场；去公路与现代机械。",
+   "commons_title": "File:Marble Quarry near Carrera.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Marble_Quarry_near_Carrera.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Ingo Mehling",
+   "date": "2021-09-08 16:21:43",
+   "original_size": [
+    7713,
+    4141
+   ]
+  },
+  {
+   "index": 63,
+   "name": "卡利卡特港市",
+   "source": "assets/historical/卡利卡特港市.jpg",
+   "note": "Braun & Hogenberg 1572 年《卡利卡特》铜版画；去标题框和边框。",
+   "commons_title": "File:Calicut 1572.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Calicut_1572.jpg",
+   "license": "Public domain",
+   "artist": "BRAUN AND HOGENBERG,",
+   "date": "1572",
+   "original_size": [
+    3839,
+    1579
+   ]
+  },
+  {
+   "index": 64,
+   "name": "凯鲁万圣城",
+   "source": "assets/historical/凯鲁万圣城.jpg",
+   "note": "凯鲁万大清真寺庭院与宣礼塔。",
+   "commons_title": "File:Courtyard of the Great Mosque of Kairouan - cour de la Grande Mosquée de Kairouan.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Courtyard_of_the_Great_Mosque_of_Kairouan_-_cour_de_la_Grande_Mosqu%C3%A9e_de_Kairouan.jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "Ed Kirby",
+   "date": "2010-12-22 11:49:05",
+   "original_size": [
+    5400,
+    3600
+   ]
+  },
+  {
+   "index": 65,
+   "name": "坎儿井",
+   "source": "assets/historical/坎儿井.jpg",
+   "note": "题材近似：吐鲁番坎儿井井口辘轳（与波斯坎儿井同类技术），不是库姆；去展板。",
+   "commons_title": "File:2017-07-23 Turpan Karez Folk Park 25 anagoria.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:2017-07-23_Turpan_Karez_Folk_Park_25_anagoria.jpg",
+   "license": "CC BY 3.0",
+   "artist": "Anagoria",
+   "date": "2017-07-23",
+   "original_size": [
+    4032,
+    2268
+   ]
+  },
+  {
+   "index": 66,
+   "name": "科尔马旧城",
+   "source": "assets/historical/科尔马旧城.jpg",
+   "note": "科尔马“小威尼斯”运河与木筋房；去花箱和店招。",
+   "commons_title": "File:Little Venice in Colmar 01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Little_Venice_in_Colmar_01.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Krzysztof Golik",
+   "date": "2018-10-08 09:48:48",
+   "original_size": [
+    5281,
+    3385
+   ]
+  },
+  {
+   "index": 67,
+   "name": "科隆大教堂",
+   "source": "assets/historical/科隆大教堂.jpg",
+   "note": "James Redaway 1824 年铜版画：未完工的科隆大教堂，南塔残段上有中世纪木吊车。",
+   "commons_title": "File:Koeln Dom + St. Johann Evangelist 1824.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Koeln_Dom_%2B_St._Johann_Evangelist_1824.jpg",
+   "license": "Public domain",
+   "artist": "James Redaway",
+   "date": "1824",
+   "original_size": [
+    1806,
+    1102
+   ]
+  },
+  {
+   "index": 68,
+   "name": "科纳克太阳神庙",
+   "source": "assets/historical/科纳克太阳神庙.jpg",
+   "note": "科纳克太阳神庙前殿（尖塔已毁）；不重建坍塌主塔。",
+   "commons_title": "File:Konark Sun Temple Puri district, Odisha, India 3.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Konark_Sun_Temple_Puri_district,_Odisha,_India_3.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Joydeep Chakraborty",
+   "date": "2025-11-18 10:38:56",
+   "original_size": [
+    5591,
+    4000
+   ]
+  },
+  {
+   "index": 69,
+   "name": "孔雀王座",
+   "source": "assets/historical/孔雀王座.jpg",
+   "note": "莫卧儿风格细密画（19 世纪摹本）《沙贾汗坐孔雀宝座像》；去花卉边框，向两侧延展为觐见殿背景。",
+   "commons_title": "File:Portrait of Shah Jahan on the Peacock Throne MET DP322116.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_Shah_Jahan_on_the_Peacock_Throne_MET_DP322116.jpg",
+   "license": "Public domain",
+   "artist": "",
+   "date": "19th century",
+   "original_size": [
+    2796,
+    4000
+   ]
+  },
+  {
+   "index": 70,
+   "name": "拉利贝拉岩石教堂群",
+   "source": "assets/historical/拉利贝拉岩石教堂群.jpg",
+   "note": "拉利贝拉圣乔治教堂。",
+   "commons_title": "File:Ethiopia - sunset at Church of Saint George, Lalibela 01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Ethiopia_-_sunset_at_Church_of_Saint_George,_Lalibela_01.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Thomas Fuhrmann",
+   "date": "2019-11-12 17:37:38",
+   "original_size": [
+    6718,
+    4478
+   ]
+  },
+  {
+   "index": 71,
+   "name": "雷吉斯坦广场",
+   "source": "assets/historical/雷吉斯坦广场.jpg",
+   "note": "撒马尔罕雷吉斯坦广场三座经学院。",
+   "commons_title": "File:Registan 01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Registan_01.jpg",
+   "license": "CC0",
+   "artist": "Bernard Gagnon",
+   "date": "2023-09-29",
+   "original_size": [
+    4812,
+    2144
+   ]
+  },
+  {
+   "index": 72,
+   "name": "里昂丝绸工坊区",
+   "source": "assets/historical/里昂丝绸工坊区.jpg",
+   "note": "题材近似：里昂索恩河畔城市景观水彩，未直接描绘丝织作坊；去说明文字和边框。",
+   "commons_title": "File:Lyon la Saone et fourviere.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Lyon_la_Saone_et_fourviere.JPG",
+   "license": "Public domain",
+   "artist": "Jean-Baptiste Lallemand",
+   "date": "178?",
+   "original_size": [
+    3072,
+    1987
+   ]
+  },
+  {
+   "index": 73,
+   "name": "卢浮宫",
+   "source": "assets/historical/卢浮宫.jpg",
+   "note": "Abraham de Verwer 1640 年油画：塞纳河畔卢浮宫大画廊与新门、木塔；去画框。",
+   "commons_title": "File:Abraham de Verwer - La Grande Galerie du Louvre, avec la porte Neuve et la tour de Bois - P332 - Musée Carnavalet.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Abraham_de_Verwer_-_La_Grande_Galerie_du_Louvre,_avec_la_porte_Neuve_et_la_tour_de_Bois_-_P332_-_Mus%C3%A9e_Carnavalet.jpg",
+   "license": "CC0",
+   "artist": "Abraham de Verwer",
+   "date": "1640",
+   "original_size": [
+    5697,
+    3592
+   ]
+  },
+  {
+   "index": 74,
+   "name": "伦敦塔",
+   "source": "assets/historical/伦敦塔.jpg",
+   "note": "伦敦塔白塔与外墙。",
+   "commons_title": "File:Tower of London viewed from the River Thames.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Tower_of_London_viewed_from_the_River_Thames.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Bob Collowan",
+   "date": "2013-07-22 12:13:18",
+   "original_size": [
+    3948,
+    2479
+   ]
+  },
+  {
+   "index": 75,
+   "name": "罗马引水道",
+   "source": "assets/historical/罗马引水道.jpg",
+   "note": "罗马郊外克劳迪亚引水渠遗址。",
+   "commons_title": "File:2 - Parco degli Acquedotti.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:2_-_Parco_degli_Acquedotti.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "DonZaucker",
+   "date": "2015-08-09 18:32:47",
+   "original_size": [
+    3872,
+    2592
+   ]
+  },
+  {
+   "index": 76,
+   "name": "马尔堡城堡",
+   "source": "assets/historical/马尔堡城堡.jpg",
+   "note": "马尔堡条顿骑士团城堡与诺加特河。",
+   "commons_title": "File:Panorama of Malbork Castle, part 4.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Panorama_of_Malbork_Castle,_part_4.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "DerHexer; derivate work: Carschten",
+   "date": "2010-07-14",
+   "original_size": [
+    4138,
+    2706
+   ]
+  },
+  {
+   "index": 77,
+   "name": "马拉盖天文台",
+   "source": "assets/historical/马拉盖天文台.jpg",
+   "note": "题材近似：奥斯曼细密画，塔基丁伊斯坦布尔天文台（1577），不是马拉盖；去文字框。",
+   "commons_title": "File:Taqi al din.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Taqi_al_din.jpg",
+   "license": "Public domain",
+   "artist": "Ala ad-Din Mansur-Shirazi",
+   "date": "between circa 1574 and circa 1595",
+   "original_size": [
+    1348,
+    1965
+   ]
+  },
+  {
+   "index": 78,
+   "name": "马六甲港",
+   "source": "assets/historical/马六甲港.jpg",
+   "note": "题材近似：约 1775–1800 年荷兰时期马六甲港铜版画，不是 15 世纪苏丹国港口；去图注。",
+   "commons_title": "File:Gezicht op Malakka, RP-P-1988-59.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Gezicht_op_Malakka,_RP-P-1988-59.jpg",
+   "license": "CC0",
+   "artist": "Rijksmuseum",
+   "date": "ca. 1775 - ca. 1800",
+   "original_size": [
+    3160,
+    2210
+   ]
+  },
+  {
+   "index": 79,
+   "name": "马丘比丘",
+   "source": "assets/historical/马丘比丘.jpg",
+   "note": "马丘比丘城址与华纳比丘峰。",
+   "commons_title": "File:Machu Picchu, Perú, 2015-07-30, DD 47.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_Per%C3%BA,_2015-07-30,_DD_47.JPG",
+   "license": "CC BY-SA 4.0",
+   "artist": "Diego Delso",
+   "date": "2015-07-30 16:01:04",
+   "original_size": [
+    8669,
+    5763
+   ]
+  },
+  {
+   "index": 80,
+   "name": "马丘比丘梯田",
+   "source": "assets/historical/马丘比丘梯田.jpg",
+   "note": "马丘比丘农业梯田与仓房。",
+   "commons_title": "File:Machu Picchu, Perú, 2015-07-30, DD 44.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_Per%C3%BA,_2015-07-30,_DD_44.JPG",
+   "license": "CC BY-SA 4.0",
+   "artist": "Diego Delso",
+   "date": "2015-07-30 15:55:37",
+   "original_size": [
+    8459,
+    5639
+   ]
+  },
+  {
+   "index": 81,
+   "name": "马赛旧港",
+   "source": "assets/historical/马赛旧港.jpg",
+   "note": "约瑟夫·韦尔内 18 世纪《马赛港》油画。",
+   "commons_title": "File:Claude-Joseph Verne - L'entrée du port de Marseille (1754).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Claude-Joseph_Verne_-_L%27entr%C3%A9e_du_port_de_Marseille_(1754).jpg",
+   "license": "Public domain",
+   "artist": "Joseph Vernet",
+   "date": "1754",
+   "original_size": [
+    4312,
+    2705
+   ]
+  },
+  {
+   "index": 82,
+   "name": "麦加禁寺扩建",
+   "source": "assets/historical/麦加禁寺扩建.png",
+   "note": "穆罕默德·萨迪克贝约 1880 年所摄麦加禁寺全景；去纸托与阿拉伯文、法文说明。",
+   "commons_title": "File:Edited Khalili Collection Hajj and Arts of Pilgrimage arc.pp 0211.02-Photo of Mecca by Muhammad Sadiq Bey ca.1880-ccbysa3.0.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Edited_Khalili_Collection_Hajj_and_Arts_of_Pilgrimage_arc.pp_0211.02-Photo_of_Mecca_by_Muhammad_Sadiq_Bey_ca.1880-ccbysa3.0.png",
+   "license": "CC BY-SA 3.0",
+   "artist": "Original Photograph by Muhammad Sadiq Bey; uploaded original media file by Khalili Collections",
+   "date": "1297",
+   "original_size": [
+    4345,
+    2193
+   ]
+  },
+  {
+   "index": 83,
+   "name": "梅黛奥拉修道院",
+   "source": "assets/historical/梅黛奥拉修道院.jpg",
+   "note": "梅黛奥拉大梅黛奥隆修道院。",
+   "commons_title": "File:Megalo Meteoro monastery1.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Megalo_Meteoro_monastery1.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "DimitrisP67",
+   "date": "2017-10-11 11:41:00",
+   "original_size": [
+    5990,
+    3369
+   ]
+  },
+  {
+   "index": 84,
+   "name": "美泉宫",
+   "source": "assets/historical/美泉宫.jpg",
+   "note": "从凯旋门山俯瞰美泉宫与花园。",
+   "commons_title": "File:Schloss Schönbrunn Wien 2014 (Zuschnitt 2).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Schloss_Sch%C3%B6nbrunn_Wien_2014_(Zuschnitt_2).jpg",
+   "license": "CC BY-SA 3.0 de",
+   "artist": "Thomas Wolf, www.foto-tw.de",
+   "date": "2014-06-02",
+   "original_size": [
+    5892,
+    3693
+   ]
+  },
+  {
+   "index": 85,
+   "name": "米兰兵工厂",
+   "source": "assets/historical/米兰兵工厂.jpg",
+   "note": "题材近似：米兰斯福尔扎城堡，代表米兰公爵军械生产中心，不是兵工厂实景。",
+   "commons_title": "File:Main Courtyard - Castello Sforzesco - Milan 2014 (4).JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Main_Courtyard_-_Castello_Sforzesco_-_Milan_2014_(4).JPG",
+   "license": "CC BY-SA 3.0",
+   "artist": "José Luiz",
+   "date": "2014-02-22 11:06:44",
+   "original_size": [
+    3072,
+    2048
+   ]
+  },
+  {
+   "index": 86,
+   "name": "米兰大教堂",
+   "source": "assets/historical/米兰大教堂.jpg",
+   "note": "米兰大教堂西立面。",
+   "commons_title": "File:Milan Cathedral from Piazza del Duomo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Milan_Cathedral_from_Piazza_del_Duomo.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Jiuguang Wang",
+   "date": "",
+   "original_size": [
+    4164,
+    3129
+   ]
+  },
+  {
+   "index": 87,
+   "name": "明龙江船厂",
+   "source": "assets/historical/明龙江船厂.jpg",
+   "note": "题材近似：19 世纪中国外销画中的大型商船（沙船/福船类），没有船厂场景。",
+   "commons_title": "File:A trading junk RMG BHC1182.tiff",
+   "page": "https://commons.wikimedia.org/wiki/File:A_trading_junk_RMG_BHC1182.tiff",
+   "license": "Public domain",
+   "artist": "anonymous",
+   "date": "19th century",
+   "original_size": [
+    7200,
+    4885
+   ]
+  },
+  {
+   "index": 88,
+   "name": "莫高窟",
+   "source": "assets/historical/莫高窟.jpg",
+   "note": "莫高窟崖面与窟前木构窟檐；以木栈道替代现代护栏。",
+   "commons_title": "File:Mogao Caves (42265422972).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mogao_Caves_(42265422972).jpg",
+   "license": "CC BY 2.0",
+   "artist": "David Stanley from Nanaimo, Canada",
+   "date": "2017-09-26 10:41",
+   "original_size": [
+    1024,
+    768
+   ]
+  },
+  {
+   "index": 89,
+   "name": "莫斯科克里姆林宫",
+   "source": "assets/historical/莫斯科克里姆林宫.jpg",
+   "note": "阿波利纳里·瓦斯涅佐夫 1922 年《德米特里·顿斯科伊时代的白石克里姆林》；保持白石时期样貌。",
+   "commons_title": "File:Moscow Kremlin under Dmitry Donskoj.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Moscow_Kremlin_under_Dmitry_Donskoj.jpg",
+   "license": "Public domain",
+   "artist": "Apollinary Vasnetsov",
+   "date": "1922",
+   "original_size": [
+    1882,
+    1200
+   ]
+  },
+  {
+   "index": 90,
+   "name": "慕尼黑皇家啤酒厂",
+   "source": "assets/historical/慕尼黑皇家啤酒厂.jpg",
+   "note": "慕尼黑皇家啤酒屋（Hofbräuhaus）主楼。",
+   "commons_title": "File:Hofbrauhaus.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Hofbrauhaus.JPG",
+   "license": "Public domain",
+   "artist": "Kiban",
+   "date": "2007-02-26",
+   "original_size": [
+    2124,
+    1616
+   ]
+  },
+  {
+   "index": 91,
+   "name": "纳里卡拉要塞",
+   "source": "assets/historical/纳里卡拉要塞.jpg",
+   "note": "第比利斯纳里卡拉要塞；以低丘替换远处现代城区。",
+   "commons_title": "File:Narikala fortress, Tbilisi, Georgia.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Narikala_fortress,_Tbilisi,_Georgia.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "This work is created by George Melashvili. You can redistribute it or modify it under the terms of the terms of Cc-by-sa-3.0 (See below)",
+   "date": "2011-01-16",
+   "original_size": [
+    4271,
+    2846
+   ]
+  },
+  {
+   "index": 92,
+   "name": "纽伦堡帝国城堡",
+   "source": "assets/historical/纽伦堡帝国城堡.jpg",
+   "note": "纽伦堡帝国城堡与老城屋顶。",
+   "commons_title": "File:Burg Nürnberg 02.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Burg_N%C3%BCrnberg_02.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "DALIBRI",
+   "date": "2012-10-11 11:41:34",
+   "original_size": [
+    3664,
+    2742
+   ]
+  },
+  {
+   "index": 93,
+   "name": "萨格里什航海学校",
+   "source": "assets/historical/萨格里什航海学校.jpg",
+   "note": "萨格里什要塞风玫瑰石阵（照片褪色，提示词要求恢复色彩）。",
+   "commons_title": "File:Fortaleza de Sagres, Algarve, Portugal.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Fortaleza_de_Sagres,_Algarve,_Portugal.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Monika Hoerath",
+   "date": "2019-09-05",
+   "original_size": [
+    3504,
+    2296
+   ]
+  },
+  {
+   "index": 94,
+   "name": "萨那古城",
+   "source": "assets/historical/萨那古城.jpg",
+   "note": "萨那古城塔楼民居；去卫星天线与水箱。",
+   "commons_title": "File:Tower-Houses of Old Sana'a (2286831106).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Tower-Houses_of_Old_Sana%27a_(2286831106).jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "Dan from Brussels, Europe",
+   "date": "2008-02-23 21:39",
+   "original_size": [
+    1870,
+    1035
+   ]
+  },
+  {
+   "index": 95,
+   "name": "三一修道院",
+   "source": "assets/historical/三一修道院.jpg",
+   "note": "谢尔吉圣三一大修道院圣母安息大教堂一带。",
+   "commons_title": "File:Sergiyev Posad. Trinity Lavra of Saint Sergius P7160395 2350.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Sergiyev_Posad._Trinity_Lavra_of_Saint_Sergius_P7160395_2350.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Alexxx1979",
+   "date": "2020-07-16 15:59:02",
+   "original_size": [
+    3526,
+    2350
+   ]
+  },
+  {
+   "index": 96,
+   "name": "桑科雷大学",
+   "source": "assets/historical/桑科雷大学.jpg",
+   "note": "廷巴克图桑科雷清真寺（桑科雷大学所在）。",
+   "commons_title": "File:2007 Sankore Mosque Timbuktu 01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:2007_Sankore_Mosque_Timbuktu_01.jpg",
+   "license": "Public domain",
+   "artist": "Anne and David",
+   "date": "2007-09-02",
+   "original_size": [
+    1465,
+    1046
+   ]
+  },
+  {
+   "index": 97,
+   "name": "圣地亚哥朝圣路",
+   "source": "assets/historical/圣地亚哥朝圣路.jpg",
+   "note": "题材近似：朝圣之路法国线上的奥尔维戈医院桥，不是圣地亚哥城本身。",
+   "commons_title": "File:24286 Puente de Órbigo, León, Spain - panoramio.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:24286_Puente_de_%C3%93rbigo,_Le%C3%B3n,_Spain_-_panoramio.jpg",
+   "license": "CC BY 3.0",
+   "artist": "Santi Garcia",
+   "date": "Taken on 7 December 2008",
+   "original_size": [
+    2816,
+    2112
+   ]
+  },
+  {
+   "index": 98,
+   "name": "升龙文庙国子监",
+   "source": "assets/historical/升龙文庙国子监.jpg",
+   "note": "河内文庙奎文阁与天光井。",
+   "commons_title": "File:Khuê văn các.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Khu%C3%AA_v%C4%83n_c%C3%A1c.jpg",
+   "license": "Public domain",
+   "artist": "Phuongcacanh at Vietnamese Wikipedia",
+   "date": "10 November 2009 (original upload date)",
+   "original_size": [
+    1544,
+    1024
+   ]
+  },
+  {
+   "index": 99,
+   "name": "圣米歇尔山",
+   "source": "assets/historical/圣米歇尔山.jpg",
+   "note": "圣米歇尔山全景。",
+   "commons_title": "File:Mont St Michel 3, Brittany, France - July 2011.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Mont_St_Michel_3,_Brittany,_France_-_July_2011.jpg",
+   "license": "Public domain",
+   "artist": "Diliff",
+   "date": "2011-07-05",
+   "original_size": [
+    2811,
+    1993
+   ]
+  },
+  {
+   "index": 100,
+   "name": "圣母百花大教堂",
+   "source": "assets/historical/圣母百花大教堂.jpg",
+   "note": "从米开朗琪罗广场眺望圣母百花大教堂；夜景改为黄昏以保证可读性。",
+   "commons_title": "File:Florence Duomo from Michelangelo hill.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Florence_Duomo_from_Michelangelo_hill.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Petar Milošević",
+   "date": "2014-10-25 18:50:37",
+   "original_size": [
+    3308,
+    2399
+   ]
+  },
+  {
+   "index": 101,
+   "name": "圣乔治银行",
+   "source": "assets/historical/圣乔治银行.jpg",
+   "note": "热那亚圣乔治宫（圣乔治银行所在地）；去高架路和汽车。",
+   "commons_title": "File:Genova - Palazzo San Giorgio visto dal Bigo.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Genova_-_Palazzo_San_Giorgio_visto_dal_Bigo.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Sidvics",
+   "date": "2010-06-13",
+   "original_size": [
+    2948,
+    2000
+   ]
+  },
+  {
+   "index": 102,
+   "name": "圣索菲亚大教堂",
+   "source": "assets/historical/圣索菲亚大教堂.jpg",
+   "note": "1852 年石版画中的圣索菲亚（奥斯曼时期外观，含宣礼塔）。",
+   "commons_title": "File:Hagia Sophia 1852.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_1852.jpg",
+   "license": "Public domain",
+   "artist": "Print made by: Louis Haghe\n\nAfter: Gaspard Fossati",
+   "date": "1852",
+   "original_size": [
+    2343,
+    1650
+   ]
+  },
+  {
+   "index": 103,
+   "name": "圣瓦西里大教堂",
+   "source": "assets/historical/圣瓦西里大教堂.jpg",
+   "note": "红场圣瓦西里大教堂。",
+   "commons_title": "File:Moscow - 2025 - Daytime view of St. Basil's Cathedral from Vasilyevsky Spusk.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Moscow_-_2025_-_Daytime_view_of_St._Basil%27s_Cathedral_from_Vasilyevsky_Spusk.jpg",
+   "license": "CC BY 4.0",
+   "artist": "Юрий Д.К.",
+   "date": "Taken on 15 September 2025, 12:31:51",
+   "original_size": [
+    6266,
+    5504
+   ]
+  },
+  {
+   "index": 104,
+   "name": "圣亚彼得大教堂",
+   "source": "assets/historical/圣亚彼得大教堂.jpg",
+   "note": "弗朗切斯科·帕尼尼 18 世纪《圣彼得大教堂与广场》；去边框和文字。",
+   "commons_title": "File:St. Peter's, the Basilica and the Piazza LACMA AC1999.68.1.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:St._Peter%27s,_the_Basilica_and_the_Piazza_LACMA_AC1999.68.1.jpg",
+   "license": "Public domain",
+   "artist": "Francesco Panini (Italy, 1745-1812)",
+   "date": "Unknown date",
+   "original_size": [
+    2100,
+    1327
+   ]
+  },
+  {
+   "index": 105,
+   "name": "苏伊士古运河尝试",
+   "source": "assets/historical/苏伊士古运河尝试.jpg",
+   "note": "Grenet de Joigny 1863 年《环游世界》杂志铜版画：尼科古运河遗迹（Necho Canal）。",
+   "commons_title": "File:Le Tour du monde-08-p020.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Le_Tour_du_monde-08-p020.jpg",
+   "license": "Public domain",
+   "artist": "Dominique Adolphe Grenet de Joigny",
+   "date": "1863-07-01",
+   "original_size": [
+    1893,
+    969
+   ]
+  },
+  {
+   "index": 106,
+   "name": "苏州古典园林",
+   "source": "assets/historical/苏州古典园林.jpg",
+   "note": "苏州网师园彩霞池与濯缨水阁一带。",
+   "commons_title": "File:Master of Nets Garden 2.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Master_of_Nets_Garden_2.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Chinatravelsavvy",
+   "date": "2008-02-20 15:44:17",
+   "original_size": [
+    2048,
+    1536
+   ]
+  },
+  {
+   "index": 107,
+   "name": "塔什干老城集市",
+   "source": "assets/historical/塔什干老城集市.png",
+   "note": "题材近似：《突厥斯坦图集》中奥利耶-阿塔（今塔拉兹）集市照片，非塔什干。",
+   "commons_title": "File:Syr Darya Oblast. Aulie-Ata. Bazaar Square WDL10902.png",
+   "page": "https://commons.wikimedia.org/wiki/File:Syr_Darya_Oblast._Aulie-Ata._Bazaar_Square_WDL10902.png",
+   "license": "Public domain",
+   "artist": "Kun, Aleksandr L., 1840-1888",
+   "date": "between 1865 and 1872",
+   "original_size": [
+    1285,
+    1024
+   ]
+  },
+  {
+   "index": 108,
+   "name": "泰姬陵",
+   "source": "assets/historical/泰姬陵.jpg",
+   "note": "泰姬陵中轴视角。",
+   "commons_title": "File:Taj Mahal, Agra, India edit2.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India_edit2.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Yann; edited by King of Hearts",
+   "date": "2010",
+   "original_size": [
+    3840,
+    2525
+   ]
+  },
+  {
+   "index": 109,
+   "name": "特奥蒂瓦坎圣城",
+   "source": "assets/historical/特奥蒂瓦坎圣城.jpg",
+   "note": "特奥蒂瓦坎月亮金字塔与广场；以平原替换背景现代城镇。",
+   "commons_title": "File:Teotihuacan, Pyramid of the Moon (20686684795).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Teotihuacan,_Pyramid_of_the_Moon_(20686684795).jpg",
+   "license": "CC BY 2.0",
+   "artist": "Arian Zwegers from Brussels, Belgium",
+   "date": "2015-04-15 11:29",
+   "original_size": [
+    5184,
+    3456
+   ]
+  },
+  {
+   "index": 110,
+   "name": "特诺奇蒂特兰堤道",
+   "source": "assets/historical/特诺奇蒂特兰堤道.jpg",
+   "note": "特诺奇蒂特兰-特拉特洛尔科复原画（博物馆展品照片）。",
+   "commons_title": "File:Painting of Tenochtitlan-Tlatelolco on Lake Texcoco (9755215791).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Painting_of_Tenochtitlan-Tlatelolco_on_Lake_Texcoco_(9755215791).jpg",
+   "license": "Public domain",
+   "artist": "Gary Todd from Xinzheng, China",
+   "date": "2012-07-04 05:11",
+   "original_size": [
+    4752,
+    2491
+   ]
+  },
+  {
+   "index": 111,
+   "name": "天坛",
+   "source": "assets/historical/天坛.jpg",
+   "note": "天坛祈年殿。",
+   "commons_title": "File:Hall of Prayer for Good Harvest.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Hall_of_Prayer_for_Good_Harvest.JPG",
+   "license": "Public domain",
+   "artist": "Fong Chen",
+   "date": "2010-04-06",
+   "original_size": [
+    3000,
+    2000
+   ]
+  },
+  {
+   "index": 112,
+   "name": "托莱多兵工厂",
+   "source": "assets/historical/托莱多兵工厂.jpg",
+   "note": "1863 年铜版画：托莱多皇家白刃兵器工厂（18 世纪建）；去图注。",
+   "commons_title": "File:Vista de la fábrica de armas blancas de Toledo, en El Museo Universal.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Vista_de_la_f%C3%A1brica_de_armas_blancas_de_Toledo,_en_El_Museo_Universal.jpg",
+   "license": "Public domain",
+   "artist": "Federico Ruiz / Bernardo Rico",
+   "date": "1863-02-08",
+   "original_size": [
+    1665,
+    1405
+   ]
+  },
+  {
+   "index": 113,
+   "name": "托普卡帕宫",
+   "source": "assets/historical/托普卡帕宫.jpg",
+   "note": "从博斯普鲁斯海峡望托普卡帕宫。",
+   "commons_title": "File:Topkapı Palace from the Bosphorus in 2024 6702.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Topkap%C4%B1_Palace_from_the_Bosphorus_in_2024_6702.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Dosseman",
+   "date": "2024-06-12 10:27:41",
+   "original_size": [
+    8256,
+    5504
+   ]
+  },
+  {
+   "index": 114,
+   "name": "瓦拉纳西河坛群",
+   "source": "assets/historical/瓦拉纳西河坛群.jpg",
+   "note": "瓦拉纳西蒙希河坛。",
+   "commons_title": "File:Varanasi Munshi Ghat3.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Varanasi_Munshi_Ghat3.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Marcin Białek",
+   "date": "2010-12-26",
+   "original_size": [
+    2629,
+    1833
+   ]
+  },
+  {
+   "index": 115,
+   "name": "瓦维尔城堡",
+   "source": "assets/historical/瓦维尔城堡.jpg",
+   "note": "隔维斯瓦河望瓦维尔山王宫与大教堂。",
+   "commons_title": "File:20110930 Krakow Wawel 0412.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:20110930_Krakow_Wawel_0412.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Jakub Hałun",
+   "date": "2011-09-30",
+   "original_size": [
+    3643,
+    2426
+   ]
+  },
+  {
+   "index": 116,
+   "name": "维尔纽斯大学",
+   "source": "assets/historical/维尔纽斯大学.jpg",
+   "note": "维尔纽斯大学大庭院与圣约翰教堂。",
+   "commons_title": "File:Vilnius University Great Courtyard 2, Vilnius, Lithuania - Diliff.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Vilnius_University_Great_Courtyard_2,_Vilnius,_Lithuania_-_Diliff.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Diliff",
+   "date": "2014-09-10",
+   "original_size": [
+    12000,
+    9765
+   ]
+  },
+  {
+   "index": 117,
+   "name": "维利奇卡盐矿",
+   "source": "assets/historical/维利奇卡盐矿.jpg",
+   "note": "维利奇卡盐矿圣金加礼拜堂。",
+   "commons_title": "File:Poland-01583 - St. Kinga's Chapel (31547044100).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Poland-01583_-_St._Kinga%27s_Chapel_(31547044100).jpg",
+   "license": "CC BY-SA 2.0",
+   "artist": "Dennis G. Jarvis",
+   "date": "2016-09-24 04:17",
+   "original_size": [
+    6000,
+    4000
+   ]
+  },
+  {
+   "index": 118,
+   "name": "威尼斯军港",
+   "source": "assets/historical/威尼斯军港.jpg",
+   "note": "卡纳莱托《威尼斯兵工厂入口》油画。",
+   "commons_title": "File:View of the entrance to the Arsenal by Canaletto, 1732.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:View_of_the_entrance_to_the_Arsenal_by_Canaletto,_1732.jpg",
+   "license": "Public domain",
+   "artist": "Giovanni Antonio Canal",
+   "date": "1732 / 1730s",
+   "original_size": [
+    1292,
+    770
+   ]
+  },
+  {
+   "index": 119,
+   "name": "吴哥窟",
+   "source": "assets/historical/吴哥窟.jpg",
+   "note": "吴哥窟与倒影池。",
+   "commons_title": "File:20171128 Angkor Wat 5671 DxO.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:20171128_Angkor_Wat_5671_DxO.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Jakub Hałun",
+   "date": "2017-11-28 15:36:52",
+   "original_size": [
+    3613,
+    2169
+   ]
+  },
+  {
+   "index": 120,
+   "name": "吴哥水利工程",
+   "source": "assets/historical/吴哥水利工程.jpg",
+   "note": "吴哥皇家浴池（Srah Srang）及其登岸平台，代表吴哥水利体系。",
+   "commons_title": "File:Srah Srang, Angkor, Camboya, 2013-08-16, DD 08.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Srah_Srang,_Angkor,_Camboya,_2013-08-16,_DD_08.JPG",
+   "license": "CC BY-SA 3.0",
+   "artist": "Diego Delso",
+   "date": "2013-08-16 14:11:30",
+   "original_size": [
+    5478,
+    3406
+   ]
+  },
+  {
+   "index": 121,
+   "name": "西安钟鼓楼",
+   "source": "assets/historical/西安钟鼓楼.jpg",
+   "note": "西安钟楼；去现代楼宇和吊车，不另造鼓楼。",
+   "commons_title": "File:Xian Shaanxi China Bell-Tower-01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Xian_Shaanxi_China_Bell-Tower-01.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "CEphoto, Uwe Aranas",
+   "date": "2012-03-27",
+   "original_size": [
+    2589,
+    2255
+   ]
+  },
+  {
+   "index": 122,
+   "name": "西班牙白银舰队",
+   "source": "assets/historical/西班牙白银舰队.jpg",
+   "note": "16 世纪末《塞维利亚景观》油画（瓜达尔基维尔河港，美洲船队母港）。",
+   "commons_title": "File:Vista de la ciudad de Sevilla, Sevilla en el siglo XVI.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Vista_de_la_ciudad_de_Sevilla,_Sevilla_en_el_siglo_XVI.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Jl FilpoC",
+   "date": "2021-12-03",
+   "original_size": [
+    3640,
+    1969
+   ]
+  },
+  {
+   "index": 123,
+   "name": "希瓦古城",
+   "source": "assets/historical/希瓦古城.jpg",
+   "note": "希瓦伊钦卡拉城卡尔塔小宣礼塔与库尼亚堡。",
+   "commons_title": "File:Kalta Minor and Kukhna Ark, Khiva.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Kalta_Minor_and_Kukhna_Ark,_Khiva.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Adam Harangozó",
+   "date": "2018-08-04 14:45:21",
+   "original_size": [
+    5772,
+    3848
+   ]
+  },
+  {
+   "index": 124,
+   "name": "选帝会议殿",
+   "source": "assets/historical/选帝会议殿.jpg",
+   "note": "题材近似：法兰克福罗马人厅（皇帝加冕宴会所在），并非选帝侯选举礼拜堂。",
+   "commons_title": "File:Frankfurter Römer.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Frankfurter_R%C3%B6mer.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Thomas Wolf (Der Wolf im Wald)",
+   "date": "2008-07-24",
+   "original_size": [
+    2000,
+    1474
+   ]
+  },
+  {
+   "index": 125,
+   "name": "亚琛大教堂",
+   "source": "assets/historical/亚琛大教堂.jpg",
+   "note": "亚琛大教堂外观（加洛林八角堂与哥特唱诗堂）。",
+   "commons_title": "File:Exterior of Aachen Cathedral from Rathaus.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Exterior_of_Aachen_Cathedral_from_Rathaus.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Karmakolle",
+   "date": "19 August 2024 (according to Exif data)",
+   "original_size": [
+    4096,
+    3072
+   ]
+  },
+  {
+   "index": 126,
+   "name": "岩石圆顶圣殿",
+   "source": "assets/historical/岩石圆顶圣殿.jpg",
+   "note": "耶路撒冷圆顶清真寺。",
+   "commons_title": "File:Jerusalem-2013(2)-Temple Mount-Dome of the Rock (SE exposure).jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Jerusalem-2013(2)-Temple_Mount-Dome_of_the_Rock_(SE_exposure).jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Godot13",
+   "date": "2013-11-14 08:20:35",
+   "original_size": [
+    7500,
+    5425
+   ]
+  },
+  {
+   "index": 127,
+   "name": "耶路撒冷圣城",
+   "source": "assets/historical/耶路撒冷圣城.jpg",
+   "note": "从橄榄山望耶路撒冷老城全景；去现代建筑和道路。",
+   "commons_title": "File:Panoramic View of the old city from Mount of Olives.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Panoramic_View_of_the_old_city_from_Mount_of_Olives.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Gbecker248",
+   "date": "2013-09-29 17:20:49",
+   "original_size": [
+    4626,
+    1500
+   ]
+  },
+  {
+   "index": 128,
+   "name": "伊比利亚宗教裁判所",
+   "source": "assets/historical/伊比利亚宗教裁判所.jpg",
+   "note": "题材近似：弗朗西斯科·里齐 1683 年绘 1680 年马德里马约尔广场信仰审判仪式，不是托莱多建筑群。",
+   "commons_title": "File:Francisco rizi-auto de fe.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Francisco_rizi-auto_de_fe.jpg",
+   "license": "Public domain",
+   "artist": "Francisco Rizi",
+   "date": "1683",
+   "original_size": [
+    3071,
+    1946
+   ]
+  },
+  {
+   "index": 129,
+   "name": "伊斯法罕王家广场",
+   "source": "assets/historical/伊斯法罕王家广场.jpg",
+   "note": "帕斯卡尔·科斯特 19 世纪伊斯法罕王家广场版画。",
+   "commons_title": "File:Naqsh-e Jahan Square by Pascal Coste 1 edited.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Naqsh-e_Jahan_Square_by_Pascal_Coste_1_edited.jpg",
+   "license": "Public domain",
+   "artist": "Pascal Coste",
+   "date": "between 1839 and 1841",
+   "original_size": [
+    4547,
+    2810
+   ]
+  },
+  {
+   "index": 130,
+   "name": "印加皇家道路网",
+   "source": "assets/historical/印加皇家道路网.jpg",
+   "note": "印加古道（Qhapaq Ñan）山谷段；源图为竖幅，提示词要求横向延展。",
+   "commons_title": "File:Qhapaq ñan Grande route inca.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Qhapaq_%C3%B1an_Grande_route_inca.jpg",
+   "license": "CC BY-SA 3.0",
+   "artist": "Laurent granier",
+   "date": "",
+   "original_size": [
+    746,
+    1134
+   ]
+  },
+  {
+   "index": 131,
+   "name": "云南卫所屯田带",
+   "source": "assets/historical/云南卫所屯田带.jpg",
+   "note": "题材近似：建水朝阳楼（明代临安卫城城门），代表卫所城镇，未表现屯田景观。",
+   "commons_title": "File:Jianshui - Chaoyang Gate - P1370488.JPG",
+   "page": "https://commons.wikimedia.org/wiki/File:Jianshui_-_Chaoyang_Gate_-_P1370488.JPG",
+   "license": "CC BY-SA 3.0",
+   "artist": "User:Vmenkov",
+   "date": "2016-12-20 18:25:14",
+   "original_size": [
+    2048,
+    1536
+   ]
+  },
+  {
+   "index": 132,
+   "name": "扎波罗热塞契",
+   "source": "assets/historical/扎波罗热塞契.jpg",
+   "note": "霍尔蒂恰岛扎波罗热塞契复原建筑群（现代复原）。",
+   "commons_title": "File:Січ з висоти польоту.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%96%D1%87_%D0%B7_%D0%B2%D0%B8%D1%81%D0%BE%D1%82%D0%B8_%D0%BF%D0%BE%D0%BB%D1%8C%D0%BE%D1%82%D1%83.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Alexey Tolmachov",
+   "date": "2013-04-27 16:38:58",
+   "original_size": [
+    2700,
+    1800
+   ]
+  },
+  {
+   "index": 133,
+   "name": "扎莫希奇理想城市",
+   "source": "assets/historical/扎莫希奇理想城市.jpg",
+   "note": "扎莫希奇大市场广场与市政厅。",
+   "commons_title": "File:Great Market Square Zamość, Poland 2019-04-21 Niki4wiki.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Great_Market_Square_Zamo%C5%9B%C4%87,_Poland_2019-04-21_Niki4wiki.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "Niki4wiki",
+   "date": "2019-04-21",
+   "original_size": [
+    3648,
+    2736
+   ]
+  },
+  {
+   "index": 134,
+   "name": "智慧宫",
+   "source": "assets/historical/智慧宫.jpg",
+   "note": "题材近似：瓦西提《玛卡梅》插图中的图书馆场景（13 世纪），不是智慧宫实景；去文字。",
+   "commons_title": "File:A Library in Golden Islamic Age.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:A_Library_in_Golden_Islamic_Age.jpg",
+   "license": "Public domain",
+   "artist": "Yahya ibn Mahmud al-Wasiti",
+   "date": "2016-04-13 17:53:21",
+   "original_size": [
+    2400,
+    3200
+   ]
+  },
+  {
+   "index": 135,
+   "name": "舟山烽火台网",
+   "source": "assets/historical/舟山烽火台网.jpg",
+   "note": "题材近似：威廉·亚历山大 1793 年所绘定海南门水彩，城门而非烽火台。",
+   "commons_title": "File:SOUTH GATE OF THE CITY OF TING-HAI.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:SOUTH_GATE_OF_THE_CITY_OF_TING-HAI.jpg",
+   "license": "Public domain",
+   "artist": "William Alexander",
+   "date": "circa 1800",
+   "original_size": [
+    2800,
+    2132
+   ]
+  },
+  {
+   "index": 136,
+   "name": "紫禁城",
+   "source": "assets/historical/紫禁城.jpg",
+   "note": "故宫午门。",
+   "commons_title": "File:Meridian Gate (Forbidden City) 2018-08-18 170110.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Meridian_Gate_(Forbidden_City)_2018-08-18_170110.jpg",
+   "license": "CC BY-SA 4.0",
+   "artist": "David290",
+   "date": "2018-08-18 17:01:10",
+   "original_size": [
+    4032,
+    3024
+   ]
+  }
+ ]
+}

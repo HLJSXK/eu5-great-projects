@@ -1,0 +1,39 @@
+﻿# Towards Victory - Wonder ownership transfer hooks
+
+# root = changed location; scope:winner = new owner; scope:loser = previous owner.
+# Requires a real final building at level 1 or higher; unfinished sites do not qualify.
+tv_wonder_ownership_location_changed_owner = {
+	trigger = {
+		has_variable_map = tv_wonder_final_building_level_by_type
+		has_global_variable_map = tv_wonder_final_building_type_to_wonder_id
+		any_buildings_in_location = {
+			building_level >= 1
+			is_key_in_global_variable_map = {
+				name = tv_wonder_final_building_type_to_wonder_id
+				target = building_type
+			}
+		}
+	}
+	effect = {
+		hidden_effect = {
+			tv_wonder_ownership_handle_location_owner_changed_effect = yes
+			tv_wonder_mechanics_refresh_location_display_state_effect = yes
+		}
+	}
+}
+
+tv_wonder_construction_site_lost_on_owner_changed = {
+	trigger = {
+		scope:loser ?= {
+			var:tv_wonder_site ?= root
+			var:tv_wonder_stage ?= { this >= 3 }
+			NOT = { has_variable = tv_wonder_finalized }
+		}
+	}
+	effect = {
+		scope:loser = {
+			tv_wonder_forced_abort_effect = yes
+			trigger_event_non_silently = { id = tv_engineering_department.22 }
+		}
+	}
+}

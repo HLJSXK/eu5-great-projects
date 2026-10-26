@@ -1,0 +1,2721 @@
+{
+  "version": 1,
+  "integrated_at": "2026-10-21T17:40:48.354176+08:00",
+  "source_directory": "assets/historical/processed",
+  "source_selection": "Latest root outputs; v3 and before_coarse are older comparison batches.",
+  "archive": {
+    "path": "assets/archives/historical_ai_cartoon_previous_20261021.zip",
+    "sha256": "388be0b896c4bdf78f1e7458814c0222eeb6abdda8e740ed868ceab643216cad",
+    "size": 1139116880,
+    "file_count": 706
+  },
+  "dds_format": "DXT1",
+  "mipmaps": false,
+  "banner_size": [
+    2160,
+    880
+  ],
+  "crop_policy": "Maximum width 27:11 crop; vertical position reviewed for monument silhouettes. Portrait banners show a detail; full DDS preserves the entire image.",
+  "images": [
+    {
+      "name": "北京皇家粮仓",
+      "stem": "tv_wonder_unique_beijing_imperial_granaries",
+      "source": "assets/historical/processed/北京皇家粮仓_ai_cartoon.png",
+      "reference": "assets/historical/北京皇家粮仓.jpg",
+      "width": 1280,
+      "height": 848,
+      "sha256": "90b9e9211597517bdf987c930ba8e34b0dbfd61b665935612376a37df3e4e12a",
+      "png": "assets/generated_wonders/tv_wonder_unique_beijing_imperial_granaries.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_beijing_imperial_granaries.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_beijing_imperial_granaries_cropped.dds",
+      "crop_rect": [
+        0.0,
+        163.25925925925924,
+        1280.0,
+        521.4814814814815
+      ],
+      "dds_sha256": "6bde41f03102e29b0695e9b39a60b0024e3fea6da9d584358bd08c80caecc247",
+      "cropped_dds_sha256": "7a4022464ffeee44a17f35eccdaf25a62efd119011abdb0779bef6f1911f3109"
+    },
+    {
+      "name": "博洛尼亚大学",
+      "stem": "tv_wonder_unique_university_of_bologna",
+      "source": "assets/historical/processed/博洛尼亚大学_ai_cartoon.png",
+      "reference": "assets/historical/博洛尼亚大学.jpg",
+      "width": 1024,
+      "height": 736,
+      "sha256": "70b69f7a3a533c1eba9efb050450f97903a339e87e721bd08a6099915fc9099a",
+      "png": "assets/generated_wonders/tv_wonder_unique_university_of_bologna.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_university_of_bologna.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_university_of_bologna_cropped.dds",
+      "crop_rect": [
+        0.0,
+        159.40740740740742,
+        1024.0,
+        417.18518518518516
+      ],
+      "dds_sha256": "0ad9895546331ec558eb246f7648fcd50b5dfbfb54920a7990d3f93d5100f359",
+      "cropped_dds_sha256": "148847185e0ba7cb956a84dbb1cb71166b670d8707b881be2e0935389f36c584"
+    },
+    {
+      "name": "埃奇米阿津主教座堂",
+      "stem": "tv_wonder_unique_echmiadzin_cathedral",
+      "source": "assets/historical/processed/埃奇米阿津主教座堂_ai_cartoon.png",
+      "reference": "assets/historical/埃奇米阿津主教座堂.jpg",
+      "width": 1280,
+      "height": 864,
+      "sha256": "95139e0518ce84664c4d065fd49c1cb24b1fe9ce2f4ccaa96e840a89eb2cd94c",
+      "png": "assets/generated_wonders/tv_wonder_unique_echmiadzin_cathedral.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_echmiadzin_cathedral.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_echmiadzin_cathedral_cropped.dds",
+      "crop_rect": [
+        0.0,
+        17.125925925925923,
+        1280.0,
+        521.4814814814815
+      ],
+      "dds_sha256": "6bc7aa15d9e850a5056ce6221a3ad893ea092544e65d5b2b3c337b015611f291",
+      "cropped_dds_sha256": "2c35b2417c263ba273d829b90f4537661a83ca22706d4a9beff346c640db5676"
+    },
+    {
+      "name": "埃斯科里亚尔修道院",
+      "stem": "tv_wonder_unique_escorial_monastery",
+      "source": "assets/historical/processed/埃斯科里亚尔修道院_ai_cartoon.png",
+      "reference": "assets/historical/埃斯科里亚尔修道院.jpg",
+      "width": 992,
+      "height": 672,
+      "sha256": "7290d4079161bbf8b734a5c515f48cecb7b9da78bd9fc7f293b0781a641f6759",
+      "png": "assets/generated_wonders/tv_wonder_unique_escorial_monastery.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_escorial_monastery.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_escorial_monastery_cropped.dds",
+      "crop_rect": [
+        0.0,
+        0.0,
+        992.0,
+        404.14814814814815
+      ],
+      "dds_sha256": "bd8fa12234de9d5d3088f67ce5ffb3f68ec9353b6d6d6b1ce7f5321f5bb3d44f",
+      "cropped_dds_sha256": "6925154ea7567ff5271c731817b0818cc60ec77a3886352a2ba95c9cead4c0d3"
+    },
+    {
+      "name": "奥斯曼朝觐道路",
+      "stem": "tv_wonder_unique_ottoman_hajj_road",
+      "source": "assets/historical/processed/奥斯曼朝觐道路_ai_cartoon.png",
+      "reference": "assets/historical/奥斯曼朝觐道路.webp",
+      "width": 1088,
+      "height": 608,
+      "sha256": "f0300811e429a10e604d6582c83ab6895dc8207219990275a26a913d289c5cee",
+      "png": "assets/generated_wonders/tv_wonder_unique_ottoman_hajj_road.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ottoman_hajj_road.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ottoman_hajj_road_cropped.dds",
+      "crop_rect": [
+        0.0,
+        82.37037037037038,
+        1088.0,
+        443.25925925925924
+      ],
+      "dds_sha256": "25b616e0da3ea59784a2d6ea55a35750db09a1833647a7f6d8e5910c01cc30d1",
+      "cropped_dds_sha256": "97fe7827e4b4bd64830a1e2fdf6a278ca373341435a2b104e78d879c512080fb"
+    },
+    {
+      "name": "奥格斯堡银行",
+      "stem": "tv_wonder_unique_augsburg_bank",
+      "source": "assets/historical/processed/奥格斯堡银行_ai_cartoon.png",
+      "reference": "assets/historical/奥格斯堡银行.jpg",
+      "width": 896,
+      "height": 736,
+      "sha256": "0e527d1046eddd9217618f9756b64f4ed153af98d322c596b31aeb241a9d9a8a",
+      "png": "assets/generated_wonders/tv_wonder_unique_augsburg_bank.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_augsburg_bank.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_augsburg_bank_cropped.dds",
+      "crop_rect": [
+        0.0,
+        185.4814814814815,
+        896.0,
+        365.037037037037
+      ],
+      "dds_sha256": "103bb71c9978c82dd1c00a8eca695c08b6248acb8d571be9ae13d3cba3f0a18b",
+      "cropped_dds_sha256": "5dbf3c70e37b99544615f80d11580473e94d424a0be73ca3a3e0b60ca29b609b"
+    },
+    {
+      "name": "巴库圣火庙",
+      "stem": "tv_wonder_unique_baku_ateshgah",
+      "source": "assets/historical/processed/巴库圣火庙_ai_cartoon.png",
+      "reference": "assets/historical/巴库圣火庙.jpg",
+      "width": 1008,
+      "height": 672,
+      "sha256": "46f49b26a5c7e4c06fb5859aa57529dfeaa0c89bfaec3e974eb7518dacf30d31",
+      "png": "assets/generated_wonders/tv_wonder_unique_baku_ateshgah.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_baku_ateshgah.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_baku_ateshgah_cropped.dds",
+      "crop_rect": [
+        0.0,
+        0.0,
+        1008.0,
+        410.6666666666667
+      ],
+      "dds_sha256": "669039efcc702202cb90f541e2e4eab4c6c5abd9f0a9da3514b93eb10b48e420",
+      "cropped_dds_sha256": "7ba1638f17f2cf14cbaf5f285e2da992f195c54f3ff508df49dcdc36ffa77c40"
+    },
+    {
+      "name": "巴黎圣母院",
+      "stem": "tv_wonder_unique_notre_dame_de_paris",
+      "source": "assets/historical/processed/巴黎圣母院_ai_cartoon.png",
+      "reference": "assets/historical/巴黎圣母院.jpg",
+      "width": 1280,
+      "height": 848,
+      "sha256": "fd2bc7f0e5385332c0345c814284af11a12b2bc43a42987243509cd1d1fe1a29",
+      "png": "assets/generated_wonders/tv_wonder_unique_notre_dame_de_paris.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_notre_dame_de_paris.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_notre_dame_de_paris_cropped.dds",
+      "crop_rect": [
+        0.0,
+        97.95555555555553,
+        1280.0,
+        521.4814814814815
+      ],
+      "dds_sha256": "d652de036edf502b2f6056e46f6e0886b16c0a35dea9d5c538eb17ca8853139e",
+      "cropped_dds_sha256": "c48f4c97d15f3a9f90de34e9c1070ec136e8075331f221da787f4e33d120fdda"
+    },
+    {
+      "name": "布达拉宫",
+      "stem": "tv_wonder_unique_potala_palace",
+      "source": "assets/historical/processed/布达拉宫_ai_cartoon.png",
+      "reference": "assets/historical/布达拉宫.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "1715c3a0388a0e7cdcd240a7b8ef6962417b04b8831188bbbad164c485cb8227",
+      "png": "assets/generated_wonders/tv_wonder_unique_potala_palace.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_potala_palace.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_potala_palace_cropped.dds",
+      "crop_rect": [
+        0.0,
+        124.44444444444446,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "f59bcbca6252571480eda7a02d5cf6337da1bc8bb7c032b5d3a74cebb5cf608f",
+      "cropped_dds_sha256": "89c72cb4119a8d05dd6d1ed059e7763a40d990f9efa32d3f90e23bf5a1f5e7c7"
+    },
+    {
+      "name": "比萨斜塔",
+      "stem": "tv_wonder_unique_leaning_tower_of_pisa",
+      "source": "assets/historical/processed/比萨斜塔_ai_cartoon.png",
+      "reference": "assets/historical/比萨斜塔.jpg",
+      "width": 960,
+      "height": 1440,
+      "sha256": "daa8804616a1fb3c5965eb7e88105847ee35f16daaac6eec616574e730d3d9df",
+      "png": "assets/generated_wonders/tv_wonder_unique_leaning_tower_of_pisa.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_leaning_tower_of_pisa.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_leaning_tower_of_pisa_cropped.dds",
+      "crop_rect": [
+        0.0,
+        62.93333333333333,
+        960.0,
+        391.1111111111111
+      ],
+      "dds_sha256": "385028137b879c4874cd822579142a0716746730d4a0a197495795067fe1024d",
+      "cropped_dds_sha256": "8ae3ed295cec8fe99c5a005359183896a34cb4fe85ae655cc8efb75f9e108845"
+    },
+    {
+      "name": "波尔多港",
+      "stem": "tv_wonder_unique_bordeaux_port",
+      "source": "assets/historical/processed/波尔多港_ai_cartoon.png",
+      "reference": "assets/historical/波尔多港.jpg",
+      "width": 944,
+      "height": 704,
+      "sha256": "69297a50b34fa6ca9c95e257e7ed2071392e32090dad48ffb0574d9dfb42a8dd",
+      "png": "assets/generated_wonders/tv_wonder_unique_bordeaux_port.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bordeaux_port.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bordeaux_port_cropped.dds",
+      "crop_rect": [
+        0.0,
+        111.79259259259258,
+        944.0,
+        384.5925925925926
+      ],
+      "dds_sha256": "62e1fa98e706dfb0c23c92b925182332c06171ffaea8ae46e2963cef88f58a7d",
+      "cropped_dds_sha256": "046989252c6a83fefc767d5c05706527d9ae3ddce5226c59af4ea55eb5b9d24b"
+    },
+    {
+      "name": "贝伦塔",
+      "stem": "tv_wonder_unique_belem_tower",
+      "source": "assets/historical/processed/贝伦塔_ai_cartoon.png",
+      "reference": "assets/historical/贝伦塔.jpg",
+      "width": 1008,
+      "height": 656,
+      "sha256": "4e2c75ea10d9a071aeb830e06b0e372f6a35dd44006b27ee1b5883bdf0b89fec",
+      "png": "assets/generated_wonders/tv_wonder_unique_belem_tower.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_belem_tower.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_belem_tower_cropped.dds",
+      "crop_rect": [
+        0.0,
+        0.0,
+        1008.0,
+        410.6666666666667
+      ],
+      "dds_sha256": "c7d5ce051f67934985e3b40c179a1074c86da0bc6cb9218fe63c1c6a2d6990f8",
+      "cropped_dds_sha256": "4cbd08291f06e890dfe091efcfbe90b6c62512bec376ab21fdf403573f3af9c9"
+    },
+    {
+      "name": "贝宁城墙",
+      "stem": "tv_wonder_unique_walls_of_benin",
+      "source": "assets/historical/processed/贝宁城墙_ai_cartoon.png",
+      "reference": "assets/historical/贝宁城墙.webp",
+      "width": 848,
+      "height": 784,
+      "sha256": "e37c3899ba42e4f4172fb90848da102d98929cddf53f68c2131531ffbafa8539",
+      "png": "assets/generated_wonders/tv_wonder_unique_walls_of_benin.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_walls_of_benin.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_walls_of_benin_cropped.dds",
+      "crop_rect": [
+        0.0,
+        219.25925925925927,
+        848.0,
+        345.48148148148147
+      ],
+      "dds_sha256": "c2fdfaa44a9e7f4e484d6437a7b07903a78441d8787caeda77acb4aec6231ceb",
+      "cropped_dds_sha256": "2df092c691f03a30a44431ad4e2b5d3101dcbbcf8ce90aa58bcc309bddf144ab"
+    },
+    {
+      "name": "贝尔格莱德要塞",
+      "stem": "tv_wonder_unique_belgrade_fortress",
+      "source": "assets/historical/processed/贝尔格莱德要塞_ai_cartoon.png",
+      "reference": "assets/historical/贝尔格莱德要塞.jpg",
+      "width": 992,
+      "height": 672,
+      "sha256": "5bea09cd77a6f345970af700eb0303949adf28a3253d1dd7fc46660f4d6305d5",
+      "png": "assets/generated_wonders/tv_wonder_unique_belgrade_fortress.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_belgrade_fortress.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_belgrade_fortress_cropped.dds",
+      "crop_rect": [
+        0.0,
+        40.17777777777778,
+        992.0,
+        404.14814814814815
+      ],
+      "dds_sha256": "56a5fced3ec3ac1316cbd94ed630cda863b177708b9b390ebd2d5f7c176567f8",
+      "cropped_dds_sha256": "3f383158a5f9f69f63ab335626dd8ddd24b4e29265eb5c448b705c33e5269d05"
+    },
+    {
+      "name": "贝希斯敦铭文",
+      "stem": "tv_wonder_unique_behistun_inscription",
+      "source": "assets/historical/processed/贝希斯敦铭文_ai_cartoon.png",
+      "reference": "assets/historical/贝希斯敦铭文.jpeg",
+      "width": 1120,
+      "height": 592,
+      "sha256": "258f444ea0e3dd08dc0214849650cb7dd4e442ae2265330065697c99174e9f84",
+      "png": "assets/generated_wonders/tv_wonder_unique_behistun_inscription.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_behistun_inscription.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_behistun_inscription_cropped.dds",
+      "crop_rect": [
+        0.0,
+        67.85185185185185,
+        1120.0,
+        456.2962962962963
+      ],
+      "dds_sha256": "c8e0444830b9be24debaad3b06670a8b37913ccf1505beb5a7e37f39bb0f3143",
+      "cropped_dds_sha256": "54443c72d95f7a65e27c7730c7d26b812e4a7cd33b24d60025256be1e6a08f0d"
+    },
+    {
+      "name": "阿姆斯特丹运河圈",
+      "stem": "tv_wonder_unique_amsterdam_canal_ring",
+      "source": "assets/historical/processed/阿姆斯特丹运河圈_ai_cartoon.png",
+      "reference": "assets/historical/阿姆斯特丹运河圈.webp",
+      "width": 1088,
+      "height": 608,
+      "sha256": "ddb044314c330b776031c08e60619692821d62e944c19ba6e0c1ed4e1d0f4374",
+      "png": "assets/generated_wonders/tv_wonder_unique_amsterdam_canal_ring.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_amsterdam_canal_ring.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_amsterdam_canal_ring_cropped.dds",
+      "crop_rect": [
+        0.0,
+        82.37037037037038,
+        1088.0,
+        443.25925925925924
+      ],
+      "dds_sha256": "6b1afee57d028ee948f2adaefec730aacc5e9eea480968ce328b1e1d5aa813a9",
+      "cropped_dds_sha256": "3127579e9a95951c433428e092278db6d6886ab4fff13cd44a46568e90cc5a15"
+    },
+    {
+      "name": "阿尔及尔海盗港",
+      "stem": "tv_wonder_unique_algiers_pirate_port",
+      "source": "assets/historical/processed/阿尔及尔海盗港_ai_cartoon.png",
+      "reference": "assets/historical/阿尔及尔海盗港.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "9a50cde71431bfead25484b0a42ff52a30e58b3611f529ca9d0ce7b87b66d861",
+      "png": "assets/generated_wonders/tv_wonder_unique_algiers_pirate_port.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_algiers_pirate_port.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_algiers_pirate_port_cropped.dds",
+      "crop_rect": [
+        0.0,
+        248.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "064461cbc2ed35ed740d9796c94ec6da6a6d0c334aa46706e8bf9f29434a53d3",
+      "cropped_dds_sha256": "03beb10e03fa0889026b214fbbcf97b9067d588ed544b50c4b18c2321f595e1d"
+    },
+    {
+      "name": "阿尔罕布拉宫",
+      "stem": "tv_wonder_unique_alhambra",
+      "source": "assets/historical/processed/阿尔罕布拉宫_ai_cartoon.png",
+      "reference": "assets/historical/阿尔罕布拉宫.webp",
+      "width": 1920,
+      "height": 1088,
+      "sha256": "9e643af98f8040e73316c09d07f8901cd75887e63add6ce186f7b214e4878c76",
+      "png": "assets/generated_wonders/tv_wonder_unique_alhambra.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_alhambra.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_alhambra_cropped.dds",
+      "crop_rect": [
+        0.0,
+        152.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "1fc336dd59764a8312ca87793ab25d9654288f544420f7babf654f6ffec850c1",
+      "cropped_dds_sha256": "8ab2350ee9a93a1df21dd25e638e4774d2dc965fd87742a5b1f3dc3bd9816521"
+    },
+    {
+      "name": "阿育陀耶外国使馆区",
+      "stem": "tv_wonder_unique_ayutthaya_foreign_quarters",
+      "source": "assets/historical/processed/阿育陀耶外国使馆区_ai_cartoon.png",
+      "reference": "assets/historical/阿育陀耶外国使馆区.jpg",
+      "width": 1280,
+      "height": 848,
+      "sha256": "9e335fb20a58e783ccee5d738ff47f698b71d056e0d5a421e31f48c6757b9fa0",
+      "png": "assets/generated_wonders/tv_wonder_unique_ayutthaya_foreign_quarters.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ayutthaya_foreign_quarters.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ayutthaya_foreign_quarters_cropped.dds",
+      "crop_rect": [
+        0.0,
+        0.0,
+        1280.0,
+        521.4814814814815
+      ],
+      "dds_sha256": "db739ee7d5f58a1acf8d938afded29b0f7cd3399099f7700317f60d18e48f076",
+      "cropped_dds_sha256": "ebb92dd4d9dddd7ed4dcd29f7dd71a8de708b982f0ca40a786b99c4a4c570370"
+    },
+    {
+      "name": "布尔萨皇家铸币所",
+      "stem": "tv_wonder_unique_bursa_imperial_mint",
+      "source": "assets/historical/processed/布尔萨皇家铸币所_ai_cartoon.png",
+      "reference": "assets/historical/布尔萨皇家铸币所.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "7eabb37b81fe0877c451dc5afe005ddcb217dc4b6db178b2690fbfa95c567ad2",
+      "png": "assets/generated_wonders/tv_wonder_unique_bursa_imperial_mint.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bursa_imperial_mint.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bursa_imperial_mint_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "d07175e517621793addd9691e0609ca4010a9fd684539287bdd51519b17f3efc",
+      "cropped_dds_sha256": "57047b86206cdea9f0d3a931b48adbbec00c8b7d5ff2143a684ff5d64b33d543"
+    },
+    {
+      "name": "布哈拉卡兰宣礼塔",
+      "stem": "tv_wonder_unique_bukhara_kalyan_minaret",
+      "source": "assets/historical/processed/布哈拉卡兰宣礼塔_ai_cartoon.png",
+      "reference": "assets/historical/布哈拉卡兰宣礼塔.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "69af96d8f9bd83911c48f47331c9b6654cd494a10d8a3570760a9eb3af826e7f",
+      "png": "assets/generated_wonders/tv_wonder_unique_bukhara_kalyan_minaret.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bukhara_kalyan_minaret.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bukhara_kalyan_minaret_cropped.dds",
+      "crop_rect": [
+        0.0,
+        99.55555555555557,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "63efc567fae3aa737fb9db527646a68cc8d33538d328854d5a06d1149939359e",
+      "cropped_dds_sha256": "013b2df58bef311b45544cdb66c3389103cd846fe2ef3a21b7b32388c95b36a3"
+    },
+    {
+      "name": "布里哈迪希瓦拉神庙",
+      "stem": "tv_wonder_unique_brihadishvara_temple",
+      "source": "assets/historical/processed/布里哈迪希瓦拉神庙_ai_cartoon.png",
+      "reference": "assets/historical/布里哈迪希瓦拉神庙.jpg",
+      "width": 1360,
+      "height": 2048,
+      "sha256": "904e9de647f90822f2856049b4bf5521f20f1eb8e5eaddbabda65d4ae29eea41",
+      "png": "assets/generated_wonders/tv_wonder_unique_brihadishvara_temple.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brihadishvara_temple.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brihadishvara_temple_cropped.dds",
+      "crop_rect": [
+        0.0,
+        59.757037037037044,
+        1360.0,
+        554.074074074074
+      ],
+      "dds_sha256": "3b75b7bb4a24c237cc38a984a62e7518b5b6c2cb9aab66caa099db860b55cc21",
+      "cropped_dds_sha256": "d52e81e3b0402710fabf3d7094530ad95ff15de77b117db42c3dd267b200b6a1"
+    },
+    {
+      "name": "布列斯特海军港",
+      "stem": "tv_wonder_unique_brest_naval_port",
+      "source": "assets/historical/processed/布列斯特海军港_ai_cartoon.png",
+      "reference": "assets/historical/布列斯特海军港.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "de93b74e362dfae04ad04c77fa2fef99100e55518b288e2ad68a31a2b24b187a",
+      "png": "assets/generated_wonders/tv_wonder_unique_brest_naval_port.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brest_naval_port.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brest_naval_port_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "c74d710c91e3796445250ecc0eab6f1faf66d98be95b7b3e58ab06f3989c2f58",
+      "cropped_dds_sha256": "8864edbf7b514d4be3b7ce068f69aee9651663a569b662076e9e4e3b7ed0c4f3"
+    },
+    {
+      "name": "布列斯特犹太会堂区",
+      "stem": "tv_wonder_unique_brest_synagogue_quarter",
+      "source": "assets/historical/processed/布列斯特犹太会堂区_ai_cartoon.png",
+      "reference": "assets/historical/布列斯特犹太会堂区.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "8b7cf071129b9457f5df62e01e4890cf2668d244510d82ad34615f89569f6225",
+      "png": "assets/generated_wonders/tv_wonder_unique_brest_synagogue_quarter.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brest_synagogue_quarter.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brest_synagogue_quarter_cropped.dds",
+      "crop_rect": [
+        0.0,
+        131.40740740740742,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "5b2e1876d0762f8822f685a732bd26ce153541c89af27d49529ffbf7b1a34bc8",
+      "cropped_dds_sha256": "3ec92633c5070dd18ce1fc03edf25a01d86047b151c0f96a1de26fb95392b58d"
+    },
+    {
+      "name": "长白山祭坛",
+      "stem": "tv_wonder_unique_changbai_mountain_altar",
+      "source": "assets/historical/processed/长白山祭坛_ai_cartoon.png",
+      "reference": "assets/historical/长白山祭坛.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "d09b2d64310f73d8401c1f750f310cac67b758f9b6bc780f77e967219962c5d2",
+      "png": "assets/generated_wonders/tv_wonder_unique_changbai_mountain_altar.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_changbai_mountain_altar.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_changbai_mountain_altar_cropped.dds",
+      "crop_rect": [
+        0.0,
+        350.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "84b08b3ea8583d4c455d270fc2ce110fe6613cde468c3de8c9f9addbad7bd8d6",
+      "cropped_dds_sha256": "2bb87f844447944b50936f7fc42e13d537e43e3098a4a4e40cd6de0270351d30"
+    },
+    {
+      "name": "长城九边",
+      "stem": "tv_wonder_unique_ming_great_wall",
+      "source": "assets/historical/processed/长城九边_ai_cartoon.png",
+      "reference": "assets/historical/长城九边.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "952605eb818e96afa6d8db9923cbb48e5117f49eac68cf366215ca4e9ea1efae",
+      "png": "assets/generated_wonders/tv_wonder_unique_ming_great_wall.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ming_great_wall.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ming_great_wall_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "711ebf8caaf75613d22d76f35e7a81a6a8bb8f5957382c1893dbe943286d195d",
+      "cropped_dds_sha256": "1bf367651ade617b096d1f3cbad225de6580f8a738556c75d58bd2fcb62b9573"
+    },
+    {
+      "name": "大报恩寺琉璃塔",
+      "stem": "tv_wonder_unique_porcelain_tower_of_nanjing",
+      "source": "assets/historical/processed/大报恩寺琉璃塔_ai_cartoon.png",
+      "reference": "assets/historical/大报恩寺琉璃塔.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "071fbd0ec21290ab9d7728bb5b4139bdb9bc031f5fbfd1266d506e73bdd95936",
+      "png": "assets/generated_wonders/tv_wonder_unique_porcelain_tower_of_nanjing.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_porcelain_tower_of_nanjing.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_porcelain_tower_of_nanjing_cropped.dds",
+      "crop_rect": [
+        0.0,
+        0.0,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "0c1781f2e4e9e7d346f02ae339fa2dd0a1e099737f387f9d3311257d27fed8ae",
+      "cropped_dds_sha256": "0280f9ec47a6797819efadafb785efe8e6e603f1b252d7be8e6e956729331a1b"
+    },
+    {
+      "name": "达达尼尔海峡要塞",
+      "stem": "tv_wonder_unique_dardanelles_fortress",
+      "source": "assets/historical/processed/达达尼尔海峡要塞_ai_cartoon.png",
+      "reference": "assets/historical/达达尼尔海峡要塞.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "f7bf29a139c4bc8f234b2b6b19e0242f7315082d8bc831c7233b46fa49166830",
+      "png": "assets/generated_wonders/tv_wonder_unique_dardanelles_fortress.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dardanelles_fortress.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dardanelles_fortress_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "84d79c56fd56697eb7fc1cfecff2b4c0bfc2e18263a9d8d453a75ea18ef78622",
+      "cropped_dds_sha256": "57de97973845b425e2778e66c4e3d32b027e17470d5c0a1c418ff84ab48bad35"
+    },
+    {
+      "name": "大津巴布韦石城",
+      "stem": "tv_wonder_unique_great_zimbabwe",
+      "source": "assets/historical/processed/大津巴布韦石城_ai_cartoon.png",
+      "reference": "assets/historical/大津巴布韦石城.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "ab317cf3d214356ef7d8057faaad63491ab95910d8690944eecf0cd499ffba76",
+      "png": "assets/generated_wonders/tv_wonder_unique_great_zimbabwe.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_great_zimbabwe.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_great_zimbabwe_cropped.dds",
+      "crop_rect": [
+        0.0,
+        105.12592592592594,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "625c36979e1259adfeb4707a9f20131fc43d96a9e7154d76eca6ab97d220c88a",
+      "cropped_dds_sha256": "ef12c938c02bc4abce2a91062a15df7f4b2ccff6ecf23bfcd54a743910495098"
+    },
+    {
+      "name": "德累斯顿艺术馆",
+      "stem": "tv_wonder_unique_dresden_art_gallery",
+      "source": "assets/historical/processed/德累斯顿艺术馆_ai_cartoon.png",
+      "reference": "assets/historical/德累斯顿艺术馆.jpg",
+      "width": 2048,
+      "height": 1152,
+      "sha256": "d6528051a873d6087c97cbd7c19193603f41e311a89a33bcb2fe18ff06192ec4",
+      "png": "assets/generated_wonders/tv_wonder_unique_dresden_art_gallery.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dresden_art_gallery.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dresden_art_gallery_cropped.dds",
+      "crop_rect": [
+        0.0,
+        31.76296296296297,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "4d39411adbf6f079798216aee596dbcda423dd683f194a96cb66685461984ffe",
+      "cropped_dds_sha256": "ca0e5f53ffab0bc5eccdf45b4e98668a145db7641df5120c4f7686229c8a552b"
+    },
+    {
+      "name": "德里红堡",
+      "stem": "tv_wonder_unique_red_fort_delhi",
+      "source": "assets/historical/processed/德里红堡_ai_cartoon.png",
+      "reference": "assets/historical/德里红堡.jpg",
+      "width": 2048,
+      "height": 1152,
+      "sha256": "27874941c708ac9f82d2ffa59c66bb28f0691544fb08dc7eaedaa2c13f8172b8",
+      "png": "assets/generated_wonders/tv_wonder_unique_red_fort_delhi.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_red_fort_delhi.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_red_fort_delhi_cropped.dds",
+      "crop_rect": [
+        0.0,
+        79.40740740740742,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "334752713249142951b5906688518f7b0b58d8ac50f79355fea3c35ab901c071",
+      "cropped_dds_sha256": "e5fb5d93393af79ec269c0e35907e34d135bd0fecad5370f58c4ac212dddb073"
+    },
+    {
+      "name": "冬宫",
+      "stem": "tv_wonder_unique_winter_palace",
+      "source": "assets/historical/processed/冬宫_ai_cartoon.png",
+      "reference": "assets/historical/冬宫.jpg",
+      "width": 2048,
+      "height": 1024,
+      "sha256": "f83f5198e354e43a3a1ef36e39a6409b690b0ebe2a9e82fc7dacafe45743fb9a",
+      "png": "assets/generated_wonders/tv_wonder_unique_winter_palace.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_winter_palace.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_winter_palace_cropped.dds",
+      "crop_rect": [
+        0.0,
+        94.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "67df49746b3ec40caa24931749f4cd777778330d4c8799e0360a067cbf03a563",
+      "cropped_dds_sha256": "939ff9461824b0690dd3b8f13eeaa473bd1d663a60b1d8657c5f2c86cc5ad92f"
+    },
+    {
+      "name": "洞窟修道院",
+      "stem": "tv_wonder_unique_cave_monastery",
+      "source": "assets/historical/processed/洞窟修道院_ai_cartoon.png",
+      "reference": "assets/historical/洞窟修道院.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "9d37d52599c1c67930221e7256541ccb4c419aaa011d04bfbfc5934532affae9",
+      "png": "assets/generated_wonders/tv_wonder_unique_cave_monastery.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cave_monastery.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cave_monastery_cropped.dds",
+      "crop_rect": [
+        0.0,
+        26.281481481481485,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "6f8da71604423b10035acebe6d6182712c7bd039195fbcf4223386222c60cdd4",
+      "cropped_dds_sha256": "77279d85ce596bf523a359566ee2ff4eb595c952e1989ab6658a7b160cb080d8"
+    },
+    {
+      "name": "东印度公司",
+      "stem": "tv_wonder_unique_east_india_company",
+      "source": "assets/historical/processed/东印度公司_ai_cartoon.png",
+      "reference": "assets/historical/东印度公司.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "4633269d85836986674cfd3db117633d687688a1350913c2d52358fe58799978",
+      "png": "assets/generated_wonders/tv_wonder_unique_east_india_company.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_east_india_company.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_east_india_company_cropped.dds",
+      "crop_rect": [
+        0.0,
+        26.281481481481485,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "5799d4c4b31d2223b10c30371f9e5e6ffaa64b566fa9f555f4ef98a26bf1200b",
+      "cropped_dds_sha256": "03580328c205814e15cb0e690f1ac716f54bb80592c891c5935e316cd5a954c8"
+    },
+    {
+      "name": "都江堰",
+      "stem": "tv_wonder_unique_dujiangyan",
+      "source": "assets/historical/processed/都江堰_ai_cartoon.png",
+      "reference": "assets/historical/都江堰.jpg",
+      "width": 2240,
+      "height": 960,
+      "sha256": "af743dcd74fa1193d31a167e072fbb832140e9b41ec423c27a0c6a8ceb92d3d6",
+      "png": "assets/generated_wonders/tv_wonder_unique_dujiangyan.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dujiangyan.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dujiangyan_cropped.dds",
+      "crop_rect": [
+        0.0,
+        23.703703703703695,
+        2240.0,
+        912.5925925925926
+      ],
+      "dds_sha256": "2b78e70a6ad041618bef253a7beab5ca776a7404263e00910865eb20a3d8ac5a",
+      "cropped_dds_sha256": "191ee90d22f0bad9ef77ffbb708d7472d0e71a6013695a75299dbacd117906e5"
+    },
+    {
+      "name": "恩德伦宫廷学校",
+      "stem": "tv_wonder_unique_enderun_palace_school",
+      "source": "assets/historical/processed/恩德伦宫廷学校_ai_cartoon.png",
+      "reference": "assets/historical/恩德伦宫廷学校.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "8751d81d8fd658dae2236770c7678f48fb5029dae797a7dbc5a0f98eb38bcf46",
+      "png": "assets/generated_wonders/tv_wonder_unique_enderun_palace_school.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_enderun_palace_school.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_enderun_palace_school_cropped.dds",
+      "crop_rect": [
+        0.0,
+        175.40740740740742,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "ee10aaa3c57256af3344cacf0151180f95090b51e9a494919bfbb8d468a45493",
+      "cropped_dds_sha256": "2c3d92659e0f7159b16984da2d46d535ca6cb319e92f78aea44e939cf51fb37f"
+    },
+    {
+      "name": "法罗斯灯塔",
+      "stem": "tv_wonder_unique_pharos_lighthouse",
+      "source": "assets/historical/processed/法罗斯灯塔_ai_cartoon.png",
+      "reference": "assets/historical/法罗斯灯塔.png",
+      "width": 2080,
+      "height": 1664,
+      "sha256": "8afede693f38bf2774881e55bfa6406b967234b15f26c618c005566b4fdda20d",
+      "png": "assets/generated_wonders/tv_wonder_unique_pharos_lighthouse.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_pharos_lighthouse.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_pharos_lighthouse_cropped.dds",
+      "crop_rect": [
+        0.0,
+        40.829629629629636,
+        2080.0,
+        847.4074074074074
+      ],
+      "dds_sha256": "05e6191acac261449b0985babb9f76b7ef3c2e318367e0391bdc87598d5620ad",
+      "cropped_dds_sha256": "5f5c0c18fbadde8eae2626746fdfaa74d1d862c516c78791171a2e4247a094d2"
+    },
+    {
+      "name": "法塔赫布尔西格里",
+      "stem": "tv_wonder_unique_fatehpur_sikri",
+      "source": "assets/historical/processed/法塔赫布尔西格里_ai_cartoon.png",
+      "reference": "assets/historical/法塔赫布尔西格里.jpg",
+      "width": 2048,
+      "height": 1152,
+      "sha256": "a43e4ec792ab86da209fa7ebb2ec18c780a74c033c06faef994be2d44f691b55",
+      "png": "assets/generated_wonders/tv_wonder_unique_fatehpur_sikri.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fatehpur_sikri.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fatehpur_sikri_cropped.dds",
+      "crop_rect": [
+        0.0,
+        63.52592592592594,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "aa3dab0890a70d40c6f95e8264e0eabc077df003c49669a646d080160afdf346",
+      "cropped_dds_sha256": "dfe17394d8be8c966aadb270da4eb2ed3735b450ff79a60cae6b1b9b3da44eca"
+    },
+    {
+      "name": "梵蒂冈档案馆",
+      "stem": "tv_wonder_unique_vatican_archives",
+      "source": "assets/historical/processed/梵蒂冈档案馆_ai_cartoon.png",
+      "reference": "assets/historical/梵蒂冈档案馆.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "04a3f818c732442b84799b7e635084a83ef3c05bc73c9f0feb4e72982f912eb8",
+      "png": "assets/generated_wonders/tv_wonder_unique_vatican_archives.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_vatican_archives.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_vatican_archives_cropped.dds",
+      "crop_rect": [
+        0.0,
+        248.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "0c858a9366475ec635b4b1935a5a566505263772f8bf8308c9d738547e2ee0d3",
+      "cropped_dds_sha256": "ab74d157ceed1f20b6936e14cb4f717369e087f5fad024ac3fbe89c26d67ad74"
+    },
+    {
+      "name": "凡尔赛宫",
+      "stem": "tv_wonder_unique_versailles_palace",
+      "source": "assets/historical/processed/凡尔赛宫_ai_cartoon.png",
+      "reference": "assets/historical/凡尔赛宫.jpg",
+      "width": 1920,
+      "height": 1392,
+      "sha256": "bd99379020dbb455e8e4f0d38c19fbea9d376d7c905359252fa65da580f4c45a",
+      "png": "assets/generated_wonders/tv_wonder_unique_versailles_palace.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_versailles_palace.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_versailles_palace_cropped.dds",
+      "crop_rect": [
+        0.0,
+        304.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "1668876727f9f3e4d206d17585f5de663adb9acb3d745a541e1a9f9e7a6fb773",
+      "cropped_dds_sha256": "eb10994a10a0f23a807e56d2cdccbffe2a6bece074449b0b8165064f3e2ca6e8"
+    },
+    {
+      "name": "费尔干纳王宫",
+      "stem": "tv_wonder_unique_ferghana_palace",
+      "source": "assets/historical/processed/费尔干纳王宫_ai_cartoon.png",
+      "reference": "assets/historical/费尔干纳王宫.jpg",
+      "width": 2240,
+      "height": 960,
+      "sha256": "a6817e5d2fa4e4892829274457e74dc268dc227b681351b82a060cf467a36b4f",
+      "png": "assets/generated_wonders/tv_wonder_unique_ferghana_palace.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ferghana_palace.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ferghana_palace_cropped.dds",
+      "crop_rect": [
+        0.0,
+        23.703703703703695,
+        2240.0,
+        912.5925925925926
+      ],
+      "dds_sha256": "595388ae64880c98e7f3188493ed40932c797134852b3ea8eb239fe64070c69c",
+      "cropped_dds_sha256": "3999785013afd3775504e31826823f8324f345acc39e9f36d4f20154eb7f0097"
+    },
+    {
+      "name": "非斯古城",
+      "stem": "tv_wonder_unique_fez_old_city",
+      "source": "assets/historical/processed/非斯古城_ai_cartoon.png",
+      "reference": "assets/historical/非斯古城.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "9330cbe1a35b0449335ec7b20eb7a90f829d7973e2d1fdc2f6f961bb6647c7e0",
+      "png": "assets/generated_wonders/tv_wonder_unique_fez_old_city.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fez_old_city.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fez_old_city_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "1fe67aff031a0d5fa051cd9e9eb46d881ea2954f4f14f4dc64170da0abdf1d7e",
+      "cropped_dds_sha256": "c9ec0562b1f149c6a2e44f8422a9c7eeaf1431627f50534329959cac69ddcfa8"
+    },
+    {
+      "name": "芬恩花园",
+      "stem": "tv_wonder_unique_fin_garden",
+      "source": "assets/historical/processed/芬恩花园_ai_cartoon.png",
+      "reference": "assets/historical/芬恩花园.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "35c0b372230d99131ac2e0c782229b4071a110693dbc6c4e645f45344ad08306",
+      "png": "assets/generated_wonders/tv_wonder_unique_fin_garden.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fin_garden.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fin_garden_cropped.dds",
+      "crop_rect": [
+        0.0,
+        149.33333333333334,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "3d41bb092ccbad281b28ef02042a59c4458ab27c7f6ff2750554365c006302b9",
+      "cropped_dds_sha256": "7927761c9f796771f64f0f2ece92b17953d4b7ea3277a2d9bbf62f23650b476f"
+    },
+    {
+      "name": "枫丹白露宫",
+      "stem": "tv_wonder_unique_fontainebleau_palace",
+      "source": "assets/historical/processed/枫丹白露宫_ai_cartoon.png",
+      "reference": "assets/historical/枫丹白露宫.jpg",
+      "width": 1920,
+      "height": 1424,
+      "sha256": "5a1466cac1591daedb8b18d73af3290784750937df6a1f1e4a92c9214629b205",
+      "png": "assets/generated_wonders/tv_wonder_unique_fontainebleau_palace.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fontainebleau_palace.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fontainebleau_palace_cropped.dds",
+      "crop_rect": [
+        0.0,
+        64.17777777777779,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "3be5697dd0d74fb15b0fdaf9afeaa236a59b04f1d6983ee8a807c15cc78cb205",
+      "cropped_dds_sha256": "7a7357a2f59f77e1416050625c65046c51ff4fb3a09be57c90b7ef02bef0fb80"
+    },
+    {
+      "name": "格但斯克港",
+      "stem": "tv_wonder_unique_gdansk_port",
+      "source": "assets/historical/processed/格但斯克港_ai_cartoon.png",
+      "reference": "assets/historical/格但斯克港.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "4ed0e3fe79ad7393f0b70a9b6df2216bb3d9c1dd3f88357e0fc7dd931b6fae6a",
+      "png": "assets/generated_wonders/tv_wonder_unique_gdansk_port.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_gdansk_port.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_gdansk_port_cropped.dds",
+      "crop_rect": [
+        0.0,
+        39.82222222222223,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "6fdac557cecd2f449d7da314d6dcb014e8a1f0cdef23d0977eacbabe3b6895b9",
+      "cropped_dds_sha256": "bbd247fc2166fcbaebf4b22d78432c557801397d0d420c28bf55a76074d358f6"
+    },
+    {
+      "name": "广州十三行",
+      "stem": "tv_wonder_unique_canton_thirteen_factories",
+      "source": "assets/historical/processed/广州十三行_ai_cartoon.png",
+      "reference": "assets/historical/广州十三行.jpg",
+      "width": 1920,
+      "height": 1136,
+      "sha256": "39d0b1a987f5b0d37ba22856129704d72e3a68ff1ecccf37968c29a87a20c2a8",
+      "png": "assets/generated_wonders/tv_wonder_unique_canton_thirteen_factories.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_canton_thirteen_factories.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_canton_thirteen_factories_cropped.dds",
+      "crop_rect": [
+        0.0,
+        176.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "f84e9d4b518a55db508993770da9b5d0247478730823e1d20f8199f0688573cb",
+      "cropped_dds_sha256": "2c1fdb75296fff4cf6f943f61e1a0b2a41739740d932e6721115b13f1d60ce20"
+    },
+    {
+      "name": "海德堡大学",
+      "stem": "tv_wonder_unique_heidelberg_university",
+      "source": "assets/historical/processed/海德堡大学_ai_cartoon.png",
+      "reference": "assets/historical/海德堡大学.jpg",
+      "width": 1920,
+      "height": 1200,
+      "sha256": "878439104262084ae6b68ab5d914ab64e0763e76a8e4318521c34e4f857196d5",
+      "png": "assets/generated_wonders/tv_wonder_unique_heidelberg_university.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_heidelberg_university.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_heidelberg_university_cropped.dds",
+      "crop_rect": [
+        0.0,
+        25.06666666666667,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "106edf7a3c91c49ef03004a03cb9758fe0e89be5fed2e25682cea6fefbd3f541",
+      "cropped_dds_sha256": "703c7a75a5cf40f731c977de2297f8c5f6108e60095c29c2eb594f801d19a57d"
+    },
+    {
+      "name": "汉萨城市厅",
+      "stem": "tv_wonder_unique_hanseatic_town_hall",
+      "source": "assets/historical/processed/汉萨城市厅_ai_cartoon.png",
+      "reference": "assets/historical/汉萨城市厅.jpg",
+      "width": 1680,
+      "height": 2192,
+      "sha256": "aa4ad1efa027c8f6375351e839c4a3d258efcdd621a846700d7a5556a85d562f",
+      "png": "assets/generated_wonders/tv_wonder_unique_hanseatic_town_hall.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hanseatic_town_hall.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hanseatic_town_hall_cropped.dds",
+      "crop_rect": [
+        0.0,
+        226.13333333333335,
+        1680.0,
+        684.4444444444445
+      ],
+      "dds_sha256": "4fe5de7c75d4549e59781fd83469cb23c9bbb10846d9695b2ea4eb71686126ac",
+      "cropped_dds_sha256": "8aca09a762155fb8b6ec072fe7fec551d1abd42ebe507824fda0c3456bde69ba"
+    },
+    {
+      "name": "汉萨商会",
+      "stem": "tv_wonder_unique_hanseatic_kontor",
+      "source": "assets/historical/processed/汉萨商会_ai_cartoon.png",
+      "reference": "assets/historical/汉萨商会.jpg",
+      "width": 1920,
+      "height": 1440,
+      "sha256": "8b14f448264be99554fa7856941105b185a63dacec2af9d0bf7b8edbb1fcd671",
+      "png": "assets/generated_wonders/tv_wonder_unique_hanseatic_kontor.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hanseatic_kontor.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hanseatic_kontor_cropped.dds",
+      "crop_rect": [
+        0.0,
+        328.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "02f11b1b12e6d5c50c650d63b9580904457c9c5552da59be167362097a1f13ab",
+      "cropped_dds_sha256": "038f46642748a640c07c95901def8c4d78302ddf65370124b1d57fb623716819"
+    },
+    {
+      "name": "荷兰围海工程",
+      "stem": "tv_wonder_unique_dutch_polders",
+      "source": "assets/historical/processed/荷兰围海工程_ai_cartoon.png",
+      "reference": "assets/historical/荷兰围海工程.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "be0f9c8a5f431c272390775ff9e414fba5d788100d2f5a0c1cbbaf38da1fc7e1",
+      "png": "assets/generated_wonders/tv_wonder_unique_dutch_polders.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dutch_polders.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dutch_polders_cropped.dds",
+      "crop_rect": [
+        0.0,
+        49.777777777777786,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "3937f6809ac226c4964f71e03b911bca6b65a9a8d334063fb827580a4800bf77",
+      "cropped_dds_sha256": "9897ccf46db63f71efc670975ac7fc5ff140b7c9b1dab1922c80dab9abacc646"
+    },
+    {
+      "name": "皇家海军船坞",
+      "stem": "tv_wonder_unique_british_navy_dockyards",
+      "source": "assets/historical/processed/皇家海军船坞_ai_cartoon.png",
+      "reference": "assets/historical/皇家海军船坞.jpg",
+      "width": 1920,
+      "height": 1120,
+      "sha256": "56c89146eeac9316f538bf5a559d066e633e790fd2519fe9120d9ea5e680e0df",
+      "png": "assets/generated_wonders/tv_wonder_unique_british_navy_dockyards.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_british_navy_dockyards.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_british_navy_dockyards_cropped.dds",
+      "crop_rect": [
+        0.0,
+        168.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "888b21444da035db6d15e5481fd80ed79ada2ce902dc83789a821a1516d8effb",
+      "cropped_dds_sha256": "e1e4748b6feaa49434c325089a7d492e8160304f1a4f513bbebe1de8817a4eee"
+    },
+    {
+      "name": "姬路城",
+      "stem": "tv_wonder_unique_himeji_castle",
+      "source": "assets/historical/processed/姬路城_ai_cartoon.png",
+      "reference": "assets/historical/姬路城.jpg",
+      "width": 1920,
+      "height": 1440,
+      "sha256": "7935a3e1eae035278b9386493570977f47b0dd71ab45782c1f0fabf7411c74b1",
+      "png": "assets/generated_wonders/tv_wonder_unique_himeji_castle.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_himeji_castle.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_himeji_castle_cropped.dds",
+      "crop_rect": [
+        0.0,
+        39.46666666666667,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "104bfbb973e51fe1fa86896c67bf09cde3857a295c2f6145943133bd452397a8",
+      "cropped_dds_sha256": "6671b6f70f220d4f311771073a66df722db1cb634a8d6c3f6528cdd6c6dd5f47"
+    },
+    {
+      "name": "江南贡院",
+      "stem": "tv_wonder_unique_jiangnan_examination_hall",
+      "source": "assets/historical/processed/江南贡院_ai_cartoon.png",
+      "reference": "assets/historical/江南贡院.jpg",
+      "width": 1040,
+      "height": 832,
+      "sha256": "8d661e120b6e0cc824594ab0cec4b740d8ee01832e5cd807d9ae212acf30660f",
+      "png": "assets/generated_wonders/tv_wonder_unique_jiangnan_examination_hall.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jiangnan_examination_hall.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jiangnan_examination_hall_cropped.dds",
+      "crop_rect": [
+        0.0,
+        40.829629629629636,
+        1040.0,
+        423.7037037037037
+      ],
+      "dds_sha256": "908788fde88708b49cb7ee3279e787675c6dd023ed35547b1789abb8bb9f5514",
+      "cropped_dds_sha256": "d6fb5d461c76cd2b6317d75bbc8ca8ebc813a3376f62494ccb9575c1cd0be19b"
+    },
+    {
+      "name": "杰内大清真寺",
+      "stem": "tv_wonder_unique_great_mosque_of_djenne",
+      "source": "assets/historical/processed/杰内大清真寺_ai_cartoon.png",
+      "reference": "assets/historical/杰内大清真寺.jpg",
+      "width": 2048,
+      "height": 1024,
+      "sha256": "237ec0432e9f540df55b10e4a5263441db1d8712681316ae3f36eef3c1d8ec8a",
+      "png": "assets/generated_wonders/tv_wonder_unique_great_mosque_of_djenne.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_great_mosque_of_djenne.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_great_mosque_of_djenne_cropped.dds",
+      "crop_rect": [
+        0.0,
+        94.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "5c3970a4c46af80539d3c35da8a1fa3b46eaed53fd77183e6cd8c31591327236",
+      "cropped_dds_sha256": "5672348b42990749a7725fc7b2b7f846c14b2c6e9f4749c3d40f5fc45443c7ee"
+    },
+    {
+      "name": "景德镇官窑",
+      "stem": "tv_wonder_unique_jingdezhen_imperial_kilns",
+      "source": "assets/historical/processed/景德镇官窑_ai_cartoon.png",
+      "reference": "assets/historical/景德镇官窑.jpg",
+      "width": 1024,
+      "height": 768,
+      "sha256": "057874b46da49da4a3539b111c8af3f24a0f6f233176e43f133d1617f8687b62",
+      "png": "assets/generated_wonders/tv_wonder_unique_jingdezhen_imperial_kilns.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jingdezhen_imperial_kilns.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jingdezhen_imperial_kilns_cropped.dds",
+      "crop_rect": [
+        0.0,
+        52.62222222222223,
+        1024.0,
+        417.18518518518516
+      ],
+      "dds_sha256": "50d2bbd973de33f725d8612d6e5a2ecdeb4e95d491095bb910f3caa90dbf7c4a",
+      "cropped_dds_sha256": "f6c1656fe7175b4e79dd8b1622e1842a1f7cccea1e91d6fa781a2db1410f3cfe"
+    },
+    {
+      "name": "景福宫",
+      "stem": "tv_wonder_unique_gyeongbokgung",
+      "source": "assets/historical/processed/景福宫_ai_cartoon.png",
+      "reference": "assets/historical/景福宫.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "221c5b78234976403360364d260ee1cd7ebf55ee94b167f81f5e0e51cee50f1b",
+      "png": "assets/generated_wonders/tv_wonder_unique_gyeongbokgung.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_gyeongbokgung.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_gyeongbokgung_cropped.dds",
+      "crop_rect": [
+        0.0,
+        0.0,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "cf4c950f5a200f3ed6b9c73a9a038a2397f2f42f7fee08749676814e4170c17a",
+      "cropped_dds_sha256": "6c6b3e293cc7f58b15038637ae43b1d58b765977609bf3e0a670fd06095ee04b"
+    },
+    {
+      "name": "京杭大运河",
+      "stem": "tv_wonder_unique_grand_canal",
+      "source": "assets/historical/processed/京杭大运河_ai_cartoon.png",
+      "reference": "assets/historical/京杭大运河.jpg",
+      "width": 1920,
+      "height": 1344,
+      "sha256": "a0e0cfca80c9f0b6baa2cf314eac4b61608874f4fab4eece8fe13b542de5768c",
+      "png": "assets/generated_wonders/tv_wonder_unique_grand_canal.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_grand_canal.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_grand_canal_cropped.dds",
+      "crop_rect": [
+        0.0,
+        280.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "8b554afcc5a4cce1ba4aa6b71eef3a1260f5bf2f0bb43e0372cfbf880f4728a0",
+      "cropped_dds_sha256": "b9a13ae0c0b797448936f93cbd5877e757875f43f1bbc62f6624a6ef5d781975"
+    },
+    {
+      "name": "巨石阵",
+      "stem": "tv_wonder_unique_stonehenge",
+      "source": "assets/historical/processed/巨石阵_ai_cartoon.png",
+      "reference": "assets/historical/巨石阵.jpg",
+      "width": 1920,
+      "height": 1024,
+      "sha256": "f032aa10eb50ee0f48f1662626bf784f88635331a828cbad37f6e8c5f5377547",
+      "png": "assets/generated_wonders/tv_wonder_unique_stonehenge.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_stonehenge.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_stonehenge_cropped.dds",
+      "crop_rect": [
+        0.0,
+        120.88888888888891,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "61de0fe0e2d02eb6924388421f9ba051ec7699c09e3ae52d9d5dae5b01388b7b",
+      "cropped_dds_sha256": "0276b9532880f8710c5b0390c5bae79e3288b7d4b6021be8f8235b773315d595"
+    },
+    {
+      "name": "卡尔卡松城堡",
+      "stem": "tv_wonder_unique_carcassonne_castle",
+      "source": "assets/historical/processed/卡尔卡松城堡_ai_cartoon.png",
+      "reference": "assets/historical/卡尔卡松城堡.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "ce652cbbc4619396b526baad76aa9dd5cc8b0bb6c9c4982b9e99e1d9079b9bf5",
+      "png": "assets/generated_wonders/tv_wonder_unique_carcassonne_castle.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_carcassonne_castle.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_carcassonne_castle_cropped.dds",
+      "crop_rect": [
+        0.0,
+        49.777777777777786,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "b3185315d9360043d494f65ca049334b727d6dc402d9bbae0f4a4d2807e58c76",
+      "cropped_dds_sha256": "22c402c461170ebd7f0e6e6f1c8bd07981ae47b0b466b49277b113ffc5cc7902"
+    },
+    {
+      "name": "卡霍基亚土丘城",
+      "stem": "tv_wonder_unique_cahokia_mounds",
+      "source": "assets/historical/processed/卡霍基亚土丘城_ai_cartoon.png",
+      "reference": "assets/historical/卡霍基亚土丘城.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "6f27f0f90f001239883f60d84319bcfa19cd2e974b580ef4fb7347bb3fa9ce98",
+      "png": "assets/generated_wonders/tv_wonder_unique_cahokia_mounds.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cahokia_mounds.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cahokia_mounds_cropped.dds",
+      "crop_rect": [
+        0.0,
+        248.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "f67844867ed26873e3fcc30f085f75fc9cbb57e20345ded6e2634507f4ed0de6",
+      "cropped_dds_sha256": "5fa36f0a7fe93c068d89734361c98cd4286cd8e58320dc2152ca882cb0649b0c"
+    },
+    {
+      "name": "卡拉拉大理石矿",
+      "stem": "tv_wonder_unique_carrara_marble_quarries",
+      "source": "assets/historical/processed/卡拉拉大理石矿_ai_cartoon.png",
+      "reference": "assets/historical/卡拉拉大理石矿.jpg",
+      "width": 2048,
+      "height": 1152,
+      "sha256": "74899ea56e909442859dc67d1859b2f270db78996b7bc80fde80135620e0dea5",
+      "png": "assets/generated_wonders/tv_wonder_unique_carrara_marble_quarries.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_carrara_marble_quarries.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_carrara_marble_quarries_cropped.dds",
+      "crop_rect": [
+        0.0,
+        158.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "f0877147086cf57bab494e13aa56a72a1d68cb44431c8be7f98107ddf71d37e7",
+      "cropped_dds_sha256": "412fd20dfcb58d67d8839553cd012d0f5c2ddf6aa4d1364e70e378f5ec3e0978"
+    },
+    {
+      "name": "卡利卡特港市",
+      "stem": "tv_wonder_unique_calicut_port_city",
+      "source": "assets/historical/processed/卡利卡特港市_ai_cartoon.png",
+      "reference": "assets/historical/卡利卡特港市.jpg",
+      "width": 1920,
+      "height": 784,
+      "sha256": "f4f19731b4fd6991817df3a1fdacea176452382cf2cac176aa753e0c7530f0e2",
+      "png": "assets/generated_wonders/tv_wonder_unique_calicut_port_city.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_calicut_port_city.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_calicut_port_city_cropped.dds",
+      "crop_rect": [
+        0.0,
+        0.8888888888889142,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "d892aa0b04076f61ca33fc7ce4b01a90792e5fb05abacb1e0be791b64ab3a3af",
+      "cropped_dds_sha256": "d336a43225f08f5272fd70746c1b580bffca16618160732164d1dd36c6a3a694"
+    },
+    {
+      "name": "凯鲁万圣城",
+      "stem": "tv_wonder_unique_kairouan_holy_city",
+      "source": "assets/historical/processed/凯鲁万圣城_ai_cartoon.png",
+      "reference": "assets/historical/凯鲁万圣城.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "53d3a5927ecce1652b0129df3ed03b023e22e1e27fb5f849e5a86c1d39c5c2f1",
+      "png": "assets/generated_wonders/tv_wonder_unique_kairouan_holy_city.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_kairouan_holy_city.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_kairouan_holy_city_cropped.dds",
+      "crop_rect": [
+        0.0,
+        105.12592592592594,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "9d2ac39e199f3da83f8ba2857e0a40cb3f757a112f4a75404efe54566a74a6fe",
+      "cropped_dds_sha256": "40b3e6eff06ec76d4a609aa241bbc2a97e1e4bd7fd88194d00746dbc3ca9631e"
+    },
+    {
+      "name": "坎儿井",
+      "stem": "tv_wonder_unique_persian_qanat",
+      "source": "assets/historical/processed/坎儿井_ai_cartoon.png",
+      "reference": "assets/historical/坎儿井.jpg",
+      "width": 1280,
+      "height": 720,
+      "sha256": "5b3c38a937572e6bd9d222b8f0173ec12b024f6d667d5f02fea625d5162ce140",
+      "png": "assets/generated_wonders/tv_wonder_unique_persian_qanat.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_persian_qanat.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_persian_qanat_cropped.dds",
+      "crop_rect": [
+        0.0,
+        99.25925925925924,
+        1280.0,
+        521.4814814814815
+      ],
+      "dds_sha256": "359566ade88dcec900cfbcdb86d4aaceeb42144693b4f6493ac12e37c7e7fdb8",
+      "cropped_dds_sha256": "2bde1c09e4da3db06e4ffa3b39605bdbe23bf6340544dcdd7460c839f9e50b80"
+    },
+    {
+      "name": "科尔马旧城",
+      "stem": "tv_wonder_unique_colmar_old_town",
+      "source": "assets/historical/processed/科尔马旧城_ai_cartoon.png",
+      "reference": "assets/historical/科尔马旧城.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "61e0140a9a811a70bf82343d38a4f964dff4e34b71acb1a579c9acf2cebaea02",
+      "png": "assets/generated_wonders/tv_wonder_unique_colmar_old_town.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_colmar_old_town.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_colmar_old_town_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "215c8c5daf0162ed6e5dceece1302950a010eaf359ffd573342ad8c5a8498635",
+      "cropped_dds_sha256": "69a6a2e0c0a8b6c64723d08b39aad4ac15906e5fec83ddfb62f55967930f66f8"
+    },
+    {
+      "name": "科隆大教堂",
+      "stem": "tv_wonder_unique_cologne_cathedral",
+      "source": "assets/historical/processed/科隆大教堂_ai_cartoon.png",
+      "reference": "assets/historical/科隆大教堂.jpg",
+      "width": 1808,
+      "height": 1104,
+      "sha256": "10fb964647e63ce7cac25fa4927c434bf7249dfbc88ad0156a89b3a10edcdbfa",
+      "png": "assets/generated_wonders/tv_wonder_unique_cologne_cathedral.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cologne_cathedral.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cologne_cathedral_cropped.dds",
+      "crop_rect": [
+        0.0,
+        73.48148148148148,
+        1808.0,
+        736.5925925925926
+      ],
+      "dds_sha256": "47df39179f692f97276f6d45ab9d3929e20a16e41a4d525a4cef417817fb1d68",
+      "cropped_dds_sha256": "8518c7ae3a0d402b3cb1e3753f909fc60c72a6343e850f2454ff9688841b341c"
+    },
+    {
+      "name": "科纳克太阳神庙",
+      "stem": "tv_wonder_unique_konark_sun_temple",
+      "source": "assets/historical/processed/科纳克太阳神庙_ai_cartoon.png",
+      "reference": "assets/historical/科纳克太阳神庙.jpg",
+      "width": 1920,
+      "height": 1376,
+      "sha256": "bc81c516730f578e3aa7f8a6101b4428a5b275a1e23eeedcf377e3722a6e6d95",
+      "png": "assets/generated_wonders/tv_wonder_unique_konark_sun_temple.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_konark_sun_temple.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_konark_sun_temple_cropped.dds",
+      "crop_rect": [
+        0.0,
+        89.06666666666668,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "87885cbe28207980be52cd2dbc4b0cec413c978a5bf277d9a2ccbd6e0c0f7700",
+      "cropped_dds_sha256": "c2a59e7a38ff4640c3d7643ffa4dfb722983ccbc861bf6341efb81ee71bf27cf"
+    },
+    {
+      "name": "孔雀王座",
+      "stem": "tv_wonder_unique_peacock_throne",
+      "source": "assets/historical/processed/孔雀王座_ai_cartoon.png",
+      "reference": "assets/historical/孔雀王座.jpg",
+      "width": 1360,
+      "height": 2048,
+      "sha256": "d4b8c42c89fead0b60049b8945a7e3ffb1d99cdc8fc5416b96415230c1b7026b",
+      "png": "assets/generated_wonders/tv_wonder_unique_peacock_throne.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_peacock_throne.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_peacock_throne_cropped.dds",
+      "crop_rect": [
+        0.0,
+        746.962962962963,
+        1360.0,
+        554.074074074074
+      ],
+      "dds_sha256": "0394e069853b1eef6e8f074ea0c9af22298dc67e3e9cce9909101d9a88a85c93",
+      "cropped_dds_sha256": "92e3b686df6c8ddcdbcca64f1a53d0ec6f5cb7fbe5c30519b4474371a244e183"
+    },
+    {
+      "name": "拉利贝拉岩石教堂群",
+      "stem": "tv_wonder_unique_lalibela_churches",
+      "source": "assets/historical/processed/拉利贝拉岩石教堂群_ai_cartoon.png",
+      "reference": "assets/historical/拉利贝拉岩石教堂群.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "49c8c0706a474d41dd85a975ed02329bac4ee950ce66d436badef7710e45a8ed",
+      "png": "assets/generated_wonders/tv_wonder_unique_lalibela_churches.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_lalibela_churches.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_lalibela_churches_cropped.dds",
+      "crop_rect": [
+        0.0,
+        248.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "5a015ed500f0aa04ee816148ec78136f1e63675d57d867ba0a4ea865ef7bae59",
+      "cropped_dds_sha256": "aac3975432471a8bca053c013ffa628649d23d1f723ed4fcc07b1a7d6fad22c3"
+    },
+    {
+      "name": "雷吉斯坦广场",
+      "stem": "tv_wonder_unique_registan_square",
+      "source": "assets/historical/processed/雷吉斯坦广场_ai_cartoon.png",
+      "reference": "assets/historical/雷吉斯坦广场.jpg",
+      "width": 2240,
+      "height": 960,
+      "sha256": "3b2ab85754ea4d08596ddd639b74b90dd515b4631344068d2fab95ef64f0a556",
+      "png": "assets/generated_wonders/tv_wonder_unique_registan_square.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_registan_square.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_registan_square_cropped.dds",
+      "crop_rect": [
+        0.0,
+        23.703703703703695,
+        2240.0,
+        912.5925925925926
+      ],
+      "dds_sha256": "a5d375e8cb017923991efc2ee0e49462a9dd8a98af8159e407b3ebcb6e7cf904",
+      "cropped_dds_sha256": "8e1bb7b8e01a84faf08ec403b58193211fd4913f51e2f51bf037dfba3f15e106"
+    },
+    {
+      "name": "里昂丝绸工坊区",
+      "stem": "tv_wonder_unique_lyon_silk_workshops",
+      "source": "assets/historical/processed/里昂丝绸工坊区_ai_cartoon.png",
+      "reference": "assets/historical/里昂丝绸工坊区.jpg",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e634e8319bcf94ff21aecf6066ce784a6f5eb00dd64e1b02f3af0a6f64b8be20",
+      "png": "assets/generated_wonders/tv_wonder_unique_lyon_silk_workshops.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_lyon_silk_workshops.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_lyon_silk_workshops_cropped.dds",
+      "crop_rect": [
+        0.0,
+        199.11111111111114,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "1e88c819dacf8f2135e031a6c5a7f8c727cc19d3f881602271ce8d009af0c97f",
+      "cropped_dds_sha256": "de5bc7f0c359d31728b5eb4dba0c30f50939c67ae2019d5eb221be141c3dc38a"
+    },
+    {
+      "name": "卢浮宫",
+      "stem": "tv_wonder_unique_louvre_palace",
+      "source": "assets/historical/processed/卢浮宫_ai_cartoon.png",
+      "reference": "assets/historical/卢浮宫.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "28445f0d0699ba655674a8e05d89da6314834d45d488001e74f24ce008bb4522",
+      "png": "assets/generated_wonders/tv_wonder_unique_louvre_palace.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_louvre_palace.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_louvre_palace_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "73bbd5860ec9e18861b5583f1ddfc879581f7f381fa3822623cf9cd55ae0c877",
+      "cropped_dds_sha256": "450e3dc997f58e986b1ae44044183d93ebfc06d8cd5116b35704f68b236d2fdf"
+    },
+    {
+      "name": "伦敦塔",
+      "stem": "tv_wonder_unique_tower_of_london",
+      "source": "assets/historical/processed/伦敦塔_ai_cartoon.png",
+      "reference": "assets/historical/伦敦塔.jpg",
+      "width": 1920,
+      "height": 1200,
+      "sha256": "12168258539ebb6233fafe313d0e28d1d84c38db788148bb9105f8e7554f1eaa",
+      "png": "assets/generated_wonders/tv_wonder_unique_tower_of_london.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tower_of_london.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tower_of_london_cropped.dds",
+      "crop_rect": [
+        0.0,
+        62.66666666666667,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "610e1c9ef5f06efdcfe49e522bb994e7376fa4effc5e374d3fe79a9a09d178c1",
+      "cropped_dds_sha256": "f2ee2ac5775fe3bfad3e289acef67c9135ed29d8ab5b65495d743c7c1b610674"
+    },
+    {
+      "name": "罗马引水道",
+      "stem": "tv_wonder_unique_roman_aqueducts",
+      "source": "assets/historical/processed/罗马引水道_ai_cartoon.png",
+      "reference": "assets/historical/罗马引水道.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "f3743e0686a4e06ee9c67bf254996d55fcbb92730294914c62359afd9eddcfa8",
+      "png": "assets/generated_wonders/tv_wonder_unique_roman_aqueducts.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_roman_aqueducts.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_roman_aqueducts_cropped.dds",
+      "crop_rect": [
+        0.0,
+        24.888888888888893,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "68d1df63f9cd2e2e374c83eb423da21d15d0f17c296d7ee8c86555fdd129c72d",
+      "cropped_dds_sha256": "d8fb9d490610ff9437910f22f307ba11f3e2ad67a22a89a60dc60bd8c7aca637"
+    },
+    {
+      "name": "马尔堡城堡",
+      "stem": "tv_wonder_unique_malbork_castle",
+      "source": "assets/historical/processed/马尔堡城堡_ai_cartoon.png",
+      "reference": "assets/historical/马尔堡城堡.jpg",
+      "width": 1920,
+      "height": 1264,
+      "sha256": "128bf2c799e7f776be02f814fdf11942c014e553701c42e8e01615d6f3cb2cd7",
+      "png": "assets/generated_wonders/tv_wonder_unique_malbork_castle.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_malbork_castle.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_malbork_castle_cropped.dds",
+      "crop_rect": [
+        0.0,
+        96.35555555555557,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "44ba4419e9df7fa7b58b4b654080e0dd48ccd036054235d4e28433fae1948ae5",
+      "cropped_dds_sha256": "1053c90d1cef2a50044f512188ef6d35dfeff2c19725f207cd27a4bf976c8b14"
+    },
+    {
+      "name": "马拉盖天文台",
+      "stem": "tv_wonder_unique_maragheh_observatory",
+      "source": "assets/historical/processed/马拉盖天文台_ai_cartoon.png",
+      "reference": "assets/historical/马拉盖天文台.jpg",
+      "width": 1360,
+      "height": 2048,
+      "sha256": "f339395959cf4b3fdfe741bc975034d6739c418e6d7f58d3eb683d86fd0a79a6",
+      "png": "assets/generated_wonders/tv_wonder_unique_maragheh_observatory.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_maragheh_observatory.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_maragheh_observatory_cropped.dds",
+      "crop_rect": [
+        0.0,
+        746.962962962963,
+        1360.0,
+        554.074074074074
+      ],
+      "dds_sha256": "750eb6e143d37afc8c2a324bff48d4e6e87017c897f3695b89fddab0ba09c988",
+      "cropped_dds_sha256": "ed79f8d67e5a062f1a9dd64f4d9971fddee615f9d0eee907c93538d28d93b9f1"
+    },
+    {
+      "name": "马六甲港",
+      "stem": "tv_wonder_unique_malacca_port",
+      "source": "assets/historical/processed/马六甲港_ai_cartoon.png",
+      "reference": "assets/historical/马六甲港.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "77284e0b1fa9243311d290702cd75abcca684adec54977e1743121c59ab7ebca",
+      "png": "assets/generated_wonders/tv_wonder_unique_malacca_port.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_malacca_port.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_malacca_port_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "dd7ea2661909dc86ef9b4941a6d7ab321920955176fc8376ee7cbf231b01637e",
+      "cropped_dds_sha256": "6db6b40704b1b3f470d830639978af77fa5d5a2f6cb2448ec16c18293ca5c12c"
+    },
+    {
+      "name": "马丘比丘",
+      "stem": "tv_wonder_unique_machu_picchu",
+      "source": "assets/historical/processed/马丘比丘_ai_cartoon.png",
+      "reference": "assets/historical/马丘比丘.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "deed9dc4e0b4a4aa6bd485ae14a150f1d862e8b142f363ef9f67d4f17534d0f0",
+      "png": "assets/generated_wonders/tv_wonder_unique_machu_picchu.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_machu_picchu.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_machu_picchu_cropped.dds",
+      "crop_rect": [
+        0.0,
+        52.56296296296297,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "18ed6b847a80b53718e08ec22008b0e7d01e4e44e6c6221d905a6d3abde527ee",
+      "cropped_dds_sha256": "dd29b0ac9e706746e8ddaee6aea7a9607630e58e2cc0433e9a148ffc91c2cc43"
+    },
+    {
+      "name": "马丘比丘梯田",
+      "stem": "tv_wonder_unique_machu_picchu_terraces",
+      "source": "assets/historical/processed/马丘比丘梯田_ai_cartoon.png",
+      "reference": "assets/historical/马丘比丘梯田.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "b7f00486ec320e39c6c166322c22da31c6dc6c03df91546d6bfa4ca2f8b54f4a",
+      "png": "assets/generated_wonders/tv_wonder_unique_machu_picchu_terraces.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_machu_picchu_terraces.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_machu_picchu_terraces_cropped.dds",
+      "crop_rect": [
+        0.0,
+        248.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "79aa7accb898ffa7fd3e39580c2292579882f4cf9c957f5a84951c6ff817b8c8",
+      "cropped_dds_sha256": "dee7c9d2e70d2bd941867190481dfd45aef6c0ab54a9cff42ce32fade124f7a8"
+    },
+    {
+      "name": "马赛旧港",
+      "stem": "tv_wonder_unique_marseille_old_port",
+      "source": "assets/historical/processed/马赛旧港_ai_cartoon.png",
+      "reference": "assets/historical/马赛旧港.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "48d8344239c50627e54f6aff27d521e6deb41ee02aac711bfcd6a6125e2fa7f4",
+      "png": "assets/generated_wonders/tv_wonder_unique_marseille_old_port.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_marseille_old_port.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_marseille_old_port_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "38cba64f98925760da011ab004b6c735d26c7633c9ce20cc4f789eb47e0fc7b7",
+      "cropped_dds_sha256": "2d52cdcaf34407440392379df2df80d2478fb80d51f45fd7d784e3ec7b629650"
+    },
+    {
+      "name": "麦加禁寺扩建",
+      "stem": "tv_wonder_unique_mecca_haram_expansion",
+      "source": "assets/historical/processed/麦加禁寺扩建_ai_cartoon.png",
+      "reference": "assets/historical/麦加禁寺扩建.png",
+      "width": 2048,
+      "height": 1024,
+      "sha256": "f638386111a0d4c2f1b22f24e6cb480b7d927d21d3ee8bbcc27ff1fac0747e26",
+      "png": "assets/generated_wonders/tv_wonder_unique_mecca_haram_expansion.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mecca_haram_expansion.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mecca_haram_expansion_cropped.dds",
+      "crop_rect": [
+        0.0,
+        94.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "9e23c59bee48a6d43d58b47e2a65d68e739b04e8735c4af1b003e2efe480c496",
+      "cropped_dds_sha256": "8fef8852e55cf57952da720dda4d9ce3d007bb70ebaff663f2439c736865520f"
+    },
+    {
+      "name": "梅黛奥拉修道院",
+      "stem": "tv_wonder_unique_meteora_monasteries",
+      "source": "assets/historical/processed/梅黛奥拉修道院_ai_cartoon.png",
+      "reference": "assets/historical/梅黛奥拉修道院.jpg",
+      "width": 1920,
+      "height": 1088,
+      "sha256": "db93ffdc0846276e738a5328fb8783293c1531723c5a3b6ec11920f5bf20ab79",
+      "png": "assets/generated_wonders/tv_wonder_unique_meteora_monasteries.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_meteora_monasteries.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_meteora_monasteries_cropped.dds",
+      "crop_rect": [
+        0.0,
+        30.577777777777783,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "df3b40220442d8fcddc07ca8098d5cf9d0f66612e1a67ae94a95d65d9409c3f3",
+      "cropped_dds_sha256": "e41b41be02650b3366c6bbe6d9ecc6a8f27ac2d357126c65c7eeedb7a6271b15"
+    },
+    {
+      "name": "美泉宫",
+      "stem": "tv_wonder_unique_schoenbrunn_palace",
+      "source": "assets/historical/processed/美泉宫_ai_cartoon.png",
+      "reference": "assets/historical/美泉宫.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "dd323dad45644060e740153d12787f44442b2c6882f65f338a006ff07a9af039",
+      "png": "assets/generated_wonders/tv_wonder_unique_schoenbrunn_palace.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_schoenbrunn_palace.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_schoenbrunn_palace_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "8b36cb2a10f48f22f4b8449b4480c11f4e919c85d596f4ee02331b9cb016ebae",
+      "cropped_dds_sha256": "d86f0dc2bf9d087dc915578985b07880960598efe31ee70f5183eeb235929704"
+    },
+    {
+      "name": "米兰兵工厂",
+      "stem": "tv_wonder_unique_milan_arsenal",
+      "source": "assets/historical/processed/米兰兵工厂_ai_cartoon.png",
+      "reference": "assets/historical/米兰兵工厂.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "b056c41b487475a1e15a6cfd42a8bf585286ee5e56bf8d982d4c853f42aacbe7",
+      "png": "assets/generated_wonders/tv_wonder_unique_milan_arsenal.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_milan_arsenal.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_milan_arsenal_cropped.dds",
+      "crop_rect": [
+        0.0,
+        52.56296296296297,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "77dd63ab75861311fdc21994dcec58897b8ad7b6b0b9613bb3cfe0f6efc2d430",
+      "cropped_dds_sha256": "4cb3ef255a300347d740f87f004c57ee350aff2c3e2a395cbe460260a01010ba"
+    },
+    {
+      "name": "米兰大教堂",
+      "stem": "tv_wonder_unique_milan_cathedral",
+      "source": "assets/historical/processed/米兰大教堂_ai_cartoon.png",
+      "reference": "assets/historical/米兰大教堂.jpg",
+      "width": 1920,
+      "height": 1440,
+      "sha256": "06d7b2823a49d07854c4ea9777d9c35233a8d641968458c03053f4c24bdc101c",
+      "png": "assets/generated_wonders/tv_wonder_unique_milan_cathedral.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_milan_cathedral.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_milan_cathedral_cropped.dds",
+      "crop_rect": [
+        0.0,
+        26.311111111111114,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "3a30574513491d1977f74826d2b49b5a0c443797813280fe66e77e6b62a517e6",
+      "cropped_dds_sha256": "5bdac5f9f986d804a90557cb10273e4a0a7cc4c98aad76fae848e7a92dcf8f15"
+    },
+    {
+      "name": "明龙江船厂",
+      "stem": "tv_wonder_unique_longjiang_shipyard",
+      "source": "assets/historical/processed/明龙江船厂_ai_cartoon.png",
+      "reference": "assets/historical/明龙江船厂.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "7d174f81344283f1f2ffb1c6242f5990c96e165c491a1a8a33d3dedc0915ad1e",
+      "png": "assets/generated_wonders/tv_wonder_unique_longjiang_shipyard.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_longjiang_shipyard.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_longjiang_shipyard_cropped.dds",
+      "crop_rect": [
+        0.0,
+        78.84444444444445,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "fe795de162a87945fa4d8d001e00ea0eb26c865d77624e1fb893548cbc1b22a7",
+      "cropped_dds_sha256": "c8e17faa64374c712a98f67ae2569232e41c7b225f2c4edb0fdd1998504b18a0"
+    },
+    {
+      "name": "莫高窟",
+      "stem": "tv_wonder_unique_mogao_caves",
+      "source": "assets/historical/processed/莫高窟_ai_cartoon.png",
+      "reference": "assets/historical/莫高窟.jpg",
+      "width": 1024,
+      "height": 768,
+      "sha256": "b8e444ff050b36f94ee33331dbe2bcfe183595039a3a9090baac81ccf9e93a3c",
+      "png": "assets/generated_wonders/tv_wonder_unique_mogao_caves.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mogao_caves.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mogao_caves_cropped.dds",
+      "crop_rect": [
+        0.0,
+        35.08148148148148,
+        1024.0,
+        417.18518518518516
+      ],
+      "dds_sha256": "2e2d4359e56c6c1d50d691233814c50134d04ea78ade2c6f160f8b759ceac753",
+      "cropped_dds_sha256": "aff4330ba1ab0df03156653659c08e94c618683f75e2e622a353919859994083"
+    },
+    {
+      "name": "莫斯科克里姆林宫",
+      "stem": "tv_wonder_unique_kremlin",
+      "source": "assets/historical/processed/莫斯科克里姆林宫_ai_cartoon.png",
+      "reference": "assets/historical/莫斯科克里姆林宫.jpg",
+      "width": 1888,
+      "height": 1200,
+      "sha256": "972f56e0f2760ae161d5beca90d05e2e3bee11b8adca72342fd2497104ca0c94",
+      "png": "assets/generated_wonders/tv_wonder_unique_kremlin.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_kremlin.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_kremlin_cropped.dds",
+      "crop_rect": [
+        0.0,
+        43.08148148148148,
+        1888.0,
+        769.1851851851852
+      ],
+      "dds_sha256": "cabe320c2d77e171c6b7d0ffea132b47c8a3527379141a4977f2de98124078c6",
+      "cropped_dds_sha256": "c32f0d6017c1e2ae3bb45e76cb19c91976c7f00ab24f0e480b77ef0680015b6f"
+    },
+    {
+      "name": "慕尼黑皇家啤酒厂",
+      "stem": "tv_wonder_unique_munich_royal_brewery",
+      "source": "assets/historical/processed/慕尼黑皇家啤酒厂_ai_cartoon.png",
+      "reference": "assets/historical/慕尼黑皇家啤酒厂.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "09996592fa83ecbdf011441da73edd5d07d070ae178f65a4bb37d38b8866e2d8",
+      "png": "assets/generated_wonders/tv_wonder_unique_munich_royal_brewery.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_munich_royal_brewery.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_munich_royal_brewery_cropped.dds",
+      "crop_rect": [
+        0.0,
+        70.16296296296296,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "6d2e0cce773e1651744379cf17fe906dc2789f9c52ccad25562ae5c96da5a3ae",
+      "cropped_dds_sha256": "28293cccaddc0e71f5e9716fe154e78338302a73e163927388bf4db41706e977"
+    },
+    {
+      "name": "纳里卡拉要塞",
+      "stem": "tv_wonder_unique_narikala_fortress",
+      "source": "assets/historical/processed/纳里卡拉要塞_ai_cartoon.png",
+      "reference": "assets/historical/纳里卡拉要塞.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "0e7254414c26bd3dd7d7b853851404fe4f04c09bc2fb7253a1b963668fda1b9a",
+      "png": "assets/generated_wonders/tv_wonder_unique_narikala_fortress.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_narikala_fortress.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_narikala_fortress_cropped.dds",
+      "crop_rect": [
+        0.0,
+        131.40740740740742,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "37d2c5a40256d83e522b4c7067fda7ab99c94278a8c70c0a99a0b1b8d64065e2",
+      "cropped_dds_sha256": "ab9a99f464b251be33193b6692cbd3169af4f5e9aabbfc16f1ecf270fba128d9"
+    },
+    {
+      "name": "纽伦堡帝国城堡",
+      "stem": "tv_wonder_unique_nuremberg_imperial_castle",
+      "source": "assets/historical/processed/纽伦堡帝国城堡_ai_cartoon.png",
+      "reference": "assets/historical/纽伦堡帝国城堡.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "fbd0ff87689de8671b49a3002ea436819ad6ddb203c2cebe10143dfbace20b14",
+      "png": "assets/generated_wonders/tv_wonder_unique_nuremberg_imperial_castle.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_nuremberg_imperial_castle.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_nuremberg_imperial_castle_cropped.dds",
+      "crop_rect": [
+        0.0,
+        210.4888888888889,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "6432ffdcef611c7b027fc57d530c6c85faf9eed0fc4a0f9a0baf7f397797cdfa",
+      "cropped_dds_sha256": "9148f4fa3368262e1f9c127dd675e11c5b48704f340f561454bdd488bb5470a5"
+    },
+    {
+      "name": "萨格里什航海学校",
+      "stem": "tv_wonder_unique_sagres_navigation_school",
+      "source": "assets/historical/processed/萨格里什航海学校_ai_cartoon.png",
+      "reference": "assets/historical/萨格里什航海学校.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "7e7ddf8170fbbcd8ee5dd00e816594c245bdd64d87739a00df4b7c263c6ffe3c",
+      "png": "assets/generated_wonders/tv_wonder_unique_sagres_navigation_school.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sagres_navigation_school.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sagres_navigation_school_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "b4095f92f137a09d75523b54462fcb7cc79eac3aba3aeb46e23587ee5f98f7c2",
+      "cropped_dds_sha256": "486e92cfacfcb795ff2f269cdfbdda15f9e645684eae84aeb95cff2dcbac02fb"
+    },
+    {
+      "name": "萨那古城",
+      "stem": "tv_wonder_unique_sanaa_old_city",
+      "source": "assets/historical/processed/萨那古城_ai_cartoon.png",
+      "reference": "assets/historical/萨那古城.jpg",
+      "width": 2048,
+      "height": 1152,
+      "sha256": "87a60cd9da08f28716c41e844c77af94126dd2f61e93ddc688249598564800f9",
+      "png": "assets/generated_wonders/tv_wonder_unique_sanaa_old_city.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sanaa_old_city.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sanaa_old_city_cropped.dds",
+      "crop_rect": [
+        0.0,
+        47.64444444444445,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "8d16a2c057b9f31d2a86dc4bb7703aa447b2f12b55501073bf652a3cc2762e7b",
+      "cropped_dds_sha256": "475825a8dcbcd75653474d34b29c44ce21904b49d6c7db3936f5f83bcebaf22b"
+    },
+    {
+      "name": "三一修道院",
+      "stem": "tv_wonder_unique_trinity_lavra",
+      "source": "assets/historical/processed/三一修道院_ai_cartoon.png",
+      "reference": "assets/historical/三一修道院.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "e06e0d0b511c376148498efbe01601ecb015d2eccbd8837daeb5c3b57b7a5a5e",
+      "png": "assets/generated_wonders/tv_wonder_unique_trinity_lavra.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_trinity_lavra.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_trinity_lavra_cropped.dds",
+      "crop_rect": [
+        0.0,
+        52.56296296296297,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "7e207c4b76942a3edcf15da603efdb53f975e780f5f3e0a3b338dd86e9be310b",
+      "cropped_dds_sha256": "c39c57dd3297c00f371bfbed7600a85cf8ef6f7562d82b747098099a9988dd82"
+    },
+    {
+      "name": "桑科雷大学",
+      "stem": "tv_wonder_unique_sankore_university",
+      "source": "assets/historical/processed/桑科雷大学_ai_cartoon.png",
+      "reference": "assets/historical/桑科雷大学.jpg",
+      "width": 1472,
+      "height": 1040,
+      "sha256": "46d64adc1781df19ed88eff639e0289f0f6ea743033cb92a92aaab198e874fe2",
+      "png": "assets/generated_wonders/tv_wonder_unique_sankore_university.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sankore_university.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sankore_university_cropped.dds",
+      "crop_rect": [
+        0.0,
+        22.014814814814816,
+        1472.0,
+        599.7037037037037
+      ],
+      "dds_sha256": "5df59897a6a027784d63d3f8098183235fc2521122dfa22c04243d6f5c48093a",
+      "cropped_dds_sha256": "1dfe7ebdcfe1cc1a7a785f22ae777b0bf0c1e9c24b3f12c50aab29a4e19c90dd"
+    },
+    {
+      "name": "圣地亚哥朝圣路",
+      "stem": "tv_wonder_unique_camino_de_santiago",
+      "source": "assets/historical/processed/圣地亚哥朝圣路_ai_cartoon.png",
+      "reference": "assets/historical/圣地亚哥朝圣路.jpg",
+      "width": 1920,
+      "height": 1440,
+      "sha256": "d9343104b165144440578747efc33eb31f4fbeb946557fa8608976e4fa99a107",
+      "png": "assets/generated_wonders/tv_wonder_unique_camino_de_santiago.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_camino_de_santiago.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_camino_de_santiago_cropped.dds",
+      "crop_rect": [
+        0.0,
+        328.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "26073bbc615d0be42d4e5fff5392f1cfe7b459e66c45a56e60cf4116794219b4",
+      "cropped_dds_sha256": "c15148a741381e2193f4dfd8fa8a270bdb23da1d3b51db39b681373ed658bb44"
+    },
+    {
+      "name": "升龙文庙国子监",
+      "stem": "tv_wonder_unique_thang_long_temple_of_literature",
+      "source": "assets/historical/processed/升龙文庙国子监_ai_cartoon.png",
+      "reference": "assets/historical/升龙文庙国子监.jpg",
+      "width": 1552,
+      "height": 1024,
+      "sha256": "6369db78a6ee6b9c48fa159352f7fab7e9d03e9a1dfd7613e58651ff930ed122",
+      "png": "assets/generated_wonders/tv_wonder_unique_thang_long_temple_of_literature.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_thang_long_temple_of_literature.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_thang_long_temple_of_literature_cropped.dds",
+      "crop_rect": [
+        0.0,
+        195.85185185185185,
+        1552.0,
+        632.2962962962963
+      ],
+      "dds_sha256": "0e960ae2338a21c47010fe21653ba5f8917adec535d7dcef61ea6dfb8583993e",
+      "cropped_dds_sha256": "3d1549449b5e150ce2e9297c13d884be68f19e08a4d558d4e695632b9dde5888"
+    },
+    {
+      "name": "圣米歇尔山",
+      "stem": "tv_wonder_unique_mont_saint_michel",
+      "source": "assets/historical/processed/圣米歇尔山_ai_cartoon.png",
+      "reference": "assets/historical/圣米歇尔山.jpg",
+      "width": 1920,
+      "height": 1360,
+      "sha256": "596649ef038947488b663040230c7a7f10e6bb070b99abc458a83736faa053ca",
+      "png": "assets/generated_wonders/tv_wonder_unique_mont_saint_michel.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mont_saint_michel.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mont_saint_michel_cropped.dds",
+      "crop_rect": [
+        0.0,
+        23.111111111111114,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "5b6be0db7525f6ea8fd7861fb75156bf9d2767a6668bb82832bb98bc4fe5bce5",
+      "cropped_dds_sha256": "0cb96ad807c8a00a7d1387a3200c984982fdee29e913b0e558a8a45788410586"
+    },
+    {
+      "name": "圣母百花大教堂",
+      "stem": "tv_wonder_unique_santa_maria_del_fiore",
+      "source": "assets/historical/processed/圣母百花大教堂_ai_cartoon.png",
+      "reference": "assets/historical/圣母百花大教堂.jpg",
+      "width": 1920,
+      "height": 1392,
+      "sha256": "797c3269efb02424c8962a1f4d46f3c9d97f1795c58d335d4dfd860aeb82b37a",
+      "png": "assets/generated_wonders/tv_wonder_unique_santa_maria_del_fiore.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_santa_maria_del_fiore.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_santa_maria_del_fiore_cropped.dds",
+      "crop_rect": [
+        0.0,
+        121.95555555555558,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "7beb3ccd06e696bc6c7f4312012a9ba575b38177bd226ec50d976bdd2f13b976",
+      "cropped_dds_sha256": "51a81289eaeb3f0ae94a3bf08bed5cae18bc59c2b658208bbac4a0e9bdb66512"
+    },
+    {
+      "name": "圣乔治银行",
+      "stem": "tv_wonder_unique_bank_of_saint_george",
+      "source": "assets/historical/processed/圣乔治银行_ai_cartoon.png",
+      "reference": "assets/historical/圣乔治银行.jpg",
+      "width": 1920,
+      "height": 1296,
+      "sha256": "7db4d3dd3ea088745db64e5b8a1c34d5bb809a6930a7dd8cd4df8627d857fbca",
+      "png": "assets/generated_wonders/tv_wonder_unique_bank_of_saint_george.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bank_of_saint_george.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bank_of_saint_george_cropped.dds",
+      "crop_rect": [
+        0.0,
+        77.06666666666668,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "b558a519fa7b095273dba042909917ec608e79f0c8e157651aae7a1d5116762b",
+      "cropped_dds_sha256": "41bd9cc70df3e424a9de08ef8c91a2e79df13a331306be37b343f05b88323c9b"
+    },
+    {
+      "name": "圣索菲亚大教堂",
+      "stem": "tv_wonder_unique_hagia_sophia",
+      "source": "assets/historical/processed/圣索菲亚大教堂_ai_cartoon.png",
+      "reference": "assets/historical/圣索菲亚大教堂.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "f1bef5f6d87153a7888fe18697d176277e8b9368b49d595f31d077bba5fbd150",
+      "png": "assets/generated_wonders/tv_wonder_unique_hagia_sophia.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hagia_sophia.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hagia_sophia_cropped.dds",
+      "crop_rect": [
+        0.0,
+        31.53777777777778,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "48a99883ec7b06d4539798e1a72a80ff74d4ee0a08b5211effc6296d6bdb463a",
+      "cropped_dds_sha256": "a81e66f9372db1cb99e9e37afb2a3fc45676cf6726210aff4f62ef09a88656c8"
+    },
+    {
+      "name": "圣瓦西里大教堂",
+      "stem": "tv_wonder_unique_st_basils_cathedral",
+      "source": "assets/historical/processed/圣瓦西里大教堂_ai_cartoon.png",
+      "reference": "assets/historical/圣瓦西里大教堂.jpg",
+      "width": 2080,
+      "height": 1664,
+      "sha256": "f21b0ee1866d53253a6504e0c8cc1d3bba7aa54afb236a409aa0c63228a6ce2f",
+      "png": "assets/generated_wonders/tv_wonder_unique_st_basils_cathedral.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_st_basils_cathedral.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_st_basils_cathedral_cropped.dds",
+      "crop_rect": [
+        0.0,
+        32.6637037037037,
+        2080.0,
+        847.4074074074074
+      ],
+      "dds_sha256": "338bbfda1759b4539d2d62801680661ccdf19bc660d406a960330895cb4ce23f",
+      "cropped_dds_sha256": "52572b90ec715052c0a42646eb0b9bf1fd25c810459c1d2005852ceb5dfb44fc"
+    },
+    {
+      "name": "圣亚彼得大教堂",
+      "stem": "tv_wonder_unique_st_peters_basilica",
+      "source": "assets/historical/processed/圣亚彼得大教堂_ai_cartoon.png",
+      "reference": "assets/historical/圣亚彼得大教堂.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "2dea49548dcc2a8686ded6e2c73cf0d17740159a27ea8f9a1aed07c477a50aff",
+      "png": "assets/generated_wonders/tv_wonder_unique_st_peters_basilica.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_st_peters_basilica.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_st_peters_basilica_cropped.dds",
+      "crop_rect": [
+        0.0,
+        63.07555555555556,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "3a4dddf2b79a35fc87df00d4e131ce996f03f276867068edaa8b3bd30337a997",
+      "cropped_dds_sha256": "985ae28e1b49b2432e9a21eb9a0abbb97bb73cb7f39ba324c2d6b77aa92e42fb"
+    },
+    {
+      "name": "苏伊士古运河尝试",
+      "stem": "tv_wonder_unique_suez_ancient_canal",
+      "source": "assets/historical/processed/苏伊士古运河尝试_ai_cartoon.png",
+      "reference": "assets/historical/苏伊士古运河尝试.jpg",
+      "width": 1280,
+      "height": 640,
+      "sha256": "7218c6a5aadcb6f2935e315277032a679a356e024ca5736aa06e33c5e5e1394e",
+      "png": "assets/generated_wonders/tv_wonder_unique_suez_ancient_canal.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_suez_ancient_canal.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_suez_ancient_canal_cropped.dds",
+      "crop_rect": [
+        0.0,
+        59.25925925925924,
+        1280.0,
+        521.4814814814815
+      ],
+      "dds_sha256": "70782ee725151ebde8e7dc7a2ed3c6c8584348e60357e7b5b37a7432a574d243",
+      "cropped_dds_sha256": "23928fd91274f71a02ba89f720ee686dc8a0913f64d8e1933946a033bb62e895"
+    },
+    {
+      "name": "苏州古典园林",
+      "stem": "tv_wonder_unique_suzhou_classical_gardens",
+      "source": "assets/historical/processed/苏州古典园林_ai_cartoon.png",
+      "reference": "assets/historical/苏州古典园林.jpg",
+      "width": 1920,
+      "height": 1440,
+      "sha256": "851f0d235979b158577acaa529899518075dd46cfee4d8b1660d763630a9d8a7",
+      "png": "assets/generated_wonders/tv_wonder_unique_suzhou_classical_gardens.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_suzhou_classical_gardens.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_suzhou_classical_gardens_cropped.dds",
+      "crop_rect": [
+        0.0,
+        328.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "fee5e3adb60666407544c561018ee6c506c70e982fbc19d2abd7b4178c184435",
+      "cropped_dds_sha256": "b72a98c624c0d42b10bf05b5fb1f2a7fbbb08ecc06d1c78f309eedac8a8bc83e"
+    },
+    {
+      "name": "塔什干老城集市",
+      "stem": "tv_wonder_unique_tashkent_old_bazaar",
+      "source": "assets/historical/processed/塔什干老城集市_ai_cartoon.png",
+      "reference": "assets/historical/塔什干老城集市.png",
+      "width": 1280,
+      "height": 1024,
+      "sha256": "c33e401cfd73b8de70ca4dd6f814074790f3169a72c27e23ca00d8586b48088d",
+      "png": "assets/generated_wonders/tv_wonder_unique_tashkent_old_bazaar.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tashkent_old_bazaar.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tashkent_old_bazaar_cropped.dds",
+      "crop_rect": [
+        0.0,
+        251.25925925925924,
+        1280.0,
+        521.4814814814815
+      ],
+      "dds_sha256": "774b1fd90478d2103cf45ff313daa4ad835b3d0c8ee8c008cb26d4389aceb700",
+      "cropped_dds_sha256": "2a604141135d3e8be43fe450b72ca3353b6ad93ddc8aafd958b83ecd0e6dfbda"
+    },
+    {
+      "name": "泰姬陵",
+      "stem": "tv_wonder_unique_taj_mahal",
+      "source": "assets/historical/processed/泰姬陵_ai_cartoon.png",
+      "reference": "assets/historical/泰姬陵.jpg",
+      "width": 1920,
+      "height": 1264,
+      "sha256": "349ad3f8089b405a90a236db240da20a57ab04842c76b6a0fdc4a391a703e25b",
+      "png": "assets/generated_wonders/tv_wonder_unique_taj_mahal.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_taj_mahal.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_taj_mahal_cropped.dds",
+      "crop_rect": [
+        0.0,
+        48.177777777777784,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "b2e9e9de865738fd4a8d6720b46aeafbffe548fcd12e2ce3b5c0f844f02bc10b",
+      "cropped_dds_sha256": "919df172b61e009cb2f745b831ab2a7b4f75f4313f4d0805c456266c8d4da0c2"
+    },
+    {
+      "name": "特奥蒂瓦坎圣城",
+      "stem": "tv_wonder_unique_teotihuacan",
+      "source": "assets/historical/processed/特奥蒂瓦坎圣城_ai_cartoon.png",
+      "reference": "assets/historical/特奥蒂瓦坎圣城.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "53485657bacd60faa6385b4215d8be8ef8dfb20ee0ab2ac28bd8226f0a13340b",
+      "png": "assets/generated_wonders/tv_wonder_unique_teotihuacan.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_teotihuacan.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_teotihuacan_cropped.dds",
+      "crop_rect": [
+        0.0,
+        248.8888888888889,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "7f1a9b941d041603b36d0b776d87d74ed47e40849d273cfe928a9413927c739a",
+      "cropped_dds_sha256": "7f7cf929de2ac2d71678854136fe8232ce5f3002733f9a3c42e2d706fb5f5e41"
+    },
+    {
+      "name": "特诺奇蒂特兰堤道",
+      "stem": "tv_wonder_unique_tenochtitlan_causeways",
+      "source": "assets/historical/processed/特诺奇蒂特兰堤道_ai_cartoon.png",
+      "reference": "assets/historical/特诺奇蒂特兰堤道.jpg",
+      "width": 1920,
+      "height": 1008,
+      "sha256": "0acca6fc08b7fafc5fe78df60bfb84363b5e0c121f13cc5e147d27981db4753d",
+      "png": "assets/generated_wonders/tv_wonder_unique_tenochtitlan_causeways.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tenochtitlan_causeways.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tenochtitlan_causeways_cropped.dds",
+      "crop_rect": [
+        0.0,
+        112.88888888888891,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "112b7bf78fea0db92624fac21efb24860cd3ed38e17e2635db0af7db7cff4de7",
+      "cropped_dds_sha256": "0996b7c94bd691c0e0712c152fd7431904fa9716fdfb84296880fb13b74d3d4d"
+    },
+    {
+      "name": "天坛",
+      "stem": "tv_wonder_unique_temple_of_heaven",
+      "source": "assets/historical/processed/天坛_ai_cartoon.png",
+      "reference": "assets/historical/天坛.jpg",
+      "width": 1920,
+      "height": 1280,
+      "sha256": "a3192edfd0be083dca16171ff98f33517af7e39ff9ce5bc19f507f2b68e9cedc",
+      "png": "assets/generated_wonders/tv_wonder_unique_temple_of_heaven.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_temple_of_heaven.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_temple_of_heaven_cropped.dds",
+      "crop_rect": [
+        0.0,
+        49.777777777777786,
+        1920.0,
+        782.2222222222222
+      ],
+      "dds_sha256": "ba8cd856c80bb899cdf379d3b055bbcba42ca3bf9011c9c844511f158a410714",
+      "cropped_dds_sha256": "7279364cf8e47e49a26b8732440c16634101d6c25cf00cdfa886bcd280c547cf"
+    },
+    {
+      "name": "托莱多兵工厂",
+      "stem": "tv_wonder_unique_toledo_armory",
+      "source": "assets/historical/processed/托莱多兵工厂_ai_cartoon.png",
+      "reference": "assets/historical/托莱多兵工厂.jpg",
+      "width": 2080,
+      "height": 1664,
+      "sha256": "8a3653ded5a673ccc4b989a7c385d5b95aa32f24c49d601cb6a37e5b4556d1a5",
+      "png": "assets/generated_wonders/tv_wonder_unique_toledo_armory.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_toledo_armory.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_toledo_armory_cropped.dds",
+      "crop_rect": [
+        0.0,
+        408.2962962962963,
+        2080.0,
+        847.4074074074074
+      ],
+      "dds_sha256": "7f9e277202d0a3bcf19964b5d190cadb76161a12c7d41eb62c16be1762fa2bb3",
+      "cropped_dds_sha256": "ca06dabd617a491223c5894ca00272d252f62633d8278c2bef5d6d734e5f66dc"
+    },
+    {
+      "name": "托普卡帕宫",
+      "stem": "tv_wonder_unique_topkapi_palace",
+      "source": "assets/historical/processed/托普卡帕宫_ai_cartoon.png",
+      "reference": "assets/historical/托普卡帕宫.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "28368f71dc0efacb0ee8836ccd397522cb357dac79f8324bc504643e1746a15f",
+      "png": "assets/generated_wonders/tv_wonder_unique_topkapi_palace.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_topkapi_palace.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_topkapi_palace_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "360c188274576f7e0938e1f0bde710b7be8abd797b0735f6db88e1fe070a4d2e",
+      "cropped_dds_sha256": "7aa1bf7e433fef52707b307a2a33a350d2aaa35066bcfd0810384c074bb91e98"
+    },
+    {
+      "name": "瓦拉纳西河坛群",
+      "stem": "tv_wonder_unique_varanasi_ghats",
+      "source": "assets/historical/processed/瓦拉纳西河坛群_ai_cartoon.png",
+      "reference": "assets/historical/瓦拉纳西河坛群.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "17f03dfaf5eb4d3ea240b9864f5a65157e041d2a7ddb90d35269ac292a07626b",
+      "png": "assets/generated_wonders/tv_wonder_unique_varanasi_ghats.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_varanasi_ghats.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_varanasi_ghats_cropped.dds",
+      "crop_rect": [
+        0.0,
+        131.40740740740742,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "d52416dd1f887bf8b92c234e3e88203aca289fbeac710d65c5202dc53d1d805a",
+      "cropped_dds_sha256": "f3ef9c710f66b5ffdec89ba8da33fc22c23a11f12953640e5e41fb45a9e76cac"
+    },
+    {
+      "name": "瓦维尔城堡",
+      "stem": "tv_wonder_unique_wawel_castle",
+      "source": "assets/historical/processed/瓦维尔城堡_ai_cartoon.png",
+      "reference": "assets/historical/瓦维尔城堡.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "dde96863b6735327928bd619155137636dc67ae87719e56e35f952979325dbab",
+      "png": "assets/generated_wonders/tv_wonder_unique_wawel_castle.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wawel_castle.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wawel_castle_cropped.dds",
+      "crop_rect": [
+        0.0,
+        52.56296296296297,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "7be93b714d6b8a141270fab1f692dabb12a9d8544d3595c1bf165e335777ade3",
+      "cropped_dds_sha256": "0f4465854e5e3eee9f10df4ffafdb280053f16ad5dd14d9372ed52d04859b125"
+    },
+    {
+      "name": "维尔纽斯大学",
+      "stem": "tv_wonder_unique_vilnius_university",
+      "source": "assets/historical/processed/维尔纽斯大学_ai_cartoon.png",
+      "reference": "assets/historical/维尔纽斯大学.jpg",
+      "width": 2080,
+      "height": 1664,
+      "sha256": "9cf377fdd1430e4f0ae0804772aa3d5c792c817a5c35ce68e72bb5b10b6c0b47",
+      "png": "assets/generated_wonders/tv_wonder_unique_vilnius_university.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_vilnius_university.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_vilnius_university_cropped.dds",
+      "crop_rect": [
+        0.0,
+        48.995555555555555,
+        2080.0,
+        847.4074074074074
+      ],
+      "dds_sha256": "4af0520bda6e02181faac3e7f8eb7013c60d5aa2eae03b4ec88a044f7aa93e69",
+      "cropped_dds_sha256": "12ce1034d5356ef307868e5d99076c43c0542d160c34066b20a0555b8700b37e"
+    },
+    {
+      "name": "维利奇卡盐矿",
+      "stem": "tv_wonder_unique_wieliczka_salt_mine",
+      "source": "assets/historical/processed/维利奇卡盐矿_ai_cartoon.png",
+      "reference": "assets/historical/维利奇卡盐矿.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "90351a4beeefdb4f7be63494433f7b74522c72b0f553ed190157aa2577176fc6",
+      "png": "assets/generated_wonders/tv_wonder_unique_wieliczka_salt_mine.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wieliczka_salt_mine.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wieliczka_salt_mine_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "e1dcd3853aa101bacaddcbcd3aaa987f2a88132c710bb8689cea7c05f622d5d7",
+      "cropped_dds_sha256": "dd7561b33945863c21de461b3af95bf472846346dcec75d5b3d40c92d5fab744"
+    },
+    {
+      "name": "威尼斯军港",
+      "stem": "tv_wonder_unique_venetian_arsenal",
+      "source": "assets/historical/processed/威尼斯军港_ai_cartoon.png",
+      "reference": "assets/historical/威尼斯军港.jpg",
+      "width": 1280,
+      "height": 720,
+      "sha256": "30646ff82276d70268936d6b4c4c74e62e98f8295b14b58a9e40e63210ab2e62",
+      "png": "assets/generated_wonders/tv_wonder_unique_venetian_arsenal.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_venetian_arsenal.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_venetian_arsenal_cropped.dds",
+      "crop_rect": [
+        0.0,
+        9.925925925925924,
+        1280.0,
+        521.4814814814815
+      ],
+      "dds_sha256": "ca1b36034da15f9be27d5f76d7a5d6bc9870cc765fbdda147df0393b82252fa3",
+      "cropped_dds_sha256": "461bb38d583dbc3f47de4d31dfe91721df405ff5f7f00becc1f0e9d1b6e542fe"
+    },
+    {
+      "name": "吴哥窟",
+      "stem": "tv_wonder_unique_angkor_wat",
+      "source": "assets/historical/processed/吴哥窟_ai_cartoon.png",
+      "reference": "assets/historical/吴哥窟.jpg",
+      "width": 2048,
+      "height": 1152,
+      "sha256": "27744754d684de9b4f4575541bec4eea8e89a27027b280ce8f40b086619ad3e6",
+      "png": "assets/generated_wonders/tv_wonder_unique_angkor_wat.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_angkor_wat.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_angkor_wat_cropped.dds",
+      "crop_rect": [
+        0.0,
+        31.76296296296297,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "167c324a384719b238897b5ea41159d746cd64ce65221f8a5558b572b879c04a",
+      "cropped_dds_sha256": "1ff0430303327525529db9c10dd70b42f93da9d802acee651b496b9e4996e96f"
+    },
+    {
+      "name": "吴哥水利工程",
+      "stem": "tv_wonder_unique_angkor_hydraulic_system",
+      "source": "assets/historical/processed/吴哥水利工程_ai_cartoon.png",
+      "reference": "assets/historical/吴哥水利工程.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "fc6ddbd705e8d02c4d9b145718a45bf2e1fc0f4a6dcd50812622ff0e8b114b58",
+      "png": "assets/generated_wonders/tv_wonder_unique_angkor_hydraulic_system.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_angkor_hydraulic_system.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_angkor_hydraulic_system_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "936e96fea2aa4a783d074508144b1a7e90176357a6bb3055df5e49d335e97b1d",
+      "cropped_dds_sha256": "a891fd3573bd807de4cc63537bf263ea430037c182d964ce32e2be9dad110008"
+    },
+    {
+      "name": "西安钟鼓楼",
+      "stem": "tv_wonder_unique_xian_bell_and_drum_towers",
+      "source": "assets/historical/processed/西安钟鼓楼_ai_cartoon.png",
+      "reference": "assets/historical/西安钟鼓楼.jpg",
+      "width": 2080,
+      "height": 1664,
+      "sha256": "8ce3be512621d8474b794b9eb186183864dc2ecca7d60eff76ae46070cb1bbf4",
+      "png": "assets/generated_wonders/tv_wonder_unique_xian_bell_and_drum_towers.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_xian_bell_and_drum_towers.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_xian_bell_and_drum_towers_cropped.dds",
+      "crop_rect": [
+        0.0,
+        48.995555555555555,
+        2080.0,
+        847.4074074074074
+      ],
+      "dds_sha256": "635a32bacd89e8f31adbecc40527c0be032ed72372fe0dc12303fc73aca666a3",
+      "cropped_dds_sha256": "872ddecc375073db535c3e231118ca8eb5c5076911a370b987dd996ac1cdbe03"
+    },
+    {
+      "name": "西班牙白银舰队",
+      "stem": "tv_wonder_unique_spanish_silver_fleet",
+      "source": "assets/historical/processed/西班牙白银舰队_ai_cartoon.png",
+      "reference": "assets/historical/西班牙白银舰队.jpg",
+      "width": 2048,
+      "height": 1152,
+      "sha256": "b575f540d586573e92e5e773f5fedb1950e8d239480beb1c0861e2d8326545c2",
+      "png": "assets/generated_wonders/tv_wonder_unique_spanish_silver_fleet.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_spanish_silver_fleet.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_spanish_silver_fleet_cropped.dds",
+      "crop_rect": [
+        0.0,
+        158.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "fb9464bb990f7f5ccf6b0c68b279696dc6804c8305f29819037e39bafe00aaac",
+      "cropped_dds_sha256": "8e261585fa3d5bdac69220d952b468bed7ee5f622d83301b583eb6c36f0f4255"
+    },
+    {
+      "name": "希瓦古城",
+      "stem": "tv_wonder_unique_khiva_old_city",
+      "source": "assets/historical/processed/希瓦古城_ai_cartoon.png",
+      "reference": "assets/historical/希瓦古城.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "2436aa7d200e7ff85daba34dffc91631d59b3d463d9bea1890beb00adc72f2ad",
+      "png": "assets/generated_wonders/tv_wonder_unique_khiva_old_city.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_khiva_old_city.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_khiva_old_city_cropped.dds",
+      "crop_rect": [
+        0.0,
+        42.05037037037037,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "950a10c5c9e869e558fbf883902ec0a0a0ef774b7abab13710469ca787b7296b",
+      "cropped_dds_sha256": "a11849c3d405874bfdec38b4a08b19e731ca90269a19da54cb9d6b23bf4f43e9"
+    },
+    {
+      "name": "选帝会议殿",
+      "stem": "tv_wonder_unique_electoral_conference_hall",
+      "source": "assets/historical/processed/选帝会议殿_ai_cartoon.png",
+      "reference": "assets/historical/选帝会议殿.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "e16694ff21c67846f1150c1a1a3de14069fce084ae6d32dc7e9eea62267b20ae",
+      "png": "assets/generated_wonders/tv_wonder_unique_electoral_conference_hall.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_electoral_conference_hall.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_electoral_conference_hall_cropped.dds",
+      "crop_rect": [
+        0.0,
+        35.08148148148148,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "3f69324ce2dc0293fdd09c3c825f0e7e28de900a7faebbc4c37d219bf2dba175",
+      "cropped_dds_sha256": "6fda739d7bf15c26c8641f58009d07915143ce1ae65cca060e3dcee4c708bb25"
+    },
+    {
+      "name": "亚琛大教堂",
+      "stem": "tv_wonder_unique_aachen_cathedral",
+      "source": "assets/historical/processed/亚琛大教堂_ai_cartoon.png",
+      "reference": "assets/historical/亚琛大教堂.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "8e12b240867e96fd2bb57dd0cb2410611d030a90457fba9175c36329421e7fc5",
+      "png": "assets/generated_wonders/tv_wonder_unique_aachen_cathedral.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_aachen_cathedral.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_aachen_cathedral_cropped.dds",
+      "crop_rect": [
+        0.0,
+        105.24444444444445,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "70a4bb953329917d12c0d75f2e2d0d4e57ef87cf521f49893405cb946b728acb",
+      "cropped_dds_sha256": "5986bf4f25988b197d9715644f715b802dd825589688f7c9c37afecd452bc45e"
+    },
+    {
+      "name": "岩石圆顶圣殿",
+      "stem": "tv_wonder_unique_dome_of_the_rock",
+      "source": "assets/historical/processed/岩石圆顶圣殿_ai_cartoon.png",
+      "reference": "assets/historical/岩石圆顶圣殿.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "0a0451ff7b1b2eaad8955b5f435482bfd8dfdcaf39ecb8d9d37cbdcd773619ac",
+      "png": "assets/generated_wonders/tv_wonder_unique_dome_of_the_rock.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dome_of_the_rock.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dome_of_the_rock_cropped.dds",
+      "crop_rect": [
+        0.0,
+        0.0,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "d6b7324f2fef27d788663f9654daf7dcb2e0f591770b658e00ab8c1f1202bddb",
+      "cropped_dds_sha256": "5e4904936e79916b068bd88920715ff1fd6c769eaaf91090b391283a6f7c035e"
+    },
+    {
+      "name": "耶路撒冷圣城",
+      "stem": "tv_wonder_unique_jerusalem_holy_city",
+      "source": "assets/historical/processed/耶路撒冷圣城_ai_cartoon.png",
+      "reference": "assets/historical/耶路撒冷圣城.jpg",
+      "width": 2880,
+      "height": 960,
+      "sha256": "b36ca6c5efed640f6c2022b729d981dbe15373a86ba5fb238fe5705dfe945714",
+      "png": "assets/generated_wonders/tv_wonder_unique_jerusalem_holy_city.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jerusalem_holy_city.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jerusalem_holy_city_cropped.dds",
+      "crop_rect": [
+        261.81818181818176,
+        0.0,
+        2356.3636363636365,
+        960.0
+      ],
+      "dds_sha256": "d19f03b71af9283648e06924483c194355ec2c58474358040655b23d79a67f41",
+      "cropped_dds_sha256": "0af68771d9a16e05d90c053f065c3bbd8cfac5477f25df4d0a42477fa3bba74c"
+    },
+    {
+      "name": "伊比利亚宗教裁判所",
+      "stem": "tv_wonder_unique_iberian_inquisition",
+      "source": "assets/historical/processed/伊比利亚宗教裁判所_ai_cartoon.png",
+      "reference": "assets/historical/伊比利亚宗教裁判所.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "d753fca90aadd0cd3c1c73ff604a908c53c914a1f8a632454411f436d6eef177",
+      "png": "assets/generated_wonders/tv_wonder_unique_iberian_inquisition.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_iberian_inquisition.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_iberian_inquisition_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "37a9e906ac4757d41e0b3a0f6fde42a49287948e560ec51c55173ffa23194c79",
+      "cropped_dds_sha256": "2cfbf844370c18bdaeeeff9caac73bbf7e7f12b93ab9ee72a56722eb85012ae1"
+    },
+    {
+      "name": "伊斯法罕王家广场",
+      "stem": "tv_wonder_unique_isfahan_square",
+      "source": "assets/historical/processed/伊斯法罕王家广场_ai_cartoon.png",
+      "reference": "assets/historical/伊斯法罕王家广场.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "3cd53c34a19b6cfd53f75e2fb2bc50278b5d909ec9c12f43b49680314d91ca45",
+      "png": "assets/generated_wonders/tv_wonder_unique_isfahan_square.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_isfahan_square.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_isfahan_square_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "270ab0f3bf1e8169e7d3f870b11b00d20d666bf90c460d38ba85b6ecda1f6795",
+      "cropped_dds_sha256": "22a8fb0e9576e9e210e01a67631fafa1d31a481a9d2d97aa178b2e2b65675acc"
+    },
+    {
+      "name": "印加皇家道路网",
+      "stem": "tv_wonder_unique_inca_royal_road",
+      "source": "assets/historical/processed/印加皇家道路网_ai_cartoon.png",
+      "reference": "assets/historical/印加皇家道路网.jpg",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "0884efab71b6f61d3c34b6bc21cc3afcec7e00c3db3d6ec6aae467a77e66ae30",
+      "png": "assets/generated_wonders/tv_wonder_unique_inca_royal_road.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_inca_royal_road.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_inca_royal_road_cropped.dds",
+      "crop_rect": [
+        0.0,
+        559.4074074074074,
+        1024.0,
+        417.18518518518516
+      ],
+      "dds_sha256": "9a3fd15c1abdea0dbfc522fd832021e391b2155ab0b194c7a5462bf01915eddf",
+      "cropped_dds_sha256": "3c6aa0b442bafb8bf57fed8c6e1e58aab310ec3bb9f3675e5e331c5118e3148d"
+    },
+    {
+      "name": "云南卫所屯田带",
+      "stem": "tv_wonder_unique_yunnan_weisuo_colonies",
+      "source": "assets/historical/processed/云南卫所屯田带_ai_cartoon.png",
+      "reference": "assets/historical/云南卫所屯田带.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "f8f2dba62ff565be43c0af67c828d9fe738141b2f525b8863370fb3a59140146",
+      "png": "assets/generated_wonders/tv_wonder_unique_yunnan_weisuo_colonies.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_yunnan_weisuo_colonies.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_yunnan_weisuo_colonies_cropped.dds",
+      "crop_rect": [
+        0.0,
+        70.16296296296296,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "c28bf481ce67f166d225a6c125ffd69cb50b877e5fd82ac1ec1f869844e6c3eb",
+      "cropped_dds_sha256": "53ee2028db1d573de06c9169baf8f24dcbbebb53431baff33471d4ff10d512f3"
+    },
+    {
+      "name": "扎波罗热塞契",
+      "stem": "tv_wonder_unique_zaporizhian_sich",
+      "source": "assets/historical/processed/扎波罗热塞契_ai_cartoon.png",
+      "reference": "assets/historical/扎波罗热塞契.jpg",
+      "width": 2048,
+      "height": 1360,
+      "sha256": "e6add4188006062a95bda8bba9dacdc5a4f2646a5327df91272dacb935013f03",
+      "png": "assets/generated_wonders/tv_wonder_unique_zaporizhian_sich.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zaporizhian_sich.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zaporizhian_sich_cropped.dds",
+      "crop_rect": [
+        0.0,
+        262.81481481481484,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "20c037d7d20812b8e40959e9c2ad7786bfa5671878be401c5dbfa5438a22eb6a",
+      "cropped_dds_sha256": "12c909c4b04c218fc6da0ed8c1897780309040c4446738b9df0ac5e52ce2a9ce"
+    },
+    {
+      "name": "扎莫希奇理想城市",
+      "stem": "tv_wonder_unique_zamosc_ideal_city",
+      "source": "assets/historical/processed/扎莫希奇理想城市_ai_cartoon.png",
+      "reference": "assets/historical/扎莫希奇理想城市.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "08a09f038ffcd35d99303a0f663048d370fcd319aef7119797700e775db7b254",
+      "png": "assets/generated_wonders/tv_wonder_unique_zamosc_ideal_city.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zamosc_ideal_city.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zamosc_ideal_city_cropped.dds",
+      "crop_rect": [
+        0.0,
+        28.065185185185186,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "098269b0fc80f93d786203ee4b45a876abc299565006f13f8a07eeded66ffa57",
+      "cropped_dds_sha256": "7c9cb6b54204b1208c61bf9f206c5c74ba862a3e3329248124375b37f1cb0796"
+    },
+    {
+      "name": "智慧宫",
+      "stem": "tv_wonder_unique_house_of_wisdom",
+      "source": "assets/historical/processed/智慧宫_ai_cartoon.png",
+      "reference": "assets/historical/智慧宫.jpg",
+      "width": 1536,
+      "height": 2048,
+      "sha256": "5f726e08bbb2ad1382f18adf5c48abbda199b1fd82d20eba16f59bdeec1587c7",
+      "png": "assets/generated_wonders/tv_wonder_unique_house_of_wisdom.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_house_of_wisdom.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_house_of_wisdom_cropped.dds",
+      "crop_rect": [
+        0.0,
+        711.1111111111111,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "b8fc9b1d44a35c47616979ae96b9c3aadba19db276809feff574af9b2f7c2b2d",
+      "cropped_dds_sha256": "8aa1123f71b2ca738af5a8e3e14b0487a97b33f2491847e697ecbec86fd5de62"
+    },
+    {
+      "name": "舟山烽火台网",
+      "stem": "tv_wonder_unique_zhoushan_beacon_network",
+      "source": "assets/historical/processed/舟山烽火台网_ai_cartoon.png",
+      "reference": "assets/historical/舟山烽火台网.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "325374f8d47ed769a114fec6aa4b647de1398a91c29106556b473c44fad51cc4",
+      "png": "assets/generated_wonders/tv_wonder_unique_zhoushan_beacon_network.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zhoushan_beacon_network.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zhoushan_beacon_network_cropped.dds",
+      "crop_rect": [
+        0.0,
+        175.40740740740742,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "15cd68b1dc8f41652309e3e21710f7fe64cfa40d1d23e5187cf3df2d2e1501bd",
+      "cropped_dds_sha256": "baaeaa675f13e75665c5d43af1c567cd9ce2abd0a51ea35fe088587abfc987a5"
+    },
+    {
+      "name": "紫禁城",
+      "stem": "tv_wonder_unique_forbidden_city",
+      "source": "assets/historical/processed/紫禁城_ai_cartoon.png",
+      "reference": "assets/historical/紫禁城.jpg",
+      "width": 2048,
+      "height": 1536,
+      "sha256": "1b1394909a48162a3cf26459adc6569d276b59c9b9ac188270bb776cceb2857c",
+      "png": "assets/generated_wonders/tv_wonder_unique_forbidden_city.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_forbidden_city.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_forbidden_city_cropped.dds",
+      "crop_rect": [
+        0.0,
+        70.16296296296296,
+        2048.0,
+        834.3703703703703
+      ],
+      "dds_sha256": "ed3e360ff194d6ab658ce445fd1cfd0358f50e1dd87517e2f6153013291b67f5",
+      "cropped_dds_sha256": "fc6bcb76693a1a09fabeb6f2e6e1cd8bda7e7cc519556f2f12f4a6c72b714fb1"
+    }
+  ]
+}

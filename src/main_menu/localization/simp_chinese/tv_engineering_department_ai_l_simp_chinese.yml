@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+ tv_ed__wonder_control__ai_name: "AI 建造"
+ tv_ed__wonder_control__ai_desc: "控制 AI 国家按固定脚本推进伟大工程。"
+ tv_ed__ai_enabled_name: "允许 AI 建造伟大工程"
+ tv_ed__ai_enabled_desc: "AI 国家按固定条件任命工程师并推进工程。关闭后停止脚本代操作，既有自动进度与事件继续。其他建造流程设置仅对人类国家生效。"
+ tv_engineering_department.22.t: "失去工程地点"
+ tv_engineering_department.22.d: "我们失去了伟大工程所在的地点。工程已被迫放弃，并承担正常的失败惩罚。若能收复工地，仍然留存的工程可以续建。"
+ tv_engineering_department.22.a: "惨痛的挫折。"
+ tv_engineering_department_ai_log: "AI 伟大工程操作"

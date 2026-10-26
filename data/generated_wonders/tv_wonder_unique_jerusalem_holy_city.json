@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/耶路撒冷圣城_ai_cartoon.png",
+  "source_sha256": "b36ca6c5efed640f6c2022b729d981dbe15373a86ba5fb238fe5705dfe945714",
+  "reference": "assets/historical/耶路撒冷圣城.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Panoramic_View_of_the_old_city_from_Mount_of_Olives.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Gbecker248",
+    "date": "2013-09-29 17:20:49",
+    "note": "从橄榄山望耶路撒冷老城全景；去现代建筑和道路。"
+  }
+}

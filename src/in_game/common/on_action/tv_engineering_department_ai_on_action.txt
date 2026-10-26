@@ -1,0 +1,23 @@
+﻿# AI operations use the same state and effects as the player project.
+tv_engineering_department_ai_yearly_pulse = {
+	trigger = {
+		tv_engineering_department_ai_active_trigger = yes
+		tv_wonder_in_conception_trigger = yes
+		NOT = { tv_wonder_has_great_engineer_trigger = yes }
+		monthly_balance >= 300
+	}
+	effect = { hidden_effect = { tv_wonder_ai_appoint_engineer_effect = yes } }
+}
+
+tv_engineering_department_ai_monthly_pulse = {
+	trigger = {
+		tv_engineering_department_ai_active_trigger = yes
+		has_variable = tv_wonder_stage
+		OR = { tv_wonder_has_open_proposal_trigger = yes var:tv_wonder_stage ?= { this >= 1 } }
+	}
+	effect = {
+		hidden_effect = {
+			tv_engineering_department_ai_monthly_effect = yes
+		}
+	}
+}

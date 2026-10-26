@@ -1,0 +1,1004 @@
+import { escapeHtml } from "./display.js";
+import {
+    isStructuredFieldType,
+    stableStringify,
+    withoutEditorOptions,
+    deepClone,
+    renderSiteTriggerScript,
+    renderSitePreferenceScript,
+    previewTextForField,
+    normalizeOptionList,
+    optionsWithBlank,
+    optionPrimaryText,
+    optionSecondaryText,
+} from "./wonder_values.js";
+
+// ── Shared option-menu layer ────────────────────────────────────────────────────────────────────
+// Only one menu may be open at a time, and it is dismissed explicitly: a document-level
+// pointerdown outside it, Escape, or a focusout (for the keyboard path). The menu itself stays a
+// child of its .option-combobox but is positioned `fixed` by JS, which lifts it out of the editor's
+// scrolling box and out from under the sticky section headers. It is never opened by focus alone —
+// see the note on the input listeners below.
+let activeMenu = null;
+
+function closeOpenOptionMenu() {
+    const current = activeMenu;
+    activeMenu = null;
+    current?.close();
+}
+
+function repositionActiveMenu() {
+    activeMenu?.position?.();
+}
+
+if (typeof document !== "undefined") {
+    document.addEventListener("pointerdown", (event) => {
+        if (!activeMenu) return;
+        if (activeMenu.menu.contains(event.target)) return;
+        if (activeMenu.owner?.contains(event.target)) return;
+        closeOpenOptionMenu();
+    }, true);
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeOpenOptionMenu();
+    }, true);
+    window.addEventListener("resize", repositionActiveMenu);
+    document.addEventListener("scroll", repositionActiveMenu, true);
+}
+
+export function createWonderFields({ onChange, onOpenPrototype, onInitialLevelChange }) {
+    function createSingleLineEditorBinding(field, scope, onInput = null) {
+        const input = document.createElement("input");
+        const fieldType = field.field_type || "text";
+        input.type = fieldType === "number" ? "number" : "text";
+        input.value = field.value;
+        input.dataset.editorField = "true";
+        input.dataset.fieldScope = scope;
+        input.dataset.fieldType = fieldType;
+        input.dataset.key = field.key;
+        if (field.key.startsWith("mechanics.ritual_text.")) input.dataset.ritualTextInput = "true";
+        input.dataset.originalValue = field.original_value;
+        if (fieldType === "number") {
+            input.step = "1";
+        }
+        if (field.target_kind === "unique_initial_level") {
+            input.min = "0";
+            input.max = "6";
+            input.step = "1";
+        }
+        if (scope === "localization") {
+            input.dataset.language = field.language;
+        }
+        input.addEventListener("input", () => {
+            onChange(input);
+            onInput?.(input.value);
+        });
+        input.addEventListener("change", () => {
+            onChange(input);
+            onInput?.(input.value);
+        });
+        return input;
+    }
+
+    function createSearchableSelect(options, value, config = {}) {
+        const normalizedOptions = normalizeOptionList(options);
+        const wrapper = document.createElement("div");
+        wrapper.className = "option-combobox";
+        wrapper.dataset.displayMode = "localized";
+
+        const input = document.createElement("input");
+        input.type = "text";
+        input.autocomplete = "off";
+        input.spellcheck = false;
+        input.placeholder = config.placeholder || "Search...";
+
+        const modeButton = document.createElement("button");
+        modeButton.type = "button";
+        modeButton.className = "option-mode-button";
+        modeButton.textContent = "Text";
+
+        const openButton = document.createElement("button");
+        openButton.type = "button";
+        openButton.className = "option-open-button";
+        openButton.textContent = "v";
+        openButton.setAttribute("aria-label", "Open options");
+
+        const menu = document.createElement("div");
+        menu.className = "option-menu";
+        menu.hidden = true;
+        // The menu is portalled to <body> and positioned fixed. Inside the editor it sat in the
+        // panel's own stacking/clipping context, so the sticky section headers painted over it and
+        // the scrolling editor body cut it off. As a body-level fixed layer it escapes both.
+        menu.dataset.optionMenu = "true";
+
+        let currentValue = String(value ?? "");
+        let query = "";
+        let displayMode = "localized";
+
+        const selectedOption = () => normalizedOptions.find((option) => option.value === currentValue) || null;
+
+        const displayForValue = () => {
+            const option = selectedOption();
+            if (option) {
+                return optionPrimaryText(option, displayMode);
+            }
+            return currentValue;
+        };
+
+        const filteredOptions = () => {
+            const normalizedQuery = query.trim().toLowerCase();
+            if (!normalizedQuery) {
+                return normalizedOptions;
+            }
+            return normalizedOptions.filter((option) => option.search_text.includes(normalizedQuery));
+        };
+
+        // Menu placement. The menu is a fixed layer on <body>, so its position is derived from the
+        // wrapper's own rect every time it opens or the page moves. It flips above the field when
+        // there is not enough room below, and never leaves the viewport.
+        const MENU_MAX_HEIGHT = 280;
+        const positionMenu = () => {
+            if (menu.hidden) return;
+            const rect = wrapper.getBoundingClientRect();
+            const spaceBelow = window.innerHeight - rect.bottom - 8;
+            const spaceAbove = rect.top - 8;
+            const openUp = spaceBelow < Math.min(MENU_MAX_HEIGHT, menu.scrollHeight) && spaceAbove > spaceBelow;
+            const height = Math.max(80, Math.min(MENU_MAX_HEIGHT, openUp ? spaceAbove : spaceBelow));
+            menu.style.position = "fixed";
+            menu.style.left = `${Math.max(8, Math.min(rect.left, window.innerWidth - rect.width - 8))}px`;
+            menu.style.width = `${rect.width}px`;
+            menu.style.maxHeight = `${height}px`;
+            if (openUp) {
+                menu.style.top = "auto";
+                menu.style.bottom = `${window.innerHeight - rect.top + 4}px`;
+            } else {
+                menu.style.bottom = "auto";
+                menu.style.top = `${rect.bottom + 4}px`;
+            }
+        };
+
+        const setOpen = (isOpen) => {
+            if (isOpen) {
+                // Only one menu is ever open: close whatever the previous field left behind.
+                closeOpenOptionMenu();
+            }
+            menu.hidden = !isOpen;
+            wrapper.classList.toggle("open", isOpen);
+            if (isOpen) {
+                renderMenu();
+                positionMenu();
+                activeMenu = { menu, owner: wrapper, close: () => setOpen(false), position: positionMenu };
+            } else if (activeMenu?.menu === menu) {
+                activeMenu = null;
+            }
+        };
+
+        const renderInput = () => {
+            input.value = displayForValue();
+            const option = selectedOption();
+            input.title = option
+                ? `${option.key_label || option.value}\n${option.localized_label || option.label || ""}`
+                : currentValue;
+            modeButton.textContent = displayMode === "key" ? "Key" : "Text";
+            wrapper.dataset.displayMode = displayMode;
+        };
+
+        const commitValue = (nextValue) => {
+            currentValue = String(nextValue ?? "");
+            query = "";
+            renderInput();
+            setOpen(false);
+            wrapper.dispatchEvent(new Event("input", { bubbles: true }));
+            wrapper.dispatchEvent(new Event("change", { bubbles: true }));
+        };
+
+        const renderMenu = () => {
+            menu.innerHTML = "";
+            const matches = filteredOptions();
+            if (!matches.length) {
+                const empty = document.createElement("div");
+                empty.className = "option-empty";
+                empty.textContent = "No matching entries";
+                menu.append(empty);
+                return;
+            }
+            for (const option of matches) {
+                const item = document.createElement("button");
+                item.type = "button";
+                item.className = "option-item";
+                if (option.value === currentValue) {
+                    item.classList.add("selected");
+                }
+                const primary = optionPrimaryText(option, displayMode);
+                const secondary = optionSecondaryText(option, displayMode);
+                const description = displayMode === "key" ? option.description_zh || option.description_en : "";
+                item.innerHTML = `
+                <span class="option-item-main">${escapeHtml(primary || option.value || "(empty)")}</span>
+                <span class="option-item-sub">${escapeHtml(secondary || option.source || "")}</span>
+                ${description ? `<span class="option-item-desc">${escapeHtml(description)}</span>` : ""}
+            `;
+                item.addEventListener("mousedown", (event) => {
+                    event.preventDefault();
+                    commitValue(option.value);
+                });
+                menu.append(item);
+            }
+        };
+
+        Object.defineProperty(wrapper, "value", {
+            get() {
+                return currentValue;
+            },
+            set(nextValue) {
+                currentValue = String(nextValue ?? "");
+                query = "";
+                renderInput();
+                renderMenu();
+            },
+        });
+        Object.defineProperty(wrapper, "disabled", {
+            get() {
+                return input.disabled;
+            },
+            set(isDisabled) {
+                input.disabled = Boolean(isDisabled);
+                modeButton.disabled = Boolean(isDisabled);
+                openButton.disabled = Boolean(isDisabled);
+                wrapper.classList.toggle("disabled", Boolean(isDisabled));
+                if (isDisabled) {
+                    setOpen(false);
+                }
+            },
+        });
+
+        // Focusing a field must NOT open its menu. Focus moves on its own — committing a value hands
+        // focus to the next control, and the panel rebuilds its fields — so a focus-triggered open
+        // popped the first dropdown whenever any value was chosen. The menu now opens on an explicit
+        // click of the field or the arrow button, and while the operator types.
+        input.addEventListener("click", () => {
+            query = "";
+            setOpen(true);
+        });
+        input.addEventListener("input", () => {
+            query = input.value;
+            setOpen(true);
+        });
+        input.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowDown") {
+                event.preventDefault();
+                setOpen(true);
+                return;
+            }
+            if (event.key === "Enter") {
+                const first = filteredOptions()[0];
+                if (first) {
+                    event.preventDefault();
+                    commitValue(first.value);
+                }
+            } else if (event.key === "Escape") {
+                query = "";
+                renderInput();
+                setOpen(false);
+            }
+        });
+        modeButton.addEventListener("click", () => {
+            displayMode = displayMode === "key" ? "localized" : "key";
+            renderInput();
+            if (!menu.hidden) {
+                renderMenu();
+                positionMenu();
+            }
+        });
+        openButton.addEventListener("click", () => {
+            const shouldOpen = menu.hidden;
+            query = "";
+            renderInput();
+            // Focus the input before opening so the search box is ready to type into; the input's
+            // click handler is not involved because this is a programmatic focus.
+            if (shouldOpen) input.focus();
+            setOpen(shouldOpen);
+        });
+        // No `focusout` dismissal: a click on a non-focusable area leaves focus on the input, so the
+        // old timeout-based handler never fired and the menu stayed open. The document-level
+        // pointerdown handler at the top of this module owns closing instead.
+
+        // Keyboard dismissal. The document-level pointerdown handler closes the menu for mouse
+        // clicks (it fires even when the click lands on a non-focusable area, which is where the old
+        // focusout-only logic left the menu stuck open). This handler covers the keyboard path:
+        // tabbing out of the field must close it too.
+        wrapper.addEventListener("focusout", () => {
+            window.setTimeout(() => {
+                if (wrapper.contains(document.activeElement)) return;
+                if (!activeMenu || activeMenu.owner !== wrapper) return;
+                query = "";
+                renderInput();
+                setOpen(false);
+            }, 0);
+        });
+
+        wrapper.append(input, modeButton, openButton, menu);
+        renderInput();
+        return wrapper;
+    }
+
+    function createEditorBinding(field, scope) {
+        const fieldType = field.field_type || "text";
+        const input = document.createElement("input");
+        if (isStructuredFieldType(fieldType)) {
+            input.type = "hidden";
+            input.value = field.original_value;
+        } else if (fieldType === "boolean") {
+            input.type = "checkbox";
+            input.checked = ["yes", "true", "1"].includes(String(field.value || "").trim().toLowerCase());
+            input.value = input.checked ? "yes" : "no";
+            input.addEventListener("change", () => {
+                input.value = input.checked ? "yes" : "no";
+                onChange(input);
+            });
+        } else if (fieldType === "select") {
+            input.remove();
+            const select = createSearchableSelect(field.options || [], field.value, {
+                placeholder: `Search ${field.label || "entries"}`,
+            });
+            select.value = field.value;
+            select.dataset.editorField = "true";
+            select.dataset.fieldScope = scope;
+            select.dataset.fieldType = fieldType;
+            select.dataset.key = field.key;
+            select.dataset.originalValue = field.original_value;
+            if (scope === "localization") {
+                select.dataset.language = field.language;
+            }
+            select.addEventListener("input", () => onChange(select));
+            select.addEventListener("change", () => onChange(select));
+            return select;
+        } else if (scope === "localization" || fieldType === "yaml" || fieldType === "script") {
+            input.remove();
+            const textarea = document.createElement("textarea");
+            textarea.rows = Math.max(field.height || 4, 3);
+            textarea.value = field.value;
+            textarea.dataset.editorField = "true";
+            textarea.dataset.fieldScope = scope;
+            textarea.dataset.fieldType = fieldType;
+            textarea.dataset.key = field.key;
+            if (field.key.startsWith("mechanics.ritual_text.")) textarea.dataset.ritualTextInput = "true";
+            textarea.dataset.originalValue = field.original_value;
+            if (scope === "localization") {
+                textarea.dataset.language = field.language;
+            }
+            textarea.addEventListener("input", () => onChange(textarea));
+            textarea.addEventListener("change", () => onChange(textarea));
+            return textarea;
+        } else {
+            input.type = "text";
+            input.value = field.value;
+        }
+
+        input.dataset.editorField = "true";
+        input.dataset.fieldScope = scope;
+        input.dataset.fieldType = fieldType;
+        input.dataset.key = field.key;
+        if (field.key.startsWith("mechanics.ritual_text.")) input.dataset.ritualTextInput = "true";
+        input.dataset.originalValue = field.original_value;
+        if (scope === "localization") {
+            input.dataset.language = field.language;
+        }
+        if (!isStructuredFieldType(fieldType) && fieldType !== "boolean") {
+            input.addEventListener("input", () => onChange(input));
+            input.addEventListener("change", () => onChange(input));
+        }
+        return input;
+    }
+
+    function createStructuredShell(field, scope) {
+        const stateValue = deepClone(field.structured_value ?? {});
+        const binding = createEditorBinding(field, scope);
+        const shell = document.createElement("div");
+        shell.className = "structured-field";
+
+        const layout = document.createElement("div");
+        layout.className = "structured-layout";
+
+        const editor = document.createElement("div");
+        editor.className = "structured-editor";
+
+        const preview = document.createElement("aside");
+        preview.className = "code-state-pane";
+        preview.innerHTML = `
+        <div class="code-state-head">
+            <strong>Code State</strong>
+            <span>${escapeHtml(field.source_path || "")}</span>
+        </div>
+    `;
+        const previewMeta = document.createElement("p");
+        previewMeta.className = "code-state-meta";
+        previewMeta.textContent = field.target_path || field.key;
+        preview.append(previewMeta);
+        const previewOutput = document.createElement("pre");
+        previewOutput.className = "code-state-output";
+        preview.append(previewOutput);
+
+        const commit = () => {
+            binding.value = stableStringify(withoutEditorOptions(stateValue));
+            previewOutput.textContent = previewTextForField(field, stateValue);
+            onChange(binding);
+        };
+
+        shell.append(binding, layout);
+        layout.append(editor, preview);
+        commit();
+        return { shell, editor, stateValue, commit };
+    }
+
+    function buildReadonlyStructuredNote(field) {
+        const note = document.createElement("div");
+        note.className = "readonly-note";
+
+        const message = document.createElement("div");
+        message.innerHTML = `
+        <strong>Inherited from prototype</strong>
+        <p>Effects are listed below in read-only form. Edit the prototype wonder to change them.</p>
+    `;
+        note.append(message);
+
+        if (field.prototype_key) {
+            const actions = document.createElement("div");
+            actions.className = "readonly-actions";
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "mini-button";
+            button.textContent = "Open prototype";
+            button.addEventListener("click", () => {
+                onOpenPrototype(field.prototype_key);
+            });
+            actions.append(button);
+            note.append(actions);
+        }
+
+        return note;
+    }
+
+    function buildRowListEditor(config) {
+        const section = document.createElement("section");
+        section.className = "structured-group";
+        if (config.listId) {
+            section.dataset.rowList = config.listId;
+        }
+        const readonly = config.readonly === true;
+
+        const header = document.createElement("div");
+        header.className = "structured-group-head";
+        header.innerHTML = `<h4>${escapeHtml(config.title)}</h4>`;
+        let addButton = null;
+        if (!readonly) {
+            addButton = document.createElement("button");
+            addButton.type = "button";
+            addButton.className = "mini-button";
+            addButton.textContent = config.addLabel || "Add row";
+            addButton.addEventListener("click", () => {
+                if (Number.isInteger(config.maxRows) && config.rows.length >= config.maxRows) {
+                    return;
+                }
+                config.rows.push(config.createRow());
+                renderRows();
+                config.onChange();
+            });
+            header.append(addButton);
+        }
+        section.append(header);
+
+        if (config.note) {
+            const note = document.createElement("p");
+            note.className = "structured-group-note";
+            note.textContent = config.note;
+            section.append(note);
+        }
+
+        const rowsNode = document.createElement("div");
+        rowsNode.className = "structured-rows";
+        section.append(rowsNode);
+
+        const renderRows = () => {
+            if (addButton) {
+                addButton.disabled = Number.isInteger(config.maxRows) && config.rows.length >= config.maxRows;
+            }
+            rowsNode.innerHTML = "";
+            if (!config.rows.length) {
+                const empty = document.createElement("div");
+                empty.className = "structured-empty";
+                empty.textContent = config.emptyText || "No rows yet.";
+                rowsNode.append(empty);
+            }
+            config.rows.forEach((row, index) => {
+                const rowNode = document.createElement("div");
+                rowNode.className = "structured-row";
+                if (!config.secondaryKey) {
+                    rowNode.classList.add("single-value");
+                }
+
+                const primaryOptions = config.primaryOptions || [];
+                const primaryControl = config.primaryControl || "text";
+                let primary;
+                if (primaryControl === "select" || primaryOptions.length) {
+                    primary = createSearchableSelect(
+                        optionsWithBlank(
+                            primaryOptions,
+                            config.primaryPlaceholder || `Choose ${config.primaryLabel || "value"}`,
+                        ),
+                        row[config.primaryKey] || "",
+                        {
+                            placeholder: config.primaryPlaceholder || `Search ${config.primaryLabel || "value"}`,
+                        },
+                    );
+                } else {
+                    primary = document.createElement("input");
+                    primary.type = "text";
+                    primary.placeholder = config.primaryPlaceholder || config.primaryLabel;
+                    primary.value = row[config.primaryKey] || "";
+                }
+                if (readonly) {
+                    primary.disabled = true;
+                } else {
+                    primary.addEventListener("input", () => {
+                        row[config.primaryKey] = primary.value;
+                        config.onChange();
+                    });
+                    primary.addEventListener("change", () => {
+                        row[config.primaryKey] = primary.value;
+                        config.onChange();
+                    });
+                }
+                rowNode.append(primary);
+
+                if (config.secondaryKey) {
+                    const secondaryOptions = config.secondaryOptions || [];
+                    const secondaryControl = config.secondaryControl || "text";
+                    let secondary;
+                    if (secondaryControl === "select" || secondaryOptions.length) {
+                        secondary = createSearchableSelect(
+                            optionsWithBlank(
+                                secondaryOptions,
+                                config.secondaryPlaceholder || `Choose ${config.secondaryLabel || "value"}`,
+                            ),
+                            row[config.secondaryKey] || "",
+                            {
+                                placeholder: config.secondaryPlaceholder || `Search ${config.secondaryLabel || "value"}`,
+                            },
+                        );
+                    } else {
+                        secondary = document.createElement("input");
+                        secondary.type = "text";
+                        secondary.placeholder = config.secondaryPlaceholder || config.secondaryLabel;
+                        secondary.value = row[config.secondaryKey] || "";
+                    }
+                    if (readonly) {
+                        secondary.disabled = true;
+                    } else {
+                        secondary.addEventListener("input", () => {
+                            row[config.secondaryKey] = secondary.value;
+                            config.onChange();
+                        });
+                        secondary.addEventListener("change", () => {
+                            row[config.secondaryKey] = secondary.value;
+                            config.onChange();
+                        });
+                    }
+                    rowNode.append(secondary);
+                }
+
+                if (!readonly) {
+                    const removeButton = document.createElement("button");
+                    removeButton.type = "button";
+                    removeButton.className = "mini-button danger";
+                    removeButton.textContent = "Remove";
+                    removeButton.disabled = Number.isInteger(config.minRows) && config.rows.length <= config.minRows;
+                    removeButton.addEventListener("click", () => {
+                        config.rows.splice(index, 1);
+                        renderRows();
+                        config.onChange();
+                    });
+                    rowNode.append(removeButton);
+                }
+                rowsNode.append(rowNode);
+            });
+        };
+
+        renderRows();
+        return section;
+    }
+
+    function buildTableListEditor(config) {
+        const section = document.createElement("section");
+        section.className = "structured-group";
+
+        const header = document.createElement("div");
+        header.className = "structured-group-head";
+        header.innerHTML = `<h4>${escapeHtml(config.title)}</h4>`;
+        const addButton = document.createElement("button");
+        addButton.type = "button";
+        addButton.className = "mini-button";
+        addButton.textContent = config.addLabel || "Add row";
+        header.append(addButton);
+        section.append(header);
+
+        const rowsNode = document.createElement("div");
+        rowsNode.className = "structured-rows";
+        section.append(rowsNode);
+
+        const renderRows = () => {
+            rowsNode.innerHTML = "";
+            if (!config.rows.length) {
+                const empty = document.createElement("div");
+                empty.className = "structured-empty";
+                empty.textContent = "No rows yet.";
+                rowsNode.append(empty);
+            }
+            config.rows.forEach((row, index) => {
+                const rowNode = document.createElement("div");
+                rowNode.className = "structured-row dynamic";
+                rowNode.style.gridTemplateColumns = `${config.columns.map((column) => column.width || "minmax(0, 1fr)").join(" ")} auto`;
+
+                for (const column of config.columns) {
+                    const options =
+                        typeof column.options === "function" ? column.options(row) : column.options || [];
+                    let input;
+                    if (column.control === "select" || options.length) {
+                        input = createSearchableSelect(options, row[column.key] || "", {
+                            placeholder: `Search ${column.label || "value"}`,
+                        });
+                    } else {
+                        input = document.createElement("input");
+                        input.type = "text";
+                        input.value = row[column.key] || "";
+                        input.placeholder = column.label;
+                    }
+                    input.addEventListener("input", () => {
+                        row[column.key] = input.value;
+                        config.onChange();
+                    });
+                    input.addEventListener("change", () => {
+                        row[column.key] = input.value;
+                        if (column.rerenderOnChange) {
+                            renderRows();
+                        }
+                        config.onChange();
+                    });
+                    rowNode.append(input);
+                }
+
+                const removeButton = document.createElement("button");
+                removeButton.type = "button";
+                removeButton.className = "mini-button danger";
+                removeButton.textContent = "Remove";
+                removeButton.addEventListener("click", () => {
+                    config.rows.splice(index, 1);
+                    renderRows();
+                    config.onChange();
+                });
+                rowNode.append(removeButton);
+                rowsNode.append(rowNode);
+            });
+        };
+
+        addButton.addEventListener("click", () => {
+            config.rows.push(config.createRow());
+            renderRows();
+            config.onChange();
+        });
+
+        renderRows();
+        return section;
+    }
+
+    function buildScalarEditor(label, value, onChange, options = null) {
+        const node = document.createElement("label");
+        node.className = "scalar-field";
+        const title = document.createElement("span");
+        title.textContent = label;
+        node.append(title);
+
+        let input;
+        if (options && options.length) {
+            input = createSearchableSelect(options, value ?? "", {
+                placeholder: `Search ${label || "value"}`,
+            });
+        } else {
+            input = document.createElement("input");
+            input.type = "text";
+            input.value = value ?? "";
+        }
+        input.addEventListener("input", () => onChange(input.value));
+        input.addEventListener("change", () => onChange(input.value));
+        node.append(input);
+        return node;
+    }
+
+    function buildTextareaEditor(label, value, rows, onChange) {
+        const node = document.createElement("label");
+        node.className = "scalar-field wide";
+        const title = document.createElement("span");
+        title.textContent = label;
+        node.append(title);
+        const input = document.createElement("textarea");
+        input.rows = rows;
+        input.value = value ?? "";
+        input.addEventListener("input", () => onChange(input.value));
+        node.append(input);
+        return node;
+    }
+
+    function applyPresetRows(targetRows, sourceRows) {
+        targetRows.splice(0, targetRows.length, ...deepClone(sourceRows || []));
+    }
+
+    function buildPresetEditor(stateValue, label, onApply) {
+        return buildScalarEditor(label, stateValue.template_id, (value) => {
+            const previousValue = stateValue.template_id;
+            stateValue.template_id = value;
+            onApply(value, previousValue);
+        }, stateValue.template_options || []);
+    }
+
+    function renderSiteTriggerField(field, scope) {
+        const shell = createStructuredShell(field, scope);
+        const { editor, stateValue, commit } = shell;
+        const body = document.createElement("div");
+        body.className = "structured-editor-body";
+        editor.append(body);
+
+        const renderBody = () => {
+            body.innerHTML = "";
+            body.append(
+                buildPresetEditor(stateValue, "Condition template", (value, previousValue) => {
+                    if (value === "custom_script" && previousValue !== "custom_script") {
+                        const previewState = deepClone(stateValue);
+                        previewState.template_id = previousValue;
+                        stateValue.raw_script = renderSiteTriggerScript(previewState);
+                    }
+                    if (value !== "custom_script" && value !== "current_variant") {
+                        const preset = (stateValue.presets || []).find((item) => item.id === value);
+                        if (preset) {
+                            applyPresetRows(stateValue.any_of.rows, preset.any_of.map((entry) => ({ value: entry })));
+                            applyPresetRows(stateValue.all_of.rows, preset.all_of.map((entry) => ({ value: entry })));
+                        }
+                    }
+                    commit();
+                    renderBody();
+                }),
+            );
+
+            if (stateValue.template_id === "custom_script") {
+                body.append(
+                    buildTextareaEditor("Custom trigger script", stateValue.raw_script, 10, (value) => {
+                        stateValue.raw_script = value;
+                        commit();
+                    }),
+                );
+                return;
+            }
+
+            body.append(
+                buildRowListEditor({
+                    title: "Any-of conditions",
+                    rows: stateValue.any_of.rows,
+                    primaryKey: "value",
+                    primaryLabel: "Condition",
+                    primaryOptions: stateValue.any_of.options || stateValue.condition_options || [],
+                    addLabel: "Add any-of",
+                    createRow: () => ({ value: "" }),
+                    onChange: commit,
+                }),
+                buildRowListEditor({
+                    title: "All-of conditions",
+                    rows: stateValue.all_of.rows,
+                    primaryKey: "value",
+                    primaryLabel: "Condition",
+                    primaryOptions: stateValue.all_of.options || stateValue.condition_options || [],
+                    addLabel: "Add all-of",
+                    createRow: () => ({ value: "" }),
+                    onChange: commit,
+                }),
+            );
+        };
+
+        renderBody();
+        commit();
+        return shell.shell;
+    }
+
+    function renderSitePreferenceField(field, scope) {
+        const shell = createStructuredShell(field, scope);
+        const { editor, stateValue, commit } = shell;
+        const body = document.createElement("div");
+        body.className = "structured-editor-body";
+        editor.append(body);
+
+        const renderBody = () => {
+            body.innerHTML = "";
+            body.append(
+                buildPresetEditor(stateValue, "Preference template", (value, previousValue) => {
+                    if (value === "custom_script" && previousValue !== "custom_script") {
+                        const previewState = deepClone(stateValue);
+                        previewState.template_id = previousValue;
+                        stateValue.raw_script = renderSitePreferenceScript(previewState);
+                    }
+                    if (value !== "custom_script" && value !== "current_variant") {
+                        const preset = (stateValue.presets || []).find((item) => item.id === value);
+                        if (preset) {
+                            applyPresetRows(stateValue.bonus_rules.rows, preset.bonus_rules);
+                            applyPresetRows(stateValue.scaled_rules.rows, preset.scaled_rules);
+                        }
+                    }
+                    commit();
+                    renderBody();
+                }),
+            );
+
+            if (stateValue.template_id === "custom_script") {
+                body.append(
+                    buildTextareaEditor("Custom preference script", stateValue.raw_script, 14, (value) => {
+                        stateValue.raw_script = value;
+                        commit();
+                    }),
+                );
+                return;
+            }
+
+            body.append(
+                buildTableListEditor({
+                    title: "Conditional bonus rows",
+                    rows: stateValue.bonus_rules.rows,
+                    columns: [
+                        { key: "branch", label: "Branch", control: "select", options: stateValue.branch_options || [], width: "120px" },
+                        { key: "condition", label: "Condition", control: "select", options: stateValue.condition_options || [], width: "minmax(0, 1.8fr)" },
+                        { key: "value", label: "Value", width: "140px" },
+                    ],
+                    addLabel: "Add bonus rule",
+                    createRow: () => ({ branch: "if", condition: "", value: "" }),
+                    onChange: commit,
+                }),
+                buildTableListEditor({
+                    title: "Scaled bonus rows",
+                    rows: stateValue.scaled_rules.rows,
+                    columns: [
+                        { key: "source", label: "Source", control: "select", options: stateValue.scale_source_options || [], width: "minmax(0, 1.4fr)" },
+                        { key: "min", label: "Min", width: "110px" },
+                        { key: "max", label: "Max", width: "110px" },
+                        { key: "multiplier", label: "Multiplier", width: "140px" },
+                    ],
+                    addLabel: "Add scale rule",
+                    createRow: () => {
+                        const defaults = stateValue.scale_source_options?.[0] || {};
+                        return {
+                            source: defaults.value || "",
+                            min: defaults.default_min || "",
+                            max: defaults.default_max || "",
+                            multiplier: defaults.default_multiplier || "",
+                        };
+                    },
+                    onChange: commit,
+                }),
+            );
+        };
+
+        renderBody();
+        commit();
+        return shell.shell;
+    }
+
+    function renderModifierTableField(field, scope) {
+        const shell = createStructuredShell(field, scope);
+        const { editor, stateValue, commit } = shell;
+        editor.append(
+            buildRowListEditor({
+                title: stateValue.modifier_scope === "local" ? "Local modifier list" : "Country modifier list",
+                rows: stateValue.rows,
+                primaryKey: "modifier",
+                secondaryKey: "value",
+                primaryLabel: "Modifier",
+                secondaryLabel: "Value",
+                primaryOptions: stateValue.options || [],
+                primaryControl: "select",
+                addLabel: "Add modifier",
+                createRow: () => ({ modifier: "", value: "" }),
+                onChange: commit,
+            }),
+        );
+        if (Array.isArray(stateValue.derived_rows) && stateValue.derived_rows.length) {
+            editor.append(
+                buildRowListEditor({
+                    title: stateValue.derived_title || "Auto-applied modifiers",
+                    note: stateValue.derived_help_text || "",
+                    rows: stateValue.derived_rows,
+                    primaryKey: "modifier",
+                    secondaryKey: "value",
+                    primaryLabel: "Modifier",
+                    secondaryLabel: "Value",
+                    primaryControl: "text",
+                    secondaryControl: "text",
+                    readonly: true,
+                    emptyText: "No auto-applied modifiers.",
+                }),
+            );
+        }
+        commit();
+        return shell.shell;
+    }
+
+    function renderRewardEditorField(field, scope) {
+        const shell = createStructuredShell(field, scope);
+        const { editor, stateValue, commit } = shell;
+
+        if (stateValue.cost_options) {
+            editor.append(
+                buildScalarEditor("Cost type", stateValue.cost_type ?? "", (value) => {
+                    stateValue.cost_type = value || null;
+                    commit();
+                }, stateValue.cost_options),
+            );
+        }
+
+        editor.append(
+            buildRowListEditor({
+                title: "Reward rows",
+                rows: stateValue.rows,
+                primaryKey: "type",
+                secondaryKey: "value",
+                primaryLabel: "Reward type",
+                secondaryLabel: "Value",
+                primaryOptions: stateValue.options || [],
+                primaryControl: "select",
+                addLabel: "Add reward",
+                createRow: () => ({ type: "", value: "" }),
+                onChange: commit,
+            }),
+        );
+        commit();
+        return shell.shell;
+    }
+
+    function renderStructuredFieldByType(field, scope) {
+        if (field.field_type === "modifier_table") {
+            return renderModifierTableField(field, scope);
+        }
+        if (field.field_type === "reward_editor") {
+            return renderRewardEditorField(field, scope);
+        }
+        if (field.field_type === "site_trigger_template") {
+            return renderSiteTriggerField(field, scope);
+        }
+        if (field.field_type === "site_preference_template") {
+            return renderSitePreferenceField(field, scope);
+        }
+        return createEditorBinding(field, scope);
+    }
+
+    function renderReadonlyStructuredField(field, scope) {
+        const shell = renderStructuredFieldByType(field, scope);
+        const editor = shell.querySelector(".structured-editor");
+        if (editor) {
+            editor.prepend(buildReadonlyStructuredNote(field));
+            for (const control of editor.querySelectorAll("input, select, textarea, button")) {
+                if (control.closest(".readonly-actions")) {
+                    continue;
+                }
+                control.disabled = true;
+            }
+        }
+        return shell;
+    }
+
+    function buildEditorInput(field, scope) {
+        if (field.editable === false && isStructuredFieldType(field.field_type || "text")) {
+            return renderReadonlyStructuredField(field, scope);
+        }
+        if (isStructuredFieldType(field.field_type || "text")) {
+            return renderStructuredFieldByType(field, scope);
+        }
+        if (scope === "mechanics" && field.target_kind === "unique_initial_level") {
+            return createSingleLineEditorBinding(field, scope, onInitialLevelChange);
+        }
+        return createEditorBinding(field, scope);
+    }
+
+    return { buildEditorInput, createSingleLineEditorBinding };
+}

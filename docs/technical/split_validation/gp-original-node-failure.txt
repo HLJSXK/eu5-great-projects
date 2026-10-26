@@ -1,0 +1,31 @@
+TAP version 13
+# Subtest: ritual prompt builder keeps display order, nested values and translated title
+not ok 1 - ritual prompt builder keeps display order, nested values and translated title
+  ---
+  duration_ms: 1.3186
+  type: 'test'
+  location: 'C:\\Users\\Hades\\Documents\\code\\eu5-towards-victory\\tmp\\gp-baseline\\tests\\wonder_rituals.cjs:6:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module 'C:\\Users\\Hades\\Documents\\code\\eu5-towards-victory\\tmp\\gp-baseline\\towards_victory_editor_web\\static\\wonder_rituals.js' imported from C:\\Users\\Hades\\Documents\\code\\eu5-towards-victory\\tmp\\gp-baseline\\tests\\wonder_rituals.cjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    moduleResolve (node:internal/modules/esm/resolve:859:10)
+    defaultResolve (node:internal/modules/esm/resolve:983:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:717:20)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:694:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:308:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:650:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:344:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:649:21)
+    defaultImportModuleDynamicallyForScript (node:internal/modules/esm/utils:235:31)
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 0
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 111.8013

@@ -1,0 +1,79 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# EU5 specific
+error.log
+*.bin
+*.cache
+
+# Temporary files
+tmp/
+temp/
+.pytest_cache/
+*.tmp
+*.bak
+*.log
+*_backup/
+/.pytest-*/
+/.editor_state/
+
+# Build artifacts
+build/
+bin/
+dist/
+*.zip
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Checked-in static support site outputs
+!unique_wonders_site/
+!unique_wonders_site/dist/
+!unique_wonders_site/dist/index.html
+!unique_wonders_site/dist/app.css
+!unique_wonders_site/dist/app.js
+!unique_wonders_site/dist/data/
+!unique_wonders_site/dist/data/**
+!unique_wonders_site/dist/tiles/
+!unique_wonders_site/dist/tiles/**
+!unique_wonders_site/scripts/
+!unique_wonders_site/scripts/build/
+!unique_wonders_site/scripts/build/*.py
+
+# Go specific
+*.test
+*.out
+go.work
+
+# Python (legacy)
+__pycache__/
+*.py[cod]
+.Python
+env/
+venv/
+
+# Personal notes
+notes/
+TODO_personal.md
+*_draft.md
+
+# Local API credentials
+generate_wonder_image.local.json
+generate_dds_icon.local.json
+
+# Regenerated on demand by victory_tree_planner_web (decoded from src DDS)
+assets/generated_tree_previews/
+
+# Shared sibling EU5 modding base checkout
+/.eu5-base

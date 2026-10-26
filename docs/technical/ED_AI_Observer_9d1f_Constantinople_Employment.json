@@ -1,0 +1,4417 @@
+{
+  "schema": "ed-ai-constantinople-employment/1",
+  "playthrough_id": "9d1f3b46-96b1-4b41-b187-64b68248ff7e",
+  "snapshot_count": 52,
+  "population_units": "raw save units, no conversion to displayed persons",
+  "staffing_denominator": "nominal completed levels times employment_size from current local vanilla/ED definitions, not an engine query of building_employment_size_amount",
+  "unresolved_nominal_employment_definitions": {},
+  "snapshots": [
+    {
+      "date": "1338.4.1",
+      "source_file": "1338.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 189632016,
+      "owner_id": 203,
+      "owner_tag": "BYZ",
+      "population_records": 21,
+      "population_by_type_raw": {
+        "burghers": 7.300190000000001,
+        "nobles": 2.02417,
+        "clergy": 3.71651,
+        "peasants": 93.61352,
+        "tribesmen": 0.08083,
+        "laborers": 8.10856,
+        "soldiers": 6.50039
+      },
+      "population_total_raw": 121.34416999999999,
+      "all_completed_building_objects": 40,
+      "domestic_completed_building_objects": 34,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 33,
+      "domestic_non_closed_under90pct_nominal": 5,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 7.300190000000001,
+          "domestic_building_objects": 17,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 17,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 2.5000000000000013,
+          "non_closed_employed": 2.0100000000000002,
+          "non_closed_nominal_staffing_ratio": 0.8039999999999997
+        },
+        "clergy": {
+          "actual_population_raw": 3.71651,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.7999999999999999,
+          "non_closed_employed": 0.6950000000000001,
+          "non_closed_nominal_staffing_ratio": 0.8687500000000001
+        },
+        "laborers": {
+          "actual_population_raw": 8.10856,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 2,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.1,
+          "non_closed_employed": 1.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 2.02417,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.12,
+          "non_closed_employed": 0.12,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 6.50039,
+          "domestic_building_objects": 4,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 4,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 5.5,
+          "non_closed_employed": 5.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1340.4.1",
+      "source_file": "1340.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 198270891,
+      "owner_id": 203,
+      "owner_tag": "BYZ",
+      "population_records": 19,
+      "population_by_type_raw": {
+        "nobles": 1.75174,
+        "clergy": 3.75508,
+        "burghers": 7.224430000000001,
+        "peasants": 94.1852,
+        "laborers": 8.10319,
+        "soldiers": 6.50073
+      },
+      "population_total_raw": 121.52037,
+      "all_completed_building_objects": 39,
+      "domestic_completed_building_objects": 34,
+      "domestic_closed_objects": 6,
+      "domestic_non_closed_with_jobs": 28,
+      "domestic_non_closed_under90pct_nominal": 8,
+      "domestic_non_closed_zero_employment": 3,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 7.224430000000001,
+          "domestic_building_objects": 17,
+          "explicitly_closed_objects": 2,
+          "non_closed_objects": 15,
+          "non_closed_zero_employment_objects": 3,
+          "non_closed_nominal_capacity": 2.3000000000000007,
+          "non_closed_employed": 1.45,
+          "non_closed_nominal_staffing_ratio": 0.6304347826086955
+        },
+        "clergy": {
+          "actual_population_raw": 3.75508,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 2,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.7000000000000001,
+          "non_closed_employed": 0.7000000000000001,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 8.10319,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.1,
+          "non_closed_employed": 2.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.75174,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 2,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.02,
+          "non_closed_employed": 0.02,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 6.50073,
+          "domestic_building_objects": 4,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.5,
+          "non_closed_employed": 4.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1350.4.1",
+      "source_file": "1350.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 233903766,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 31,
+      "population_by_type_raw": {
+        "nobles": 1.0524799999999999,
+        "clergy": 2.03162,
+        "burghers": 3.58769,
+        "peasants": 45.79131,
+        "soldiers": 2.50064,
+        "laborers": 7.27363
+      },
+      "population_total_raw": 62.23737,
+      "all_completed_building_objects": 33,
+      "domestic_completed_building_objects": 28,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 28,
+      "domestic_non_closed_under90pct_nominal": 7,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 3.58769,
+          "domestic_building_objects": 18,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 18,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 2.6000000000000014,
+          "non_closed_employed": 2.2800000000000007,
+          "non_closed_nominal_staffing_ratio": 0.8769230769230767
+        },
+        "clergy": {
+          "actual_population_raw": 2.03162,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.4,
+          "non_closed_employed": 0.4,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 7.27363,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.1,
+          "non_closed_employed": 2.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 2.50064,
+          "domestic_building_objects": 2,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 2,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.5,
+          "non_closed_employed": 1.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1360.4.1",
+      "source_file": "1360.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 255182027,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 28,
+      "population_by_type_raw": {
+        "nobles": 1.33279,
+        "clergy": 2.6852099999999997,
+        "burghers": 7.502080000000001,
+        "peasants": 74.35739,
+        "soldiers": 2.50076,
+        "laborers": 8.105329999999999
+      },
+      "population_total_raw": 96.48355999999998,
+      "all_completed_building_objects": 33,
+      "domestic_completed_building_objects": 28,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 28,
+      "domestic_non_closed_under90pct_nominal": 6,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 7.502080000000001,
+          "domestic_building_objects": 18,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 18,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 2.800000000000001,
+          "non_closed_employed": 2.4100000000000006,
+          "non_closed_nominal_staffing_ratio": 0.8607142857142855
+        },
+        "clergy": {
+          "actual_population_raw": 2.6852099999999997,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.4,
+          "non_closed_employed": 0.4,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 8.105329999999999,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.1,
+          "non_closed_employed": 2.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 2.50076,
+          "domestic_building_objects": 2,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 2,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.5,
+          "non_closed_employed": 1.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1370.4.1",
+      "source_file": "1370.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 260284940,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 41,
+      "population_by_type_raw": {
+        "nobles": 1.53742,
+        "clergy": 3.22917,
+        "burghers": 7.8019799999999995,
+        "peasants": 107.86282999999999,
+        "slaves": 0.33295,
+        "soldiers": 3.00083,
+        "laborers": 10.209209999999999,
+        "tribesmen": 0.07381
+      },
+      "population_total_raw": 134.04819999999998,
+      "all_completed_building_objects": 35,
+      "domestic_completed_building_objects": 30,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 30,
+      "domestic_non_closed_under90pct_nominal": 7,
+      "domestic_non_closed_zero_employment": 4,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 7.8019799999999995,
+          "domestic_building_objects": 18,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 18,
+          "non_closed_zero_employment_objects": 4,
+          "non_closed_nominal_capacity": 3.1000000000000014,
+          "non_closed_employed": 2.3000000000000003,
+          "non_closed_nominal_staffing_ratio": 0.7419354838709675
+        },
+        "clergy": {
+          "actual_population_raw": 3.22917,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.4,
+          "non_closed_employed": 0.4,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 10.209209999999999,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.1,
+          "non_closed_employed": 2.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.53742,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.05,
+          "non_closed_employed": 0.05,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 3.00083,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.0,
+          "non_closed_employed": 2.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1380.4.1",
+      "source_file": "1380.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 267575639,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 31,
+      "population_by_type_raw": {
+        "burghers": 8.0422,
+        "nobles": 1.36262,
+        "clergy": 3.29003,
+        "peasants": 105.90981000000001,
+        "slaves": 0.06794,
+        "soldiers": 2.90993,
+        "laborers": 11.74314
+      },
+      "population_total_raw": 133.32567,
+      "all_completed_building_objects": 38,
+      "domestic_completed_building_objects": 32,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 32,
+      "domestic_non_closed_under90pct_nominal": 6,
+      "domestic_non_closed_zero_employment": 2,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 8.0422,
+          "domestic_building_objects": 19,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 19,
+          "non_closed_zero_employment_objects": 2,
+          "non_closed_nominal_capacity": 3.300000000000001,
+          "non_closed_employed": 2.6000000000000005,
+          "non_closed_nominal_staffing_ratio": 0.7878787878787877
+        },
+        "clergy": {
+          "actual_population_raw": 3.29003,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.4,
+          "non_closed_employed": 0.4,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 11.74314,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.1,
+          "non_closed_employed": 2.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.36262,
+          "domestic_building_objects": 2,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 2,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.15000000000000002,
+          "non_closed_employed": 0.15000000000000002,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 2.90993,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.0,
+          "non_closed_employed": 2.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1390.4.1",
+      "source_file": "1390.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 275693451,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 32,
+      "population_by_type_raw": {
+        "nobles": 1.7136,
+        "clergy": 3.3722899999999996,
+        "burghers": 8.30275,
+        "peasants": 107.77984000000001,
+        "slaves": 0.0421,
+        "soldiers": 5.2006,
+        "laborers": 12.075030000000002
+      },
+      "population_total_raw": 138.48621,
+      "all_completed_building_objects": 40,
+      "domestic_completed_building_objects": 34,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 34,
+      "domestic_non_closed_under90pct_nominal": 7,
+      "domestic_non_closed_zero_employment": 3,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 8.30275,
+          "domestic_building_objects": 20,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 20,
+          "non_closed_zero_employment_objects": 3,
+          "non_closed_nominal_capacity": 3.500000000000001,
+          "non_closed_employed": 2.8800000000000003,
+          "non_closed_nominal_staffing_ratio": 0.8228571428571427
+        },
+        "clergy": {
+          "actual_population_raw": 3.3722899999999996,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.4,
+          "non_closed_employed": 0.4,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 12.075030000000002,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.1,
+          "non_closed_employed": 2.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.7136,
+          "domestic_building_objects": 2,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 2,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.15000000000000002,
+          "non_closed_employed": 0.15000000000000002,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 5.2006,
+          "domestic_building_objects": 4,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 4,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.2006,
+          "non_closed_nominal_staffing_ratio": 0.8667666666666666
+        }
+      }
+    },
+    {
+      "date": "1400.4.1",
+      "source_file": "1400.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 280978620,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 25,
+      "population_by_type_raw": {
+        "nobles": 1.74792,
+        "clergy": 2.9642899999999996,
+        "burghers": 9.3024,
+        "peasants": 89.86537,
+        "soldiers": 7.202030000000001,
+        "laborers": 10.966529999999999
+      },
+      "population_total_raw": 122.04854,
+      "all_completed_building_objects": 43,
+      "domestic_completed_building_objects": 37,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 37,
+      "domestic_non_closed_under90pct_nominal": 3,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 9.3024,
+          "domestic_building_objects": 22,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 22,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 4.5,
+          "non_closed_employed": 4.339999999999999,
+          "non_closed_nominal_staffing_ratio": 0.9644444444444442
+        },
+        "clergy": {
+          "actual_population_raw": 2.9642899999999996,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 6,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 10.966529999999999,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.1,
+          "non_closed_employed": 2.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.74792,
+          "domestic_building_objects": 2,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 2,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.15000000000000002,
+          "non_closed_employed": 0.15000000000000002,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 7.202030000000001,
+          "domestic_building_objects": 4,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 4,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 6.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1410.4.1",
+      "source_file": "1410.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 288217277,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 46,
+      "population_by_type_raw": {
+        "slaves": 1.9999999999999998,
+        "nobles": 1.8164200000000001,
+        "clergy": 3.15259,
+        "burghers": 11.21218,
+        "peasants": 85.32868,
+        "soldiers": 10.20243,
+        "laborers": 12.099480000000002
+      },
+      "population_total_raw": 125.81178,
+      "all_completed_building_objects": 50,
+      "domestic_completed_building_objects": 42,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 42,
+      "domestic_non_closed_under90pct_nominal": 2,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 11.21218,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.8,
+          "non_closed_employed": 6.559999999999999,
+          "non_closed_nominal_staffing_ratio": 0.964705882352941
+        },
+        "clergy": {
+          "actual_population_raw": 3.15259,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 12.099480000000002,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.1,
+          "non_closed_employed": 2.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.8164200000000001,
+          "domestic_building_objects": 2,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 2,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.15000000000000002,
+          "non_closed_employed": 0.15000000000000002,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 1.9999999999999998,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.0,
+          "non_closed_employed": 2.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 10.20243,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 9.0,
+          "non_closed_employed": 9.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1420.4.1",
+      "source_file": "1420.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 298523986,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 43,
+      "population_by_type_raw": {
+        "slaves": 1.8345599999999997,
+        "nobles": 1.5693000000000001,
+        "clergy": 3.43336,
+        "burghers": 12.74826,
+        "peasants": 79.69552,
+        "soldiers": 8.48269,
+        "laborers": 11.95973
+      },
+      "population_total_raw": 119.72342,
+      "all_completed_building_objects": 50,
+      "domestic_completed_building_objects": 42,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 42,
+      "domestic_non_closed_under90pct_nominal": 4,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 12.74826,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 7.799999999999999,
+          "non_closed_employed": 7.6099999999999985,
+          "non_closed_nominal_staffing_ratio": 0.9756410256410256
+        },
+        "clergy": {
+          "actual_population_raw": 3.43336,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 11.95973,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.1,
+          "non_closed_employed": 2.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.5693000000000001,
+          "domestic_building_objects": 2,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 2,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.15000000000000002,
+          "non_closed_employed": 0.15000000000000002,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 1.8345599999999997,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.0,
+          "non_closed_employed": 1.83456,
+          "non_closed_nominal_staffing_ratio": 0.91728
+        },
+        "soldiers": {
+          "actual_population_raw": 8.48269,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 9.0,
+          "non_closed_employed": 8.48268,
+          "non_closed_nominal_staffing_ratio": 0.94252
+        }
+      }
+    },
+    {
+      "date": "1430.4.1",
+      "source_file": "1430.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 298584678,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 36,
+      "population_by_type_raw": {
+        "slaves": 1.7756500000000002,
+        "clergy": 3.62449,
+        "burghers": 12.904269999999999,
+        "peasants": 77.49933,
+        "nobles": 1.9149,
+        "soldiers": 10.20322,
+        "laborers": 13.15699
+      },
+      "population_total_raw": 121.07885000000002,
+      "all_completed_building_objects": 51,
+      "domestic_completed_building_objects": 45,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 45,
+      "domestic_non_closed_under90pct_nominal": 2,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 12.904269999999999,
+          "domestic_building_objects": 25,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 25,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 8.299999999999999,
+          "non_closed_employed": 8.2,
+          "non_closed_nominal_staffing_ratio": 0.9879518072289157
+        },
+        "clergy": {
+          "actual_population_raw": 3.62449,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 13.15699,
+          "domestic_building_objects": 4,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 4,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.1,
+          "non_closed_employed": 3.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.9149,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 1.7756500000000002,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.0,
+          "non_closed_employed": 1.77564,
+          "non_closed_nominal_staffing_ratio": 0.88782
+        },
+        "soldiers": {
+          "actual_population_raw": 10.20322,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 9.0,
+          "non_closed_employed": 9.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1440.4.1",
+      "source_file": "1440.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 306275158,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 36,
+      "population_by_type_raw": {
+        "slaves": 1.53848,
+        "burghers": 12.575800000000001,
+        "peasants": 61.59451,
+        "clergy": 3.2806699999999998,
+        "nobles": 1.6779700000000002,
+        "soldiers": 8.60698,
+        "laborers": 11.319109999999998
+      },
+      "population_total_raw": 100.59351999999998,
+      "all_completed_building_objects": 52,
+      "domestic_completed_building_objects": 46,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 46,
+      "domestic_non_closed_under90pct_nominal": 6,
+      "domestic_non_closed_zero_employment": 2,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 12.575800000000001,
+          "domestic_building_objects": 25,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 25,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 8.499999999999998,
+          "non_closed_employed": 8.349999999999998,
+          "non_closed_nominal_staffing_ratio": 0.9823529411764705
+        },
+        "clergy": {
+          "actual_population_raw": 3.2806699999999998,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 11.319109999999998,
+          "domestic_building_objects": 4,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 4,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.1,
+          "non_closed_employed": 3.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.6779700000000002,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 1.53848,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.0,
+          "non_closed_employed": 1.53848,
+          "non_closed_nominal_staffing_ratio": 0.76924
+        },
+        "soldiers": {
+          "actual_population_raw": 8.60698,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 6,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 11.0,
+          "non_closed_employed": 8.60697,
+          "non_closed_nominal_staffing_ratio": 0.7824518181818182
+        }
+      }
+    },
+    {
+      "date": "1450.4.1",
+      "source_file": "1450.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 312301938,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 39,
+      "population_by_type_raw": {
+        "slaves": 1.6952599999999998,
+        "burghers": 13.103990000000001,
+        "peasants": 59.18751,
+        "clergy": 3.45937,
+        "nobles": 1.76727,
+        "soldiers": 11.44536,
+        "laborers": 14.09445
+      },
+      "population_total_raw": 104.75321,
+      "all_completed_building_objects": 53,
+      "domestic_completed_building_objects": 47,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 47,
+      "domestic_non_closed_under90pct_nominal": 2,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 13.103990000000001,
+          "domestic_building_objects": 25,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 25,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 8.499999999999998,
+          "non_closed_employed": 8.499999999999998,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "clergy": {
+          "actual_population_raw": 3.45937,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 14.09445,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.1,
+          "non_closed_employed": 3.9000000000000004,
+          "non_closed_nominal_staffing_ratio": 0.9512195121951221
+        },
+        "nobles": {
+          "actual_population_raw": 1.76727,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 1.6952599999999998,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.0,
+          "non_closed_employed": 1.69526,
+          "non_closed_nominal_staffing_ratio": 0.84763
+        },
+        "soldiers": {
+          "actual_population_raw": 11.44536,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 6,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 11.0,
+          "non_closed_employed": 11.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1460.4.1",
+      "source_file": "1460.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 316268445,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 35,
+      "population_by_type_raw": {
+        "slaves": 1.7761,
+        "burghers": 13.18168,
+        "peasants": 55.90792999999999,
+        "clergy": 3.4009,
+        "nobles": 1.64104,
+        "soldiers": 11.66927,
+        "laborers": 13.92052
+      },
+      "population_total_raw": 101.49743999999998,
+      "all_completed_building_objects": 53,
+      "domestic_completed_building_objects": 47,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 46,
+      "domestic_non_closed_under90pct_nominal": 1,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 13.18168,
+          "domestic_building_objects": 25,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 25,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 8.599999999999998,
+          "non_closed_employed": 8.599999999999998,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "clergy": {
+          "actual_population_raw": 3.4009,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 13.92052,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 4,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.1,
+          "non_closed_employed": 3.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.64104,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 1.7761,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 2.0,
+          "non_closed_employed": 1.7761,
+          "non_closed_nominal_staffing_ratio": 0.88805
+        },
+        "soldiers": {
+          "actual_population_raw": 11.66927,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 6,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 11.0,
+          "non_closed_employed": 11.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1470.4.1",
+      "source_file": "1470.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 321466884,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 33,
+      "population_by_type_raw": {
+        "slaves": 3.80699,
+        "burghers": 14.78495,
+        "peasants": 54.225519999999996,
+        "clergy": 3.4511800000000004,
+        "nobles": 1.7245300000000001,
+        "soldiers": 12.358709999999999,
+        "laborers": 13.95716
+      },
+      "population_total_raw": 104.30904,
+      "all_completed_building_objects": 54,
+      "domestic_completed_building_objects": 48,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 47,
+      "domestic_non_closed_under90pct_nominal": 1,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 14.78495,
+          "domestic_building_objects": 25,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 25,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 11.299999999999997,
+          "non_closed_employed": 11.199999999999996,
+          "non_closed_nominal_staffing_ratio": 0.991150442477876
+        },
+        "clergy": {
+          "actual_population_raw": 3.4511800000000004,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 13.95716,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 4,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.1,
+          "non_closed_employed": 3.1,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.7245300000000001,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 3.80699,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.0,
+          "non_closed_employed": 3.80696,
+          "non_closed_nominal_staffing_ratio": 0.95174
+        },
+        "soldiers": {
+          "actual_population_raw": 12.358709999999999,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 12.0,
+          "non_closed_employed": 12.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1480.4.1",
+      "source_file": "1480.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 326965039,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 33,
+      "population_by_type_raw": {
+        "slaves": 4.00094,
+        "burghers": 16.690070000000002,
+        "peasants": 51.69462,
+        "clergy": 3.44996,
+        "nobles": 1.53792,
+        "soldiers": 13.103570000000001,
+        "laborers": 14.344190000000001
+      },
+      "population_total_raw": 104.82127000000001,
+      "all_completed_building_objects": 55,
+      "domestic_completed_building_objects": 49,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 48,
+      "domestic_non_closed_under90pct_nominal": 1,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 16.690070000000002,
+          "domestic_building_objects": 25,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 25,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 12.2,
+          "non_closed_employed": 12.099999999999998,
+          "non_closed_nominal_staffing_ratio": 0.9918032786885245
+        },
+        "clergy": {
+          "actual_population_raw": 3.44996,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 14.344190000000001,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.35,
+          "non_closed_employed": 3.35,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.53792,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 4.00094,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.0,
+          "non_closed_employed": 4.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 13.103570000000001,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 12.0,
+          "non_closed_employed": 12.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1490.4.1",
+      "source_file": "1490.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 331441055,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 30,
+      "population_by_type_raw": {
+        "slaves": 3.76985,
+        "burghers": 18.948339999999998,
+        "peasants": 50.38484,
+        "clergy": 3.50176,
+        "nobles": 1.47275,
+        "soldiers": 12.78281,
+        "laborers": 13.905850000000001
+      },
+      "population_total_raw": 104.7662,
+      "all_completed_building_objects": 54,
+      "domestic_completed_building_objects": 48,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 47,
+      "domestic_non_closed_under90pct_nominal": 1,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 18.948339999999998,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 15.1,
+          "non_closed_employed": 14.999999999999996,
+          "non_closed_nominal_staffing_ratio": 0.9933774834437084
+        },
+        "clergy": {
+          "actual_population_raw": 3.50176,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 13.905850000000001,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.35,
+          "non_closed_employed": 3.35,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.47275,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 3.76985,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.0,
+          "non_closed_employed": 3.76984,
+          "non_closed_nominal_staffing_ratio": 0.94246
+        },
+        "soldiers": {
+          "actual_population_raw": 12.78281,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 12.0,
+          "non_closed_employed": 12.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1500.4.1",
+      "source_file": "1500.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 337554144,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 33,
+      "population_by_type_raw": {
+        "slaves": 3.8344600000000004,
+        "burghers": 20.08131,
+        "peasants": 50.03773,
+        "clergy": 3.5333699999999997,
+        "nobles": 1.6324800000000002,
+        "soldiers": 13.026399999999999,
+        "laborers": 14.34964
+      },
+      "population_total_raw": 106.49539000000001,
+      "all_completed_building_objects": 56,
+      "domestic_completed_building_objects": 48,
+      "domestic_closed_objects": 2,
+      "domestic_non_closed_with_jobs": 46,
+      "domestic_non_closed_under90pct_nominal": 1,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 20.08131,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 15.299999999999999,
+          "non_closed_employed": 15.199999999999998,
+          "non_closed_nominal_staffing_ratio": 0.9934640522875816
+        },
+        "clergy": {
+          "actual_population_raw": 3.5333699999999997,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 6,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.95,
+          "non_closed_employed": 0.95,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 14.34964,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.35,
+          "non_closed_employed": 3.35,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.6324800000000002,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 3.8344600000000004,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.0,
+          "non_closed_employed": 3.83444,
+          "non_closed_nominal_staffing_ratio": 0.95861
+        },
+        "soldiers": {
+          "actual_population_raw": 13.026399999999999,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 12.0,
+          "non_closed_employed": 12.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1510.4.1",
+      "source_file": "1510.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 342971520,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 39,
+      "population_by_type_raw": {
+        "slaves": 3.7674,
+        "burghers": 21.72639,
+        "peasants": 46.07329,
+        "clergy": 3.47772,
+        "nobles": 1.54834,
+        "soldiers": 11.696110000000001,
+        "laborers": 13.88603
+      },
+      "population_total_raw": 102.17528000000001,
+      "all_completed_building_objects": 56,
+      "domestic_completed_building_objects": 48,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 47,
+      "domestic_non_closed_under90pct_nominal": 1,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 21.72639,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 18.900000000000002,
+          "non_closed_employed": 18.800000000000004,
+          "non_closed_nominal_staffing_ratio": 0.9947089947089949
+        },
+        "clergy": {
+          "actual_population_raw": 3.47772,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 13.88603,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.35,
+          "non_closed_employed": 3.35,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.54834,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 3.7674,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.0,
+          "non_closed_employed": 3.7674,
+          "non_closed_nominal_staffing_ratio": 0.94185
+        },
+        "soldiers": {
+          "actual_population_raw": 11.696110000000001,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 12.0,
+          "non_closed_employed": 11.696029999999999,
+          "non_closed_nominal_staffing_ratio": 0.9746691666666666
+        }
+      }
+    },
+    {
+      "date": "1520.4.1",
+      "source_file": "1520.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 350413550,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 42,
+      "population_by_type_raw": {
+        "burghers": 22.826700000000002,
+        "peasants": 36.11256,
+        "clergy": 3.32046,
+        "slaves": 3.4865399999999993,
+        "nobles": 1.56141,
+        "soldiers": 11.904679999999999,
+        "laborers": 12.57381
+      },
+      "population_total_raw": 91.78616,
+      "all_completed_building_objects": 56,
+      "domestic_completed_building_objects": 48,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 47,
+      "domestic_non_closed_under90pct_nominal": 2,
+      "domestic_non_closed_zero_employment": 1,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 22.826700000000002,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 1,
+          "non_closed_nominal_capacity": 19.1,
+          "non_closed_employed": 19.000000000000004,
+          "non_closed_nominal_staffing_ratio": 0.9947643979057593
+        },
+        "clergy": {
+          "actual_population_raw": 3.32046,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 12.57381,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.8,
+          "non_closed_employed": 3.8,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.56141,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 3.4865399999999993,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.0,
+          "non_closed_employed": 3.48652,
+          "non_closed_nominal_staffing_ratio": 0.87163
+        },
+        "soldiers": {
+          "actual_population_raw": 11.904679999999999,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 12.0,
+          "non_closed_employed": 11.90459,
+          "non_closed_nominal_staffing_ratio": 0.9920491666666668
+        }
+      }
+    },
+    {
+      "date": "1530.4.1",
+      "source_file": "1530.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 359003701,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 42,
+      "population_by_type_raw": {
+        "burghers": 24.83821,
+        "peasants": 25.700419999999998,
+        "clergy": 3.28193,
+        "slaves": 3.73952,
+        "nobles": 1.48489,
+        "soldiers": 13.04617,
+        "laborers": 13.366190000000001
+      },
+      "population_total_raw": 85.45733,
+      "all_completed_building_objects": 57,
+      "domestic_completed_building_objects": 49,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 48,
+      "domestic_non_closed_under90pct_nominal": 0,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 24.83821,
+          "domestic_building_objects": 25,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 25,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 20.8,
+          "non_closed_employed": 20.8,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "clergy": {
+          "actual_population_raw": 3.28193,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 13.366190000000001,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.8,
+          "non_closed_employed": 3.8,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.48489,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 3.73952,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.0,
+          "non_closed_employed": 3.73952,
+          "non_closed_nominal_staffing_ratio": 0.93488
+        },
+        "soldiers": {
+          "actual_population_raw": 13.04617,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 12.0,
+          "non_closed_employed": 12.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1540.4.1",
+      "source_file": "1540.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 366386505,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 47,
+      "population_by_type_raw": {
+        "burghers": 25.10958,
+        "peasants": 20.33457,
+        "clergy": 3.26254,
+        "nobles": 1.3787099999999999,
+        "soldiers": 12.593160000000001,
+        "slaves": 3.9985199999999996,
+        "laborers": 17.80321
+      },
+      "population_total_raw": 84.48029,
+      "all_completed_building_objects": 59,
+      "domestic_completed_building_objects": 51,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 50,
+      "domestic_non_closed_under90pct_nominal": 1,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 25.10958,
+          "domestic_building_objects": 27,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 27,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 20.800000000000004,
+          "non_closed_employed": 20.800000000000004,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "clergy": {
+          "actual_population_raw": 3.26254,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 17.80321,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 9.35,
+          "non_closed_employed": 9.35,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.3787099999999999,
+          "domestic_building_objects": 3,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 3,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.2,
+          "non_closed_employed": 0.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 3.9985199999999996,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 3.99852,
+          "non_closed_nominal_staffing_ratio": 0.66642
+        },
+        "soldiers": {
+          "actual_population_raw": 12.593160000000001,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 12.0,
+          "non_closed_employed": 12.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1550.4.1",
+      "source_file": "1550.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 374004948,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 51,
+      "population_by_type_raw": {
+        "burghers": 25.609560000000002,
+        "peasants": 17.11807,
+        "slaves": 5.612629999999999,
+        "clergy": 3.32486,
+        "nobles": 1.49261,
+        "soldiers": 12.954930000000001,
+        "laborers": 21.35578
+      },
+      "population_total_raw": 87.46844,
+      "all_completed_building_objects": 60,
+      "domestic_completed_building_objects": 52,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 51,
+      "domestic_non_closed_under90pct_nominal": 2,
+      "domestic_non_closed_zero_employment": 2,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 25.609560000000002,
+          "domestic_building_objects": 27,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 27,
+          "non_closed_zero_employment_objects": 2,
+          "non_closed_nominal_capacity": 20.800000000000004,
+          "non_closed_employed": 20.500000000000007,
+          "non_closed_nominal_staffing_ratio": 0.9855769230769232
+        },
+        "clergy": {
+          "actual_population_raw": 3.32486,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 21.35578,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 9.35,
+          "non_closed_employed": 9.35,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.49261,
+          "domestic_building_objects": 4,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 4,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.30000000000000004,
+          "non_closed_employed": 0.30000000000000004,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 5.612629999999999,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.61258,
+          "non_closed_nominal_staffing_ratio": 0.9354300000000001
+        },
+        "soldiers": {
+          "actual_population_raw": 12.954930000000001,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 12.0,
+          "non_closed_employed": 12.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1560.4.1",
+      "source_file": "1560.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 377178006,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 46,
+      "population_by_type_raw": {
+        "burghers": 24.811149999999998,
+        "peasants": 7.77106,
+        "clergy": 3.04716,
+        "slaves": 4.92542,
+        "nobles": 1.31933,
+        "soldiers": 13.13947,
+        "laborers": 18.44602
+      },
+      "population_total_raw": 73.45961,
+      "all_completed_building_objects": 62,
+      "domestic_completed_building_objects": 54,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 53,
+      "domestic_non_closed_under90pct_nominal": 1,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 24.811149999999998,
+          "domestic_building_objects": 28,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 28,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 21.8,
+          "non_closed_employed": 21.8,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "clergy": {
+          "actual_population_raw": 3.04716,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 18.44602,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 9.35,
+          "non_closed_employed": 9.35,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.31933,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 4.92542,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 4.9254,
+          "non_closed_nominal_staffing_ratio": 0.8209
+        },
+        "soldiers": {
+          "actual_population_raw": 13.13947,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 13.0,
+          "non_closed_employed": 13.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1570.4.1",
+      "source_file": "1570.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 386685264,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 62,
+      "population_by_type_raw": {
+        "burghers": 27.05972,
+        "peasants": 2.25299,
+        "soldiers": 12.83149,
+        "clergy": 2.9735699999999996,
+        "slaves": 4.9174999999999995,
+        "nobles": 1.19978,
+        "laborers": 17.27628
+      },
+      "population_total_raw": 68.51132999999999,
+      "all_completed_building_objects": 62,
+      "domestic_completed_building_objects": 54,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 53,
+      "domestic_non_closed_under90pct_nominal": 2,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 27.05972,
+          "domestic_building_objects": 28,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 28,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 24.299999999999997,
+          "non_closed_employed": 24.09,
+          "non_closed_nominal_staffing_ratio": 0.9913580246913581
+        },
+        "clergy": {
+          "actual_population_raw": 2.9735699999999996,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 17.27628,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 9.45,
+          "non_closed_employed": 9.45,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.19978,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 4.9174999999999995,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 4.91748,
+          "non_closed_nominal_staffing_ratio": 0.8195800000000001
+        },
+        "soldiers": {
+          "actual_population_raw": 12.83149,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 13.0,
+          "non_closed_employed": 12.831380000000001,
+          "non_closed_nominal_staffing_ratio": 0.9870292307692309
+        }
+      }
+    },
+    {
+      "date": "1580.4.1",
+      "source_file": "1580.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 388610563,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 47,
+      "population_by_type_raw": {
+        "burghers": 28.70737,
+        "peasants": 2.28854,
+        "slaves": 5.415159999999999,
+        "soldiers": 13.300170000000001,
+        "clergy": 2.98043,
+        "nobles": 1.03564,
+        "laborers": 14.39158
+      },
+      "population_total_raw": 68.11889000000001,
+      "all_completed_building_objects": 62,
+      "domestic_completed_building_objects": 54,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 54,
+      "domestic_non_closed_under90pct_nominal": 6,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 28.70737,
+          "domestic_building_objects": 28,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 28,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 24.599999999999998,
+          "non_closed_employed": 24.599999999999998,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "clergy": {
+          "actual_population_raw": 2.98043,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 14.39158,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 6,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 10.45,
+          "non_closed_employed": 7.39149,
+          "non_closed_nominal_staffing_ratio": 0.7073196172248805
+        },
+        "nobles": {
+          "actual_population_raw": 1.03564,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 5.415159999999999,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.41512,
+          "non_closed_nominal_staffing_ratio": 0.90252
+        },
+        "soldiers": {
+          "actual_population_raw": 13.300170000000001,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 13.0,
+          "non_closed_employed": 13.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1590.4.1",
+      "source_file": "1590.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 392101171,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 57,
+      "population_by_type_raw": {
+        "slaves": 5.78684,
+        "burghers": 30.046899999999997,
+        "nobles": 1.08651,
+        "peasants": 2.15773,
+        "soldiers": 14.14709,
+        "clergy": 3.02705,
+        "laborers": 12.92761
+      },
+      "population_total_raw": 69.17972999999999,
+      "all_completed_building_objects": 62,
+      "domestic_completed_building_objects": 54,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 53,
+      "domestic_non_closed_under90pct_nominal": 0,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 30.046899999999997,
+          "domestic_building_objects": 28,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 28,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 25.4,
+          "non_closed_employed": 25.4,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "clergy": {
+          "actual_population_raw": 3.02705,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 12.92761,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.2,
+          "non_closed_employed": 4.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.08651,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 5.78684,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.78682,
+          "non_closed_nominal_staffing_ratio": 0.9644699999999999
+        },
+        "soldiers": {
+          "actual_population_raw": 14.14709,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 13.0,
+          "non_closed_employed": 13.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1600.4.1",
+      "source_file": "1600.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 396084615,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 47,
+      "population_by_type_raw": {
+        "burghers": 31.077189999999998,
+        "nobles": 1.73196,
+        "peasants": 2.24844,
+        "soldiers": 16.16039,
+        "clergy": 3.08493,
+        "slaves": 5.74551,
+        "laborers": 12.461859999999998
+      },
+      "population_total_raw": 72.51028,
+      "all_completed_building_objects": 61,
+      "domestic_completed_building_objects": 53,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 52,
+      "domestic_non_closed_under90pct_nominal": 0,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 31.077189999999998,
+          "domestic_building_objects": 26,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 26,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 26.299999999999997,
+          "non_closed_employed": 26.299999999999997,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "clergy": {
+          "actual_population_raw": 3.08493,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 12.461859999999998,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.2,
+          "non_closed_employed": 4.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 1.73196,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 5.74551,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.74548,
+          "non_closed_nominal_staffing_ratio": 0.95758
+        },
+        "soldiers": {
+          "actual_population_raw": 16.16039,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.0,
+          "non_closed_employed": 15.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        }
+      }
+    },
+    {
+      "date": "1610.4.1",
+      "source_file": "1610.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 400212492,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 57,
+      "population_by_type_raw": {
+        "slaves": 3.4785299999999997,
+        "burghers": 23.1537,
+        "peasants": 3.62409,
+        "soldiers": 13.47568,
+        "clergy": 1.8604999999999998,
+        "nobles": 0.84922,
+        "laborers": 26.78365
+      },
+      "population_total_raw": 73.22537,
+      "all_completed_building_objects": 59,
+      "domestic_completed_building_objects": 51,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 50,
+      "domestic_non_closed_under90pct_nominal": 33,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 23.1537,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 26.299999999999997,
+          "non_closed_employed": 23.15338,
+          "non_closed_nominal_staffing_ratio": 0.8803566539923955
+        },
+        "clergy": {
+          "actual_population_raw": 1.8604999999999998,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0,
+          "non_closed_employed": 1.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 26.78365,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.2,
+          "non_closed_employed": 4.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.84922,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 3.4785299999999997,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 3.4785,
+          "non_closed_nominal_staffing_ratio": 0.57975
+        },
+        "soldiers": {
+          "actual_population_raw": 13.47568,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 13.475539999999999,
+          "non_closed_nominal_staffing_ratio": 0.8693896774193548
+        }
+      }
+    },
+    {
+      "date": "1620.4.1",
+      "source_file": "1620.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 406743007,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 56,
+      "population_by_type_raw": {
+        "slaves": 2.73473,
+        "soldiers": 15.34731,
+        "burghers": 26.66873,
+        "peasants": 2.5095899999999998,
+        "clergy": 2.1544,
+        "nobles": 0.9127,
+        "laborers": 20.198079999999997
+      },
+      "population_total_raw": 70.52554,
+      "all_completed_building_objects": 60,
+      "domestic_completed_building_objects": 52,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 51,
+      "domestic_non_closed_under90pct_nominal": 1,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 26.66873,
+          "domestic_building_objects": 23,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 23,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 26.199999999999996,
+          "non_closed_employed": 26.199999999999996,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "clergy": {
+          "actual_population_raw": 2.1544,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 1.2000000000000002,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 20.198079999999997,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.2,
+          "non_closed_employed": 4.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.9127,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 2.73473,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 2.73468,
+          "non_closed_nominal_staffing_ratio": 0.45578
+        },
+        "soldiers": {
+          "actual_population_raw": 15.34731,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 15.347170000000002,
+          "non_closed_nominal_staffing_ratio": 0.9901400000000001
+        }
+      }
+    },
+    {
+      "date": "1630.4.1",
+      "source_file": "1630.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 410804927,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 54,
+      "population_by_type_raw": {
+        "slaves": 3.3255200000000005,
+        "soldiers": 13.67225,
+        "burghers": 28.781280000000002,
+        "peasants": 2.3735800000000005,
+        "clergy": 2.04284,
+        "nobles": 0.6571100000000001,
+        "laborers": 17.12506
+      },
+      "population_total_raw": 67.97764000000001,
+      "all_completed_building_objects": 61,
+      "domestic_completed_building_objects": 53,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 52,
+      "domestic_non_closed_under90pct_nominal": 9,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 28.781280000000002,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 26.7,
+          "non_closed_employed": 26.699999999999996,
+          "non_closed_nominal_staffing_ratio": 0.9999999999999999
+        },
+        "clergy": {
+          "actual_population_raw": 2.04284,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 1.2000000000000002,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "laborers": {
+          "actual_population_raw": 17.12506,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.2,
+          "non_closed_employed": 4.2,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.6571100000000001,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.5,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "slaves": {
+          "actual_population_raw": 3.3255200000000005,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 3.3255,
+          "non_closed_nominal_staffing_ratio": 0.55425
+        },
+        "soldiers": {
+          "actual_population_raw": 13.67225,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 13.672240000000002,
+          "non_closed_nominal_staffing_ratio": 0.8820800000000001
+        }
+      }
+    },
+    {
+      "date": "1640.4.1",
+      "source_file": "1640.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 415689325,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 56,
+      "population_by_type_raw": {
+        "burghers": 28.102929999999997,
+        "slaves": 4.910910000000002,
+        "peasants": 2.08963,
+        "soldiers": 14.5106,
+        "nobles": 0.48335,
+        "laborers": 10.58919
+      },
+      "population_total_raw": 60.68661,
+      "all_completed_building_objects": 63,
+      "domestic_completed_building_objects": 55,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 54,
+      "domestic_non_closed_under90pct_nominal": 15,
+      "domestic_non_closed_zero_employment": 9,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 28.102929999999997,
+          "domestic_building_objects": 26,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 26,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 26.7,
+          "non_closed_employed": 26.699999999999992,
+          "non_closed_nominal_staffing_ratio": 0.9999999999999998
+        },
+        "clergy": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 9,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "laborers": {
+          "actual_population_raw": 10.58919,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.2,
+          "non_closed_employed": 3.58915,
+          "non_closed_nominal_staffing_ratio": 0.8545595238095238
+        },
+        "nobles": {
+          "actual_population_raw": 0.48335,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.48334,
+          "non_closed_nominal_staffing_ratio": 0.96668
+        },
+        "slaves": {
+          "actual_population_raw": 4.910910000000002,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 4.91088,
+          "non_closed_nominal_staffing_ratio": 0.81848
+        },
+        "soldiers": {
+          "actual_population_raw": 14.5106,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 14.51048,
+          "non_closed_nominal_staffing_ratio": 0.93616
+        }
+      }
+    },
+    {
+      "date": "1650.4.1",
+      "source_file": "1650.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 417974594,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 68,
+      "population_by_type_raw": {
+        "burghers": 23.90313,
+        "slaves": 5.19377,
+        "tribesmen": 0.02728,
+        "peasants": 2.2393300000000003,
+        "clergy": 0.1554,
+        "soldiers": 15.047899999999998,
+        "nobles": 0.37256,
+        "laborers": 7.12546
+      },
+      "population_total_raw": 54.06483,
+      "all_completed_building_objects": 61,
+      "domestic_completed_building_objects": 53,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 52,
+      "domestic_non_closed_under90pct_nominal": 44,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 23.90313,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 27.299999999999994,
+          "non_closed_employed": 23.902929999999998,
+          "non_closed_nominal_staffing_ratio": 0.8755652014652016
+        },
+        "clergy": {
+          "actual_population_raw": 0.1554,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.15538,
+          "non_closed_nominal_staffing_ratio": 0.1294833333333333
+        },
+        "laborers": {
+          "actual_population_raw": 7.12546,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 4.2,
+          "non_closed_employed": 0.12542,
+          "non_closed_nominal_staffing_ratio": 0.029861904761904763
+        },
+        "nobles": {
+          "actual_population_raw": 0.37256,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.37254000000000004,
+          "non_closed_nominal_staffing_ratio": 0.7450800000000001
+        },
+        "slaves": {
+          "actual_population_raw": 5.19377,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.19372,
+          "non_closed_nominal_staffing_ratio": 0.86562
+        },
+        "soldiers": {
+          "actual_population_raw": 15.047899999999998,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 15.04786,
+          "non_closed_nominal_staffing_ratio": 0.9708296774193549
+        }
+      }
+    },
+    {
+      "date": "1660.4.1",
+      "source_file": "1660.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 430612124,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 57,
+      "population_by_type_raw": {
+        "burghers": 14.49919,
+        "slaves": 4.924270000000001,
+        "peasants": 1.4707199999999998,
+        "clergy": 0.29451,
+        "soldiers": 12.224169999999999,
+        "nobles": 0.12952,
+        "laborers": 8.87705
+      },
+      "population_total_raw": 42.419430000000006,
+      "all_completed_building_objects": 60,
+      "domestic_completed_building_objects": 52,
+      "domestic_closed_objects": 2,
+      "domestic_non_closed_with_jobs": 50,
+      "domestic_non_closed_under90pct_nominal": 50,
+      "domestic_non_closed_zero_employment": 0,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 14.49919,
+          "domestic_building_objects": 23,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 23,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 27.3,
+          "non_closed_employed": 14.49903,
+          "non_closed_nominal_staffing_ratio": 0.5311
+        },
+        "clergy": {
+          "actual_population_raw": 0.29451,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.29449000000000003,
+          "non_closed_nominal_staffing_ratio": 0.2454083333333333
+        },
+        "laborers": {
+          "actual_population_raw": 8.87705,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 2,
+          "non_closed_objects": 4,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 3.2,
+          "non_closed_employed": 1.87702,
+          "non_closed_nominal_staffing_ratio": 0.58656875
+        },
+        "nobles": {
+          "actual_population_raw": 0.12952,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.1295,
+          "non_closed_nominal_staffing_ratio": 0.259
+        },
+        "slaves": {
+          "actual_population_raw": 4.924270000000001,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 4.92426,
+          "non_closed_nominal_staffing_ratio": 0.82071
+        },
+        "soldiers": {
+          "actual_population_raw": 12.224169999999999,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 12.224070000000001,
+          "non_closed_nominal_staffing_ratio": 0.7886496774193549
+        }
+      }
+    },
+    {
+      "date": "1670.4.1",
+      "source_file": "1670.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 433318004,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 71,
+      "population_by_type_raw": {
+        "slaves": 5.754440000000001,
+        "burghers": 16.15672,
+        "peasants": 1.64255,
+        "soldiers": 14.673200000000001,
+        "clergy": 0.42073,
+        "nobles": 0.23793,
+        "laborers": 6.13153
+      },
+      "population_total_raw": 45.0171,
+      "all_completed_building_objects": 61,
+      "domestic_completed_building_objects": 53,
+      "domestic_closed_objects": 2,
+      "domestic_non_closed_with_jobs": 51,
+      "domestic_non_closed_under90pct_nominal": 42,
+      "domestic_non_closed_zero_employment": 5,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 16.15672,
+          "domestic_building_objects": 23,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 23,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 27.3,
+          "non_closed_employed": 16.1566,
+          "non_closed_nominal_staffing_ratio": 0.5918168498168498
+        },
+        "clergy": {
+          "actual_population_raw": 0.42073,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.4207199999999999,
+          "non_closed_nominal_staffing_ratio": 0.3505999999999999
+        },
+        "laborers": {
+          "actual_population_raw": 6.13153,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 2,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 5,
+          "non_closed_nominal_capacity": 21.2,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.23793,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.23791,
+          "non_closed_nominal_staffing_ratio": 0.47582
+        },
+        "slaves": {
+          "actual_population_raw": 5.754440000000001,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.75442,
+          "non_closed_nominal_staffing_ratio": 0.95907
+        },
+        "soldiers": {
+          "actual_population_raw": 14.673200000000001,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 14.67307,
+          "non_closed_nominal_staffing_ratio": 0.9466496774193548
+        }
+      }
+    },
+    {
+      "date": "1680.4.1",
+      "source_file": "1680.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 436977931,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 57,
+      "population_by_type_raw": {
+        "slaves": 5.788039999999999,
+        "burghers": 19.115209999999998,
+        "peasants": 1.6089799999999999,
+        "soldiers": 15.034089999999999,
+        "clergy": 0.4408,
+        "nobles": 0.24144000000000002
+      },
+      "population_total_raw": 42.228559999999995,
+      "all_completed_building_objects": 62,
+      "domestic_completed_building_objects": 54,
+      "domestic_closed_objects": 2,
+      "domestic_non_closed_with_jobs": 52,
+      "domestic_non_closed_under90pct_nominal": 43,
+      "domestic_non_closed_zero_employment": 5,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 19.115209999999998,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 27.3,
+          "non_closed_employed": 19.11504,
+          "non_closed_nominal_staffing_ratio": 0.7001846153846154
+        },
+        "clergy": {
+          "actual_population_raw": 0.4408,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.4407499999999999,
+          "non_closed_nominal_staffing_ratio": 0.36729166666666657
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 2,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 5,
+          "non_closed_nominal_capacity": 23.2,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.24144000000000002,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.24141,
+          "non_closed_nominal_staffing_ratio": 0.48282
+        },
+        "slaves": {
+          "actual_population_raw": 5.788039999999999,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.78802,
+          "non_closed_nominal_staffing_ratio": 0.96467
+        },
+        "soldiers": {
+          "actual_population_raw": 15.034089999999999,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 15.03407,
+          "non_closed_nominal_staffing_ratio": 0.96994
+        }
+      }
+    },
+    {
+      "date": "1690.4.1",
+      "source_file": "1690.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 441022155,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 61,
+      "population_by_type_raw": {
+        "slaves": 3.6911900000000006,
+        "burghers": 13.74688,
+        "peasants": 1.16941,
+        "soldiers": 9.48094,
+        "clergy": 0.16537,
+        "nobles": 0.08812
+      },
+      "population_total_raw": 28.341910000000002,
+      "all_completed_building_objects": 61,
+      "domestic_completed_building_objects": 53,
+      "domestic_closed_objects": 2,
+      "domestic_non_closed_with_jobs": 51,
+      "domestic_non_closed_under90pct_nominal": 51,
+      "domestic_non_closed_zero_employment": 4,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 13.74688,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 27.700000000000003,
+          "non_closed_employed": 13.746550000000001,
+          "non_closed_nominal_staffing_ratio": 0.4962653429602888
+        },
+        "clergy": {
+          "actual_population_raw": 0.16537,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.16536,
+          "non_closed_nominal_staffing_ratio": 0.13779999999999998
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 2,
+          "non_closed_objects": 4,
+          "non_closed_zero_employment_objects": 4,
+          "non_closed_nominal_capacity": 3.2,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.08812,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.0881,
+          "non_closed_nominal_staffing_ratio": 0.1762
+        },
+        "slaves": {
+          "actual_population_raw": 3.6911900000000006,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 3.69114,
+          "non_closed_nominal_staffing_ratio": 0.61519
+        },
+        "soldiers": {
+          "actual_population_raw": 9.48094,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 9.48088,
+          "non_closed_nominal_staffing_ratio": 0.6116696774193549
+        }
+      }
+    },
+    {
+      "date": "1700.4.1",
+      "source_file": "1700.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 441439728,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 56,
+      "population_by_type_raw": {
+        "slaves": 5.812460000000001,
+        "burghers": 14.47646,
+        "peasants": 1.07195,
+        "soldiers": 8.47431,
+        "nobles": 0.09268,
+        "clergy": 0.11758
+      },
+      "population_total_raw": 30.045440000000003,
+      "all_completed_building_objects": 61,
+      "domestic_completed_building_objects": 53,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 52,
+      "domestic_non_closed_under90pct_nominal": 51,
+      "domestic_non_closed_zero_employment": 5,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 14.47646,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 27.700000000000003,
+          "non_closed_employed": 14.476220000000003,
+          "non_closed_nominal_staffing_ratio": 0.5226072202166065
+        },
+        "clergy": {
+          "actual_population_raw": 0.11758,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.11750999999999998,
+          "non_closed_nominal_staffing_ratio": 0.09792499999999997
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 6,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 5,
+          "non_closed_nominal_capacity": 4.2,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.09268,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.09265,
+          "non_closed_nominal_staffing_ratio": 0.1853
+        },
+        "slaves": {
+          "actual_population_raw": 5.812460000000001,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.81244,
+          "non_closed_nominal_staffing_ratio": 0.9687399999999999
+        },
+        "soldiers": {
+          "actual_population_raw": 8.47431,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 8.474160000000001,
+          "non_closed_nominal_staffing_ratio": 0.5467200000000001
+        }
+      }
+    },
+    {
+      "date": "1710.4.1",
+      "source_file": "1710.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 446677807,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 45,
+      "population_by_type_raw": {
+        "burghers": 11.46852,
+        "peasants": 0.8504000000000002,
+        "soldiers": 2.9243,
+        "slaves": 4.824809999999999,
+        "nobles": 0.04214,
+        "clergy": 0.07467
+      },
+      "population_total_raw": 20.18484,
+      "all_completed_building_objects": 61,
+      "domestic_completed_building_objects": 53,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 52,
+      "domestic_non_closed_under90pct_nominal": 52,
+      "domestic_non_closed_zero_employment": 6,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 11.46852,
+          "domestic_building_objects": 23,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 23,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 27.900000000000002,
+          "non_closed_employed": 11.468240000000003,
+          "non_closed_nominal_staffing_ratio": 0.4110480286738352
+        },
+        "clergy": {
+          "actual_population_raw": 0.07467,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.07465000000000001,
+          "non_closed_nominal_staffing_ratio": 0.06220833333333333
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 6,
+          "non_closed_zero_employment_objects": 6,
+          "non_closed_nominal_capacity": 10.2,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.04214,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.042109999999999995,
+          "non_closed_nominal_staffing_ratio": 0.08421999999999999
+        },
+        "slaves": {
+          "actual_population_raw": 4.824809999999999,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 4.82478,
+          "non_closed_nominal_staffing_ratio": 0.8041299999999999
+        },
+        "soldiers": {
+          "actual_population_raw": 2.9243,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 2.9242300000000006,
+          "non_closed_nominal_staffing_ratio": 0.18866000000000002
+        }
+      }
+    },
+    {
+      "date": "1720.4.1",
+      "source_file": "1720.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 450247149,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 59,
+      "population_by_type_raw": {
+        "burghers": 10.06632,
+        "slaves": 5.886429999999999,
+        "peasants": 0.8812,
+        "soldiers": 5.16016,
+        "nobles": 0.04726,
+        "clergy": 0.10353000000000001
+      },
+      "population_total_raw": 22.1449,
+      "all_completed_building_objects": 62,
+      "domestic_completed_building_objects": 54,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 53,
+      "domestic_non_closed_under90pct_nominal": 52,
+      "domestic_non_closed_zero_employment": 7,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 10.06632,
+          "domestic_building_objects": 23,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 23,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 26.6,
+          "non_closed_employed": 10.066149999999999,
+          "non_closed_nominal_staffing_ratio": 0.37842669172932325
+        },
+        "clergy": {
+          "actual_population_raw": 0.10353000000000001,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.10348000000000002,
+          "non_closed_nominal_staffing_ratio": 0.08623333333333333
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 7,
+          "non_closed_nominal_capacity": 24.36,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.04726,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.047240000000000004,
+          "non_closed_nominal_staffing_ratio": 0.09448000000000001
+        },
+        "slaves": {
+          "actual_population_raw": 5.886429999999999,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.88642,
+          "non_closed_nominal_staffing_ratio": 0.98107
+        },
+        "soldiers": {
+          "actual_population_raw": 5.16016,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 15.5,
+          "non_closed_employed": 5.1601,
+          "non_closed_nominal_staffing_ratio": 0.33290967741935484
+        }
+      }
+    },
+    {
+      "date": "1730.4.1",
+      "source_file": "1730.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 448949991,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 70,
+      "population_by_type_raw": {
+        "burghers": 10.60464,
+        "slaves": 9.381429999999998,
+        "peasants": 1.36618,
+        "soldiers": 4.342149999999999,
+        "nobles": 0.02272,
+        "clergy": 0.07795
+      },
+      "population_total_raw": 25.79507,
+      "all_completed_building_objects": 61,
+      "domestic_completed_building_objects": 53,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 52,
+      "domestic_non_closed_under90pct_nominal": 51,
+      "domestic_non_closed_zero_employment": 6,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 10.60464,
+          "domestic_building_objects": 23,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 23,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 26.400000000000002,
+          "non_closed_employed": 10.604480000000002,
+          "non_closed_nominal_staffing_ratio": 0.40168484848484853
+        },
+        "clergy": {
+          "actual_population_raw": 0.07795,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.07788999999999999,
+          "non_closed_nominal_staffing_ratio": 0.06490833333333332
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 6,
+          "non_closed_zero_employment_objects": 6,
+          "non_closed_nominal_capacity": 4.68,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.02272,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.022699999999999998,
+          "non_closed_nominal_staffing_ratio": 0.045399999999999996
+        },
+        "slaves": {
+          "actual_population_raw": 9.381429999999998,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 6.0,
+          "non_closed_nominal_staffing_ratio": 1.0
+        },
+        "soldiers": {
+          "actual_population_raw": 4.342149999999999,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 16.5,
+          "non_closed_employed": 4.3421400000000006,
+          "non_closed_nominal_staffing_ratio": 0.26316000000000006
+        }
+      }
+    },
+    {
+      "date": "1740.4.1",
+      "source_file": "1740.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 454315497,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 57,
+      "population_by_type_raw": {
+        "burghers": 7.9110000000000005,
+        "slaves": 5.069869999999999,
+        "peasants": 1.8225900000000004,
+        "soldiers": 2.09903,
+        "clergy": 0.03315
+      },
+      "population_total_raw": 16.93564,
+      "all_completed_building_objects": 64,
+      "domestic_completed_building_objects": 56,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 55,
+      "domestic_non_closed_under90pct_nominal": 55,
+      "domestic_non_closed_zero_employment": 11,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 7.9110000000000005,
+          "domestic_building_objects": 26,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 26,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 26.88,
+          "non_closed_employed": 7.910659999999998,
+          "non_closed_nominal_staffing_ratio": 0.29429538690476187
+        },
+        "clergy": {
+          "actual_population_raw": 0.03315,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.03312999999999999,
+          "non_closed_nominal_staffing_ratio": 0.02760833333333332
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 6,
+          "non_closed_zero_employment_objects": 6,
+          "non_closed_nominal_capacity": 4.68,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 5,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "slaves": {
+          "actual_population_raw": 5.069869999999999,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.06982,
+          "non_closed_nominal_staffing_ratio": 0.84497
+        },
+        "soldiers": {
+          "actual_population_raw": 2.09903,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 16.5,
+          "non_closed_employed": 2.0989599999999995,
+          "non_closed_nominal_staffing_ratio": 0.12720969696969694
+        }
+      }
+    },
+    {
+      "date": "1750.4.1",
+      "source_file": "1750.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 452460539,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 67,
+      "population_by_type_raw": {
+        "nobles": 0.010409999999999999,
+        "slaves": 5.787860000000002,
+        "burghers": 8.61815,
+        "peasants": 2.7780199999999997,
+        "soldiers": 2.01559,
+        "clergy": 0.04288
+      },
+      "population_total_raw": 19.25291,
+      "all_completed_building_objects": 69,
+      "domestic_completed_building_objects": 61,
+      "domestic_closed_objects": 1,
+      "domestic_non_closed_with_jobs": 60,
+      "domestic_non_closed_under90pct_nominal": 59,
+      "domestic_non_closed_zero_employment": 6,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 8.61815,
+          "domestic_building_objects": 31,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 31,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 28.880000000000006,
+          "non_closed_employed": 8.61797,
+          "non_closed_nominal_staffing_ratio": 0.29840616343490295
+        },
+        "clergy": {
+          "actual_population_raw": 0.04288,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.042829999999999986,
+          "non_closed_nominal_staffing_ratio": 0.03569166666666665
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 1,
+          "non_closed_objects": 6,
+          "non_closed_zero_employment_objects": 6,
+          "non_closed_nominal_capacity": 4.84,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.010409999999999999,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.0104,
+          "non_closed_nominal_staffing_ratio": 0.0208
+        },
+        "slaves": {
+          "actual_population_raw": 5.787860000000002,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.78784,
+          "non_closed_nominal_staffing_ratio": 0.96464
+        },
+        "soldiers": {
+          "actual_population_raw": 2.01559,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 17.5,
+          "non_closed_employed": 2.0154699999999997,
+          "non_closed_nominal_staffing_ratio": 0.11516971428571426
+        }
+      }
+    },
+    {
+      "date": "1760.4.1",
+      "source_file": "1760.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 457091976,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 64,
+      "population_by_type_raw": {
+        "nobles": 0.028650000000000002,
+        "slaves": 5.40896,
+        "clergy": 0.06451,
+        "burghers": 9.645689999999998,
+        "peasants": 2.48678,
+        "soldiers": 1.5878599999999998
+      },
+      "population_total_raw": 19.22245,
+      "all_completed_building_objects": 68,
+      "domestic_completed_building_objects": 60,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 60,
+      "domestic_non_closed_under90pct_nominal": 59,
+      "domestic_non_closed_zero_employment": 7,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 9.645689999999998,
+          "domestic_building_objects": 30,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 30,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 30.9,
+          "non_closed_employed": 9.64532,
+          "non_closed_nominal_staffing_ratio": 0.31214627831715214
+        },
+        "clergy": {
+          "actual_population_raw": 0.06451,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.06445000000000001,
+          "non_closed_nominal_staffing_ratio": 0.05370833333333333
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 7,
+          "non_closed_nominal_capacity": 12.78,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.028650000000000002,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.02864,
+          "non_closed_nominal_staffing_ratio": 0.05728
+        },
+        "slaves": {
+          "actual_population_raw": 5.40896,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.40894,
+          "non_closed_nominal_staffing_ratio": 0.90149
+        },
+        "soldiers": {
+          "actual_population_raw": 1.5878599999999998,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 17.5,
+          "non_closed_employed": 1.58777,
+          "non_closed_nominal_staffing_ratio": 0.09072971428571427
+        }
+      }
+    },
+    {
+      "date": "1770.4.1",
+      "source_file": "1770.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 461869213,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 64,
+      "population_by_type_raw": {
+        "nobles": 0.031860000000000006,
+        "clergy": 0.07132,
+        "burghers": 10.15413,
+        "peasants": 2.9899700000000005,
+        "slaves": 5.75457,
+        "soldiers": 1.16737
+      },
+      "population_total_raw": 20.169220000000003,
+      "all_completed_building_objects": 67,
+      "domestic_completed_building_objects": 59,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 59,
+      "domestic_non_closed_under90pct_nominal": 58,
+      "domestic_non_closed_zero_employment": 7,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 10.15413,
+          "domestic_building_objects": 29,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 29,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 33.260000000000005,
+          "non_closed_employed": 10.15367,
+          "non_closed_nominal_staffing_ratio": 0.3052817197835237
+        },
+        "clergy": {
+          "actual_population_raw": 0.07132,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.07129,
+          "non_closed_nominal_staffing_ratio": 0.05940833333333333
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 7,
+          "non_closed_nominal_capacity": 13.899999999999999,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.031860000000000006,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.03184,
+          "non_closed_nominal_staffing_ratio": 0.06368
+        },
+        "slaves": {
+          "actual_population_raw": 5.75457,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.75454,
+          "non_closed_nominal_staffing_ratio": 0.9590900000000001
+        },
+        "soldiers": {
+          "actual_population_raw": 1.16737,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 17.5,
+          "non_closed_employed": 1.16725,
+          "non_closed_nominal_staffing_ratio": 0.0667
+        }
+      }
+    },
+    {
+      "date": "1780.4.1",
+      "source_file": "1780.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 465763610,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 71,
+      "population_by_type_raw": {
+        "nobles": 0.07834,
+        "clergy": 0.21248,
+        "burghers": 11.674730000000002,
+        "slaves": 5.776480000000001,
+        "peasants": 2.31177,
+        "soldiers": 1.07903
+      },
+      "population_total_raw": 21.132830000000002,
+      "all_completed_building_objects": 62,
+      "domestic_completed_building_objects": 54,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 54,
+      "domestic_non_closed_under90pct_nominal": 53,
+      "domestic_non_closed_zero_employment": 7,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 11.674730000000002,
+          "domestic_building_objects": 24,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 24,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 36.7,
+          "non_closed_employed": 11.67455,
+          "non_closed_nominal_staffing_ratio": 0.3181076294277929
+        },
+        "clergy": {
+          "actual_population_raw": 0.21248,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.21242999999999995,
+          "non_closed_nominal_staffing_ratio": 0.17702499999999993
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 7,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 7,
+          "non_closed_zero_employment_objects": 7,
+          "non_closed_nominal_capacity": 15.82,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.07834,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.07830999999999999,
+          "non_closed_nominal_staffing_ratio": 0.15661999999999998
+        },
+        "slaves": {
+          "actual_population_raw": 5.776480000000001,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.77644,
+          "non_closed_nominal_staffing_ratio": 0.96274
+        },
+        "soldiers": {
+          "actual_population_raw": 1.07903,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 17.5,
+          "non_closed_employed": 1.07887,
+          "non_closed_nominal_staffing_ratio": 0.06164971428571429
+        }
+      }
+    },
+    {
+      "date": "1790.4.1",
+      "source_file": "1790.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 475921737,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 69,
+      "population_by_type_raw": {
+        "nobles": 0.15812,
+        "clergy": 0.45531999999999995,
+        "burghers": 14.665980000000001,
+        "peasants": 2.7926000000000006,
+        "soldiers": 1.19677,
+        "slaves": 4.563429999999999,
+        "laborers": 0.06471
+      },
+      "population_total_raw": 23.896930000000005,
+      "all_completed_building_objects": 65,
+      "domestic_completed_building_objects": 57,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 57,
+      "domestic_non_closed_under90pct_nominal": 57,
+      "domestic_non_closed_zero_employment": 8,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 14.665980000000001,
+          "domestic_building_objects": 26,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 26,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 39.98,
+          "non_closed_employed": 14.66576,
+          "non_closed_nominal_staffing_ratio": 0.36682741370685346
+        },
+        "clergy": {
+          "actual_population_raw": 0.45531999999999995,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.2000000000000002,
+          "non_closed_employed": 0.45528999999999986,
+          "non_closed_nominal_staffing_ratio": 0.3794083333333332
+        },
+        "laborers": {
+          "actual_population_raw": 0.06471,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 8,
+          "non_closed_nominal_capacity": 36.14,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.15812,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.15810000000000002,
+          "non_closed_nominal_staffing_ratio": 0.31620000000000004
+        },
+        "slaves": {
+          "actual_population_raw": 4.563429999999999,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 4.56342,
+          "non_closed_nominal_staffing_ratio": 0.76057
+        },
+        "soldiers": {
+          "actual_population_raw": 1.19677,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 17.5,
+          "non_closed_employed": 1.19665,
+          "non_closed_nominal_staffing_ratio": 0.06838
+        }
+      }
+    },
+    {
+      "date": "1800.4.1",
+      "source_file": "1800.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 481055218,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 73,
+      "population_by_type_raw": {
+        "nobles": 0.18177,
+        "clergy": 0.52419,
+        "burghers": 12.77469,
+        "peasants": 2.81117,
+        "soldiers": 2.4379,
+        "slaves": 5.7763300000000015,
+        "laborers": 0.02122
+      },
+      "population_total_raw": 24.527269999999998,
+      "all_completed_building_objects": 67,
+      "domestic_completed_building_objects": 59,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 59,
+      "domestic_non_closed_under90pct_nominal": 58,
+      "domestic_non_closed_zero_employment": 9,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 12.77469,
+          "domestic_building_objects": 27,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 27,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 38.559999999999995,
+          "non_closed_employed": 12.77439,
+          "non_closed_nominal_staffing_ratio": 0.33128604771784237
+        },
+        "clergy": {
+          "actual_population_raw": 0.52419,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0999999999999999,
+          "non_closed_employed": 0.5241399999999999,
+          "non_closed_nominal_staffing_ratio": 0.4764909090909091
+        },
+        "laborers": {
+          "actual_population_raw": 0.02122,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 9,
+          "non_closed_nominal_capacity": 38.89,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.18177,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.18174,
+          "non_closed_nominal_staffing_ratio": 0.36348
+        },
+        "slaves": {
+          "actual_population_raw": 5.7763300000000015,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.77632,
+          "non_closed_nominal_staffing_ratio": 0.96272
+        },
+        "soldiers": {
+          "actual_population_raw": 2.4379,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 17.5,
+          "non_closed_employed": 2.43775,
+          "non_closed_nominal_staffing_ratio": 0.13929999999999998
+        }
+      }
+    },
+    {
+      "date": "1810.4.1",
+      "source_file": "1810.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 487016193,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 66,
+      "population_by_type_raw": {
+        "nobles": 0.23614,
+        "clergy": 0.6704600000000001,
+        "burghers": 14.200230000000001,
+        "peasants": 2.7461000000000007,
+        "soldiers": 1.98643,
+        "slaves": 5.167089999999999,
+        "laborers": 0.00128
+      },
+      "population_total_raw": 25.007730000000002,
+      "all_completed_building_objects": 66,
+      "domestic_completed_building_objects": 58,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 58,
+      "domestic_non_closed_under90pct_nominal": 54,
+      "domestic_non_closed_zero_employment": 29,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 14.200230000000001,
+          "domestic_building_objects": 26,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 26,
+          "non_closed_zero_employment_objects": 20,
+          "non_closed_nominal_capacity": 37.79999999999999,
+          "non_closed_employed": 14.200230000000001,
+          "non_closed_nominal_staffing_ratio": 0.37566746031746046
+        },
+        "clergy": {
+          "actual_population_raw": 0.6704600000000001,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.0999999999999999,
+          "non_closed_employed": 0.67043,
+          "non_closed_nominal_staffing_ratio": 0.6094818181818182
+        },
+        "laborers": {
+          "actual_population_raw": 0.00128,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 9,
+          "non_closed_nominal_capacity": 41.39,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.23614,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.23611,
+          "non_closed_nominal_staffing_ratio": 0.47222
+        },
+        "slaves": {
+          "actual_population_raw": 5.167089999999999,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.16708,
+          "non_closed_nominal_staffing_ratio": 0.8611800000000001
+        },
+        "soldiers": {
+          "actual_population_raw": 1.98643,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 17.5,
+          "non_closed_employed": 1.98642,
+          "non_closed_nominal_staffing_ratio": 0.11350971428571428
+        }
+      }
+    },
+    {
+      "date": "1820.4.1",
+      "source_file": "1820.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 489428134,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 69,
+      "population_by_type_raw": {
+        "nobles": 0.33684,
+        "slaves": 3.5109,
+        "clergy": 0.67538,
+        "burghers": 13.237240000000002,
+        "peasants": 2.51678,
+        "soldiers": 3.3162499999999997,
+        "laborers": 1.77449
+      },
+      "population_total_raw": 25.367880000000003,
+      "all_completed_building_objects": 67,
+      "domestic_completed_building_objects": 59,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 59,
+      "domestic_non_closed_under90pct_nominal": 56,
+      "domestic_non_closed_zero_employment": 32,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 13.237240000000002,
+          "domestic_building_objects": 25,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 25,
+          "non_closed_zero_employment_objects": 20,
+          "non_closed_nominal_capacity": 35.51999999999999,
+          "non_closed_employed": 13.237240000000002,
+          "non_closed_nominal_staffing_ratio": 0.3726700450450452
+        },
+        "clergy": {
+          "actual_population_raw": 0.67538,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.05,
+          "non_closed_employed": 0.6753600000000001,
+          "non_closed_nominal_staffing_ratio": 0.6432
+        },
+        "laborers": {
+          "actual_population_raw": 1.77449,
+          "domestic_building_objects": 12,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 12,
+          "non_closed_zero_employment_objects": 12,
+          "non_closed_nominal_capacity": 44.89,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.33684,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.33680999999999994,
+          "non_closed_nominal_staffing_ratio": 0.6736199999999999
+        },
+        "slaves": {
+          "actual_population_raw": 3.5109,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 3.5109,
+          "non_closed_nominal_staffing_ratio": 0.58515
+        },
+        "soldiers": {
+          "actual_population_raw": 3.3162499999999997,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 18.5,
+          "non_closed_employed": 3.3161199999999997,
+          "non_closed_nominal_staffing_ratio": 0.17924972972972972
+        }
+      }
+    },
+    {
+      "date": "1830.4.1",
+      "source_file": "1830.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 494440315,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 67,
+      "population_by_type_raw": {
+        "nobles": 0.36238,
+        "clergy": 0.72621,
+        "burghers": 14.453,
+        "peasants": 2.38743,
+        "soldiers": 2.52546,
+        "slaves": 5.763420000000002
+      },
+      "population_total_raw": 26.2179,
+      "all_completed_building_objects": 70,
+      "domestic_completed_building_objects": 62,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 62,
+      "domestic_non_closed_under90pct_nominal": 58,
+      "domestic_non_closed_zero_employment": 34,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 14.453,
+          "domestic_building_objects": 23,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 23,
+          "non_closed_zero_employment_objects": 18,
+          "non_closed_nominal_capacity": 32.620000000000005,
+          "non_closed_employed": 14.453,
+          "non_closed_nominal_staffing_ratio": 0.4430717351318209
+        },
+        "clergy": {
+          "actual_population_raw": 0.72621,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.05,
+          "non_closed_employed": 0.72619,
+          "non_closed_nominal_staffing_ratio": 0.6916095238095238
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 16,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 16,
+          "non_closed_zero_employment_objects": 16,
+          "non_closed_nominal_capacity": 49.519999999999996,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.36238,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.36235000000000006,
+          "non_closed_nominal_staffing_ratio": 0.7247000000000001
+        },
+        "slaves": {
+          "actual_population_raw": 5.763420000000002,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.76342,
+          "non_closed_nominal_staffing_ratio": 0.96057
+        },
+        "soldiers": {
+          "actual_population_raw": 2.52546,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 18.5,
+          "non_closed_employed": 2.5254299999999996,
+          "non_closed_nominal_staffing_ratio": 0.13650972972972972
+        }
+      }
+    },
+    {
+      "date": "1840.4.1",
+      "source_file": "1840.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+      "location_id": 5872,
+      "location_offset": 508119699,
+      "owner_id": 41,
+      "owner_tag": "TUR",
+      "population_records": 60,
+      "population_by_type_raw": {
+        "nobles": 0.33985000000000004,
+        "burghers": 13.326340000000002,
+        "peasants": 2.28027,
+        "slaves": 5.24944,
+        "soldiers": 0.8857200000000001,
+        "clergy": 0.65795
+      },
+      "population_total_raw": 22.73957,
+      "all_completed_building_objects": 72,
+      "domestic_completed_building_objects": 64,
+      "domestic_closed_objects": 0,
+      "domestic_non_closed_with_jobs": 64,
+      "domestic_non_closed_under90pct_nominal": 62,
+      "domestic_non_closed_zero_employment": 36,
+      "groups": {
+        "burghers": {
+          "actual_population_raw": 13.326340000000002,
+          "domestic_building_objects": 22,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 22,
+          "non_closed_zero_employment_objects": 17,
+          "non_closed_nominal_capacity": 28.460000000000004,
+          "non_closed_employed": 13.326340000000002,
+          "non_closed_nominal_staffing_ratio": 0.4682480674631061
+        },
+        "clergy": {
+          "actual_population_raw": 0.65795,
+          "domestic_building_objects": 8,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 8,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 1.05,
+          "non_closed_employed": 0.6579299999999999,
+          "non_closed_nominal_staffing_ratio": 0.6265999999999999
+        },
+        "laborers": {
+          "actual_population_raw": 0,
+          "domestic_building_objects": 19,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 19,
+          "non_closed_zero_employment_objects": 19,
+          "non_closed_nominal_capacity": 36.47,
+          "non_closed_employed": 0.0,
+          "non_closed_nominal_staffing_ratio": 0.0
+        },
+        "nobles": {
+          "actual_population_raw": 0.33985000000000004,
+          "domestic_building_objects": 5,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 5,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 0.5,
+          "non_closed_employed": 0.33984000000000003,
+          "non_closed_nominal_staffing_ratio": 0.6796800000000001
+        },
+        "slaves": {
+          "actual_population_raw": 5.24944,
+          "domestic_building_objects": 1,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 1,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 6.0,
+          "non_closed_employed": 5.2494,
+          "non_closed_nominal_staffing_ratio": 0.8748999999999999
+        },
+        "soldiers": {
+          "actual_population_raw": 0.8857200000000001,
+          "domestic_building_objects": 9,
+          "explicitly_closed_objects": 0,
+          "non_closed_objects": 9,
+          "non_closed_zero_employment_objects": 0,
+          "non_closed_nominal_capacity": 20.5,
+          "non_closed_employed": 0.8855999999999999,
+          "non_closed_nominal_staffing_ratio": 0.043199999999999995
+        }
+      }
+    }
+  ]
+}

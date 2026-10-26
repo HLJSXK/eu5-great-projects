@@ -1,0 +1,32 @@
+{
+  "name": "Great Project - MEIOU and Taxes Compatibility",
+  "id": "hades.towards_victory.great_project.compat.meiou_and_taxes",
+  "version": "261026",
+  "game_id": "eu5",
+  "supported_game_version": "1.4.*",
+  "short_description": "Compatibility patch for running Great Project with MEIOU and Taxes.",
+  "picture": "thumbnail.png",
+  "tags": [
+    "User Interface",
+    "Compatibility"
+  ],
+  "relationships": [
+    {
+      "rel_type": "dependency",
+      "id": "hades.towards_victory.great_project",
+      "display_name": "Towards Victory - Great Project",
+      "resource_type": "mod",
+      "version": "261026"
+    },
+    {
+      "rel_type": "dependency",
+      "id": "meiou_and_taxes",
+      "display_name": "MEIOU and Taxes",
+      "resource_type": "mod",
+      "version": "0.1.*"
+    }
+  ],
+  "game_custom_data": {
+    "multiplayer_synchronized": true
+  }
+}

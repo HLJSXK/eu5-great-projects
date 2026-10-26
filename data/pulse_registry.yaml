@@ -1,0 +1,47 @@
+settings:
+  monthly_country_pulse_event_delay_days: 1
+pulses:
+  monthly_country_pulse:
+  - tv_engineering_department_ai_monthly_pulse
+  - tv_engineering_department_cmf_warning_suppressions_monthly_pulse
+  - tv_engineering_department_chief_alert_monthly_pulse
+  - tv_engineering_department_concept_monthly_pulse
+  - tv_engineering_department_debate_monthly_pulse
+  - tv_engineering_department_support_resolution_monthly_pulse
+  - tv_engineering_department_survey_monthly_pulse
+  - tv_engineering_department_construction_monthly_pulse
+  - tv_engineering_department_construction_random_events_monthly_pulse
+  - tv_engineering_department_ritual_monthly_pulse
+  - tv_engineering_department_wonder_auto_cache_monthly_pulse
+  yearly_country_pulse:
+  - tv_engineering_department_ai_yearly_pulse
+  on_character_death:
+  - tv_engineering_department_char_death
+bridges:
+  on_new_country_formed:
+  - tv_engineering_department_standalone_country_created
+  on_released_country:
+  - tv_engineering_department_standalone_country_created
+  on_game_start:
+  - tv_wonder_initialize_index_on_game_start
+  - tv_wonder_sync_final_building_level_maps_on_game_start
+  - tv_wonder_initialize_existing_unique_wonders_on_game_start
+  - tv_wonder_vw_startup_reconcile_on_game_start
+  - tv_wonder_initialize_country_auto_cache_on_game_start
+  - tv_wonder_initialize_location_display_state_on_game_start
+  - tv_engineering_department_standalone_game_start_bridge
+  on_game_load:
+  - tv_wonder_initialize_index_on_game_load
+  - tv_wonder_sync_final_building_level_maps_on_game_load
+  - tv_wonder_initialize_existing_unique_wonders_on_game_load
+  - tv_wonder_initialize_country_auto_cache_on_game_load
+  - tv_wonder_initialize_location_display_state_on_game_load
+  - tv_engineering_department_standalone_game_load_bridge
+  on_religion_changed:
+  - tv_wonder_unique_hagia_sophia_mosque_religion_changed
+  on_location_changed_owner:
+  - tv_wonder_unique_hagia_sophia_mosque_owner_changed
+  - tv_wonder_ownership_location_changed_owner
+  - tv_wonder_construction_site_lost_on_owner_changed
+  cmf_on_callback:
+  - tv_engineering_department_chief_alert_on_cmf_callback

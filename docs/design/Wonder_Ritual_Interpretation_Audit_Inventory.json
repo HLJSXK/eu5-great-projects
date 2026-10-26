@@ -1,0 +1,4588 @@
+{
+  "audit_date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "scope": "Static workspace audit; no game runtime verification. Content status describes the new interpretation schema, not the old ritual content.",
+  "counts": {
+    "projects": 192,
+    "generic_projects": 56,
+    "unique_projects": 136,
+    "shared_eight_stage": 134,
+    "bespoke": 2,
+    "required_interpretations": 576,
+    "authored_interpretations": 0,
+    "base_drift_entries": 56,
+    "base_keys_becoming_empty": 27,
+    "project_types_without_base_country_effects_after_removal": 92,
+    "unique_country_rewards_overridden": 134,
+    "small_generic_repeatable_types": 24
+  },
+  "baseline_verification": {
+    "command": "C:/Users/Hades/anaconda3/envs/eu5/python.exe scripts_engineering_department/test_wonder_mechanics_rules.py",
+    "exit_code": 0,
+    "output": "[OK] Wonder mechanics scale rules validated: 192 wonders, 136 unique wonders.",
+    "meaning": "The existing architecture passes its current checks; several checks enforce behavior the new design intends to replace."
+  },
+  "source_sha256": {
+    "docs/design/Wonder_Ritual_Interpretation_Design.md": "1004b3fdf005d2f2920b32777052cf5fc91044073743cd667989bf3e6be9f94a",
+    "data/wonders.yaml": "67352fd0643e1ca867bd2e47019e8914e6045b4da41b06354f4206f4adf18cbe",
+    "data/unique_wonders.yaml": "8a93892af3dbdf73a7c302207c712509ba3408fdc92bfb8b08244fc89a9533c1",
+    "data/wonder_base_modifiers.yaml": "e0f4884f400fd10719f174db2fbc624e40bcad6b6fb14d085770973db3c3cea5",
+    "data/wonder_generic_rituals.yaml": "beb4b46f97d4a9f80791ae8ee3f95c24d40446642fc153de4e6cac0a5c2a1a77",
+    "scripts_engineering_department/wonder_mechanics/_core.py": "2afb01ba73255f942367ce1e138ae142b5a49f1662d40bb951aa2c3ed28d9c51",
+    "scripts_engineering_department/wonder_ceremony_lib.py": "5b42a81b33e9d4229e98df3cbc3e8032a4601a236a663650810c8dcc3d40daae",
+    "src/in_game/common/scripted_effects/tv_engineering_department_effects.txt": "f76065a103b0aecf5d06eeebfadff292284fef7c21099c96522c089c9c3f32bd",
+    ".eu5-base/reference_game_files/game/in_game/common/societal_values/00_default.txt": "34810dbee1f4ad22efb10d3ed43867255e998c958493fbe91de77599b0075195",
+    ".eu5-base/reference_game_files/game/loading_screen/common/defines/00_defines.txt": "a0aca4ad514aeb38a68a6ef2406cf215c72c5ba3477a59d413c4ff69969c1b83"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "key": "sacred_mountain",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "sacred_mountain",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "clergy_estate_max_tax",
+        "clergy_estate_target_satisfaction"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 2,
+      "key": "triumphal_axis",
+      "kind": "generic",
+      "size": "large",
+      "base_key": "triumphal_axis",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_political_influence"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 3,
+      "key": "great_port",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "great_port",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 4,
+      "key": "giant_necropolis",
+      "kind": "generic",
+      "size": "large",
+      "base_key": "giant_necropolis",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_traditionalist": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "pop_join_rebel_threshold",
+        "pop_leave_rebels_threshold"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 5,
+      "key": "great_lighthouse",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "great_lighthouse",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "trade_range",
+        "naval_range",
+        "colonial_range"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 6,
+      "key": "hydraulic_workshop",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "hydraulic_workshop",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 7,
+      "key": "mining_city",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "mining_city",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_traditional_economy": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 8,
+      "key": "giant_observatory",
+      "kind": "generic",
+      "size": "large",
+      "base_key": "giant_observatory",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "research_speed"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 9,
+      "key": "palace_of_nations",
+      "kind": "generic",
+      "size": "large",
+      "base_key": "palace_of_nations",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_distance_from_capital_speed_propagation"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 10,
+      "key": "university_city",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "university_city",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 11,
+      "key": "sky_dome_grand_temple",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "sky_dome_grand_temple",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_conversion_speed"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 12,
+      "key": "giant_tower_temple",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "giant_tower_temple",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 13,
+      "key": "river_extension",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "river_extension",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_free_subjects": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 14,
+      "key": "national_shipyard",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "national_shipyard",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "ship_build_speed"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 15,
+      "key": "star_fortress_city",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 16,
+      "key": "great_wall",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "great_wall",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 17,
+      "key": "giant_armory",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "giant_armory",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_offensive": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 18,
+      "key": "library_of_nation",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "library_of_nation",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_promotion_speed"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 19,
+      "key": "large_canal_system",
+      "kind": "generic",
+      "size": "large",
+      "base_key": "large_canal_system",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_free_subjects": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_monthly_prosperity"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 20,
+      "key": "mountain_terrace_network",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "mountain_terrace_network",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_traditional_economy": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 21,
+      "key": "giant_dam_project",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "giant_dam_project",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_free_subjects": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 22,
+      "key": "royal_granary_system",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "royal_granary_system",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_traditional_economy": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_food_capacity_modifier"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 23,
+      "key": "imperial_post_road_network",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "imperial_post_road_network",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_land": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 24,
+      "key": "canal_hub_city",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "canal_hub_city",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_mercantilism": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 25,
+      "key": "frontier_colonization_belt",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "frontier_colonization_belt",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_outward": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 26,
+      "key": "coastal_beacon_network",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "coastal_beacon_network",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_communalism": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 27,
+      "key": "knightly_fortress_order",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "knightly_fortress_order",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_land": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 28,
+      "key": "war_college_system",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "war_college_system",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_belligerent": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_army_tradition"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 29,
+      "key": "great_clock_bell_system",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "great_clock_bell_system",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_inward": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 30,
+      "key": "royal_art_district",
+      "kind": "generic",
+      "size": "large",
+      "base_key": "royal_art_district",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_aristocracy": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "num_possible_artists",
+        "artist_salary_modifier"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 31,
+      "key": "grand_theater_festival_district",
+      "kind": "generic",
+      "size": "large",
+      "base_key": "grand_theater_festival_district",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "cultural_influence_modifier",
+        "skill_of_new_artists"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 32,
+      "key": "world_embassy_quarter",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "world_embassy_quarter",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_conciliatory": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "diplomatic_reputation"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 33,
+      "key": "law_code_stele_project",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "law_code_stele_project",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_inward": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_rebel_growth"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 34,
+      "key": "world_market",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "world_market",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_free_trade": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_trade_center_power",
+        "burghers_estate_target_satisfaction"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 35,
+      "key": "royal_mint_system",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "royal_mint_system",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "minting_income_factor"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 36,
+      "key": "guild_alliance",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "guild_alliance",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_plutocracy": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 37,
+      "key": "maritime_trade_station_network",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "maritime_trade_station_network",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_free_trade": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 38,
+      "key": "giant_workshop_complex",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "giant_workshop_complex",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 39,
+      "key": "world_monument_group",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "world_monument_group",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "cultures_capacity"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 40,
+      "key": "city_expansion_project",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "city_expansion_project",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_inward": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 41,
+      "key": "megalithic_circle",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "megalithic_circle",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_traditionalist": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_heretic",
+        "tolerance_heathen"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 42,
+      "key": "grand_cathedral",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "grand_cathedral",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_own"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 43,
+      "key": "great_monastery",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "great_monastery",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_communalism": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 44,
+      "key": "city_great_tower",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "city_great_tower",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_inward": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 45,
+      "key": "great_sculpture_group",
+      "kind": "generic",
+      "size": "large",
+      "base_key": "great_sculpture_group",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "pop_join_rebel_threshold",
+        "pop_leave_rebels_threshold"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 46,
+      "key": "coastal_defense_cannon",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "coastal_defense_cannon",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_offensive": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 47,
+      "key": "naval_school",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "naval_school",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_quality": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_navy_tradition"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 48,
+      "key": "colonial_trade_company",
+      "kind": "generic",
+      "size": "large",
+      "base_key": "colonial_trade_company",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_free_trade": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_merchant_power",
+        "global_merchant_capacity_modifier"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 49,
+      "key": "great_assembly_hall",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "great_assembly_hall",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_conciliatory": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "country_cabinet_efficiency",
+        "legislative_efficiency"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 50,
+      "key": "mobile_fortress",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "mobile_fortress",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_decentralization": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 51,
+      "key": "ancient_city_ruins",
+      "kind": "generic",
+      "size": "large",
+      "base_key": "ancient_city_ruins",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_outward": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "exploration_mission_speed"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 52,
+      "key": "summer_palace",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "summer_palace",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_decentralization": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 53,
+      "key": "national_bank",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "national_bank",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "tax_income_efficiency"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 54,
+      "key": "pirate_port",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "pirate_port",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_individualism": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "can_hire_privateers",
+        "privateer_maintenance_cost_modifier",
+        "privateer_durability"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 55,
+      "key": "grand_garden_complex",
+      "kind": "generic",
+      "size": "small",
+      "base_key": "grand_garden_complex",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.05
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 56,
+      "key": "state_examination_complex",
+      "kind": "generic",
+      "size": "medium",
+      "base_key": "state_examination_complex",
+      "location": null,
+      "current_style_ids": [
+        1,
+        2,
+        3
+      ],
+      "current_process": "style_specific",
+      "current_ritual_key": null,
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.05
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_promotion_speed_modifier"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 101,
+      "key": "unique_pharos_lighthouse",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "great_lighthouse",
+      "location": "alexandria",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "bespoke",
+      "current_ritual_key": "harbor_lighting_and_pilotage_oath",
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "trade_range",
+        "naval_range",
+        "colonial_range"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 102,
+      "key": "unique_hagia_sophia",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sky_dome_grand_temple",
+      "location": "constantinople",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "bespoke",
+      "current_ritual_key": "justinianic_synaxis_of_the_great_church",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_conversion_speed"
+      ],
+      "unique_country_reward_overridden": false,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 103,
+      "key": "unique_dome_of_the_rock",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sky_dome_grand_temple",
+      "location": "jerusalem",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "dome_pilgrimage",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_conversion_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 104,
+      "key": "unique_angkor_wat",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_tower_temple",
+      "location": "angkor",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "devaraja_entrance",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 105,
+      "key": "unique_potala_palace",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sacred_mountain",
+      "location": "lhasa",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "enthronement",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "clergy_estate_max_tax",
+        "clergy_estate_target_satisfaction"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 106,
+      "key": "unique_alhambra",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "palace_of_nations",
+      "location": "granada",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "capitulation_treaty",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_distance_from_capital_speed_propagation"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 107,
+      "key": "unique_machu_picchu",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sacred_mountain",
+      "location": "picchu",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "inti_raymi",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "clergy_estate_max_tax",
+        "clergy_estate_target_satisfaction"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 108,
+      "key": "unique_himeji_castle",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": "shikama",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "castle_receipt",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 109,
+      "key": "unique_taj_mahal",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "giant_necropolis",
+      "location": "agra",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "royal_memorial_unsealing",
+      "base_drift_at_level_1": {
+        "monthly_towards_traditionalist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "pop_join_rebel_threshold",
+        "pop_leave_rebels_threshold"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 110,
+      "key": "unique_forbidden_city",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "triumphal_axis",
+      "location": "dadu",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "capital_transfer",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_political_influence"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 111,
+      "key": "unique_topkapi_palace",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "palace_of_nations",
+      "location": "constantinople",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "conquest_entry",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_distance_from_capital_speed_propagation"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 112,
+      "key": "unique_st_peters_basilica",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sky_dome_grand_temple",
+      "location": "rome",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "dedication",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_conversion_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 113,
+      "key": "unique_lalibela_churches",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sacred_mountain",
+      "location": "lalibela",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "holy_city_pilgrimage",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "clergy_estate_max_tax",
+        "clergy_estate_target_satisfaction"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 114,
+      "key": "unique_venetian_arsenal",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "national_shipyard",
+      "location": "venice",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "marriage_of_the_sea",
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "ship_build_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 115,
+      "key": "unique_malacca_port",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_port",
+      "location": "malacca",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "port_covenant",
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 116,
+      "key": "unique_red_fort_delhi",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": "delhi",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "peacock_throne",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 117,
+      "key": "unique_versailles_palace",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "triumphal_axis",
+      "location": "mantes",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "sun_king_transfer",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_political_influence"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 118,
+      "key": "unique_tenochtitlan_causeways",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "river_extension",
+      "location": "tenochtitlan",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "temple_expansion_sacrifice",
+      "base_drift_at_level_1": {
+        "monthly_towards_free_subjects": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 119,
+      "key": "unique_amsterdam_canal_ring",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "canal_hub_city",
+      "location": "amsterdam",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "three_canal_opening",
+      "base_drift_at_level_1": {
+        "monthly_towards_mercantilism": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 120,
+      "key": "unique_mecca_haram_expansion",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sky_dome_grand_temple",
+      "location": "mecca",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "kaaba_recovering",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_conversion_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 121,
+      "key": "unique_ming_great_wall",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_wall",
+      "location": "fuchuan_ningxia",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "nine_borders_beacons",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 122,
+      "key": "unique_bank_of_saint_george",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "national_bank",
+      "location": "genoa",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "bank_founding",
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tax_income_efficiency"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 123,
+      "key": "unique_cahokia_mounds",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "world_monument_group",
+      "location": "cahokia",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "woodhenge_final_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "cultures_capacity"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 124,
+      "key": "unique_great_zimbabwe",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "world_market",
+      "location": "great_zimbabwe",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "gold_tribute",
+      "base_drift_at_level_1": {
+        "monthly_towards_free_trade": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_trade_center_power",
+        "burghers_estate_target_satisfaction"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 125,
+      "key": "unique_isfahan_square",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "triumphal_axis",
+      "location": "isfahan",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "capital_polo",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_political_influence"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 126,
+      "key": "unique_grand_canal",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "large_canal_system",
+      "location": "shangyuan",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "grain_fleet_first_sailing",
+      "base_drift_at_level_1": {
+        "monthly_towards_free_subjects": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_monthly_prosperity"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 127,
+      "key": "unique_inca_royal_road",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "imperial_post_road_network",
+      "location": "picchu",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "relay_message",
+      "base_drift_at_level_1": {
+        "monthly_towards_land": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 128,
+      "key": "unique_roman_aqueducts",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "hydraulic_workshop",
+      "location": "rome",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "aqueduct_opening",
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 129,
+      "key": "unique_suez_ancient_canal",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "large_canal_system",
+      "location": "suez",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "canal_opening",
+      "base_drift_at_level_1": {
+        "monthly_towards_free_subjects": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_monthly_prosperity"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 130,
+      "key": "unique_kremlin",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": "moscow",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "tsar_coronation",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 131,
+      "key": "unique_teotihuacan",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "world_monument_group",
+      "location": "tenochtitlan",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "sun_pyramid_fire",
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "cultures_capacity"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 132,
+      "key": "unique_angkor_hydraulic_system",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "hydraulic_workshop",
+      "location": "angkor",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "west_baray_water",
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 133,
+      "key": "unique_dutch_polders",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_dam_project",
+      "location": "amsterdam",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "dike_closure",
+      "base_drift_at_level_1": {
+        "monthly_towards_free_subjects": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 134,
+      "key": "unique_machu_picchu_terraces",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "mountain_terrace_network",
+      "location": "picchu",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "first_sowing",
+      "base_drift_at_level_1": {
+        "monthly_towards_traditional_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 135,
+      "key": "unique_british_navy_dockyards",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "national_shipyard",
+      "location": "portsmouth",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "armada_readiness",
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "ship_build_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 136,
+      "key": "unique_spanish_silver_fleet",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "maritime_trade_station_network",
+      "location": "sevilla",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "silver_return",
+      "base_drift_at_level_1": {
+        "monthly_towards_free_trade": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 137,
+      "key": "unique_ottoman_hajj_road",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "imperial_post_road_network",
+      "location": "mecca",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "hajj_departure",
+      "base_drift_at_level_1": {
+        "monthly_towards_land": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 138,
+      "key": "unique_persian_qanat",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "hydraulic_workshop",
+      "location": "qom",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "water_rights",
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 139,
+      "key": "unique_longjiang_shipyard",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "national_shipyard",
+      "location": "jiangyin",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "zheng_he_departure",
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "ship_build_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 140,
+      "key": "unique_jerusalem_holy_city",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "world_monument_group",
+      "location": "jerusalem",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "holy_city_transfer",
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "cultures_capacity"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 141,
+      "key": "unique_stonehenge",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "megalithic_circle",
+      "location": "salisbury",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "solstice_reckoning",
+      "base_drift_at_level_1": {
+        "monthly_towards_traditionalist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_heretic",
+        "tolerance_heathen"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 142,
+      "key": "unique_tower_of_london",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": "london",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "crown_jewel_warding",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 143,
+      "key": "unique_notre_dame_de_paris",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "grand_cathedral",
+      "location": "paris",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "cathedral_crown_procession",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_own"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 144,
+      "key": "unique_st_basils_cathedral",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "grand_cathedral",
+      "location": "moscow",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "intercession_of_moscow",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_own"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 145,
+      "key": "unique_trinity_lavra",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_monastery",
+      "location": "moscow",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "monastic_host_sanctification",
+      "base_drift_at_level_1": {
+        "monthly_towards_communalism": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 146,
+      "key": "unique_winter_palace",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "triumphal_axis",
+      "location": "neva",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "imperial_gallery_opening",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_political_influence"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 147,
+      "key": "unique_gyeongbokgung",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "triumphal_axis",
+      "location": "namgyeong",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "royal_audience_renewal",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_political_influence"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 148,
+      "key": "unique_changbai_mountain_altar",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sacred_mountain",
+      "location": "girin_ula",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "sacred_mountain_investiture",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "clergy_estate_max_tax",
+        "clergy_estate_target_satisfaction"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 149,
+      "key": "unique_belgrade_fortress",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": "belgrad",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "danube_watch_muster",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 150,
+      "key": "unique_meteora_monasteries",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_monastery",
+      "location": "trikala",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "suspended_liturgy",
+      "base_drift_at_level_1": {
+        "monthly_towards_communalism": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 151,
+      "key": "unique_belem_tower",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "city_great_tower",
+      "location": "lisbon",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "tagus_watch_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_inward": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 152,
+      "key": "unique_iberian_inquisition",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_monastery",
+      "location": "toledo",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "tribunal_register",
+      "base_drift_at_level_1": {
+        "monthly_towards_communalism": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 153,
+      "key": "unique_santa_maria_del_fiore",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "grand_cathedral",
+      "location": "florence",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "florentine_dome_consecration",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_own"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 154,
+      "key": "unique_leaning_tower_of_pisa",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "city_great_tower",
+      "location": "pisa",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "campanile_stabilization",
+      "base_drift_at_level_1": {
+        "monthly_towards_inward": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 155,
+      "key": "unique_milan_cathedral",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "grand_cathedral",
+      "location": "milano",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "marble_spire_consecration",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_own"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 156,
+      "key": "unique_vatican_archives",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "library_of_nation",
+      "location": "rome",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "apostolic_archive_seal",
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_promotion_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 157,
+      "key": "unique_temple_of_heaven",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sky_dome_grand_temple",
+      "location": "dadu",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "heavenly_sacrifice",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_conversion_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 158,
+      "key": "unique_dujiangyan",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_dam_project",
+      "location": "chengdu",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "fish_mouth_water_division",
+      "base_drift_at_level_1": {
+        "monthly_towards_free_subjects": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 159,
+      "key": "unique_porcelain_tower_of_nanjing",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_tower_temple",
+      "location": "shangyuan",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "glazed_lantern_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 160,
+      "key": "unique_jingdezhen_imperial_kilns",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_workshop_complex",
+      "location": "fuliang",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "imperial_kiln_seal",
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 161,
+      "key": "unique_mogao_caves",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "great_sculpture_group",
+      "location": "shazhou",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "thousand_buddha_dedication",
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "pop_join_rebel_threshold",
+        "pop_leave_rebels_threshold"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 162,
+      "key": "unique_canton_thirteen_factories",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "guild_alliance",
+      "location": "guangzhou",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "hong_merchant_charter",
+      "base_drift_at_level_1": {
+        "monthly_towards_plutocracy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 163,
+      "key": "unique_dardanelles_fortress",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "coastal_defense_cannon",
+      "location": "gallipoli",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "strait_battery_muster",
+      "base_drift_at_level_1": {
+        "monthly_towards_offensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 164,
+      "key": "unique_escorial_monastery",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_monastery",
+      "location": "el_escorial",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "royal_cloister_dedication",
+      "base_drift_at_level_1": {
+        "monthly_towards_communalism": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 165,
+      "key": "unique_toledo_armory",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_armory",
+      "location": "toledo",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "blade_proofing",
+      "base_drift_at_level_1": {
+        "monthly_towards_offensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 166,
+      "key": "unique_camino_de_santiago",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "imperial_post_road_network",
+      "location": "santiago_compostela",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "pilgrim_way_blessing",
+      "base_drift_at_level_1": {
+        "monthly_towards_land": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 167,
+      "key": "unique_sagres_navigation_school",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "naval_school",
+      "location": "lagos",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "oceanic_chart_lecture",
+      "base_drift_at_level_1": {
+        "monthly_towards_quality": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_navy_tradition"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 168,
+      "key": "unique_milan_arsenal",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_armory",
+      "location": "milano",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "lombard_foundry_contract",
+      "base_drift_at_level_1": {
+        "monthly_towards_offensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 169,
+      "key": "unique_university_of_bologna",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "university_city",
+      "location": "bologna",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "doctorate_convocation",
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 170,
+      "key": "unique_carrara_marble_quarries",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "mining_city",
+      "location": "prato",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "marble_contract",
+      "base_drift_at_level_1": {
+        "monthly_towards_traditional_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 171,
+      "key": "unique_east_india_company",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "colonial_trade_company",
+      "location": "bombay",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "east_india_company_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_free_trade": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_merchant_power",
+        "global_merchant_capacity_modifier"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 172,
+      "key": "unique_peacock_throne",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "palace_of_nations",
+      "location": "delhi",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "peacock_throne_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_distance_from_capital_speed_propagation"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 173,
+      "key": "unique_varanasi_ghats",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sky_dome_grand_temple",
+      "location": "varanasi",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "varanasi_ghats_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_conversion_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 174,
+      "key": "unique_brihadishvara_temple",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_tower_temple",
+      "location": "thanjavur",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "brihadishvara_temple_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 175,
+      "key": "unique_konark_sun_temple",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "grand_cathedral",
+      "location": "puri",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "konark_sun_temple_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_own"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 176,
+      "key": "unique_fatehpur_sikri",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "great_assembly_hall",
+      "location": "agra",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "fatehpur_sikri_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_conciliatory": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "country_cabinet_efficiency",
+        "legislative_efficiency"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 177,
+      "key": "unique_calicut_port_city",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_port",
+      "location": "kozhikode",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "calicut_port_city_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 178,
+      "key": "unique_wieliczka_salt_mine",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "mining_city",
+      "location": "wieliczka",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "wieliczka_salt_mine_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_traditional_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 179,
+      "key": "unique_wawel_castle",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": "krakow",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "wawel_castle_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 180,
+      "key": "unique_zamosc_ideal_city",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "city_expansion_project",
+      "location": "krasnystaw",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "zamosc_ideal_city_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_inward": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 181,
+      "key": "unique_gdansk_port",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_port",
+      "location": "gdansk",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "gdansk_port_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 182,
+      "key": "unique_malbork_castle",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "knightly_fortress_order",
+      "location": "malbork",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "malbork_castle_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_land": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 183,
+      "key": "unique_brest_synagogue_quarter",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "great_assembly_hall",
+      "location": "brest_litowsk",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "brest_synagogue_quarter_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_conciliatory": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "country_cabinet_efficiency",
+        "legislative_efficiency"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 184,
+      "key": "unique_vilnius_university",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "university_city",
+      "location": "vilnius",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "vilnius_university_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 185,
+      "key": "unique_cave_monastery",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_monastery",
+      "location": "kyiv",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "cave_monastery_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_communalism": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 186,
+      "key": "unique_zaporizhian_sich",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "mobile_fortress",
+      "location": "kremenchuk",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "zaporizhian_sich_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_decentralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 187,
+      "key": "unique_registan_square",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "grand_theater_festival_district",
+      "location": "samarkand",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "registan_square_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "cultural_influence_modifier",
+        "skill_of_new_artists"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 188,
+      "key": "unique_khiva_old_city",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "ancient_city_ruins",
+      "location": "khiva",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "khiva_old_city_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_outward": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "exploration_mission_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 189,
+      "key": "unique_bukhara_kalyan_minaret",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_tower_temple",
+      "location": "bukhara",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "bukhara_kalyan_minaret_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 190,
+      "key": "unique_ferghana_palace",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "palace_of_nations",
+      "location": "kokand",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "ferghana_palace_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_distance_from_capital_speed_propagation"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 191,
+      "key": "unique_tashkent_old_bazaar",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "world_market",
+      "location": "chach",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "tashkent_old_bazaar_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_free_trade": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_trade_center_power",
+        "burghers_estate_target_satisfaction"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 192,
+      "key": "unique_louvre_palace",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "palace_of_nations",
+      "location": "paris",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "louvre_court_exhibition",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_distance_from_capital_speed_propagation"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 193,
+      "key": "unique_fontainebleau_palace",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "summer_palace",
+      "location": "melun",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "fontainebleau_school_patronage",
+      "base_drift_at_level_1": {
+        "monthly_towards_decentralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 194,
+      "key": "unique_bordeaux_port",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_port",
+      "location": "bordeaux",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "garonne_wine_fair",
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 195,
+      "key": "unique_marseille_old_port",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_port",
+      "location": "marseille",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "mediterranean_convoy_blessing",
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 196,
+      "key": "unique_lyon_silk_workshops",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_workshop_complex",
+      "location": "lyon",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "canut_guild_charter",
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 197,
+      "key": "unique_mont_saint_michel",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sacred_mountain",
+      "location": "vire",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "tidal_pilgrimage",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "clergy_estate_max_tax",
+        "clergy_estate_target_satisfaction"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 199,
+      "key": "unique_carcassonne_castle",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": "carcassonne",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "double_wall_watch",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 200,
+      "key": "unique_brest_naval_port",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "national_shipyard",
+      "location": "brest",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "atlantic_fleet_muster",
+      "base_drift_at_level_1": {
+        "monthly_towards_naval": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "ship_build_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 201,
+      "key": "unique_colmar_old_town",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "ancient_city_ruins",
+      "location": "colmar",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "alsatian_heritage_fair",
+      "base_drift_at_level_1": {
+        "monthly_towards_outward": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "exploration_mission_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 202,
+      "key": "unique_house_of_wisdom",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "library_of_nation",
+      "location": "baghdad",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "translation_movement_catalog",
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_promotion_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 203,
+      "key": "unique_echmiadzin_cathedral",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "grand_cathedral",
+      "location": "armavir",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "apostolic_see_consecration",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_own"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 204,
+      "key": "unique_narikala_fortress",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": "tbilisi",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "kura_watch_muster",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 205,
+      "key": "unique_baku_ateshgah",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_tower_temple",
+      "location": "baku",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "eternal_fire_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 206,
+      "key": "unique_sanaa_old_city",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "world_market",
+      "location": "sana_yemen",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "sanaa_souk_opening",
+      "base_drift_at_level_1": {
+        "monthly_towards_free_trade": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_trade_center_power",
+        "burghers_estate_target_satisfaction"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 207,
+      "key": "unique_schoenbrunn_palace",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "palace_of_nations",
+      "location": "vienna",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "habsburg_congress_audience",
+      "base_drift_at_level_1": {
+        "monthly_towards_centralization": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_distance_from_capital_speed_propagation"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 208,
+      "key": "unique_electoral_conference_hall",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "great_assembly_hall",
+      "location": "frankfurt",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "golden_bull_convocation",
+      "base_drift_at_level_1": {
+        "monthly_towards_conciliatory": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "country_cabinet_efficiency",
+        "legislative_efficiency"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 209,
+      "key": "unique_aachen_cathedral",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "grand_cathedral",
+      "location": "aachen",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "imperial_coronation_liturgy",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_own"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 210,
+      "key": "unique_nuremberg_imperial_castle",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": "nuremberg",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "imperial_regalia_guard",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 211,
+      "key": "unique_augsburg_bank",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "national_bank",
+      "location": "augsburg",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "imperial_credit_contracts",
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tax_income_efficiency"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 212,
+      "key": "unique_cologne_cathedral",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "grand_cathedral",
+      "location": "cologne",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "three_kings_pilgrimage",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "tolerance_own"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 213,
+      "key": "unique_hanseatic_kontor",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "guild_alliance",
+      "location": "hamburg",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "kontor_ledger_oath",
+      "base_drift_at_level_1": {
+        "monthly_towards_plutocracy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 214,
+      "key": "unique_hanseatic_town_hall",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "great_assembly_hall",
+      "location": "lubeck",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "league_diet_session",
+      "base_drift_at_level_1": {
+        "monthly_towards_conciliatory": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "country_cabinet_efficiency",
+        "legislative_efficiency"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 215,
+      "key": "unique_dresden_art_gallery",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "royal_art_district",
+      "location": "dresden",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "elector_gallery_opening",
+      "base_drift_at_level_1": {
+        "monthly_towards_aristocracy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "num_possible_artists",
+        "artist_salary_modifier"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 216,
+      "key": "unique_munich_royal_brewery",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_workshop_complex",
+      "location": "munich",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "ducal_brewery_charter",
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 217,
+      "key": "unique_heidelberg_university",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "university_city",
+      "location": "heidelberg",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "palatine_scholars_convocation",
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 218,
+      "key": "unique_fez_old_city",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "ancient_city_ruins",
+      "location": "fez",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "medina_restoration_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_outward": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "exploration_mission_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 219,
+      "key": "unique_kairouan_holy_city",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "sky_dome_grand_temple",
+      "location": "kairouan",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "ifriqiyan_scholars_synod",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_conversion_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 220,
+      "key": "unique_algiers_pirate_port",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "pirate_port",
+      "location": "algiers",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "corsair_captains_oath",
+      "base_drift_at_level_1": {
+        "monthly_towards_individualism": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "can_hire_privateers",
+        "privateer_maintenance_cost_modifier",
+        "privateer_durability"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 221,
+      "key": "unique_sankore_university",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "university_city",
+      "location": "timbuktu",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "manuscripts_convocation",
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 222,
+      "key": "unique_great_mosque_of_djenne",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "giant_tower_temple",
+      "location": "djenne",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "banco_replastering_festival",
+      "base_drift_at_level_1": {
+        "monthly_towards_spiritualist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 223,
+      "key": "unique_walls_of_benin",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "star_fortress_city",
+      "location": "benin",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "earthwork_gate_muster",
+      "base_drift_at_level_1": {
+        "monthly_towards_defensive": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 224,
+      "key": "unique_suzhou_classical_gardens",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "grand_garden_complex",
+      "location": "wuxian",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "literati_garden_convocation",
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 225,
+      "key": "unique_fin_garden",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "grand_garden_complex",
+      "location": "kashan",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "oasis_garden_water_rite",
+      "base_drift_at_level_1": {
+        "monthly_towards_humanist": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 226,
+      "key": "unique_jiangnan_examination_hall",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "state_examination_complex",
+      "location": "shangyuan",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "locked_compound_degree_roll",
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_promotion_speed_modifier"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 227,
+      "key": "unique_thang_long_temple_of_literature",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "state_examination_complex",
+      "location": "thang_long",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "doctors_steles_convocation",
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_pop_promotion_speed_modifier"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 228,
+      "key": "unique_maragheh_observatory",
+      "kind": "unique",
+      "size": "large",
+      "base_key": "giant_observatory",
+      "location": "maragheh",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "zij_star_table_assembly",
+      "base_drift_at_level_1": {
+        "monthly_towards_innovative": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "research_speed"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 229,
+      "key": "unique_xian_bell_and_drum_towers",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "great_clock_bell_system",
+      "location": "jingzhao",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "city_time_signal_ordinance",
+      "base_drift_at_level_1": {
+        "monthly_towards_inward": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 230,
+      "key": "unique_behistun_inscription",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "law_code_stele_project",
+      "location": "bisotun",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "royal_rock_text_proclamation",
+      "base_drift_at_level_1": {
+        "monthly_towards_inward": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_rebel_growth"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 231,
+      "key": "unique_beijing_imperial_granaries",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "royal_granary_system",
+      "location": "dadu",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "capital_grain_reserve_audit",
+      "base_drift_at_level_1": {
+        "monthly_towards_traditional_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "global_food_capacity_modifier"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 232,
+      "key": "unique_bursa_imperial_mint",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "royal_mint_system",
+      "location": "bursa",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "sealed_coinage_assay",
+      "base_drift_at_level_1": {
+        "monthly_towards_capital_economy": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "minting_income_factor"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 233,
+      "key": "unique_enderun_palace_school",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "war_college_system",
+      "location": "constantinople",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "palace_service_examination",
+      "base_drift_at_level_1": {
+        "monthly_towards_belligerent": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "monthly_army_tradition"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 234,
+      "key": "unique_ayutthaya_foreign_quarters",
+      "kind": "unique",
+      "size": "medium",
+      "base_key": "world_embassy_quarter",
+      "location": "ayodhya",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "river_embassy_quarter_settlement",
+      "base_drift_at_level_1": {
+        "monthly_towards_conciliatory": 0.1
+      },
+      "base_country_keys_after_drift_removal": [
+        "diplomatic_reputation"
+      ],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 235,
+      "key": "unique_yunnan_weisuo_colonies",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "frontier_colonization_belt",
+      "location": "songming",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "frontier_garrison_field_register",
+      "base_drift_at_level_1": {
+        "monthly_towards_outward": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    },
+    {
+      "id": 236,
+      "key": "unique_zhoushan_beacon_network",
+      "kind": "unique",
+      "size": "small",
+      "base_key": "coastal_beacon_network",
+      "location": "dinghai",
+      "current_style_ids": [
+        1
+      ],
+      "current_process": "shared_eight_stage",
+      "current_ritual_key": "island_beacon_watch",
+      "base_drift_at_level_1": {
+        "monthly_towards_communalism": 0.1
+      },
+      "base_country_keys_after_drift_removal": [],
+      "unique_country_reward_overridden": true,
+      "interpretation_content_status": "not_authored",
+      "required_interpretations": 3,
+      "historical_evidence_status": "not_reviewed_per_interpretation",
+      "reward_balance_status": "not_calibrated_per_interpretation"
+    }
+  ]
+}

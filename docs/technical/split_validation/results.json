@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-26",
+  "python": "C:\\Users\\Hades\\anaconda3\\envs\\eu5\\python.exe",
+  "source_commit": "2cf4171b4e273c87efb8257baef895c7a6017ad6",
+  "base_source_commit": "33e60f14164ad06fc227b2d9e7c365b6db67c561",
+  "tv": {
+    "pytest_fast": {
+      "passed": 315,
+      "failed": 0,
+      "command": "python -m pytest -q -n 4 --dist worksteal tests --basetemp=.pytest-tv-complete -m \"not slow\""
+    },
+    "node": {
+      "passed": 105,
+      "failed": 0
+    },
+    "static_full": {
+      "pass": true,
+      "files_checked": 181
+    },
+    "static_changed": {
+      "pass": true,
+      "files_checked": 58
+    },
+    "slow_selection": {
+      "passed": 203,
+      "failed": 2,
+      "preexisting": "prices.30 religion condition shape changed in unchanged victory_task_codegen.py"
+    },
+    "browser": "pass; 6 tabs, foreign route 404, read-only preview, 1440/900px"
+  },
+  "gp": {
+    "build_check": {
+      "pass": true,
+      "producers": 50,
+      "outputs": 81,
+      "game_text_files": 189,
+      "date": "2026-10-26"
+    },
+    "node": {
+      "passed": 127,
+      "failed": 1,
+      "preexisting": "wonder_rituals.cjs imports absent wonder_rituals.js"
+    },
+    "static_changed": {
+      "pass": true,
+      "files_checked": 480
+    },
+    "browser": "pass; 6 tabs, live wonder details, foreign route 404, read-only preview, 1440/900px",
+    "atlas": {
+      "pass": true,
+      "copied_images": 191,
+      "records": 195,
+      "preexisting_missing_images": [
+        "tv_wonder_unique_amber_room",
+        "tv_wonder_unique_parthenon",
+        "tv_wonder_unique_bangkok_grand_palace",
+        "tv_wonder_unique_wat_arun"
+      ]
+    }
+  },
+  "shared_knowledge": {
+    "boundary_and_loader_tests_passed": 13,
+    "moved_gp_rules": 11,
+    "court_manifest_correction": true,
+    "lint_fixtures_each": 60
+  },
+  "independent_clone": {
+    "status": "pending"
+  },
+  "deployment": "not performed",
+  "remote_publication": "not performed"
+}

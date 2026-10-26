@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/汉萨城市厅_ai_cartoon.png",
+  "source_sha256": "aa4ad1efa027c8f6375351e839c4a3d258efcdd621a846700d7a5556a85d562f",
+  "reference": "assets/historical/汉萨城市厅.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:L%C3%BCbeck_-_Rathaus_03.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Architraveller",
+    "date": "2007-05-01 14:42:20",
+    "note": "吕贝克市政厅；源图为竖幅，提示词要求横向延展。"
+  }
+}

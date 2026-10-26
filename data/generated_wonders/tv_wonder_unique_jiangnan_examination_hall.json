@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/江南贡院_ai_cartoon.png",
+  "source_sha256": "8d661e120b6e0cc824594ab0cec4b740d8ee01832e5cd807d9ae212acf30660f",
+  "reference": "assets/historical/江南贡院.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Exam_Cells_Canton.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author",
+    "date": "1902",
+    "note": "题材近似：19 世纪广州贡院“龙门”老照片，不是南京江南贡院；去除照片说明文字。"
+  }
+}

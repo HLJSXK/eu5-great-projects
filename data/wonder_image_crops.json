@@ -1,0 +1,3311 @@
+{
+  "version": 1,
+  "target_aspect": {
+    "width": 27,
+    "height": 11
+  },
+  "output_size": {
+    "width": 2160,
+    "height": 880
+  },
+  "crops": {
+    "tv_wonder_construction": {
+      "source": "assets/generated_wonders/tv_wonder_construction.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_foundation": {
+      "source": "assets/generated_wonders/tv_wonder_foundation.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 179.2,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.175,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_body": {
+      "source": "assets/generated_wonders/tv_wonder_body.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 119.4667,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.11666667,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_function": {
+      "source": "assets/generated_wonders/tv_wonder_function.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 39.8222,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03888889,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_decoration": {
+      "source": "assets/generated_wonders/tv_wonder_decoration.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 99.5556,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09722222,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_complete": {
+      "source": "assets/generated_wonders/tv_wonder_complete.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 139.3778,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.13611111,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_giant_necropolis": {
+      "source": "assets/generated_wonders/tv_wonder_giant_necropolis.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 39.8222,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03888889,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_great_lighthouse": {
+      "source": "assets/generated_wonders/tv_wonder_great_lighthouse.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_hydraulic_workshop": {
+      "source": "assets/generated_wonders/tv_wonder_hydraulic_workshop.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 99.5556,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09722222,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_mining_city": {
+      "source": "assets/generated_wonders/tv_wonder_mining_city.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 159.2889,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.15555556,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_giant_observatory": {
+      "source": "assets/generated_wonders/tv_wonder_giant_observatory.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_palace_of_nations": {
+      "source": "assets/generated_wonders/tv_wonder_palace_of_nations.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 30.164,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02945704,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_university_city": {
+      "source": "assets/generated_wonders/tv_wonder_university_city.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 8.2396,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.00804646,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_sky_dome_grand_temple": {
+      "source": "assets/generated_wonders/tv_wonder_sky_dome_grand_temple.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_giant_tower_temple": {
+      "source": "assets/generated_wonders/tv_wonder_giant_tower_temple.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_river_extension": {
+      "source": "assets/generated_wonders/tv_wonder_river_extension.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 164.29,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.16043941,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_national_shipyard": {
+      "source": "assets/generated_wonders/tv_wonder_national_shipyard.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 152.6829,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.14910439,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_star_fortress_city": {
+      "source": "assets/generated_wonders/tv_wonder_star_fortress_city.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 58.5368,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.05716485,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_great_wall": {
+      "source": "assets/generated_wonders/tv_wonder_great_wall.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 200.4008,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19570389,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_giant_armory": {
+      "source": "assets/generated_wonders/tv_wonder_giant_armory.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 90.7786,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.08865099,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_library_of_nation": {
+      "source": "assets/generated_wonders/tv_wonder_library_of_nation.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_large_canal_system": {
+      "source": "assets/generated_wonders/tv_wonder_large_canal_system.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 358.2424,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.34984607,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_mountain_terrace_network": {
+      "source": "assets/generated_wonders/tv_wonder_mountain_terrace_network.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 143.6552,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.14028827,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_giant_dam_project": {
+      "source": "assets/generated_wonders/tv_wonder_giant_dam_project.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 102.3857,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09998601,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_royal_granary_system": {
+      "source": "assets/generated_wonders/tv_wonder_royal_granary_system.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 12.1086,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0118248,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_imperial_post_road_network": {
+      "source": "assets/generated_wonders/tv_wonder_imperial_post_road_network.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 164.29,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.16043941,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_canal_hub_city": {
+      "source": "assets/generated_wonders/tv_wonder_canal_hub_city.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 26.295,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0256787,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_frontier_colonization_belt": {
+      "source": "assets/generated_wonders/tv_wonder_frontier_colonization_belt.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 282.9398,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.27630842,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_coastal_beacon_network": {
+      "source": "assets/generated_wonders/tv_wonder_coastal_beacon_network.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 53.3781,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.05212706,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_knightly_fortress_order": {
+      "source": "assets/generated_wonders/tv_wonder_knightly_fortress_order.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 128.1791,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.12517492,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_war_college_system": {
+      "source": "assets/generated_wonders/tv_wonder_war_college_system.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 191.3731,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.18688777,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_great_clock_bell_system": {
+      "source": "assets/generated_wonders/tv_wonder_great_clock_bell_system.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 328.8665,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.32115869,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_royal_art_district": {
+      "source": "assets/generated_wonders/tv_wonder_royal_art_district.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 17.2673,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.01686258,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_grand_theater_festival_district": {
+      "source": "assets/generated_wonders/tv_wonder_grand_theater_festival_district.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 398.2222,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.38888889,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_world_embassy_quarter": {
+      "source": "assets/generated_wonders/tv_wonder_world_embassy_quarter.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 97.227,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09494822,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_law_code_stele_project": {
+      "source": "assets/generated_wonders/tv_wonder_law_code_stele_project.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 218.4562,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.21333613,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_world_market": {
+      "source": "assets/generated_wonders/tv_wonder_world_market.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 324.2093,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.31661069,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_royal_mint_system": {
+      "source": "assets/generated_wonders/tv_wonder_royal_mint_system.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 398.2222,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.38888889,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_guild_alliance": {
+      "source": "assets/generated_wonders/tv_wonder_guild_alliance.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 398.2222,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.38888889,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_maritime_trade_station_network": {
+      "source": "assets/generated_wonders/tv_wonder_maritime_trade_station_network.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 219.7459,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.21459558,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_giant_workshop_complex": {
+      "source": "assets/generated_wonders/tv_wonder_giant_workshop_complex.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 206.8491,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.20200112,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_world_monument_group": {
+      "source": "assets/generated_wonders/tv_wonder_world_monument_group.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 72.7232,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.07101875,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_city_expansion_project": {
+      "source": "assets/generated_wonders/tv_wonder_city_expansion_project.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 191.3731,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.18688777,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_megalithic_circle": {
+      "source": "assets/generated_wonders/tv_wonder_megalithic_circle.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 293.2572,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.28638399,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_grand_cathedral": {
+      "source": "assets/generated_wonders/tv_wonder_grand_cathedral.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 108.834,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.10628324,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_great_monastery": {
+      "source": "assets/generated_wonders/tv_wonder_great_monastery.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 112.7031,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.11006157,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_city_great_tower": {
+      "source": "assets/generated_wonders/tv_wonder_city_great_tower.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_great_sculpture_group": {
+      "source": "assets/generated_wonders/tv_wonder_great_sculpture_group.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 28.8743,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02819759,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_coastal_defense_cannon": {
+      "source": "assets/generated_wonders/tv_wonder_coastal_defense_cannon.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 160.4209,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.15666107,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_naval_school": {
+      "source": "assets/generated_wonders/tv_wonder_naval_school.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 356.4512,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.34809684,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_colonial_trade_company": {
+      "source": "assets/generated_wonders/tv_wonder_colonial_trade_company.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 398.2222,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.38888889,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_great_assembly_hall": {
+      "source": "assets/generated_wonders/tv_wonder_great_assembly_hall.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 215.8769,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.21081724,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_mobile_fortress": {
+      "source": "assets/generated_wonders/tv_wonder_mobile_fortress.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 86.9096,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.08487266,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_ancient_city_ruins": {
+      "source": "assets/generated_wonders/tv_wonder_ancient_city_ruins.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 111.4134,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.10880213,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_summer_palace": {
+      "source": "assets/generated_wonders/tv_wonder_summer_palace.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_pharos_lighthouse": {
+      "source": "assets/generated_wonders/tv_wonder_unique_pharos_lighthouse.png",
+      "source_width": 2080,
+      "source_height": 1664,
+      "rect": {
+        "x": 0.0,
+        "y": 40.8296,
+        "width": 2080.0,
+        "height": 847.4074
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02453704,
+        "width": 1.0,
+        "height": 0.50925926
+      }
+    },
+    "tv_wonder_unique_hagia_sophia": {
+      "source": "assets/generated_wonders/tv_wonder_unique_hagia_sophia.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 31.5378,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02318954,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_dome_of_the_rock": {
+      "source": "assets/generated_wonders/tv_wonder_unique_dome_of_the_rock.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_angkor_wat": {
+      "source": "assets/generated_wonders/tv_wonder_unique_angkor_wat.png",
+      "source_width": 2048,
+      "source_height": 1152,
+      "rect": {
+        "x": 0.0,
+        "y": 31.763,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02757202,
+        "width": 1.0,
+        "height": 0.72427984
+      }
+    },
+    "tv_wonder_unique_potala_palace": {
+      "source": "assets/generated_wonders/tv_wonder_unique_potala_palace.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 124.4444,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09722222,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_alhambra": {
+      "source": "assets/generated_wonders/tv_wonder_unique_alhambra.png",
+      "source_width": 1920,
+      "source_height": 1088,
+      "rect": {
+        "x": 0.0,
+        "y": 152.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.14052288,
+        "width": 1.0,
+        "height": 0.71895425
+      }
+    },
+    "tv_wonder_unique_machu_picchu": {
+      "source": "assets/generated_wonders/tv_wonder_unique_machu_picchu.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 52.563,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03864924,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_himeji_castle": {
+      "source": "assets/generated_wonders/tv_wonder_unique_himeji_castle.png",
+      "source_width": 1920,
+      "source_height": 1440,
+      "rect": {
+        "x": 0.0,
+        "y": 39.4667,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02740741,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_taj_mahal": {
+      "source": "assets/generated_wonders/tv_wonder_unique_taj_mahal.png",
+      "source_width": 1920,
+      "source_height": 1264,
+      "rect": {
+        "x": 0.0,
+        "y": 48.1778,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03811533,
+        "width": 1.0,
+        "height": 0.61884669
+      }
+    },
+    "tv_wonder_unique_forbidden_city": {
+      "source": "assets/generated_wonders/tv_wonder_unique_forbidden_city.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 70.163,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.04567901,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_topkapi_palace": {
+      "source": "assets/generated_wonders/tv_wonder_unique_topkapi_palace.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_st_peters_basilica": {
+      "source": "assets/generated_wonders/tv_wonder_unique_st_peters_basilica.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 63.0756,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.04637908,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_lalibela_churches": {
+      "source": "assets/generated_wonders/tv_wonder_unique_lalibela_churches.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 248.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_venetian_arsenal": {
+      "source": "assets/generated_wonders/tv_wonder_unique_venetian_arsenal.png",
+      "source_width": 1280,
+      "source_height": 720,
+      "rect": {
+        "x": 0.0,
+        "y": 9.9259,
+        "width": 1280.0,
+        "height": 521.4815
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.01378601,
+        "width": 1.0,
+        "height": 0.72427984
+      }
+    },
+    "tv_wonder_unique_malacca_port": {
+      "source": "assets/generated_wonders/tv_wonder_unique_malacca_port.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_red_fort_delhi": {
+      "source": "assets/generated_wonders/tv_wonder_unique_red_fort_delhi.png",
+      "source_width": 2048,
+      "source_height": 1152,
+      "rect": {
+        "x": 0.0,
+        "y": 79.4074,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.06893004,
+        "width": 1.0,
+        "height": 0.72427984
+      }
+    },
+    "tv_wonder_unique_versailles_palace": {
+      "source": "assets/generated_wonders/tv_wonder_unique_versailles_palace.png",
+      "source_width": 1920,
+      "source_height": 1392,
+      "rect": {
+        "x": 0.0,
+        "y": 304.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.21902937,
+        "width": 1.0,
+        "height": 0.56194125
+      }
+    },
+    "tv_wonder_unique_tenochtitlan_causeways": {
+      "source": "assets/generated_wonders/tv_wonder_unique_tenochtitlan_causeways.png",
+      "source_width": 1920,
+      "source_height": 1008,
+      "rect": {
+        "x": 0.0,
+        "y": 112.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.11199295,
+        "width": 1.0,
+        "height": 0.77601411
+      }
+    },
+    "tv_wonder_unique_amsterdam_canal_ring": {
+      "source": "assets/generated_wonders/tv_wonder_unique_amsterdam_canal_ring.png",
+      "source_width": 1088,
+      "source_height": 608,
+      "rect": {
+        "x": 0.0,
+        "y": 82.3704,
+        "width": 1088.0,
+        "height": 443.2593
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.13547758,
+        "width": 1.0,
+        "height": 0.72904483
+      }
+    },
+    "tv_wonder_unique_mecca_haram_expansion": {
+      "source": "assets/generated_wonders/tv_wonder_unique_mecca_haram_expansion.png",
+      "source_width": 2048,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 94.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09259259,
+        "width": 1.0,
+        "height": 0.81481481
+      }
+    },
+    "tv_wonder_unique_ming_great_wall": {
+      "source": "assets/generated_wonders/tv_wonder_unique_ming_great_wall.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_bank_of_saint_george": {
+      "source": "assets/generated_wonders/tv_wonder_unique_bank_of_saint_george.png",
+      "source_width": 1920,
+      "source_height": 1296,
+      "rect": {
+        "x": 0.0,
+        "y": 77.0667,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.05946502,
+        "width": 1.0,
+        "height": 0.60356653
+      }
+    },
+    "tv_wonder_unique_cahokia_mounds": {
+      "source": "assets/generated_wonders/tv_wonder_unique_cahokia_mounds.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 248.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_great_zimbabwe": {
+      "source": "assets/generated_wonders/tv_wonder_unique_great_zimbabwe.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 105.1259,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.07729847,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_isfahan_square": {
+      "source": "assets/generated_wonders/tv_wonder_unique_isfahan_square.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_grand_canal": {
+      "source": "assets/generated_wonders/tv_wonder_unique_grand_canal.png",
+      "source_width": 1920,
+      "source_height": 1344,
+      "rect": {
+        "x": 0.0,
+        "y": 280.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.20899471,
+        "width": 1.0,
+        "height": 0.58201058
+      }
+    },
+    "tv_wonder_unique_inca_royal_road": {
+      "source": "assets/generated_wonders/tv_wonder_unique_inca_royal_road.png",
+      "source_width": 1024,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 559.4074,
+        "width": 1024.0,
+        "height": 417.1852
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.36419753,
+        "width": 1.0,
+        "height": 0.27160494
+      }
+    },
+    "tv_wonder_unique_roman_aqueducts": {
+      "source": "assets/generated_wonders/tv_wonder_unique_roman_aqueducts.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 24.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.01944444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_suez_ancient_canal": {
+      "source": "assets/generated_wonders/tv_wonder_unique_suez_ancient_canal.png",
+      "source_width": 1280,
+      "source_height": 640,
+      "rect": {
+        "x": 0.0,
+        "y": 59.2593,
+        "width": 1280.0,
+        "height": 521.4815
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09259259,
+        "width": 1.0,
+        "height": 0.81481481
+      }
+    },
+    "tv_wonder_unique_kremlin": {
+      "source": "assets/generated_wonders/tv_wonder_unique_kremlin.png",
+      "source_width": 1888,
+      "source_height": 1200,
+      "rect": {
+        "x": 0.0,
+        "y": 43.0815,
+        "width": 1888.0,
+        "height": 769.1852
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03590123,
+        "width": 1.0,
+        "height": 0.64098765
+      }
+    },
+    "tv_wonder_unique_teotihuacan": {
+      "source": "assets/generated_wonders/tv_wonder_unique_teotihuacan.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 248.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_angkor_hydraulic_system": {
+      "source": "assets/generated_wonders/tv_wonder_unique_angkor_hydraulic_system.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_dutch_polders": {
+      "source": "assets/generated_wonders/tv_wonder_unique_dutch_polders.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 49.7778,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03888889,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_machu_picchu_terraces": {
+      "source": "assets/generated_wonders/tv_wonder_unique_machu_picchu_terraces.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 248.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_british_navy_dockyards": {
+      "source": "assets/generated_wonders/tv_wonder_unique_british_navy_dockyards.png",
+      "source_width": 1920,
+      "source_height": 1120,
+      "rect": {
+        "x": 0.0,
+        "y": 168.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.15079365,
+        "width": 1.0,
+        "height": 0.6984127
+      }
+    },
+    "tv_wonder_unique_spanish_silver_fleet": {
+      "source": "assets/generated_wonders/tv_wonder_unique_spanish_silver_fleet.png",
+      "source_width": 2048,
+      "source_height": 1152,
+      "rect": {
+        "x": 0.0,
+        "y": 158.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.13786008,
+        "width": 1.0,
+        "height": 0.72427984
+      }
+    },
+    "tv_wonder_unique_ottoman_hajj_road": {
+      "source": "assets/generated_wonders/tv_wonder_unique_ottoman_hajj_road.png",
+      "source_width": 1088,
+      "source_height": 608,
+      "rect": {
+        "x": 0.0,
+        "y": 82.3704,
+        "width": 1088.0,
+        "height": 443.2593
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.13547758,
+        "width": 1.0,
+        "height": 0.72904483
+      }
+    },
+    "tv_wonder_unique_persian_qanat": {
+      "source": "assets/generated_wonders/tv_wonder_unique_persian_qanat.png",
+      "source_width": 1280,
+      "source_height": 720,
+      "rect": {
+        "x": 0.0,
+        "y": 99.2593,
+        "width": 1280.0,
+        "height": 521.4815
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.13786008,
+        "width": 1.0,
+        "height": 0.72427984
+      }
+    },
+    "tv_wonder_unique_longjiang_shipyard": {
+      "source": "assets/generated_wonders/tv_wonder_unique_longjiang_shipyard.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 78.8444,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.05797386,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_jerusalem_holy_city": {
+      "source": "assets/generated_wonders/tv_wonder_unique_jerusalem_holy_city.png",
+      "source_width": 2880,
+      "source_height": 960,
+      "rect": {
+        "x": 261.8182,
+        "y": 0.0,
+        "width": 2356.3636,
+        "height": 960.0
+      },
+      "normalized": {
+        "x": 0.09090909,
+        "y": 0.0,
+        "width": 0.81818182,
+        "height": 1.0
+      }
+    },
+    "tv_wonder_unique_stonehenge": {
+      "source": "assets/generated_wonders/tv_wonder_unique_stonehenge.png",
+      "source_width": 1920,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 120.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.11805556,
+        "width": 1.0,
+        "height": 0.76388889
+      }
+    },
+    "tv_wonder_unique_tower_of_london": {
+      "source": "assets/generated_wonders/tv_wonder_unique_tower_of_london.png",
+      "source_width": 1920,
+      "source_height": 1200,
+      "rect": {
+        "x": 0.0,
+        "y": 62.6667,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.05222222,
+        "width": 1.0,
+        "height": 0.65185185
+      }
+    },
+    "tv_wonder_unique_notre_dame_de_paris": {
+      "source": "assets/generated_wonders/tv_wonder_unique_notre_dame_de_paris.png",
+      "source_width": 1280,
+      "source_height": 848,
+      "rect": {
+        "x": 0.0,
+        "y": 97.9556,
+        "width": 1280.0,
+        "height": 521.4815
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.11551363,
+        "width": 1.0,
+        "height": 0.61495458
+      }
+    },
+    "tv_wonder_unique_st_basils_cathedral": {
+      "source": "assets/generated_wonders/tv_wonder_unique_st_basils_cathedral.png",
+      "source_width": 2080,
+      "source_height": 1664,
+      "rect": {
+        "x": 0.0,
+        "y": 32.6637,
+        "width": 2080.0,
+        "height": 847.4074
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.01962963,
+        "width": 1.0,
+        "height": 0.50925926
+      }
+    },
+    "tv_wonder_unique_trinity_lavra": {
+      "source": "assets/generated_wonders/tv_wonder_unique_trinity_lavra.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 52.563,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03864924,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_winter_palace": {
+      "source": "assets/generated_wonders/tv_wonder_unique_winter_palace.png",
+      "source_width": 2048,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 94.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09259259,
+        "width": 1.0,
+        "height": 0.81481481
+      }
+    },
+    "tv_wonder_unique_gyeongbokgung": {
+      "source": "assets/generated_wonders/tv_wonder_unique_gyeongbokgung.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_changbai_mountain_altar": {
+      "source": "assets/generated_wonders/tv_wonder_unique_changbai_mountain_altar.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 350.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.22839506,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_belgrade_fortress": {
+      "source": "assets/generated_wonders/tv_wonder_unique_belgrade_fortress.png",
+      "source_width": 992,
+      "source_height": 672,
+      "rect": {
+        "x": 0.0,
+        "y": 40.1778,
+        "width": 992.0,
+        "height": 404.1481
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.05978836,
+        "width": 1.0,
+        "height": 0.60141093
+      }
+    },
+    "tv_wonder_unique_meteora_monasteries": {
+      "source": "assets/generated_wonders/tv_wonder_unique_meteora_monasteries.png",
+      "source_width": 1920,
+      "source_height": 1088,
+      "rect": {
+        "x": 0.0,
+        "y": 30.5778,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02810458,
+        "width": 1.0,
+        "height": 0.71895425
+      }
+    },
+    "tv_wonder_unique_belem_tower": {
+      "source": "assets/generated_wonders/tv_wonder_unique_belem_tower.png",
+      "source_width": 1008,
+      "source_height": 656,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1008.0,
+        "height": 410.6667
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.62601626
+      }
+    },
+    "tv_wonder_unique_iberian_inquisition": {
+      "source": "assets/generated_wonders/tv_wonder_unique_iberian_inquisition.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_santa_maria_del_fiore": {
+      "source": "assets/generated_wonders/tv_wonder_unique_santa_maria_del_fiore.png",
+      "source_width": 1920,
+      "source_height": 1392,
+      "rect": {
+        "x": 0.0,
+        "y": 121.9556,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.08761175,
+        "width": 1.0,
+        "height": 0.56194125
+      }
+    },
+    "tv_wonder_unique_leaning_tower_of_pisa": {
+      "source": "assets/generated_wonders/tv_wonder_unique_leaning_tower_of_pisa.png",
+      "source_width": 960,
+      "source_height": 1440,
+      "rect": {
+        "x": 0.0,
+        "y": 62.9333,
+        "width": 960.0,
+        "height": 391.1111
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0437037,
+        "width": 1.0,
+        "height": 0.27160494
+      }
+    },
+    "tv_wonder_unique_milan_cathedral": {
+      "source": "assets/generated_wonders/tv_wonder_unique_milan_cathedral.png",
+      "source_width": 1920,
+      "source_height": 1440,
+      "rect": {
+        "x": 0.0,
+        "y": 26.3111,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0182716,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_vatican_archives": {
+      "source": "assets/generated_wonders/tv_wonder_unique_vatican_archives.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 248.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_temple_of_heaven": {
+      "source": "assets/generated_wonders/tv_wonder_unique_temple_of_heaven.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 49.7778,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03888889,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_dujiangyan": {
+      "source": "assets/generated_wonders/tv_wonder_unique_dujiangyan.png",
+      "source_width": 2240,
+      "source_height": 960,
+      "rect": {
+        "x": 0.0,
+        "y": 23.7037,
+        "width": 2240.0,
+        "height": 912.5926
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02469136,
+        "width": 1.0,
+        "height": 0.95061728
+      }
+    },
+    "tv_wonder_unique_porcelain_tower_of_nanjing": {
+      "source": "assets/generated_wonders/tv_wonder_unique_porcelain_tower_of_nanjing.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_jingdezhen_imperial_kilns": {
+      "source": "assets/generated_wonders/tv_wonder_unique_jingdezhen_imperial_kilns.png",
+      "source_width": 1024,
+      "source_height": 768,
+      "rect": {
+        "x": 0.0,
+        "y": 52.6222,
+        "width": 1024.0,
+        "height": 417.1852
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.06851852,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_mogao_caves": {
+      "source": "assets/generated_wonders/tv_wonder_unique_mogao_caves.png",
+      "source_width": 1024,
+      "source_height": 768,
+      "rect": {
+        "x": 0.0,
+        "y": 35.0815,
+        "width": 1024.0,
+        "height": 417.1852
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.04567901,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_canton_thirteen_factories": {
+      "source": "assets/generated_wonders/tv_wonder_unique_canton_thirteen_factories.png",
+      "source_width": 1920,
+      "source_height": 1136,
+      "rect": {
+        "x": 0.0,
+        "y": 176.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.15571205,
+        "width": 1.0,
+        "height": 0.6885759
+      }
+    },
+    "tv_wonder_unique_dardanelles_fortress": {
+      "source": "assets/generated_wonders/tv_wonder_unique_dardanelles_fortress.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_escorial_monastery": {
+      "source": "assets/generated_wonders/tv_wonder_unique_escorial_monastery.png",
+      "source_width": 992,
+      "source_height": 672,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 992.0,
+        "height": 404.1481
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.60141093
+      }
+    },
+    "tv_wonder_unique_toledo_armory": {
+      "source": "assets/generated_wonders/tv_wonder_unique_toledo_armory.png",
+      "source_width": 2080,
+      "source_height": 1664,
+      "rect": {
+        "x": 0.0,
+        "y": 408.2963,
+        "width": 2080.0,
+        "height": 847.4074
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.24537037,
+        "width": 1.0,
+        "height": 0.50925926
+      }
+    },
+    "tv_wonder_unique_camino_de_santiago": {
+      "source": "assets/generated_wonders/tv_wonder_unique_camino_de_santiago.png",
+      "source_width": 1920,
+      "source_height": 1440,
+      "rect": {
+        "x": 0.0,
+        "y": 328.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.22839506,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_sagres_navigation_school": {
+      "source": "assets/generated_wonders/tv_wonder_unique_sagres_navigation_school.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_milan_arsenal": {
+      "source": "assets/generated_wonders/tv_wonder_unique_milan_arsenal.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 52.563,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03864924,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_university_of_bologna": {
+      "source": "assets/generated_wonders/tv_wonder_unique_university_of_bologna.png",
+      "source_width": 1024,
+      "source_height": 736,
+      "rect": {
+        "x": 0.0,
+        "y": 159.4074,
+        "width": 1024.0,
+        "height": 417.1852
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.21658615,
+        "width": 1.0,
+        "height": 0.5668277
+      }
+    },
+    "tv_wonder_unique_carrara_marble_quarries": {
+      "source": "assets/generated_wonders/tv_wonder_unique_carrara_marble_quarries.png",
+      "source_width": 2048,
+      "source_height": 1152,
+      "rect": {
+        "x": 0.0,
+        "y": 158.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.13786008,
+        "width": 1.0,
+        "height": 0.72427984
+      }
+    },
+    "tv_wonder_unique_east_india_company": {
+      "source": "assets/generated_wonders/tv_wonder_unique_east_india_company.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 26.2815,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.01932462,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_peacock_throne": {
+      "source": "assets/generated_wonders/tv_wonder_unique_peacock_throne.png",
+      "source_width": 1360,
+      "source_height": 2048,
+      "rect": {
+        "x": 0.0,
+        "y": 746.963,
+        "width": 1360.0,
+        "height": 554.0741
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.36472801,
+        "width": 1.0,
+        "height": 0.27054398
+      }
+    },
+    "tv_wonder_unique_varanasi_ghats": {
+      "source": "assets/generated_wonders/tv_wonder_unique_varanasi_ghats.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 131.4074,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09662309,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_brihadishvara_temple": {
+      "source": "assets/generated_wonders/tv_wonder_unique_brihadishvara_temple.png",
+      "source_width": 1360,
+      "source_height": 2048,
+      "rect": {
+        "x": 0.0,
+        "y": 59.757,
+        "width": 1360.0,
+        "height": 554.0741
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02917824,
+        "width": 1.0,
+        "height": 0.27054398
+      }
+    },
+    "tv_wonder_unique_konark_sun_temple": {
+      "source": "assets/generated_wonders/tv_wonder_unique_konark_sun_temple.png",
+      "source_width": 1920,
+      "source_height": 1376,
+      "rect": {
+        "x": 0.0,
+        "y": 89.0667,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.06472868,
+        "width": 1.0,
+        "height": 0.56847545
+      }
+    },
+    "tv_wonder_unique_fatehpur_sikri": {
+      "source": "assets/generated_wonders/tv_wonder_unique_fatehpur_sikri.png",
+      "source_width": 2048,
+      "source_height": 1152,
+      "rect": {
+        "x": 0.0,
+        "y": 63.5259,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.05514403,
+        "width": 1.0,
+        "height": 0.72427984
+      }
+    },
+    "tv_wonder_unique_calicut_port_city": {
+      "source": "assets/generated_wonders/tv_wonder_unique_calicut_port_city.png",
+      "source_width": 1920,
+      "source_height": 784,
+      "rect": {
+        "x": 0.0,
+        "y": 0.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.00113379,
+        "width": 1.0,
+        "height": 0.99773243
+      }
+    },
+    "tv_wonder_unique_wieliczka_salt_mine": {
+      "source": "assets/generated_wonders/tv_wonder_unique_wieliczka_salt_mine.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_wawel_castle": {
+      "source": "assets/generated_wonders/tv_wonder_unique_wawel_castle.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 52.563,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03864924,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_zamosc_ideal_city": {
+      "source": "assets/generated_wonders/tv_wonder_unique_zamosc_ideal_city.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 28.0652,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0182716,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_gdansk_port": {
+      "source": "assets/generated_wonders/tv_wonder_unique_gdansk_port.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 39.8222,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03111111,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_malbork_castle": {
+      "source": "assets/generated_wonders/tv_wonder_unique_malbork_castle.png",
+      "source_width": 1920,
+      "source_height": 1264,
+      "rect": {
+        "x": 0.0,
+        "y": 96.3556,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.07623066,
+        "width": 1.0,
+        "height": 0.61884669
+      }
+    },
+    "tv_wonder_unique_brest_synagogue_quarter": {
+      "source": "assets/generated_wonders/tv_wonder_unique_brest_synagogue_quarter.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 131.4074,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09662309,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_vilnius_university": {
+      "source": "assets/generated_wonders/tv_wonder_unique_vilnius_university.png",
+      "source_width": 2080,
+      "source_height": 1664,
+      "rect": {
+        "x": 0.0,
+        "y": 48.9956,
+        "width": 2080.0,
+        "height": 847.4074
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02944444,
+        "width": 1.0,
+        "height": 0.50925926
+      }
+    },
+    "tv_wonder_unique_cave_monastery": {
+      "source": "assets/generated_wonders/tv_wonder_unique_cave_monastery.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 26.2815,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.01932462,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_zaporizhian_sich": {
+      "source": "assets/generated_wonders/tv_wonder_unique_zaporizhian_sich.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_registan_square": {
+      "source": "assets/generated_wonders/tv_wonder_unique_registan_square.png",
+      "source_width": 2240,
+      "source_height": 960,
+      "rect": {
+        "x": 0.0,
+        "y": 23.7037,
+        "width": 2240.0,
+        "height": 912.5926
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02469136,
+        "width": 1.0,
+        "height": 0.95061728
+      }
+    },
+    "tv_wonder_unique_khiva_old_city": {
+      "source": "assets/generated_wonders/tv_wonder_unique_khiva_old_city.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 42.0504,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03091939,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_bukhara_kalyan_minaret": {
+      "source": "assets/generated_wonders/tv_wonder_unique_bukhara_kalyan_minaret.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 99.5556,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.07777778,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_ferghana_palace": {
+      "source": "assets/generated_wonders/tv_wonder_unique_ferghana_palace.png",
+      "source_width": 2240,
+      "source_height": 960,
+      "rect": {
+        "x": 0.0,
+        "y": 23.7037,
+        "width": 2240.0,
+        "height": 912.5926
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02469136,
+        "width": 1.0,
+        "height": 0.95061728
+      }
+    },
+    "tv_wonder_unique_tashkent_old_bazaar": {
+      "source": "assets/generated_wonders/tv_wonder_unique_tashkent_old_bazaar.png",
+      "source_width": 1280,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 251.2593,
+        "width": 1280.0,
+        "height": 521.4815
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.24537037,
+        "width": 1.0,
+        "height": 0.50925926
+      }
+    },
+    "tv_wonder_unique_louvre_palace": {
+      "source": "assets/generated_wonders/tv_wonder_unique_louvre_palace.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_fontainebleau_palace": {
+      "source": "assets/generated_wonders/tv_wonder_unique_fontainebleau_palace.png",
+      "source_width": 1920,
+      "source_height": 1424,
+      "rect": {
+        "x": 0.0,
+        "y": 64.1778,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.04506866,
+        "width": 1.0,
+        "height": 0.54931336
+      }
+    },
+    "tv_wonder_unique_bordeaux_port": {
+      "source": "assets/generated_wonders/tv_wonder_unique_bordeaux_port.png",
+      "source_width": 944,
+      "source_height": 704,
+      "rect": {
+        "x": 0.0,
+        "y": 111.7926,
+        "width": 944.0,
+        "height": 384.5926
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.1587963,
+        "width": 1.0,
+        "height": 0.5462963
+      }
+    },
+    "tv_wonder_unique_marseille_old_port": {
+      "source": "assets/generated_wonders/tv_wonder_unique_marseille_old_port.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_lyon_silk_workshops": {
+      "source": "assets/generated_wonders/tv_wonder_unique_lyon_silk_workshops.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 199.1111,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_mont_saint_michel": {
+      "source": "assets/generated_wonders/tv_wonder_unique_mont_saint_michel.png",
+      "source_width": 1920,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 23.1111,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.01699346,
+        "width": 1.0,
+        "height": 0.5751634
+      }
+    },
+    "tv_wonder_unique_carcassonne_castle": {
+      "source": "assets/generated_wonders/tv_wonder_unique_carcassonne_castle.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 49.7778,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.03888889,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_brest_naval_port": {
+      "source": "assets/generated_wonders/tv_wonder_unique_brest_naval_port.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_colmar_old_town": {
+      "source": "assets/generated_wonders/tv_wonder_unique_colmar_old_town.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_giant_lighthouse": {
+      "source": "assets/generated_wonders/tv_wonder_giant_lighthouse.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_house_of_wisdom": {
+      "source": "assets/generated_wonders/tv_wonder_unique_house_of_wisdom.png",
+      "source_width": 1536,
+      "source_height": 2048,
+      "rect": {
+        "x": 0.0,
+        "y": 711.1111,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.34722222,
+        "width": 1.0,
+        "height": 0.30555556
+      }
+    },
+    "tv_wonder_unique_echmiadzin_cathedral": {
+      "source": "assets/generated_wonders/tv_wonder_unique_echmiadzin_cathedral.png",
+      "source_width": 1280,
+      "source_height": 864,
+      "rect": {
+        "x": 0.0,
+        "y": 17.1259,
+        "width": 1280.0,
+        "height": 521.4815
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.01982167,
+        "width": 1.0,
+        "height": 0.60356653
+      }
+    },
+    "tv_wonder_unique_narikala_fortress": {
+      "source": "assets/generated_wonders/tv_wonder_unique_narikala_fortress.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 131.4074,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09662309,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_baku_ateshgah": {
+      "source": "assets/generated_wonders/tv_wonder_unique_baku_ateshgah.png",
+      "source_width": 1008,
+      "source_height": 672,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1008.0,
+        "height": 410.6667
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_sanaa_old_city": {
+      "source": "assets/generated_wonders/tv_wonder_unique_sanaa_old_city.png",
+      "source_width": 2048,
+      "source_height": 1152,
+      "rect": {
+        "x": 0.0,
+        "y": 47.6444,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.04135802,
+        "width": 1.0,
+        "height": 0.72427984
+      }
+    },
+    "tv_wonder_unique_schoenbrunn_palace": {
+      "source": "assets/generated_wonders/tv_wonder_unique_schoenbrunn_palace.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_electoral_conference_hall": {
+      "source": "assets/generated_wonders/tv_wonder_unique_electoral_conference_hall.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 35.0815,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02283951,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_aachen_cathedral": {
+      "source": "assets/generated_wonders/tv_wonder_unique_aachen_cathedral.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 105.2444,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.06851852,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_nuremberg_imperial_castle": {
+      "source": "assets/generated_wonders/tv_wonder_unique_nuremberg_imperial_castle.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 210.4889,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.13703704,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_augsburg_bank": {
+      "source": "assets/generated_wonders/tv_wonder_unique_augsburg_bank.png",
+      "source_width": 896,
+      "source_height": 736,
+      "rect": {
+        "x": 0.0,
+        "y": 185.4815,
+        "width": 896.0,
+        "height": 365.037
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.25201288,
+        "width": 1.0,
+        "height": 0.49597424
+      }
+    },
+    "tv_wonder_unique_cologne_cathedral": {
+      "source": "assets/generated_wonders/tv_wonder_unique_cologne_cathedral.png",
+      "source_width": 1808,
+      "source_height": 1104,
+      "rect": {
+        "x": 0.0,
+        "y": 73.4815,
+        "width": 1808.0,
+        "height": 736.5926
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.06655931,
+        "width": 1.0,
+        "height": 0.66720344
+      }
+    },
+    "tv_wonder_unique_hanseatic_kontor": {
+      "source": "assets/generated_wonders/tv_wonder_unique_hanseatic_kontor.png",
+      "source_width": 1920,
+      "source_height": 1440,
+      "rect": {
+        "x": 0.0,
+        "y": 328.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.22839506,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_hanseatic_town_hall": {
+      "source": "assets/generated_wonders/tv_wonder_unique_hanseatic_town_hall.png",
+      "source_width": 1680,
+      "source_height": 2192,
+      "rect": {
+        "x": 0.0,
+        "y": 226.1333,
+        "width": 1680.0,
+        "height": 684.4444
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.10316302,
+        "width": 1.0,
+        "height": 0.31224655
+      }
+    },
+    "tv_wonder_unique_dresden_art_gallery": {
+      "source": "assets/generated_wonders/tv_wonder_unique_dresden_art_gallery.png",
+      "source_width": 2048,
+      "source_height": 1152,
+      "rect": {
+        "x": 0.0,
+        "y": 31.763,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02757202,
+        "width": 1.0,
+        "height": 0.72427984
+      }
+    },
+    "tv_wonder_unique_munich_royal_brewery": {
+      "source": "assets/generated_wonders/tv_wonder_unique_munich_royal_brewery.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 70.163,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.04567901,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_heidelberg_university": {
+      "source": "assets/generated_wonders/tv_wonder_unique_heidelberg_university.png",
+      "source_width": 1920,
+      "source_height": 1200,
+      "rect": {
+        "x": 0.0,
+        "y": 25.0667,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02088889,
+        "width": 1.0,
+        "height": 0.65185185
+      }
+    },
+    "tv_wonder_unique_fez_old_city": {
+      "source": "assets/generated_wonders/tv_wonder_unique_fez_old_city.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_kairouan_holy_city": {
+      "source": "assets/generated_wonders/tv_wonder_unique_kairouan_holy_city.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 105.1259,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.07729847,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_algiers_pirate_port": {
+      "source": "assets/generated_wonders/tv_wonder_unique_algiers_pirate_port.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 248.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_sankore_university": {
+      "source": "assets/generated_wonders/tv_wonder_unique_sankore_university.png",
+      "source_width": 1472,
+      "source_height": 1040,
+      "rect": {
+        "x": 0.0,
+        "y": 22.0148,
+        "width": 1472.0,
+        "height": 599.7037
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02116809,
+        "width": 1.0,
+        "height": 0.57663818
+      }
+    },
+    "tv_wonder_unique_great_mosque_of_djenne": {
+      "source": "assets/generated_wonders/tv_wonder_unique_great_mosque_of_djenne.png",
+      "source_width": 2048,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 94.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09259259,
+        "width": 1.0,
+        "height": 0.81481481
+      }
+    },
+    "tv_wonder_unique_walls_of_benin": {
+      "source": "assets/generated_wonders/tv_wonder_unique_walls_of_benin.png",
+      "source_width": 848,
+      "source_height": 784,
+      "rect": {
+        "x": 0.0,
+        "y": 219.2593,
+        "width": 848.0,
+        "height": 345.4815
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.27966742,
+        "width": 1.0,
+        "height": 0.44066515
+      }
+    },
+    "tv_wonder_unique_suzhou_classical_gardens": {
+      "source": "assets/generated_wonders/tv_wonder_unique_suzhou_classical_gardens.png",
+      "source_width": 1920,
+      "source_height": 1440,
+      "rect": {
+        "x": 0.0,
+        "y": 328.8889,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.22839506,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_fin_garden": {
+      "source": "assets/generated_wonders/tv_wonder_unique_fin_garden.png",
+      "source_width": 1920,
+      "source_height": 1280,
+      "rect": {
+        "x": 0.0,
+        "y": 149.3333,
+        "width": 1920.0,
+        "height": 782.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.11666667,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_unique_jiangnan_examination_hall": {
+      "source": "assets/generated_wonders/tv_wonder_unique_jiangnan_examination_hall.png",
+      "source_width": 1040,
+      "source_height": 832,
+      "rect": {
+        "x": 0.0,
+        "y": 40.8296,
+        "width": 1040.0,
+        "height": 423.7037
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.04907407,
+        "width": 1.0,
+        "height": 0.50925926
+      }
+    },
+    "tv_wonder_unique_thang_long_temple_of_literature": {
+      "source": "assets/generated_wonders/tv_wonder_unique_thang_long_temple_of_literature.png",
+      "source_width": 1552,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 195.8519,
+        "width": 1552.0,
+        "height": 632.2963
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19126157,
+        "width": 1.0,
+        "height": 0.61747685
+      }
+    },
+    "tv_wonder_unique_maragheh_observatory": {
+      "source": "assets/generated_wonders/tv_wonder_unique_maragheh_observatory.png",
+      "source_width": 1360,
+      "source_height": 2048,
+      "rect": {
+        "x": 0.0,
+        "y": 746.963,
+        "width": 1360.0,
+        "height": 554.0741
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.36472801,
+        "width": 1.0,
+        "height": 0.27054398
+      }
+    },
+    "tv_wonder_unique_xian_bell_and_drum_towers": {
+      "source": "assets/generated_wonders/tv_wonder_unique_xian_bell_and_drum_towers.png",
+      "source_width": 2080,
+      "source_height": 1664,
+      "rect": {
+        "x": 0.0,
+        "y": 48.9956,
+        "width": 2080.0,
+        "height": 847.4074
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.02944444,
+        "width": 1.0,
+        "height": 0.50925926
+      }
+    },
+    "tv_wonder_unique_behistun_inscription": {
+      "source": "assets/generated_wonders/tv_wonder_unique_behistun_inscription.png",
+      "source_width": 1120,
+      "source_height": 592,
+      "rect": {
+        "x": 0.0,
+        "y": 67.8519,
+        "width": 1120.0,
+        "height": 456.2963
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.11461461,
+        "width": 1.0,
+        "height": 0.77077077
+      }
+    },
+    "tv_wonder_unique_beijing_imperial_granaries": {
+      "source": "assets/generated_wonders/tv_wonder_unique_beijing_imperial_granaries.png",
+      "source_width": 1280,
+      "source_height": 848,
+      "rect": {
+        "x": 0.0,
+        "y": 163.2593,
+        "width": 1280.0,
+        "height": 521.4815
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19252271,
+        "width": 1.0,
+        "height": 0.61495458
+      }
+    },
+    "tv_wonder_unique_bursa_imperial_mint": {
+      "source": "assets/generated_wonders/tv_wonder_unique_bursa_imperial_mint.png",
+      "source_width": 2048,
+      "source_height": 1360,
+      "rect": {
+        "x": 0.0,
+        "y": 262.8148,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19324619,
+        "width": 1.0,
+        "height": 0.61350763
+      }
+    },
+    "tv_wonder_unique_enderun_palace_school": {
+      "source": "assets/generated_wonders/tv_wonder_unique_enderun_palace_school.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 175.4074,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.11419753,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_ayutthaya_foreign_quarters": {
+      "source": "assets/generated_wonders/tv_wonder_unique_ayutthaya_foreign_quarters.png",
+      "source_width": 1280,
+      "source_height": 848,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1280.0,
+        "height": 521.4815
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61495458
+      }
+    },
+    "tv_wonder_unique_yunnan_weisuo_colonies": {
+      "source": "assets/generated_wonders/tv_wonder_unique_yunnan_weisuo_colonies.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 70.163,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.04567901,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_zhoushan_beacon_network": {
+      "source": "assets/generated_wonders/tv_wonder_unique_zhoushan_beacon_network.png",
+      "source_width": 2048,
+      "source_height": 1536,
+      "rect": {
+        "x": 0.0,
+        "y": 175.4074,
+        "width": 2048.0,
+        "height": 834.3704
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.11419753,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_great_port": {
+      "source": "assets/generated_wonders/tv_wonder_great_port.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 99.5556,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.09722222,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_sacred_mountain": {
+      "source": "assets/generated_wonders/tv_wonder_sacred_mountain.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_triumphal_axis": {
+      "source": "assets/generated_wonders/tv_wonder_triumphal_axis.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 19.9111,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.01944444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    }
+  }
+}

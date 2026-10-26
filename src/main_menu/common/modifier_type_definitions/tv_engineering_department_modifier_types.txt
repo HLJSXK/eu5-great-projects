@@ -1,0 +1,61 @@
+﻿tv_wonder_labor_camp_price_cost_modifier = {
+	color = bad
+	percent = yes
+	game_data = {
+		category = country
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+tv_wonder_direct_build_small_price_cost_modifier = {
+	color = bad
+	percent = yes
+	game_data = {
+		category = country
+	}
+}
+
+tv_wonder_direct_build_medium_price_cost_modifier = {
+	color = bad
+	percent = yes
+	game_data = {
+		category = country
+	}
+}
+
+tv_wonder_direct_build_large_price_cost_modifier = {
+	color = bad
+	percent = yes
+	game_data = {
+		category = country
+	}
+}
+
+tv_wonder_ritual_small_price_cost_modifier = {
+	color = bad
+	percent = yes
+	game_data = { category = country }
+}
+
+
+tv_wonder_ritual_medium_price_cost_modifier = {
+	color = bad
+	percent = yes
+	game_data = { category = country }
+}
+
+
+tv_wonder_ritual_large_price_cost_modifier = {
+	color = bad
+	percent = yes
+	game_data = { category = country }
+}

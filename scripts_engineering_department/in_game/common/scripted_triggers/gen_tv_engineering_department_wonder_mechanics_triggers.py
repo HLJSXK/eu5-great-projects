@@ -1,0 +1,435 @@
+import sys
+from pathlib import Path
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+REPO_ROOT = Path(__file__).resolve().parents[4]
+sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
+
+from wonder_mechanics.io import load_all_wonder_mechanics
+from wonder_mechanics.naming import PARTS
+from wonder_mechanics.render import render_header
+from wonder_mechanics.schema import site_trigger_lines_for_wonder
+from wonder_mechanics.suitability_conditions import (
+    SUITABILITY_KNOWLEDGE_ROW_SLOTS,
+    suitability_row_key,
+)
+
+OUT_FILE = REPO_ROOT / "src" / "in_game" / "common" / "scripted_triggers" / "tv_engineering_department_wonder_mechanics_triggers.txt"
+SCRIPT_REL = "scripts_engineering_department/in_game/common/scripted_triggers/gen_tv_engineering_department_wonder_mechanics_triggers.py"
+T = "\t"
+FEASIBLE_GENERIC_DECK_MAP = "tv_wonder_feasible_generic_deck"
+FEASIBLE_UNIQUE_DECK_MAP = "tv_wonder_feasible_unique_deck"
+LOCATION_SURVEYED_MAP = "tv_wonder_surveyed"
+LOCATION_SURVEY_SCALE_TIER_MAP = "tv_wonder_survey_scale_tier"
+
+
+def trigger_conditions(wonder: dict, mechanics: dict, indent: int = 1) -> list[str]:
+    return site_trigger_lines_for_wonder(mechanics, wonder, indent)
+
+
+def building_or_block(buildings: list[str], indent: int) -> list[str]:
+    prefix = T * indent
+    lines = [f"{prefix}OR = {{"]
+    for building in buildings:
+        lines.append(f"{prefix}{T}has_building = building_type:{building}")
+    lines.append(f"{prefix}}}")
+    return lines
+
+
+def country_fresh_uniqueness_conditions(wonder: dict, indent: int) -> list[str]:
+    if wonder["size"] == "small":
+        return []
+    prefix = T * indent
+    return [f"{prefix}NOT = {{ tv_wonder_country_has_{wonder['key']}_project_or_final_trigger = yes }}"]
+
+
+def intermediate_buildings(wonder: dict) -> list[str]:
+    key = wonder["key"]
+    return [f"tv_wonder_{key}", *[f"tv_wonder_{key}_{part}" for part in PARTS]]
+
+
+def final_buildings(wonder: dict) -> list[str]:
+    return list(dict.fromkeys([wonder["final_building"]]))
+
+
+def building_type_ref(building: str) -> str:
+    if ":" in building or building in {"prev", "this", "root"}:
+        return building
+    return f"building_type:{building}"
+
+
+def loc_level(building: str, op: str, level: int) -> str:
+    return f"location_building_level = {{ building_type = {building_type_ref(building)} value {op} {level} }}"
+
+
+def final_building_level_exact(building: str, level: int, indent: int) -> list[str]:
+    prefix = T * indent
+    lines = [f"{prefix}{loc_level(building, '>=', level)}"]
+    if level < 6:
+        lines.append(f"{prefix}NOT = {{ {loc_level(building, '>=', level + 1)} }}")
+    return lines
+
+
+def stored_tier_can_expand_branch(wonder: dict, final_building: str, indent: int) -> list[str]:
+    prefix = T * indent
+    wonder_id = str(int(wonder["id"]))
+    lines = [f"{prefix}OR = {{"]
+    lines.append(f"{prefix}{T}AND = {{")
+    lines.append(f"{prefix}{T}{T}owner ?= {{ is_ai = no }} has_global_variable = tv_engineering_department_unlimited_scale")
+    lines.append(f"{prefix}{T}{T}{loc_level(final_building, '>=', 1)}")
+    lines.append(f"{prefix}{T}{T}NOT = {{ {loc_level(final_building, '>=', 6)} }}")
+    lines.append(f"{prefix}{T}}}")
+    lines.append(f"{prefix}{T}AND = {{")
+    # Selector/tooltip evaluation can visit every AND/OR operand; branch before reading a map.
+    lines.append(f"{prefix}{T}{T}trigger_if = {{")
+    lines.append(f"{prefix}{T}{T}{T}limit = {{ has_variable_map = {LOCATION_SURVEY_SCALE_TIER_MAP} }}")
+    lines.append(f"{prefix}{T}{T}{T}is_key_in_variable_map = {{ name = {LOCATION_SURVEY_SCALE_TIER_MAP} target = {wonder_id} }}")
+    lines.append(f"{prefix}{T}{T}{T}OR = {{")
+    for level in range(1, 6):
+        lines.append(f"{prefix}{T}{T}{T}{T}AND = {{")
+        lines.extend(final_building_level_exact(final_building, level, indent + 5))
+        lines.append(
+            f"{prefix}{T}{T}{T}{T}{T}\"variable_map({LOCATION_SURVEY_SCALE_TIER_MAP}|{wonder_id})\" ?= "
+            f"{{ this >= {level + 1} }}"
+        )
+        lines.append(f"{prefix}{T}{T}{T}{T}}}")
+    lines.append(f"{prefix}{T}{T}{T}}}")
+    lines.append(f"{prefix}{T}{T}}}")
+    lines.append(f"{prefix}{T}{T}trigger_else = {{ always = no }}")
+    lines.append(f"{prefix}{T}}}")
+    lines.append(f"{prefix}}}")
+    return lines
+
+
+def unsurveyed_initial_final_building_can_expand(wonder: dict, final_building: str, indent: int) -> list[str]:
+    prefix = T * indent
+    wonder_id = str(int(wonder["id"]))
+    lines = [f"{prefix}AND = {{"]
+    lines.append(f"{prefix}{T}{loc_level(final_building, '>=', 1)}")
+    lines.append(f"{prefix}{T}NOT = {{ {loc_level(final_building, '>=', 6)} }}")
+    lines.append(f"{prefix}{T}trigger_if = {{")
+    lines.append(f"{prefix}{T}{T}limit = {{ has_variable_map = {LOCATION_SURVEYED_MAP} }}")
+    lines.append(f"{prefix}{T}{T}NOT = {{ is_key_in_variable_map = {{ name = {LOCATION_SURVEYED_MAP} target = {wonder_id} }} }}")
+    lines.append(f"{prefix}{T}}}")
+    lines.append(f"{prefix}{T}trigger_else = {{ always = yes }}")
+    lines.append(f"{prefix}}}")
+    return lines
+
+
+def final_building_below_cap_conditions(wonder: dict, indent: int) -> list[str]:
+    prefix = T * indent
+    lines = [f"{prefix}OR = {{"]
+    allow_unsurveyed_initial = int(wonder.get("initial_level") or 0) > 0
+    for final_building in final_buildings(wonder):
+        lines.extend(stored_tier_can_expand_branch(wonder, final_building, indent + 1))
+        if allow_unsurveyed_initial:
+            lines.extend(unsurveyed_initial_final_building_can_expand(wonder, final_building, indent + 1))
+    lines.append(f"{prefix}}}")
+    return lines
+
+
+def fresh_site_candidate_conditions(wonder: dict, mechanics: dict, indent: int) -> list[str]:
+    del mechanics
+    prefix = T * indent
+    lines = [f"{prefix}AND = {{"]
+    lines.append(f"{prefix}{T}tv_wonder_location_meets_{wonder['key']}_base_site_rules_trigger = yes")
+    lines.append(f"{prefix}{T}NOT = {{ tv_wonder_location_has_{wonder['key']}_intermediate_building_trigger = yes }}")
+    lines.append(f"{prefix}{T}NOT = {{ tv_wonder_location_has_{wonder['key']}_final_building_trigger = yes }}")
+    lines.append(f"{prefix}{T}NOT = {{ tv_wonder_location_has_{wonder['key']}_capped_final_building_trigger = yes }}")
+    lines.append(f"{prefix}}}")
+    return lines
+
+
+def host_site_candidate_conditions(wonder: dict, mechanics: dict, indent: int) -> list[str]:
+    del mechanics
+    prefix = T * indent
+    lines = [f"{prefix}AND = {{"]
+    lines.append(f"{prefix}{T}tv_wonder_location_meets_{wonder['key']}_base_site_rules_trigger = yes")
+    lines.append(f"{prefix}{T}NOT = {{ tv_wonder_location_has_{wonder['key']}_intermediate_building_trigger = yes }}")
+    lines.append(f"{prefix}{T}OR = {{")
+    lines.append(f"{prefix}{T}{T}AND = {{")
+    lines.append(f"{prefix}{T}{T}{T}NOT = {{ tv_wonder_location_has_{wonder['key']}_final_building_trigger = yes }}")
+    lines.append(f"{prefix}{T}{T}{T}NOT = {{ tv_wonder_location_has_{wonder['key']}_capped_final_building_trigger = yes }}")
+    lines.append(f"{prefix}{T}{T}}}")
+    lines.append(f"{prefix}{T}{T}tv_wonder_location_has_{wonder['key']}_expandable_final_building_trigger = yes")
+    lines.append(f"{prefix}{T}}}")
+    lines.append(f"{prefix}}}")
+    return lines
+
+
+def owned_fresh_site_candidate_conditions(wonder: dict, mechanics: dict, indent: int) -> list[str]:
+    prefix = T * indent
+    if wonder.get("is_unique"):
+        return [
+            f"{prefix}owns = location:{wonder['location']}",
+            f"{prefix}location:{wonder['location']} = {{",
+            *fresh_site_candidate_conditions(wonder, mechanics, indent + 1),
+            f"{prefix}}}",
+        ]
+    return [
+        f"{prefix}any_owned_location = {{",
+        *fresh_site_candidate_conditions(wonder, mechanics, indent + 1),
+        f"{prefix}}}",
+    ]
+
+
+def player_visible_site_rule_conditions(wonder: dict, mechanics: dict, indent: int) -> list[str]:
+    prefix = T * indent
+    if wonder.get("is_unique"):
+        return [f"{prefix}owns = location:{wonder['location']}"]
+
+    lines = [f"{prefix}any_owned_location = {{"]
+    lines.extend(trigger_conditions(wonder, mechanics, indent + 1))
+    lines.append(f"{prefix}}}")
+    return lines
+
+
+def add_project_occupancy_triggers(lines: list[str], wonders: list[dict], mechanics: dict) -> None:
+    for wonder in wonders:
+        key = wonder["key"]
+        lines.append(f"tv_wonder_location_meets_{key}_base_site_rules_trigger = {{")
+        if wonder.get("is_unique"):
+            lines.append(f"{T}this = location:{wonder['location']}")
+        lines.extend(trigger_conditions(wonder, mechanics, 1))
+        lines.append("}")
+        lines.append("")
+
+        lines.append(f"tv_wonder_location_has_{key}_intermediate_building_trigger = {{")
+        lines.extend(building_or_block(intermediate_buildings(wonder), 1))
+        lines.append("}")
+        lines.append("")
+        lines.append(f"tv_wonder_location_has_{key}_final_building_trigger = {{")
+        lines.extend(building_or_block(final_buildings(wonder), 1))
+        lines.append("}")
+        lines.append("")
+        lines.append(f"tv_wonder_location_has_{key}_expandable_final_building_trigger = {{")
+        lines.extend(final_building_below_cap_conditions(wonder, 1))
+        lines.append("}")
+        lines.append("")
+        lines.append(f"tv_wonder_location_has_{key}_capped_final_building_trigger = {{")
+        lines.append(f"{T}tv_wonder_location_has_{key}_final_building_trigger = yes")
+        lines.append(f"{T}NOT = {{ tv_wonder_location_has_{key}_expandable_final_building_trigger = yes }}")
+        lines.append("}")
+        lines.append("")
+        lines.append(f"tv_wonder_location_is_valid_priority_module_project_for_{key}_trigger = {{")
+        lines.append(f"{T}tv_wonder_location_meets_{key}_base_site_rules_trigger = yes")
+        lines.append(f"{T}tv_wonder_location_has_{key}_intermediate_building_trigger = yes")
+        lines.append("}")
+        lines.append("")
+        lines.append(f"tv_wonder_location_is_valid_priority_final_project_for_{key}_trigger = {{")
+        lines.append(f"{T}tv_wonder_location_meets_{key}_base_site_rules_trigger = yes")
+        lines.append(f"{T}tv_wonder_location_has_{key}_expandable_final_building_trigger = yes")
+        lines.append("}")
+        lines.append("")
+        lines.append(f"tv_wonder_location_is_valid_priority_project_for_{key}_trigger = {{")
+        lines.append(f"{T}OR = {{")
+        lines.append(f"{T}{T}tv_wonder_location_is_valid_priority_module_project_for_{key}_trigger = yes")
+        lines.append(f"{T}{T}tv_wonder_location_is_valid_priority_final_project_for_{key}_trigger = yes")
+        lines.append(f"{T}}}")
+        lines.append("}")
+        lines.append("")
+
+        lines.append(f"tv_wonder_country_has_{key}_project_or_final_trigger = {{")
+        lines.append(f"{T}any_owned_location = {{")
+        lines.append(f"{T}{T}OR = {{")
+        lines.append(f"{T}{T}{T}tv_wonder_location_has_{key}_intermediate_building_trigger = yes")
+        lines.append(f"{T}{T}{T}tv_wonder_location_has_{key}_final_building_trigger = yes")
+        lines.append(f"{T}{T}}}")
+        lines.append(f"{T}}}")
+        lines.append("}")
+        lines.append("")
+
+    lines.append("tv_wonder_location_has_any_wonder_final_building_trigger = {")
+    lines.append(f"{T}OR = {{")
+    for wonder in wonders:
+        lines.append(f"{T}{T}tv_wonder_location_has_{wonder['key']}_final_building_trigger = yes")
+    lines.append(f"{T}}}")
+    lines.append("}")
+    lines.append("")
+
+    append_id_dispatch_trigger(
+        lines,
+        "tv_wonder_location_has_locked_wonder_intermediate_building_trigger",
+        wonders,
+        limit_line=lambda wonder: f"prev = {{ var:tv_wonder_locked ?= {wonder['id']} }}",
+        target_line=lambda wonder: f"tv_wonder_location_has_{wonder['key']}_intermediate_building_trigger = yes",
+    )
+
+    append_id_dispatch_trigger(
+        lines,
+        "tv_wonder_location_has_locked_wonder_expandable_final_building_trigger",
+        wonders,
+        limit_line=lambda wonder: f"prev = {{ var:tv_wonder_locked ?= {wonder['id']} }}",
+        target_line=lambda wonder: f"tv_wonder_location_has_{wonder['key']}_expandable_final_building_trigger = yes",
+    )
+
+    append_id_dispatch_trigger(
+        lines,
+        "tv_wonder_location_meets_locked_wonder_base_site_rules_trigger",
+        wonders,
+        limit_line=lambda wonder: f"prev = {{ var:tv_wonder_locked ?= {wonder['id']} }}",
+        target_line=lambda wonder: f"tv_wonder_location_meets_{wonder['key']}_base_site_rules_trigger = yes",
+    )
+
+    append_id_dispatch_trigger(
+        lines,
+        "tv_wonder_location_is_valid_priority_project_for_locked_wonder_trigger",
+        wonders,
+        limit_line=lambda wonder: f"prev = {{ var:tv_wonder_locked ?= {wonder['id']} }}",
+        target_line=lambda wonder: f"tv_wonder_location_is_valid_priority_project_for_{wonder['key']}_trigger = yes",
+    )
+
+
+def append_display_base_site_rules_alias_triggers(lines: list[str], wonders: list[dict], mechanics: dict) -> None:
+    for wonder in wonders:
+        lines.append(f"tv_wonder_display_{wonder['id']}_base_site_rules_trigger = {{")
+        lines.extend(trigger_conditions(wonder, mechanics, 1))
+        lines.append("}")
+        lines.append("")
+
+
+def has_any_key_in_map_trigger(map_name: str, indent: int) -> list[str]:
+    prefix = T * indent
+    return [
+        f"{prefix}has_variable_map = {map_name}",
+        f"{prefix}any_key_in_variable_map = {{",
+        f"{prefix}{T}variable = {map_name}",
+        f"{prefix}{T}always = yes",
+        f"{prefix}}}",
+    ]
+
+
+def append_id_dispatch_trigger(
+    lines: list[str],
+    name: str,
+    wonders: list[dict],
+    *,
+    limit_line,
+    target_line,
+) -> None:
+    lines.append(f"{name} = {{")
+    for idx, wonder in enumerate(wonders):
+        head = "trigger_if" if idx == 0 else "trigger_else_if"
+        lines.append(f"{T}{head} = {{")
+        lines.append(f"{T}{T}limit = {{ {limit_line(wonder)} }}")
+        lines.append(f"{T}{T}{target_line(wonder)}")
+        lines.append(f"{T}}}")
+    lines.append(f"{T}trigger_else = {{ always = no }}")
+    lines.append("}")
+    lines.append("")
+
+
+def append_site_rule_dispatch_triggers(lines: list[str], wonders: list[dict]) -> None:
+    append_id_dispatch_trigger(
+        lines,
+        "tv_wonder_site_rule_player_visible_locked_wonder_trigger",
+        wonders,
+        limit_line=lambda wonder: f"var:tv_wonder_locked ?= {wonder['id']}",
+        target_line=lambda wonder: f"tv_wonder_player_visible_site_rules_{wonder['key']}_trigger = yes",
+    )
+    append_id_dispatch_trigger(
+        lines,
+        "tv_wonder_location_can_host_locked_wonder_trigger",
+        wonders,
+        limit_line=lambda wonder: (
+            f"owner ?= {{ var:tv_wonder_locked ?= {wonder['id']} }}"
+        ),
+        target_line=lambda wonder: f"tv_wonder_location_can_host_{wonder['key']}_trigger = yes",
+    )
+
+
+def append_suitability_flag_static_reference_trigger(lines: list[str], generic_wonders: list[dict]) -> None:
+    """OR-reference every baked suitability map key used by the GUI.
+
+    These flags only ever appear as global_variable_map keys (add_to_global_variable_map
+    key = flag:... in tv_wonder_index_effects.txt, MakeScopeFlag(Concatenate(...)) in the
+    engineering department GUI); GUI reads don't count as "used" for error.log's static
+    scanner. Without a real reference from a *reachable* scripted trigger/effect, every
+    baked key logs "is set but is never used" on load. `has_flag` is not a valid EU5 trigger
+    (it logs "Unknown trigger type: has_flag"); the real check for a variable-map flag key is
+    `is_key_in_global_variable_map`. This trigger is called once from
+    tv_wonder_initialize_index_on_game_start/_on_game_load (see
+    tv_engineering_department_on_action.txt), which makes the keys "used" and satisfies the
+    scanner. The checks always evaluate true since every key is baked at init -- this trigger
+    is a static reference, not real gameplay logic.
+    """
+    lines.append("tv_wonder_suitability_flag_static_reference_trigger = {")
+    lines.append(f"{T}OR = {{")
+    for wonder in generic_wonders:
+        mechanic_id = int(wonder["id"])
+        for row_index in range(1, SUITABILITY_KNOWLEDGE_ROW_SLOTS + 1):
+            flag_key = suitability_row_key(mechanic_id, row_index)
+            lines.append(f"{T}{T}is_key_in_global_variable_map = {{ name = tv_wonder_suitability_condition_type target = flag:{flag_key} }}")
+            lines.append(f"{T}{T}is_key_in_global_variable_map = {{ name = tv_wonder_suitability_weight target = flag:{flag_key} }}")
+    lines.append(f"{T}}}")
+    lines.append("}")
+    lines.append("")
+
+
+def generate() -> str:
+    all_wonders, mechanics = load_all_wonder_mechanics()
+    generic_wonders = [wonder for wonder in all_wonders if not wonder.get("is_unique")]
+    unique_wonders = [wonder for wonder in all_wonders if wonder.get("is_unique")]
+    lines = render_header(SCRIPT_REL)
+    append_suitability_flag_static_reference_trigger(lines, generic_wonders)
+    add_project_occupancy_triggers(lines, all_wonders, mechanics)
+    append_display_base_site_rules_alias_triggers(lines, all_wonders, mechanics)
+    for wonder in all_wonders:
+        lines.append(f"tv_wonder_location_can_host_{wonder['key']}_trigger = {{")
+        lines.extend(host_site_candidate_conditions(wonder, mechanics, 1))
+        lines.append("}")
+        lines.append("")
+        lines.append(f"tv_wonder_can_build_{wonder['key']}_trigger = {{")
+        lines.extend(country_fresh_uniqueness_conditions(wonder, 1))
+        lines.extend(owned_fresh_site_candidate_conditions(wonder, mechanics, 1))
+        lines.append("}")
+        lines.append("")
+        lines.append(f"tv_wonder_player_visible_site_rules_{wonder['key']}_trigger = {{")
+        lines.extend(player_visible_site_rule_conditions(wonder, mechanics, 1))
+        lines.append("}")
+        lines.append("")
+
+    lines.append("tv_wonder_generic_has_any_feasible_proposal_trigger = {")
+    lines.extend(has_any_key_in_map_trigger(FEASIBLE_GENERIC_DECK_MAP, 1))
+    lines.append("}")
+    lines.append("")
+
+    lines.append("tv_wonder_unique_has_any_feasible_proposal_trigger = {")
+    lines.extend(has_any_key_in_map_trigger(FEASIBLE_UNIQUE_DECK_MAP, 1))
+    lines.append("}")
+    lines.append("")
+
+    lines.append("tv_wonder_mechanics_has_any_feasible_proposal_trigger = {")
+    lines.append(f"{T}OR = {{")
+    lines.append(f"{T}{T}tv_wonder_generic_has_any_feasible_proposal_trigger = yes")
+    lines.append(f"{T}{T}tv_wonder_unique_has_any_feasible_proposal_trigger = yes")
+    lines.append(f"{T}}}")
+    lines.append("}")
+    lines.append("")
+
+    append_site_rule_dispatch_triggers(lines, all_wonders)
+
+    lines.append("tv_wonder_selected_survey_already_cached_trigger = {")
+    lines.append(f"{T}has_variable = tv_wonder_locked")
+    lines.append(f"{T}scope:tv_wonder_selected_survey_site = {{")
+    lines.append(f"{T}{T}trigger_if = {{")
+    lines.append(f"{T}{T}{T}limit = {{ has_variable_map = {LOCATION_SURVEYED_MAP} }}")
+    lines.append(f"{T}{T}{T}is_key_in_variable_map = {{ name = {LOCATION_SURVEYED_MAP} target = prev.var:tv_wonder_locked }}")
+    lines.append(f"{T}{T}}}")
+    lines.append(f"{T}{T}trigger_else = {{ always = no }}")
+    lines.append(f"{T}}}")
+    lines.append("}")
+    lines.append("")
+
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def main() -> None:
+    OUT_FILE.write_text(generate(), encoding="utf-8-sig", newline="\n")
+    print(f"Wrote {OUT_FILE.relative_to(REPO_ROOT)}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Great Projects 编辑器</title>
+<link rel="stylesheet" href="static/shared.css">
+<link rel="stylesheet" href="static/cost_reward.css">
+<link rel="stylesheet" href="static/wonder_localization.css">
+<link rel="stylesheet" href="static/media_studio.css">
+<link rel="stylesheet" href="static/generators.css">
+<link rel="stylesheet" href="static/localization.css">
+</head>
+<body>
+<div id="tool-hub-shell">
+
+  <!-- Persistent tool rail: every tool reachable in one click, never competing with the work area. -->
+  <header id="tool-hub-header">
+    <div class="rail-brand">
+      <span class="rail-mark">GP</span>
+      <span class="rail-name">Great Projects<span class="rail-sub">编辑器</span></span>
+    </div>
+    <nav class="tool-hub-tab-bar" aria-label="工具">
+      <button class="tool-hub-tab-btn" data-tool="cost-reward"><span class="rail-icon" aria-hidden="true">◧</span><span class="rail-label">花费/奖励编辑器</span><span class="tool-hub-tab-dot" data-dot hidden></span></button>
+      <button class="tool-hub-tab-btn" data-tool="wonder-localization"><span class="rail-icon" aria-hidden="true">❖</span><span class="rail-label">奇观本地化编辑器</span><span class="tool-hub-tab-dot" data-dot hidden></span></button>
+      <button class="tool-hub-tab-btn" data-tool="media-studio"><span class="rail-icon" aria-hidden="true">▶</span><span class="rail-label">媒体工具</span><span class="tool-hub-tab-dot" data-dot hidden></span></button>
+      <button class="tool-hub-tab-btn" data-tool="wonder-cropper"><span class="rail-icon" aria-hidden="true">✂</span><span class="rail-label">奇观裁剪</span><span class="tool-hub-tab-dot" data-dot hidden></span></button>
+      <button class="tool-hub-tab-btn" data-tool="generators"><span class="rail-icon" aria-hidden="true">⚙</span><span class="rail-label">生成器</span><span class="tool-hub-tab-dot" data-dot hidden></span></button>
+      <button class="tool-hub-tab-btn" data-tool="localization"><span class="rail-icon" aria-hidden="true">文</span><span class="rail-label">本地化</span><span class="tool-hub-tab-dot" data-dot hidden></span></button>
+    </nav>
+    <details class="rail-ops" id="rail-ops">
+      <summary>最近操作</summary>
+      <div id="operations-panel" aria-label="最近操作"></div>
+    </details>
+  </header>
+
+  <main id="tool-hub-panels">
+
+    <section class="tool-panel tool-cost-reward" data-tool="cost-reward">
+      <div class="tool-head">
+        <div class="tool-head-text">
+          <h1>奖励 / Modifier / 任务池</h1>
+          <p class="tool-note">底层数值目录与任务池，按类别分页编辑。</p>
+        </div>
+        <details class="tool-help">
+          <summary>说明</summary>
+          <div class="tool-help-body">
+            <p>编辑 <code>data/cost_reward_units.yaml</code> —— 一套独立于任何具体机制的底层数值目录，
+            按国家级/本地级/角色级一次性奖励 + 国家级/本地级持续 modifier 五个类别分页展示；国家级条目也可记录非缩放的布尔解锁，
+            供项目中未来的多个系统查表使用。不单独存代价（cost）：需要代价时，取对应奖励（reward）行
+            value 的相反数即可（<code>country_reward.inflation</code> 方向相反）。</p>
+            <p>同时编辑 <code>data/task_pool.yaml</code> —— 与之并列的独立任务池目录（见 Cost_Reward_Unit_Concepts.md 第 6 节），
+            按 on_action 型任务 / Trigger 型任务两个类别分页展示，同样不存奖励，只记录"需要发生什么"/
+            "需要达到什么状态"以及引擎侧的检测方式。</p>
+            <p>奇观建设随机事件与奇观自身的 modifier 数据分别维护在自己独立的文件中
+            （<code>data/wonder_construction_events.yaml</code>、<code>data/wonder_base_modifiers.yaml</code> 等），不引用此处；
+            奇观本身请继续使用"奇观本地化编辑器"标签页。</p>
+          </div>
+        </details>
+        <div class="tool-actions">
+          <button id="cr-save-btn" class="primary-button">保存并重新生成</button>
+          <button id="cr-reload-btn">重新加载</button>
+        </div>
+      </div>
+      <div class="tool-body">
+        <div id="cr-tabs" class="tabs"></div>
+        <div id="panels"></div>
+      </div>
+      <details class="tool-log" id="cr-log-drawer">
+        <summary><span id="cr-status" class="job-status" role="status">就绪</span><span class="tool-log-hint">日志</span></summary>
+        <pre id="cr-log"></pre>
+      </details>
+    </section>
+
+
+    <section class="tool-panel tool-wonder-localization" data-tool="wonder-localization">
+      <div class="wl-shell">
+
+        <aside class="wl-sidebar">
+          <div class="wl-sidebar-top">
+            <input id="search-input" type="search" placeholder="搜索 ID / 名称 / concept">
+            <div class="kind-switch" id="wonder-kind-tabs"></div>
+            <p class="count-line" id="wonder-count">加载中...</p>
+          </div>
+          <div class="wonder-list" id="wonder-list"></div>
+        </aside>
+
+        <div class="wl-main">
+
+          <div class="wl-topbar">
+            <div class="wl-topbar-names">
+              <h2 id="app-title" aria-hidden="true"></h2>
+              <div id="wonder-name-editors" class="hidden"></div>
+              <div id="wonder-meta"></div>
+            </div>
+            <div class="wl-topbar-actions">
+              <div class="status-stack">
+                <span id="status-badge" class="status-badge">就绪</span>
+                <span id="dirty-badge" class="dirty-badge hidden">未保存</span>
+              </div>
+              <button id="retry-detail-button" class="secondary-button" hidden>重试详情</button>
+              <button id="reload-button" class="secondary-button">重新加载</button>
+              <button id="save-button" class="primary-button">保存</button>
+            </div>
+          </div>
+
+          <figure class="wonder-image-frame" id="wonder-image-frame" aria-hidden="true"></figure>
+
+          <div class="wl-tabs">
+            <div class="editor-toolbar">
+              <div class="tab-bar" id="language-tabs"></div>
+            </div>
+          </div>
+
+          <div class="wl-editor-body">
+            <div class="language-panels" id="language-panels"></div>
+          </div>
+
+          <div class="wl-log" id="wl-log">
+            <div class="wl-log-header" role="button" tabindex="0" aria-expanded="false">
+              <span>日志</span>
+              <div class="wl-log-tools">
+                <button id="copy-log-button" class="ghost-button">复制</button>
+                <span class="wl-log-expand" aria-hidden="true">▲</span>
+              </div>
+            </div>
+            <div class="wl-log-body">
+              <pre id="log-output" class="log-output"></pre>
+            </div>
+          </div>
+
+        </div><!-- /.wl-main -->
+      </div><!-- /.wl-shell -->
+
+      <div id="toast" class="toast hidden" aria-live="polite"></div>
+    </section>
+
+    <section class="tool-panel tool-media-studio" data-tool="media-studio">
+      <div class="tool-head">
+        <div class="tool-head-text">
+          <h1>媒体工作台</h1>
+          <p class="tool-note">运行项目图片生成器，查看作业日志及经过校验的产物报告。</p>
+        </div>
+        <details class="tool-help">
+          <summary>说明</summary>
+          <div class="tool-help-body">
+            <p>从左侧选择工具，填写参数后运行。作业在后台执行，可取消；产物发布前会做文件级校验，
+            失败时只在日志中报告，不会写入正式路径。</p>
+          </div>
+        </details>
+      </div>
+      <div class="media-layout">
+        <aside class="media-tool-list" id="media-tool-list"></aside>
+        <main class="media-workspace">
+          <div id="media-form" class="media-form"></div>
+          <div class="media-actions">
+            <button id="media-run" class="primary-button" type="button">运行工具</button>
+          </div>
+          <div id="media-job"></div>
+        </main>
+      </div>
+    </section>
+
+    <section class="tool-panel tool-wonder-cropper" data-tool="wonder-cropper">
+      <div class="tool-head">
+        <div class="tool-head-text">
+          <h1>奇观图片裁剪</h1>
+          <p class="tool-note">选择已生成的奇观图片，拖出 27:11 裁剪区域，保存后重建 DDS 产物。</p>
+        </div>
+        <details class="tool-help">
+          <summary>说明</summary>
+          <div class="tool-help-body">
+            <p>在画布上拖动或缩放裁剪框，比例为 27:11。保存裁剪写入配置；重建 DDS 会把结果发布到正式产物路径。</p>
+          </div>
+        </details>
+      </div>
+      <div class="cropper-layout">
+        <aside class="cropper-sidebar">
+          <div class="section-label">图片</div>
+          <div id="cropper-task-list"></div>
+        </aside>
+        <main class="cropper-stage-wrap">
+          <canvas id="cropper-canvas"></canvas>
+        </main>
+        <aside class="cropper-inspector">
+          <h2 id="cropper-title">未选择图片</h2>
+          <dl id="cropper-meta"></dl>
+          <div class="cropper-actions">
+            <button id="cropper-save" class="primary-button" type="button">保存裁剪</button>
+            <button id="cropper-remove" type="button">移除已保存裁剪</button>
+            <button id="cropper-reload" type="button">重新加载裁剪</button>
+            <button id="cropper-apply" type="button">重建 DDS</button>
+          </div>
+          <div id="cropper-job"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="tool-panel tool-generators" data-tool="generators">
+      <div class="tool-head">
+        <div class="tool-head-text">
+          <h1>生成器</h1>
+          <p class="tool-note">按脚本目录的 root 与域分组，勾选后顺序执行。</p>
+        </div>
+        <details class="tool-help">
+          <summary>说明</summary>
+          <div class="tool-help-body">
+            <p>运行 <code>data/generated_files.yaml</code> 中登记的脚本，按脚本目录的 root 与域分组。
+            选中的脚本按勾选顺序<b>顺序执行，没有依赖图</b>：某个脚本失败后不会继续执行后续脚本，产物也不发布；
+            一次请求内输出路径相交的脚本组合会被直接拒绝。产物核对是文件级检查（格式与字节变化），
+            不是领域语义校验。真实执行只写登记的输出路径；勾选"仅校验"则只检查选择、不执行脚本。</p>
+          </div>
+        </details>
+      </div>
+      <div id="generators-root"></div>
+    </section>
+
+    <section class="tool-panel tool-localization" data-tool="localization">
+      <div class="tool-head">
+        <div class="tool-head-text">
+          <h1>本地化编辑器</h1>
+          <p class="tool-note">双列编辑 English / 简体中文条目，按物理文件分组。</p>
+        </div>
+        <details class="tool-help">
+          <summary>说明</summary>
+          <div class="tool-help-body">
+            <p>双列编辑 <code>src*/**/localization/**/*.yml</code> 的 English / 简体中文条目：
+            按物理文件分组，缺译整行高亮，可切换"全部 / 仅缺译 / 仅已改动"并搜索 key 与译文。
+            保存走共享的预览 → 确认 → 提交流程，写入前保留文件头注释、BOM 与换行符，<b>不触发生成</b>。</p>
+            <p>登记在 <code>data/generated_files.yaml</code> 的生成物只读展示，并给出应改的 data 源；
+            新增键必须同时提供两种语言，否则提交被拒绝。预览为游戏内近似效果，
+            不渲染 <code>@icon!</code> 贴图、不展开变量与本地化函数，也不还原字体与排版。</p>
+          </div>
+        </details>
+      </div>
+      <div id="localization-root"></div>
+    </section>
+
+
+  </main>
+
+  <footer id="validation-panel" aria-label="校验结果"></footer>
+</div>
+<!-- Preview dialogs live outside tool panels: a modal opened inside a hidden panel would be invisible yet block the page. -->
+<div id="cr-preview"></div>
+<div id="wonder-preview"></div>
+<div id="loc-preview"></div>
+<script type="module" src="static/shared.js"></script>
+<script type="module" src="static/operations_panel.js"></script>
+<script type="module" src="static/cost_reward.js"></script>
+<script type="module" src="static/wonder_localization.js"></script>
+<script type="module" src="static/media_studio.js"></script>
+<script type="module" src="static/cropper.js"></script>
+<script type="module" src="static/generators.js"></script>
+<script type="module" src="static/localization.js"></script>
+<script type="module" src="static/validation_panel.js"></script>
+</body>
+</html>

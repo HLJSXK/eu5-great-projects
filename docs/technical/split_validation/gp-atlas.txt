@@ -1,0 +1,15 @@
+
+=== static localization indexes ===
+[OK] Indexes written to data\index/ — icons.txt: 381, loc_keys_en.txt: 14772, scripted_effects.txt: 5534, scripted_triggers.txt: 3638, static_modifiers.txt: 2665
+--- static localization indexes done in 5.1s ---
+
+=== unique wonders data ===
+wrote unique_wonders_site\dist\data\unique_wonders.json (56 generic, 139 unique wonders)
+--- unique wonders data done in 1.5s ---
+
+=== wonder image assets ===
+copied 191 wonder images
+missing wonder images: tv_wonder_unique_amber_room, tv_wonder_unique_parthenon, tv_wonder_unique_bangkok_grand_palace, tv_wonder_unique_wat_arun
+--- wonder image assets done in 0.8s ---
+
+=== unique_wonders_site build complete ===

@@ -1,0 +1,49 @@
+﻿tv_wonder_ai_ritual_effect = {
+	tv_wonder_ritual_refresh_display_effect = yes
+	set_local_variable = { name = tv_wonder_ai_best_alignment value = var:tv_wonder_ritual_alignment_1 }
+	set_variable = { name = tv_wonder_ritual_choice value = 1 }
+	if = { limit = { var:tv_wonder_ritual_alignment_2 > local_var:tv_wonder_ai_best_alignment }
+	set_local_variable = { name = tv_wonder_ai_best_alignment value = var:tv_wonder_ritual_alignment_2 }
+	set_variable = { name = tv_wonder_ritual_choice value = 2 }
+	}
+	if = { limit = { var:tv_wonder_ritual_alignment_3 > local_var:tv_wonder_ai_best_alignment }
+	set_variable = { name = tv_wonder_ritual_choice value = 3 }
+	}
+	remove_local_variable = tv_wonder_ai_best_alignment
+	if = { limit = { tv_wonder_ritual_can_confirm_trigger = yes } tv_wonder_ritual_confirm_effect = yes }
+	else = {
+	change_variable = { name = tv_wonder_ritual_ai_wait_months add = 1 }
+	if = { limit = { var:tv_wonder_ritual_ai_wait_months >= 24 }
+	if = { limit = { var:tv_wonder_project_mode ?= 3 } tv_wonder_ritual_cancel_reritual_effect = yes }
+	else = { tv_wonder_ritual_choose_plain_effect = yes }
+	}
+	}
+}
+
+tv_wonder_ai_reritual_effect = {
+	save_scope_as = tv_wonder_ai_reritual_country
+	remove_variable = tv_wonder_reritual_pending_id
+	set_local_variable = { name = tv_wonder_ai_plain_best value = 0 }
+	every_key_in_variable_map = { variable = tv_wonder_plain_level_by_wonder_id
+	set_local_variable = { name = tv_wonder_ai_plain_id value = this }
+	scope:tv_wonder_ai_reritual_country = {
+	set_local_variable = { name = tv_wonder_ai_plain_level value = "variable_map(tv_wonder_plain_level_by_wonder_id|local_var:tv_wonder_ai_plain_id)" }
+	set_local_variable = { name = tv_wonder_ai_plain_size value = "global_variable_map(tv_wonder_id_to_size|local_var:tv_wonder_ai_plain_id)" }
+if = { limit = { local_var:tv_wonder_ai_plain_level > local_var:tv_wonder_ai_plain_best
+OR = {
+AND = { local_var:tv_wonder_ai_plain_size = 1 can_pay_price = price:tv_wonder_ritual_small_price }
+AND = { local_var:tv_wonder_ai_plain_size = 2 can_pay_price = price:tv_wonder_ritual_medium_price }
+AND = { local_var:tv_wonder_ai_plain_size = 3 can_pay_price = price:tv_wonder_ritual_large_price }
+}
+}
+	set_local_variable = { name = tv_wonder_ai_plain_best value = local_var:tv_wonder_ai_plain_level }
+	set_variable = { name = tv_wonder_reritual_pending_id value = local_var:tv_wonder_ai_plain_id }
+	}
+	remove_local_variable = tv_wonder_ai_plain_size
+remove_local_variable = tv_wonder_ai_plain_level
+	}
+	remove_local_variable = tv_wonder_ai_plain_id
+	}
+	remove_local_variable = tv_wonder_ai_plain_best
+	if = { limit = { has_variable = tv_wonder_reritual_pending_id } tv_wonder_reritual_lock_effect = yes }
+}

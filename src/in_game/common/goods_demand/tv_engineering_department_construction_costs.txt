@@ -1,0 +1,7 @@
+﻿tv_wonder_labor_camp_construction = {
+	lumber = 2
+	tools = 1
+	masonry = 1
+
+	category = building_construction
+}

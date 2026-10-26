@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\Hades\Documents\code\eu5-towards-victory\scripts\victory_task_codegen.py", line 1304, in generate_price_events
+    raise ValueError("prices.30 religion condition shape changed")
+ValueError: prices.30 religion condition shape changed

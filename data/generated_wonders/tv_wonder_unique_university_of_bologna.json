@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/博洛尼亚大学_ai_cartoon.png",
+  "source_sha256": "70b69f7a3a533c1eba9efb050450f97903a339e87e721bd08a6099915fc9099a",
+  "reference": "assets/historical/博洛尼亚大学.jpg",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

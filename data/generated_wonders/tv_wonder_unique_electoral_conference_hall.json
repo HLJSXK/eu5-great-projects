@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/选帝会议殿_ai_cartoon.png",
+  "source_sha256": "e16694ff21c67846f1150c1a1a3de14069fce084ae6d32dc7e9eea62267b20ae",
+  "reference": "assets/historical/选帝会议殿.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Frankfurter_R%C3%B6mer.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Thomas Wolf (Der Wolf im Wald)",
+    "date": "2008-07-24",
+    "note": "题材近似：法兰克福罗马人厅（皇帝加冕宴会所在），并非选帝侯选举礼拜堂。"
+  }
+}

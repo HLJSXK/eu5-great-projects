@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/都江堰_ai_cartoon.png",
+  "source_sha256": "af743dcd74fa1193d31a167e072fbb832140e9b41ec423c27a0c6a8ceb92d3d6",
+  "reference": "assets/historical/都江堰.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Dujiang_Weir.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "星星",
+    "date": "2020-05-22 11:15",
+    "note": "都江堰鱼嘴与内外江全景，宽幅约 2.37:1，接近 27:11。"
+  }
+}

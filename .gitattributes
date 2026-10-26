@@ -1,0 +1,4 @@
+# Store text as LF regardless of the contributor's core.autocrlf setting.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf

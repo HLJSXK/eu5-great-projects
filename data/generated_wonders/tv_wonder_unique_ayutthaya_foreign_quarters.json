@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/阿育陀耶外国使馆区_ai_cartoon.png",
+  "source_sha256": "9e335fb20a58e783ccee5d738ff47f698b71d056e0d5a421e31f48c6757b9fa0",
+  "reference": "assets/historical/阿育陀耶外国使馆区.jpg",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

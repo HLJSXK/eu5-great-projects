@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/纳里卡拉要塞_ai_cartoon.png",
+  "source_sha256": "0e7254414c26bd3dd7d7b853851404fe4f04c09bc2fb7253a1b963668fda1b9a",
+  "reference": "assets/historical/纳里卡拉要塞.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Narikala_fortress,_Tbilisi,_Georgia.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "This work is created by George Melashvili. You can redistribute it or modify it under the terms of the terms of Cc-by-sa-3.0 (See below)",
+    "date": "2011-01-16",
+    "note": "第比利斯纳里卡拉要塞；以低丘替换远处现代城区。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/巴库圣火庙_ai_cartoon.png",
+  "source_sha256": "46f49b26a5c7e4c06fb5859aa57529dfeaa0c89bfaec3e974eb7518dacf30d31",
+  "reference": "assets/historical/巴库圣火庙.jpg",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

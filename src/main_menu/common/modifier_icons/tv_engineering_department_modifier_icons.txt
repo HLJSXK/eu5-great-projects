@@ -1,0 +1,39 @@
+﻿tv_wonder_labor_camp_price_cost_modifier = {
+	positive = "gfx/interface/icons/modifier_types/global_construction_speed.dds"
+}
+
+
+
+
+
+
+
+
+
+
+
+tv_wonder_direct_build_small_price_cost_modifier = {
+	positive = "gfx/interface/icons/modifier_types/masonry_positive.dds"
+}
+
+tv_wonder_direct_build_medium_price_cost_modifier = {
+	positive = "gfx/interface/icons/modifier_types/masonry_positive.dds"
+}
+
+tv_wonder_direct_build_large_price_cost_modifier = {
+	positive = "gfx/interface/icons/modifier_types/masonry_positive.dds"
+}
+
+tv_wonder_ritual_small_price_cost_modifier = {
+	positive = "gfx/interface/icons/modifier_types/commission_art_price_cost_modifier.dds"
+}
+
+
+tv_wonder_ritual_medium_price_cost_modifier = {
+	positive = "gfx/interface/icons/modifier_types/commission_art_price_cost_modifier.dds"
+}
+
+
+tv_wonder_ritual_large_price_cost_modifier = {
+	positive = "gfx/interface/icons/modifier_types/commission_art_price_cost_modifier.dds"
+}

@@ -1,0 +1,761 @@
+/* Towards Victory editor — single stylesheet for the shell: design tokens, the persistent tool rail,
+   the shared panel chrome (tool head, help, log drawer) and the two pinned status strips.
+   Every colour, radius and font family is declared here and nowhere else. The rail is dark; each tool
+   panel opts into the light workspace palette through `.tool-panel { color-scheme: light }`. */
+:root {
+  color-scheme: dark;
+
+  /* Workspace (light) palette */
+  --workspace-bg: #f0ede8;
+  --workspace-bg-strong: #fffdf8;
+  --workspace-panel: #ffffff;
+  --workspace-card: #ffffff;
+  --workspace-subtle: #e8e4de;
+  --workspace-ink: #24364b;
+  --workspace-text: #243144;
+  --workspace-muted: #6b7787;
+  --workspace-faint: #97a1ae;
+  --workspace-line: rgba(39, 54, 74, 0.14);
+  --workspace-line-strong: rgba(39, 54, 74, 0.28);
+  --workspace-accent: #0f6c75;
+  --workspace-accent-soft: rgba(15, 108, 117, 0.1);
+  --workspace-accent-strong: #0a5159;
+  --workspace-warm: #b35c2e;
+  --workspace-warm-soft: rgba(179, 92, 46, 0.12);
+  --workspace-danger: #b54943;
+  --workspace-danger-soft: rgba(181, 73, 67, 0.1);
+  --workspace-shadow: 0 10px 30px rgba(38, 44, 59, 0.08);
+  --workspace-radius-xl: 20px;
+  --workspace-radius-lg: 14px;
+  --workspace-radius-md: 9px;
+  --workspace-radius-button: 8px;
+
+  /* Rail (dark) palette */
+  --rail-bg: #111a22;
+  --rail-bg-soft: #17232d;
+  --rail-line: rgba(255, 255, 255, 0.09);
+  --rail-text: #d8e8f0;
+  --rail-muted: rgba(216, 232, 240, 0.55);
+  --rail-active: rgba(15, 108, 117, 0.34);
+  --rail-active-line: rgba(64, 176, 186, 0.55);
+
+  /* Status colours shared by the rail markers and the log strips */
+  --status-dirty: #f6c453;
+  --status-running: #4ea8de;
+  --status-pass: #5fd08a;
+  --status-error: #ff7b66;
+
+  /* Log surface */
+  --log-bg: #101a22;
+  --log-text: #d3dae2;
+
+  --workspace-font-sans: "Segoe UI Variable Text", "Microsoft YaHei UI", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+  --workspace-font-mono: "Cascadia Code", "Sarasa Mono SC", "Consolas", ui-monospace, monospace;
+
+  font-family: var(--workspace-font-sans);
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; height: 100%; }
+
+body {
+  background: var(--workspace-bg);
+  color: var(--workspace-text);
+  font-family: var(--workspace-font-sans);
+  overflow: hidden;
+}
+
+button, input, textarea, select { font: inherit; }
+
+button { border: none; cursor: pointer; }
+
+code { overflow-wrap: anywhere; font-family: var(--workspace-font-mono); }
+
+/* ── Shell: rail + work area + validation strip ─────────────────────────────────────────────── */
+
+#tool-hub-shell {
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: 100vh;
+  height: 100dvh;
+}
+
+#tool-hub-header {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--rail-bg);
+  color: var(--rail-text);
+  border-right: 1px solid var(--rail-line);
+}
+
+/* ── Rail: brand, tool list, operations drawer ──────────────────────────────────────────────── */
+
+.rail-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 14px 12px;
+  border-bottom: 1px solid var(--rail-line);
+}
+
+.rail-mark {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--workspace-accent), var(--workspace-warm));
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.rail-name {
+  display: grid;
+  gap: 1px;
+  font-size: 0.84rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.rail-sub {
+  color: var(--rail-muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+}
+
+.tool-hub-tab-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  flex: 0 1 auto;
+}
+
+.tool-hub-tab-btn {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) 8px;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--workspace-radius-md);
+  background: transparent;
+  color: var(--rail-text);
+  font-size: 0.86rem;
+  text-align: left;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.tool-hub-tab-btn:hover { background: rgba(255, 255, 255, 0.06); }
+
+.tool-hub-tab-btn.active {
+  background: var(--rail-active);
+  border-color: var(--rail-active-line);
+  color: #fff;
+  font-weight: 600;
+}
+
+.rail-icon {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--rail-muted);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.tool-hub-tab-btn.active .rail-icon {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.rail-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Per-tool dirty / running marker. `[hidden]` needs an explicit rule so the class selector does not
+   outrank the user-agent default. */
+.tool-hub-tab-dot {
+  display: block;
+  justify-self: end;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--status-dirty);
+}
+
+.tool-hub-tab-dot[hidden] { display: none; }
+
+.tool-hub-tab-dot.dirty { background: var(--status-dirty); }
+.tool-hub-tab-dot.running { background: var(--status-running); }
+
+/* Both at once: keep the dirty fill and ring it with the running colour. */
+.tool-hub-tab-dot.dirty.running {
+  background: var(--status-dirty);
+  box-shadow: 0 0 0 2px var(--status-running);
+}
+
+/* Operations drawer pinned to the bottom of the rail: collapsed it is one line, so a long list can
+   never push the tool list around. */
+.rail-ops {
+  margin-top: auto;
+  border-top: 1px solid var(--rail-line);
+  font-size: 0.78rem;
+  color: var(--rail-muted);
+  flex: 0 0 auto;
+}
+
+.rail-ops > summary {
+  padding: 9px 14px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.rail-ops > summary::-webkit-details-marker { display: none; }
+
+.rail-ops > summary::after {
+  content: "▲";
+  font-size: 0.62rem;
+  color: rgba(216, 232, 240, 0.4);
+}
+
+.rail-ops[open] > summary::after { content: "▼"; }
+
+.rail-ops > summary:hover { background: rgba(255, 255, 255, 0.05); }
+
+#operations-panel {
+  max-height: 34vh;
+  overflow: auto;
+  padding: 0 10px 10px;
+  border-top: 1px solid var(--rail-line);
+}
+
+#operations-panel[data-state="empty"] .operations-results { display: none; }
+#operations-panel .operations-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; padding: 0.5rem 0 0.2rem; }
+#operations-panel .operations-title { color: #fff; }
+#operations-panel .operations-status-bar { flex: 1 1 8rem; overflow-wrap: anywhere; order: 3; }
+#operations-panel button {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--rail-text);
+  border: 1px solid var(--rail-line);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#operations-panel button:disabled { opacity: 0.55; cursor: default; }
+#operations-panel[data-state="failed"] .operations-status-bar { color: var(--status-error); }
+#operations-panel .operations-results { padding-bottom: 0.3rem; }
+#operations-panel .operations-group h4 { margin: 0.5rem 0 0.2rem; font-size: 0.76rem; color: #e8f1f6; }
+#operations-panel .operations-group[data-group="failed"] h4 { color: var(--status-error); }
+#operations-panel .operations-group[data-group="running"] h4 { color: #7cc4f0; }
+#operations-panel .operations-count { opacity: 0.7; font-weight: normal; }
+#operations-panel ul { list-style: none; margin: 0; padding: 0; }
+#operations-panel .operations-row { padding: 0.22rem 0; border-top: 1px solid var(--rail-line); }
+#operations-panel .operations-row-main { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; }
+#operations-panel .operations-status { color: #e8f1f6; }
+#operations-panel .operations-status[data-kind="failed"] { color: var(--status-error); }
+#operations-panel .operations-status[data-kind="succeeded"] { color: var(--status-pass); }
+#operations-panel .operations-summary { flex: 1 1 100%; overflow-wrap: anywhere; color: var(--rail-muted); }
+#operations-panel .operations-error { margin: 0.15rem 0 0; color: var(--status-error); overflow-wrap: anywhere; }
+#operations-panel .operations-empty { margin: 0.2rem 0; color: rgba(216, 232, 240, 0.4); }
+#operations-panel .operations-detail {
+  margin: 0.3rem 0;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid var(--rail-line);
+  border-radius: 4px;
+  background: var(--log-bg);
+  color: var(--log-text);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 14rem;
+  overflow: auto;
+}
+
+/* ── Work area ─────────────────────────────────────────────────────────────────────────────── */
+
+#tool-hub-panels {
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--workspace-bg);
+}
+
+.tool-panel {
+  display: none;
+  color-scheme: light;
+  height: 100%;
+  min-height: 0;
+}
+
+.tool-panel.active { display: flex; flex-direction: column; }
+
+/* A panel that hands its body to a JS-mounted root must let that root take the remaining height and
+   own the scrolling. Without this the root is a content-sized flex item, the panel grows past the
+   viewport and any action row below the body ends up off-screen. */
+:is(#generators-root, #localization-root, #victory-paths-root) {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Shared panel chrome: tool head, help, actions ─────────────────────────────────────────── */
+
+.tool-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px 14px;
+  flex: 0 0 auto;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--workspace-line);
+  background: var(--workspace-bg-strong);
+}
+
+.tool-head-text { flex: 1 1 20rem; min-width: 0; }
+
+.tool-head h1 {
+  margin: 0;
+  color: var(--workspace-ink);
+  font-size: 1.06rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.tool-note {
+  margin: 3px 0 0;
+  color: var(--workspace-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.tool-head .subtitle {
+  margin: 4px 0 0;
+  color: var(--workspace-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  max-width: 72rem;
+}
+
+.tool-head .design-note {
+  margin: 4px 0 0;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--workspace-warm-soft);
+  color: #7c3f1d;
+  font-size: 0.78rem;
+}
+
+.tool-head .hint { color: var(--workspace-muted); font-size: 0.82rem; }
+
+/* Long explanations fold away so the editing surface keeps the height. */
+.tool-help {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  max-width: min(46rem, 100%);
+  font-size: 0.8rem;
+}
+
+.tool-help > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 11px;
+  border: 1px solid var(--workspace-line-strong);
+  border-radius: 999px;
+  color: var(--workspace-muted);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.tool-help > summary::-webkit-details-marker { display: none; }
+.tool-help > summary:hover { border-color: var(--workspace-accent); color: var(--workspace-accent-strong); }
+.tool-help[open] > summary { background: var(--workspace-accent-soft); border-color: var(--workspace-accent); color: var(--workspace-accent-strong); }
+
+.tool-help-body {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--workspace-line);
+  border-radius: var(--workspace-radius-md);
+  background: var(--workspace-panel);
+  color: var(--workspace-muted);
+  line-height: 1.6;
+  box-shadow: var(--workspace-shadow);
+}
+
+.tool-help-body p { margin: 0 0 0.5rem; }
+.tool-help-body p:last-child { margin-bottom: 0; }
+
+.tool-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+/* ── Shared buttons ────────────────────────────────────────────────────────────────────────── */
+
+:is(.primary-button, .secondary-button, .ghost-button) {
+  padding: 7px 14px;
+  border-radius: var(--workspace-radius-button);
+  font-size: 0.86rem;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  transition: background 120ms ease, border-color 120ms ease, opacity 120ms ease;
+}
+
+.primary-button {
+  background: var(--workspace-accent);
+  color: #fff;
+  font-weight: 600;
+  border-color: var(--workspace-accent);
+}
+
+.primary-button:hover { background: var(--workspace-accent-strong); border-color: var(--workspace-accent-strong); }
+
+.secondary-button {
+  background: var(--workspace-panel);
+  color: var(--workspace-text);
+  border-color: var(--workspace-line-strong);
+}
+
+.secondary-button:hover { border-color: var(--workspace-accent); color: var(--workspace-accent-strong); }
+
+.ghost-button {
+  background: transparent;
+  color: var(--workspace-accent-strong);
+  border-color: var(--workspace-line);
+  padding: 4px 9px;
+  font-size: 0.8rem;
+}
+
+.ghost-button:hover { background: var(--workspace-accent-soft); }
+
+:is(.primary-button, .secondary-button, .ghost-button):disabled,
+.tool-panel button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Default (unstyled) tool buttons still read as buttons inside a light panel. List rows and cards own
+   their own look, so they are excluded: a row selector outranked by this one would repaint a dark
+   sidebar item as a white card. */
+.tool-panel button:not(:is(.primary-button, .secondary-button, .ghost-button, .tool-hub-tab-btn, .tab,
+    .kind-switch-button, .mini-button, .media-tool-item, .cropper-task, .localization-group, .wonder-item,
+    .node-row, .copy-text-button, .expand-text-button, .option-mode-button, .option-open-button,
+    .option-item, .long-text-cell summary, .generator-group-head .generator-choice)) {
+  padding: 7px 13px;
+  border: 1px solid var(--workspace-line-strong);
+  border-radius: var(--workspace-radius-button);
+  background: var(--workspace-panel);
+  color: var(--workspace-text);
+  font-size: 0.86rem;
+}
+
+.tool-panel button:not(:is(.primary-button, .secondary-button, .ghost-button, .tool-hub-tab-btn, .tab,
+    .kind-switch-button, .mini-button, .media-tool-item, .cropper-task, .localization-group, .wonder-item,
+    .node-row, .copy-text-button, .expand-text-button, .option-mode-button, .option-open-button,
+    .option-item, .long-text-cell summary, .generator-group-head .generator-choice)):hover:enabled {
+  border-color: var(--workspace-accent);
+  color: var(--workspace-accent-strong);
+}
+
+/* ── Tabs shared by cost/reward and the victory tree ──────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.tab {
+  padding: 6px 12px;
+  border: 1px solid var(--workspace-line);
+  border-radius: 999px;
+  background: var(--workspace-panel);
+  color: var(--workspace-muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.tab:hover { border-color: var(--workspace-accent); color: var(--workspace-accent-strong); }
+
+.tab.active {
+  background: var(--workspace-accent);
+  border-color: var(--workspace-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Log drawer: one collapsed strip at the bottom of each editing panel ─────────────────── */
+
+.tool-log {
+  flex: 0 0 auto;
+  border-top: 1px solid var(--workspace-line);
+  background: var(--workspace-subtle);
+}
+
+.tool-log > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  font-size: 0.8rem;
+}
+
+.tool-log > summary::-webkit-details-marker { display: none; }
+.tool-log > summary:hover { background: rgba(0, 0, 0, 0.04); }
+
+.tool-log-hint { margin-left: auto; color: var(--workspace-faint); font-size: 0.76rem; }
+.tool-log-hint::after { content: " ▲"; }
+.tool-log[open] .tool-log-hint::after { content: " ▼"; }
+
+.tool-log > pre {
+  margin: 0;
+  max-height: 30vh;
+  overflow: auto;
+  padding: 10px 16px;
+  border-top: 1px solid var(--workspace-line);
+  background: var(--log-bg);
+  color: var(--log-text);
+  font-family: var(--workspace-font-mono);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* ── Status + log primitives shared by the job panel and editors ─────────────────────────── */
+
+.job-status { color: var(--workspace-muted); font-size: 0.8rem; overflow-wrap: anywhere; }
+.job-status[data-kind="error"] { color: var(--workspace-danger); font-weight: 600; }
+.job-status[data-kind="working"] { color: var(--workspace-warm); }
+.job-identity { margin: 0; color: var(--workspace-faint); font-size: 0.78rem; overflow-wrap: anywhere; }
+.job-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 0.7rem; }
+
+.job-log {
+  margin: 0.6rem 0 0;
+  min-height: 8rem;
+  max-height: 24rem;
+  overflow: auto;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--workspace-line);
+  border-radius: var(--workspace-radius-md);
+  background: var(--log-bg);
+  color: var(--log-text);
+  font-family: var(--workspace-font-mono);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* An idle job has nothing to report; an empty dark block is just noise in the panel. */
+.job-log:empty,
+#log-output:empty { display: none; }
+
+/* ── Preview / diff dialog ────────────────────────────────────────────────────────────────── */
+
+.diff-dialog {
+  width: min(64rem, 92vw);
+  max-height: 88vh;
+  padding: 1.3rem;
+  border: 1px solid var(--workspace-line-strong);
+  border-radius: var(--workspace-radius-lg);
+  background: var(--workspace-panel);
+  color: var(--workspace-text);
+}
+
+.diff-dialog::backdrop { background: rgba(10, 18, 24, 0.6); }
+.diff-dialog h2 { margin-top: 0; color: var(--workspace-ink); font-size: 1.05rem; }
+.diff-scroll { overflow: auto; max-height: 58vh; }
+.diff-dialog table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.diff-dialog th,
+.diff-dialog td {
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--workspace-line);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  font-size: 0.82rem;
+}
+.diff-dialog th { background: var(--workspace-accent-soft); color: var(--workspace-accent-strong); text-align: left; }
+.diff-dialog td.diff-value { white-space: pre-wrap; overflow-wrap: anywhere; vertical-align: top; }
+.diff-dialog .diff-summary { color: var(--workspace-muted); font-size: 0.84rem; }
+.diff-dialog [data-confirm] { margin-right: 6px; }
+
+/* ── Validation strip pinned under the work area ─────────────────────────────────────────── */
+
+#validation-panel {
+  grid-column: 2;
+  grid-row: 2;
+  flex: 0 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--rail-bg-soft);
+  color: var(--log-text);
+  font-size: 0.8rem;
+}
+
+#validation-panel .validation-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 16px;
+}
+
+#validation-panel .validation-status { flex: 1 1 16rem; overflow-wrap: anywhere; }
+
+#validation-panel button {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--log-text);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 0.22rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+#validation-panel button:disabled { opacity: 0.55; cursor: default; }
+#validation-panel[data-state="running"] .validation-status { color: var(--status-dirty); }
+#validation-panel[data-state="pass"] { border-top-color: var(--status-pass); }
+#validation-panel[data-state="pass"] .validation-status { color: var(--status-pass); }
+#validation-panel[data-state="warnings"] { border-top-color: var(--status-dirty); }
+#validation-panel[data-state="warnings"] .validation-status { color: var(--status-dirty); }
+#validation-panel[data-state="errors"],
+#validation-panel[data-state="failed"] { border-top: 2px solid var(--workspace-danger); }
+#validation-panel[data-state="errors"] .validation-status,
+#validation-panel[data-state="failed"] .validation-status { color: var(--status-error); font-weight: 600; }
+#validation-panel .validation-results { max-height: 30vh; overflow: auto; padding: 0 16px 0.5rem; }
+#validation-panel .validation-group h4 { margin: 0.4rem 0 0.2rem; font-size: 0.8rem; }
+#validation-panel .validation-group[data-severity="error"] h4 { color: var(--status-error); }
+#validation-panel .validation-group[data-severity="warning"] h4 { color: var(--status-dirty); }
+#validation-panel .validation-count { opacity: 0.75; font-weight: normal; }
+#validation-panel ul { margin: 0; padding-left: 1.1rem; }
+#validation-panel .validation-item { margin: 0.12rem 0; overflow-wrap: anywhere; }
+#validation-panel .validation-file { user-select: all; color: #9cc8ff; }
+#validation-panel .validation-output { margin: 0.3rem 0 0; white-space: pre-wrap; overflow-wrap: anywhere; color: #c8ced6; }
+
+/* ── Shared workspace surfaces ───────────────────────────────────────────────────────────── */
+
+.workspace-heading h1 { margin: 0 0 0.2rem; color: var(--workspace-ink); }
+.workspace-heading .subtitle { color: var(--workspace-muted); line-height: 1.6; }
+.eyebrow,
+.section-label {
+  color: var(--workspace-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.hidden { display: none !important; }
+
+.empty-state {
+  padding: 14px;
+  border: 1px dashed var(--workspace-line-strong);
+  border-radius: var(--workspace-radius-md);
+  color: var(--workspace-faint);
+  text-align: center;
+  font-size: 0.84rem;
+}
+
+/* ── Narrow screens: the rail becomes a horizontal strip above the work area ──────────────── */
+
+@media (max-width: 900px) {
+  #tool-hub-shell {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+
+  #tool-hub-header {
+    grid-column: 1;
+    grid-row: 1;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-right: none;
+    border-bottom: 1px solid var(--rail-line);
+    overflow: hidden;
+  }
+
+  .rail-brand { padding: 0 6px 0 2px; border-bottom: none; flex-shrink: 0; }
+  .rail-name { display: none; }
+
+  .tool-hub-tab-bar {
+    flex-direction: row;
+    gap: 4px;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+  }
+
+  .tool-hub-tab-bar::-webkit-scrollbar { display: none; }
+
+  .tool-hub-tab-btn {
+    grid-template-columns: 18px;
+    width: auto;
+    padding: 7px 9px;
+    flex-shrink: 0;
+  }
+
+  .rail-label { display: none; }
+  .tool-hub-tab-dot { position: absolute; top: 4px; right: 3px; width: 6px; height: 6px; }
+
+  .rail-ops { margin-top: 0; margin-left: auto; border-top: none; flex-shrink: 0; }
+  .rail-ops > summary { padding: 6px 8px; }
+  .rail-ops > summary::after { content: ""; }
+  #operations-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    max-height: 50vh;
+    padding: 8px 12px;
+    background: var(--rail-bg);
+    border-top: 1px solid var(--rail-line);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+  }
+
+  #tool-hub-panels { grid-column: 1; grid-row: 2; }
+  #validation-panel { grid-column: 1; grid-row: 3; }
+
+  .tool-head { padding: 10px 12px; }
+  .tool-actions { margin-left: 0; width: 100%; }
+  .tool-help { max-width: 100%; }
+}

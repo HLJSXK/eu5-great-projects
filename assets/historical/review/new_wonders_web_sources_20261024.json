@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "retrieved_on": "2026-10-24",
+  "scope": "四座新增独特奇观的网络参考源图；保留下载图像原始字节，未裁切、调色或重绘。",
+  "selection_basis": "参考项目既有源图，混用实景照片与历史复原插图，以主体辨识度、完整轮廓、建筑几何和明确来源为优先；后续可按既有粗笔触油画流程重绘。",
+  "images": [
+    {
+      "name": "琥珀宫",
+      "wonder_key": "unique_amber_room",
+      "source": "assets/historical/琥珀宫.jpg",
+      "title": "File:Bernsteinzimmer02.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Bernsteinzimmer02.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Bernsteinzimmer02.jpg",
+      "artist": "jeanyfan",
+      "date": "2004-05-16",
+      "license": "Public domain",
+      "license_url": null,
+      "size": [
+        1600,
+        1200
+      ],
+      "bytes": 1366369,
+      "sha256": "8485e2fc19996177eb52a311c66beb65f16a2d017323b4d137cc0cbd607b8f17",
+      "note": "现代重建琥珀厅的实景照片。选择无游客和围栏遮挡的墙角视角，琥珀镶板、镜柱、鎏金雕饰与暖色关系清楚；重绘时将电灯改为时代合适的烛光，装饰概括为粗笔触。"
+    },
+    {
+      "name": "帕特农神庙",
+      "wonder_key": "unique_parthenon",
+      "source": "assets/historical/帕特农神庙.jpg",
+      "title": "Rekonstruktion des Parthenon zur Perikleischen Zeit",
+      "page": "https://austria-forum.org/af/Bilder_und_Videos/Pierers_Konversations-Lexikon/Band_01/Rekonstruktion_des_Parthenon_zur_Perikleischen_Zeit",
+      "download_url": "https://austria-forum.org/attach/Bilder_und_Videos/Pierers_Konversations-Lexikon/Band_01/Rekonstruktion_des_Parthenon_zur_Perikleischen_Zeit/scaled-900x616-Rekonstruktion-des-Parthenon-zur-Perikleischen-Zeit.jpg",
+      "artist": "Unknown illustrator; Pierers Konversations-Lexikon, hosted by Austria-Forum",
+      "date": null,
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "size": [
+        900,
+        616
+      ],
+      "bytes": 110996,
+      "sha256": "7b25a2a2ed0581329eb60e07d5390531c0aa89243716d115dfdf1687655d96e3",
+      "note": "历史百科中的伯里克利时期外观复原插图，完整屋顶、八柱立面与长侧柱廊清楚，比现代废墟照片更适合作形体参考。它不是1337年的实景；重绘时按模组的中世纪教堂背景调整，移除底部题字与古典时代人物。"
+    },
+    {
+      "name": "曼谷大皇宫",
+      "wonder_key": "unique_bangkok_grand_palace",
+      "source": "assets/historical/曼谷大皇宫.jpg",
+      "title": "File:Dusit Maha Prasat, BKK.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Dusit_Maha_Prasat,_BKK.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Dusit_Maha_Prasat%2C_BKK.jpg",
+      "artist": "Supanut Arunoprayote",
+      "date": "2018-01-23 09:17:16",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "size": [
+        4551,
+        3641
+      ],
+      "bytes": 5809541,
+      "sha256": "312269dcbfda955ab8082ae0c743c35bc60fa91df60af6454b96452be730164d",
+      "note": "大皇宫内的律实宫御殿（Dusit Maha Prasat），用作主体泰式宫殿的形制参考。重檐、尖顶、白墙与庭院完整，未选后来的欧式宫殿立面；重绘时去掉现代路灯等设施，保持附属建筑从属。"
+    },
+    {
+      "name": "郑王庙",
+      "wonder_key": "unique_wat_arun",
+      "source": "assets/historical/郑王庙.jpg",
+      "title": "File:Wat Arun from Chao Phraya River.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Wat_Arun_from_Chao_Phraya_River.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Wat_Arun_from_Chao_Phraya_River.jpg",
+      "artist": "Diliff",
+      "date": "2004-06-02",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5",
+      "size": [
+        1000,
+        667
+      ],
+      "bytes": 176621,
+      "sha256": "f50d09b329049e0a14c53cfedc1a97d8ebdb460a07aa46945acf2e9fb9612892",
+      "note": "从昭披耶河渡船拍摄的完整塔群。中央主塔、四周小塔与河岸关系清楚，横幅构图符合现有建筑参考图习惯；重绘时去掉现代机动船、标牌等设施，并调整为黎明光线。"
+    }
+  ]
+}

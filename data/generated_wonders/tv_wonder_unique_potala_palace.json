@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/布达拉宫_ai_cartoon.png",
+  "source_sha256": "1715c3a0388a0e7cdcd240a7b8ef6962417b04b8831188bbbad164c485cb8227",
+  "reference": "assets/historical/布达拉宫.jpg",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

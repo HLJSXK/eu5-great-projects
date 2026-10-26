@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/智慧宫_ai_cartoon.png",
+  "source_sha256": "5f726e08bbb2ad1382f18adf5c48abbda199b1fd82d20eba16f59bdeec1587c7",
+  "reference": "assets/historical/智慧宫.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:A_Library_in_Golden_Islamic_Age.jpg",
+    "license": "Public domain",
+    "artist": "Yahya ibn Mahmud al-Wasiti",
+    "date": "2016-04-13 17:53:21",
+    "note": "题材近似：瓦西提《玛卡梅》插图中的图书馆场景（13 世纪），不是智慧宫实景；去文字。"
+  }
+}

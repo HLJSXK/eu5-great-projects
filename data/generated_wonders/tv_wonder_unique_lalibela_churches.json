@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/拉利贝拉岩石教堂群_ai_cartoon.png",
+  "source_sha256": "49c8c0706a474d41dd85a975ed02329bac4ee950ce66d436badef7710e45a8ed",
+  "reference": "assets/historical/拉利贝拉岩石教堂群.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Ethiopia_-_sunset_at_Church_of_Saint_George,_Lalibela_01.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Thomas Fuhrmann",
+    "date": "2019-11-12 17:37:38",
+    "note": "拉利贝拉圣乔治教堂。"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/阿尔及尔海盗港_ai_cartoon.png",
+  "source_sha256": "9a50cde71431bfead25484b0a42ff52a30e58b3611f529ca9d0ce7b87b66d861",
+  "reference": "assets/historical/阿尔及尔海盗港.jpg",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

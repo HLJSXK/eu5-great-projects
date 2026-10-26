@@ -1,0 +1,1744 @@
+﻿generic_rituals:
+  colonial_trade_company:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        country_modifier:
+          trade_income: 0.1
+    - style: 2
+      societal_value:
+        axis: aristocracy_vs_plutocracy
+        direction: plutocracy
+      reward:
+        location_modifier:
+          local_max_rgo_size_modifier: 1
+    - style: 3
+      societal_value:
+        axis: capital_economy_vs_traditional_economy
+        direction: capital_economy
+      reward:
+        one_shot:
+        - type: gold
+          value: 10000
+  great_assembly_hall:
+    estate_preferences:
+      clergy_estate: random
+      burghers_estate: 3
+      peasants_estate: 3
+      dhimmi_estate: random
+      tribes_estate: 1
+      cossacks_estate: 3
+    rituals:
+    - style: 1
+      societal_value:
+        axis: aristocracy_vs_plutocracy
+        direction: aristocracy
+      reward:
+        country_modifier:
+          government_reform_slots: 1
+    - style: 2
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        location_modifier:
+          local_max_literacy: 10
+    - style: 3
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: liberalism
+      reward:
+        one_shot:
+        - type: legitimacy
+          value: 15
+  mobile_fortress:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      burghers_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: 2
+      cossacks_estate: 3
+    rituals:
+    - style: 1
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: offensive
+      reward:
+        country_modifier:
+          global_levy_recruitment_speed_modifier: 0.5
+    - style: 2
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: decentralization
+      reward:
+        location_modifier:
+          local_max_control: 0.1
+    - style: 3
+      societal_value:
+        axis: quality_vs_quantity
+        direction: quantity
+      reward:
+        one_shot:
+        - type: all_estate_satisfaction
+          value: 0.2
+  ancient_city_ruins:
+    estate_preferences:
+      clergy_estate: 3
+      burghers_estate: 2
+      peasants_estate: 3
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: traditionalist
+      reward:
+        country_modifier:
+          court_spending_efficiency: 0.2
+    - style: 2
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: innovative
+      reward:
+        location_modifier:
+          local_cultural_tradition: 1
+    - style: 3
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        one_shot:
+        - type: research_progress
+          value: 15
+  summer_palace:
+    estate_preferences:
+      clergy_estate: random
+      burghers_estate: 2
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        country_modifier:
+          government_size: 1
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: humanist
+      reward:
+        location_modifier:
+          free_building_levels: 25
+    - style: 3
+      societal_value:
+        axis: belligerent_vs_conciliatory
+        direction: conciliatory
+      reward:
+        one_shot:
+        - type: site_prosperity
+          value: 0.5
+  sacred_mountain:
+    estate_preferences:
+      nobles_estate: 1
+      burghers_estate: random
+      peasants_estate: 2
+      dhimmi_estate: random
+      tribes_estate: 2
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        country_modifier:
+          revoke_privilege_cost_modifier: -0.2
+    - style: 2
+      societal_value:
+        axis: outward_vs_inward
+        direction: inward
+      reward:
+        location_modifier:
+          local_clergy_desired_pop: 1
+    - style: 3
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        one_shot:
+        - type: stability
+          value: 21
+  triumphal_axis:
+    estate_preferences:
+      clergy_estate: random
+      burghers_estate: 3
+      peasants_estate: 3
+      dhimmi_estate: random
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        country_modifier:
+          subject_income_modifier: 0.2
+    - style: 2
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: offensive
+      reward:
+        location_modifier:
+          local_unrest: -0.4
+    - style: 3
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: liberalism
+      reward:
+        one_shot:
+        - type: ruler_mil
+          value: 20
+  great_port:
+    estate_preferences:
+      nobles_estate: 2
+      clergy_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        country_modifier:
+          trade_sea_efficiency: 0.2
+    - style: 2
+      societal_value:
+        axis: land_vs_naval
+        direction: naval
+      reward:
+        location_modifier:
+          local_migration_attraction: 1
+    - style: 3
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: free_trade
+      reward:
+        one_shot:
+        - type: gold
+          value: 10000
+  giant_necropolis:
+    estate_preferences:
+      clergy_estate: 2
+      burghers_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: traditionalist
+      reward:
+        country_modifier:
+          stability_investment: 0.05
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        location_modifier:
+          local_unrest: -0.4
+    - style: 3
+      societal_value:
+        axis: outward_vs_inward
+        direction: inward
+      reward:
+        one_shot:
+        - type: legitimacy
+          value: 15
+  great_lighthouse:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: outward_vs_inward
+        direction: outward
+      reward:
+        country_modifier:
+          diplomatic_range: 400
+    - style: 2
+      societal_value:
+        axis: land_vs_naval
+        direction: naval
+      reward:
+        location_modifier:
+          local_maritime_presence: 0.4
+    - style: 3
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: defensive
+      reward:
+        one_shot:
+        - type: prestige
+          value: 50
+  hydraulic_workshop:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: 1
+      burghers_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        country_modifier:
+          global_rural_build_buildings_efficiency: 0.2
+    - style: 2
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        location_modifier:
+          local_monthly_prosperity: 0.002
+    - style: 3
+      societal_value:
+        axis: capital_economy_vs_traditional_economy
+        direction: capital_economy
+      reward:
+        one_shot:
+        - type: site_prosperity
+          value: 0.5
+  mining_city:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      burghers_estate: 2
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        country_modifier:
+          peasants_estate_target_satisfaction: 0.025
+    - style: 2
+      societal_value:
+        axis: serfdom_vs_free_subjects
+        direction: free_subjects
+      reward:
+        location_modifier:
+          local_raw_material_output: 0.25
+    - style: 3
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: innovative
+      reward:
+        one_shot:
+        - type: gold
+          value: 10000
+  giant_observatory:
+    estate_preferences:
+      nobles_estate: 1
+      burghers_estate: 1
+      peasants_estate: 3
+      dhimmi_estate: random
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: innovative
+      reward:
+        country_modifier:
+          monthly_rebel_growth: -0.001
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        location_modifier:
+          local_raw_material_output: 0.2
+    - style: 3
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: humanist
+      reward:
+        one_shot:
+        - type: research_progress
+          value: 15
+  palace_of_nations:
+    estate_preferences:
+      clergy_estate: 1
+      burghers_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: centralization
+      reward:
+        country_modifier:
+          subject_loyalty: 10
+    - style: 2
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        location_modifier:
+          local_trade_center_power: 0.2
+    - style: 3
+      societal_value:
+        axis: belligerent_vs_conciliatory
+        direction: conciliatory
+      reward:
+        one_shot:
+        - type: ruler_dip
+          value: 20
+  university_city:
+    estate_preferences:
+      nobles_estate: random
+      clergy_estate: 2
+      peasants_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: humanist
+      reward:
+        country_modifier:
+          skill_of_new_artists: 0.1
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        location_modifier:
+          local_trades_per_burgher: 10
+    - style: 3
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: liberalism
+      reward:
+        one_shot:
+        - type: research_progress
+          value: 15
+  sky_dome_grand_temple:
+    estate_preferences:
+      nobles_estate: 1
+      burghers_estate: random
+      peasants_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        country_modifier:
+          global_pop_assimilation_speed_modifier: 0.2
+    - style: 2
+      societal_value:
+        axis: individualism_vs_communalism
+        direction: communalism
+      reward:
+        location_modifier:
+          local_unrest: -0.2
+    - style: 3
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: liberalism
+      reward:
+        one_shot:
+        - type: all_estate_satisfaction
+          value: 0.2
+  giant_tower_temple:
+    estate_preferences:
+      nobles_estate: 1
+      burghers_estate: random
+      peasants_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        country_modifier:
+          war_score_vs_other_religion_efficiency: 0.2
+    - style: 2
+      societal_value:
+        axis: outward_vs_inward
+        direction: outward
+      reward:
+        location_modifier:
+          local_pop_assimilation_speed: 0.01
+    - style: 3
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: innovative
+      reward:
+        one_shot:
+        - type: stability
+          value: 21
+  river_extension:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      burghers_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: centralization
+      reward:
+        country_modifier:
+          army_movement_speed: 0.2
+    - style: 2
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: free_trade
+      reward:
+        location_modifier:
+          local_disease_resistance: 0.2
+    - style: 3
+      societal_value:
+        axis: serfdom_vs_free_subjects
+        direction: free_subjects
+      reward:
+        one_shot:
+        - type: site_prosperity
+          value: 0.5
+  national_shipyard:
+    estate_preferences:
+      nobles_estate: 2
+      clergy_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: land_vs_naval
+        direction: naval
+      reward:
+        country_modifier:
+          exploration_preparation_time_modifier: -0.5
+    - style: 2
+      societal_value:
+        axis: quality_vs_quantity
+        direction: quality
+      reward:
+        location_modifier:
+          harbor_suitability: 0.2
+    - style: 3
+      societal_value:
+        axis: outward_vs_inward
+        direction: outward
+      reward:
+        one_shot:
+        - type: prestige
+          value: 50
+  star_fortress_city:
+    estate_preferences:
+      nobles_estate: 2
+      clergy_estate: 1
+      burghers_estate: random
+      dhimmi_estate: random
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: defensive
+      reward:
+        country_modifier:
+          antagonism_received_modifier: -0.1
+    - style: 2
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: offensive
+      reward:
+        location_modifier:
+          fort_level: 2
+    - style: 3
+      societal_value:
+        axis: outward_vs_inward
+        direction: inward
+      reward:
+        one_shot:
+        - type: army_tradition
+          value: 10
+  great_wall:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      burghers_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: 3
+      cossacks_estate: 3
+    rituals:
+    - style: 1
+      societal_value:
+        axis: outward_vs_inward
+        direction: inward
+      reward:
+        country_modifier:
+          stability_cost_efficiency: 0.2
+    - style: 2
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: defensive
+      reward:
+        location_modifier:
+          fort_level: 2
+    - style: 3
+      societal_value:
+        axis: land_vs_naval
+        direction: land
+      reward:
+        one_shot:
+        - type: army_tradition
+          value: 10
+  giant_armory:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      burghers_estate: 2
+      dhimmi_estate: 1
+      tribes_estate: random
+      cossacks_estate: 1
+    rituals:
+    - style: 1
+      societal_value:
+        axis: quality_vs_quantity
+        direction: quality
+      reward:
+        country_modifier:
+          land_morale_modifier: 0.1
+    - style: 2
+      societal_value:
+        axis: capital_economy_vs_traditional_economy
+        direction: traditional_economy
+      reward:
+        location_modifier:
+          local_manpower_modifier: 0.5
+    - style: 3
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        one_shot:
+        - type: ruler_mil
+          value: 20
+  library_of_nation:
+    estate_preferences:
+      nobles_estate: 1
+      burghers_estate: 3
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        country_modifier:
+          research_speed_modifier: 0.2
+    - style: 2
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: traditionalist
+      reward:
+        location_modifier:
+          local_max_literacy: 10
+    - style: 3
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: innovative
+      reward:
+        one_shot:
+        - type: research_progress
+          value: 15
+  large_canal_system:
+    estate_preferences:
+      nobles_estate: 2
+      clergy_estate: random
+      burghers_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        country_modifier:
+          tax_income_efficiency: 0.05
+    - style: 2
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: centralization
+      reward:
+        location_modifier:
+          local_merchant_power: 5
+    - style: 3
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: free_trade
+      reward:
+        one_shot:
+        - type: all_estate_satisfaction
+          value: 0.2
+  mountain_terrace_network:
+    estate_preferences:
+      nobles_estate: random
+      clergy_estate: 3
+      burghers_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: 3
+      cossacks_estate: 3
+    rituals:
+    - style: 1
+      societal_value:
+        axis: individualism_vs_communalism
+        direction: communalism
+      reward:
+        country_modifier:
+          rural_migration_attraction: 0.5
+    - style: 2
+      societal_value:
+        axis: capital_economy_vs_traditional_economy
+        direction: capital_economy
+      reward:
+        location_modifier:
+          local_disease_resistance: 0.2
+    - style: 3
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        one_shot:
+        - type: site_prosperity
+          value: 0.5
+  giant_dam_project:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      burghers_estate: 2
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: centralization
+      reward:
+        country_modifier:
+          peasants_estate_target_satisfaction: 0.025
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: humanist
+      reward:
+        location_modifier:
+          local_population_capacity: 10
+    - style: 3
+      societal_value:
+        axis: individualism_vs_communalism
+        direction: communalism
+      reward:
+        one_shot:
+        - type: site_prosperity
+          value: 0.5
+  royal_granary_system:
+    estate_preferences:
+      nobles_estate: 2
+      clergy_estate: random
+      burghers_estate: 1
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: centralization
+      reward:
+        country_modifier:
+          tax_income_efficiency: 0.03
+    - style: 2
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        location_modifier:
+          local_monthly_development_modifier: 0.2
+    - style: 3
+      societal_value:
+        axis: individualism_vs_communalism
+        direction: communalism
+      reward:
+        one_shot:
+        - type: stability
+          value: 21
+  imperial_post_road_network:
+    estate_preferences:
+      nobles_estate: 3
+      clergy_estate: random
+      burghers_estate: 2
+      dhimmi_estate: 3
+      tribes_estate: 2
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: land_vs_naval
+        direction: land
+      reward:
+        country_modifier:
+          global_peasants_migration_allowed: true
+          global_laborers_migration_allowed: true
+    - style: 2
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: free_trade
+      reward:
+        location_modifier:
+          local_institution_growth_modifier: 0.5
+    - style: 3
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        one_shot:
+        - type: site_prosperity
+          value: 0.5
+  canal_hub_city:
+    estate_preferences:
+      nobles_estate: 2
+      clergy_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: capital_economy_vs_traditional_economy
+        direction: capital_economy
+      reward:
+        country_modifier:
+          stability_investment: 0.05
+    - style: 2
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        location_modifier:
+          local_monthly_development: 0.005
+    - style: 3
+      societal_value:
+        axis: aristocracy_vs_plutocracy
+        direction: plutocracy
+      reward:
+        one_shot:
+        - type: all_estate_satisfaction
+          value: 0.2
+  frontier_colonization_belt:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: 1
+      burghers_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: 1
+    rituals:
+    - style: 1
+      societal_value:
+        axis: land_vs_naval
+        direction: land
+      reward:
+        country_modifier:
+          subject_pays_colonial_cost_modifier: 0.1
+    - style: 2
+      societal_value:
+        axis: serfdom_vs_free_subjects
+        direction: free_subjects
+      reward:
+        location_modifier:
+          local_market_access: 0.2
+    - style: 3
+      societal_value:
+        axis: outward_vs_inward
+        direction: outward
+      reward:
+        one_shot:
+        - type: site_prosperity
+          value: 0.5
+  coastal_beacon_network:
+    estate_preferences:
+      nobles_estate: 3
+      clergy_estate: random
+      burghers_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: land_vs_naval
+        direction: naval
+      reward:
+        country_modifier:
+          exploration_preparation_time_modifier: -0.2
+    - style: 2
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: free_trade
+      reward:
+        location_modifier:
+          max_ships_built_at_same_time: 1
+    - style: 3
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: defensive
+      reward:
+        one_shot:
+        - type: sailors
+          value: 50
+  knightly_fortress_order:
+    estate_preferences:
+      clergy_estate: 1
+      burghers_estate: 3
+      peasants_estate: 2
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        country_modifier:
+          land_morale_modifier: 0.1
+    - style: 2
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: defensive
+      reward:
+        location_modifier:
+          growth_is_primary_culture: true
+          local_pop_assimilation_speed: 0.01
+    - style: 3
+      societal_value:
+        axis: aristocracy_vs_plutocracy
+        direction: plutocracy
+      reward:
+        one_shot:
+        - type: manpower
+          value: 50
+  war_college_system:
+    estate_preferences:
+      nobles_estate: 2
+      clergy_estate: random
+      burghers_estate: 1
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 3
+    rituals:
+    - style: 1
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        country_modifier:
+          siege_ability: 0.2
+    - style: 2
+      societal_value:
+        axis: aristocracy_vs_plutocracy
+        direction: aristocracy
+      reward:
+        location_modifier:
+          can_recruit_regiment_in_this_location: true
+          local_manpower: 0.01
+    - style: 3
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: offensive
+      reward:
+        one_shot:
+        - type: ruler_mil
+          value: 20
+  great_clock_bell_system:
+    estate_preferences:
+      nobles_estate: 3
+      burghers_estate: 2
+      peasants_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: 3
+    rituals:
+    - style: 1
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        country_modifier:
+          global_road_building_time: -0.2
+    - style: 2
+      societal_value:
+        axis: individualism_vs_communalism
+        direction: communalism
+      reward:
+        location_modifier:
+          local_rgo_build_time: -0.4
+    - style: 3
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        one_shot:
+        - type: prestige
+          value: 50
+  royal_art_district:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      peasants_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        country_modifier:
+          tolerance_own: 1
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: humanist
+      reward:
+        location_modifier:
+          local_migration_attraction: 2
+    - style: 3
+      societal_value:
+        axis: capital_economy_vs_traditional_economy
+        direction: capital_economy
+      reward:
+        one_shot:
+        - type: research_progress
+          value: 15
+  grand_theater_festival_district:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: 2
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        country_modifier:
+          global_monthly_art_start_chance: 0.2
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        location_modifier:
+          local_unrest: -0.4
+    - style: 3
+      societal_value:
+        axis: individualism_vs_communalism
+        direction: communalism
+      reward:
+        one_shot:
+        - type: prestige
+          value: 100
+  world_embassy_quarter:
+    estate_preferences:
+      clergy_estate: 3
+      burghers_estate: 1
+      peasants_estate: random
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: free_trade
+      reward:
+        country_modifier:
+          monthly_diplomats: 0.1
+    - style: 2
+      societal_value:
+        axis: outward_vs_inward
+        direction: outward
+      reward:
+        location_modifier:
+          local_crown_estate_power: 1
+    - style: 3
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        one_shot:
+        - type: ruler_dip
+          value: 20
+  law_code_stele_project:
+    estate_preferences:
+      clergy_estate: 1
+      burghers_estate: 3
+      peasants_estate: 3
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mysticism_vs_jurisprudence
+        direction: jurisprudence
+      reward:
+        country_modifier:
+          country_cabinet_efficiency: 0.2
+    - style: 2
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: centralization
+      reward:
+        location_modifier:
+          local_proximity_source: 50
+    - style: 3
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: liberalism
+      reward:
+        one_shot:
+        - type: government_power
+          value: 20
+  world_market:
+    estate_preferences:
+      nobles_estate: 3
+      clergy_estate: random
+      peasants_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: aristocracy_vs_plutocracy
+        direction: plutocracy
+      reward:
+        country_modifier:
+          spy_network_construction: 0.4
+    - style: 2
+      societal_value:
+        axis: individualism_vs_communalism
+        direction: communalism
+      reward:
+        location_modifier:
+          local_institution_growth_modifier: 1
+    - style: 3
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        one_shot:
+        - type: site_prosperity
+          value: 1
+  royal_mint_system:
+    estate_preferences:
+      nobles_estate: 3
+      clergy_estate: random
+      peasants_estate: 1
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: 3
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        country_modifier:
+          minting_inflation_threshold: 0.05
+    - style: 2
+      societal_value:
+        axis: capital_economy_vs_traditional_economy
+        direction: capital_economy
+      reward:
+        location_modifier:
+          local_raw_material_output: 0.25
+    - style: 3
+      societal_value:
+        axis: quality_vs_quantity
+        direction: quality
+      reward:
+        one_shot:
+        - type: gold
+          value: 10000
+  guild_alliance:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: 3
+      peasants_estate: 1
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: capital_economy_vs_traditional_economy
+        direction: traditional_economy
+      reward:
+        country_modifier:
+          merchant_maintenance_efficiency: 0.25
+    - style: 2
+      societal_value:
+        axis: outward_vs_inward
+        direction: outward
+      reward:
+        location_modifier:
+          local_production_efficiency: 0.1
+    - style: 3
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: humanist
+      reward:
+        one_shot:
+        - type: inflation
+          value: -0.1
+  maritime_trade_station_network:
+    estate_preferences:
+      nobles_estate: 2
+      clergy_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: 3
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: free_trade
+      reward:
+        country_modifier:
+          trade_income: 0.05
+    - style: 2
+      societal_value:
+        axis: serfdom_vs_free_subjects
+        direction: serfdom
+      reward:
+        location_modifier:
+          local_monthly_development: 0.01
+    - style: 3
+      societal_value:
+        axis: outward_vs_inward
+        direction: outward
+      reward:
+        one_shot:
+        - type: navy_tradition
+          value: 20
+  giant_workshop_complex:
+    estate_preferences:
+      nobles_estate: 2
+      clergy_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 1
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: capital_economy_vs_traditional_economy
+        direction: capital_economy
+      reward:
+        country_modifier:
+          burghers_estate_target_satisfaction: 0.025
+    - style: 2
+      societal_value:
+        axis: quality_vs_quantity
+        direction: quality
+      reward:
+        location_modifier:
+          local_pop_promotion_speed_modifier: 0.5
+    - style: 3
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        one_shot:
+        - type: gold
+          value: 10000
+  world_monument_group:
+    estate_preferences:
+      clergy_estate: 2
+      burghers_estate: 3
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        country_modifier:
+          monthly_prestige: 0.1
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        location_modifier:
+          local_clergy_desired_pop: 1
+    - style: 3
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: humanist
+      reward:
+        one_shot:
+        - type: stability
+          value: 21
+  city_expansion_project:
+    estate_preferences:
+      nobles_estate: 3
+      clergy_estate: random
+      peasants_estate: 1
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: free_trade
+      reward:
+        country_modifier:
+          global_urban_build_buildings_efficiency: 0.05
+    - style: 2
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: defensive
+      reward:
+        location_modifier:
+          local_monthly_development_modifier: 0.1
+          local_migration_attraction: 2
+    - style: 3
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: centralization
+      reward:
+        one_shot:
+        - type: gold
+          value: 300
+        - type: site_prosperity
+          value: 0.25
+  megalithic_circle:
+    estate_preferences:
+      nobles_estate: 1
+      burghers_estate: 1
+      peasants_estate: 2
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: traditionalist
+      reward:
+        country_modifier:
+          monthly_prestige: 0.05
+    - style: 2
+      societal_value:
+        axis: individualism_vs_communalism
+        direction: communalism
+      reward:
+        location_modifier:
+          local_cultural_tradition: 1
+    - style: 3
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        one_shot:
+        - type: legitimacy
+          value: 20
+  grand_cathedral:
+    estate_preferences:
+      nobles_estate: 1
+      burghers_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        country_modifier:
+          court_spending_efficiency: 0.05
+    - style: 2
+      societal_value:
+        axis: outward_vs_inward
+        direction: outward
+      reward:
+        location_modifier:
+          local_monthly_prosperity: 0.002
+    - style: 3
+      societal_value:
+        axis: individualism_vs_communalism
+        direction: communalism
+      reward:
+        one_shot:
+        - type: prestige
+          value: 50
+  great_monastery:
+    estate_preferences:
+      nobles_estate: 3
+      burghers_estate: 3
+      peasants_estate: 2
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: innovative
+      reward:
+        country_modifier:
+          clergy_estate_target_satisfaction: 0.05
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        location_modifier:
+          local_unrest: -0.1
+    - style: 3
+      societal_value:
+        axis: outward_vs_inward
+        direction: inward
+      reward:
+        one_shot:
+        - type: ruler_adm
+          value: 20
+  city_great_tower:
+    estate_preferences:
+      nobles_estate: 3
+      clergy_estate: random
+      peasants_estate: 2
+      dhimmi_estate: 1
+      tribes_estate: random
+      cossacks_estate: 1
+    rituals:
+    - style: 1
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: defensive
+      reward:
+        country_modifier:
+          global_estate_power: -0.25
+    - style: 2
+      societal_value:
+        axis: individualism_vs_communalism
+        direction: communalism
+      reward:
+        location_modifier:
+          local_merchant_capacity_modifier: 0.25
+    - style: 3
+      societal_value:
+        axis: aristocracy_vs_plutocracy
+        direction: aristocracy
+      reward:
+        one_shot:
+        - type: all_estate_satisfaction
+          value: 0.2
+  great_sculpture_group:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: 2
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: absolutism
+      reward:
+        country_modifier:
+          antagonism_received_modifier: -0.2
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: spiritualist
+      reward:
+        location_modifier:
+          local_monthly_prosperity: 0.004
+    - style: 3
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: humanist
+      reward:
+        one_shot:
+        - type: diplomats
+          value: 5
+  coastal_defense_cannon:
+    estate_preferences:
+      nobles_estate: 3
+      clergy_estate: random
+      burghers_estate: 1
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: 2
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        country_modifier:
+          trade_sea_efficiency: 0.2
+    - style: 2
+      societal_value:
+        axis: offensive_vs_defensive
+        direction: defensive
+      reward:
+        location_modifier:
+          local_unrest: -0.2
+    - style: 3
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: centralization
+      reward:
+        one_shot:
+        - type: navy_tradition
+          value: 20
+  naval_school:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      burghers_estate: 2
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: 3
+    rituals:
+    - style: 1
+      societal_value:
+        axis: land_vs_naval
+        direction: naval
+      reward:
+        country_modifier:
+          global_maritime_presence_modifier: 0.2
+    - style: 2
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: innovative
+      reward:
+        location_modifier:
+          local_navy_levy_size_modifier: 1
+    - style: 3
+      societal_value:
+        axis: outward_vs_inward
+        direction: outward
+      reward:
+        one_shot:
+        - type: research_progress
+          value: 15
+  national_bank:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: centralization
+      reward:
+        country_modifier:
+          tax_income_efficiency: 0.03
+    - style: 2
+      societal_value:
+        axis: capital_economy_vs_traditional_economy
+        direction: capital_economy
+      reward:
+        location_modifier:
+          local_market_access: 0.1
+          local_trade_center_power: 0.1
+    - style: 3
+      societal_value:
+        axis: absolutism_vs_liberalism
+        direction: liberalism
+      reward:
+        one_shot:
+        - type: inflation
+          value: -1
+  pirate_port:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: 2
+      cossacks_estate: 3
+    rituals:
+    - style: 1
+      societal_value:
+        axis: mercantilism_vs_free_trade
+        direction: mercantilism
+      reward:
+        country_modifier:
+          hire_privateer_cost_modifier: -0.2
+    - style: 2
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: decentralization
+      reward:
+        location_modifier:
+          local_maritime_presence: 0.2
+    - style: 3
+      societal_value:
+        axis: belligerent_vs_conciliatory
+        direction: belligerent
+      reward:
+        one_shot:
+        - type: navy_tradition
+          value: 20
+  grand_garden_complex:
+    estate_preferences:
+      clergy_estate: random
+      burghers_estate: 2
+      peasants_estate: 3
+      dhimmi_estate: 2
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: aristocracy_vs_plutocracy
+        direction: aristocracy
+      reward:
+        country_modifier:
+          nobles_estate_target_satisfaction: 0.025
+    - style: 2
+      societal_value:
+        axis: spiritualist_vs_humanist
+        direction: humanist
+      reward:
+        location_modifier:
+          growth_is_primary_culture: true
+    - style: 3
+      societal_value:
+        axis: outward_vs_inward
+        direction: outward
+      reward:
+        one_shot:
+        - type: site_prosperity
+          value: 1
+  state_examination_complex:
+    estate_preferences:
+      nobles_estate: 1
+      clergy_estate: random
+      peasants_estate: 2
+      dhimmi_estate: 3
+      tribes_estate: random
+      cossacks_estate: random
+    rituals:
+    - style: 1
+      societal_value:
+        axis: sinicized_vs_unsinicized
+        direction: sinicized
+      reward:
+        country_modifier:
+          country_cabinet_efficiency: 0.2
+    - style: 2
+      societal_value:
+        axis: traditionalist_vs_innovative
+        direction: innovative
+      reward:
+        location_modifier:
+          local_max_literacy: 20
+    - style: 3
+      societal_value:
+        axis: centralization_vs_decentralization
+        direction: centralization
+      reward:
+        one_shot:
+        - type: government_power
+          value: 20

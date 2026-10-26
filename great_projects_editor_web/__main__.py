@@ -1,0 +1,79 @@
+from __future__ import annotations
+
+import argparse
+import threading
+import webbrowser
+import sys
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+from .services.common import safe_check
+
+
+def _run_combined_check() -> int:
+    from .services.cost_reward import build_check_report as cost_reward_check
+    from .services.wonder.localization import build_check_report as wonder_localization_check
+    from .services.localization_editor import build_check_report as localization_check
+    from .services.generator_runs import build_check_report as generator_check
+    from .services.media import bootstrap_payload, registry
+    from .services.cropper import cropper
+
+    tools = [
+        ("cost_reward", cost_reward_check),
+        ("wonder_localization", wonder_localization_check),
+        ("localization", localization_check),
+        ("generators", generator_check),
+    ]
+    failed = False
+    for name, check_fn in tools:
+        print(f"=== {name} ===")
+        for line in safe_check(name, check_fn):
+            print(line)
+            failed = failed or line.startswith("[FAIL]")
+    print("=== media ===")
+    payload = bootstrap_payload()
+    print(f"[PASS] registered tools: {len(registry.payload())} ({len(payload['tools'])} runnable media tools)")
+    print(f"[PASS] cropper images discovered: {len(cropper.tasks)}")
+    return int(failed)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Run the unified Great Projects web workspace (editors, media generators, and wonder cropper)."
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="run editor checks and unified media discovery checks, then exit",
+    )
+    parser.add_argument("--host", default="127.0.0.1", help="host interface for the web server")
+    parser.add_argument("--port", type=int, default=8763, help="port for the web server")
+    parser.add_argument("--no-browser", action="store_true", help="start the server without opening a browser tab")
+    parser.add_argument("--reload", action="store_true", help="enable uvicorn auto-reload")
+    args = parser.parse_args()
+
+    if args.check:
+        raise SystemExit(_run_combined_check())
+
+    try:
+        import fastapi  # noqa: F401
+        import uvicorn
+    except ImportError as exc:
+        raise SystemExit(
+            "Missing dependency: uvicorn/fastapi.\n"
+            "Install them in the eu5 environment first, for example:\n"
+            "C:\\Users\\Hades\\anaconda3\\envs\\eu5\\python.exe -m pip install -r great_projects_editor_web/requirements.txt"
+        ) from exc
+
+    url = f"http://{args.host}:{args.port}/"
+    if not args.no_browser and args.host in {"127.0.0.1", "localhost"}:
+        threading.Timer(1.0, lambda: webbrowser.open(url)).start()
+
+    print(f"Great Projects Editor Web running at {url}")
+    uvicorn.run("great_projects_editor_web.server:create_default_app", factory=True,
+                host=args.host, port=args.port, reload=args.reload)
+
+
+if __name__ == "__main__":
+    main()

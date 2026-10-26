@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/巴黎圣母院_ai_cartoon.png",
+  "source_sha256": "fd2bc7f0e5385332c0345c814284af11a12b2bc43a42987243509cd1d1fe1a29",
+  "reference": "assets/historical/巴黎圣母院.jpg",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

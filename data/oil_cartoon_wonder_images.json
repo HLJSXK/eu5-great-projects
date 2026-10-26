@@ -1,0 +1,298 @@
+{
+  "version": 1,
+  "integrated_at": "2026-10-21T18:09:00.963844+08:00",
+  "archive": {
+    "path": "assets/archives/oil_cartoon_previous_20261021.zip",
+    "sha256": "b134ce48e3a8c9e67c36758f07638cec1cde296c18ac56aa71f3a82c792341f9",
+    "file_count": 53,
+    "size": 60796128
+  },
+  "dds_format": "DXT1",
+  "mipmaps": false,
+  "banner_size": [
+    2160,
+    880
+  ],
+  "images": [
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_body.png",
+      "stem": "tv_wonder_body",
+      "kind": "stage",
+      "png": "assets/generated_wonders/tv_wonder_body.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_body.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_body_cropped.dds",
+      "source_sha256": "b0c646cf7de0897d50a84931b58d6687938618a4a3d2b793032d5ff6a74d9707",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        119.46666666666668,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "bb5d044a20686a8dfbf14e8ce2613bb28a6754550a2aae83831844b57cf905a4",
+      "cropped_dds_sha256": "8b01d85c5a761a7f6dcab0597746b715bfbcf2272eab086859ff25d69dd11a31"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_complete.png",
+      "stem": "tv_wonder_complete",
+      "kind": "stage",
+      "png": "assets/generated_wonders/tv_wonder_complete.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_complete.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_complete_cropped.dds",
+      "source_sha256": "0502928706d49c2eab2de2e4d684bcda4a3dac88a5cdfec00705c82d28ddc800",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        139.3777777777778,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "480715d7850e7e57b76c063bed860708f2aec11728ef86db04f37620ca252349",
+      "cropped_dds_sha256": "e08d03797a844ede609a927641762f1739c2ec860bd62d1370c9c62347884242"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_construction.png",
+      "stem": "tv_wonder_construction",
+      "kind": "stage",
+      "png": "assets/generated_wonders/tv_wonder_construction.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_construction.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_construction_cropped.dds",
+      "source_sha256": "7c005194d3cafb1235e7603f43ff7fc07a33f4c68be9ca9049b55dc36370ae66",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        0.0,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "7752b9b31e86fb834fcaa3d76d625a4d63a9edbe1372571863c30c125124b958",
+      "cropped_dds_sha256": "4bc52c3ccf6cb24dd424d3bdfd62a2b975202640c00d9faee4e65682cae541a5"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_decoration.png",
+      "stem": "tv_wonder_decoration",
+      "kind": "stage",
+      "png": "assets/generated_wonders/tv_wonder_decoration.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_decoration.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_decoration_cropped.dds",
+      "source_sha256": "14c9c4cbcaf13f84c647443a14150f7688aa1584de0ba1f4e3ddd4da41503093",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        99.55555555555557,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "d7c021ff7dbe74c23684fb2b0c34910b374963a46afa08a84b2cd2539433f0a6",
+      "cropped_dds_sha256": "bce0e441517eeae11665a9ba706dcd1383d6a9c1ed355a09ad28f05ad7173905"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_foundation.png",
+      "stem": "tv_wonder_foundation",
+      "kind": "stage",
+      "png": "assets/generated_wonders/tv_wonder_foundation.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_foundation.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_foundation_cropped.dds",
+      "source_sha256": "a523a18444824d7d6d55b9e736ac4a8f63bc7ad2a1c8ab770d472cdb2a384938",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        179.20000000000005,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "860d067fe6e11b216ca10ca6f15663ce782008c3b91a542dd0f1698d08ddb34e",
+      "cropped_dds_sha256": "e867ad5303452a66c43e030bec1949100b301a170a2479e837f6e2b9f81ec860"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_function.png",
+      "stem": "tv_wonder_function",
+      "kind": "stage",
+      "png": "assets/generated_wonders/tv_wonder_function.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_function.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_function_cropped.dds",
+      "source_sha256": "dfb3931ec53669438eac9d5f7310ba44225a9a3d38d947cea63289bc6e87b1a6",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        39.82222222222223,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "7b8f9d36a02c8b57ad95e0a471c92459fa4221663e1341d4f14b3690c853584a",
+      "cropped_dds_sha256": "953a30eb665ed0e3f2394669a6c63f012dbf295532df8ae20fb7e487afc225a1"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_giant_necropolis.png",
+      "stem": "tv_wonder_giant_necropolis",
+      "kind": "generic",
+      "png": "assets/generated_wonders/tv_wonder_giant_necropolis.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_giant_necropolis.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_giant_necropolis_cropped.dds",
+      "source_sha256": "aa64f56999b3020f85a1fd407d75b1c58cd5ef8ebc0f71693b8ede8a47a5c6be",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        39.82222222222223,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "b0f6b661dc9e1b98ccb5579ff60ecb3074ee3c0b6de04d7aedd7684ea9f3cee6",
+      "cropped_dds_sha256": "9e873fedc77f7d793f93215db19bf1a39fca30e357eb25b553da9a185bab5398"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_great_lighthouse.png",
+      "stem": "tv_wonder_great_lighthouse",
+      "kind": "generic",
+      "png": "assets/generated_wonders/tv_wonder_great_lighthouse.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_great_lighthouse.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_great_lighthouse_cropped.dds",
+      "source_sha256": "0c61bb3359580650ca6e6a7619ae11ea0f0c7a74f919256e3b5417326e20ba6a",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        0.0,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "4df98e7286e3b948d4e7b9f013423c257bc3f9cca7dcbe9e538676ce15dc42b9",
+      "cropped_dds_sha256": "78647d8d119e5d4e631301f2018646d468ec8c6b3896b95965b92628dae8d2fb"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_great_port.png",
+      "stem": "tv_wonder_great_port",
+      "kind": "generic",
+      "png": "assets/generated_wonders/tv_wonder_great_port.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_great_port.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_great_port_cropped.dds",
+      "source_sha256": "0d7efb474e625aadaf0e1719c0a07022103d94712a866accd130891df60659c5",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        99.55555555555557,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "900bf1ab45db1f60bf3af26815974364dc1f19e67479eb63dae46918e53d2af9",
+      "cropped_dds_sha256": "8b2ab963fc184d4aacebaa464ee73b53b0acbecdf2bb6e94cbf5ace2b7862d9f"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_hydraulic_workshop.png",
+      "stem": "tv_wonder_hydraulic_workshop",
+      "kind": "generic",
+      "png": "assets/generated_wonders/tv_wonder_hydraulic_workshop.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_hydraulic_workshop.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_hydraulic_workshop_cropped.dds",
+      "source_sha256": "c3b3ea92c7eec3d070b8ff164fab70e12cd19fa9d621d4dd9c59e6d22615a9b4",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        99.55555555555557,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "b2ba4607d47acce28f5773f3ac3e98680fd5551f38e9bf837fcae55f08b607cc",
+      "cropped_dds_sha256": "db72a5c34d6c769ca4735c5bc9889fbf059a3505ca14b5f0294a5d45975fb143"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_mining_city.png",
+      "stem": "tv_wonder_mining_city",
+      "kind": "generic",
+      "png": "assets/generated_wonders/tv_wonder_mining_city.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_mining_city.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_mining_city_cropped.dds",
+      "source_sha256": "872413de97ea81dedab7f03989f647c84cdcb8ce49fd52245bd4895dde8e3715",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        159.28888888888892,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "cf68e8ab5cc4bee460315cc10348d979178d3bc1d2a38902357d3519239de5db",
+      "cropped_dds_sha256": "3946341449291b7974bb4395312fe4b2ae4b9ac40f916b80dd09cd933f862dc3"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_sacred_mountain.png",
+      "stem": "tv_wonder_sacred_mountain",
+      "kind": "generic",
+      "png": "assets/generated_wonders/tv_wonder_sacred_mountain.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_sacred_mountain.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_sacred_mountain_cropped.dds",
+      "source_sha256": "2af25c57a97c267319dec631bb2f8bf7923b1a08d699a2281d782e62a131375f",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        0.0,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "b8d1cfb9bf2b0366618c46788ef33f69607d7aab95bbbb42dcbef0cfec878ebb",
+      "cropped_dds_sha256": "bf19399fdaec2a032de1c309201ee26b044d2899db2f40b2a05aca555446acf4"
+    },
+    {
+      "source": "assets/generated_wonders/oil_cartoon/tv_wonder_triumphal_axis.png",
+      "stem": "tv_wonder_triumphal_axis",
+      "kind": "generic",
+      "png": "assets/generated_wonders/tv_wonder_triumphal_axis.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_triumphal_axis.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_triumphal_axis_cropped.dds",
+      "source_sha256": "975b8154fa2cf2af1ac212190af61fcaf106f8d094f9490e7980b46164be3bce",
+      "size": [
+        1536,
+        1024
+      ],
+      "crop_rect": [
+        0.0,
+        19.911111111111115,
+        1536.0,
+        625.7777777777777
+      ],
+      "dds_sha256": "aa32b4c8eb96f3b1e37d9b74f3e969ab62f2ec3b14966b45a21605cc9ec6488a",
+      "cropped_dds_sha256": "cf129a3a0fbc7657003b09fe1de5d89d4af42243b8503b6a6780ddc03f02c889"
+    }
+  ],
+  "runtime_reference_updates": [
+    {
+      "event": "tv_engineering_department.200",
+      "image": "tv_wonder_foundation_cropped.dds",
+      "reason": "Foundation-unit completion previously used the general construction illustration."
+    }
+  ]
+}

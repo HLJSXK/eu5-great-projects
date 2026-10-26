@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/埃奇米阿津主教座堂_ai_cartoon.png",
+  "source_sha256": "95139e0518ce84664c4d065fd49c1cb24b1fe9ce2f4ccaa96e840a89eb2cd94c",
+  "reference": "assets/historical/埃奇米阿津主教座堂.jpg",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

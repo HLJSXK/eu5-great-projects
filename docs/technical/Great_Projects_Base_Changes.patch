@@ -1,0 +1,155 @@
+diff --git a/docs/knowledge/BRIEF.md b/docs/knowledge/BRIEF.md
+index 6edd367..b9c6d1f 100644
+--- a/docs/knowledge/BRIEF.md
++++ b/docs/knowledge/BRIEF.md
+@@ -1,7 +1,7 @@
+ # EU5 Shared Knowledge Brief
+ 
+ > Generated from this base checkout. Do not edit directly.
+-> Last updated: 2026-10-24
++> Last updated: 2026-10-26
+ 
+ ## Startup
+ 
+diff --git a/docs/knowledge/MIGRATION_COVERAGE.yaml b/docs/knowledge/MIGRATION_COVERAGE.yaml
+index f11c2a4..fa61d92 100644
+--- a/docs/knowledge/MIGRATION_COVERAGE.yaml
++++ b/docs/knowledge/MIGRATION_COVERAGE.yaml
+@@ -1,4 +1,4 @@
+-schema_version: 1
++schema_version: 2
+ description: Complete source snapshots and migration destinations for every original anti-pattern entry.
+ entries:
+ - source_project: eu5-modding-project
+@@ -2497,6 +2497,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: ritual_content_event_text_dict_letter_key_collides_with_desc
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: ritual_content_event_text_dict_letter_key_collides_with_desc
+@@ -3844,6 +3845,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: wonder_fixed_modifier_thousand_scaled_value
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: wonder_fixed_modifier_thousand_scaled_value
+@@ -7034,6 +7036,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: wonder_ritual_cleanup_stale_after_entity_ritual_rename
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: wonder_ritual_cleanup_stale_after_entity_ritual_rename
+@@ -7119,6 +7122,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: wonder_ritual_choice_branch_retry_reward_template_trap
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: wonder_ritual_choice_branch_retry_reward_template_trap
+@@ -7304,6 +7308,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: unique_wonder_base_key_reassignment_requires_mechanic_key_match
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: unique_wonder_base_key_reassignment_requires_mechanic_key_match
+@@ -7688,6 +7693,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: wonder_existing_wonder_location_never_seeded_as_surveyed
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: wonder_existing_wonder_location_never_seeded_as_surveyed
+@@ -7733,6 +7739,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: wonder_ceremony_card_icon_global_stage_mapping
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: wonder_ceremony_card_icon_global_stage_mapping
+@@ -8570,6 +8577,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: unique_wonder_ceremony_stage_cost_must_have_exactly_one_entry
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: unique_wonder_ceremony_stage_cost_must_have_exactly_one_entry
+@@ -8658,6 +8666,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: ceremony_cost_gold_must_use_scaled_gold_not_flat_add_gold
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: ceremony_cost_gold_must_use_scaled_gold_not_flat_add_gold
+@@ -8726,6 +8735,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: gui_generator_rewrite_silently_dropped_generic_wonder_confirm_buttons
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: gui_generator_rewrite_silently_dropped_generic_wonder_confirm_buttons
+@@ -8774,6 +8784,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: ceremony_locked_flag_conflates_first_confirm_with_expansion_reuse
+   destination: local
++  destination_project: eu5-great-projects
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: ceremony_locked_flag_conflates_first_confirm_with_expansion_reuse
+@@ -8930,6 +8941,7 @@ entries:
+ - source_project: eu5-towards-victory
+   id: court_character_variable_scope_link_missing_var_prefix
+   destination: local
++  destination_project: eu5-court-positions
+   destination_path: docs/knowledge/anti_patterns.yaml
+   entry:
+     id: court_character_variable_scope_link_missing_var_prefix
+diff --git a/docs/knowledge/knowledge_loader.py b/docs/knowledge/knowledge_loader.py
+index 60ce1fd..420af27 100644
+--- a/docs/knowledge/knowledge_loader.py
++++ b/docs/knowledge/knowledge_loader.py
+@@ -129,7 +129,12 @@ def validate_migration_coverage(workspace: Path) -> dict[str, int]:
+     overlap = shared_ids & local_ids
+     if overlap:
+         raise ValueError(f"Workspace shadows shared anti-pattern IDs: {sorted(overlap)[:8]}")
+-    entries = [x for x in manifest.get("entries", []) if x.get("source_project") == root.name]
++    # Source provenance remains immutable; local rules follow their current owner.
++    entries = [
++        row for row in manifest.get("entries", [])
++        if (row.get("source_project") if row.get("destination") == "base"
++            else row.get("destination_project", row.get("source_project"))) == root.name
++    ]
+     missing = [x["id"] for x in entries if x["id"] not in (shared_ids if x.get("destination") == "base" else local_ids)]
+     if missing:
+         raise ValueError(f"Missing migrated anti-patterns for {root.name}: {missing[:8]}")
+diff --git a/scripts/knowledge_loader.py b/scripts/knowledge_loader.py
+index 78ee6fe..f2020f7 100644
+--- a/scripts/knowledge_loader.py
++++ b/scripts/knowledge_loader.py
+@@ -129,7 +129,12 @@ def validate_migration_coverage(workspace: Path) -> dict[str, int]:
+     overlap = shared_ids & local_ids
+     if overlap:
+         raise ValueError(f"Workspace shadows shared anti-pattern IDs: {sorted(overlap)[:8]}")
+-    entries = [x for x in manifest.get("entries", []) if x.get("source_project") == root.name]
++    # Source provenance remains immutable; local rules follow their current owner.
++    entries = [
++        row for row in manifest.get("entries", [])
++        if (row.get("source_project") if row.get("destination") == "base"
++            else row.get("destination_project", row.get("source_project"))) == root.name
++    ]
+     missing = [x["id"] for x in entries if x["id"] not in (shared_ids if x.get("destination") == "base" else local_ids)]
+     if missing:
+         raise ValueError(f"Missing migrated anti-patterns for {root.name}: {missing[:8]}")

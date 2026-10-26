@@ -1,0 +1,17 @@
+﻿ritual_rules:
+  duration_months: 24
+  cost:
+    catalog: country_reward
+    type: scaled_gold
+    value:
+      small: 2
+      medium: 3
+      large: 5
+  societal_value:
+    shock: 20
+    monthly: 0.1
+  memory_years: 100
+  estate_satisfaction:
+    support: 0.1
+    oppose: -0.05
+  reritual_prestige: 10

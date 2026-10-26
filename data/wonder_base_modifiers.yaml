@@ -1,0 +1,99 @@
+﻿base_modifiers:
+  colonial_trade_company:
+    global_merchant_power: 0.2
+    global_merchant_capacity_modifier: 0.1
+  great_assembly_hall:
+    country_cabinet_efficiency: 0.1
+    legislative_efficiency: 0.1
+  mobile_fortress: {}
+  ancient_city_ruins:
+    exploration_mission_speed: 0.1
+  summer_palace: {}
+  sacred_mountain:
+    clergy_estate_max_tax: 0.1
+    clergy_estate_target_satisfaction: 0.05
+  triumphal_axis:
+    monthly_political_influence: 0.05
+  great_port: {}
+  giant_necropolis:
+    pop_join_rebel_threshold: -0.025
+    pop_leave_rebels_threshold: -0.025
+  great_lighthouse:
+    trade_range: 200
+    naval_range: 200
+    colonial_range: 200
+  hydraulic_workshop: {}
+  mining_city: {}
+  giant_observatory:
+    research_speed: 0.05
+  palace_of_nations:
+    global_distance_from_capital_speed_propagation: 0.05
+  university_city: {}
+  sky_dome_grand_temple:
+    global_pop_conversion_speed: 0.002
+  giant_tower_temple: {}
+  river_extension: {}
+  national_shipyard:
+    ship_build_speed: 0.2
+  national_bank:
+    tax_income_efficiency: 0.05
+  star_fortress_city: {}
+  great_wall: {}
+  giant_armory: {}
+  library_of_nation:
+    global_pop_promotion_speed: 0.005
+  large_canal_system:
+    global_monthly_prosperity: 0.0005
+  mountain_terrace_network: {}
+  giant_dam_project: {}
+  royal_granary_system:
+    global_food_capacity_modifier: 0.2
+  imperial_post_road_network: {}
+  canal_hub_city: {}
+  frontier_colonization_belt: {}
+  coastal_beacon_network: {}
+  knightly_fortress_order: {}
+  war_college_system:
+    monthly_army_tradition: 0.05
+  great_clock_bell_system: {}
+  royal_art_district:
+    num_possible_artists: 1
+    artist_salary_modifier: -0.1
+  grand_theater_festival_district:
+    cultural_influence_modifier: 0.1
+    skill_of_new_artists: 0.05
+  world_embassy_quarter:
+    diplomatic_reputation: 1
+  law_code_stele_project:
+    monthly_rebel_growth: -0.0005
+  world_market:
+    global_trade_center_power: 0.05
+    burghers_estate_target_satisfaction: 0.025
+  royal_mint_system:
+    minting_income_factor: 0.1
+  guild_alliance: {}
+  maritime_trade_station_network: {}
+  giant_workshop_complex: {}
+  world_monument_group:
+    cultures_capacity: 0.5
+  city_expansion_project: {}
+  megalithic_circle:
+    tolerance_heretic: 0.5
+    tolerance_heathen: 0.5
+  grand_cathedral:
+    tolerance_own: 0.5
+  great_monastery: {}
+  city_great_tower: {}
+  great_sculpture_group:
+    pop_join_rebel_threshold: -0.025
+    pop_leave_rebels_threshold: -0.025
+  coastal_defense_cannon: {}
+  naval_school:
+    monthly_navy_tradition: 0.05
+  pirate_port:
+    can_hire_privateers: true
+    privateer_maintenance_cost_modifier: -0.05
+    privateer_durability: 0.05
+  grand_garden_complex: {}
+  state_examination_complex:
+    global_pop_promotion_speed_modifier: 0.05

@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/瓦拉纳西河坛群_ai_cartoon.png",
+  "source_sha256": "17f03dfaf5eb4d3ea240b9864f5a65157e041d2a7ddb90d35269ac292a07626b",
+  "reference": "assets/historical/瓦拉纳西河坛群.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Varanasi_Munshi_Ghat3.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Marcin Białek",
+    "date": "2010-12-26",
+    "note": "瓦拉纳西蒙希河坛。"
+  }
+}

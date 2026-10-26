@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/圣乔治银行_ai_cartoon.png",
+  "source_sha256": "7db4d3dd3ea088745db64e5b8a1c34d5bb809a6930a7dd8cd4df8627d857fbca",
+  "reference": "assets/historical/圣乔治银行.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Genova_-_Palazzo_San_Giorgio_visto_dal_Bigo.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Sidvics",
+    "date": "2010-06-13",
+    "note": "热那亚圣乔治宫（圣乔治银行所在地）；去高架路和汽车。"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/凡尔赛宫_ai_cartoon.png",
+  "source_sha256": "bd99379020dbb455e8e4f0d38c19fbea9d376d7c905359252fa65da580f4c45a",
+  "reference": "assets/historical/凡尔赛宫.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Chateau_de_Versailles_1668_Pierre_Patel.jpg",
+    "license": "Public domain",
+    "artist": "Pierre Patel",
+    "date": "circa 1668",
+    "note": "Pierre Patel 1668 年凡尔赛宫鸟瞰油画；早于后期扩建，提示词禁止改成后来的宫殿格局。"
+  }
+}

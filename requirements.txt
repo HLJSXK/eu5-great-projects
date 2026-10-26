@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+
+PyYAML>=6
+Pillow>=10
+pytest>=8
+httpx
+pytest-xdist>=3.6

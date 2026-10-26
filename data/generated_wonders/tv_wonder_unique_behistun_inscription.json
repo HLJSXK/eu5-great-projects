@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/贝希斯敦铭文_ai_cartoon.png",
+  "source_sha256": "258f444ea0e3dd08dc0214849650cb7dd4e442ae2265330065697c99174e9f84",
+  "reference": "assets/historical/贝希斯敦铭文.jpeg",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

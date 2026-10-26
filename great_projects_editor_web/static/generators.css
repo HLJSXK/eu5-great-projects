@@ -1,0 +1,149 @@
+/* Generator runner: grouped script list on the left, run panel on the right. The tool head comes from
+   shared.css. */
+
+.tool-generators #generators-root {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.generators-layout {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+  gap: 12px;
+  padding: 12px 16px 16px;
+  overflow: hidden;
+}
+
+.generators-sidebar,
+.generators-main {
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 12px 14px;
+  border: 1px solid var(--workspace-line);
+  border-radius: var(--workspace-radius-lg);
+  background: var(--workspace-panel);
+  box-shadow: var(--workspace-shadow);
+}
+
+.generators-note { color: var(--workspace-muted); font-size: 0.8rem; line-height: 1.55; }
+.generators-note strong { color: var(--workspace-warm); }
+.generators-note p { margin: 0.35rem 0 0; }
+
+.generators-actions { display: grid; gap: 6px; margin: 10px 0; }
+
+.generators-actions button {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--workspace-line-strong);
+  border-radius: var(--workspace-radius-button);
+  background: var(--workspace-bg-strong);
+  color: var(--workspace-text);
+  font-size: 0.84rem;
+}
+
+.generators-actions button:hover:enabled { border-color: var(--workspace-accent); color: var(--workspace-accent-strong); }
+.generators-actions .primary-button { background: var(--workspace-accent); border-color: var(--workspace-accent); color: #fff; }
+.generators-actions .primary-button:hover:enabled { background: var(--workspace-accent-strong); color: #fff; }
+.generators-actions button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.generators-dry-run {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--workspace-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.generators-dry-run input { accent-color: var(--workspace-accent); }
+
+.generators-plan {
+  margin: 0;
+  color: var(--workspace-accent-strong);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.generators-groups { min-width: 0; }
+
+.generator-group {
+  min-width: 0;
+  margin-bottom: 8px;
+  border: 1px solid var(--workspace-line);
+  border-radius: var(--workspace-radius-md);
+  background: var(--workspace-bg-strong);
+  overflow: hidden;
+}
+
+.generator-group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border-bottom: 1px solid var(--workspace-line);
+  cursor: pointer;
+  background: rgba(39, 54, 74, 0.03);
+}
+
+.generator-group-title { flex: 1 1 auto; min-width: 0; color: var(--workspace-text); font-size: 0.86rem; font-weight: 650; overflow-wrap: anywhere; }
+.generator-group-counts,
+.generator-counts { color: var(--workspace-faint); font-size: 0.74rem; }
+
+.generator-group-rows { padding: 2px 11px 7px; min-width: 0; }
+
+.generator-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  border-top: 1px solid var(--workspace-line);
+}
+
+.generator-group-rows .generator-row:first-child { border-top: none; }
+
+.generator-choice { display: flex; align-items: center; gap: 8px; flex: 1 1 20rem; min-width: 0; cursor: pointer; }
+.generator-choice input { accent-color: var(--workspace-accent); }
+
+.generator-script {
+  color: var(--workspace-text);
+  font-family: var(--workspace-font-mono);
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.generator-details { flex: 1 1 100%; color: var(--workspace-muted); font-size: 0.78rem; }
+.generator-details summary { cursor: pointer; color: var(--workspace-accent-strong); }
+
+.generator-details pre {
+  margin: 5px 0 2px;
+  padding: 8px 10px;
+  border: 1px solid var(--workspace-line);
+  border-radius: var(--workspace-radius-md);
+  background: var(--log-bg);
+  color: var(--log-text);
+  font-family: var(--workspace-font-mono);
+  font-size: 0.76rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.generators-run-panel { margin-top: 12px; }
+
+@media (max-width: 900px) {
+  .generators-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    padding: 10px 12px 14px;
+  }
+  .generators-sidebar { max-height: 38vh; }
+}

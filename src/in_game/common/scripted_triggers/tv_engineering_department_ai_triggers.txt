@@ -1,0 +1,80 @@
+﻿# AI policy predicates. Country scope except the character candidate predicate.
+tv_engineering_department_ai_active_trigger = {
+	is_ai = yes
+	has_global_variable = tv_engineering_department_ai_enabled
+	has_variable = tv_engineering_department_member
+}
+
+tv_wonder_ai_engineer_candidate_trigger = {
+	is_alive = yes
+	is_adult = yes
+	is_artist = no
+	is_ruler = no
+	is_heir = no
+	is_consort = no
+	NOT = { has_variable = tv_io_chief_role }
+}
+
+
+
+tv_wonder_ai_can_accept_nobles_demand_trigger = {
+	tv_wonder_nobles_current_demand_available_trigger = yes
+	OR = {
+		var:tv_wonder_nobles_demand ?= 5
+		var:tv_wonder_nobles_demand ?= 6
+		var:tv_wonder_nobles_demand ?= 7
+		var:tv_wonder_nobles_demand ?= 8
+		var:tv_wonder_nobles_demand ?= 10
+		var:tv_wonder_nobles_demand ?= 11
+		var:tv_wonder_nobles_demand ?= 12
+	}
+}
+
+tv_wonder_ai_can_accept_burghers_demand_trigger = {
+	tv_wonder_burghers_current_demand_available_trigger = yes
+	OR = {
+		var:tv_wonder_burghers_demand ?= 5
+		var:tv_wonder_burghers_demand ?= 6
+		var:tv_wonder_burghers_demand ?= 7
+		var:tv_wonder_burghers_demand ?= 8
+		var:tv_wonder_burghers_demand ?= 10
+		var:tv_wonder_burghers_demand ?= 11
+		var:tv_wonder_burghers_demand ?= 12
+	}
+}
+
+tv_wonder_ai_can_accept_clergy_demand_trigger = {
+	tv_wonder_clergy_current_demand_available_trigger = yes
+	OR = {
+		var:tv_wonder_clergy_demand ?= 5
+		var:tv_wonder_clergy_demand ?= 6
+		var:tv_wonder_clergy_demand ?= 7
+		var:tv_wonder_clergy_demand ?= 8
+		var:tv_wonder_clergy_demand ?= 10
+		var:tv_wonder_clergy_demand ?= 11
+		var:tv_wonder_clergy_demand ?= 12
+	}
+}
+
+tv_wonder_ai_can_accept_any_demand_trigger = {
+	OR = {
+		tv_wonder_ai_can_accept_nobles_demand_trigger = yes
+		tv_wonder_ai_can_accept_burghers_demand_trigger = yes
+		tv_wonder_ai_can_accept_clergy_demand_trigger = yes
+	}
+}
+
+# Optional literal comparisons also stay safe while unrelated stages are idle.
+tv_wonder_ai_can_finish_construction_trigger = {
+	var:tv_wonder_stage ?= 3
+	tv_wonder_construction_site_selected_trigger = yes
+	NOT = { has_variable = tv_wonder_construction_complete }
+	OR = {
+		AND = { tv_wonder_current_site_is_shell_trigger = yes var:tv_wonder_level ?= { this >= 1 } }
+		AND = { var:tv_wonder_project_base_level ?= 0 var:tv_wonder_level ?= { this >= 2 } }
+		AND = { var:tv_wonder_project_base_level ?= 1 var:tv_wonder_level ?= { this >= 3 } }
+		AND = { var:tv_wonder_project_base_level ?= 2 var:tv_wonder_level ?= { this >= 4 } }
+		AND = { var:tv_wonder_project_base_level ?= 3 var:tv_wonder_level ?= { this >= 5 } }
+		AND = { var:tv_wonder_project_base_level ?= 4 var:tv_wonder_level ?= { this >= 6 } }
+	}
+}

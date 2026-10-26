@@ -1,0 +1,2622 @@
+{
+  "schema": "ed-ai-stalled-projects/1",
+  "playthrough_id": "9d1f3b46-96b1-4b41-b187-64b68248ff7e",
+  "snapshot_count": 52,
+  "excluded_site": 5872,
+  "criteria": "At least three observed stage-3 records across at least 30 years; monthly and current unit progress both zero; identical level, project base level and four completed-part counts across those records. Other stages may appear between them. Sparse saves cannot exclude unsampled work or prove an exact failure count.",
+  "run_count": 9,
+  "runs": [
+    {
+      "country_id": 930,
+      "tag": "AMD",
+      "site": 11378,
+      "site_name": "dzogon",
+      "site_name_zh": "佐钦",
+      "wonder_id": 19,
+      "wonder_key": "large_canal_system",
+      "wonder_label": "大水渠",
+      "start_year": 1770,
+      "end_year": 1840,
+      "observations": 7,
+      "max_sample_gap_years": 20,
+      "large_support_rebounds": 2,
+      "later_completed_unit_or_level_growth_observed": false,
+      "records": [
+        {
+          "date": "1770.4.1",
+          "year": 1770,
+          "country_id": 930,
+          "tag": "AMD",
+          "site": 11378,
+          "site_name": "dzogon",
+          "wonder_id": 19,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            2.0,
+            2.0,
+            2.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 119.0,
+          "engineer_id": 50346831,
+          "gold": 33822.41671,
+          "balance": 1124.13066,
+          "camp_id": 175317,
+          "camp_level": 1,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 8,
+          "camp_queue_max_progress_days": 192.47224,
+          "source_file": "1770.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 111607324
+        },
+        {
+          "date": "1790.4.1",
+          "year": 1790,
+          "country_id": 930,
+          "tag": "AMD",
+          "site": 11378,
+          "site_name": "dzogon",
+          "wonder_id": 19,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            2.0,
+            2.0,
+            2.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 163.0,
+          "engineer_id": 50389399,
+          "gold": 3049.53063,
+          "balance": -15.85029,
+          "camp_id": 183021,
+          "camp_level": 3,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 6,
+          "camp_queue_max_progress_days": 102.79397,
+          "source_file": "1790.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 110601889
+        },
+        {
+          "date": "1800.4.1",
+          "year": 1800,
+          "country_id": 930,
+          "tag": "AMD",
+          "site": 11378,
+          "site_name": "dzogon",
+          "wonder_id": 19,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            2.0,
+            2.0,
+            2.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 43.0,
+          "engineer_id": 50389399,
+          "gold": 3406.36086,
+          "balance": 328.99568,
+          "camp_id": 183021,
+          "camp_level": 10,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 0,
+          "camp_queue_max_progress_days": 0,
+          "source_file": "1800.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 110689622
+        },
+        {
+          "date": "1810.4.1",
+          "year": 1810,
+          "country_id": 930,
+          "tag": "AMD",
+          "site": 11378,
+          "site_name": "dzogon",
+          "wonder_id": 19,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            2.0,
+            2.0,
+            2.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 171.0,
+          "engineer_id": 67203200,
+          "gold": 5737.85856,
+          "balance": 460.92471,
+          "camp_id": 187577,
+          "camp_level": 3,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 6,
+          "camp_queue_max_progress_days": 115.91854,
+          "source_file": "1810.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 110542010
+        },
+        {
+          "date": "1820.4.1",
+          "year": 1820,
+          "country_id": 930,
+          "tag": "AMD",
+          "site": 11378,
+          "site_name": "dzogon",
+          "wonder_id": 19,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            2.0,
+            2.0,
+            2.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 51.0,
+          "engineer_id": 67203200,
+          "gold": 6141.60289,
+          "balance": 345.70183,
+          "camp_id": 187577,
+          "camp_level": 8,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 0,
+          "camp_queue_max_progress_days": 0,
+          "source_file": "1820.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 111174009
+        },
+        {
+          "date": "1830.4.1",
+          "year": 1830,
+          "country_id": 930,
+          "tag": "AMD",
+          "site": 11378,
+          "site_name": "dzogon",
+          "wonder_id": 19,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            2.0,
+            2.0,
+            2.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 168.0,
+          "engineer_id": 50437915,
+          "gold": 6603.78553,
+          "balance": 267.73841,
+          "camp_id": 193342,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 9,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1830.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 112179986
+        },
+        {
+          "date": "1840.4.1",
+          "year": 1840,
+          "country_id": 930,
+          "tag": "AMD",
+          "site": 11378,
+          "site_name": "dzogon",
+          "wonder_id": 19,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            2.0,
+            2.0,
+            2.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 28.0,
+          "engineer_id": 50437915,
+          "gold": 6924.93624,
+          "balance": 325.84691,
+          "camp_id": 193342,
+          "camp_level": 7,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 4,
+          "camp_queue_max_progress_days": 83.855,
+          "source_file": "1840.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 113010033
+        }
+      ],
+      "intermediate_country_states": [
+        {
+          "year": 1770,
+          "stage": 3.0,
+          "locked_wonder_id": 19.0,
+          "site": 11378
+        },
+        {
+          "year": 1780,
+          "stage": 0.0,
+          "locked_wonder_id": null,
+          "site": null
+        },
+        {
+          "year": 1790,
+          "stage": 3.0,
+          "locked_wonder_id": 19.0,
+          "site": 11378
+        },
+        {
+          "year": 1800,
+          "stage": 3.0,
+          "locked_wonder_id": 19.0,
+          "site": 11378
+        },
+        {
+          "year": 1810,
+          "stage": 3.0,
+          "locked_wonder_id": 19.0,
+          "site": 11378
+        },
+        {
+          "year": 1820,
+          "stage": 3.0,
+          "locked_wonder_id": 19.0,
+          "site": 11378
+        },
+        {
+          "year": 1830,
+          "stage": 3.0,
+          "locked_wonder_id": 19.0,
+          "site": 11378
+        },
+        {
+          "year": 1840,
+          "stage": 3.0,
+          "locked_wonder_id": 19.0,
+          "site": 11378
+        }
+      ],
+      "physical_final_buildings": [],
+      "endpoint_population_by_type_raw": {
+        "laborers": 69.72124,
+        "soldiers": 4.10146,
+        "peasants": 0.12176000000000001,
+        "burghers": 0.02
+      }
+    },
+    {
+      "country_id": 2035,
+      "tag": "MOS",
+      "site": 6305,
+      "site_name": "khiva",
+      "site_name_zh": "希瓦",
+      "wonder_id": 188,
+      "wonder_key": "unique_khiva_old_city",
+      "wonder_label": "希瓦古城",
+      "start_year": 1780,
+      "end_year": 1840,
+      "observations": 7,
+      "max_sample_gap_years": 10,
+      "large_support_rebounds": 4,
+      "later_completed_unit_or_level_growth_observed": false,
+      "records": [
+        {
+          "date": "1780.4.1",
+          "year": 1780,
+          "country_id": 2035,
+          "tag": "MOS",
+          "site": 6305,
+          "site_name": "khiva",
+          "wonder_id": 188,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 85.0,
+          "engineer_id": 50453710,
+          "gold": 2592.08621,
+          "balance": 904.25818,
+          "camp_id": 33560508,
+          "camp_level": 7,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 8,
+          "camp_queue_max_progress_days": 314.00604,
+          "source_file": "1780.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 145347573
+        },
+        {
+          "date": "1790.4.1",
+          "year": 1790,
+          "country_id": 2035,
+          "tag": "MOS",
+          "site": 6305,
+          "site_name": "khiva",
+          "wonder_id": 188,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 189.0,
+          "engineer_id": 67194823,
+          "gold": 3176.35365,
+          "balance": 2786.18963,
+          "camp_id": 16853346,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 15,
+          "camp_queue_max_progress_days": 283.70641,
+          "source_file": "1790.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 145807928
+        },
+        {
+          "date": "1800.4.1",
+          "year": 1800,
+          "country_id": 2035,
+          "tag": "MOS",
+          "site": 6305,
+          "site_name": "khiva",
+          "wonder_id": 188,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 49.0,
+          "engineer_id": 67194823,
+          "gold": 18671.4646,
+          "balance": 1651.93647,
+          "camp_id": 16853346,
+          "camp_level": 10,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 5,
+          "camp_queue_max_progress_days": 39.29246,
+          "source_file": "1800.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 146280476
+        },
+        {
+          "date": "1810.4.1",
+          "year": 1810,
+          "country_id": 2035,
+          "tag": "MOS",
+          "site": 6305,
+          "site_name": "khiva",
+          "wonder_id": 188,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 151.0,
+          "engineer_id": 67133267,
+          "gold": 27720.31611,
+          "balance": 2483.97099,
+          "camp_id": 187275,
+          "camp_level": 3,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 12,
+          "camp_queue_max_progress_days": 271.69828,
+          "source_file": "1810.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 146469733
+        },
+        {
+          "date": "1820.4.1",
+          "year": 1820,
+          "country_id": 2035,
+          "tag": "MOS",
+          "site": 6305,
+          "site_name": "khiva",
+          "wonder_id": 188,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 11.0,
+          "engineer_id": 67133267,
+          "gold": 29665.3268,
+          "balance": 2717.38601,
+          "camp_id": 187275,
+          "camp_level": 11,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 4,
+          "camp_queue_max_progress_days": 81.60718,
+          "source_file": "1820.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 147058416
+        },
+        {
+          "date": "1830.4.1",
+          "year": 1830,
+          "country_id": 2035,
+          "tag": "MOS",
+          "site": 6305,
+          "site_name": "khiva",
+          "wonder_id": 188,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 115.0,
+          "engineer_id": 33693789,
+          "gold": 8269.17774,
+          "balance": 5230.01405,
+          "camp_id": 192434,
+          "camp_level": 5,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 289.28676,
+          "source_file": "1830.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 148234909
+        },
+        {
+          "date": "1840.4.1",
+          "year": 1840,
+          "country_id": 2035,
+          "tag": "MOS",
+          "site": 6305,
+          "site_name": "khiva",
+          "wonder_id": 188,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 197.0,
+          "engineer_id": 100751677,
+          "gold": 50781.52447,
+          "balance": 252.19643,
+          "camp_id": 196412,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 15,
+          "camp_queue_max_progress_days": 55.53673,
+          "source_file": "1840.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 149511425
+        }
+      ],
+      "intermediate_country_states": [
+        {
+          "year": 1780,
+          "stage": 3.0,
+          "locked_wonder_id": 188.0,
+          "site": 6305
+        },
+        {
+          "year": 1790,
+          "stage": 3.0,
+          "locked_wonder_id": 188.0,
+          "site": 6305
+        },
+        {
+          "year": 1800,
+          "stage": 3.0,
+          "locked_wonder_id": 188.0,
+          "site": 6305
+        },
+        {
+          "year": 1810,
+          "stage": 3.0,
+          "locked_wonder_id": 188.0,
+          "site": 6305
+        },
+        {
+          "year": 1820,
+          "stage": 3.0,
+          "locked_wonder_id": 188.0,
+          "site": 6305
+        },
+        {
+          "year": 1830,
+          "stage": 3.0,
+          "locked_wonder_id": 188.0,
+          "site": 6305
+        },
+        {
+          "year": 1840,
+          "stage": 3.0,
+          "locked_wonder_id": 188.0,
+          "site": 6305
+        }
+      ],
+      "physical_final_buildings": [
+        {
+          "year": 1780,
+          "type": "tv_wonder_unique_khiva_old_city_inaugurated",
+          "level": 1,
+          "owner": 2035,
+          "offset": 203994415
+        },
+        {
+          "year": 1790,
+          "type": "tv_wonder_unique_khiva_old_city_inaugurated",
+          "level": 1,
+          "owner": 2035,
+          "offset": 205789035
+        },
+        {
+          "year": 1800,
+          "type": "tv_wonder_unique_khiva_old_city_inaugurated",
+          "level": 1,
+          "owner": 2035,
+          "offset": 206879957
+        },
+        {
+          "year": 1810,
+          "type": "tv_wonder_unique_khiva_old_city_inaugurated",
+          "level": 1,
+          "owner": 2035,
+          "offset": 208042352
+        },
+        {
+          "year": 1820,
+          "type": "tv_wonder_unique_khiva_old_city_inaugurated",
+          "level": 1,
+          "owner": 2035,
+          "offset": 209909656
+        },
+        {
+          "year": 1830,
+          "type": "tv_wonder_unique_khiva_old_city_inaugurated",
+          "level": 1,
+          "owner": 2035,
+          "offset": 211899329
+        },
+        {
+          "year": 1840,
+          "type": "tv_wonder_unique_khiva_old_city_inaugurated",
+          "level": 1,
+          "owner": 2035,
+          "offset": 214436207
+        }
+      ],
+      "endpoint_population_by_type_raw": {
+        "laborers": 8.219439999999999,
+        "peasants": 0.34443
+      }
+    },
+    {
+      "country_id": 41,
+      "tag": "TUR",
+      "site": 6802,
+      "site_name": "bursa",
+      "site_name_zh": "布尔萨",
+      "wonder_id": 232,
+      "wonder_key": "unique_bursa_imperial_mint",
+      "wonder_label": "布尔萨皇家铸币所",
+      "start_year": 1590,
+      "end_year": 1650,
+      "observations": 6,
+      "max_sample_gap_years": 20,
+      "large_support_rebounds": 2,
+      "later_completed_unit_or_level_growth_observed": true,
+      "records": [
+        {
+          "date": "1590.4.1",
+          "year": 1590,
+          "country_id": 41,
+          "tag": "TUR",
+          "site": 6802,
+          "site_name": "bursa",
+          "wonder_id": 232,
+          "level": 5.0,
+          "base": 5.0,
+          "parts": [
+            6.0,
+            6.0,
+            6.0,
+            5.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 192.0,
+          "engineer_id": 33565961,
+          "gold": 111555.0078,
+          "balance": 3019.01829,
+          "camp_id": 126680,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1590.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 85251778
+        },
+        {
+          "date": "1600.4.1",
+          "year": 1600,
+          "country_id": 41,
+          "tag": "TUR",
+          "site": 6802,
+          "site_name": "bursa",
+          "wonder_id": 232,
+          "level": 5.0,
+          "base": 5.0,
+          "parts": [
+            6.0,
+            6.0,
+            6.0,
+            5.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 72.0,
+          "engineer_id": 33565961,
+          "gold": 181806.90876,
+          "balance": 2380.66156,
+          "camp_id": 126680,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1600.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 85783239
+        },
+        {
+          "date": "1610.4.1",
+          "year": 1610,
+          "country_id": 41,
+          "tag": "TUR",
+          "site": 6802,
+          "site_name": "bursa",
+          "wonder_id": 232,
+          "level": 5.0,
+          "base": 5.0,
+          "parts": [
+            6.0,
+            6.0,
+            6.0,
+            5.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 179.0,
+          "engineer_id": 50358557,
+          "gold": 10685.76925,
+          "balance": 1775.44833,
+          "camp_id": 133696,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1610.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 86683371
+        },
+        {
+          "date": "1620.4.1",
+          "year": 1620,
+          "country_id": 41,
+          "tag": "TUR",
+          "site": 6802,
+          "site_name": "bursa",
+          "wonder_id": 232,
+          "level": 5.0,
+          "base": 5.0,
+          "parts": [
+            6.0,
+            6.0,
+            6.0,
+            5.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 49.0,
+          "engineer_id": 16892568,
+          "gold": 62210.08014,
+          "balance": 1584.07911,
+          "camp_id": 133696,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1620.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 86950658
+        },
+        {
+          "date": "1630.4.1",
+          "year": 1630,
+          "country_id": 41,
+          "tag": "TUR",
+          "site": 6802,
+          "site_name": "bursa",
+          "wonder_id": 232,
+          "level": 5.0,
+          "base": 5.0,
+          "parts": [
+            6.0,
+            6.0,
+            6.0,
+            5.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 130.0,
+          "engineer_id": 16898722,
+          "gold": 9301.41415,
+          "balance": 227.78756,
+          "camp_id": 139106,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1630.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 88163027
+        },
+        {
+          "date": "1650.4.1",
+          "year": 1650,
+          "country_id": 41,
+          "tag": "TUR",
+          "site": 6802,
+          "site_name": "bursa",
+          "wonder_id": 232,
+          "level": 5.0,
+          "base": 5.0,
+          "parts": [
+            6.0,
+            6.0,
+            6.0,
+            5.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 99.0,
+          "engineer_id": 67133973,
+          "gold": 3400.93256,
+          "balance": 3011.0277,
+          "camp_id": 143647,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1650.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 89990123
+        }
+      ],
+      "intermediate_country_states": [
+        {
+          "year": 1590,
+          "stage": 3.0,
+          "locked_wonder_id": 232.0,
+          "site": 6802
+        },
+        {
+          "year": 1600,
+          "stage": 3.0,
+          "locked_wonder_id": 232.0,
+          "site": 6802
+        },
+        {
+          "year": 1610,
+          "stage": 3.0,
+          "locked_wonder_id": 232.0,
+          "site": 6802
+        },
+        {
+          "year": 1620,
+          "stage": 3.0,
+          "locked_wonder_id": 232.0,
+          "site": 6802
+        },
+        {
+          "year": 1630,
+          "stage": 3.0,
+          "locked_wonder_id": 232.0,
+          "site": 6802
+        },
+        {
+          "year": 1640,
+          "stage": 0.0,
+          "locked_wonder_id": null,
+          "site": null
+        },
+        {
+          "year": 1650,
+          "stage": 3.0,
+          "locked_wonder_id": 232.0,
+          "site": 6802
+        }
+      ],
+      "physical_final_buildings": [
+        {
+          "year": 1590,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 4,
+          "owner": 41,
+          "offset": 186141531
+        },
+        {
+          "year": 1600,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 4,
+          "owner": 41,
+          "offset": 187638503
+        },
+        {
+          "year": 1610,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 4,
+          "owner": 41,
+          "offset": 189323183
+        },
+        {
+          "year": 1620,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 4,
+          "owner": 41,
+          "offset": 191002398
+        },
+        {
+          "year": 1630,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 4,
+          "owner": 41,
+          "offset": 193488341
+        },
+        {
+          "year": 1640,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 4,
+          "owner": 41,
+          "offset": 195459696
+        },
+        {
+          "year": 1650,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 4,
+          "owner": 41,
+          "offset": 197599178
+        },
+        {
+          "year": 1660,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 4,
+          "owner": 41,
+          "offset": 199838611
+        },
+        {
+          "year": 1670,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 201298454
+        },
+        {
+          "year": 1680,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 201883233
+        },
+        {
+          "year": 1690,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 202254644
+        },
+        {
+          "year": 1700,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 202235283
+        },
+        {
+          "year": 1710,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 201576159
+        },
+        {
+          "year": 1720,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 201863311
+        },
+        {
+          "year": 1730,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 201574502
+        },
+        {
+          "year": 1740,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 202754472
+        },
+        {
+          "year": 1750,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 203884501
+        },
+        {
+          "year": 1760,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 204849744
+        },
+        {
+          "year": 1770,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 204549730
+        },
+        {
+          "year": 1780,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 204000766
+        },
+        {
+          "year": 1790,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 205795383
+        },
+        {
+          "year": 1800,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 206886302
+        },
+        {
+          "year": 1810,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 208048706
+        },
+        {
+          "year": 1820,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 209916053
+        },
+        {
+          "year": 1830,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 211905701
+        },
+        {
+          "year": 1840,
+          "type": "tv_wonder_unique_bursa_imperial_mint_inaugurated",
+          "level": 6,
+          "owner": 41,
+          "offset": 214442578
+        }
+      ],
+      "endpoint_population_by_type_raw": {
+        "nobles": 0.8019,
+        "burghers": 15.773710000000001,
+        "slaves": 3.91418,
+        "peasants": 44.03279,
+        "clergy": 2.6852799999999997,
+        "laborers": 36.58695,
+        "soldiers": 12.19697
+      }
+    },
+    {
+      "country_id": 1502,
+      "tag": "NAP",
+      "site": 3079,
+      "site_name": "rome",
+      "site_name_zh": "罗马",
+      "wonder_id": 112,
+      "wonder_key": "unique_st_peters_basilica",
+      "wonder_label": "圣亚彼得大教堂",
+      "start_year": 1600,
+      "end_year": 1640,
+      "observations": 4,
+      "max_sample_gap_years": 20,
+      "large_support_rebounds": 1,
+      "later_completed_unit_or_level_growth_observed": true,
+      "records": [
+        {
+          "date": "1600.4.1",
+          "year": 1600,
+          "country_id": 1502,
+          "tag": "NAP",
+          "site": 3079,
+          "site_name": "rome",
+          "wonder_id": 112,
+          "level": 4.0,
+          "base": 4.0,
+          "parts": [
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 104.0,
+          "engineer_id": 33586063,
+          "gold": 37544.63682,
+          "balance": 1348.02252,
+          "camp_id": 128376,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1600.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 127447747
+        },
+        {
+          "date": "1620.4.1",
+          "year": 1620,
+          "country_id": 1502,
+          "tag": "NAP",
+          "site": 3079,
+          "site_name": "rome",
+          "wonder_id": 112,
+          "level": 4.0,
+          "base": 4.0,
+          "parts": [
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 86.0,
+          "engineer_id": 135536,
+          "gold": 19764.69656,
+          "balance": 101.10546,
+          "camp_id": 134609,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1620.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 128971861
+        },
+        {
+          "date": "1630.4.1",
+          "year": 1630,
+          "country_id": 1502,
+          "tag": "NAP",
+          "site": 3079,
+          "site_name": "rome",
+          "wonder_id": 112,
+          "level": 4.0,
+          "base": 4.0,
+          "parts": [
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 178.0,
+          "engineer_id": 137187,
+          "gold": 20202.43734,
+          "balance": 1194.01316,
+          "camp_id": 139897,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1630.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 130391563
+        },
+        {
+          "date": "1640.4.1",
+          "year": 1640,
+          "country_id": 1502,
+          "tag": "NAP",
+          "site": 3079,
+          "site_name": "rome",
+          "wonder_id": 112,
+          "level": 4.0,
+          "base": 4.0,
+          "parts": [
+            4.0,
+            4.0,
+            4.0,
+            4.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 58.0,
+          "engineer_id": 16895699,
+          "gold": 1304.20853,
+          "balance": 273.32112,
+          "camp_id": 139897,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1640.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 131429223
+        }
+      ],
+      "intermediate_country_states": [
+        {
+          "year": 1600,
+          "stage": 3.0,
+          "locked_wonder_id": 112.0,
+          "site": 3079
+        },
+        {
+          "year": 1610,
+          "stage": 1.0,
+          "locked_wonder_id": 112.0,
+          "site": null
+        },
+        {
+          "year": 1620,
+          "stage": 3.0,
+          "locked_wonder_id": 112.0,
+          "site": 3079
+        },
+        {
+          "year": 1630,
+          "stage": 3.0,
+          "locked_wonder_id": 112.0,
+          "site": 3079
+        },
+        {
+          "year": 1640,
+          "stage": 3.0,
+          "locked_wonder_id": 112.0,
+          "site": 3079
+        }
+      ],
+      "physical_final_buildings": [
+        {
+          "year": 1600,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 4,
+          "owner": 1502,
+          "offset": 183656944
+        },
+        {
+          "year": 1610,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 4,
+          "owner": 1502,
+          "offset": 185345443
+        },
+        {
+          "year": 1620,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 4,
+          "owner": 1502,
+          "offset": 187019548
+        },
+        {
+          "year": 1630,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 4,
+          "owner": 1502,
+          "offset": 189499683
+        },
+        {
+          "year": 1640,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 4,
+          "owner": 1502,
+          "offset": 191472856
+        },
+        {
+          "year": 1650,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 4,
+          "owner": 1502,
+          "offset": 193608854
+        },
+        {
+          "year": 1660,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 4,
+          "owner": 1502,
+          "offset": 195849428
+        },
+        {
+          "year": 1670,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 4,
+          "owner": 1502,
+          "offset": 197302064
+        },
+        {
+          "year": 1680,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 197885586
+        },
+        {
+          "year": 1690,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 198254863
+        },
+        {
+          "year": 1700,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 198233863
+        },
+        {
+          "year": 1710,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 197573255
+        },
+        {
+          "year": 1720,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 197873656
+        },
+        {
+          "year": 1730,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 197575867
+        },
+        {
+          "year": 1740,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 198744393
+        },
+        {
+          "year": 1750,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 199871055
+        },
+        {
+          "year": 1760,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 200831206
+        },
+        {
+          "year": 1770,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 200531963
+        },
+        {
+          "year": 1780,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 199978149
+        },
+        {
+          "year": 1790,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 201771696
+        },
+        {
+          "year": 1800,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 202865143
+        },
+        {
+          "year": 1810,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 204026767
+        },
+        {
+          "year": 1820,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 205890791
+        },
+        {
+          "year": 1830,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 207882986
+        },
+        {
+          "year": 1840,
+          "type": "tv_wonder_unique_st_peters_basilica_inaugurated",
+          "level": 5,
+          "owner": 1502,
+          "offset": 210417653
+        }
+      ],
+      "endpoint_population_by_type_raw": {
+        "burghers": 25.32019,
+        "peasants": 354.0816,
+        "clergy": 13.678889999999999,
+        "soldiers": 15.91506,
+        "nobles": 5.45531,
+        "laborers": 58.35621999999999
+      }
+    },
+    {
+      "country_id": 2099,
+      "tag": "KHM",
+      "site": 14951,
+      "site_name": "angkor",
+      "site_name_zh": "吴哥",
+      "wonder_id": 132,
+      "wonder_key": "unique_angkor_hydraulic_system",
+      "wonder_label": "吴哥水利工程",
+      "start_year": 1450,
+      "end_year": 1490,
+      "observations": 3,
+      "max_sample_gap_years": 30,
+      "large_support_rebounds": 1,
+      "later_completed_unit_or_level_growth_observed": true,
+      "records": [
+        {
+          "date": "1450.4.1",
+          "year": 1450,
+          "country_id": 2099,
+          "tag": "KHM",
+          "site": 14951,
+          "site_name": "angkor",
+          "wonder_id": 132,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 135.0,
+          "engineer_id": 72786,
+          "gold": 20664.69045,
+          "balance": 386.38808,
+          "camp_id": 67950,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1450.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 110461445
+        },
+        {
+          "date": "1480.4.1",
+          "year": 1480,
+          "country_id": 2099,
+          "tag": "KHM",
+          "site": 14951,
+          "site_name": "angkor",
+          "wonder_id": 132,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 194.0,
+          "engineer_id": 92778,
+          "gold": 13502.59845,
+          "balance": 509.24328,
+          "camp_id": 81565,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1480.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 118196836
+        },
+        {
+          "date": "1490.4.1",
+          "year": 1490,
+          "country_id": 2099,
+          "tag": "KHM",
+          "site": 14951,
+          "site_name": "angkor",
+          "wonder_id": 132,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 74.0,
+          "engineer_id": 92778,
+          "gold": 26576.31835,
+          "balance": 389.80733,
+          "camp_id": 81565,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 10,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1490.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 120769975
+        }
+      ],
+      "intermediate_country_states": [
+        {
+          "year": 1450,
+          "stage": 3.0,
+          "locked_wonder_id": 132.0,
+          "site": 14951
+        },
+        {
+          "year": 1460,
+          "stage": 1.0,
+          "locked_wonder_id": 104.0,
+          "site": null
+        },
+        {
+          "year": 1470,
+          "stage": 3.0,
+          "locked_wonder_id": 104.0,
+          "site": 14951
+        },
+        {
+          "year": 1480,
+          "stage": 3.0,
+          "locked_wonder_id": 132.0,
+          "site": 14951
+        },
+        {
+          "year": 1490,
+          "stage": 3.0,
+          "locked_wonder_id": 132.0,
+          "site": 14951
+        }
+      ],
+      "physical_final_buildings": [
+        {
+          "year": 1450,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 147057746
+        },
+        {
+          "year": 1460,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 150218076
+        },
+        {
+          "year": 1470,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 152582417
+        },
+        {
+          "year": 1480,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 155489605
+        },
+        {
+          "year": 1490,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 158188950
+        },
+        {
+          "year": 1500,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 161579488
+        },
+        {
+          "year": 1510,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 164506178
+        },
+        {
+          "year": 1520,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 166706368
+        },
+        {
+          "year": 1530,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 169180614
+        },
+        {
+          "year": 1540,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 172376931
+        },
+        {
+          "year": 1550,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 175902114
+        },
+        {
+          "year": 1560,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 1,
+          "owner": 2099,
+          "offset": 178785123
+        },
+        {
+          "year": 1570,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 3,
+          "owner": 2099,
+          "offset": 181701369
+        },
+        {
+          "year": 1580,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 3,
+          "owner": 2099,
+          "offset": 183543798
+        },
+        {
+          "year": 1590,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 3,
+          "owner": 2099,
+          "offset": 186129558
+        },
+        {
+          "year": 1600,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 3,
+          "owner": 2099,
+          "offset": 187626513
+        },
+        {
+          "year": 1610,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 3,
+          "owner": 2099,
+          "offset": 189311220
+        },
+        {
+          "year": 1620,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 190990406
+        },
+        {
+          "year": 1630,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 193476351
+        },
+        {
+          "year": 1640,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 195447759
+        },
+        {
+          "year": 1650,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 197587135
+        },
+        {
+          "year": 1660,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 199826510
+        },
+        {
+          "year": 1670,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 201286419
+        },
+        {
+          "year": 1680,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 201871218
+        },
+        {
+          "year": 1690,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 202242601
+        },
+        {
+          "year": 1700,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 202223313
+        },
+        {
+          "year": 1710,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 201564151
+        },
+        {
+          "year": 1720,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 201851304
+        },
+        {
+          "year": 1730,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 201562531
+        },
+        {
+          "year": 1740,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 202742525
+        },
+        {
+          "year": 1750,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 203872559
+        },
+        {
+          "year": 1760,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 204837772
+        },
+        {
+          "year": 1770,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 204537761
+        },
+        {
+          "year": 1780,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 203988831
+        },
+        {
+          "year": 1790,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 205783409
+        },
+        {
+          "year": 1800,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 206874333
+        },
+        {
+          "year": 1810,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 208036729
+        },
+        {
+          "year": 1820,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 209904025
+        },
+        {
+          "year": 1830,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 211893702
+        },
+        {
+          "year": 1840,
+          "type": "tv_wonder_unique_angkor_hydraulic_system_inaugurated",
+          "level": 5,
+          "owner": 2099,
+          "offset": 214430576
+        }
+      ],
+      "endpoint_population_by_type_raw": {
+        "burghers": 21.710639999999998,
+        "nobles": 6.08185,
+        "clergy": 11.773750000000001,
+        "laborers": 43.92161,
+        "peasants": 329.24643,
+        "soldiers": 12.35914
+      }
+    },
+    {
+      "country_id": 2038,
+      "tag": "VLR",
+      "site": 5097,
+      "site_name": "yuryev_polsky",
+      "site_name_zh": "尤里耶夫‑波利斯基",
+      "wonder_id": 55,
+      "wonder_key": "grand_garden_complex",
+      "wonder_label": "园林群",
+      "start_year": 1770,
+      "end_year": 1810,
+      "observations": 3,
+      "max_sample_gap_years": 30,
+      "large_support_rebounds": 1,
+      "later_completed_unit_or_level_growth_observed": false,
+      "records": [
+        {
+          "date": "1770.4.1",
+          "year": 1770,
+          "country_id": 2038,
+          "tag": "VLR",
+          "site": 5097,
+          "site_name": "yuryev_polsky",
+          "wonder_id": 55,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 98.0,
+          "engineer_id": 16904351,
+          "gold": 932.36079,
+          "balance": 143.40567,
+          "camp_id": 175332,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 5,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1770.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 146765045
+        },
+        {
+          "date": "1800.4.1",
+          "year": 1800,
+          "country_id": 2038,
+          "tag": "VLR",
+          "site": 5097,
+          "site_name": "yuryev_polsky",
+          "wonder_id": 55,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 170.0,
+          "engineer_id": 16854456,
+          "gold": 229.3643,
+          "balance": 121.32406,
+          "camp_id": 185327,
+          "camp_level": 2,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 3,
+          "camp_queue_max_progress_days": 305.91835,
+          "source_file": "1800.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 146587827
+        },
+        {
+          "date": "1810.4.1",
+          "year": 1810,
+          "country_id": 2038,
+          "tag": "VLR",
+          "site": 5097,
+          "site_name": "yuryev_polsky",
+          "wonder_id": 55,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 40.0,
+          "engineer_id": 33693630,
+          "gold": 1608.63235,
+          "balance": 195.6018,
+          "camp_id": 185327,
+          "camp_level": 5,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 0,
+          "camp_queue_max_progress_days": 0,
+          "source_file": "1810.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 146689374
+        }
+      ],
+      "intermediate_country_states": [
+        {
+          "year": 1770,
+          "stage": 3.0,
+          "locked_wonder_id": 55.0,
+          "site": 5097
+        },
+        {
+          "year": 1780,
+          "stage": 0.0,
+          "locked_wonder_id": null,
+          "site": null
+        },
+        {
+          "year": 1790,
+          "stage": 0.0,
+          "locked_wonder_id": null,
+          "site": null
+        },
+        {
+          "year": 1800,
+          "stage": 3.0,
+          "locked_wonder_id": 55.0,
+          "site": 5097
+        },
+        {
+          "year": 1810,
+          "stage": 3.0,
+          "locked_wonder_id": 55.0,
+          "site": 5097
+        }
+      ],
+      "physical_final_buildings": [],
+      "endpoint_population_by_type_raw": {
+        "burghers": 12.26741,
+        "nobles": 0.13382999999999998,
+        "clergy": 0.8135,
+        "laborers": 11.60134,
+        "soldiers": 1.10066,
+        "peasants": 0.64889
+      }
+    },
+    {
+      "country_id": 1253,
+      "tag": "CAS",
+      "site": 2759,
+      "site_name": "lagos",
+      "site_name_zh": "拉古什",
+      "wonder_id": 167,
+      "wonder_key": "unique_sagres_navigation_school",
+      "wonder_label": "萨格里什航海学校",
+      "start_year": 1800,
+      "end_year": 1840,
+      "observations": 3,
+      "max_sample_gap_years": 20,
+      "large_support_rebounds": 0,
+      "later_completed_unit_or_level_growth_observed": false,
+      "records": [
+        {
+          "date": "1800.4.1",
+          "year": 1800,
+          "country_id": 1253,
+          "tag": "CAS",
+          "site": 2759,
+          "site_name": "lagos",
+          "wonder_id": 167,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 110.0,
+          "engineer_id": 83943109,
+          "gold": 7703.65623,
+          "balance": 2107.66098,
+          "camp_id": 184247,
+          "camp_level": 9,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 1,
+          "camp_queue_max_progress_days": 58.36434,
+          "source_file": "1800.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 119391924
+        },
+        {
+          "date": "1820.4.1",
+          "year": 1820,
+          "country_id": 1253,
+          "tag": "CAS",
+          "site": 2759,
+          "site_name": "lagos",
+          "wonder_id": 167,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 106.0,
+          "engineer_id": 67165583,
+          "gold": 22865.2131,
+          "balance": 5559.73702,
+          "camp_id": 188512,
+          "camp_level": 10,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 0,
+          "camp_queue_max_progress_days": 0,
+          "source_file": "1820.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 119993079
+        },
+        {
+          "date": "1840.4.1",
+          "year": 1840,
+          "country_id": 1253,
+          "tag": "CAS",
+          "site": 2759,
+          "site_name": "lagos",
+          "wonder_id": 167,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 91.0,
+          "engineer_id": 67235751,
+          "gold": 1619.19187,
+          "balance": 1581.07464,
+          "camp_id": 194127,
+          "camp_level": 10,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 0,
+          "camp_queue_max_progress_days": 0,
+          "source_file": "1840.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 121903520
+        }
+      ],
+      "intermediate_country_states": [
+        {
+          "year": 1800,
+          "stage": 3.0,
+          "locked_wonder_id": 167.0,
+          "site": 2759
+        },
+        {
+          "year": 1810,
+          "stage": 1.0,
+          "locked_wonder_id": 167.0,
+          "site": null
+        },
+        {
+          "year": 1820,
+          "stage": 3.0,
+          "locked_wonder_id": 167.0,
+          "site": 2759
+        },
+        {
+          "year": 1830,
+          "stage": 1.0,
+          "locked_wonder_id": 167.0,
+          "site": null
+        },
+        {
+          "year": 1840,
+          "stage": 3.0,
+          "locked_wonder_id": 167.0,
+          "site": 2759
+        }
+      ],
+      "physical_final_buildings": [],
+      "endpoint_population_by_type_raw": {
+        "soldiers": 0.99801,
+        "clergy": 0.00742,
+        "peasants": 0.23292,
+        "laborers": 3.47625
+      }
+    },
+    {
+      "country_id": 1151,
+      "tag": "BOU",
+      "site": 2294,
+      "site_name": "lyon",
+      "site_name_zh": "里昂",
+      "wonder_id": 196,
+      "wonder_key": "unique_lyon_silk_workshops",
+      "wonder_label": "里昂丝绸工坊区",
+      "start_year": 1750,
+      "end_year": 1780,
+      "observations": 4,
+      "max_sample_gap_years": 10,
+      "large_support_rebounds": 2,
+      "later_completed_unit_or_level_growth_observed": true,
+      "records": [
+        {
+          "date": "1750.4.1",
+          "year": 1750,
+          "country_id": 1151,
+          "tag": "BOU",
+          "site": 2294,
+          "site_name": "lyon",
+          "wonder_id": 196,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 121.0,
+          "engineer_id": 16919437,
+          "gold": 21631.79225,
+          "balance": 1216.71983,
+          "camp_id": 169366,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 5,
+          "camp_queue_max_progress_days": 0.0,
+          "source_file": "1750.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 119237064
+        },
+        {
+          "date": "1760.4.1",
+          "year": 1760,
+          "country_id": 1151,
+          "tag": "BOU",
+          "site": 2294,
+          "site_name": "lyon",
+          "wonder_id": 196,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 1.0,
+          "engineer_id": 16919437,
+          "gold": 30929.02705,
+          "balance": 1412.34164,
+          "camp_id": 169366,
+          "camp_level": 5,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 0,
+          "camp_queue_max_progress_days": 0,
+          "source_file": "1760.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 118818245
+        },
+        {
+          "date": "1770.4.1",
+          "year": 1770,
+          "country_id": 1151,
+          "tag": "BOU",
+          "site": 2294,
+          "site_name": "lyon",
+          "wonder_id": 196,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 95.0,
+          "engineer_id": 83910429,
+          "gold": 30702.40158,
+          "balance": 2406.45647,
+          "camp_id": 174797,
+          "camp_level": 2,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 3,
+          "camp_queue_max_progress_days": 10.17772,
+          "source_file": "1770.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 116923055
+        },
+        {
+          "date": "1780.4.1",
+          "year": 1780,
+          "country_id": 1151,
+          "tag": "BOU",
+          "site": 2294,
+          "site_name": "lyon",
+          "wonder_id": 196,
+          "level": 0.0,
+          "base": 0.0,
+          "parts": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 191.0,
+          "engineer_id": 33685639,
+          "gold": 1904.85946,
+          "balance": 343.07697,
+          "camp_id": 16945073,
+          "camp_level": 0,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 5,
+          "camp_queue_max_progress_days": 160.75441,
+          "source_file": "1780.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 115575679
+        }
+      ],
+      "intermediate_country_states": [
+        {
+          "year": 1750,
+          "stage": 3.0,
+          "locked_wonder_id": 196.0,
+          "site": 2294
+        },
+        {
+          "year": 1760,
+          "stage": 3.0,
+          "locked_wonder_id": 196.0,
+          "site": 2294
+        },
+        {
+          "year": 1770,
+          "stage": 3.0,
+          "locked_wonder_id": 196.0,
+          "site": 2294
+        },
+        {
+          "year": 1780,
+          "stage": 3.0,
+          "locked_wonder_id": 196.0,
+          "site": 2294
+        }
+      ],
+      "physical_final_buildings": [
+        {
+          "year": 1810,
+          "type": "tv_wonder_unique_lyon_silk_workshops_inaugurated",
+          "level": 2,
+          "owner": 1151,
+          "offset": 227934517
+        },
+        {
+          "year": 1820,
+          "type": "tv_wonder_unique_lyon_silk_workshops_inaugurated",
+          "level": 2,
+          "owner": 1151,
+          "offset": 229778639
+        },
+        {
+          "year": 1830,
+          "type": "tv_wonder_unique_lyon_silk_workshops_inaugurated",
+          "level": 4,
+          "owner": 1151,
+          "offset": 231741485
+        },
+        {
+          "year": 1840,
+          "type": "tv_wonder_unique_lyon_silk_workshops_inaugurated",
+          "level": 5,
+          "owner": 1151,
+          "offset": 234295608
+        }
+      ],
+      "endpoint_population_by_type_raw": {
+        "burghers": 7.84394,
+        "clergy": 1.18769,
+        "nobles": 0.20279000000000003,
+        "peasants": 0.95825,
+        "laborers": 6.8794200000000005,
+        "soldiers": 0.10003999999999999
+      }
+    },
+    {
+      "country_id": 1608,
+      "tag": "TEP",
+      "site": 21812,
+      "site_name": "tenochtitlan",
+      "site_name_zh": "特诺奇蒂特兰",
+      "wonder_id": 131,
+      "wonder_key": "unique_teotihuacan",
+      "wonder_label": "特奥蒂瓦坎圣城",
+      "start_year": 1710,
+      "end_year": 1740,
+      "observations": 3,
+      "max_sample_gap_years": 20,
+      "large_support_rebounds": 1,
+      "later_completed_unit_or_level_growth_observed": true,
+      "records": [
+        {
+          "date": "1710.4.1",
+          "year": 1710,
+          "country_id": 1608,
+          "tag": "TEP",
+          "site": 21812,
+          "site_name": "tenochtitlan",
+          "wonder_id": 131,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 79.0,
+          "engineer_id": 16910478,
+          "gold": 13631.01996,
+          "balance": 239.21381,
+          "camp_id": 157580,
+          "camp_level": 10,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 0,
+          "camp_queue_max_progress_days": 0,
+          "source_file": "1710.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 135741401
+        },
+        {
+          "date": "1730.4.1",
+          "year": 1730,
+          "country_id": 1608,
+          "tag": "TEP",
+          "site": 21812,
+          "site_name": "tenochtitlan",
+          "wonder_id": 131,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 75.0,
+          "engineer_id": 83967239,
+          "gold": 7715.74984,
+          "balance": 477.75969,
+          "camp_id": 16923128,
+          "camp_level": 10,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 0,
+          "camp_queue_max_progress_days": 0,
+          "source_file": "1730.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 134405520
+        },
+        {
+          "date": "1740.4.1",
+          "year": 1740,
+          "country_id": 1608,
+          "tag": "TEP",
+          "site": 21812,
+          "site_name": "tenochtitlan",
+          "wonder_id": 131,
+          "level": 1.0,
+          "base": 1.0,
+          "parts": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "monthly_progress": 0.0,
+          "current_unit_progress": 0.0,
+          "support": 171.0,
+          "engineer_id": 67203905,
+          "gold": 8870.52803,
+          "balance": 454.82721,
+          "camp_id": 167869,
+          "camp_level": 6,
+          "camp_employed": 0.0,
+          "camp_open_field": "omitted",
+          "camp_queued_levels": 4,
+          "camp_queue_max_progress_days": 110.6587,
+          "source_file": "1740.04.01_autosave_9d1f3b46-96b1-4b41-b187-64b68248ff7e.eu5",
+          "country_offset": 134223790
+        }
+      ],
+      "intermediate_country_states": [
+        {
+          "year": 1710,
+          "stage": 3.0,
+          "locked_wonder_id": 131.0,
+          "site": 21812
+        },
+        {
+          "year": 1720,
+          "stage": 1.0,
+          "locked_wonder_id": 131.0,
+          "site": null
+        },
+        {
+          "year": 1730,
+          "stage": 3.0,
+          "locked_wonder_id": 131.0,
+          "site": 21812
+        },
+        {
+          "year": 1740,
+          "stage": 3.0,
+          "locked_wonder_id": 131.0,
+          "site": 21812
+        }
+      ],
+      "physical_final_buildings": [
+        {
+          "year": 1710,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 1,
+          "owner": 1608,
+          "offset": 201563911
+        },
+        {
+          "year": 1720,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 1,
+          "owner": 1608,
+          "offset": 201851064
+        },
+        {
+          "year": 1730,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 1,
+          "owner": 1608,
+          "offset": 201562291
+        },
+        {
+          "year": 1740,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 1,
+          "owner": 1608,
+          "offset": 202742285
+        },
+        {
+          "year": 1750,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 1,
+          "owner": 1608,
+          "offset": 203872320
+        },
+        {
+          "year": 1760,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 1,
+          "owner": 1608,
+          "offset": 204837534
+        },
+        {
+          "year": 1770,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 1,
+          "owner": 1608,
+          "offset": 204537521
+        },
+        {
+          "year": 1780,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 3,
+          "owner": 1608,
+          "offset": 203988592
+        },
+        {
+          "year": 1790,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 3,
+          "owner": 1608,
+          "offset": 205783169
+        },
+        {
+          "year": 1800,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 5,
+          "owner": 1608,
+          "offset": 206874092
+        },
+        {
+          "year": 1810,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 5,
+          "owner": 1608,
+          "offset": 208036488
+        },
+        {
+          "year": 1820,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 5,
+          "owner": 1608,
+          "offset": 209903784
+        },
+        {
+          "year": 1830,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 5,
+          "owner": 1608,
+          "offset": 211893461
+        },
+        {
+          "year": 1840,
+          "type": "tv_wonder_unique_teotihuacan_inaugurated",
+          "level": 5,
+          "owner": 1608,
+          "offset": 214430335
+        }
+      ],
+      "endpoint_population_by_type_raw": {
+        "nobles": 0.5473,
+        "laborers": 11.33541,
+        "burghers": 7.804760000000001,
+        "clergy": 1.2910300000000001,
+        "peasants": 2.39819,
+        "soldiers": 1.25076
+      }
+    }
+  ]
+}

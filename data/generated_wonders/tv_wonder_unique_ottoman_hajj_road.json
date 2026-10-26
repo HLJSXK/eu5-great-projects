@@ -1,0 +1,7 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/奥斯曼朝觐道路_ai_cartoon.png",
+  "source_sha256": "f0300811e429a10e604d6582c83ab6895dc8207219990275a26a913d289c5cee",
+  "reference": "assets/historical/奥斯曼朝觐道路.webp",
+  "integration_manifest": "data/historical_wonder_images.json"
+}

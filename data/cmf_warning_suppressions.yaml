@@ -1,0 +1,11 @@
+extra_suppressions:
+- tv_wonder_suitability_weight
+- tv_wonder_ritual_display_axis_1
+- tv_wonder_ritual_display_axis_2
+- tv_wonder_ritual_display_axis_3
+- tv_wonder_ritual_display_dir_1
+- tv_wonder_ritual_display_dir_2
+- tv_wonder_ritual_display_dir_3
+- tv_wonder_ritual_position_1
+- tv_wonder_ritual_position_2
+- tv_wonder_ritual_position_3

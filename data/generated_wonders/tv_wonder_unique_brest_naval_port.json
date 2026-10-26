@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/布列斯特海军港_ai_cartoon.png",
+  "source_sha256": "de93b74e362dfae04ad04c77fa2fef99100e55518b288e2ad68a31a2b24b187a",
+  "reference": "assets/historical/布列斯特海军港.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:Vue_du_port_de_Brest.jpg",
+    "license": "Public domain",
+    "artist": "Jean-François Hue",
+    "date": "between 1793 and 1795",
+    "note": "Jean-François Hue 1793–1795 油画，船坞、在建战舰与人群齐全，年代吻合。"
+  }
+}

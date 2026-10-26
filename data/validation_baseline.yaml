@@ -1,0 +1,6 @@
+# Validation warning baseline.
+#
+# Warnings listed here are accepted technical debt. New warnings fail validation
+# until the AI either fixes them or adds a short rationale here.
+
+warnings: []

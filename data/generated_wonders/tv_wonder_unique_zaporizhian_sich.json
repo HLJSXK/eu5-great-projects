@@ -1,0 +1,14 @@
+{
+  "asset_kind": "historical_ai_cartoon_import",
+  "source": "assets/historical/processed/扎波罗热塞契_ai_cartoon.png",
+  "source_sha256": "e6add4188006062a95bda8bba9dacdc5a4f2646a5327df91272dacb935013f03",
+  "reference": "assets/historical/扎波罗热塞契.jpg",
+  "integration_manifest": "data/historical_wonder_images.json",
+  "reference_credit": {
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%96%D1%87_%D0%B7_%D0%B2%D0%B8%D1%81%D0%BE%D1%82%D0%B8_%D0%BF%D0%BE%D0%BB%D1%8C%D0%BE%D1%82%D1%83.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Alexey Tolmachov",
+    "date": "2013-04-27 16:38:58",
+    "note": "霍尔蒂恰岛扎波罗热塞契复原建筑群（现代复原）。"
+  }
+}
