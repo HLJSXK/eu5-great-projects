@@ -1,0 +1,2 @@
+[OK] Unified rituals: 195 final buildings, 585 country modifiers, 195 location modifiers; age/other directions 55/113 (2 conditional).
+[OK] Construction, survey, initialization, localization and ritual contracts validated.

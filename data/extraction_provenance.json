@@ -53287,8 +53287,8 @@
     },
     {
       "path": "docs/technical/Repository_Split.md",
-      "sha256": "9d9b1633fc2ae87085040f599f31e1c1e3928ca62d41039471dd294cf3eb6988",
-      "bytes": 14145
+      "sha256": "15f0e61117911eeb93f12b30dfd8cecd533d9d53a39ea1e14c91d5abf97e2a80",
+      "bytes": 14592
     },
     {
       "path": "docs/technical/Towards_Victory_Editor_Web_Assessment.md",
@@ -53316,9 +53316,44 @@
       "bytes": 77
     },
     {
+      "path": "docs/technical/split_validation/gp-clone-browser.txt",
+      "sha256": "65855d104233859c55e0ebf6fa18a8db9281a3bf10742c54a2f74156febe5171",
+      "bytes": 130
+    },
+    {
+      "path": "docs/technical/split_validation/gp-clone-build-check.txt",
+      "sha256": "57120f95dd17c2dc93c7e43a96e4e47941501b7cbd2fc02eae5331047e20f60b",
+      "bytes": 12818
+    },
+    {
+      "path": "docs/technical/split_validation/gp-clone-node.txt",
+      "sha256": "b0aa1a86881b9397bb743633dc917085faab5e3a72e3b2bfa96ab0b2ce410f77",
+      "bytes": 28649
+    },
+    {
+      "path": "docs/technical/split_validation/gp-clone-package.txt",
+      "sha256": "30703f704005a8b3d722153d7251d5925f4ab2aeba21157d6fdff519245411b8",
+      "bytes": 13003
+    },
+    {
+      "path": "docs/technical/split_validation/gp-clone-provenance.txt",
+      "sha256": "1406d95fbf6ca3c5325638dd3359e1415e46c9ea3929ca0bb4dbcfc1323dff1c",
+      "bytes": 69
+    },
+    {
+      "path": "docs/technical/split_validation/gp-clone-pytest.txt",
+      "sha256": "c33908c95ff07243f730f9374c604da8a0eb143c4704978d1e8a8d672a2f95fe",
+      "bytes": 3755
+    },
+    {
+      "path": "docs/technical/split_validation/gp-clone-web-check.txt",
+      "sha256": "947e45c9fcc814c3b523a4e7be4e76980f146826486bec3dc0675b436b317408",
+      "bytes": 1858
+    },
+    {
       "path": "docs/technical/split_validation/gp-editor-1440.png",
-      "sha256": "d8e69c525ddb12f15d67223ea6bba7533eda8d9b81fd6161700ecd390ae4f2aa",
-      "bytes": 187836
+      "sha256": "27d2e3def4cdc65c52a7bd08eca615748068d533e5c1ec756d5000a23096d5de",
+      "bytes": 190182
     },
     {
       "path": "docs/technical/split_validation/gp-editor-900.png",
@@ -53329,6 +53364,11 @@
       "path": "docs/technical/split_validation/gp-full-pytest-before-lf-test-update.txt",
       "sha256": "a88397a6266a312a667c47d856e9d6fe60756a39a61b206f3d22eef8e5cc69b1",
       "bytes": 5827
+    },
+    {
+      "path": "docs/technical/split_validation/gp-mechanics-rules.txt",
+      "sha256": "35b47ebeadc4a8ab09c82f7b6904f35569487adc8fc2254137a698f6677b127f",
+      "bytes": 223
     },
     {
       "path": "docs/technical/split_validation/gp-node.txt",
@@ -53347,8 +53387,8 @@
     },
     {
       "path": "docs/technical/split_validation/results.json",
-      "sha256": "16582503cbfbcdfb691dbce699f03a3dfab797de74418abcde0dea6c928c5126",
-      "bytes": 1961
+      "sha256": "47ed403da8d2e506b75c0680cca9d20d94134e56d7e6815fb8e9bc97220b21f3",
+      "bytes": 3298
     },
     {
       "path": "docs/technical/split_validation/tv-browser.txt",
@@ -53357,7 +53397,7 @@
     },
     {
       "path": "docs/technical/split_validation/tv-changed-validation.json",
-      "sha256": "71a1c2cb7f4a096c63347857fdad15998ed2b11f9210979a39a5b9d7333e50cb",
+      "sha256": "c0a782b7711fbb7355cc4b3df017fe4a75f38c314437a19a00c2d1bd70fa4113",
       "bytes": 76
     },
     {
@@ -73986,6 +74026,6 @@
     "source_records_retained": 5671,
     "source_records_excluded": 8,
     "moved_records": 5457,
-    "final_files_excluding_manifest": 5708
+    "final_files_excluding_manifest": 5716
   }
 }

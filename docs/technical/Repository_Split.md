@@ -10,7 +10,7 @@
 共享 base 起点：`33e60f14164ad06fc227b2d9e7c365b6db67c561`。
 
 新仓库路径：`C:/Users/Hades/Documents/code/eu5-great-projects`。
-这是独立的本地 Git 仓库，主分支为 `main`。未创建 GitHub 仓库，未推送，未发布网站，未部署到游戏。
+这是独立的本地 Git 仓库，主分支为 `main`。初始提交 `c90007e44bc3`；接受完整 clone 验证的快照为 `cdab9113f0f4`。未创建 GitHub 仓库，未推送，未发布网站，未部署到游戏。
 初始提交是当前可构建快照；没有重写或导入整个 TV 提交历史。
 原始历史继续保留在 TV，逐文件来源由新仓库的 `data/extraction_provenance.json` 记录。
 
@@ -49,6 +49,8 @@
 | 共同的编辑器事务/作业/验证基础设施 | 各仓库本地维护一份，从原版本派生；不建立依赖 TV 的包装器 |
 | `docs/**/ED_*`、奇观设计/指南/风险卡 | 归 GP；保留原有归档状态 |
 | 混合领域的旧编辑器方案和手册 | 明确标注为拆分前历史资料；当前命令以各自 README / CLAUDE 为准 |
+
+TV 的 5,457 项受控删除全部映射到 GP，没有未登记的删除。35 个实际 generic actions 与 11 个语言目录一起移交。
 
 来源清单包含原路径、新路径、迁移类别、原 Git blob、原 Windows 工作树 SHA-256；
 最终交付文件另有 SHA-256 快照。两种哈希不混为一谈：原工作树可能有 CRLF，而 Git 保存 LF。
@@ -136,13 +138,15 @@ GP 的文本生产者显式写 LF，保留游戏文本的 UTF-8 BOM；七个 van
 已确认的核心结果：
 
 - TV 快速 Python 回归：315 通过；Node：105 通过。
-- GP 全量 Python 回归包含真实生成链；仅保留下一节的既有仪式 GUI 断言失败。
+- GP 正式 clone 全量 Python 回归（含真实生成链）：883 通过、1 项既有仪式 GUI 断言失败，耗时 136.55 秒。
 - GP Node：127 通过，1 个既有缺失模块测试失败。
 - 两边独立浏览器验收通过；GP 实际加载 56 个通用奇观和 139 个独特奇观。
 - GP `scripts/build.py --check --date 2026-10-26` 通过：50 个生产者、81 项输出一致性、189 个游戏文本文件静态检查。
 - TV 全量静态验证：181 个游戏文本文件，无错误或警告。
 - 两边 `scripts/validate.py --changed --fix --ai-report`、routing 检查和 lint fixtures 的最终结果见机器记录。
 - 实际所有 action 的注册检查通过，没有新增 suppressions 或移除五字段检查。
+
+正式 clone 已独立 bootstrap、构建校验、来源校验、Web/Node/浏览器回归，并成功打包四个目录到自己的 `build/`；无 staging origin 或 Git alternates。
 
 没有启动 EU5、加载存档、测试多人游戏或调用第三方 mod 运行时。
 网站只做本地构建，保留 GitHub workflow；远端仓库/Pages 的后续设置尚未执行。

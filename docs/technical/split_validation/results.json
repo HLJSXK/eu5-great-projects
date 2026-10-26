@@ -19,7 +19,7 @@
     },
     "static_changed": {
       "pass": true,
-      "files_checked": 58
+      "files_checked": 74
     },
     "slow_selection": {
       "passed": 203,
@@ -56,6 +56,23 @@
         "tv_wonder_unique_bangkok_grand_palace",
         "tv_wonder_unique_wat_arun"
       ]
+    },
+    "pytest_full": {
+      "passed": 883,
+      "failed": 1,
+      "seconds": 136.55,
+      "command": "python -m pytest -q -n 4 --dist worksteal tests --basetemp=.pytest-clone-audit",
+      "preexisting_failure": "test_gui_only_ritual_variables_are_suppressed_in_standalone_ed"
+    },
+    "mechanics_rules": "pass; 195 final buildings, 585 country modifiers, 195 location modifiers",
+    "package": {
+      "pass": true,
+      "directories": [
+        "build/tv_engineering_department",
+        "build/tv_meiou_and_taxes_compat",
+        "build/tv_standard_of_living_compat",
+        "build/tv_prosper_or_perish_compat"
+      ]
     }
   },
   "shared_knowledge": {
@@ -65,8 +82,28 @@
     "lint_fixtures_each": 60
   },
   "independent_clone": {
-    "status": "pending"
+    "status": "verified",
+    "path": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects",
+    "initial_commit": "c90007e44bc3ecdafcd66b5e2dbce2ba37bb65d8",
+    "tested_commit": "cdab9113f0f417450edffd6fc0938237fa2b34e7",
+    "build_check": true,
+    "web_check": true,
+    "provenance": true,
+    "browser": true,
+    "package": true,
+    "clean_after_verification": true,
+    "remotes": [],
+    "git_object_alternates": false,
+    "shared_base": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-base"
   },
   "deployment": "not performed",
-  "remote_publication": "not performed"
+  "remote_publication": "not performed",
+  "ownership_audit": {
+    "tv_tracked_deletions": 5457,
+    "mapped_in_gp": 5457,
+    "unmapped": 0,
+    "actual_gp_generic_actions": 35,
+    "localization_languages": 11,
+    "private_config_moved_ignored": true
+  }
 }

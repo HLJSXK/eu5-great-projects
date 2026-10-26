@@ -1,0 +1,36 @@
+=== cost_reward ===
+[OK] data/cost_reward_units.yaml: 456 units validated across 5 categories.
+[OK] data/task_pool.yaml: 0 tasks validated across 2 categories.
+=== wonder_localization ===
+Validated 195 wonders against canonical source data\wonder_localization.yaml
+Required canonical localization keys: 3351
+Generated localization files match canonical output: 2
+Concept generator output matches wonder source: src\main_menu\common\game_concepts\tv_engineering_department_wonder_mechanics_concepts.txt
+Checked manual localization overlap across 4 files
+=== localization ===
+[PASS] src: hand-authored files=82, editable EN/ZH files=10, bilingual groups=5, EN keys=1067, ZH keys=1067, missing keys=0
+=== generators ===
+[PASS] runnable generators: 50
+[PASS] generators src/compat: 4
+[PASS] generators src/in_game/common/auto_modifiers: 1
+[PASS] generators src/in_game/common/building_types: 3
+[PASS] generators src/in_game/common/customizable_localization: 1
+[PASS] generators src/in_game/common/decisions: 1
+[PASS] generators src/in_game/common/generic_actions: 1
+[PASS] generators src/in_game/common/on_action: 3
+[PASS] generators src/in_game/common/scripted_effects: 14
+[PASS] generators src/in_game/common/scripted_triggers: 3
+[PASS] generators src/in_game/common/static_modifiers: 1
+[PASS] generators src/in_game/events: 4
+[PASS] generators src/in_game/gui: 2
+[PASS] generators src/in_game/gui/panels/organization: 1
+[PASS] generators src/index: 1
+[PASS] generators src/main_menu/common/game_concepts: 1
+[PASS] generators src/main_menu/localization/english: 3
+[PASS] generators src/main_menu/localization/simp_chinese: 3
+[PASS] generators src/messagetypes: 1
+[PASS] generators src/wonder_editor_catalog: 1
+[PASS] generators src/wonder_societal_axes: 1
+=== media ===
+[PASS] registered tools: 8 (5 runnable media tools)
+[PASS] cropper images discovered: 199

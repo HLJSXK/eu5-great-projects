@@ -1,0 +1,793 @@
+TAP version 13
+# Subtest: 409 resource_busy includes server diagnostics in the shared guidance
+ok 1 - 409 resource_busy includes server diagnostics in the shared guidance
+  ---
+  duration_ms: 67.0608
+  type: 'test'
+  ...
+# Subtest: 409 resource_changed includes server diagnostics in the shared guidance
+ok 2 - 409 resource_changed includes server diagnostics in the shared guidance
+  ---
+  duration_ms: 0.9645
+  type: 'test'
+  ...
+# Subtest: 500 retains generation on the error
+ok 3 - 500 retains generation on the error
+  ---
+  duration_ms: 1.2441
+  type: 'test'
+  ...
+# Subtest: 500 retains log_text on the error
+ok 4 - 500 retains log_text on the error
+  ---
+  duration_ms: 0.8948
+  type: 'test'
+  ...
+# Subtest: non-JSON error bodies are consumed once and retain the original text
+ok 5 - non-JSON error bodies are consumed once and retain the original text
+  ---
+  duration_ms: 2.1301
+  type: 'test'
+  ...
+# Subtest: a successful response returns JSON and forwards request options unchanged
+ok 6 - a successful response returns JSON and forwards request options unchanged
+  ---
+  duration_ms: 2.5267
+  type: 'test'
+  ...
+# Subtest: an unrecognized 409 keeps its diagnostic instead of reporting a stale resource
+ok 7 - an unrecognized 409 keeps its diagnostic instead of reporting a stale resource
+  ---
+  duration_ms: 1.3832
+  type: 'test'
+  ...
+# Subtest: structured validation details remain inspectable and produce a readable message
+ok 8 - structured validation details remain inspectable and produce a readable message
+  ---
+  duration_ms: 1.2672
+  type: 'test'
+  ...
+# Subtest: empty detail falls back to the raw response and custom messages keep diagnostics
+ok 9 - empty detail falls back to the raw response and custom messages keep diagnostics
+  ---
+  duration_ms: 5.3821
+  type: 'test'
+  ...
+# Subtest: filters cost/reward rows by id and bilingual loc text
+ok 10 - filters cost/reward rows by id and bilingual loc text
+  ---
+  duration_ms: 7.1197
+  type: 'test'
+  ...
+# Subtest: dirty row collection ignores empty field maps and supports only-dirty filtering
+ok 11 - dirty row collection ignores empty field maps and supports only-dirty filtering
+  ---
+  duration_ms: 0.7876
+  type: 'test'
+  ...
+# Subtest: filter and only-dirty conditions compose without changing token order
+ok 12 - filter and only-dirty conditions compose without changing token order
+  ---
+  duration_ms: 1.0023
+  type: 'test'
+  ...
+# Subtest: value notes stay within the comments-backed category meanings
+ok 13 - value notes stay within the comments-backed category meanings
+  ---
+  duration_ms: 5.0478
+  type: 'test'
+  ...
+# Subtest: commit cannot switch the selected image and only updates the active draft
+ok 14 - commit cannot switch the selected image and only updates the active draft
+  ---
+  duration_ms: 13.5371
+  type: 'test'
+  ...
+# Subtest: wheel resize is ignored while a commit is pending
+ok 15 - wheel resize is ignored while a commit is pending
+  ---
+  duration_ms: 5.7486
+  type: 'test'
+  ...
+# Subtest: arrow navigation only handles the visible cropper when focus is outside form controls
+ok 16 - arrow navigation only handles the visible cropper when focus is outside form controls
+  ---
+  duration_ms: 8.8956
+  type: 'test'
+  ...
+# Subtest: a commit conflict keeps the draft until an explicit reload advances the base
+ok 17 - a commit conflict keeps the draft until an explicit reload advances the base
+  ---
+  duration_ms: 58.3102
+  type: 'test'
+  ...
+# Subtest: cropper unlocks after 404 without discarding the crop
+ok 18 - cropper unlocks after 404 without discarding the crop
+  ---
+  duration_ms: 4.4015
+  type: 'test'
+  ...
+# Subtest: cropper unlocks after 422 without discarding the crop
+ok 19 - cropper unlocks after 422 without discarding the crop
+  ---
+  duration_ms: 15.9688
+  type: 'test'
+  ...
+# Subtest: catalogue renders one section per root/domain in catalogue order, with counts and rows
+ok 20 - catalogue renders one section per root/domain in catalogue order, with counts and rows
+  ---
+  duration_ms: 40.3381
+  type: 'test'
+  ...
+# Subtest: run stays disabled until a script is selected; group toggle and order follow the click order
+ok 21 - run stays disabled until a script is selected; group toggle and order follow the click order
+  ---
+  duration_ms: 2.6613
+  type: 'test'
+  ...
+# Subtest: a run sends the selected scripts in order and renders steps and artifacts through the shared renderer
+ok 22 - a run sends the selected scripts in order and renders steps and artifacts through the shared renderer
+  ---
+  duration_ms: 2.1983
+  type: 'test'
+  ...
+# Subtest: dry_run reports skipped steps, no artifacts and says nothing was executed or written
+ok 23 - dry_run reports skipped steps, no artifacts and says nothing was executed or written
+  ---
+  duration_ms: 0.8352
+  type: 'test'
+  ...
+# Subtest: a timed-out step renders through the shared report instead of a raw identifier
+ok 24 - a timed-out step renders through the shared report instead of a raw identifier
+  ---
+  duration_ms: 0.9026
+  type: 'test'
+  ...
+# Subtest: a failed run reports the server detail as an error and releases the panel
+ok 25 - a failed run reports the server detail as an error and releases the panel
+  ---
+  duration_ms: 0.6465
+  type: 'test'
+  ...
+# Subtest: rows and actions are locked while a run is in flight
+ok 26 - rows and actions are locked while a run is in flight
+  ---
+  duration_ms: 0.885
+  type: 'test'
+  ...
+# Subtest: the page entry loads the catalogue once, only when the generators tab is activated
+ok 27 - the page entry loads the catalogue once, only when the generators tab is activated
+  ---
+  duration_ms: 68.7067
+  type: 'test'
+  ...
+# Subtest: importing the shell activates the first tab and dispatches tool-activated once
+ok 28 - importing the shell activates the first tab and dispatches tool-activated once
+  ---
+  duration_ms: 4.6869
+  type: 'test'
+  ...
+# Subtest: the dirty registry adds and removes entries and only notifies on a real change
+ok 29 - the dirty registry adds and removes entries and only notifies on a real change
+  ---
+  duration_ms: 3.5765
+  type: 'test'
+  ...
+# Subtest: a dirty tool paints its tab dot and an active job shows the running marker
+ok 30 - a dirty tool paints its tab dot and an active job shows the running marker
+  ---
+  duration_ms: 1.2619
+  type: 'test'
+  ...
+# Subtest: beforeunload is only blocked while some tool is dirty
+ok 31 - beforeunload is only blocked while some tool is dirty
+  ---
+  duration_ms: 1.1471
+  type: 'test'
+  ...
+# Subtest: ResourceState reports only real dirty transitions through onDirtyChange
+ok 32 - ResourceState reports only real dirty transitions through onDirtyChange
+  ---
+  duration_ms: 1.2632
+  type: 'test'
+  ...
+# Subtest: operation groups split running, failed and finished without repeating a row
+ok 33 - operation groups split running, failed and finished without repeating a row
+  ---
+  duration_ms: 81.7933
+  type: 'test'
+  ...
+# Subtest: a multi-resource operation marks every tab that owns one of its resources
+ok 34 - a multi-resource operation marks every tab that owns one of its resources
+  ---
+  duration_ms: 1.8203
+  type: 'test'
+  ...
+# Subtest: the operations list renders loaded, empty and failed states and escapes payloads
+ok 35 - the operations list renders loaded, empty and failed states and escapes payloads
+  ---
+  duration_ms: 2.5338
+  type: 'test'
+  ...
+# Subtest: a poll refresh keeps an expanded row open and the next first click still expands
+ok 36 - a poll refresh keeps an expanded row open and the next first click still expands
+  ---
+  duration_ms: 24.549
+  type: 'test'
+  ...
+# Subtest: the page entry loads only when the localization tab is activated, and only once
+ok 37 - the page entry loads only when the localization tab is activated, and only once
+  ---
+  duration_ms: 98.23
+  type: 'test'
+  ...
+# Subtest: files are indexed into one group per logical file, with generated pairs read-only
+ok 38 - files are indexed into one group per logical file, with generated pairs read-only
+  ---
+  duration_ms: 1.1969
+  type: 'test'
+  ...
+# Subtest: read-only comes from either file of the pair, so the other language cannot bypass it
+ok 39 - read-only comes from either file of the pair, so the other language cannot bypass it
+  ---
+  duration_ms: 0.4529
+  type: 'test'
+  ...
+# Subtest: missing translations are counted in both directions and the summary matches the pairs
+ok 40 - missing translations are counted in both directions and the summary matches the pairs
+  ---
+  duration_ms: 0.5486
+  type: 'test'
+  ...
+# Subtest: filters split by missing and edited, and search matches key or either language
+ok 41 - filters split by missing and edited, and search matches key or either language
+  ---
+  duration_ms: 0.9995
+  type: 'test'
+  ...
+# Subtest: a new key must carry both languages, and only real changes reach the request
+ok 42 - a new key must carry both languages, and only real changes reach the request
+  ---
+  duration_ms: 1.0665
+  type: 'test'
+  ...
+# Subtest: the panel loads the resource, renders both columns and reports the missing counts
+ok 43 - the panel loads the resource, renders both columns and reports the missing counts
+  ---
+  duration_ms: 5.093
+  type: 'test'
+  ...
+# Subtest: \#G content\#! renders as a colored span, and \#Gfoo\#! degrades instead of absorbing its content
+ok 44 - \#G content\#! renders as a colored span, and \#Gfoo\#! degrades instead of absorbing its content
+  ---
+  duration_ms: 6.0427
+  type: 'test'
+  ...
+# Subtest: $X$ renders as a variable placeholder and is never expanded
+ok 45 - $X$ renders as a variable placeholder and is never expanded
+  ---
+  duration_ms: 0.5939
+  type: 'test'
+  ...
+# Subtest: [trust|e] renders as a localization function call and its argument is kept
+ok 46 - [trust|e] renders as a localization function call and its argument is kept
+  ---
+  duration_ms: 0.5853
+  type: 'test'
+  ...
+# Subtest: \\n becomes a line break and a physical newline does too
+ok 47 - \\n becomes a line break and a physical newline does too
+  ---
+  duration_ms: 0.2749
+  type: 'test'
+  ...
+# Subtest: unclosed markup degrades: the marker is reported and nothing crashes
+ok 48 - unclosed markup degrades: the marker is reported and nothing crashes
+  ---
+  duration_ms: 0.5644
+  type: 'test'
+  ...
+# Subtest: unsupported markup is labeled, not faked: @icon! and unknown tags
+ok 49 - unsupported markup is labeled, not faked: @icon! and unknown tags
+  ---
+  duration_ms: 0.261
+  type: 'test'
+  ...
+# Subtest: nested tags keep their order and every text run is escaped
+ok 50 - nested tags keep their order and every text run is escaped
+  ---
+  duration_ms: 0.3812
+  type: 'test'
+  ...
+# Subtest: plain text drops supported markup and keeps line breaks
+ok 51 - plain text drops supported markup and keeps line breaks
+  ---
+  duration_ms: 0.2288
+  type: 'test'
+  ...
+# Subtest: an interrupted publication warns about formal outputs and retained backups
+ok 52 - an interrupted publication warns about formal outputs and retained backups
+  ---
+  duration_ms: 18.9074
+  type: 'test'
+  ...
+# Subtest: a job interrupted before it started does not warn about partial publication
+ok 53 - a job interrupted before it started does not warn about partial publication
+  ---
+  duration_ms: 0.9634
+  type: 'test'
+  ...
+# Subtest: discarded intermediate files are separate from formal output conflicts
+ok 54 - discarded intermediate files are separate from formal output conflicts
+  ---
+  duration_ms: 1.9329
+  type: 'test'
+  ...
+# Subtest: a late poll after cancellation cannot append duplicate lines
+ok 55 - a late poll after cancellation cannot append duplicate lines
+  ---
+  duration_ms: 37.7657
+  type: 'test'
+  ...
+# Subtest: a late response from an earlier job cannot change the current job
+ok 56 - a late response from an earlier job cannot change the current job
+  ---
+  duration_ms: 3.3537
+  type: 'test'
+  ...
+# Subtest: transient polling failure retains the cursor and logs, then resumes
+ok 57 - transient polling failure retains the cursor and logs, then resumes
+  ---
+  duration_ms: 2.7478
+  type: 'test'
+  ...
+# Subtest: a nontransient polling failure allows stopping without losing the job or accepting late responses
+ok 58 - a nontransient polling failure allows stopping without losing the job or accepting late responses
+  ---
+  duration_ms: 3.3249
+  type: 'test'
+  ...
+# Subtest: 404 stops tracking and unlocks the form while preserving diagnostics
+ok 59 - 404 stops tracking and unlocks the form while preserving diagnostics
+  ---
+  duration_ms: 2.2133
+  type: 'test'
+  ...
+# Subtest: 410 stops tracking and unlocks the form while preserving diagnostics
+ok 60 - 410 stops tracking and unlocks the form while preserving diagnostics
+  ---
+  duration_ms: 1.5152
+  type: 'test'
+  ...
+# Subtest: cancellation failure remains visible across polling and allows another cancel
+ok 61 - cancellation failure remains visible across polling and allows another cancel
+  ---
+  duration_ms: 3.1927
+  type: 'test'
+  ...
+# Subtest: a cancellation failure is cleared once the job reaches a terminal state
+ok 62 - a cancellation failure is cleared once the job reaches a terminal state
+  ---
+  duration_ms: 0.7957
+  type: 'test'
+  ...
+# Subtest: same-cursor terminal cancellation discards a late running response
+ok 63 - same-cursor terminal cancellation discards a late running response
+  ---
+  duration_ms: 0.9774
+  type: 'test'
+  ...
+# Subtest: a job detached by Stop tracking stays cancellable and resumes tracking from the cancel snapshot
+ok 64 - a job detached by Stop tracking stays cancellable and resumes tracking from the cancel snapshot
+  ---
+  duration_ms: 8.2982
+  type: 'test'
+  ...
+# Subtest: accepted cancellation reports a rendering failure without claiming the request failed
+ok 65 - accepted cancellation reports a rendering failure without claiming the request failed
+  ---
+  duration_ms: 2.2703
+  type: 'test'
+  ...
+# Subtest: media bootstrap failure reaches the copyable log
+ok 66 - media bootstrap failure reaches the copyable log
+  ---
+  duration_ms: 45.3453
+  type: 'test'
+  ...
+# Subtest: media submit failure reaches the copyable log
+ok 67 - media submit failure reaches the copyable log
+  ---
+  duration_ms: 6.8203
+  type: 'test'
+  ...
+# Subtest: requests freeze editing and duplicates, and failure retains draft and base
+ok 68 - requests freeze editing and duplicates, and failure retains draft and base
+  ---
+  duration_ms: 3.5304
+  type: 'test'
+  ...
+# Subtest: replacing a resource ignores both stale success and stale failure
+ok 69 - replacing a resource ignores both stale success and stale failure
+  ---
+  duration_ms: 0.774
+  type: 'test'
+  ...
+# Subtest: applying a replacement keeps the request busy and reports render failures
+ok 70 - applying a replacement keeps the request busy and reports render failures
+  ---
+  duration_ms: 0.5103
+  type: 'test'
+  ...
+# Subtest: a render failure during polling is reported and keeps an active job polling
+ok 71 - a render failure during polling is reported and keeps an active job polling
+  ---
+  duration_ms: 2.0332
+  type: 'test'
+  ...
+# Subtest: shared logs, tabs and HTML escaping keep data as text and restore newly rendered controls
+ok 72 - shared logs, tabs and HTML escaping keep data as text and restore newly rendered controls
+  ---
+  duration_ms: 4.4591
+  type: 'test'
+  ...
+# Subtest: generation diagnostics include the operation, attempted artifacts and separate recovery result
+ok 73 - generation diagnostics include the operation, attempted artifacts and separate recovery result
+  ---
+  duration_ms: 0.7906
+  type: 'test'
+  ...
+# Subtest: preview renders structured values and derived file hashes without interpreting HTML
+ok 74 - preview renders structured values and derived file hashes without interpreting HTML
+  ---
+  duration_ms: 13.2913
+  type: 'test'
+  ...
+# Subtest: Wonder text and structure preview preserves newlines and differentiates deletion from null
+ok 75 - Wonder text and structure preview preserves newlines and differentiates deletion from null
+  ---
+  duration_ms: 2.3777
+  type: 'test'
+  ...
+# Subtest: save previews before commit, blocks duplicates, and commits the exact confirmed request
+ok 76 - save previews before commit, blocks duplicates, and commits the exact confirmed request
+  ---
+  duration_ms: 58.981
+  type: 'test'
+  ...
+# Subtest: return from preview keeps the draft and never commits
+ok 77 - return from preview keeps the draft and never commits
+  ---
+  duration_ms: 2.773
+  type: 'test'
+  ...
+# Subtest: escape from preview keeps the draft and never commits
+ok 78 - escape from preview keeps the draft and never commits
+  ---
+  duration_ms: 5.1192
+  type: 'test'
+  ...
+# Subtest: preview failure shows diagnostics and keeps the draft and base
+ok 79 - preview failure shows diagnostics and keeps the draft and base
+  ---
+  duration_ms: 1.7198
+  type: 'test'
+  ...
+# Subtest: commit failure shows diagnostics and keeps the draft and base
+ok 80 - commit failure shows diagnostics and keeps the draft and base
+  ---
+  duration_ms: 2.8757
+  type: 'test'
+  ...
+# Subtest: reload requires approval for a dirty draft and discards it only on success
+ok 81 - reload requires approval for a dirty draft and discards it only on success
+  ---
+  duration_ms: 1.5338
+  type: 'test'
+  ...
+# Subtest: both job panels show identical file reports, validation errors and retained-backup diagnostics
+ok 82 - both job panels show identical file reports, validation errors and retained-backup diagnostics
+  ---
+  duration_ms: 1.4635
+  type: 'test'
+  ...
+# Subtest: initial load failure does not claim a draft was preserved
+ok 83 - initial load failure does not claim a draft was preserved
+  ---
+  duration_ms: 0.741
+  type: 'test'
+  ...
+# Subtest: committed source paths are announced even when the saved page cannot render
+ok 84 - committed source paths are announced even when the saved page cannot render
+  ---
+  duration_ms: 6.2802
+  type: 'test'
+  ...
+# Subtest: intersecting writes from another editor refresh once after the active request
+ok 85 - intersecting writes from another editor refresh once after the active request
+  ---
+  duration_ms: 4.2907
+  type: 'test'
+  ...
+# Subtest: job panel errors put the diagnostic before the operation report
+ok 86 - job panel errors put the diagnostic before the operation report
+  ---
+  duration_ms: 1.7323
+  type: 'test'
+  ...
+# Subtest: pass, warnings and errors responses render their summary, state and grouped item counts
+ok 87 - pass, warnings and errors responses render their summary, state and grouped item counts
+  ---
+  duration_ms: 50.6945
+  type: 'test'
+  ...
+# Subtest: 400/504/500 responses show an incomplete validation, not a pass or a rule failure
+ok 88 - 400/504/500 responses show an incomplete validation, not a pass or a rule failure
+  ---
+  duration_ms: 3.4619
+  type: 'test'
+  ...
+# Subtest: a save during a running validation queues exactly one follow-up run
+ok 89 - a save during a running validation queues exactly one follow-up run
+  ---
+  duration_ms: 6.4042
+  type: 'test'
+  ...
+# Subtest: the page instance validates on resource-saved and editor_panel emits it only after a successful commit
+ok 90 - the page instance validates on resource-saved and editor_panel emits it only after a successful commit
+  ---
+  duration_ms: 19.7385
+  type: 'test'
+  ...
+# Subtest: field drafts add, restore, and remove empty pages without replacing other draft content
+ok 91 - field drafts add, restore, and remove empty pages without replacing other draft content
+  ---
+  duration_ms: 15.6773
+  type: 'test'
+  ...
+# Subtest: structured field drafts restore editor options and update name and initial-level previews
+ok 92 - structured field drafts restore editor options and update name and initial-level previews
+  ---
+  duration_ms: 1.4219
+  type: 'test'
+  ...
+# Subtest: name and initial-level keys share one definition with the page
+ok 93 - name and initial-level keys share one definition with the page
+  ---
+  duration_ms: 0.4163
+  type: 'test'
+  ...
+# Subtest: wonder search includes IDs, keys, bilingual names, concepts, kinds and sizes
+ok 94 - wonder search includes IDs, keys, bilingual names, concepts, kinds and sizes
+  ---
+  duration_ms: 4.9563
+  type: 'test'
+  ...
+# Subtest: wonder mode filtering preserves order and references without changing the input list
+ok 95 - wonder mode filtering preserves order and references without changing the input list
+  ---
+  duration_ms: 0.5348
+  type: 'test'
+  ...
+# Subtest: key lookup distinguishes a generic prototype from a unique wonder with the same key
+ok 96 - key lookup distinguishes a generic prototype from a unique wonder with the same key
+  ---
+  duration_ms: 0.2864
+  type: 'test'
+  ...
+# Subtest: image alt text accepts summaries and details with bilingual and key fallbacks
+ok 97 - image alt text accepts summaries and details with bilingual and key fallbacks
+  ---
+  duration_ms: 0.2897
+  type: 'test'
+  ...
+# Subtest: initial-level labels distinguish absent, existing and invalid draft values
+ok 98 - initial-level labels distinguish absent, existing and invalid draft values
+  ---
+  duration_ms: 0.2842
+  type: 'test'
+  ...
+# Subtest: reload confirms all page drafts and publishes resource and detail together
+ok 99 - reload confirms all page drafts and publishes resource and detail together
+  ---
+  duration_ms: 68.2434
+  type: 'test'
+  ...
+# Subtest: cancelled reload keeps drafts/base without requests
+ok 100 - cancelled reload keeps drafts/base without requests
+  ---
+  duration_ms: 0.7186
+  type: 'test'
+  ...
+# Subtest: initial detail failure leaves the summary loaded and retry can select the first wonder
+ok 101 - initial detail failure leaves the summary loaded and retry can select the first wonder
+  ---
+  duration_ms: 2.0298
+  type: 'test'
+  ...
+# Subtest: failed resource reload retains all drafts/base/detail
+ok 102 - failed resource reload retains all drafts/base/detail
+  ---
+  duration_ms: 1.5225
+  type: 'test'
+  ...
+# Subtest: failed detail reload retains all drafts/base/detail
+ok 103 - failed detail reload retains all drafts/base/detail
+  ---
+  duration_ms: 2.16
+  type: 'test'
+  ...
+# Subtest: failed catalog reload retains all drafts/base/detail
+ok 104 - failed catalog reload retains all drafts/base/detail
+  ---
+  duration_ms: 1.6325
+  type: 'test'
+  ...
+# Subtest: save uses the immediately tracked page drafts for preview and commit
+ok 105 - save uses the immediately tracked page drafts for preview and commit
+  ---
+  duration_ms: 11.4382
+  type: 'test'
+  ...
+# Subtest: cancel from preview keeps all drafts and base
+ok 106 - cancel from preview keeps all drafts and base
+  ---
+  duration_ms: 1.616
+  type: 'test'
+  ...
+# Subtest: escape from preview keeps all drafts and base
+ok 107 - escape from preview keeps all drafts and base
+  ---
+  duration_ms: 1.4022
+  type: 'test'
+  ...
+# Subtest: preview 409 keeps drafts and diagnostics
+ok 108 - preview 409 keeps drafts and diagnostics
+  ---
+  duration_ms: 1.7081
+  type: 'test'
+  ...
+# Subtest: preview 500 keeps drafts and diagnostics
+ok 109 - preview 500 keeps drafts and diagnostics
+  ---
+  duration_ms: 1.1053
+  type: 'test'
+  ...
+# Subtest: commit 409 keeps drafts and diagnostics
+ok 110 - commit 409 keeps drafts and diagnostics
+  ---
+  duration_ms: 5.5221
+  type: 'test'
+  ...
+# Subtest: commit 500 keeps drafts and diagnostics
+ok 111 - commit 500 keeps drafts and diagnostics
+  ---
+  duration_ms: 1.984
+  type: 'test'
+  ...
+# Subtest: repeated failures replace the previous operation report
+ok 112 - repeated failures replace the previous operation report
+  ---
+  duration_ms: 1.7091
+  type: 'test'
+  ...
+# Subtest: committed base survives catalog failure; explicit retry only loads detail and preserves the operation report
+ok 113 - committed base survives catalog failure; explicit retry only loads detail and preserves the operation report
+  ---
+  duration_ms: 2.081
+  type: 'test'
+  ...
+# Subtest: external commits rebase every drafted page and report hidden-page original conflicts
+ok 114 - external commits rebase every drafted page and report hidden-page original conflicts
+  ---
+  duration_ms: 5.8316
+  type: 'test'
+  ...
+# Subtest: external refresh waits for an active request and preserves drafts on failure
+ok 115 - external refresh waits for an active request and preserves drafts on failure
+  ---
+  duration_ms: 3.1738
+  type: 'test'
+  ...
+# Subtest: reload falls back to the initial wonder when the selected entry was deleted
+ok 116 - reload falls back to the initial wonder when the selected entry was deleted
+  ---
+  duration_ms: 1.5218
+  type: 'test'
+  ...
+# Subtest: a successful commit with failed rendering retains the new base and offers detail retry
+ok 117 - a successful commit with failed rendering retains the new base and offers detail retry
+  ---
+  duration_ms: 3.4421
+  type: 'test'
+  ...
+# Subtest: ritual prompt builder keeps display order, nested values and translated title
+not ok 118 - ritual prompt builder keeps display order, nested values and translated title
+  ---
+  duration_ms: 1.1415
+  type: 'test'
+  location: 'C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\tests\\wonder_rituals.cjs:6:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot find module 'C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\great_projects_editor_web\\static\\wonder_rituals.js' imported from C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\tests\\wonder_rituals.cjs"
+  code: 'ERR_MODULE_NOT_FOUND'
+  stack: |-
+    finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    moduleResolve (node:internal/modules/esm/resolve:859:10)
+    defaultResolve (node:internal/modules/esm/resolve:983:11)
+    #cachedDefaultResolve (node:internal/modules/esm/loader:717:20)
+    ModuleLoader.resolve (node:internal/modules/esm/loader:694:38)
+    ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:308:38)
+    onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:650:36)
+    TracingChannel.tracePromise (node:diagnostics_channel:344:14)
+    ModuleLoader.import (node:internal/modules/esm/loader:649:21)
+    defaultImportModuleDynamicallyForScript (node:internal/modules/esm/utils:235:31)
+  ...
+# Subtest: text normalization preserves multiline content and flattens localization lines
+ok 119 - text normalization preserves multiline content and flattens localization lines
+  ---
+  duration_ms: 1.9154
+  type: 'test'
+  ...
+# Subtest: structured field detection, stable serialization and cloning retain source data
+ok 120 - structured field detection, stable serialization and cloning retain source data
+  ---
+  duration_ms: 0.4859
+  type: 'test'
+  ...
+# Subtest: editor catalogs strip recursively and restore without replacing edited source values
+ok 121 - editor catalogs strip recursively and restore without replacing edited source values
+  ---
+  duration_ms: 1.1852
+  type: 'test'
+  ...
+# Subtest: numeric and row conversion preserves scripts and ignores unfinished preview rows
+ok 122 - numeric and row conversion preserves scripts and ignores unfinished preview rows
+  ---
+  duration_ms: 0.7154
+  type: 'test'
+  ...
+# Subtest: option normalization preserves metadata and provides searchable primary and secondary labels
+ok 123 - option normalization preserves metadata and provides searchable primary and secondary labels
+  ---
+  duration_ms: 0.4553
+  type: 'test'
+  ...
+# Subtest: site trigger rendering preserves custom, empty, single and OR-with-required scripts
+ok 124 - site trigger rendering preserves custom, empty, single and OR-with-required scripts
+  ---
+  duration_ms: 196.3748
+  type: 'test'
+  ...
+# Subtest: site preference renders conditional bonuses, scaling and one final variable cleanup
+ok 125 - site preference renders conditional bonuses, scaling and one final variable cleanup
+  ---
+  duration_ms: 0.8409
+  type: 'test'
+  ...
+# Subtest: YAML rendering keeps nested lists, empty values, Unicode and multiline scalar quoting
+ok 126 - YAML rendering keeps nested lists, empty values, Unicode and multiline scalar quoting
+  ---
+  duration_ms: 0.7992
+  type: 'test'
+  ...
+# Subtest: field previews select the correct payload, source path and indentation
+ok 127 - field previews select the correct payload, source path and indentation
+  ---
+  duration_ms: 0.8524
+  type: 'test'
+  ...
+# Subtest: frontend YAML previews and scripts agree with backend normalization of the same editor states
+ok 128 - frontend YAML previews and scripts agree with backend normalization of the same editor states
+  ---
+  duration_ms: 165.2676
+  type: 'test'
+  ...
+1..128
+# tests 128
+# suites 0
+# pass 127
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 892.0818
