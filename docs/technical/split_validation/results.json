@@ -19,14 +19,16 @@
     },
     "static_changed": {
       "pass": true,
-      "files_checked": 74
+      "files_checked": 137,
+      "phase": "final TV handoff diff after all ownership transfers"
     },
     "slow_selection": {
       "passed": 203,
       "failed": 2,
       "preexisting": "prices.30 religion condition shape changed in unchanged victory_task_codegen.py"
     },
-    "browser": "pass; 6 tabs, foreign route 404, read-only preview, 1440/900px"
+    "browser": "pass; 6 tabs, foreign route 404, read-only preview, 1440/900px",
+    "diff_check": "pass"
   },
   "gp": {
     "build_check": {
