@@ -1,0 +1,392 @@
+[
+  {
+    "path": "ai_gui_assessment/.gitignore",
+    "disposition": "move_after_verified_commit",
+    "sha256": "429656f9e7c4ff7ba7298cfcf87fa191bdc2d8547ee469d916a39b7721606b6a",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/README.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "843fac09ebb2610adb8c03cd47044e34b8edabc4da7004df1d47ae6eca054b82",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/engineering.py",
+    "disposition": "move_after_verified_commit",
+    "sha256": "8a39e5cf4d4a8e20d76bc649bd2fc2ab5501994842757a2ccdc3b8ccaaf0e00f",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/fixtures/ceremony_plain.json",
+    "disposition": "move_after_verified_commit",
+    "sha256": "d5bc73644d5b8478fc56184039a8b2d21b84133d673baeff0d0251a64f66b237",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/fixtures/ceremony_style_2.json",
+    "disposition": "move_after_verified_commit",
+    "sha256": "56f327aee3ed817c83df930d3d18c4859f9c27adbb7ec1f9d7799a34d9a347ad",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/fixtures/ceremony_style_3.json",
+    "disposition": "move_after_verified_commit",
+    "sha256": "2f66bbd02c7191289330d9ff28852ca79abf133951cff1b3b1ad8abffcbc5a74",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/fixtures/hagia_overview.json",
+    "disposition": "move_after_verified_commit",
+    "sha256": "e34b32e7ed4290a999968f21c5f547ad818ef3a6ce30ee1621d8cff6425f8d0b",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/fixtures/ritual_details_open.json",
+    "disposition": "move_after_verified_commit",
+    "sha256": "da3c2bf8d247f41081bfc54b9573a39016606d46057764e51183a43028f2e40e",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/priority_proposal/draft_loc_simp_chinese.yml",
+    "disposition": "move_after_verified_commit",
+    "sha256": "80eb90d4bf18adabe0a597cb75da4cb0d64a5c51bd297ae366d7d518eb8284f1",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/priority_proposal/scheme_a_grouped_list.gui",
+    "disposition": "move_after_verified_commit",
+    "sha256": "ab26c3f9667f5fed984c4f78ef7baeb8dfb5be19bcdb975ca5f62210a3e70c07",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/README.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "384f287bcf5325b7d37826bfdfc59b131db8b3dd0d543ca8bbe8b5035e45fac4",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/compare.py",
+    "disposition": "move_after_verified_commit",
+    "sha256": "6df9ec73613d645a4d13508b11a10eff84b633a43b27003572ea44e766ee144b",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/draft_loc_simp_chinese.yml",
+    "disposition": "move_after_verified_commit",
+    "sha256": "e9af974d207906b0fabce163bf331fafe2c8ba5f23b0321fc744a4edd137dc1c",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/renders/compare_progress.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "b60cc867c84d44c61c2a5afadec4f6158b9a7adb7d524db4c38f5ed823818e30",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/renders/compare_select.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "9af255a4f9c73b31959af53dc0a480ffd3778b998c845efecb1628750676affd",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_progress.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "713e9aad29d1059d32d513c5448bc1e03c1cb0f985f3de3cb6607bbb7cd52ead",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_select.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "2eff77f34272dca7d47bb913da42aea2b79ef5533c9c91a9c4b1e23c16b67071",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_progress.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "fdb175dce3bafdb369a5e65991cee35f9763c89e096a83abc7b7d80be067f13c",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_select.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "67381290bd5f2819892b97d4f8f6bb98d936d812197713e93c0af41cbef1e10c",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_progress.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "4a1d4570f286f3cead3d139aadc7c13eca110a5a792886972544b2554d00fb6c",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_select.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "7e6df9c4f3215082b9cd987bea6abaf69d6daaeb07c6374a9534cf00047c03d2",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych.gui",
+    "disposition": "move_after_verified_commit",
+    "sha256": "26126bcec64a5a531ec2220f57acc9674360697cc94e327d8c7b6bd6bce6bb72",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych_progress.gui",
+    "disposition": "move_after_verified_commit",
+    "sha256": "173453694569341301af8b9d0877c0aef051c496a69488dcfd11bc7e1493614b",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger.gui",
+    "disposition": "move_after_verified_commit",
+    "sha256": "b43f581e7f98382324f139011ed1c7c96991f0549b4bfc1c168673bf159cec56",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger_progress.gui",
+    "disposition": "move_after_verified_commit",
+    "sha256": "ebb05630166248a353662eb24a4e3cb7ef8579ee4d382f2ca39403f8c2ff84a7",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass.gui",
+    "disposition": "move_after_verified_commit",
+    "sha256": "39bd80b1d3fad6477ae654bf931ca091041659df3a3d6b913e07c0ec44b186bc",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass_progress.gui",
+    "disposition": "move_after_verified_commit",
+    "sha256": "909414722ed3951dbeab20b55fe21b020befe0479e9ab74963a1e88086fb4983",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/mockups/ritual_rework/stitch.py",
+    "disposition": "move_after_verified_commit",
+    "sha256": "f4199c6c70fa34b5017458773324fa38328149206b2a1b063e999d3cfc8856f3",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/priority_proposal_mockups.py",
+    "disposition": "move_after_verified_commit",
+    "sha256": "b51d780ab41af7e47d036272a9cc5d3afb637ae6d04572d80a58584da4e59e10",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/ritual_rework_mockups.py",
+    "disposition": "move_after_verified_commit",
+    "sha256": "de6053c5a8787d2c712879b0d0b6e33ee3f17283e99e240500a3587dd1f61ebe",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "ai_gui_assessment/tests/test_engineering.py",
+    "disposition": "move_after_verified_commit",
+    "sha256": "e7aec2d22d4bc42ae644947e021e0a60887b3e7e872b0be7c09ca241208d416e",
+    "evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+  },
+  {
+    "path": "docs/marketing/assets/finish_en.jpg",
+    "disposition": "move_after_verified_commit",
+    "sha256": "9761ade7e0140d33557e5d961303a791142939e6d0a80ec5911c226356948518",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/finish_zh.jpg",
+    "disposition": "move_after_verified_commit",
+    "sha256": "0595a228bda8bd52624a77549b149dd45384487ecef53cc78188d63082b2b8af",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/gen_hero_banner.py",
+    "disposition": "move_after_verified_commit",
+    "sha256": "34b5aae24709046ace191ebf90ca314f2f5ab5dce0102af741d4620835630c81",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/hero_banner_en.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "71c07e7a83e001f8f121fdb415e038a8722c025ac51bb000aaec277be1f1d941",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/hero_banner_zh.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "69f37638d6055f8e31421a0c2f658923b22e253108c1c3cb46fb6ebfb09888f6",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/location_en.jpg",
+    "disposition": "move_after_verified_commit",
+    "sha256": "cf2100f09e7a6fb030528e0bc4d0582d4cda3f9ce02c308cb5477312dd6dc096",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/location_zh.jpg",
+    "disposition": "move_after_verified_commit",
+    "sha256": "8c4093dab8d3f45e7fc94e492196577b7c472ba1420325da250abeed234a2b2b",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/org_en.jpg",
+    "disposition": "move_after_verified_commit",
+    "sha256": "4595c533dd2439cd10006c98c906d3074ea3e6c9b6e37c7fa0551855fe56438f",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/org_zh.jpg",
+    "disposition": "move_after_verified_commit",
+    "sha256": "f1b59ef33289bf935a77092b4cb11eafaa4b20e967631449459286adc889dfec",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_compatibility_en.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "529d065b4b8a8c87ead2fa484d7bdce6b2bdbae1f748828b307cb5ca8edb90ce",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_compatibility_zh.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "b880d361c7a63b8a2dd3766d2013f7e8f4ad298c6f3a7840f04156c34418963b",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_core_features_en.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "ad12f7c3756cd33044ab46dd38bcd41f7bae145c87fc92632d23286a1c862d70",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_core_features_zh.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "ea75918d6e368d2b54155b3cc86c03fd554bb3b8868a0c3c984357118e649a1b",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_credits_en.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "ab09f198ac9fdfc27760f3d89c07a3d74d40e391395d8bfd2a0ad59897fe6426",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_credits_zh.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "781ec0b0f7e3d58a7f9469bd6e08f1fdc0ed386ab067cf3a390f1728dbd8c1ee",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_links_en.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "0883c1bc905f3e786259c5a1e406aa22b6580b14856fd921fea84ef04a870ec1",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_links_zh.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "b2b7459da1308737d7466812f622d5d723c97d72cf833cf39e943dcca7e4884b",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_overview_en.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "122f5aa95f65120f33f69ee8e4413c674dbaf5b1b52de3fa020fcaed95af5913",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_overview_zh.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "f3ab89e94ca361fa21249c77f42911482b45ce833b5a96428474c4b7e58e201f",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_six_stages_en.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "7e07f135f4ab2b112df24dd1674e253e435aa03479ce04f6347e1370e2a4f657",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/assets/section_six_stages_zh.png",
+    "disposition": "move_after_verified_commit",
+    "sha256": "bb420a847025b63ae0000075873aeb544f8f99fd07eb8ddf16c726ad7261c085",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/compat_submods_workshop_en.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "993df2669be64c34474dc0907e49613aedeab568974e61ece17b8745bfed37d4",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/compat_submods_workshop_zh.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "87a591ceec7504de1d15e47c6f6c4503315b7f32e68addb982f5fd319f632a83",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/discord_modcoop_forum_en.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "169f92ae78b8272f1539554842a063986c06894ccfc50512b426c9331548af7d",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/discord_official_release_en.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "5d356be651c1235d3562f9785a761e818d77d29c1d46f0e4b0e59f613ca72e88",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/discord_update_260805_en.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "b03da54f8502b3c33fd6222b3ae3ded8e51a8300776497120ea3e5259bd5b2be",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/github_wiki_en.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "e6b356ca36310fdec2d236afb32cd52e593f6513a340deb4eff0db264cd3ef89",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/github_wiki_zh.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "ef02f93b3a696aa92922c6a3da8b93f41f59cd7d26b232fec3e7e8c8fd4e8744",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/paradox_forum_en.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "2899a376d40f9092301be53aadb68f010153daa7cb1d57af417bea85dd8fa9eb",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/qq_announcement_zh.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "bf74378a6a37f8bb904a12db67594d5ed7eeaeb7d788088b81227b6d40897333",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/reddit_post_en.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "052476d4e47ccb0dbb414e9ec50d345dcb1bd592c983a5af6fc7d1ec8994138f",
+    "evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+  },
+  {
+    "path": "docs/marketing/steam_page_en.md",
+    "disposition": "copy_shared",
+    "sha256": "62099cbda9739a63f2d01d222ac7fc5748b31e2180d35a321ba70a4b1ae3aa4b",
+    "evidence": "Mixed historical Steam draft: GP body with Standard of Living notice; preserve TV original."
+  },
+  {
+    "path": "docs/marketing/steam_page_zh.md",
+    "disposition": "copy_shared",
+    "sha256": "00d1b9da0a8259b03aec3bcb82634a694cec05f82daec652d6585c9c9cc0eeb5",
+    "evidence": "Mixed historical Steam draft: GP body with Standard of Living notice; preserve TV original."
+  },
+  {
+    "path": "docs/technical/EU5_1.4_Suez_Canal_Integration.md",
+    "disposition": "move_after_verified_commit",
+    "sha256": "f5a01990cd96c6351020360ab390a409daa49a0c63b6ac51db70383a129c3370",
+    "evidence": "Suez wonder integration is implemented in the GP wonder lifecycle."
+  }
+]

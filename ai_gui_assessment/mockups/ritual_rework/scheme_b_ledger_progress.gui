@@ -1,0 +1,141 @@
+# Scheme B (progress): ledger. Four selectable rows (three ritual styles + plain) on top; the
+# selected row opens a detail sheet with effects, the societal-value axis and every
+# estate's reaction. Sample state: style 1 selected. Draft data only.
+
+widget = {
+	size = { 462 52 }
+	using = bg_text_mask_container_dark_blue
+	text_multi = { position = { 10 6 } max_width = 442 autoresize = yes text = "RR_PROGRESS_BANNER_B" align = nobaseline|left }
+}
+
+# ---------- row 1 (selected)
+widget = {
+	size = { 462 54 }
+	using = bg_paper_card_situations
+	widget = { size = { 462 54 } background = { using = color_yellow_texture alpha = 0.2 } }
+	widget = { size = { 5 54 } background = { using = color_yellow_texture alpha = 1 } }
+	icon = { position = { 14 7 } size = { 40 40 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_right.dds" }
+	text_single = { position = { 64 6 } size = { 220 22 } text = "RR_S1_NAME" fontsize = 17 align = nobaseline|left }
+	text_single = { position = { 64 29 } size = { 240 20 } text = "RR_ROW_S1" fontsize = 13 align = nobaseline|left }
+	text_single = { parentanchor = right position = { -44 17 } size = { 120 20 } text = "RR_LOCKED" fontsize = 14 align = right|nobaseline }
+	text_single = { parentanchor = right|vcenter position = { -12 0 } size = { 24 24 } raw_text = "@trigger_yes!" }
+}
+
+# ---------- row 2
+widget = {
+	size = { 462 54 }
+	alpha = 0.4
+	using = bg_paper_card_situations
+	icon = { position = { 14 7 } size = { 40 40 } texture = "gfx/interface/icons/societal_values/land_vs_naval_right.dds" }
+	text_single = { position = { 64 6 } size = { 220 22 } text = "RR_S2_NAME" fontsize = 17 align = nobaseline|left }
+	text_single = { position = { 64 29 } size = { 240 20 } text = "RR_ROW_S2" fontsize = 13 align = nobaseline|left }
+	text_single = { parentanchor = right position = { -44 17 } size = { 120 20 } text = "RR_S2_ESTATE_SUMMARY" fontsize = 13 align = right|nobaseline }
+}
+
+# ---------- row 3
+widget = {
+	size = { 462 54 }
+	alpha = 0.4
+	using = bg_paper_card_situations
+	icon = { position = { 14 7 } size = { 40 40 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_left.dds" }
+	text_single = { position = { 64 6 } size = { 220 22 } text = "RR_S3_NAME" fontsize = 17 align = nobaseline|left }
+	text_single = { position = { 64 29 } size = { 240 20 } text = "RR_ROW_S3" fontsize = 13 align = nobaseline|left }
+	text_single = { parentanchor = right position = { -44 17 } size = { 120 20 } text = "RR_S3_ESTATE_SUMMARY" fontsize = 13 align = right|nobaseline }
+}
+
+# ---------- detail sheet
+widget = {
+	size = { 462 450 }
+	using = bg_paper_card_situations
+
+	vbox = {
+		position = { 0 0 }
+		size = { 462 450 }
+		margin = { 12 10 }
+		spacing = 6
+
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			size = { 438 26 }
+			text_single = { size = { 200 26 } text = "RR_S1_NAME" fontsize = 19 align = nobaseline|left }
+			expand = {}
+			text_single = { size = { 120 26 } text = "RR_S1_KIND" fontsize = 13 align = nobaseline|right }
+		}
+		text_multi = { layoutpolicy_horizontal = expanding max_width = 438 autoresize = yes text = "RR_C_DESC" fontsize = 13 align = nobaseline|left }
+
+		# effects: engine-generated description of the real completion effect that the
+		# ritual executes (country scope, dispatches on tv_wonder_locked + tv_wonder_ritual_choice).
+		# No hand-written effect text and no tooltip-only wrapper.
+		widget = { size = { 438 22 } background = { using = color_black_texture alpha = 0.35 } text_single = { position = { 8 0 } size = { 300 22 } text = "RR_DETAIL_EFFECTS" fontsize = 14 align = nobaseline|left } }
+		text_multi = {
+			layoutpolicy_horizontal = expanding
+			minimumsize = { 430 -1 }
+			max_width = 430
+			autoresize = yes
+			raw_text = "[ShowScriptedEffectForScope('tv_wonder_ritual_apply_choice_effect',InternationalOrganizationsView.GetPlayer.MakeScope.Self)]"
+			fontsize = 13
+			align = nobaseline|left
+		}
+
+		# value axis
+		widget = { size = { 438 22 } background = { using = color_black_texture alpha = 0.35 } text_single = { position = { 8 0 } size = { 300 22 } text = "RR_VALUE_LABEL" fontsize = 14 align = nobaseline|left } }
+		widget = {
+			size = { 438 54 }
+			icon = { position = { 0 4 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_left.dds" alpha = 0.6 }
+			icon = { position = { 402 4 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_right.dds" }
+			widget = { position = { 46 18 } size = { 346 8 } background = { using = color_black_texture alpha = 0.6 } }
+			widget = { position = { 219 14 } size = { 2 16 } background = { using = color_white_texture alpha = 0.5 } }
+			widget = { position = { 198 12 } size = { 4 20 } background = { using = color_white_texture alpha = 1 } }
+			widget = { position = { 202 19 } size = { 34 6 } background = { using = color_yellow_texture alpha = 1 } }
+			text_single = { position = { 46 30 } size = { 120 20 } text = "RR_AXIS_LEFT" fontsize = 12 align = nobaseline|left }
+			text_single = { position = { 160 30 } size = { 120 20 } text = "RR_AXIS_NOW" fontsize = 12 align = center|nobaseline }
+			text_single = { position = { 332 30 } size = { 60 20 } text = "RR_AXIS_RIGHT" fontsize = 12 align = nobaseline|right }
+		}
+
+		# estates
+		widget = { size = { 438 22 } background = { using = color_black_texture alpha = 0.35 } text_single = { position = { 8 0 } size = { 300 22 } text = "RR_ESTATES_LABEL" fontsize = 14 align = nobaseline|left } }
+		hbox = {
+			size = { 438 72 }
+			spacing = 6
+			widget = {
+				size = { 105 72 }
+				background = { using = color_market_green_texture alpha = 0.25 }
+				icon = { position = { 4 6 } size = { 36 36 } texture = "gfx/interface/icons/estates/clergy_estate.dds" }
+				text_single = { position = { 44 4 } size = { 60 20 } text = "RR_EST_CLERGY" align = nobaseline|left }
+				text_single = { position = { 44 24 } size = { 60 20 } text = "RR_SUPPORT" align = nobaseline|left }
+				text_single = { position = { 4 48 } size = { 98 20 } text = "RR_EST_RANDOM_TAG" fontsize = 12 align = nobaseline|left }
+			}
+			widget = {
+				size = { 105 72 }
+				background = { using = color_mid_red_texture alpha = 0.22 }
+				icon = { position = { 4 6 } size = { 36 36 } texture = "gfx/interface/icons/estates/nobles_estate.dds" }
+				text_single = { position = { 44 4 } size = { 60 20 } text = "RR_EST_NOBLES" align = nobaseline|left }
+				text_single = { position = { 44 24 } size = { 60 20 } text = "RR_OPPOSE" align = nobaseline|left }
+			}
+			widget = {
+				size = { 105 72 }
+				background = { using = color_mid_red_texture alpha = 0.22 }
+				icon = { position = { 4 6 } size = { 36 36 } texture = "gfx/interface/icons/estates/burghers_estate.dds" }
+				text_single = { position = { 44 4 } size = { 60 20 } text = "RR_EST_BURGHERS" align = nobaseline|left }
+				text_single = { position = { 44 24 } size = { 60 20 } text = "RR_OPPOSE" align = nobaseline|left }
+				text_single = { position = { 4 48 } size = { 98 20 } text = "RR_EST_WANTS_S2" fontsize = 12 align = nobaseline|left }
+			}
+			widget = {
+				size = { 105 72 }
+				background = { using = color_mid_red_texture alpha = 0.22 }
+				icon = { position = { 4 6 } size = { 36 36 } texture = "gfx/interface/icons/estates/peasants_estate.dds" }
+				text_single = { position = { 44 4 } size = { 60 20 } text = "RR_EST_PEASANTS" align = nobaseline|left }
+				text_single = { position = { 44 24 } size = { 60 20 } text = "RR_OPPOSE" align = nobaseline|left }
+			}
+		}
+	}
+}
+
+# ---------- progress
+widget = {
+	size = { 462 70 }
+	using = bg_text_mask_container_dark_blue
+	text_single = { position = { 12 6 } size = { 300 22 } text = "RR_PROGRESS_TITLE" fontsize = 15 align = nobaseline|left }
+	text_single = { parentanchor = right position = { -12 6 } size = { 160 22 } text = "RR_PROGRESS_TEXT" align = nobaseline|right }
+	progressbar = { position = { 12 36 } size = { 438 16 } progresstexture = "gfx/interface/progressbars/progress_bar_goldish.dds" noprogresstexture = "gfx/interface/progressbars/progress_bar_blue_alt.dds" texture_density = 2 spriteType = Corneredstretched spriteborder = { 12 0 } min = 0 max = 100 value = 42 }
+}

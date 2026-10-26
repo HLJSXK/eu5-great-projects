@@ -1,0 +1,135 @@
+# Scheme C (progress): compass. A wonder hero strip, a tab row (three styles + plain), and one
+# sheet per tab led by the societal-value axis, then the three reward carriers as
+# lit/unlit badges and the estate reactions. Sample state: style 1 tab. Draft data only.
+
+widget = {
+	size = { 462 124 }
+	using = bg_text_mask_container_dark_blue
+	icon = { position = { 6 6 } size = { 168 112 } texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_great_port.dds" }
+	text_single = { position = { 186 8 } size = { 260 26 } text = "RR_C_WONDER" fontsize = 20 align = nobaseline|left }
+	text_single = { position = { 186 36 } size = { 260 20 } text = "RR_C_SITE" fontsize = 13 align = nobaseline|left }
+	widget = {
+		position = { 186 60 }
+		size = { 150 22 }
+		background = { using = color_yellow_texture alpha = 0.25 }
+		text_single = { position = { 8 0 } size = { 140 22 } text = "RR_C_STATE_PROGRESS" fontsize = 13 align = nobaseline|left }
+	}
+	text_multi = { position = { 186 88 } max_width = 266 autoresize = yes text = "RR_PROGRESS_HINT" fontsize = 12 align = nobaseline|left }
+}
+
+hbox = {
+	layoutpolicy_horizontal = fixed
+	size = { 462 34 }
+	spacing = 4
+	button_regular = { size = { 114 32 } using = button_regular_texture_alt_green using = button_common_textobj_template text = "RR_S1_NAME" }
+	button_regular_diamond = { size = { 114 32 } alpha = 0.35 text = "RR_S2_NAME" }
+	button_regular_diamond = { size = { 114 32 } alpha = 0.35 text = "RR_S3_NAME" }
+	text_single = { size = { 106 32 } autoresize = no text = "RR_LOCKED" align = center|nobaseline }
+}
+
+widget = {
+	size = { 462 535 }
+	using = bg_paper_card_situations
+
+	vbox = {
+		position = { 0 0 }
+		size = { 462 535 }
+		margin = { 12 10 }
+		spacing = 6
+
+		text_multi = { layoutpolicy_horizontal = expanding minimumsize = { 438 -1 } max_width = 438 autoresize = yes text = "RR_C_DESC" fontsize = 13 align = nobaseline|left }
+
+		# ---- value hero
+		widget = { size = { 438 22 } background = { using = color_black_texture alpha = 0.35 } text_single = { position = { 8 0 } size = { 300 22 } text = "RR_C_VALUE_HEADER" fontsize = 14 align = nobaseline|left } }
+		widget = {
+			size = { 438 84 }
+			icon = { position = { 0 4 } size = { 56 56 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_left.dds" alpha = 0.5 }
+			icon = { position = { 382 4 } size = { 56 56 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_right.dds" }
+			text_single = { position = { 0 62 } size = { 56 20 } autoresize = no text = "RR_AXIS_LEFT" fontsize = 13 align = center|nobaseline }
+			text_single = { position = { 382 62 } size = { 56 20 } autoresize = no text = "RR_AXIS_RIGHT" fontsize = 13 align = center|nobaseline }
+			widget = { position = { 66 28 } size = { 306 10 } background = { using = color_black_texture alpha = 0.6 } }
+			widget = { position = { 66 24 } size = { 2 18 } background = { using = color_white_texture alpha = 0.4 } }
+			widget = { position = { 218 22 } size = { 2 22 } background = { using = color_white_texture alpha = 0.6 } }
+			widget = { position = { 370 24 } size = { 2 18 } background = { using = color_white_texture alpha = 0.4 } }
+			widget = { position = { 199 20 } size = { 4 26 } background = { using = color_white_texture alpha = 1 } }
+			widget = { position = { 203 29 } size = { 40 8 } background = { using = color_yellow_texture alpha = 1 } }
+			text_single = { position = { 150 46 } size = { 120 20 } autoresize = no text = "RR_AXIS_NOW" fontsize = 12 align = center|nobaseline }
+		}
+
+		# ---- reward carriers
+		widget = { size = { 438 22 } background = { using = color_black_texture alpha = 0.35 } text_single = { position = { 8 0 } size = { 300 22 } text = "RR_C_REWARD_HEADER" fontsize = 14 align = nobaseline|left } }
+		hbox = {
+			size = { 438 34 }
+			spacing = 6
+			widget = {
+				size = { 142 34 }
+				background = { using = color_yellow_texture alpha = 0.22 }
+				widget = { size = { 142 3 } background = { using = color_yellow_texture alpha = 1 } }
+				text_single = { position = { 0 7 } size = { 142 20 } autoresize = no text = "RR_KIND_COUNTRY_ICON" fontsize = 14 align = center|nobaseline }
+			}
+			widget = {
+				size = { 142 34 }
+				alpha = 0.45
+				background = { using = color_black_texture alpha = 0.25 }
+				text_single = { position = { 0 7 } size = { 142 20 } autoresize = no text = "RR_KIND_LOCATION_ICON" fontsize = 14 align = center|nobaseline }
+			}
+			widget = {
+				size = { 142 34 }
+				alpha = 0.45
+				background = { using = color_black_texture alpha = 0.25 }
+				text_single = { position = { 0 7 } size = { 142 20 } autoresize = no text = "RR_KIND_ONESHOT_ICON" fontsize = 14 align = center|nobaseline }
+			}
+		}
+
+		# ---- effects: engine-generated description of the real completion effect
+		# (dispatches on tv_wonder_locked + tv_wonder_ritual_choice). The carrier
+		# badges above are indicators only; all values come from this text.
+		widget = { size = { 438 22 } background = { using = color_black_texture alpha = 0.35 } text_single = { position = { 8 0 } size = { 300 22 } text = "RR_DETAIL_EFFECTS" fontsize = 14 align = nobaseline|left } }
+		text_multi = {
+			layoutpolicy_horizontal = expanding
+			minimumsize = { 430 -1 }
+			max_width = 430
+			autoresize = yes
+			raw_text = "[ShowScriptedEffectForScope('tv_wonder_ritual_apply_choice_effect',InternationalOrganizationsView.GetPlayer.MakeScope.Self)]"
+			fontsize = 13
+			align = nobaseline|left
+		}
+
+		# ---- estates
+		widget = { size = { 438 22 } background = { using = color_black_texture alpha = 0.35 } text_single = { position = { 8 0 } size = { 300 22 } text = "RR_C_ESTATE_HEADER" fontsize = 14 align = nobaseline|left } }
+		hbox = {
+			size = { 438 92 }
+			spacing = 6
+			widget = {
+				size = { 105 92 }
+				icon = { position = { 30 2 } size = { 44 44 } texture = "gfx/interface/icons/estates/clergy_estate.dds" }
+				text_single = { position = { 0 48 } size = { 105 20 } autoresize = no text = "RR_C_EST_CLERGY" align = center|nobaseline }
+				text_single = { position = { 0 68 } size = { 105 20 } autoresize = no text = "RR_EST_RANDOM_TAG" fontsize = 12 align = center|nobaseline }
+			}
+			widget = {
+				size = { 105 92 }
+				icon = { position = { 30 2 } size = { 44 44 } texture = "gfx/interface/icons/estates/nobles_estate.dds" alpha = 0.6 }
+				text_single = { position = { 0 48 } size = { 105 20 } autoresize = no text = "RR_C_EST_NOBLES" align = center|nobaseline }
+			}
+			widget = {
+				size = { 105 92 }
+				icon = { position = { 30 2 } size = { 44 44 } texture = "gfx/interface/icons/estates/burghers_estate.dds" alpha = 0.6 }
+				text_single = { position = { 0 48 } size = { 105 20 } autoresize = no text = "RR_C_EST_BURGHERS" align = center|nobaseline }
+				text_single = { position = { 0 68 } size = { 105 20 } autoresize = no text = "RR_EST_WANTS_S2" fontsize = 12 align = center|nobaseline }
+			}
+			widget = {
+				size = { 105 92 }
+				icon = { position = { 30 2 } size = { 44 44 } texture = "gfx/interface/icons/estates/peasants_estate.dds" alpha = 0.6 }
+				text_single = { position = { 0 48 } size = { 105 20 } autoresize = no text = "RR_C_EST_PEASANTS" align = center|nobaseline }
+			}
+		}
+	}
+}
+
+widget = {
+	size = { 462 70 }
+	using = bg_text_mask_container_dark_blue
+	text_single = { position = { 12 6 } size = { 300 22 } text = "RR_PROGRESS_TITLE" fontsize = 15 align = nobaseline|left }
+	text_single = { parentanchor = right position = { -12 6 } size = { 160 22 } text = "RR_PROGRESS_TEXT" align = nobaseline|right }
+	progressbar = { position = { 12 36 } size = { 438 16 } progresstexture = "gfx/interface/progressbars/progress_bar_goldish.dds" noprogresstexture = "gfx/interface/progressbars/progress_bar_blue_alt.dds" texture_density = 2 spriteType = Corneredstretched spriteborder = { 12 0 } min = 0 max = 100 value = 42 }
+}

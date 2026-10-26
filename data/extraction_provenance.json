@@ -45474,6 +45474,591 @@
       "source_blob": "354f4102a6d434612ab0a7a4a1d77e36494533e2",
       "working_sha256": "586099b4a74e7d956c35718c55ceadf3b5fc876556b37e6be3f633719f0fb2ae",
       "disposition": "retained"
+    },
+    {
+      "source": "ai_gui_assessment/.gitignore",
+      "target": "ai_gui_assessment/.gitignore",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "47241b6ef0ff1e57728871e05bd8871ff3b3a6e0",
+      "working_sha256": "429656f9e7c4ff7ba7298cfcf87fa191bdc2d8547ee469d916a39b7721606b6a",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/README.md",
+      "target": "ai_gui_assessment/README.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "06a9ea35792218ea0e589c4bf635802ca69cbde3",
+      "working_sha256": "843fac09ebb2610adb8c03cd47044e34b8edabc4da7004df1d47ae6eca054b82",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/engineering.py",
+      "target": "ai_gui_assessment/engineering.py",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "30017ba4d405571a1764f251a2746d486bda9462",
+      "working_sha256": "8a39e5cf4d4a8e20d76bc649bd2fc2ab5501994842757a2ccdc3b8ccaaf0e00f",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/fixtures/ceremony_plain.json",
+      "target": "ai_gui_assessment/fixtures/ceremony_plain.json",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "0dcc57e7d3d3f443b709f89675c2fbabaab3a8cd",
+      "working_sha256": "d5bc73644d5b8478fc56184039a8b2d21b84133d673baeff0d0251a64f66b237",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/fixtures/ceremony_style_2.json",
+      "target": "ai_gui_assessment/fixtures/ceremony_style_2.json",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "88008b8a810a3ff89e5db2c5b4aa7db9a994afcc",
+      "working_sha256": "56f327aee3ed817c83df930d3d18c4859f9c27adbb7ec1f9d7799a34d9a347ad",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/fixtures/ceremony_style_3.json",
+      "target": "ai_gui_assessment/fixtures/ceremony_style_3.json",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "ce5f853e4e0687aa7b31144ec8debf06e5cda094",
+      "working_sha256": "2f66bbd02c7191289330d9ff28852ca79abf133951cff1b3b1ad8abffcbc5a74",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/fixtures/hagia_overview.json",
+      "target": "ai_gui_assessment/fixtures/hagia_overview.json",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "d72b5c42f28a46d0aa6069a1ca8f6c9d67b99168",
+      "working_sha256": "e34b32e7ed4290a999968f21c5f547ad818ef3a6ce30ee1621d8cff6425f8d0b",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/fixtures/ritual_details_open.json",
+      "target": "ai_gui_assessment/fixtures/ritual_details_open.json",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "b117c53543f604ef7daaf7c0debbc8c37530a85d",
+      "working_sha256": "da3c2bf8d247f41081bfc54b9573a39016606d46057764e51183a43028f2e40e",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/priority_proposal/draft_loc_simp_chinese.yml",
+      "target": "ai_gui_assessment/mockups/priority_proposal/draft_loc_simp_chinese.yml",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "2a9b481c2f484262679207c6ff21c88ed28f113e",
+      "working_sha256": "80eb90d4bf18adabe0a597cb75da4cb0d64a5c51bd297ae366d7d518eb8284f1",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/priority_proposal/scheme_a_grouped_list.gui",
+      "target": "ai_gui_assessment/mockups/priority_proposal/scheme_a_grouped_list.gui",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "d359af9d5e6fba5b425840d07527479528656711",
+      "working_sha256": "ab26c3f9667f5fed984c4f78ef7baeb8dfb5be19bcdb975ca5f62210a3e70c07",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/README.md",
+      "target": "ai_gui_assessment/mockups/ritual_rework/README.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "5576da11afe35924053a9ef33e26f6a79601eab7",
+      "working_sha256": "384f287bcf5325b7d37826bfdfc59b131db8b3dd0d543ca8bbe8b5035e45fac4",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/compare.py",
+      "target": "ai_gui_assessment/mockups/ritual_rework/compare.py",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "335323ff7e1045074071860c121246733a2816e9",
+      "working_sha256": "6df9ec73613d645a4d13508b11a10eff84b633a43b27003572ea44e766ee144b",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/draft_loc_simp_chinese.yml",
+      "target": "ai_gui_assessment/mockups/ritual_rework/draft_loc_simp_chinese.yml",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "cf9cba81b3cac046c52551a20605d08ae6251f49",
+      "working_sha256": "e9af974d207906b0fabce163bf331fafe2c8ba5f23b0321fc744a4edd137dc1c",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/renders/compare_progress.png",
+      "target": "ai_gui_assessment/mockups/ritual_rework/renders/compare_progress.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "6065154a1727cca3ee68220428a68953e7231c38",
+      "working_sha256": "b60cc867c84d44c61c2a5afadec4f6158b9a7adb7d524db4c38f5ed823818e30",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/renders/compare_select.png",
+      "target": "ai_gui_assessment/mockups/ritual_rework/renders/compare_select.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "7c684d23e3768cb566b3b1c300239fba400264db",
+      "working_sha256": "9af255a4f9c73b31959af53dc0a480ffd3778b998c845efecb1628750676affd",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_progress.png",
+      "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_progress.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "654bdcd031f8ca1832f1558491925922d6630538",
+      "working_sha256": "713e9aad29d1059d32d513c5448bc1e03c1cb0f985f3de3cb6607bbb7cd52ead",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_select.png",
+      "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_select.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "d0df06257f099b36fb75e4de038646099d36aab5",
+      "working_sha256": "2eff77f34272dca7d47bb913da42aea2b79ef5533c9c91a9c4b1e23c16b67071",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_progress.png",
+      "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_progress.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "2c9038931a3c089ca760b201523ff7e8eccb0c9d",
+      "working_sha256": "fdb175dce3bafdb369a5e65991cee35f9763c89e096a83abc7b7d80be067f13c",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_select.png",
+      "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_select.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "020bf9c9371ea353bd9347ec587a1b899956e42b",
+      "working_sha256": "67381290bd5f2819892b97d4f8f6bb98d936d812197713e93c0af41cbef1e10c",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_progress.png",
+      "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_progress.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "08c7a07ce4ae4802af444850226bf518b3b3390c",
+      "working_sha256": "4a1d4570f286f3cead3d139aadc7c13eca110a5a792886972544b2554d00fb6c",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_select.png",
+      "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_select.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "f041b5856e2e81bf329014395fd64bc336d3ff4d",
+      "working_sha256": "7e6df9c4f3215082b9cd987bea6abaf69d6daaeb07c6374a9534cf00047c03d2",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych.gui",
+      "target": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych.gui",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "7fa7fe7f4e259ca4ba05543ded0f50cbbac215cf",
+      "working_sha256": "26126bcec64a5a531ec2220f57acc9674360697cc94e327d8c7b6bd6bce6bb72",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych_progress.gui",
+      "target": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych_progress.gui",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "614366920b6b9e67cd737fda37f6838a6f8ae40c",
+      "working_sha256": "173453694569341301af8b9d0877c0aef051c496a69488dcfd11bc7e1493614b",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger.gui",
+      "target": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger.gui",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "80247e3e766b7bdc0f5c7d623bf1213ee8e89d5e",
+      "working_sha256": "b43f581e7f98382324f139011ed1c7c96991f0549b4bfc1c168673bf159cec56",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger_progress.gui",
+      "target": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger_progress.gui",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "caf228f7808576dc2827b80b272df3e301e21d9c",
+      "working_sha256": "ebb05630166248a353662eb24a4e3cb7ef8579ee4d382f2ca39403f8c2ff84a7",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass.gui",
+      "target": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass.gui",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "11351abacdfcb00f88f0445830cbbabdd0912042",
+      "working_sha256": "39bd80b1d3fad6477ae654bf931ca091041659df3a3d6b913e07c0ec44b186bc",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass_progress.gui",
+      "target": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass_progress.gui",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "3280cfae3c8178a56e66973bbb7daa2228bc8e07",
+      "working_sha256": "909414722ed3951dbeab20b55fe21b020befe0479e9ab74963a1e88086fb4983",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/mockups/ritual_rework/stitch.py",
+      "target": "ai_gui_assessment/mockups/ritual_rework/stitch.py",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "058add04c1d5943152daf07b740e216a9a33d0f2",
+      "working_sha256": "f4199c6c70fa34b5017458773324fa38328149206b2a1b063e999d3cfc8856f3",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/priority_proposal_mockups.py",
+      "target": "ai_gui_assessment/priority_proposal_mockups.py",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "700d88f7fc76d3517225f091aaf93961e089d0c5",
+      "working_sha256": "b51d780ab41af7e47d036272a9cc5d3afb637ae6d04572d80a58584da4e59e10",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/ritual_rework_mockups.py",
+      "target": "ai_gui_assessment/ritual_rework_mockups.py",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "10d1a899c54a93c207abd94b035649ad400fa13e",
+      "working_sha256": "de6053c5a8787d2c712879b0d0b6e33ee3f17283e99e240500a3587dd1f61ebe",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "ai_gui_assessment/tests/test_engineering.py",
+      "target": "ai_gui_assessment/tests/test_engineering.py",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "7a6be1283042204364e44ac6cd4b9f4c28931287",
+      "working_sha256": "e7aec2d22d4bc42ae644947e021e0a60887b3e7e872b0be7c09ca241208d416e",
+      "disposition": "retained",
+      "ownership_evidence": "ED offline-preview package; README explicitly identifies src_engineering_department and shared renderer."
+    },
+    {
+      "source": "docs/marketing/assets/finish_en.jpg",
+      "target": "docs/marketing/assets/finish_en.jpg",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "34a71789d226bf3a3dce35e2ad8ddd752764e748",
+      "working_sha256": "9761ade7e0140d33557e5d961303a791142939e6d0a80ec5911c226356948518",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/finish_zh.jpg",
+      "target": "docs/marketing/assets/finish_zh.jpg",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "6a115e8fadf7c1060cf5e30236824fe00c8284c5",
+      "working_sha256": "0595a228bda8bd52624a77549b149dd45384487ecef53cc78188d63082b2b8af",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/gen_hero_banner.py",
+      "target": "docs/marketing/assets/gen_hero_banner.py",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "e60141605cb22115afda1aa796a91395d217b782",
+      "working_sha256": "34b5aae24709046ace191ebf90ca314f2f5ab5dce0102af741d4620835630c81",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/hero_banner_en.png",
+      "target": "docs/marketing/assets/hero_banner_en.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "57c4e7c50ba254dac003da9a3ceaa7dc7492d63d",
+      "working_sha256": "71c07e7a83e001f8f121fdb415e038a8722c025ac51bb000aaec277be1f1d941",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/hero_banner_zh.png",
+      "target": "docs/marketing/assets/hero_banner_zh.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "2c9e1e516eb2bc6a4e84c86b8a4439db1c9caf6a",
+      "working_sha256": "69f37638d6055f8e31421a0c2f658923b22e253108c1c3cb46fb6ebfb09888f6",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/location_en.jpg",
+      "target": "docs/marketing/assets/location_en.jpg",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "43b189a4d0fa3fded47f2ab500606297a287a1c9",
+      "working_sha256": "cf2100f09e7a6fb030528e0bc4d0582d4cda3f9ce02c308cb5477312dd6dc096",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/location_zh.jpg",
+      "target": "docs/marketing/assets/location_zh.jpg",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "de367a32da4b8886ae091b901cde31853b2f6f58",
+      "working_sha256": "8c4093dab8d3f45e7fc94e492196577b7c472ba1420325da250abeed234a2b2b",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/org_en.jpg",
+      "target": "docs/marketing/assets/org_en.jpg",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "534f64b6f78d83e63f1438fa70dae1de4030bf30",
+      "working_sha256": "4595c533dd2439cd10006c98c906d3074ea3e6c9b6e37c7fa0551855fe56438f",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/org_zh.jpg",
+      "target": "docs/marketing/assets/org_zh.jpg",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "9b3ce650dcda6cb0a1fa66816df0c65869d94e7c",
+      "working_sha256": "f1b59ef33289bf935a77092b4cb11eafaa4b20e967631449459286adc889dfec",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_compatibility_en.png",
+      "target": "docs/marketing/assets/section_compatibility_en.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "775887883319701cd303cf140d7da32befb9bf2d",
+      "working_sha256": "529d065b4b8a8c87ead2fa484d7bdce6b2bdbae1f748828b307cb5ca8edb90ce",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_compatibility_zh.png",
+      "target": "docs/marketing/assets/section_compatibility_zh.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "8221b0572a002feace7b79df43860880a81cae9d",
+      "working_sha256": "b880d361c7a63b8a2dd3766d2013f7e8f4ad298c6f3a7840f04156c34418963b",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_core_features_en.png",
+      "target": "docs/marketing/assets/section_core_features_en.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "d959a48affda414cf53b1bc77abb0aae398a004d",
+      "working_sha256": "ad12f7c3756cd33044ab46dd38bcd41f7bae145c87fc92632d23286a1c862d70",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_core_features_zh.png",
+      "target": "docs/marketing/assets/section_core_features_zh.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "58c8ca688e092722d0e9f8eb4aba133b509ed2f3",
+      "working_sha256": "ea75918d6e368d2b54155b3cc86c03fd554bb3b8868a0c3c984357118e649a1b",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_credits_en.png",
+      "target": "docs/marketing/assets/section_credits_en.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "d88fb4cdf15fca95667363131ddeb35867b3d04a",
+      "working_sha256": "ab09f198ac9fdfc27760f3d89c07a3d74d40e391395d8bfd2a0ad59897fe6426",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_credits_zh.png",
+      "target": "docs/marketing/assets/section_credits_zh.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "d24eb5f47e646500bd850d5df5589f9d68e48ee3",
+      "working_sha256": "781ec0b0f7e3d58a7f9469bd6e08f1fdc0ed386ab067cf3a390f1728dbd8c1ee",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_links_en.png",
+      "target": "docs/marketing/assets/section_links_en.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "9435d13c165b1ddbd90e3012f79104599c40f299",
+      "working_sha256": "0883c1bc905f3e786259c5a1e406aa22b6580b14856fd921fea84ef04a870ec1",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_links_zh.png",
+      "target": "docs/marketing/assets/section_links_zh.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "27d29d3cf28398a2e2076e15719b58441fa6c21c",
+      "working_sha256": "b2b7459da1308737d7466812f622d5d723c97d72cf833cf39e943dcca7e4884b",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_overview_en.png",
+      "target": "docs/marketing/assets/section_overview_en.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "f895b9416d979dae4bd364d1eacdf99ac48bad41",
+      "working_sha256": "122f5aa95f65120f33f69ee8e4413c674dbaf5b1b52de3fa020fcaed95af5913",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_overview_zh.png",
+      "target": "docs/marketing/assets/section_overview_zh.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "0887b6e1c6fe23d398a55b2c3be703e1c792913e",
+      "working_sha256": "f3ab89e94ca361fa21249c77f42911482b45ce833b5a96428474c4b7e58e201f",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_six_stages_en.png",
+      "target": "docs/marketing/assets/section_six_stages_en.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "d9ca9c4b509f414eb24d407c38f3b57fd155d130",
+      "working_sha256": "7e07f135f4ab2b112df24dd1674e253e435aa03479ce04f6347e1370e2a4f657",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/assets/section_six_stages_zh.png",
+      "target": "docs/marketing/assets/section_six_stages_zh.png",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "740f13a2711e1af654f573b0974a819cc57841b9",
+      "working_sha256": "bb420a847025b63ae0000075873aeb544f8f99fd07eb8ddf16c726ad7261c085",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/compat_submods_workshop_en.md",
+      "target": "docs/marketing/compat_submods_workshop_en.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "6c6633c1d813cd33c6a431e9d8a25157c9115691",
+      "working_sha256": "993df2669be64c34474dc0907e49613aedeab568974e61ece17b8745bfed37d4",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/compat_submods_workshop_zh.md",
+      "target": "docs/marketing/compat_submods_workshop_zh.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "f2bd56c6d58cfee4c6503146fd8e26cb6cd3734c",
+      "working_sha256": "87a591ceec7504de1d15e47c6f6c4503315b7f32e68addb982f5fd319f632a83",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/discord_modcoop_forum_en.md",
+      "target": "docs/marketing/discord_modcoop_forum_en.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "f54726bc02552b7f1cdd26ff2196c02c8d20e12b",
+      "working_sha256": "169f92ae78b8272f1539554842a063986c06894ccfc50512b426c9331548af7d",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/discord_official_release_en.md",
+      "target": "docs/marketing/discord_official_release_en.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "7810f3e56109d9e8b90dc601de3e77ced2f46643",
+      "working_sha256": "5d356be651c1235d3562f9785a761e818d77d29c1d46f0e4b0e59f613ca72e88",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/discord_update_260805_en.md",
+      "target": "docs/marketing/discord_update_260805_en.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "1446d33e63db9b6cae07a0ec6a81c293f9e794fe",
+      "working_sha256": "b03da54f8502b3c33fd6222b3ae3ded8e51a8300776497120ea3e5259bd5b2be",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/github_wiki_en.md",
+      "target": "docs/marketing/github_wiki_en.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "886c477a42668de1d77545a37241e7be0f40b3c9",
+      "working_sha256": "e6b356ca36310fdec2d236afb32cd52e593f6513a340deb4eff0db264cd3ef89",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/github_wiki_zh.md",
+      "target": "docs/marketing/github_wiki_zh.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "1144086872ac79ccb4720692d913bb752a53ea3b",
+      "working_sha256": "ef02f93b3a696aa92922c6a3da8b93f41f59cd7d26b232fec3e7e8c8fd4e8744",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/paradox_forum_en.md",
+      "target": "docs/marketing/paradox_forum_en.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "426c40d2657413a2a9634bdb0397875670fb3227",
+      "working_sha256": "2899a376d40f9092301be53aadb68f010153daa7cb1d57af417bea85dd8fa9eb",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/qq_announcement_zh.md",
+      "target": "docs/marketing/qq_announcement_zh.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "73e5d7814cde67bcd83228c24baa3023972294dc",
+      "working_sha256": "bf74378a6a37f8bb904a12db67594d5ed7eeaeb7d788088b81227b6d40897333",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/reddit_post_en.md",
+      "target": "docs/marketing/reddit_post_en.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "92f2be007f798062740ef3b2fa2e55cb156e13f3",
+      "working_sha256": "052476d4e47ccb0dbb414e9ec50d345dcb1bd592c983a5af6fc7d1ec8994138f",
+      "disposition": "retained",
+      "ownership_evidence": "GP publication material: explicit Great Project titles/mod id or banners generated by GP-only gen_hero_banner.py."
+    },
+    {
+      "source": "docs/marketing/steam_page_en.md",
+      "target": "docs/marketing/steam_page_en.md",
+      "ownership": "shared-history",
+      "source_blob": "24bdcca4394c5f6a613c9ade04109b74a357bd42",
+      "working_sha256": "62099cbda9739a63f2d01d222ac7fc5748b31e2180d35a321ba70a4b1ae3aa4b",
+      "disposition": "retained",
+      "ownership_evidence": "Mixed historical Steam draft: GP body with Standard of Living notice; preserve TV original."
+    },
+    {
+      "source": "docs/marketing/steam_page_zh.md",
+      "target": "docs/marketing/steam_page_zh.md",
+      "ownership": "shared-history",
+      "source_blob": "531a6cca70ddc5507ca5844dec2e917f8f48a0b2",
+      "working_sha256": "00d1b9da0a8259b03aec3bcb82634a694cec05f82daec652d6585c9c9cc0eeb5",
+      "disposition": "retained",
+      "ownership_evidence": "Mixed historical Steam draft: GP body with Standard of Living notice; preserve TV original."
+    },
+    {
+      "source": "docs/technical/EU5_1.4_Suez_Canal_Integration.md",
+      "target": "docs/technical/EU5_1.4_Suez_Canal_Integration.md",
+      "ownership": "copied-pending-owner-transfer",
+      "source_blob": "19c450310901cf3c691dca74ca7c3e50ef373e09",
+      "working_sha256": "f5a01990cd96c6351020360ab390a409daa49a0c63b6ac51db70383a129c3370",
+      "disposition": "retained",
+      "ownership_evidence": "Suez wonder integration is implemented in the GP wonder lifecycle."
     }
   ],
   "schema_version": 1,
@@ -45509,6 +46094,161 @@
       "path": "README.md",
       "sha256": "ae7c818217ade420a660f4af6e2104ab817e17b50e6e7dce3087712e84d59363",
       "bytes": 1171
+    },
+    {
+      "path": "ai_gui_assessment/.gitignore",
+      "sha256": "429656f9e7c4ff7ba7298cfcf87fa191bdc2d8547ee469d916a39b7721606b6a",
+      "bytes": 8
+    },
+    {
+      "path": "ai_gui_assessment/README.md",
+      "sha256": "e21a9946a1aa6000fef3ae6a65a8fe261605e887089ced0af6698bb7f4419502",
+      "bytes": 9792
+    },
+    {
+      "path": "ai_gui_assessment/engineering.py",
+      "sha256": "2bed87932ce15d153942f61b989ac412cdcd1f5d6474296ede7051414422081b",
+      "bytes": 34887
+    },
+    {
+      "path": "ai_gui_assessment/fixtures/ceremony_plain.json",
+      "sha256": "d5bc73644d5b8478fc56184039a8b2d21b84133d673baeff0d0251a64f66b237",
+      "bytes": 65
+    },
+    {
+      "path": "ai_gui_assessment/fixtures/ceremony_style_2.json",
+      "sha256": "56f327aee3ed817c83df930d3d18c4859f9c27adbb7ec1f9d7799a34d9a347ad",
+      "bytes": 57
+    },
+    {
+      "path": "ai_gui_assessment/fixtures/ceremony_style_3.json",
+      "sha256": "2f66bbd02c7191289330d9ff28852ca79abf133951cff1b3b1ad8abffcbc5a74",
+      "bytes": 119
+    },
+    {
+      "path": "ai_gui_assessment/fixtures/hagia_overview.json",
+      "sha256": "e34b32e7ed4290a999968f21c5f547ad818ef3a6ce30ee1621d8cff6425f8d0b",
+      "bytes": 246
+    },
+    {
+      "path": "ai_gui_assessment/fixtures/ritual_details_open.json",
+      "sha256": "da3c2bf8d247f41081bfc54b9573a39016606d46057764e51183a43028f2e40e",
+      "bytes": 78
+    },
+    {
+      "path": "ai_gui_assessment/mockups/priority_proposal/draft_loc_simp_chinese.yml",
+      "sha256": "80eb90d4bf18adabe0a597cb75da4cb0d64a5c51bd297ae366d7d518eb8284f1",
+      "bytes": 498
+    },
+    {
+      "path": "ai_gui_assessment/mockups/priority_proposal/scheme_a_grouped_list.gui",
+      "sha256": "000d9f522b36a5ba97a2144db28544770275f6b2b958b50de1b24a8103c22efd",
+      "bytes": 10559
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/README.md",
+      "sha256": "384f287bcf5325b7d37826bfdfc59b131db8b3dd0d543ca8bbe8b5035e45fac4",
+      "bytes": 8940
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/compare.py",
+      "sha256": "6df9ec73613d645a4d13508b11a10eff84b633a43b27003572ea44e766ee144b",
+      "bytes": 1224
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/draft_loc_simp_chinese.yml",
+      "sha256": "e9af974d207906b0fabce163bf331fafe2c8ba5f23b0321fc744a4edd137dc1c",
+      "bytes": 5360
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/renders/compare_progress.png",
+      "sha256": "b60cc867c84d44c61c2a5afadec4f6158b9a7adb7d524db4c38f5ed823818e30",
+      "bytes": 1450693
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/renders/compare_select.png",
+      "sha256": "9af255a4f9c73b31959af53dc0a480ffd3778b998c845efecb1628750676affd",
+      "bytes": 1481459
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_progress.png",
+      "sha256": "713e9aad29d1059d32d513c5448bc1e03c1cb0f985f3de3cb6607bbb7cd52ead",
+      "bytes": 757361
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_select.png",
+      "sha256": "2eff77f34272dca7d47bb913da42aea2b79ef5533c9c91a9c4b1e23c16b67071",
+      "bytes": 775474
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_progress.png",
+      "sha256": "fdb175dce3bafdb369a5e65991cee35f9763c89e096a83abc7b7d80be067f13c",
+      "bytes": 843893
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_select.png",
+      "sha256": "67381290bd5f2819892b97d4f8f6bb98d936d812197713e93c0af41cbef1e10c",
+      "bytes": 882597
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_progress.png",
+      "sha256": "4a1d4570f286f3cead3d139aadc7c13eca110a5a792886972544b2554d00fb6c",
+      "bytes": 867943
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_select.png",
+      "sha256": "7e6df9c4f3215082b9cd987bea6abaf69d6daaeb07c6374a9534cf00047c03d2",
+      "bytes": 866343
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych.gui",
+      "sha256": "26126bcec64a5a531ec2220f57acc9674360697cc94e327d8c7b6bd6bce6bb72",
+      "bytes": 9653
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych_progress.gui",
+      "sha256": "173453694569341301af8b9d0877c0aef051c496a69488dcfd11bc7e1493614b",
+      "bytes": 8987
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger.gui",
+      "sha256": "b43f581e7f98382324f139011ed1c7c96991f0549b4bfc1c168673bf159cec56",
+      "bytes": 8242
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger_progress.gui",
+      "sha256": "ebb05630166248a353662eb24a4e3cb7ef8579ee4d382f2ca39403f8c2ff84a7",
+      "bytes": 8156
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass.gui",
+      "sha256": "39bd80b1d3fad6477ae654bf931ca091041659df3a3d6b913e07c0ec44b186bc",
+      "bytes": 7366
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass_progress.gui",
+      "sha256": "909414722ed3951dbeab20b55fe21b020befe0479e9ab74963a1e88086fb4983",
+      "bytes": 7784
+    },
+    {
+      "path": "ai_gui_assessment/mockups/ritual_rework/stitch.py",
+      "sha256": "f4199c6c70fa34b5017458773324fa38328149206b2a1b063e999d3cfc8856f3",
+      "bytes": 1088
+    },
+    {
+      "path": "ai_gui_assessment/priority_proposal_mockups.py",
+      "sha256": "7fd78e8121e2c31487f428416738eac395f292aef39e528f2c2ce70c1308b951",
+      "bytes": 6698
+    },
+    {
+      "path": "ai_gui_assessment/ritual_rework_mockups.py",
+      "sha256": "de6053c5a8787d2c712879b0d0b6e33ee3f17283e99e240500a3587dd1f61ebe",
+      "bytes": 5451
+    },
+    {
+      "path": "ai_gui_assessment/tests/test_engineering.py",
+      "sha256": "2feaebbc5b81e8ef005ff8318259ff4d89025d8230c74030525c0f47935c71c8",
+      "bytes": 18913
     },
     {
       "path": "assets/cover/ED.png",
@@ -53206,9 +53946,174 @@
       "bytes": 77
     },
     {
+      "path": "docs/marketing/assets/finish_en.jpg",
+      "sha256": "9761ade7e0140d33557e5d961303a791142939e6d0a80ec5911c226356948518",
+      "bytes": 652180
+    },
+    {
+      "path": "docs/marketing/assets/finish_zh.jpg",
+      "sha256": "0595a228bda8bd52624a77549b149dd45384487ecef53cc78188d63082b2b8af",
+      "bytes": 658659
+    },
+    {
+      "path": "docs/marketing/assets/gen_hero_banner.py",
+      "sha256": "9e4d5a8a300d9294828b6f6742d6c1701716baeefdfd6543e6fbc14bca46d231",
+      "bytes": 8217
+    },
+    {
+      "path": "docs/marketing/assets/hero_banner_en.png",
+      "sha256": "71c07e7a83e001f8f121fdb415e038a8722c025ac51bb000aaec277be1f1d941",
+      "bytes": 50539
+    },
+    {
+      "path": "docs/marketing/assets/hero_banner_zh.png",
+      "sha256": "69f37638d6055f8e31421a0c2f658923b22e253108c1c3cb46fb6ebfb09888f6",
+      "bytes": 34667
+    },
+    {
+      "path": "docs/marketing/assets/location_en.jpg",
+      "sha256": "cf2100f09e7a6fb030528e0bc4d0582d4cda3f9ce02c308cb5477312dd6dc096",
+      "bytes": 457293
+    },
+    {
+      "path": "docs/marketing/assets/location_zh.jpg",
+      "sha256": "8c4093dab8d3f45e7fc94e492196577b7c472ba1420325da250abeed234a2b2b",
+      "bytes": 371329
+    },
+    {
+      "path": "docs/marketing/assets/org_en.jpg",
+      "sha256": "4595c533dd2439cd10006c98c906d3074ea3e6c9b6e37c7fa0551855fe56438f",
+      "bytes": 394839
+    },
+    {
+      "path": "docs/marketing/assets/org_zh.jpg",
+      "sha256": "f1b59ef33289bf935a77092b4cb11eafaa4b20e967631449459286adc889dfec",
+      "bytes": 410821
+    },
+    {
+      "path": "docs/marketing/assets/section_compatibility_en.png",
+      "sha256": "529d065b4b8a8c87ead2fa484d7bdce6b2bdbae1f748828b307cb5ca8edb90ce",
+      "bytes": 12157
+    },
+    {
+      "path": "docs/marketing/assets/section_compatibility_zh.png",
+      "sha256": "b880d361c7a63b8a2dd3766d2013f7e8f4ad298c6f3a7840f04156c34418963b",
+      "bytes": 7469
+    },
+    {
+      "path": "docs/marketing/assets/section_core_features_en.png",
+      "sha256": "ad12f7c3756cd33044ab46dd38bcd41f7bae145c87fc92632d23286a1c862d70",
+      "bytes": 12036
+    },
+    {
+      "path": "docs/marketing/assets/section_core_features_zh.png",
+      "sha256": "ea75918d6e368d2b54155b3cc86c03fd554bb3b8868a0c3c984357118e649a1b",
+      "bytes": 11071
+    },
+    {
+      "path": "docs/marketing/assets/section_credits_en.png",
+      "sha256": "ab09f198ac9fdfc27760f3d89c07a3d74d40e391395d8bfd2a0ad59897fe6426",
+      "bytes": 8808
+    },
+    {
+      "path": "docs/marketing/assets/section_credits_zh.png",
+      "sha256": "781ec0b0f7e3d58a7f9469bd6e08f1fdc0ed386ab067cf3a390f1728dbd8c1ee",
+      "bytes": 7249
+    },
+    {
+      "path": "docs/marketing/assets/section_links_en.png",
+      "sha256": "0883c1bc905f3e786259c5a1e406aa22b6580b14856fd921fea84ef04a870ec1",
+      "bytes": 6693
+    },
+    {
+      "path": "docs/marketing/assets/section_links_zh.png",
+      "sha256": "b2b7459da1308737d7466812f622d5d723c97d72cf833cf39e943dcca7e4884b",
+      "bytes": 11546
+    },
+    {
+      "path": "docs/marketing/assets/section_overview_en.png",
+      "sha256": "122f5aa95f65120f33f69ee8e4413c674dbaf5b1b52de3fa020fcaed95af5913",
+      "bytes": 9397
+    },
+    {
+      "path": "docs/marketing/assets/section_overview_zh.png",
+      "sha256": "f3ab89e94ca361fa21249c77f42911482b45ce833b5a96428474c4b7e58e201f",
+      "bytes": 5901
+    },
+    {
+      "path": "docs/marketing/assets/section_six_stages_en.png",
+      "sha256": "7e07f135f4ab2b112df24dd1674e253e435aa03479ce04f6347e1370e2a4f657",
+      "bytes": 10816
+    },
+    {
+      "path": "docs/marketing/assets/section_six_stages_zh.png",
+      "sha256": "bb420a847025b63ae0000075873aeb544f8f99fd07eb8ddf16c726ad7261c085",
+      "bytes": 14949
+    },
+    {
+      "path": "docs/marketing/compat_submods_workshop_en.md",
+      "sha256": "24cef3a05f96d1095b70aaf98c311b51517ebc5d257a7e535ddb016bd8c9b2aa",
+      "bytes": 4576
+    },
+    {
+      "path": "docs/marketing/compat_submods_workshop_zh.md",
+      "sha256": "04274373af420af30f17cc5094d5116da28863a8a1671df613f3f19eb463b847",
+      "bytes": 4842
+    },
+    {
+      "path": "docs/marketing/discord_modcoop_forum_en.md",
+      "sha256": "fbe306a63f42f3fea3351f42c339188c9888bb77693798d766063215d1cffa3e",
+      "bytes": 1087
+    },
+    {
+      "path": "docs/marketing/discord_official_release_en.md",
+      "sha256": "846a3dda2eebac238b651bf914ac90fb9c9b8e8f21ec7b5ee5960b95d8cbb7c3",
+      "bytes": 1449
+    },
+    {
+      "path": "docs/marketing/discord_update_260805_en.md",
+      "sha256": "3e02b6590be6083a8c1720df885dc366eb2f1952ae1985d95b4d5fcbca31d8b7",
+      "bytes": 1244
+    },
+    {
+      "path": "docs/marketing/github_wiki_en.md",
+      "sha256": "b24c5e3da0e219a10dd5877be064feb45222b241b6568d677d22828d045e0cfd",
+      "bytes": 5878
+    },
+    {
+      "path": "docs/marketing/github_wiki_zh.md",
+      "sha256": "3d00fbd6380fe674a92b29e12d635ea116deb290c37c98e1fa3aee93f6dcfd71",
+      "bytes": 5499
+    },
+    {
       "path": "docs/marketing/great_project_video_script.md",
       "sha256": "6a066cf4aa75c85a7644808dbd5626115a5747931b192dd313a97720418a35d2",
       "bytes": 9496
+    },
+    {
+      "path": "docs/marketing/paradox_forum_en.md",
+      "sha256": "2abc5ec2f1432db06248b3884150b51f7d40d35b0a9f873bb6c878a30625bca6",
+      "bytes": 4224
+    },
+    {
+      "path": "docs/marketing/qq_announcement_zh.md",
+      "sha256": "d8bd2e6ec5c562d289f2ee489d8301531b8e18c50753ef6d3732612dcdb60336",
+      "bytes": 1428
+    },
+    {
+      "path": "docs/marketing/reddit_post_en.md",
+      "sha256": "498b27a4f1ff9ace47d0b68068305194f1966292a7f0a3412c866da92ec4b04b",
+      "bytes": 2231
+    },
+    {
+      "path": "docs/marketing/steam_page_en.md",
+      "sha256": "ef1b2489b77c210299b1547183ec59b20a8700060932238e912c355b65d16b1e",
+      "bytes": 5066
+    },
+    {
+      "path": "docs/marketing/steam_page_zh.md",
+      "sha256": "56f38e4d1852e94b68242829fd801390cfa791f100e82fd02590bb10b6c346a1",
+      "bytes": 4968
     },
     {
       "path": "docs/technical/ED_AI_Implementation.md",
@@ -53326,6 +54231,11 @@
       "bytes": 2355
     },
     {
+      "path": "docs/technical/EU5_1.4_Suez_Canal_Integration.md",
+      "sha256": "74751af1ed25ff95b32e1f59ad69b50e1cd0656dd9acbec09493f74aec7ddcf9",
+      "bytes": 10588
+    },
+    {
       "path": "docs/technical/Editor_Web_Pre_Split_Reference.md",
       "sha256": "28eef8d405230ef91023b15701a81709879e555d82d57f54ea0854a0fd44483c",
       "bytes": 35265
@@ -53441,6 +54351,11 @@
       "bytes": 28731
     },
     {
+      "path": "docs/technical/split_validation/gp-offline-gui-tests.txt",
+      "sha256": "569167d5e4b5a57adc91c852e4b0c5581325edc9745ef14efccb6cb7c1a16c03",
+      "bytes": 77
+    },
+    {
       "path": "docs/technical/split_validation/gp-original-gui-failure.txt",
       "sha256": "361ed689eafc372a4409e10e9e3dca6a43189d64023c7b8d94e11c81dd502749",
       "bytes": 1497
@@ -53499,6 +54414,11 @@
       "path": "docs/technical/split_validation/tv-slow-selection.txt",
       "sha256": "a8d65bf5bf279d01443733da322f6a43467449ec1c0288793483d563f1a0e219",
       "bytes": 9078
+    },
+    {
+      "path": "docs/technical/split_validation/verified_supplement.json",
+      "sha256": "c9478ac1519ea89b5631547a6a0a7e21fed165aa19f7c81ee86be0cd76dadf94",
+      "bytes": 21439
     },
     {
       "path": "error_log_filter.py",
@@ -74087,10 +75007,10 @@
     }
   ],
   "counts": {
-    "source_records": 5684,
-    "source_records_retained": 5676,
+    "source_records": 5749,
+    "source_records_retained": 5741,
     "source_records_excluded": 8,
     "moved_records": 5464,
-    "final_files_excluding_manifest": 5721
+    "final_files_excluding_manifest": 5788
   }
 }

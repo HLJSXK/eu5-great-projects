@@ -1,0 +1,10 @@
+{
+  "tab": "overview",
+  "player_variables": {
+    "tv_wonder_stage": 1,
+    "tv_wonder_nobles_demand": 1,
+    "tv_wonder_burghers_demand": 2,
+    "tv_wonder_clergy_demand": 3
+  },
+  "organization_variables": {"tv_wonder_domestic_support": 68}
+}
