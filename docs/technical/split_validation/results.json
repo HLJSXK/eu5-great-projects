@@ -73,6 +73,12 @@
         "build/tv_standard_of_living_compat",
         "build/tv_prosper_or_perish_compat"
       ]
+    },
+    "offline_gui_tests": {
+      "passed": 16,
+      "subtests_passed": 43,
+      "seconds": 40.5,
+      "command": "python -m pytest -q ai_gui_assessment/tests --basetemp=.pytest-offline-gui"
     }
   },
   "shared_knowledge": {
@@ -95,13 +101,13 @@
     "remotes": [],
     "git_object_alternates": false,
     "shared_base": "C:\\Users\\Hades\\Documents\\code\\eu5-modding-base",
-    "post_test_changes": "Audit evidence, seven ED-owned media/document files, and single-root context fallback; no gameplay or generation changes."
+    "post_test_changes": "Audit evidence, ED media/documents and offline GUI tool paths; single-root context fallback. Main mod and generation outputs unchanged. Offline GUI tests passed separately."
   },
   "deployment": "not performed",
   "remote_publication": "not performed",
   "ownership_audit": {
-    "tv_tracked_deletions": 5464,
-    "mapped_in_gp": 5464,
+    "tv_tracked_deletions": 5527,
+    "mapped_in_gp": 5527,
     "unmapped": 0,
     "actual_gp_generic_actions": 35,
     "localization_languages": 11,
@@ -114,6 +120,12 @@
       "data/generated_icons/tv_victory_path_icons_ed_module_cover.json",
       "docs/marketing/great_project_video_script.md",
       "docs/design/Great_Project_Unique_Buff_Proposal.md"
-    ]
+    ],
+    "content_audit": {
+      "copied": 65,
+      "moved_after_checkpoint": 63,
+      "mixed_steam_originals_retained": 2,
+      "copy_checkpoint": "a5fc3fcbb8cbb2011f9022923766493ddf133d4e"
+    }
   }
 }

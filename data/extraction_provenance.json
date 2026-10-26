@@ -45478,7 +45478,7 @@
     {
       "source": "ai_gui_assessment/.gitignore",
       "target": "ai_gui_assessment/.gitignore",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "47241b6ef0ff1e57728871e05bd8871ff3b3a6e0",
       "working_sha256": "429656f9e7c4ff7ba7298cfcf87fa191bdc2d8547ee469d916a39b7721606b6a",
       "disposition": "retained",
@@ -45487,7 +45487,7 @@
     {
       "source": "ai_gui_assessment/README.md",
       "target": "ai_gui_assessment/README.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "06a9ea35792218ea0e589c4bf635802ca69cbde3",
       "working_sha256": "843fac09ebb2610adb8c03cd47044e34b8edabc4da7004df1d47ae6eca054b82",
       "disposition": "retained",
@@ -45496,7 +45496,7 @@
     {
       "source": "ai_gui_assessment/engineering.py",
       "target": "ai_gui_assessment/engineering.py",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "30017ba4d405571a1764f251a2746d486bda9462",
       "working_sha256": "8a39e5cf4d4a8e20d76bc649bd2fc2ab5501994842757a2ccdc3b8ccaaf0e00f",
       "disposition": "retained",
@@ -45505,7 +45505,7 @@
     {
       "source": "ai_gui_assessment/fixtures/ceremony_plain.json",
       "target": "ai_gui_assessment/fixtures/ceremony_plain.json",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "0dcc57e7d3d3f443b709f89675c2fbabaab3a8cd",
       "working_sha256": "d5bc73644d5b8478fc56184039a8b2d21b84133d673baeff0d0251a64f66b237",
       "disposition": "retained",
@@ -45514,7 +45514,7 @@
     {
       "source": "ai_gui_assessment/fixtures/ceremony_style_2.json",
       "target": "ai_gui_assessment/fixtures/ceremony_style_2.json",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "88008b8a810a3ff89e5db2c5b4aa7db9a994afcc",
       "working_sha256": "56f327aee3ed817c83df930d3d18c4859f9c27adbb7ec1f9d7799a34d9a347ad",
       "disposition": "retained",
@@ -45523,7 +45523,7 @@
     {
       "source": "ai_gui_assessment/fixtures/ceremony_style_3.json",
       "target": "ai_gui_assessment/fixtures/ceremony_style_3.json",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "ce5f853e4e0687aa7b31144ec8debf06e5cda094",
       "working_sha256": "2f66bbd02c7191289330d9ff28852ca79abf133951cff1b3b1ad8abffcbc5a74",
       "disposition": "retained",
@@ -45532,7 +45532,7 @@
     {
       "source": "ai_gui_assessment/fixtures/hagia_overview.json",
       "target": "ai_gui_assessment/fixtures/hagia_overview.json",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "d72b5c42f28a46d0aa6069a1ca8f6c9d67b99168",
       "working_sha256": "e34b32e7ed4290a999968f21c5f547ad818ef3a6ce30ee1621d8cff6425f8d0b",
       "disposition": "retained",
@@ -45541,7 +45541,7 @@
     {
       "source": "ai_gui_assessment/fixtures/ritual_details_open.json",
       "target": "ai_gui_assessment/fixtures/ritual_details_open.json",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "b117c53543f604ef7daaf7c0debbc8c37530a85d",
       "working_sha256": "da3c2bf8d247f41081bfc54b9573a39016606d46057764e51183a43028f2e40e",
       "disposition": "retained",
@@ -45550,7 +45550,7 @@
     {
       "source": "ai_gui_assessment/mockups/priority_proposal/draft_loc_simp_chinese.yml",
       "target": "ai_gui_assessment/mockups/priority_proposal/draft_loc_simp_chinese.yml",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "2a9b481c2f484262679207c6ff21c88ed28f113e",
       "working_sha256": "80eb90d4bf18adabe0a597cb75da4cb0d64a5c51bd297ae366d7d518eb8284f1",
       "disposition": "retained",
@@ -45559,7 +45559,7 @@
     {
       "source": "ai_gui_assessment/mockups/priority_proposal/scheme_a_grouped_list.gui",
       "target": "ai_gui_assessment/mockups/priority_proposal/scheme_a_grouped_list.gui",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "d359af9d5e6fba5b425840d07527479528656711",
       "working_sha256": "ab26c3f9667f5fed984c4f78ef7baeb8dfb5be19bcdb975ca5f62210a3e70c07",
       "disposition": "retained",
@@ -45568,7 +45568,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/README.md",
       "target": "ai_gui_assessment/mockups/ritual_rework/README.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "5576da11afe35924053a9ef33e26f6a79601eab7",
       "working_sha256": "384f287bcf5325b7d37826bfdfc59b131db8b3dd0d543ca8bbe8b5035e45fac4",
       "disposition": "retained",
@@ -45577,7 +45577,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/compare.py",
       "target": "ai_gui_assessment/mockups/ritual_rework/compare.py",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "335323ff7e1045074071860c121246733a2816e9",
       "working_sha256": "6df9ec73613d645a4d13508b11a10eff84b633a43b27003572ea44e766ee144b",
       "disposition": "retained",
@@ -45586,7 +45586,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/draft_loc_simp_chinese.yml",
       "target": "ai_gui_assessment/mockups/ritual_rework/draft_loc_simp_chinese.yml",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "cf9cba81b3cac046c52551a20605d08ae6251f49",
       "working_sha256": "e9af974d207906b0fabce163bf331fafe2c8ba5f23b0321fc744a4edd137dc1c",
       "disposition": "retained",
@@ -45595,7 +45595,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/renders/compare_progress.png",
       "target": "ai_gui_assessment/mockups/ritual_rework/renders/compare_progress.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "6065154a1727cca3ee68220428a68953e7231c38",
       "working_sha256": "b60cc867c84d44c61c2a5afadec4f6158b9a7adb7d524db4c38f5ed823818e30",
       "disposition": "retained",
@@ -45604,7 +45604,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/renders/compare_select.png",
       "target": "ai_gui_assessment/mockups/ritual_rework/renders/compare_select.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "7c684d23e3768cb566b3b1c300239fba400264db",
       "working_sha256": "9af255a4f9c73b31959af53dc0a480ffd3778b998c845efecb1628750676affd",
       "disposition": "retained",
@@ -45613,7 +45613,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_progress.png",
       "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_progress.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "654bdcd031f8ca1832f1558491925922d6630538",
       "working_sha256": "713e9aad29d1059d32d513c5448bc1e03c1cb0f985f3de3cb6607bbb7cd52ead",
       "disposition": "retained",
@@ -45622,7 +45622,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_select.png",
       "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_a_select.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "d0df06257f099b36fb75e4de038646099d36aab5",
       "working_sha256": "2eff77f34272dca7d47bb913da42aea2b79ef5533c9c91a9c4b1e23c16b67071",
       "disposition": "retained",
@@ -45631,7 +45631,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_progress.png",
       "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_progress.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "2c9038931a3c089ca760b201523ff7e8eccb0c9d",
       "working_sha256": "fdb175dce3bafdb369a5e65991cee35f9763c89e096a83abc7b7d80be067f13c",
       "disposition": "retained",
@@ -45640,7 +45640,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_select.png",
       "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_b_select.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "020bf9c9371ea353bd9347ec587a1b899956e42b",
       "working_sha256": "67381290bd5f2819892b97d4f8f6bb98d936d812197713e93c0af41cbef1e10c",
       "disposition": "retained",
@@ -45649,7 +45649,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_progress.png",
       "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_progress.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "08c7a07ce4ae4802af444850226bf518b3b3390c",
       "working_sha256": "4a1d4570f286f3cead3d139aadc7c13eca110a5a792886972544b2554d00fb6c",
       "disposition": "retained",
@@ -45658,7 +45658,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_select.png",
       "target": "ai_gui_assessment/mockups/ritual_rework/renders/ritual_c_select.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "f041b5856e2e81bf329014395fd64bc336d3ff4d",
       "working_sha256": "7e6df9c4f3215082b9cd987bea6abaf69d6daaeb07c6374a9534cf00047c03d2",
       "disposition": "retained",
@@ -45667,7 +45667,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych.gui",
       "target": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych.gui",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "7fa7fe7f4e259ca4ba05543ded0f50cbbac215cf",
       "working_sha256": "26126bcec64a5a531ec2220f57acc9674360697cc94e327d8c7b6bd6bce6bb72",
       "disposition": "retained",
@@ -45676,7 +45676,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych_progress.gui",
       "target": "ai_gui_assessment/mockups/ritual_rework/scheme_a_triptych_progress.gui",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "614366920b6b9e67cd737fda37f6838a6f8ae40c",
       "working_sha256": "173453694569341301af8b9d0877c0aef051c496a69488dcfd11bc7e1493614b",
       "disposition": "retained",
@@ -45685,7 +45685,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger.gui",
       "target": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger.gui",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "80247e3e766b7bdc0f5c7d623bf1213ee8e89d5e",
       "working_sha256": "b43f581e7f98382324f139011ed1c7c96991f0549b4bfc1c168673bf159cec56",
       "disposition": "retained",
@@ -45694,7 +45694,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger_progress.gui",
       "target": "ai_gui_assessment/mockups/ritual_rework/scheme_b_ledger_progress.gui",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "caf228f7808576dc2827b80b272df3e301e21d9c",
       "working_sha256": "ebb05630166248a353662eb24a4e3cb7ef8579ee4d382f2ca39403f8c2ff84a7",
       "disposition": "retained",
@@ -45703,7 +45703,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass.gui",
       "target": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass.gui",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "11351abacdfcb00f88f0445830cbbabdd0912042",
       "working_sha256": "39bd80b1d3fad6477ae654bf931ca091041659df3a3d6b913e07c0ec44b186bc",
       "disposition": "retained",
@@ -45712,7 +45712,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass_progress.gui",
       "target": "ai_gui_assessment/mockups/ritual_rework/scheme_c_compass_progress.gui",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "3280cfae3c8178a56e66973bbb7daa2228bc8e07",
       "working_sha256": "909414722ed3951dbeab20b55fe21b020befe0479e9ab74963a1e88086fb4983",
       "disposition": "retained",
@@ -45721,7 +45721,7 @@
     {
       "source": "ai_gui_assessment/mockups/ritual_rework/stitch.py",
       "target": "ai_gui_assessment/mockups/ritual_rework/stitch.py",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "058add04c1d5943152daf07b740e216a9a33d0f2",
       "working_sha256": "f4199c6c70fa34b5017458773324fa38328149206b2a1b063e999d3cfc8856f3",
       "disposition": "retained",
@@ -45730,7 +45730,7 @@
     {
       "source": "ai_gui_assessment/priority_proposal_mockups.py",
       "target": "ai_gui_assessment/priority_proposal_mockups.py",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "700d88f7fc76d3517225f091aaf93961e089d0c5",
       "working_sha256": "b51d780ab41af7e47d036272a9cc5d3afb637ae6d04572d80a58584da4e59e10",
       "disposition": "retained",
@@ -45739,7 +45739,7 @@
     {
       "source": "ai_gui_assessment/ritual_rework_mockups.py",
       "target": "ai_gui_assessment/ritual_rework_mockups.py",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "10d1a899c54a93c207abd94b035649ad400fa13e",
       "working_sha256": "de6053c5a8787d2c712879b0d0b6e33ee3f17283e99e240500a3587dd1f61ebe",
       "disposition": "retained",
@@ -45748,7 +45748,7 @@
     {
       "source": "ai_gui_assessment/tests/test_engineering.py",
       "target": "ai_gui_assessment/tests/test_engineering.py",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "7a6be1283042204364e44ac6cd4b9f4c28931287",
       "working_sha256": "e7aec2d22d4bc42ae644947e021e0a60887b3e7e872b0be7c09ca241208d416e",
       "disposition": "retained",
@@ -45757,7 +45757,7 @@
     {
       "source": "docs/marketing/assets/finish_en.jpg",
       "target": "docs/marketing/assets/finish_en.jpg",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "34a71789d226bf3a3dce35e2ad8ddd752764e748",
       "working_sha256": "9761ade7e0140d33557e5d961303a791142939e6d0a80ec5911c226356948518",
       "disposition": "retained",
@@ -45766,7 +45766,7 @@
     {
       "source": "docs/marketing/assets/finish_zh.jpg",
       "target": "docs/marketing/assets/finish_zh.jpg",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "6a115e8fadf7c1060cf5e30236824fe00c8284c5",
       "working_sha256": "0595a228bda8bd52624a77549b149dd45384487ecef53cc78188d63082b2b8af",
       "disposition": "retained",
@@ -45775,7 +45775,7 @@
     {
       "source": "docs/marketing/assets/gen_hero_banner.py",
       "target": "docs/marketing/assets/gen_hero_banner.py",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "e60141605cb22115afda1aa796a91395d217b782",
       "working_sha256": "34b5aae24709046ace191ebf90ca314f2f5ab5dce0102af741d4620835630c81",
       "disposition": "retained",
@@ -45784,7 +45784,7 @@
     {
       "source": "docs/marketing/assets/hero_banner_en.png",
       "target": "docs/marketing/assets/hero_banner_en.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "57c4e7c50ba254dac003da9a3ceaa7dc7492d63d",
       "working_sha256": "71c07e7a83e001f8f121fdb415e038a8722c025ac51bb000aaec277be1f1d941",
       "disposition": "retained",
@@ -45793,7 +45793,7 @@
     {
       "source": "docs/marketing/assets/hero_banner_zh.png",
       "target": "docs/marketing/assets/hero_banner_zh.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "2c9e1e516eb2bc6a4e84c86b8a4439db1c9caf6a",
       "working_sha256": "69f37638d6055f8e31421a0c2f658923b22e253108c1c3cb46fb6ebfb09888f6",
       "disposition": "retained",
@@ -45802,7 +45802,7 @@
     {
       "source": "docs/marketing/assets/location_en.jpg",
       "target": "docs/marketing/assets/location_en.jpg",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "43b189a4d0fa3fded47f2ab500606297a287a1c9",
       "working_sha256": "cf2100f09e7a6fb030528e0bc4d0582d4cda3f9ce02c308cb5477312dd6dc096",
       "disposition": "retained",
@@ -45811,7 +45811,7 @@
     {
       "source": "docs/marketing/assets/location_zh.jpg",
       "target": "docs/marketing/assets/location_zh.jpg",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "de367a32da4b8886ae091b901cde31853b2f6f58",
       "working_sha256": "8c4093dab8d3f45e7fc94e492196577b7c472ba1420325da250abeed234a2b2b",
       "disposition": "retained",
@@ -45820,7 +45820,7 @@
     {
       "source": "docs/marketing/assets/org_en.jpg",
       "target": "docs/marketing/assets/org_en.jpg",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "534f64b6f78d83e63f1438fa70dae1de4030bf30",
       "working_sha256": "4595c533dd2439cd10006c98c906d3074ea3e6c9b6e37c7fa0551855fe56438f",
       "disposition": "retained",
@@ -45829,7 +45829,7 @@
     {
       "source": "docs/marketing/assets/org_zh.jpg",
       "target": "docs/marketing/assets/org_zh.jpg",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "9b3ce650dcda6cb0a1fa66816df0c65869d94e7c",
       "working_sha256": "f1b59ef33289bf935a77092b4cb11eafaa4b20e967631449459286adc889dfec",
       "disposition": "retained",
@@ -45838,7 +45838,7 @@
     {
       "source": "docs/marketing/assets/section_compatibility_en.png",
       "target": "docs/marketing/assets/section_compatibility_en.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "775887883319701cd303cf140d7da32befb9bf2d",
       "working_sha256": "529d065b4b8a8c87ead2fa484d7bdce6b2bdbae1f748828b307cb5ca8edb90ce",
       "disposition": "retained",
@@ -45847,7 +45847,7 @@
     {
       "source": "docs/marketing/assets/section_compatibility_zh.png",
       "target": "docs/marketing/assets/section_compatibility_zh.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "8221b0572a002feace7b79df43860880a81cae9d",
       "working_sha256": "b880d361c7a63b8a2dd3766d2013f7e8f4ad298c6f3a7840f04156c34418963b",
       "disposition": "retained",
@@ -45856,7 +45856,7 @@
     {
       "source": "docs/marketing/assets/section_core_features_en.png",
       "target": "docs/marketing/assets/section_core_features_en.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "d959a48affda414cf53b1bc77abb0aae398a004d",
       "working_sha256": "ad12f7c3756cd33044ab46dd38bcd41f7bae145c87fc92632d23286a1c862d70",
       "disposition": "retained",
@@ -45865,7 +45865,7 @@
     {
       "source": "docs/marketing/assets/section_core_features_zh.png",
       "target": "docs/marketing/assets/section_core_features_zh.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "58c8ca688e092722d0e9f8eb4aba133b509ed2f3",
       "working_sha256": "ea75918d6e368d2b54155b3cc86c03fd554bb3b8868a0c3c984357118e649a1b",
       "disposition": "retained",
@@ -45874,7 +45874,7 @@
     {
       "source": "docs/marketing/assets/section_credits_en.png",
       "target": "docs/marketing/assets/section_credits_en.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "d88fb4cdf15fca95667363131ddeb35867b3d04a",
       "working_sha256": "ab09f198ac9fdfc27760f3d89c07a3d74d40e391395d8bfd2a0ad59897fe6426",
       "disposition": "retained",
@@ -45883,7 +45883,7 @@
     {
       "source": "docs/marketing/assets/section_credits_zh.png",
       "target": "docs/marketing/assets/section_credits_zh.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "d24eb5f47e646500bd850d5df5589f9d68e48ee3",
       "working_sha256": "781ec0b0f7e3d58a7f9469bd6e08f1fdc0ed386ab067cf3a390f1728dbd8c1ee",
       "disposition": "retained",
@@ -45892,7 +45892,7 @@
     {
       "source": "docs/marketing/assets/section_links_en.png",
       "target": "docs/marketing/assets/section_links_en.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "9435d13c165b1ddbd90e3012f79104599c40f299",
       "working_sha256": "0883c1bc905f3e786259c5a1e406aa22b6580b14856fd921fea84ef04a870ec1",
       "disposition": "retained",
@@ -45901,7 +45901,7 @@
     {
       "source": "docs/marketing/assets/section_links_zh.png",
       "target": "docs/marketing/assets/section_links_zh.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "27d29d3cf28398a2e2076e15719b58441fa6c21c",
       "working_sha256": "b2b7459da1308737d7466812f622d5d723c97d72cf833cf39e943dcca7e4884b",
       "disposition": "retained",
@@ -45910,7 +45910,7 @@
     {
       "source": "docs/marketing/assets/section_overview_en.png",
       "target": "docs/marketing/assets/section_overview_en.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "f895b9416d979dae4bd364d1eacdf99ac48bad41",
       "working_sha256": "122f5aa95f65120f33f69ee8e4413c674dbaf5b1b52de3fa020fcaed95af5913",
       "disposition": "retained",
@@ -45919,7 +45919,7 @@
     {
       "source": "docs/marketing/assets/section_overview_zh.png",
       "target": "docs/marketing/assets/section_overview_zh.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "0887b6e1c6fe23d398a55b2c3be703e1c792913e",
       "working_sha256": "f3ab89e94ca361fa21249c77f42911482b45ce833b5a96428474c4b7e58e201f",
       "disposition": "retained",
@@ -45928,7 +45928,7 @@
     {
       "source": "docs/marketing/assets/section_six_stages_en.png",
       "target": "docs/marketing/assets/section_six_stages_en.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "d9ca9c4b509f414eb24d407c38f3b57fd155d130",
       "working_sha256": "7e07f135f4ab2b112df24dd1674e253e435aa03479ce04f6347e1370e2a4f657",
       "disposition": "retained",
@@ -45937,7 +45937,7 @@
     {
       "source": "docs/marketing/assets/section_six_stages_zh.png",
       "target": "docs/marketing/assets/section_six_stages_zh.png",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "740f13a2711e1af654f573b0974a819cc57841b9",
       "working_sha256": "bb420a847025b63ae0000075873aeb544f8f99fd07eb8ddf16c726ad7261c085",
       "disposition": "retained",
@@ -45946,7 +45946,7 @@
     {
       "source": "docs/marketing/compat_submods_workshop_en.md",
       "target": "docs/marketing/compat_submods_workshop_en.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "6c6633c1d813cd33c6a431e9d8a25157c9115691",
       "working_sha256": "993df2669be64c34474dc0907e49613aedeab568974e61ece17b8745bfed37d4",
       "disposition": "retained",
@@ -45955,7 +45955,7 @@
     {
       "source": "docs/marketing/compat_submods_workshop_zh.md",
       "target": "docs/marketing/compat_submods_workshop_zh.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "f2bd56c6d58cfee4c6503146fd8e26cb6cd3734c",
       "working_sha256": "87a591ceec7504de1d15e47c6f6c4503315b7f32e68addb982f5fd319f632a83",
       "disposition": "retained",
@@ -45964,7 +45964,7 @@
     {
       "source": "docs/marketing/discord_modcoop_forum_en.md",
       "target": "docs/marketing/discord_modcoop_forum_en.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "f54726bc02552b7f1cdd26ff2196c02c8d20e12b",
       "working_sha256": "169f92ae78b8272f1539554842a063986c06894ccfc50512b426c9331548af7d",
       "disposition": "retained",
@@ -45973,7 +45973,7 @@
     {
       "source": "docs/marketing/discord_official_release_en.md",
       "target": "docs/marketing/discord_official_release_en.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "7810f3e56109d9e8b90dc601de3e77ced2f46643",
       "working_sha256": "5d356be651c1235d3562f9785a761e818d77d29c1d46f0e4b0e59f613ca72e88",
       "disposition": "retained",
@@ -45982,7 +45982,7 @@
     {
       "source": "docs/marketing/discord_update_260805_en.md",
       "target": "docs/marketing/discord_update_260805_en.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "1446d33e63db9b6cae07a0ec6a81c293f9e794fe",
       "working_sha256": "b03da54f8502b3c33fd6222b3ae3ded8e51a8300776497120ea3e5259bd5b2be",
       "disposition": "retained",
@@ -45991,7 +45991,7 @@
     {
       "source": "docs/marketing/github_wiki_en.md",
       "target": "docs/marketing/github_wiki_en.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "886c477a42668de1d77545a37241e7be0f40b3c9",
       "working_sha256": "e6b356ca36310fdec2d236afb32cd52e593f6513a340deb4eff0db264cd3ef89",
       "disposition": "retained",
@@ -46000,7 +46000,7 @@
     {
       "source": "docs/marketing/github_wiki_zh.md",
       "target": "docs/marketing/github_wiki_zh.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "1144086872ac79ccb4720692d913bb752a53ea3b",
       "working_sha256": "ef02f93b3a696aa92922c6a3da8b93f41f59cd7d26b232fec3e7e8c8fd4e8744",
       "disposition": "retained",
@@ -46009,7 +46009,7 @@
     {
       "source": "docs/marketing/paradox_forum_en.md",
       "target": "docs/marketing/paradox_forum_en.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "426c40d2657413a2a9634bdb0397875670fb3227",
       "working_sha256": "2899a376d40f9092301be53aadb68f010153daa7cb1d57af417bea85dd8fa9eb",
       "disposition": "retained",
@@ -46018,7 +46018,7 @@
     {
       "source": "docs/marketing/qq_announcement_zh.md",
       "target": "docs/marketing/qq_announcement_zh.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "73e5d7814cde67bcd83228c24baa3023972294dc",
       "working_sha256": "bf74378a6a37f8bb904a12db67594d5ed7eeaeb7d788088b81227b6d40897333",
       "disposition": "retained",
@@ -46027,7 +46027,7 @@
     {
       "source": "docs/marketing/reddit_post_en.md",
       "target": "docs/marketing/reddit_post_en.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "92f2be007f798062740ef3b2fa2e55cb156e13f3",
       "working_sha256": "052476d4e47ccb0dbb414e9ec50d345dcb1bd592c983a5af6fc7d1ec8994138f",
       "disposition": "retained",
@@ -46054,7 +46054,7 @@
     {
       "source": "docs/technical/EU5_1.4_Suez_Canal_Integration.md",
       "target": "docs/technical/EU5_1.4_Suez_Canal_Integration.md",
-      "ownership": "copied-pending-owner-transfer",
+      "ownership": "move",
       "source_blob": "19c450310901cf3c691dca74ca7c3e50ef373e09",
       "working_sha256": "f5a01990cd96c6351020360ab390a409daa49a0c63b6ac51db70383a129c3370",
       "disposition": "retained",
@@ -53946,6 +53946,11 @@
       "bytes": 77
     },
     {
+      "path": "docs/marketing/README.md",
+      "sha256": "f05b841016219f2cd4b1d8c12fb49015673a1e794d3c3d99c14a51c5c7207c60",
+      "bytes": 592
+    },
+    {
       "path": "docs/marketing/assets/finish_en.jpg",
       "sha256": "9761ade7e0140d33557e5d961303a791142939e6d0a80ec5911c226356948518",
       "bytes": 652180
@@ -54262,8 +54267,8 @@
     },
     {
       "path": "docs/technical/Repository_Split.md",
-      "sha256": "cb108b507fa90287f6c00c8c6823e0aefde7495bd9c1b7618500e64fd55e3510",
-      "bytes": 14828
+      "sha256": "90300630df53e68b0f3b3c64561ab95bd773e200e822e527d3b12b6a6ef0f2e7",
+      "bytes": 15626
     },
     {
       "path": "docs/technical/Towards_Victory_Editor_Web_Assessment.md",
@@ -54367,8 +54372,8 @@
     },
     {
       "path": "docs/technical/split_validation/results.json",
-      "sha256": "78bad5fe6bf3ba8bd10ccb8f7d9c3b36308722dfd548ff47957996635b0df8a1",
-      "bytes": 3960
+      "sha256": "46617eddd298555a1a1b579ef25f7bc930b04694b9645d77de0272f71d59beba",
+      "bytes": 4408
     },
     {
       "path": "docs/technical/split_validation/tv-browser.txt",
@@ -75010,7 +75015,7 @@
     "source_records": 5749,
     "source_records_retained": 5741,
     "source_records_excluded": 8,
-    "moved_records": 5464,
-    "final_files_excluding_manifest": 5788
+    "moved_records": 5527,
+    "final_files_excluding_manifest": 5789
   }
 }

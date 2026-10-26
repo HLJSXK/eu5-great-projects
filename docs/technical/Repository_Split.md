@@ -45,12 +45,14 @@
 | `assets/generated_wonders/**`、`assets/historical/**` | 归 GP，保留来源图、加工结果、历史归档和相关元数据 |
 | 奇观 building icons / metadata | 归 GP；通用样式参考按实际工具输入复制到 GP |
 | `unique_wonders_site/**`、对应 `.github/workflows` | 归 GP；没有调用远端 Pages 发布 |
+| `ai_gui_assessment/**` | ED 离线 GUI 预览、fixture、原型与历史渲染图归 GP；默认 mod-root 改为 `src`，继续使用 base renderer |
+| GP 的宣传稿/配图与苏伊士接入文档 | 逐项核对后迁入 GP；两个混合 Steam 原件留在 TV 作历史证据 |
 | Wonder/cropper 的前后端模块、测试 | 迁入 `great_projects_editor_web/` 及 GP `tests/` |
 | 共同的编辑器事务/作业/验证基础设施 | 各仓库本地维护一份，从原版本派生；不建立依赖 TV 的包装器 |
 | `docs/**/ED_*`、Great Project 设计/宣传稿、奇观设计/指南/风险卡 | 归 GP；保留原有归档状态 |
 | 混合领域的旧编辑器方案和手册 | 明确标注为拆分前历史资料；当前命令以各自 README / CLAUDE 为准 |
 
-TV 的 5,464 项受控删除全部映射到 GP，没有未登记的删除。35 个实际 generic actions 与 11 个语言目录一起移交。
+TV 的 5,527 项受控删除全部映射到 GP，没有未登记的删除。35 个实际 generic actions 与 11 个语言目录一起移交。
 
 来源清单包含原路径、新路径、迁移类别、原 Git blob、原 Windows 工作树 SHA-256；
 最终交付文件另有 SHA-256 快照。两种哈希不混为一谈：原工作树可能有 CRLF，而 Git 保存 LF。
@@ -141,6 +143,7 @@ GP 的文本生产者显式写 LF，保留游戏文本的 UTF-8 BOM；七个 van
 - TV 快速 Python 回归：315 通过；Node：105 通过。
 - GP 正式 clone 全量 Python 回归（含真实生成链）：883 通过、1 项既有仪式 GUI 断言失败，耗时 136.55 秒。
 - GP Node：127 通过，1 个既有缺失模块测试失败。
+- GP 离线 GUI 工具：16 项测试、43 项子检查通过；未启动游戏。
 - 两边独立浏览器验收通过；GP 实际加载 56 个通用奇观和 139 个独特奇观。
 - GP `scripts/build.py --check --date 2026-10-26` 通过：50 个生产者、81 项输出一致性、189 个游戏文本文件静态检查。
 - TV 全量静态验证：181 个游戏文本文件，无错误或警告。
@@ -164,6 +167,8 @@ GP 的文本生产者显式写 LF，保留游戏文本的 UTF-8 BOM；七个 van
    因此 TV 全量 pytest/编辑器 full runner 不能宣称全部绿色。快速回归与本轮改动的生成器通过。
 
 4. 本地图鉴构建输出了 195 条奇观记录、复制 191 张图片，报告四张既有缺图：Amber Room、Parthenon、Bangkok Grand Palace、Wat Arun。源码迁移保留现状；本轮没有调用图像 API 补图。
+
+整目录补充迁移曾被自动审批以混合资料误归属风险拒绝。随后核对标题、mod ID、工具 README 和实际配图，形成 `verified_supplement.json`；先复制 65 项并提交恢复点 `a5fc3fcbb8cb`，验证离线工具后仅移除 63 个明确归 GP 的旧副本。两个 Steam 稿的 SoL 提示与 GP 正文混合，TV 原件保留，GP 有审校副本。旧链接和宣传文字没有对外更新。
 
 上述原始复现日志随交接保存。原先归档的 AI observer、vanilla takeover 游戏内调查、编辑器改进计划继续归档；
 本轮只为仓库拆分执行其现有静态回归，不重新开立玩法调查。
