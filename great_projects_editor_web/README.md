@@ -12,5 +12,5 @@ Tools: wonder mechanics/localization, image cropper, media generation, cost/rewa
 localization and registered generators. Default port: 8763.
 
 Use scripts/run_editor_tests.py for the local test selection. The pre-extraction
-manual is preserved in docs/technical/Editor_Web_Pre_Split_Reference.md; it is
+manual is preserved in docs/archive/pre_split_editor/Editor_Web_Pre_Split_Reference.md; it is
 historical evidence, not the current list of tools or repository paths.

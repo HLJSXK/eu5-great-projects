@@ -16,5 +16,5 @@ Generic actions must have AI-list actions membership, a root-owned PERFORM messa
 type, and all five HEADER/TITLE/SETUP/LOG/MAP keys with BOM and resolving aliases.
 Run scripts/validate.py --changed --fix --ai-report and relevant tests before handoff.
 Regenerate the knowledge brief with scripts/gen_brief.py after knowledge changes.
-Read docs/technical/Repository_Split.md for extraction evidence and audit guidance.
+Read docs/archive/repository_split/Repository_Split.md for extraction evidence and audit guidance.
 The archived gameplay/refactor investigations remain archived.

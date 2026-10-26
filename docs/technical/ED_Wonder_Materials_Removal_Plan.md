@@ -43,7 +43,7 @@
 | 修正类型和图标 | `main_menu/common/modifier_type_definitions/…:9,81-150`；`modifier_icons/…:5,41-80` | 1 条工坊价格修正，加 11 条商品自动修正 |
 | 命名颜色 | `main_menu/common/named_colors/tv_engineering_department_named_colors.txt:4` | `goods_tv_wonder_materials` |
 | 游戏概念 | `main_menu/common/game_concepts/tv_engineering_department_game_concepts.txt:21` | `tv_wonder_materials` |
-| 图标 | 3 个 dds、3 个 `data/generated_icons/*.json`、`generate_dds_icon_config.json:168` | 商品图标、商品插图（放在主模组 `src/`）、工坊建筑图标 |
+| 图标 | 3 个 dds、3 个 `data/generated_icons/*.json`、`data/tool_config/dds_icons.json:168` | 商品图标、商品插图（放在主模组 `src/`）、工坊建筑图标 |
 
 ---
 
@@ -245,7 +245,7 @@ tv_wonder_labor_camp_only = {
 - `data/generated_icons/icon_goods_tv_wonder_materials_trade_good_illustration.json`
 - `data/generated_icons/tv_wonder_material_dispatch_point_building_icon.json`
 
-另外删除 `generate_dds_icon_config.json:168` 的 `tv_wonder_material_dispatch_point` 条目。
+另外删除 `data/tool_config/dds_icons.json:168` 的 `tv_wonder_material_dispatch_point` 条目。
 
 ### 第 5 步：范围外文件（D8 全部更新）
 
@@ -349,4 +349,4 @@ git grep -n -I -E "tv_wonder_materials|material_dispatch|material_workshop|mater
 
 1. 本仓库提交 A：第 1～4 步、5.2～5.6、第 6 步（游戏内容、界面、本地化、资源、文档、测试、索引）。
 2. `.eu5-base` 提交 B：5.1。
-3. 进游戏验证后，回填本计划第 3.3 步的维护费数值和第 4.3 节；如果 `docs/technical/Editor_Web_Refactor_Status.md` 或风险卡涉及本次改动，同步更新。
+3. 进游戏验证后，回填本计划第 3.3 步的维护费数值和第 4.3 节；如果 `docs/archive/pre_split_editor/Editor_Web_Refactor_Status.md` 或风险卡涉及本次改动，同步更新。

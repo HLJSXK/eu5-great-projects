@@ -183,7 +183,7 @@ ceremony:
 - 不手改 `data/unique_wonder_ritual_specs.yaml`
 - 奇观主图只对这 15 个 key 开批次：2 个通用原型 + 13 座独特奇观
 - 最终建筑 Icon 需要补齐 19 个 DDS：2 个通用原型各 3 个分支，共 6 个；13 座独特奇观各 1 个
-- 建筑 Icon prompt 写入 `generate_dds_icon_config.json` 的 `wonder_building_icons.overrides`
+- 建筑 Icon prompt 写入 `data/tool_config/dds_icons.json` 的 `wonder_building_icons.overrides`
 - 生成完要恢复 `scripts_engineering_department/generate_wonder_image_config.json` 的选择配置，别把仓库默认选择留成窄批次
 
 命令顺序：
@@ -225,7 +225,7 @@ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department\in_g
 
 最终建筑 Icon 流程：
 
-1. 为 6 个通用分支建筑和 13 个独特奇观落成建筑，在 `generate_dds_icon_config.json` 的 `wonder_building_icons.overrides` 中分别写入 `icon_prompt`。
+1. 为 6 个通用分支建筑和 13 个独特奇观落成建筑，在 `data/tool_config/dds_icons.json` 的 `wonder_building_icons.overrides` 中分别写入 `icon_prompt`。
 2. 先执行 `C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts\generate_dds_icon.py --target wonder_building_icons --dry-run`，检查最终拼接 prompt、参考图和请求参数，不调用图片 API。
 3. 再执行 `C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts\generate_dds_icon.py --target wonder_building_icons`，生成 PNG 和 `src/main_menu/gfx/interface/icons/buildings/*.dds`。
 4. 保持 `output.overwrite: false`；生成器会跳过已有建筑 Icon，只处理本批次缺失的 19 个 DDS。

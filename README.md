@@ -24,6 +24,33 @@ For local image processing install `requirements-image.txt` as well. Browser/Nod
 require Node 22+ and Chrome; the test script accepts EU5_PYTHON and CHROME_PATH.
 Runtime dependencies remain Community Mod Framework 2.x and Construction Manager.
 
-See [CLAUDE.md](CLAUDE.md) and [extraction handoff](docs/technical/Repository_Split.md).
+## Directory layout
 
-Final extraction audit: [third-pass findings and validation](docs/technical/Great_Projects_Split_Final_Audit_2026-10-26.md).
+| Path | Purpose |
+| --- | --- |
+| `src/` | Deployable Great Projects mod |
+| `submods/` | Three GUI compatibility packages |
+| `data/` | Source catalogs, generated-file registry and indexes |
+| `data/tool_config/` | Shared image-tool and error-log configuration |
+| `scripts/` | Workspace commands, integration generators and image tools |
+| `scripts_engineering_department/` | Wonder and Engineering Department generators |
+| `great_projects_editor_web/` | Independent editor, port 8763 |
+| `unique_wonders_site/` | Atlas source and checked-in site output |
+| `ai_gui_assessment/` | Offline GUI previews, fixtures and mockups |
+| `assets/` | Original images, processed assets and historical image archives |
+| `docs/` | Design, technical, knowledge and marketing documentation |
+| `docs/archive/` | Pre-split editor documentation and repository extraction evidence |
+| `tests/` | Python and Node regression tests |
+
+Run `python scripts/error_log_filter.py` for the shared log filter, configured by
+`data/tool_config/error_log_filter.json`. Image tools use
+`data/tool_config/dds_icons.json`; paths inside that image configuration remain
+relative to the repository root. Private `*.local.json` image settings remain at
+the root and are ignored by Git.
+
+`build/`, `tmp/`, Python caches and test caches are disposable local outputs.
+Keep `.eu5-base`, `.editor_state/`, private settings, source images and historical
+asset archives. The checked-in `unique_wonders_site/dist/` is part of the atlas.
+
+See [CLAUDE.md](CLAUDE.md) and the [archive index](docs/archive/README.md) for the
+extraction handoff and final audit.

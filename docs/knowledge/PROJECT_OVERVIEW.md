@@ -26,4 +26,4 @@ localization fields (HEADER, TITLE, SETUP, LOG, MAP) in both languages.
 
 The October 22 archived vanilla-takeover, AI-observer and editor-refactor work
 remains historical evidence. Extraction does not reopen gameplay investigation
-or certify untested runtime scenarios. See docs/technical/Repository_Split.md.
+or certify untested runtime scenarios. See docs/archive/repository_split/Repository_Split.md.

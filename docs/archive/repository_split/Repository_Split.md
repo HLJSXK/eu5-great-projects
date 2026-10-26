@@ -1,7 +1,7 @@
 # Great Projects / ED 仓库拆分交接（第一棒）
 
 日期：2026-10-26。本文面向下一位审计者，说明边界、可复现证据、实际改动和未验证部分。
-本文与新仓库 `docs/technical/Repository_Split.md` 同步交付。
+本文与新仓库 `docs/archive/repository_split/Repository_Split.md` 同步交付。
 
 ## 1. 起点与最终边界
 
@@ -89,9 +89,9 @@ GP operation store 环境变量改为 `GP_EDITOR_OPERATION_STORE`；默认仍在
 GP DDS 工具去掉胜利树/胜利奖励批次；TV 去掉 Wonder 图片、历史图处理及奇观批次。
 配置中的输出路径、默认批次和样式输入同步拆开，避免旧目标重新生成已迁出的目录。
 
-原混合浏览器总场景作为 `docs/technical/Pre_Split_Browser_Acceptance.cjs.txt` 保留，未声称完整重放其所有旧步骤。
+原混合浏览器总场景作为 `docs/archive/pre_split_editor/Pre_Split_Browser_Acceptance.cjs.txt` 保留，未声称完整重放其所有旧步骤。
 当前 `tests/resource_state_browser.cjs` 验证实际六页导航、所属资源、外域 404、只读预览、两种视口和 JS 异常。
-各领域原有 Python/Node 合同测试随所有者保留。截图在 `docs/technical/split_validation/`。
+各领域原有 Python/Node 合同测试随所有者保留。截图在 `docs/archive/repository_split/split_validation/`。
 
 ## 5. 共享知识库的配套修改
 

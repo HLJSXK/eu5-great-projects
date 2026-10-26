@@ -188,7 +188,7 @@ P1 为 WP-04～WP-11，P2/P3 为 WP-12～WP-14；依赖与验收标准见该文�
 
 - 资源契约和执行位于 `services/platform.py`；OperationStore 持久化，HTTP 同步提交与 JobManager 线程池分别调度。
 - Wonder DAG/命令执行位于 `services/generation.py`；产物清单与格式检查位于 `services/artifacts.py`。
-- 媒体注册/计划/作业位于 `services/tooling.py`，领域 handler 位于 media_plans/media_tools/cropper；API、锁与输入组详见 [README](../../great_projects_editor_web/README.md)。
+- 媒体注册/计划/作业位于 `services/tooling.py`，领域 handler 位于 media_plans/media_tools/cropper；API、锁与输入组详见 [README](../../../great_projects_editor_web/README.md)。
 
 ## 验证记录
 

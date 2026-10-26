@@ -58,7 +58,7 @@ historical asset directory:
 python scripts/generate_historical_images.py
 ```
 
-The root `generate_dds_icon_config.json` is the only configuration entry point.
+The `data/tool_config/dds_icons.json` file is the only configuration entry point.
 The `historical_images` section contains the two source/output mappings, the edit
 endpoint, model, API key setting, and `overwrite`. Set `overwrite` to `true` to
 regenerate existing files; otherwise existing output files are skipped. This

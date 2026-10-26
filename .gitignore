@@ -51,12 +51,7 @@ dist/
 !unique_wonders_site/scripts/build/
 !unique_wonders_site/scripts/build/*.py
 
-# Go specific
-*.test
-*.out
-go.work
-
-# Python (legacy)
+# Python
 __pycache__/
 *.py[cod]
 .Python
@@ -71,9 +66,6 @@ TODO_personal.md
 # Local API credentials
 generate_wonder_image.local.json
 generate_dds_icon.local.json
-
-# Regenerated on demand by victory_tree_planner_web (decoded from src DDS)
-assets/generated_tree_previews/
 
 # Shared sibling EU5 modding base checkout
 /.eu5-base

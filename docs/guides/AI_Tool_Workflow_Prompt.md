@@ -13,4 +13,4 @@ HEADER/TITLE/SETUP/LOG/MAP localizations with BOM and resolving aliases.
 Run scripts/validate.py --changed --fix --ai-report before handoff. Regenerate
 scripts/gen_brief.py after knowledge changes. Shared engine rules belong in
 .eu5-base; implementation rules belong here. Repository extraction evidence and
-known validation limits are in docs/technical. Archived investigations stay archived.
+known validation limits are in docs/archive/repository_split. Archived investigations stay archived.

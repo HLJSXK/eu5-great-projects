@@ -15,7 +15,7 @@ from typing import Callable
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-CONFIG_PATH = REPO_ROOT / "generate_dds_icon_config.json"
+CONFIG_PATH = REPO_ROOT / "data/tool_config/dds_icons.json"
 PROMPTS_PATH = REPO_ROOT / "assets/historical/review/historical_image_prompts.json"
 OUTPUT_DIR = REPO_ROOT / "assets/historical/processed"
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"

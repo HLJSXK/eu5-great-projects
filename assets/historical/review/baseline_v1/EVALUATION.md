@@ -5,7 +5,7 @@
 
 ## 已确认的准备工作
 
-- 20 张源图全部进入 `generate_dds_icon_config.json` 的 `historical_images.images`，
+- 20 张源图全部进入 `data/tool_config/dds_icons.json` 的 `historical_images.images`，
   输出文件名唯一，`overwrite=false`。
 - 原图列表和尺寸记录见 `sources_manifest.json`，概览见 `sources_contact_sheet.jpg`。
 - 评审工具 `scripts/evaluate_historical_images.py` 比较源图、原有纯 AI 图和本轮

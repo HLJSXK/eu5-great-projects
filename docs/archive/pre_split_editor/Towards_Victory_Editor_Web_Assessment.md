@@ -18,15 +18,15 @@
 
 ### 入口已经合并，服务没有合并
 
-`server.py` 分别实例化 `CostRewardEditorService`、`VictoryTreePlannerService` 和 `WonderResourceService`，并接入 cropper、media registry 和 jobs（见 [server.py](../../great_projects_editor_web/server.py)）。Wonder 的领域实现位于 `services/wonder/`；四个编辑器均提供 `/api/resources/{resource_id}` 及其 `validate/preview/commit` 操作，Wonder 的详情、仪式设计和 Prompt 仍有领域专用读取接口。媒体生成工具仍走 `/api/jobs` 协议。
+`server.py` 分别实例化 `CostRewardEditorService`、`VictoryTreePlannerService` 和 `WonderResourceService`，并接入 cropper、media registry 和 jobs（见 [server.py](../../../great_projects_editor_web/server.py)）。Wonder 的领域实现位于 `services/wonder/`；四个编辑器均提供 `/api/resources/{resource_id}` 及其 `validate/preview/commit` 操作，Wonder 的详情、仪式设计和 Prompt 仍有领域专用读取接口。媒体生成工具仍走 `/api/jobs` 协议。
 
-媒体侧虽然有 `ToolSpec`、`ToolRegistry` 和 `JobManager`，但编辑器只是通过 `registry.register_spec(..., interactive=True)` 注册了展示元数据，并没有进入同一个 handler、校验、作业或结果协议（见 [media.py](../../great_projects_editor_web/services/media.py#L14)）。这说明“统一工具目录”目前只覆盖媒体执行工具，未覆盖交互式编辑器。
+媒体侧虽然有 `ToolSpec`、`ToolRegistry` 和 `JobManager`，但编辑器只是通过 `registry.register_spec(..., interactive=True)` 注册了展示元数据，并没有进入同一个 handler、校验、作业或结果协议（见 [media.py](../../../great_projects_editor_web/services/media.py#L14)）。这说明“统一工具目录”目前只覆盖媒体执行工具，未覆盖交互式编辑器。
 
 ### 后端仍是三个旧领域服务加一套新作业系统
 
 迁移前的 Wonder 单体 `wonder_localization.py` 约 3,800 行（拆分前基线），Wonder 服务现由 `WonderResourceService` 与 `services/wonder/` 领域模块组成；其他编辑器仍各自维护领域加载、校验、内存状态和日志。媒体则由 `tooling.py`、`media.py`、`media_tools.py`、`media_plans.py`、`cropper.py` 组成另一条生命周期。旧工具在提交 `1653d467` 中被移入统一包，但提交内容主要是入口、路由和静态资源迁移，原有 service 和页面逻辑基本被保留；提交 `d56fa727` 又在此基础上追加了媒体作业框架。这与“拼接旧工具”的现象相符。
 
-编辑器保存是同步请求，通过各自的资源 commit 写入文件；媒体任务是异步、线程池、作业轮询和产物快照。`JobManager` 允许三个 worker，但用全局执行锁把实际写入串行化（见 [tooling.py](../../great_projects_editor_web/services/tooling.py#L289)）。两个 Wonder 媒体作业锁定 `editor.wonder`、`editor.wonder_crop` 和 `editor.cost_reward`；Wonder commit 始终锁定 `editor.wonder` 与 `editor.cost_reward`，包括禁用生成的 API 路径，因为提交仍可能写共享源文件；crop commit 锁定 `editor.wonder_crop`；修改 cost/reward 分类时的 commit 锁定 `editor.cost_reward` 与 `editor.wonder`，只改 task pool 时只锁 `editor.cost_reward`。victory tree 尚未共享，也没有统一的变更事件或提交记录。
+编辑器保存是同步请求，通过各自的资源 commit 写入文件；媒体任务是异步、线程池、作业轮询和产物快照。`JobManager` 允许三个 worker，但用全局执行锁把实际写入串行化（见 [tooling.py](../../../great_projects_editor_web/services/tooling.py#L289)）。两个 Wonder 媒体作业锁定 `editor.wonder`、`editor.wonder_crop` 和 `editor.cost_reward`；Wonder commit 始终锁定 `editor.wonder` 与 `editor.cost_reward`，包括禁用生成的 API 路径，因为提交仍可能写共享源文件；crop commit 锁定 `editor.wonder_crop`；修改 cost/reward 分类时的 commit 锁定 `editor.cost_reward` 与 `editor.wonder`，只改 task pool 时只锁 `editor.cost_reward`。victory tree 尚未共享，也没有统一的变更事件或提交记录。
 
 ### 数据契约没有共同的资源边界
 
@@ -34,7 +34,7 @@
 
 - cost/reward 直接维护 `data/cost_reward_units.yaml` 与 `data/task_pool.yaml`；
 - victory tree 维护树变体、节点坐标，并在服务初始化时解码 DDS 预览（见 [victory_tree.py](../../great_projects_editor_web/services/victory_tree.py#L111)）；
-- wonder 编辑器由 [WonderResourceService](../../great_projects_editor_web/services/wonder_resource.py) 加载本地化、通用奇观、机制、独特奇观、仪式设计和提示词等源；领域字段和规范化逻辑位于 `services/wonder/`。保存时由 [generation.py](../../great_projects_editor_web/services/generation.py) 的 `run_generation()` 执行生成计划；
+- wonder 编辑器由 [WonderResourceService](../../../great_projects_editor_web/services/wonder_resource.py) 加载本地化、通用奇观、机制、独特奇观、仪式设计和提示词等源；领域字段和规范化逻辑位于 `services/wonder/`。保存时由 [generation.py](../../../great_projects_editor_web/services/generation.py) 的 `run_generation()` 执行生成计划；
 - media 生成工具通过 job 写入 DDS/PNG 等产物；cropper 的 `data/wonder_image_crops.json` 已通过资源接口编辑，PNG 读取和 DDS 重建仍分别走图片读取与 job 接口。
 
 cost/reward、victory tree、Wonder 和 cropper 配置现在通过统一 `ResourceDescriptor`、源文件 SHA-256 快照、draft、校验、预览 diff 和 commit 返回变更集合；媒体工具也开始在 `ToolSpec` 和 job payload 中声明资源依赖、源文件快照与允许的产物格式。当前仍没有完整的生成依赖图、跨资源 batch change set 或跨资源统一预览；Wonder 现有生成范围已有独立 DAG 和逐产物报告，但尚未按字段建立完整的输入依赖图。
@@ -43,13 +43,13 @@ cost/reward、victory tree、Wonder 和 cropper 配置现在通过统一 `Resour
 
 cost/reward、tree、Wonder 和 cropper 的统一 commit 都先校验加载时 base，再构建候选内容并暂存写入；Wonder commit 还会快照源文件和登记的生成产物，生成器失败时恢复这些快照并重新加载服务。当前暂存替换对多个目标文件仍不是全局 POSIX 原子操作，跨资源提交也尚未组合成一个事务。
 
-Wonder 的生成器由 [generation.py](../../great_projects_editor_web/services/generation.py) 使用当前进程的 `sys.executable` 直接运行。领域目录 [wonder_generation.py](../../great_projects_editor_web/services/wonder_generation.py) 声明脚本、依赖和 GUI 合并输入；预览 API 返回执行计划，保存 API 返回生成报告，目前页面尚未展示这两项数据。保存对每步及最终产物校验，失败进入现有文件恢复事务。
+Wonder 的生成器由 [generation.py](../../../great_projects_editor_web/services/generation.py) 使用当前进程的 `sys.executable` 直接运行。领域目录 [wonder_generation.py](../../../great_projects_editor_web/services/wonder_generation.py) 声明脚本、依赖和 GUI 合并输入；预览 API 返回执行计划，保存 API 返回生成报告，目前页面尚未展示这两项数据。保存对每步及最终产物校验，失败进入现有文件恢复事务。
 
 ### 前端只有壳层共享，状态和组件没有共享
 
-`index.html` 将五个工作区和六个独立模块全部加载到同一页面（见 [index.html](../../great_projects_editor_web/static/index.html#L1)）。`shared.js` 只负责标签切换和 `body.dataset.activeTool`，没有路由、共享 store、请求层、通知、dirty 状态、权限或错误边界（见 [shared.js](../../great_projects_editor_web/static/shared.js#L1)）。每个模块继续拥有自己的全局 `state`、`fetch` 封装、渲染函数和保存语义。
+`index.html` 将五个工作区和六个独立模块全部加载到同一页面（见 [index.html](../../../great_projects_editor_web/static/index.html#L1)）。`shared.js` 只负责标签切换和 `body.dataset.activeTool`，没有路由、共享 store、请求层、通知、dirty 状态、权限或错误边界（见 [shared.js](../../../great_projects_editor_web/static/shared.js#L1)）。每个模块继续拥有自己的全局 `state`、`fetch` 封装、渲染函数和保存语义。
 
-CSS 也只是叠加覆盖：`shared.css` 保留旧的深色根样式，`workspace_theme.css` 再覆盖为浅色主题；wonder 仍有一套约 1,331 行的专用视觉系统，cost/reward、tree、media/cropper 又各自保留布局和控件规则。两个 `:root`、多个 `body`、`button`、输入框规则并存，主题顺序成为行为的一部分，而不是显式设计系统（见 [shared.css](../../great_projects_editor_web/static/shared.css#L1)、[workspace_theme.css](../../great_projects_editor_web/static/workspace_theme.css#L1)）。
+CSS 也只是叠加覆盖：`shared.css` 保留旧的深色根样式，`workspace_theme.css` 再覆盖为浅色主题；wonder 仍有一套约 1,331 行的专用视觉系统，cost/reward、tree、media/cropper 又各自保留布局和控件规则。两个 `:root`、多个 `body`、`button`、输入框规则并存，主题顺序成为行为的一部分，而不是显式设计系统（见 [shared.css](../../../great_projects_editor_web/static/shared.css#L1)、[workspace_theme.css](../../great_projects_editor_web/static/workspace_theme.css#L1)）。
 
 前端交互仍未完全统一：四个编辑器共享资源级 load/validate/preview/commit 入口，但各自保留领域 draft 和渲染状态；媒体生成提交 job、轮询、取消并接收产物报告。编辑资源与执行生成仍是两种工作模型。
 
@@ -151,7 +151,7 @@ flowchart LR
 
 ### 拆分前的 Wonder 服务承担了八种职责
 
-Wonder 编辑器的耦合核心不是“奇观字段很多”，而是拆分前一个类同时决定了数据如何读取、如何显示、如何解析、如何写回和如何生成。`WonderLocalizationService` 的约 3,800 行规模是拆分前基线；当时它启动时一次加载通用奇观、独特奇观、机制、站点规则、最终建筑、通用仪式、本地化、独特仪式设计和提示词，然后构建选项目录并执行全量 canonical localization 校验。当前资源加载入口位于 [WonderResourceService](../../great_projects_editor_web/services/wonder_resource.py)，领域逻辑已拆至 `services/wonder/`。拆分前的单体还负责：
+Wonder 编辑器的耦合核心不是“奇观字段很多”，而是拆分前一个类同时决定了数据如何读取、如何显示、如何解析、如何写回和如何生成。`WonderLocalizationService` 的约 3,800 行规模是拆分前基线；当时它启动时一次加载通用奇观、独特奇观、机制、站点规则、最终建筑、通用仪式、本地化、独特仪式设计和提示词，然后构建选项目录并执行全量 canonical localization 校验。当前资源加载入口位于 [WonderResourceService](../../../great_projects_editor_web/services/wonder_resource.py)，领域逻辑已拆至 `services/wonder/`。拆分前的单体还负责：
 
 1. 源文件快照和进程内缓存；
 2. generic/unique wonder 的领域聚合；
@@ -206,7 +206,7 @@ flowchart LR
 | unique Trinity Lavra detail | 约 12.56 MB | mechanics 约 12.48 MB |
 | unique Zhoushan detail | 约 12.52 MB | mechanics 约 12.49 MB |
 
-以 Trinity Lavra 为例，只有 9 个 mechanics 字段，但 `unique_ceremony` 约 6.39 MB、`unique_ritual` 约 4.41 MB；base modifiers 约 1.38 MB，其余字段均远小于此。原因是 `build_unique_ritual_editor_state()` 与 `build_unique_ceremony_editor_state()` 把完整结构连同每个 row 的 options 直接嵌入一个 field，前端再完整深拷贝并构建 DOM。`renderReadonlyStructuredField()` 甚至会先构建完整可编辑结构，再逐个禁用控件（见 [wonder_localization.js](../../great_projects_editor_web/static/wonder_localization.js#L2313)）。继承 prototype 的只读页面因此也承担了编辑态的传输和渲染成本。
+以 Trinity Lavra 为例，只有 9 个 mechanics 字段，但 `unique_ceremony` 约 6.39 MB、`unique_ritual` 约 4.41 MB；base modifiers 约 1.38 MB，其余字段均远小于此。原因是 `build_unique_ritual_editor_state()` 与 `build_unique_ceremony_editor_state()` 把完整结构连同每个 row 的 options 直接嵌入一个 field，前端再完整深拷贝并构建 DOM。`renderReadonlyStructuredField()` 甚至会先构建完整可编辑结构，再逐个禁用控件（见 [wonder_localization.js](../../../great_projects_editor_web/static/wonder_localization.js#L2313)）。继承 prototype 的只读页面因此也承担了编辑态的传输和渲染成本。
 
 前端还把所有页面草稿保存在 `pageDrafts`，保存时将所有 dirty wonder 一次提交到 `/api/resources/editor.wonder/commit`。这会把“当前页面的一个小改动”升级为一次跨 wonder、跨文件、跨 generator 的长事务；保存耗时和失败范围随用户浏览过的页面数增长。后续应让默认 commit 只针对当前资源，并要求跨 wonder 批量保存显式创建 batch change set。
 

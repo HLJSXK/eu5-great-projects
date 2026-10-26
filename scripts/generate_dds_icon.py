@@ -4,17 +4,16 @@ Generate EU5 DDS assets through Packyapi Images API from a
 natural-language prompt and target-specific style DDS/PNG references.
 
 Usage:
-  1. Edit generate_dds_icon_config.json.
+  1. Edit data/tool_config/dds_icons.json.
   2. Set PACKY_API_KEY (or PACKY_SORA_TOKEN), or put api.api_key in
      generate_dds_icon.local.json.
-  3. Run: conda run --no-capture-output -n eu5 python scripts/generate_dds_icon.py
+  3. Run with the direct EU5 Python: python scripts/generate_dds_icon.py
 
 The script expands a short asset idea into a production prompt for one selected
 target, uploads that target's style-reference images, writes the generated PNG,
 and converts it into one DDS target with enforced dimensions and byte limits.
-It can also run victory path icon, victory reward icon, and victory reward
-tree-background batches, plus a wonder building icon batch for every generated
-final wonder building.
+It can also run a wonder building icon batch for every generated final wonder
+building.
 """
 
 from __future__ import annotations
@@ -62,7 +61,7 @@ from wonder_mechanics._core import (  # noqa: E402
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-CONFIG_PATH = REPO_ROOT / "generate_dds_icon_config.json"
+CONFIG_PATH = REPO_ROOT / "data/tool_config/dds_icons.json"
 LOCAL_CONFIG_PATH = REPO_ROOT / "generate_dds_icon.local.json"
 DEFAULT_GENERATIONS_ENDPOINT = "https://www.right.codes/draw/v1/images/generations"
 DEFAULT_EDITS_ENDPOINT = "https://www.right.codes/draw/v1/images/edits"

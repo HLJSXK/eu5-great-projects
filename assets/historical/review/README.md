@@ -3,7 +3,7 @@
 本轮输入为 `assets/historical/` 根目录的 136 张图片，覆盖全部伟大工程：首批 20 张为自选源图，
 第二批 20 张与第三批 96 张来自维基共享资源（出处与授权见 `batch2_web_sources.json`、
 `batch3_web_sources.json`）。根配置
-`generate_dds_icon_config.json` 的 `historical_images.images` 已逐张映射，
+`data/tool_config/dds_icons.json` 的 `historical_images.images` 已逐张映射，
 输出为 `assets/historical/processed/<中文工程名>_ai_cartoon.png`。
 
 生成使用项目已有的 `scripts/generate_historical_images.py`，通过 Images

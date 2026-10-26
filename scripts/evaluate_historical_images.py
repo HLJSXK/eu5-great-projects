@@ -182,7 +182,7 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, default=REVIEW_DIR)
     parser.add_argument("--images-dir", type=Path, default=REPO_ROOT / "assets/historical/processed", help="Image batch to review, including a variant directory")
     args = parser.parse_args()
-    config = json.loads((REPO_ROOT / "generate_dds_icon_config.json").read_text(encoding="utf-8"))
+    config = json.loads((REPO_ROOT / "data/tool_config/dds_icons.json").read_text(encoding="utf-8"))
     review_path = REVIEW_DIR / "source_review.json"
     reviews = json.loads(review_path.read_text(encoding="utf-8"))
     if isinstance(reviews, dict):

@@ -102,7 +102,7 @@ flowchart LR
 **目标**：让并行领取成为合法流程，避免 agent 按旧规则"只推进当前焦点一项"而互相阻塞。
 
 **交付物**
-- 状态文档 `docs/technical/Editor_Web_Refactor_Status.md`：改写"使用规则"与"当前焦点"两节，
+- 状态文档 `docs/archive/pre_split_editor/Editor_Web_Refactor_Status.md`：改写"使用规则"与"当前焦点"两节，
   指向本文件；"后续任务 2/3"改为**已关闭（用户 2026-10-12 决定）**并保留一句关闭理由；
   验证记录格式不变。
 - 根 `CLAUDE.md`：启动阅读顺序加入本文件（`BRIEF.md` → 状态文档 → 本文件 → Web README）。
