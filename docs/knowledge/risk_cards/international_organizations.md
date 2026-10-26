@@ -1,17 +1,21 @@
 # International Organizations Risk Card
 
 Load this card before editing files under `common/international_organizations/` or effects
-that create, find, or mutate TV IOs.
+that create, find, or mutate Engineering Department IOs.
+
+The `tv_` runtime namespace is retained. TV-only Trade League state and law-seeding
+policies belong to the TV workspace and do not configure Engineering Department.
+Cross-repository examples below are historical evidence, not local tool dependencies.
 
 ## Required Checks
 
-1. Preserve TV IO leader invariants.
-   Do not call `international_organization_chooses_new_leader` for TV IOs. Keep
+1. Preserve Engineering Department IO leader invariants.
+   Do not call `international_organization_chooses_new_leader` for Engineering Department IOs. Keep
    `leader_change_trigger_type = none`, and read appointed characters through
    `leader_country.var:tv_xxx_leader_char.attribute`.
 
-2. Treat TV IOs as non-unique unless explicitly documented otherwise.
-   Do not use `international_organization:type_key` links for non-unique TV IOs. Iterate
+2. Treat Engineering Department IOs as non-unique unless explicitly documented otherwise.
+   Do not use `international_organization:type_key` links for non-unique Engineering Department IOs. Iterate
    memberships and filter by `international_organization_type = international_organization_type:<id>`.
 
 3. Make nullable leader_country access optional.
@@ -21,7 +25,7 @@ that create, find, or mutate TV IOs.
    must use `leader_country ?= { ... }`.
 
 4. Do not use IO `monthly_effect`.
-   TV international_organization types must not define `monthly_effect` blocks. They have
+   Engineering Department international_organization types must not define `monthly_effect` blocks. They have
    severe performance costs even when hidden. Use IO variable `monthly_change` only for
    visible breakdowns meant to appear in tooltips. When a visible IO typed variable's progress
    UI or monthly tooltip depends on automatic monthly gain, keep the real contribution in that
@@ -63,60 +67,32 @@ that create, find, or mutate TV IOs.
    `scope:recipient` reads behind `exists = scope:recipient`, and initialize actor-owned
    variables at the lifecycle point that creates the IO before reading them in `accept`.
 
-11. Use route `trade_volume` for Trade League market control.
-   For the Trade League monopoly system, annual global refresh may rank origin markets by
-   `produced_in_market:<good>` and consumer markets by `goods_demand_in_market(goods:<good>)`,
-   but route control itself must come from market export/import iterators. Sum market
-   `every_export` entries filtered by `goods = goods:<good>` for origin/node export control,
-   and market `every_import` entries for consumer import control, reading `trade_volume`.
-   Do not substitute `traded_in_market:<good>`, `goods_supply_in_market`, or member-present
-   market totals; those are market availability/proxy values, not member-owned route volume.
-   When the design needs all goods from a route, use the route scope's
-   `traded_goods = { save_scope_as = ... }` and put the goods scope into a map/list instead
-   of generating one route iterator per good. Keep static per-good branches only where a
-   target effect requires a static database id, such as `add_temporary_demand type = demand:*`.
-
-12. Keep Trade League bulk monopoly state off IO variables.
-   The generated per-good monopoly/action state is intentionally stored on `leader_country`,
-   while the IO is saved as a named scope only for membership checks. Do not reintroduce a
-   giant `variables = {}` block on `tv_trade_league`; initializing those IO variables caused
-   severe runtime stutter. GUI reads should go through
-   `GetInternationalOrganization.GetLeaderCountry.MakeScope.GetVariable(...)`.
-
-13. Keep heavy generated maintenance behind cheap country-pulse gates.
+11. Keep heavy generated maintenance behind cheap country-pulse gates.
     Register a named country monthly pulse through `data/pulse_registry.yaml`, save the country
     scope, iterate that country's `every_international_organizations_member_of` filtered to the
-    relevant TV IO plus `leader_country ?= <saved country>`, and only then call the IO-scoped
+    relevant Engineering Department IO plus `leader_country ?= <saved country>`, and only then call the IO-scoped
     refresh effect.
 
-14. Seed IO laws only when the design requires a baseline state.
-    Trade League, Arts Exhibition, and Governor's House start without initial policies unless a
-    later design explicitly changes them. Academy of Sciences is a narrow exception: it seeds
-    only `tv_academy_leader_gender_law` to
-    `tv_academy_leader_gender_male_only_policy`; its other six law groups remain unenacted.
-    Diplomatic Alliance separately seeds all eight law groups to their baseline no-effect
-    policies so creation starts at the baseline tier-0 state rather than no law.
-
-15. Match IO membership iterators to trigger/effect context.
+12. Match IO membership iterators to trigger/effect context.
     `any_international_organizations_member_of` is trigger syntax. In effect bodies,
     use `every_international_organizations_member_of = { limit = { ... } ... }`
     when you need to enter matching IO scopes and run effects.
 
-16. Define custom special-status parliament modifier type pairs.
+13. Define custom special-status parliament modifier type pairs.
     Every custom IO special status key that can be implemented by an IO needs
     `<status>_can_participate_in_parliament` and `<status>_agenda_impact` in
     `main_menu/common/modifier_type_definitions`, both with
     `game_data = { category = internationalorganization }`. Missing definitions can
     trigger startup DB assertions even when the status is not explicitly using parliament.
 
-17. Give parliament law votes a real meeting location.
+14. Give parliament law votes a real meeting location.
     `call_parliament_for_law_change` ends by calling `set_parliament_location` on a saved
     `parliament_location`. For non-HRE IOs it can use `parliament_seat`, a proposer-owned
-    IO-owned location, or a random IO-owned location. If a TV IO has no IO-owned locations,
+    IO-owned location, or a random IO-owned location. If a Engineering Department IO has no IO-owned locations,
     set its `parliament_seat` variable to a valid location such as the leader capital before
     policy votes can be proposed.
 
-18. Sync custom parliament special statuses from stable lifecycle points.
+15. Sync custom parliament special statuses from stable lifecycle points.
     For custom IO statuses that drive parliament voting or visible special-status power, do
     not rely only on `auto_bestowal_trigger` or same-tick `on_joined` state. Follow the HRE
     free-city pattern: the action or lifecycle effect that creates, invites, promotes, demotes,
@@ -125,19 +101,19 @@ that create, find, or mutate TV IOs.
     recurring monthly refreshes for special-status repair, and do not add extra parliament-seat
     or full-member repair unless a separate law-vote/location bug proves it is needed.
 
-19. Keep IO-scoped helpers out of unstable creation-block roots.
+16. Keep IO-scoped helpers out of unstable creation-block roots.
     A `create_international_organization = { ... }` body can be walked during generic-action
     pre-evaluation before the new IO is a stable root. Do not call helpers there if they start
     with IO-only triggers such as `international_organization_type`. Prefer the IO type's
     `on_creation` / `on_joined` hooks, or switch to a verified saved IO scope after creation.
 
-20. Define member opinion biases for every TV IO type.
+17. Define member opinion biases for every Engineering Department IO type.
     Each IO type should have a matching `io_opinion_<io_type>` entry under
     `in_game/common/biases/` and the same key localized in both supported languages.
     Missing the bias logs a startup warning that the organization needs an opinion of
     other members.
 
-21. Filter IO policy member modifiers to their intended recipients.
+18. Filter IO policy member modifiers to their intended recipients.
     Vanilla `policy_vote` adds `scope:vote.modifier_utility(scope:actor)` to each
     voting country's AI support as `POLICY_MODIFIER_UTILITY`. If a visible IO law
     policy effect is meant for the leader country only and must stack with other
@@ -150,14 +126,14 @@ that create, find, or mutate TV IOs.
     non-target members can strongly favor a policy because they evaluate the
     unfiltered modifier package as their own direct benefit.
 
-22. Keep idle parliament issues positively desirable.
+19. Keep idle parliament issues positively desirable.
     When a custom IO uses vanilla `call_organization_parliament` for normal, non-law
     sessions, make sure at least one issue for the participating special status has
     valid `potential` / `allow` / `selectable_for` and positive
     `wants_this_parliament_issue_bias` in ordinary founding or neutral-member states.
     Otherwise the issue picker can show that no special status has issues to bring.
 
-23. Use native IO membership tenure checks.
+20. Use native IO membership tenure checks.
     For mechanics gated by how long a country has belonged to an IO, use the country-scoped
     `years_in_international_organization = { international_organization = <io scope> value >= N }`
     trigger. In an IO-root `every_international_organization_member` iterator, `root` is the
@@ -165,7 +141,7 @@ that create, find, or mutate TV IOs.
     iterated IO. Do not add monthly countdown variables or date stamps just to mirror this
     built-in tenure value.
 
-24. Do not re-read a variable_map as the confirmation gate for a long-open event.
+21. Do not re-read a variable_map as the confirmation gate for a long-open event.
     A `trigger_event_non_silently` confirmation event can stay open for arbitrary game
     time before the player answers. Validate the scope captured at queue time/`immediate`
     directly (e.g. ownership) instead of re-reading a `variable_map`/`global_variable_map`
@@ -180,10 +156,10 @@ that create, find, or mutate TV IOs.
     in the repo-root CLAUDE.md); trust that the visible construct_building already ran and
     only re-validate ownership/other non-building state.
     See `tv_govhouse_confirm_local_administration_event_scope_effect` in
-    `common/scripted_effects/tv_govhouse_effects.txt` and
+    `eu5-towards-victory:src/in_game/common/scripted_effects/tv_govhouse_effects.txt` and
     `docs/knowledge/anti_patterns.yaml` rule `variable_map_reread_as_confirmation_gate`.
 
-25. Create IOs from a start-of-game event's `immediate`, not a visible option.
+22. Create IOs from a start-of-game event's `immediate`, not a visible option.
     An onboarding/game-start event whose option calls a "create or join this founder IO"
     scripted effect must have that call in the event's `immediate` block, not the option's
     effect chain. The nested `add_country_to_international_organization` / `set_leader_country`
@@ -194,7 +170,7 @@ that create, find, or mutate TV IOs.
     `docs/knowledge/anti_patterns.yaml` rule `io_creation_in_visible_option_effect_breaks_tooltip_preview`
     and `docs/knowledge/risk_cards/events.md` rule 11.
 
-26. Give each signed `monthly_change` contribution its own named operation.
+23. Give each signed `monthly_change` contribution its own named operation.
     Do not wrap positive and negative cases in one `add = { desc = KEY ... }` and flip the
     negative case with an inner conditional `multiply = -1`. The IO variable tooltip can expose
     that anonymous sign operation as a phantom negative row with `missing tooltip`, including
@@ -206,7 +182,7 @@ that create, find, or mutate TV IOs.
 
 ## Validation
 
-Run `validate.py --changed --fix --ai-report`; it fails any TV IO `monthly_effect` block. Then
+Run `validate.py --changed --fix --ai-report`; it fails any Engineering Department IO `monthly_effect` block. Then
 inspect shared IO tooltips in game. Tooltip rendering is part of the execution surface for IO
 variables. For any visible IO typed variable changed during a task, verify that the monthly
 breakdown still appears in the IO variable tooltip.

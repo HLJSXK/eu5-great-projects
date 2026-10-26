@@ -1,0 +1,141 @@
+```text
+bringing up nodes...
+bringing up nodes...
+
+........................................................................ [ 22%]
+........................................................................ [ 45%]
+........................................................................ [ 67%]
+........................................................................ [ 90%]
+...............F......F.......                                           [100%]
+================================== FAILURES ===================================
+_____________ test_real_generators_byte_compare_in_temporary_repo _____________
+[gw2] win32 -- Python 3.11.15 C:\Users\Hades\anaconda3\envs\eu5\python.exe
+
+tmp_path = WindowsPath('C:/Users/Hades/Documents/code/eu5-towards-victory/.pytest-final3/popen-gw2/test_real_generators_byte_comp0')
+
+    @pytest.mark.slow
+    def test_real_generators_byte_compare_in_temporary_repo(tmp_path):
+        root, plan, outputs = _copy_generator_repo(tmp_path)
+        expected = tmp_path / "expected"
+        shutil.copytree(root, expected, ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".pytest-*"))
+        started = time.perf_counter()
+        for generator in plan:
+            command = [str(Path(r"C:\Users\Hades\anaconda3\envs\eu5\python.exe")), generator["script"]]
+            result = subprocess.run(command, cwd=expected, capture_output=True, text=True, encoding="utf-8", timeout=120)
+>           assert result.returncode == 0, result.stdout + result.stderr
+E           AssertionError: Traceback (most recent call last):
+E               File "C:\Users\Hades\Documents\code\eu5-towards-victory\.pytest-final3\popen-gw2\test_real_generators_byte_comp0\expected\scripts\in_game\events\gen_tv_victory_path_task_price_events.py", line 13, in <module>
+E                 write_output(OUT, generate_price_events(load_data(), SCRIPT))
+E                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               File "C:\Users\Hades\Documents\code\eu5-towards-victory\.pytest-final3\popen-gw2\test_real_generators_byte_comp0\expected\scripts\victory_task_codegen.py", line 1304, in generate_price_events
+E                 raise ValueError("prices.30 religion condition shape changed")
+E             ValueError: prices.30 religion condition shape changed
+E             
+E           assert 1 == 0
+E            +  where 1 = CompletedProcess(args=['C:\\Users\\Hades\\anaconda3\\envs\\eu5\\python.exe', 'scripts/in_game/events/gen_tv_victory_pa...se ValueError("prices.30 religion condition shape changed")\nValueError: prices.30 religion condition shape changed\n').returncode
+
+tests\test_victory_paths_resource_contract.py:288: AssertionError
+___ test_commit_real_generators_use_new_threshold_and_report_changed_paths ____
+[gw1] win32 -- Python 3.11.15 C:\Users\Hades\anaconda3\envs\eu5\python.exe
+
+tmp_path = WindowsPath('C:/Users/Hades/Documents/code/eu5-towards-victory/.pytest-final3/popen-gw1/test_commit_real_generators_us0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001DECE68BF90>
+
+    @pytest.mark.slow
+    def test_commit_real_generators_use_new_threshold_and_report_changed_paths(tmp_path, monkeypatch):
+        root, plan, outputs = _copy_generator_repo(tmp_path)
+        service = _service_in_repo(root, monkeypatch)
+        resource = service.load_resource()
+        document = resource["document"]
+        path = document["paths"][0]
+        milestone = path["milestones"][0]
+        milestone["threshold"] += 7
+        tracked = EXPECTED_SOURCES | outputs
+        before = {relative: (root / relative).read_bytes() for relative in tracked}
+>       result = service.commit_document(document, {"sources": resource["sources"]})
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_victory_paths_resource_contract.py:262: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+towards_victory_editor_web\services\victory_paths.py:784: in commit_document
+    result = run_operation(operation, execute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+towards_victory_editor_web\services\platform.py:252: in run_operation
+    result = execute()
+             ^^^^^^^^^
+towards_victory_editor_web\services\victory_paths.py:754: in execute
+    generation_result = self.generator_service.run(report["generation"]["generators"])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+towards_victory_editor_web\services\generator_runs.py:328: in run
+    run_operation(operation, execute)
+towards_victory_editor_web\services\platform.py:252: in run_operation
+    result = execute()
+             ^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def execute() -> None:
+        if dry_run:
+            return
+        tracked_before = self._tracked_snapshot(selected)
+        formal_paths = [self.repo_root / output for output in outputs]
+        before = snapshot_artifacts(formal_paths)
+        with tempfile.TemporaryDirectory(prefix="tv-generators-") as temporary:
+            staging = Path(temporary) / "repo"
+            shutil.copytree(
+                self.repo_root, staging,
+                ignore=lambda directory, names: _copy_ignore(directory, names, self.repo_root),
+            )
+            base_link = self.repo_root / ".eu5-base"
+            if base_link.exists():
+                _stage_base_link(base_link, staging / ".eu5-base")
+            if self._tracked_snapshot(selected) != tracked_before:
+                raise ConflictError("Registered generator inputs or outputs changed during staging")
+            staged_before = _tree_snapshot(staging)
+            for generator, result in zip(selected, details["results"]):
+                step_before = staged_before
+                started = time.monotonic()
+                operation.event(f"Running {generator['script']}")
+                try:
+                    try:
+                        process = subprocess.run(
+                            [sys.executable, "-B", "-u", "-c", STAGED_RUNNER, str(staging / generator["script"])], cwd=staging,
+                            env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1", "PYTHONPATH": str(staging)},
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                            text=True, encoding="utf-8", errors="replace", check=False,
+                            timeout=STEP_TIMEOUT_SECONDS,
+                        )
+                    except subprocess.TimeoutExpired as exc:
+                        result["status"] = "timed_out"
+                        captured = exc.stdout or ""
+                        if isinstance(captured, bytes):
+                            captured = captured.decode("utf-8", errors="replace")
+                        result["output_tail"] = captured[-OUTPUT_TAIL_LIMIT:]
+                        raise GeneratorRunError(f"{generator['script']} timed out after {STEP_TIMEOUT_SECONDS:g}s", 504) from exc
+                    result.update(exit_code=process.returncode, output_tail=process.stdout[-OUTPUT_TAIL_LIMIT:])
+                    if process.returncode and WRITE_VIOLATION in result["output_tail"]:
+                        raise GeneratorRunError(result["output_tail"], 400)
+                    staged_before = _tree_snapshot(staging)
+                    allowed = {staging / output for output in generator["outputs"]}
+                    extras = [repo_relative_path(path, staging) for path in set(step_before) | set(staged_before)
+                              if step_before.get(path) != staged_before.get(path) and path not in allowed]
+                    if extras:
+                        raise GeneratorRunError("Unregistered artifacts: " + ", ".join(sorted(extras)), 400)
+                    if process.returncode:
+>                       raise GeneratorRunError(f"{generator['script']} exited with {process.returncode}")
+E                       towards_victory_editor_web.services.generator_runs.GeneratorRunError: scripts/in_game/events/gen_tv_victory_path_task_price_events.py exited with 1
+
+towards_victory_editor_web\services\generator_runs.py:291: GeneratorRunError
+============================== warnings summary ===============================
+..\..\..\anaconda3\envs\eu5\Lib\site-packages\fastapi\testclient.py:1
+..\..\..\anaconda3\envs\eu5\Lib\site-packages\fastapi\testclient.py:1
+..\..\..\anaconda3\envs\eu5\Lib\site-packages\fastapi\testclient.py:1
+..\..\..\anaconda3\envs\eu5\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Hades\anaconda3\envs\eu5\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_victory_paths_resource_contract.py::test_real_generators_byte_compare_in_temporary_repo
+FAILED tests/test_victory_paths_resource_contract.py::test_commit_real_generators_use_new_threshold_and_report_changed_paths
+2 failed, 316 passed, 4 warnings in 125.98s (0:02:05)
+```

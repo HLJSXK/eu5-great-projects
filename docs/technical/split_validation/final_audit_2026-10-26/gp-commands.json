@@ -1,0 +1,79 @@
+{
+  "node": {
+    "exit_code": 1,
+    "seconds": 1.28,
+    "command": [
+      "node",
+      "--test",
+      "tests/api.cjs",
+      "tests/resource_state.cjs",
+      "tests/media_job_polling.cjs",
+      "tests/cropper_resource_state.cjs",
+      "tests/wonder_resource_state.cjs",
+      "tests/shared_display.cjs",
+      "tests/wonder_values.cjs",
+      "tests/wonder_rituals.cjs",
+      "tests/wonder_drafts.cjs",
+      "tests/wonder_panels.cjs",
+      "tests/validation_panel.cjs",
+      "tests/generators.cjs",
+      "tests/global_shell.cjs",
+      "tests/cost_reward.cjs",
+      "tests/localization_text.cjs",
+      "tests/localization.cjs"
+    ]
+  },
+  "web": {
+    "exit_code": 0,
+    "seconds": 7.22,
+    "command": [
+      "C:\\Users\\Hades\\anaconda3\\envs\\eu5\\python.exe",
+      "-m",
+      "great_projects_editor_web",
+      "--check"
+    ]
+  },
+  "browser": {
+    "exit_code": 0,
+    "seconds": 7.91,
+    "command": [
+      "node",
+      "tests/resource_state_browser.cjs"
+    ]
+  },
+  "validate": {
+    "exit_code": 0,
+    "seconds": 26.01,
+    "command": [
+      "C:\\Users\\Hades\\anaconda3\\envs\\eu5\\python.exe",
+      "scripts/validate.py"
+    ]
+  },
+  "changed": {
+    "exit_code": 0,
+    "seconds": 23.49,
+    "command": [
+      "C:\\Users\\Hades\\anaconda3\\envs\\eu5\\python.exe",
+      "scripts/validate.py",
+      "--changed",
+      "--fix",
+      "--ai-report"
+    ]
+  },
+  "context": {
+    "exit_code": 0,
+    "seconds": 2.67,
+    "command": [
+      "C:\\Users\\Hades\\anaconda3\\envs\\eu5\\python.exe",
+      "scripts/test_ai_context.py"
+    ]
+  },
+  "lint": {
+    "exit_code": 0,
+    "seconds": 0.72,
+    "command": [
+      "C:\\Users\\Hades\\anaconda3\\envs\\eu5\\python.exe",
+      "scripts/test_lint_rules.py"
+    ]
+  }
+}

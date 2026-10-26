@@ -249,8 +249,8 @@ Load this card before editing `.gui` files or GUI-bound localization expressions
     prerequisite-to-node connector lines between fixed authored positions (a skill-tree/node-graph
     layout), do not try to fake it with stretched/rotated sprites. Pre-render all connectors as one
     transparent full-canvas PNG/DDS overlay in Python (see
-    `scripts/gen_tv_victory_tree_connectors.py`, which ports the Catmull-Rom curve math from
-    `great_projects_editor_web/static/victory_tree.js` via `scripts/dds_image_lib.py`), then place it as a
+    `eu5-towards-victory:scripts/gen_tv_victory_tree_connectors.py`, which ports the Catmull-Rom curve math from
+    `eu5-towards-victory:towards_victory_editor_web/static/victory_tree.js` via that repository's DDS helper), then place it as a
     plain `background` widget layered under the node buttons.
 
 31. Preserve engine-generated scripted-effect descriptions.

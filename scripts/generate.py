@@ -1,4 +1,4 @@
-"""Regenerate registered GP outputs; --check compares an isolated build byte for byte."""
+"""Regenerate GP outputs; --check compares text bytes and decoded PNG pixels."""
 from pathlib import Path
 import argparse
 import os
@@ -29,6 +29,25 @@ def generate() -> int:
     return 0
 
 
+def outputs_match(current: Path, generated: Path) -> bool:
+    """Ignore PNG compression differences, while detecting every changed pixel."""
+    if not current.is_file() or not generated.is_file():
+        return False
+    if current.suffix.lower() != '.png':
+        return current.read_bytes() == generated.read_bytes()
+    from PIL import Image
+    try:
+        with Image.open(current) as left, Image.open(generated) as right:
+            # Registered PNGs are static thumbnails. Compare all channels, including
+            # RGB beneath transparent pixels; ImageChops.getbbox can miss those.
+            return (left.format == right.format == 'PNG'
+                    and left.n_frames == right.n_frames == 1
+                    and left.size == right.size
+                    and left.convert('RGBA').tobytes() == right.convert('RGBA').tobytes())
+    except (OSError, ValueError):
+        return False
+
+
 def check() -> int:
     registry = yaml.safe_load((ROOT / 'data/generated_files.yaml').read_text(encoding='utf-8'))
     outputs = {row['output'] for row in registry['generated']}
@@ -46,7 +65,7 @@ def check() -> int:
         result = subprocess.run([sys.executable, str(stage / 'scripts/generate.py')], cwd=stage, env=env)
         if result.returncode:
             return result.returncode
-        stale = [p for p in sorted(outputs) if not (ROOT / p).is_file() or not (stage / p).is_file() or (ROOT / p).read_bytes() != (stage / p).read_bytes()]
+        stale = [p for p in sorted(outputs) if not outputs_match(ROOT / p, stage / p)]
         for path in stale:
             print(f'[STALE] {path}')
         print(f'[{"FAIL" if stale else "OK"}] Compared {len(outputs)} registered/merged outputs.')

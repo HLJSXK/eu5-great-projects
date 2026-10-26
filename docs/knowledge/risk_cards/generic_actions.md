@@ -168,7 +168,7 @@ execution time can still spam runtime errors while the mouse is merely hovering 
    confuse the two. See `generic_action_confirmation_needs_pending_variable_overlay_not_engine_
    window` in `anti_patterns.yaml` (RETRACTED and corrected 2026-07-13: an earlier version of
    this rule wrongly concluded no native mechanism existed and prescribed the workaround this
-   point now warns against) and `scripts/victory_tree_node_codegen.py` `generate_actions` for
+   point now warns against) and `eu5-towards-victory:scripts/victory_tree_node_codegen.py` `generate_actions` for
    the corrected implementation.
 
 20. Save the owner inside generic-action-reachable scripted triggers.

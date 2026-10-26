@@ -484,6 +484,7 @@ This is an index only. Use `scripts/ai_context.py` for task-relevant summaries o
 | `wonder_fixed_modifier_thousand_scaled_value` | lint | modifier | wonder |
 | `wonder_ritual_choice_branch_retry_reward_template_trap` | advisory | workflow | any |
 | `wonder_ritual_cleanup_stale_after_entity_ritual_rename` | advisory | workflow | any |
+| `mechanic_similarity_audit_short_triggers_file_dominates_combined_ratio` | advisory | workflow | any |
 
 ## Valid Enum Values
 

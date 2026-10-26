@@ -1,0 +1,131 @@
+```text
+[OK] All mod metadata uses version 261026.
+[OK] Connected shared EU5 base: C:\Users\Hades\Documents\code\eu5-great-projects\tmp\freshness-2r_ihncu\.eu5-base -> C:\Users\Hades\Documents\code\eu5-modding-base
+
+[regen fd7926ab97254960b9a016e6580ca03c] Starting 39 generators
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_identity_effects.py
+Wrote src\in_game\common\scripted_effects\tv_wonder_identity_effects.txt
+Wrote src\in_game\common\decisions\tv_wonder_identity_decisions.txt
+Wrote src\in_game\common\on_action\tv_wonder_identity_on_action.txt
+Wrote src\in_game\events\0000_tv_wonder_identity_events.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_ritual_state_effects.py
+Wrote src\in_game\common\scripted_effects\tv_wonder_ritual_state_effects.txt
+Wrote src\in_game\common\scripted_effects\tv_wonder_ritual_phase_effects.txt
+Wrote src\in_game\common\scripted_triggers\tv_wonder_ritual_triggers.txt
+Wrote src\in_game\common\generic_actions\tv_wonder_ritual_actions.txt
+Wrote src\in_game\common\prices\tv_wonder_ritual_prices.txt
+Wrote src\in_game\events\tv_wonder_ritual_lifecycle_events.txt
+Wrote src\main_menu\localization\english\tv_wonder_ritual_messages_l_english.yml
+Wrote src\main_menu\localization\simp_chinese\tv_wonder_ritual_messages_l_simp_chinese.yml
+Wrote src\main_menu\localization\french\tv_wonder_ritual_messages_l_french.yml
+Wrote src\main_menu\localization\german\tv_wonder_ritual_messages_l_german.yml
+Wrote src\main_menu\localization\spanish\tv_wonder_ritual_messages_l_spanish.yml
+Wrote src\main_menu\localization\russian\tv_wonder_ritual_messages_l_russian.yml
+Wrote src\main_menu\localization\polish\tv_wonder_ritual_messages_l_polish.yml
+Wrote src\main_menu\localization\japanese\tv_wonder_ritual_messages_l_japanese.yml
+Wrote src\main_menu\localization\korean\tv_wonder_ritual_messages_l_korean.yml
+Wrote src\main_menu\localization\braz_por\tv_wonder_ritual_messages_l_braz_por.yml
+Wrote src\main_menu\localization\turkish\tv_wonder_ritual_messages_l_turkish.yml
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/building_types/gen_tv_wonder_module_buildings.py
+Wrote src\in_game\common\building_types\tv_wonder_module_buildings.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/building_types/gen_tv_engineering_department_wonder_mechanics_buildings.py
+Wrote src\in_game\common\building_types\tv_engineering_department_wonder_mechanics_buildings.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/static_modifiers/gen_tv_engineering_department_wonder_mechanics_modifiers.py
+Wrote src\in_game\common\static_modifiers\tv_engineering_department_wonder_mechanics_modifiers.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_triggers/gen_tv_engineering_department_wonder_mechanics_triggers.py
+Wrote src\in_game\common\scripted_triggers\tv_engineering_department_wonder_mechanics_triggers.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_module_effects.py
+Wrote src\in_game\common\scripted_effects\tv_wonder_module_effects.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_engineering_department_wonder_mechanics_effects.py
+Wrote src\in_game\common\scripted_effects\tv_engineering_department_wonder_mechanics_effects.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/main_menu/common/game_concepts/gen_tv_engineering_department_wonder_mechanics_concepts.py
+Wrote src\main_menu\common\game_concepts\tv_engineering_department_wonder_mechanics_concepts.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/main_menu/localization/english/gen_tv_engineering_department_wonder_mechanics_l_english.py
+Wrote src\main_menu\localization\english\tv_engineering_department_wonder_mechanics_l_english.yml
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/main_menu/localization/simp_chinese/gen_tv_engineering_department_wonder_mechanics_l_simp_chinese.py
+Wrote src\main_menu\localization\simp_chinese\tv_engineering_department_wonder_mechanics_l_simp_chinese.yml
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/gui/panels/organization/gen_tv_engineering_department_wonder_mechanics_gui.py
+Wrote data\generated_fragments\tv_engineering_department_wonder_mechanics.gui
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/gui/panels/organization/merge_tv_engineering_department_wonder_mechanics_gui.py
+Merged data\generated_fragments\tv_engineering_department_wonder_mechanics.gui into src\in_game\gui\panels\organization\tv_engineering_department.gui
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_index_effects.py
+Wrote src\in_game\common\scripted_effects\tv_wonder_index_effects.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_survey_effects.py
+Wrote src\in_game\common\scripted_effects\tv_wonder_survey_effects.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_finalization_effects.py
+Wrote src\in_game\common\scripted_effects\tv_wonder_finalization_effects.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/events/gen_tv_wonder_finalization_events.py
+Wrote src\in_game\events\tv_wonder_finalization_events.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/events/gen_tv_wonder_ownership_events.py
+Wrote src\in_game\events\tv_wonder_ownership_events.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_proposal_effects.py
+Wrote src\in_game\common\scripted_effects\tv_wonder_proposal_effects.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_ownership_effects.py
+Wrote src\in_game\common\scripted_effects\tv_wonder_ownership_effects.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_level_change_effects.py
+Wrote src\in_game\common\scripted_effects\tv_wonder_level_change_effects.txt
+Wrote src\in_game\common\scripted_triggers\tv_wonder_level_change_triggers.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/main_menu/localization/english/gen_tv_wonder_ownership_l_english.py
+Wrote src\main_menu\localization\english\tv_wonder_ownership_l_english.yml
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/main_menu/localization/simp_chinese/gen_tv_wonder_ownership_l_simp_chinese.py
+Wrote src\main_menu\localization\simp_chinese\tv_wonder_ownership_l_simp_chinese.yml
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_location_display_effects.py
+Wrote src\in_game\common\scripted_effects\tv_wonder_location_display_effects.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/auto_modifiers/gen_tv_engineering_department_wonder_mechanics_auto_modifiers.py
+Wrote src\in_game\common\auto_modifiers\tv_engineering_department_wonder_mechanics_auto_modifiers.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/gui/gen_tv_encyclopedia_wonders_cards_gui.py
+Wrote data\generated_fragments\tv_encyclopedia_wonders_cards.gui
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/gui/merge_tv_encyclopedia_wonders_cards_gui.py
+Merged data\generated_fragments\tv_encyclopedia_wonders_cards.gui into src\in_game\gui\encyclopedia_lateralview.gui
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts/compat/gen_tv_prosper_or_perish_encyclopedia_lateralview.py
+Wrote submods\tv_prosper_or_perish_compat\in_game\gui\encyclopedia_lateralview.gui
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/gen_wonder_editor_catalog.py
+Generated data/wonder_editor_catalog.yaml (540 country modifiers, 118 local modifiers, 53 one-shot reward types, 456 cost/reward units)
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/gui/gen_location_window.py
+Wrote src\in_game\gui\location_window.gui
+Wrote src\in_game\common\scripted_guis\glorpui_construction_manager_scripted_gui.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts/compat/gen_tv_meiou_and_taxes_location_window.py
+Wrote submods\tv_meiou_and_taxes_compat\in_game\gui\location_window.gui
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts/compat/gen_tv_standard_of_living_location_window.py
+Wrote submods\tv_standard_of_living_compat\in_game\gui\location_window.gui
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_triggers/gen_tv_vw_vanilla_takeover_triggers.py
+Wrote src/in_game/common/scripted_triggers/tv_vw_vanilla_takeover_triggers.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_vw_vanilla_takeover_effects.py
+Wrote src/in_game/common/scripted_effects/tv_vw_vanilla_takeover_effects.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/events/gen_tv_vw_vanilla_event_overrides.py
+Wrote src/in_game/events/0000_tv_vw_vanilla_event_overrides.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/decisions/gen_tv_vw_vanilla_decision_overrides.py
+Wrote src/in_game/common/decisions/tv_vw_vanilla_decision_overrides.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/building_types/gen_tv_vw_vanilla_building_overrides.py
+Wrote src/in_game/common/building_types/tv_vw_vanilla_building_overrides.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/on_action/gen_tv_vw_vanilla_takeover_on_action.py
+Wrote src/in_game/common/on_action/tv_vw_vanilla_takeover_on_action.txt
+$ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/in_game/common/scripted_effects/gen_tv_vw_vanilla_damage_overrides.py
+Wrote src/in_game/common/scripted_effects/tv_vw_vanilla_damage_overrides.txt
+[regen] Complete
+Written: src\in_game\common\generic_actions\tv_engineering_department_leader_actions.txt
+Written: src\in_game\common\customizable_localization\character_title.txt
+Reading source: .eu5-base\reference_game_files\game\in_game\common\on_action\country_monthly.txt
+Reading source: .eu5-base\reference_game_files\game\in_game\common\on_action\country_yearly.txt
+Reading source: .eu5-base\reference_game_files\game\in_game\common\on_action\character_death_pulses.txt
+Reading source: .eu5-base\reference_game_files\game\in_game\common\on_action\_hardcoded.txt
+Reading source: .eu5-base\reference_game_files\game\in_game\common\on_action\_hardcoded.txt
+Reading source: .eu5-base\reference_game_files\game\in_game\common\on_action\_hardcoded.txt
+Skipping source verification for custom hook: on_game_load
+Reading source: .eu5-base\reference_game_files\game\in_game\common\on_action\_hardcoded.txt
+Reading source: .eu5-base\reference_game_files\game\in_game\common\on_action\_hardcoded.txt
+Skipping source verification for custom hook: cmf_on_callback
+Written: src\in_game\events\tv_wonder_construction_events.txt
+Written: src\main_menu\localization\english\tv_wonder_construction_events_l_english.yml
+Written: src\main_menu\localization\simp_chinese\tv_wonder_construction_events_l_simp_chinese.yml
+Written: src\in_game\common\scripted_effects\tv_wonder_construction_event_effects.txt
+Written: src\in_game\common\scripted_triggers\tv_wonder_construction_event_triggers.txt
+Wrote submods\tv_meiou_and_taxes_compat\.metadata\thumbnail.png (755232 bytes)
+Wrote submods\tv_standard_of_living_compat\.metadata\thumbnail.png (731577 bytes)
+Wrote submods\tv_prosper_or_perish_compat\.metadata\thumbnail.png (768546 bytes)
+Wrote data\wonder_societal_axes.yaml
+[OK] Indexes written to data\index/ — icons.txt: 381, loc_keys_en.txt: 14772, scripted_effects.txt: 5534, scripted_triggers.txt: 3638, static_modifiers.txt: 2665
+[OK] Generated 50 registered producers.
+[OK] Compared 81 registered/merged outputs.
+[OK] Validated 189 file(s) -- no issues found.
+```

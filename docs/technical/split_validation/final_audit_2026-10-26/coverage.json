@@ -1,0 +1,30 @@
+{
+  "scripts/knowledge_loader.py": {
+    "eu5-towards-victory": {
+      "source_entries": 300,
+      "base_entries": 369,
+      "local_entries": 24,
+      "merged_entries": 393
+    },
+    "eu5-great-projects": {
+      "source_entries": 12,
+      "base_entries": 369,
+      "local_entries": 32,
+      "merged_entries": 401
+    }
+  },
+  "docs/knowledge/knowledge_loader.py": {
+    "eu5-towards-victory": {
+      "source_entries": 300,
+      "base_entries": 369,
+      "local_entries": 24,
+      "merged_entries": 393
+    },
+    "eu5-great-projects": {
+      "source_entries": 12,
+      "base_entries": 369,
+      "local_entries": 32,
+      "merged_entries": 401
+    }
+  }
+}

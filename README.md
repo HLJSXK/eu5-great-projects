@@ -3,6 +3,8 @@
 Independent Europa Universalis V mod workspace, extracted from Towards Victory.
 The game mod id remains `hades.towards_victory.great_project`.
 
+The tooling requires Python 3.11 or newer.
+
 Place this repository beside `eu5-modding-base`, then use the direct EU5 Python:
 
 ```powershell
@@ -23,3 +25,5 @@ require Node 22+ and Chrome; the test script accepts EU5_PYTHON and CHROME_PATH.
 Runtime dependencies remain Community Mod Framework 2.x and Construction Manager.
 
 See [CLAUDE.md](CLAUDE.md) and [extraction handoff](docs/technical/Repository_Split.md).
+
+Final extraction audit: [third-pass findings and validation](docs/technical/Great_Projects_Split_Final_Audit_2026-10-26.md).

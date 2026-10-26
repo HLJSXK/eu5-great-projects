@@ -1,0 +1,967 @@
+[
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_prestige_english_report.json",
+    "size": 7140,
+    "sha256": "b9978bb93e73267c030e30533638678553cf792598533965e98311eead514f44"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_prestige_english_tree.txt",
+    "size": 213294,
+    "sha256": "9348a0ca686c4f57bb7ef30d887ffd852e7a4882c0946a649edd7934e9677a32"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_prestige_english.png",
+    "size": 428835,
+    "sha256": "38dcb4ea32016870d73a129dc38c469da170dc34bc02f7362895be0f8b622b48"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_style_2_report.json",
+    "size": 6339,
+    "sha256": "935e11e796b461ff27e923332e10610de61d5680f3b6530e79809e520d063c8e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_style_2_ritual.png",
+    "size": 512312,
+    "sha256": "74868900681a56980e8290b20c61018a5004c5dceab370d5542949013976b521"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_style_2_tree.txt",
+    "size": 225024,
+    "sha256": "936d1acc940ae19bd9f6e259376a41e8ee5bc3e2b82df626242e50484c3b5e24"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_style_2.png",
+    "size": 1185999,
+    "sha256": "989794e235bc5022557561913aef1ff544bda507fb00a9b71049b53deccadae5"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_style_3_report.json",
+    "size": 6386,
+    "sha256": "f00d54f825cdc99effd8881a41303761896a777cc73b6016662506e98d198d8d"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_style_3_ritual.png",
+    "size": 478594,
+    "sha256": "b9d51b226c45d7f3ec396906b8e1b2be10c9bfb7e48b98945c202a6ab324922e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_style_3_tree.txt",
+    "size": 225024,
+    "sha256": "8d701de0872557040cd7c32932636a54838955115ad0f504febdaae6fa9dde79"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ceremony_style_3.png",
+    "size": 1153980,
+    "sha256": "1e97c81c9197c0c354d0b95492ea4fe6dfec9e498675ec64d052600411109ac1"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ceremony-ready_report.json",
+    "size": 6754,
+    "sha256": "970a89e51e710d283547f08347baccd89a4a47e9face7b5f5f2eceada9ae4153"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ceremony-ready_ritual.png",
+    "size": 625357,
+    "sha256": "d92b407d81f1a7493a0094fc39074508996258ce82c917b51a10c3e83f127ee5"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ceremony-ready_tree.txt",
+    "size": 197648,
+    "sha256": "1860acf15d57f89c85308578d53bdf72736bf6a638b64d5ef6de25838f2c2aec"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ceremony-ready.png",
+    "size": 1169332,
+    "sha256": "c402639d738d32388efefc93eb179b8df8e19a4bf9fae70135654d638d517c4c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ceremony-stages_report.json",
+    "size": 7085,
+    "sha256": "b60f4951992e1071b8ea8a98557fe339409813cd7534be4c1be7b1987544138c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ceremony-stages_tree.txt",
+    "size": 208709,
+    "sha256": "d42d335b20601c5749d1e0746e74d5bc690aa8766601770330fb43c57f14fc31"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ceremony-stages.png",
+    "size": 1139751,
+    "sha256": "a6a9a6bf3dabf1d89154e5424a4ecacfc134bc370d2945879e30decb6066cc5c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_conception_report.json",
+    "size": 5430,
+    "sha256": "423c11fbacbcd3d1d8b0457ad8a43f9577a3a87a46e68245623f7545dae4144b"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_conception_tree.txt",
+    "size": 197132,
+    "sha256": "e8be6788b989066c5bf9e3ee660abf01ed53aad3171706349cc3adf47d0e8b2a"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_conception.png",
+    "size": 763902,
+    "sha256": "49834092e63d8af44aea1219449322527cb692d36ac042e61507f6dc26962fb5"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_construction_report.json",
+    "size": 5720,
+    "sha256": "31924f33b4e14688acf6e55f17c9591156ef65a51040c3381ea5947005eed732"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_construction_tree.txt",
+    "size": 197514,
+    "sha256": "9a7603757360df0dcd48baf9ae27507d2f4f82552dd1eefee6a9690d1c01b5aa"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_construction-complete_report.json",
+    "size": 6782,
+    "sha256": "027101cda9105d286bc7baa0f2348bfbe8544cad97ac2a265e044824c8e0a57f"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_construction-complete_ritual.png",
+    "size": 625357,
+    "sha256": "d92b407d81f1a7493a0094fc39074508996258ce82c917b51a10c3e83f127ee5"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_construction-complete_tree.txt",
+    "size": 197648,
+    "sha256": "1860acf15d57f89c85308578d53bdf72736bf6a638b64d5ef6de25838f2c2aec"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_construction-complete.png",
+    "size": 1169332,
+    "sha256": "c402639d738d32388efefc93eb179b8df8e19a4bf9fae70135654d638d517c4c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_construction.png",
+    "size": 822698,
+    "sha256": "eb1b884530ae4de43a6bec34612c1d07eaa1b47274ed8ef8fbfaff4efeeb8ea3"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_debate_1080_report.json",
+    "size": 2274,
+    "sha256": "4f4691c0d9be0e5da3281f8ff0041702dab3f4bf3a4bea851417519e311dfd69"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_debate_1080_tree.txt",
+    "size": 207985,
+    "sha256": "6a1944dcd529e2cc74d9e1dd5db5cefaa260a668292327f3bb09dbde0e491d24"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_debate_1080.png",
+    "size": 911033,
+    "sha256": "215ac99f9c2f6b7955ba266f0cdbf00ba10c1d9a844578054acfbd053180cc4c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_debate_report.json",
+    "size": 5400,
+    "sha256": "cd6d1da458852432fd131c949eb1e30ac44f881439f527acaa87f1b4c06371fc"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_debate_tree.txt",
+    "size": 197816,
+    "sha256": "88adad574443ee3dd1c3a2014f4f87633e77c9c981257641ef531345d30bb860"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_debate.png",
+    "size": 1286449,
+    "sha256": "16492f0c5adce7cf5fbc365a3404ef8d367f04f3ae4382747412be5a075714f2"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_finalized_report.json",
+    "size": 6725,
+    "sha256": "0265a40032aa9b8cc2eec5a50e540c888185b2534e1b38d1c6684f07e2bb0a10"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_finalized_ritual.png",
+    "size": 124082,
+    "sha256": "98fd0864fe7cb34be5ddcf13fd4de69942a1a9e838942f5d59a11e682d0193d2"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_finalized_tree.txt",
+    "size": 197150,
+    "sha256": "91e13d1b6ef2afe794f130166d347f48a8c8ccc4b8027d491ea49dd39444cf5e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_finalized.png",
+    "size": 788462,
+    "sha256": "f189ffebf8a4b53cf49d9e118c80a727b3e3ba4e5c08554d0676344c63b4bd17"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_hagia-assignment_report.json",
+    "size": 7082,
+    "sha256": "28a961c060f2baacdf1d3ab51001c2e010b40873edbe1b3f006257f64590742e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_hagia-assignment_tree.txt",
+    "size": 210240,
+    "sha256": "566c0191d88b19679a5cb73ab4a859fdfa575cb5b38e3ed8b29ecdf42b98426b"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_hagia-assignment.png",
+    "size": 1088174,
+    "sha256": "a37683921e497cd59887a191ec258436c2ff69c12f278680e1cdc22837cc7597"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_hagia-progress_report.json",
+    "size": 7230,
+    "sha256": "4464ea72d6db0c1f047aacc4e8d1b4dc04cedae0447c3cb3e4baf22900489be5"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_hagia-progress_tree.txt",
+    "size": 210234,
+    "sha256": "ef61cf1b3867bc2238097fc57993edf026bcf6092a37d460f70ccfb696316424"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_hagia-progress.png",
+    "size": 1086656,
+    "sha256": "8b7df2c2182db2729a7d9f86dd0a6d52839bf341298dc1ac53e834e2982a7bfb"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_index.json",
+    "size": 102615,
+    "sha256": "8232ad698ed97a37c8fbc93dd139ce8e5f73ab6c7465a0fa443a7e5f78b49e25"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_no-engineer_report.json",
+    "size": 5435,
+    "sha256": "4ae2a6a7f822e46c72b2c5448bf3cf9ad3df5f45c495a449fd16e72967f5f522"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_no-engineer_tree.txt",
+    "size": 197054,
+    "sha256": "848c24f1d3f089043aadb28f5c8795303c1a63c8a8528c9d31dc4abd2ddc7f29"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_no-engineer.png",
+    "size": 761036,
+    "sha256": "68009890da2bb5b6496063a3ed55c8dce7f2d714b781f7de8754f3b9562124c0"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_pharos-routes_report.json",
+    "size": 10133,
+    "sha256": "d716ff50633dcb4dd12fa5fcbe26856f00fcac66ca03eda2dbf40cbf82020b02"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_pharos-routes_tree.txt",
+    "size": 210556,
+    "sha256": "52917eed9ec0e6ad556954d7469cee942e5f2b0bbbe7b97327e316773333f20f"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_pharos-routes.png",
+    "size": 1140976,
+    "sha256": "ede307646acce0275f9597cc67a9eed184c3e8d227715be429a6eded1504e1db"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_pharos-threat_report.json",
+    "size": 10133,
+    "sha256": "c9a68c17afadd4f4f22995bd347cc8c3c03d87f8c0b0a11ff198ce25161ff881"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_pharos-threat_tree.txt",
+    "size": 210115,
+    "sha256": "97139b0f3395b3748e852bfcdf296636360b160840f6c62671d3ff70c13853e1"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_pharos-threat.png",
+    "size": 1009666,
+    "sha256": "28834de01f7194d8a7385e41773389ba1ea641c5b01608ccf16e2e7562f0e281"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_proposal_report.json",
+    "size": 5412,
+    "sha256": "778c2ce8d7a1e55cc4f94aa54df5d5bc4573a56b8dfd863f001f96ded058447c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_proposal_tree.txt",
+    "size": 197450,
+    "sha256": "8233abdc3ce3eec9a207047854d9f8e38fc41f3678cbe6cf77f8bdea3984b508"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_proposal.png",
+    "size": 1006599,
+    "sha256": "eff82e68b690bbb01ed66ff74dac9e65305f2104fc9fc0488f9b186e64cf7567"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_reritual-progress_report.json",
+    "size": 6781,
+    "sha256": "10e228d051616ce44a6663bd3f2502b08856dc0c6877d2d2ee864172f48b2eba"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_reritual-progress_ritual.png",
+    "size": 163425,
+    "sha256": "a1266305a0aab819976de95ea24e9dc3c15a40a66ebdc94dda4f6f51f4a9c2eb"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_reritual-progress_tree.txt",
+    "size": 197187,
+    "sha256": "bb65d40719e5e11f27b97712115d534445cf5858cc775621bdae9198b70bc58e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_reritual-progress.png",
+    "size": 797261,
+    "sha256": "8187552ad3ef9d409688201464b4feec8ada3b7a304ae715fde66b8627f0c67a"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_reritual-ready_report.json",
+    "size": 6754,
+    "sha256": "75b357281c9807ba72acfd2687ac86d537587c79e17da5d2691f1cac4e2db0d4"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_reritual-ready_ritual.png",
+    "size": 595601,
+    "sha256": "763cceb50bd1adf3f72274f24dde7e2e4aa84a8e4e4dc6810295e3102858b4e3"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_reritual-ready_tree.txt",
+    "size": 197637,
+    "sha256": "88c54e42fdb3b6d8b7d663f6b6f44f30ae7966b626652f8ad30275705713cae1"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_reritual-ready.png",
+    "size": 1144380,
+    "sha256": "6c536267b82e1f08ef29189e6d4dc8048f9059a961a43264cd49a359b2a18eab"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ritual-progress_report.json",
+    "size": 6773,
+    "sha256": "c2deda6109eaf76679f722f119fdd67c9a7881c495226fa06d92b0f52c373f6c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ritual-progress_ritual.png",
+    "size": 163425,
+    "sha256": "a1266305a0aab819976de95ea24e9dc3c15a40a66ebdc94dda4f6f51f4a9c2eb"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ritual-progress_tree.txt",
+    "size": 197187,
+    "sha256": "bb65d40719e5e11f27b97712115d534445cf5858cc775621bdae9198b70bc58e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_ritual-progress.png",
+    "size": 797261,
+    "sha256": "8187552ad3ef9d409688201464b4feec8ada3b7a304ae715fde66b8627f0c67a"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_support-reserve_report.json",
+    "size": 5428,
+    "sha256": "b6b672bf88c9315fe5806e16b3ed0d7f4c7d625c97ad88ea89b6a61e47c8bde7"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_support-reserve_tree.txt",
+    "size": 197816,
+    "sha256": "319df82b6baabf446dd38c8e64f62438540d88cf93db8b4f831667f30d851bac"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_support-reserve.png",
+    "size": 1292731,
+    "sha256": "0e7de5235f539c99e7c6ba2e111a17641c8c1200000eeb9b48528d1f1d7d1e09"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_survey_report.json",
+    "size": 5564,
+    "sha256": "7113ea786d24ea9cc7701ff1e559b33ad885a8927ab8e062cde9a0c867d7d9ad"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_survey_tree.txt",
+    "size": 199173,
+    "sha256": "a2407aef5a05d5d5db82ff786482acd9a68f36297a63aaa6a209221dde1612ca"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_survey-complete_report.json",
+    "size": 5589,
+    "sha256": "77d0be0b32a32546a9d4f42cb21951aee1d743cbbd634791e3401f6cba751ef7"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_survey-complete_tree.txt",
+    "size": 199173,
+    "sha256": "9b119a703cd762ca51555eaf48c9a7135b835af29e40313d667c541db360767c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_survey-complete.png",
+    "size": 930354,
+    "sha256": "4577af4a979f60ad7da3d7dfd3321b975bd0a96ea7a50bc28c7202635ec98f7a"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_survey.png",
+    "size": 931297,
+    "sha256": "409f9fa92deeac3a48a2a9cbe5f93d309a95d422e486accdbdc5ae292f10d888"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_unique-progress_report.json",
+    "size": 6802,
+    "sha256": "73ce259fec5b521dd1a9a55cf2c08db92dae87bc9c022d12c96dac97ccdb9868"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_unique-progress_ritual.png",
+    "size": 163593,
+    "sha256": "a3c2c1dc0e325daae1dbef341bd5d5a02e1ecabac43f26bc846938a97a3b7a83"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_unique-progress_tree.txt",
+    "size": 197187,
+    "sha256": "2757dd6b096a9d1cfd1ab3e225a57fc054f294c2f96979b8abee58523dfbbf33"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_unique-progress.png",
+    "size": 797681,
+    "sha256": "5f1cfde2cc7a625d39fac21f23b8932a330ad4584b4fbb618c41c4bc8e62c8d3"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_unique-ready_report.json",
+    "size": 6775,
+    "sha256": "91c97cb73883d8004def69a81a5be23bfa711bfbae7b8761fd89788af4de7d84"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_unique-ready_ritual.png",
+    "size": 627647,
+    "sha256": "5251299458aa71bd15e3df2aa06a31933ea30ef99ef2660f1c118795c0f2159a"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_unique-ready_tree.txt",
+    "size": 197648,
+    "sha256": "fe250ab94ce6fd143501dae50c0196736a855fa4b670c9d6de2dab484407801d"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/engineering_unique-ready.png",
+    "size": 1171603,
+    "sha256": "5e6616b1c9fbcf8c442eee2b658a42791797f98e4e458505665258e1ad7ce4cb"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ceremony-ready_english_report.json",
+    "size": 6137,
+    "sha256": "806b63a0b2ec6de072aea69b44fa01f997d4f1c9707e0031debda451e6085b3e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ceremony-ready_english_tree.txt",
+    "size": 225028,
+    "sha256": "9bcecf696b32512194f7ca086c4442402b0720bcc9e8e59fd073674ef463ef1e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ceremony-ready_english.png",
+    "size": 1122092,
+    "sha256": "87a4d0be5f6baafc3ecbf19400cc9675559e3855c6f91712451a60e1822c7953"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ceremony-ready_simp_chinese_report.json",
+    "size": 6147,
+    "sha256": "9873d71fe530c3e8d95cdf823761aea9b8db06d057ebad371ed547ec2be1f8d9"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ceremony-ready_simp_chinese_tree.txt",
+    "size": 225022,
+    "sha256": "eb8d5fbd9db5c078981af481a9f564a7482abe5a2ef4ac0dce76bb086ea39c50"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ceremony-ready_simp_chinese.png",
+    "size": 1100439,
+    "sha256": "ed35bc95096d5eaf0c170420cd92300fb856b5aeaca75890f4322a3b1b9197ba"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ready_report.json",
+    "size": 6812,
+    "sha256": "7c4006796b15b490f2de769f62bdadd5470e214fa2c209fcc223c1b18d2f9c57"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ready_tree.txt",
+    "size": 223990,
+    "sha256": "85067c9ca961446d0bb0444e60e6c565cd56e83499534de98213ef55d6e1e7df"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ready.png",
+    "size": 1148804,
+    "sha256": "bb998918e59ec452556549958dac5411ca9545131a01e25f0e5845e40e5b207d"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-progress_english_report.json",
+    "size": 6145,
+    "sha256": "60358fa9cd7b9f530e1f42a5b9bee556101430a8665d63d9b8c7869b1411c1dc"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-progress_english_tree.txt",
+    "size": 225021,
+    "sha256": "bd1fb751180d4403dc8f521816192418bbd241d0508214831ec6606782d45a47"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-progress_english.png",
+    "size": 1073887,
+    "sha256": "47efc5440e3f7cf7a33d9ab5a3c296fe5d570fdc897b6ac8c6305ef0dcbffbd9"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-progress_simp_chinese_report.json",
+    "size": 6155,
+    "sha256": "71cbb1065a16aafb845ea4c8a280df95a5f9b212f07567d69f146b3b99e915fd"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-progress_simp_chinese_tree.txt",
+    "size": 225015,
+    "sha256": "90aa93dec396b92a40e83c082cf9dee2deedf3c8a31747731596f5f0714a9027"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-progress_simp_chinese.png",
+    "size": 1060839,
+    "sha256": "8ec218567da61f058c9dd9b9b21517ffd8fba5715783f35d543718fd370adc04"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-ready_english_report.json",
+    "size": 6137,
+    "sha256": "d9c43208549ec2ce88ce49d09f146a3d318ead0c01ce00aba8730118c0d1e5d9"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-ready_english_tree.txt",
+    "size": 225035,
+    "sha256": "ada7501a806d974b4306eb08141f9101a7fee5a6ff5f1432115d34ccf663e165"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-ready_english.png",
+    "size": 1139988,
+    "sha256": "50abe4ce989ae571f0628bb992a7b688b1beb4a53684aea8a158026c7fcc8e75"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-ready_simp_chinese_report.json",
+    "size": 6147,
+    "sha256": "7740c51f5a47a9bf23ece75fe29ff0881a9b722caceb6fa96325c01131e62101"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-ready_simp_chinese_tree.txt",
+    "size": 225029,
+    "sha256": "3e39dce90f85d35673ccb297040db925249c5531f7d8c3d3955539ad78aed243"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_reritual-ready_simp_chinese.png",
+    "size": 1117385,
+    "sha256": "f8e84d552b069912f26ba126cc61fedac4902ee66218a2b54691bd7fa930f6bb"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ritual-progress_english_report.json",
+    "size": 6139,
+    "sha256": "9e729d1e44949b015a4e589e70bdbe5d1d435d15be7b553e664d9cf52071edf1"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ritual-progress_english_tree.txt",
+    "size": 225014,
+    "sha256": "98b9f83d53365ab2bb166e12cec7ffafb422be189785379ac31b5a8bf3c46c75"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ritual-progress_english.png",
+    "size": 1056802,
+    "sha256": "e8ad9bd372148e5f4838b088de4b69abc9e0fa34673c92cab800279d5e7845b6"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ritual-progress_simp_chinese_report.json",
+    "size": 6149,
+    "sha256": "618481501870e41b65ff3c02ce87aa4269ffe9cd730a32fd91cdf76dd963312e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ritual-progress_simp_chinese_tree.txt",
+    "size": 225008,
+    "sha256": "6e10965f042cad86b5ceba1fc8c45672f55dc3a6db5801b8753adf93c5e4df63"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_rework_ritual-progress_simp_chinese.png",
+    "size": 1043423,
+    "sha256": "658a750fdf5bed438c9fa435185df73b804788cf30035365a25d9f57433fe2da"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_states_latest.png",
+    "size": 858498,
+    "sha256": "17a993b7ae8c96a5b46e2d44b9a85be54760802155d9b215098670f5ae8ef846"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/ritual_styles_latest.png",
+    "size": 724850,
+    "sha256": "d03eb7f652c034174dfa5a968daa4ec41e5ec0f2a18bf8243d142d92e0a54700"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/shared_generic_missing_report.json",
+    "size": 727,
+    "sha256": "b07e51350d6fffdd8d75fbcc04452e764db68fd0111773835158d2e682a1ea44"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/shared_generic_missing_tree.txt",
+    "size": 118,
+    "sha256": "3f8928190c6a4118c4d9c81d4204d006938d2923ffea9ee3b9d473cd4c38ac44"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/shared_generic_missing.png",
+    "size": 3596,
+    "sha256": "6acd1070d8a097534cc5b16dbd4a53a0da59999bc4c32dbe043adb77f0412020"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/shared_generic_report.json",
+    "size": 665,
+    "sha256": "3ba7d92910691add18fd7991481ba48da33395b3fd4bd4cf5425cb25dc4a3a13"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/shared_generic_tree.txt",
+    "size": 82,
+    "sha256": "5802d42991001a50b7ef5c32fc17e9fc0e84b3ee0ce5042b84aff2b2548dc2c3"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/shared_generic.png",
+    "size": 2910,
+    "sha256": "e203d46b2cc0ed404b278de73249d88e29b81cdce07646a4e2882f11d0a98d49"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ceremony-ready_report.json",
+    "size": 6745,
+    "sha256": "7d42e5dfd4e037456de05980330b194d34b42d9494757130ff2bdf28f5d9ccf9"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ceremony-ready_ritual.png",
+    "size": 643814,
+    "sha256": "e5dc983e9f04a063783f812c8155c7f2b74885d7caa3c317d74080a43ed8135b"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ceremony-ready_tree.txt",
+    "size": 197895,
+    "sha256": "28fe0df71e76bf7d70a4ae01d0a4ac9700feb04d51adbb87965d85424a5c1130"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ceremony-ready.png",
+    "size": 1185662,
+    "sha256": "4417be5c99a243ebf64d0b22e685357ae79ecaeb572975ccaebdb23817192f05"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/finalized_report.json",
+    "size": 6716,
+    "sha256": "79a6ccb15035492ed64cc8c2ad9c4ede87564264b814d78ec7ac5a652b41168d"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/finalized_ritual.png",
+    "size": 124989,
+    "sha256": "0e9bf312e3dd94d3805d1275b6e1b10fa96cab79ba6ad5fcd896785ba5226dda"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/finalized_tree.txt",
+    "size": 197390,
+    "sha256": "ab949baff34e208db581d943a3423a3159aa54309997431e0668949ebf46468a"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/finalized.png",
+    "size": 789019,
+    "sha256": "4987e8f36b46edbc7d3a60d71ccf79c79fa697daacd739d6c930169c88c236be"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/plain-ready_report.json",
+    "size": 6736,
+    "sha256": "7fd84aa20413e53bdd6868469ff558cf3afe416c6ba53ec1ae3e48db67f81b73"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/plain-ready_ritual.png",
+    "size": 360271,
+    "sha256": "e372d45d49ebbf1f98a59f5ca68c9c05c4db5719e68434adf84a680e13bbccb5"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/plain-ready_tree.txt",
+    "size": 197578,
+    "sha256": "4cf094049999eb3e3b4aa376f44b3fb937e69922ef4368a7dcfceb8a373c795c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/plain-ready.png",
+    "size": 928489,
+    "sha256": "7843b50e497c15c7c4bb448a22ffe11dcaf82b8b4e86f6b59c4c665e17036ab2"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/reritual-progress_report.json",
+    "size": 6772,
+    "sha256": "6da82eb00005b418a20370b104c49b844bd2255be472b850c8b3eba6e9a46266"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/reritual-progress_ritual.png",
+    "size": 193048,
+    "sha256": "8b18bee4b8439129bd5268c7f8ea4802c8991222c5b9f67818e2991c8d6b9b50"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/reritual-progress_tree.txt",
+    "size": 197440,
+    "sha256": "51a4d929873ffc75944216995547c64fe7688d8be3088a72207f1ce92cf5ed37"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/reritual-progress.png",
+    "size": 809304,
+    "sha256": "81325077dd4d65f4f48e8b58150dfc4d4fd10b6e4fd4fe36e78126d17430692e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/reritual-ready_report.json",
+    "size": 6745,
+    "sha256": "8e3f825245e52118789dbd139e9cacdddffe2f42ff6ba1f304aeca1226a2b696"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/reritual-ready_ritual.png",
+    "size": 624362,
+    "sha256": "6cea4f01f57c2d001c51c4c9b35cb519d9e6185e6b699b9e1478be1e0bb8ea69"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/reritual-ready_tree.txt",
+    "size": 197879,
+    "sha256": "f0bc11284f3ce526edcfe68fec6da56865d7434788c82979b23584cdb5bda5d3"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/reritual-ready.png",
+    "size": 1170459,
+    "sha256": "b9974ce057989a011bd0304ce4218359540588b179fb8f4cf331a86283ddc3ec"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ritual-details_report.json",
+    "size": 6761,
+    "sha256": "fc239bbdb17fe030ee7e2bf39bd788edfd26a8839854409fc29306c3fbebd13a"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ritual-details_ritual.png",
+    "size": 475166,
+    "sha256": "433aa8af78a1bae95d3a3b3dcce69517b1fe3c6d5416c6ef395270d5cb671101"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ritual-details_tree.txt",
+    "size": 197727,
+    "sha256": "12c90c9048cddf3649145de7ad9c82fe894a54be5557ca456c9dd9cc5f82538d"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ritual-details.png",
+    "size": 1039447,
+    "sha256": "cc85403d01d85d6ea928f0807c0b0e668cf6c7f80cb844433eabbd72b37b8032"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ritual-progress_report.json",
+    "size": 6764,
+    "sha256": "f6014f0c09b96aef752ab7e810efca19f69a10e9dfa247594ee2011b62863ff4"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ritual-progress_ritual.png",
+    "size": 164217,
+    "sha256": "09fd0997684d8cfb6d566f64e970f35464169043cf0cbd094e9243ce9188932b"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ritual-progress_tree.txt",
+    "size": 197427,
+    "sha256": "746475803c82a2b3f778f2a43a7afda84ef1bb78ab7d621a77032f2764cbc8f3"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/ritual-progress.png",
+    "size": 799270,
+    "sha256": "d763e2966a23b66d7656b123f35d7a1f311d80e05d61e43793af0c0004e415dc"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/unique-ready_report.json",
+    "size": 6766,
+    "sha256": "84e587fccf2dd1d24b89499d0b6b5e0ab066c02c4cb308a33b99353fe60bdd76"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/unique-ready_ritual.png",
+    "size": 646106,
+    "sha256": "535fc17db8bb12c60e4463f1a61f13e9fd707c9031dbb6552b067fd9b6b694db"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/unique-ready_tree.txt",
+    "size": 197895,
+    "sha256": "78b815da807a612d809e4d2e759f090098fb2c16a74ba98964fb834bb2b0b9a8"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/english/unique-ready.png",
+    "size": 1187461,
+    "sha256": "42666854b8ce336baf12283d972c10ba0b5889349e2adb54538d79110c6998b8"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/priority_proposal/priority_a_report.json",
+    "size": 1329,
+    "sha256": "b43d17b30ca9a17e8e9aa9dc27a1404595fe268cd83c2e00869ae3076b7ba646"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/priority_proposal/priority_a_tree.txt",
+    "size": 210630,
+    "sha256": "f40e570bf3ddefdf0f1db1337835b1d9ccce493971d3c17fc219d795e82c8156"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/priority_proposal/priority_a.json",
+    "size": 972,
+    "sha256": "7ff5391cf0cabc93fd87c398f0cd656c8618bb51ffc2aa55a733f79731c21f9b"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/priority_proposal/priority_a.png",
+    "size": 301168,
+    "sha256": "55e47172a4c57079683eef29bc28891b7c150ab9c3685b7cdfa51443618e672a"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/priority_proposal/priority_baseline.json",
+    "size": 963,
+    "sha256": "64d211a3277c01d8c72329b995e645dcefa8b676904ba9120af477e3345feb4d"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/priority_proposal/priority_baseline.png",
+    "size": 940848,
+    "sha256": "3eb4a1bed999e17376d47bda4fe5fafd983ef466aa4edaf15cee22598a2d37fd"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ceremony-ready_report.json",
+    "size": 6760,
+    "sha256": "229ad74490d7319b3ca0dba48d770b993d533c6f8c3972d3d1a828e9de64cacd"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ceremony-ready_ritual.png",
+    "size": 622440,
+    "sha256": "69518a056dec5544be83e3b14520144cee1a13e6041624dcc33b37a03671b0c6"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ceremony-ready_tree.txt",
+    "size": 197892,
+    "sha256": "c3bd0d3c2e66e93b3e341eaadce0864c1230acc8b11240c95e6f7f678d55624e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ceremony-ready.png",
+    "size": 1166292,
+    "sha256": "ef5beea2ea6e2920f7c065c1b45dcd435adb036bfa84f57f31470a0e79e72fa5"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/finalized_report.json",
+    "size": 6731,
+    "sha256": "da824bdf55415371f9e9295bda734a693cf65565da8706754b5585666edb69c2"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/finalized_ritual.png",
+    "size": 124082,
+    "sha256": "98fd0864fe7cb34be5ddcf13fd4de69942a1a9e838942f5d59a11e682d0193d2"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/finalized_tree.txt",
+    "size": 197388,
+    "sha256": "83b7e2c6e842725ac0cd8587b65017ec4753493cd4741b90255072f0619ed830"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/finalized.png",
+    "size": 788462,
+    "sha256": "f189ffebf8a4b53cf49d9e118c80a727b3e3ba4e5c08554d0676344c63b4bd17"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/plain-ready_report.json",
+    "size": 6751,
+    "sha256": "bf5bc134d712165c38e881c2f04cee1997eeac72facb01229a7b00a757b5607e"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/plain-ready_ritual.png",
+    "size": 347953,
+    "sha256": "521a40c357fd3626d6f2f87030464c64bfdf485bab84584f1703df0a5e46da30"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/plain-ready_tree.txt",
+    "size": 197574,
+    "sha256": "69d74854cf8b3f7c8941c76d670e8d7c4c3817fe430d666ba55e8b8555931e2c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/plain-ready.png",
+    "size": 918252,
+    "sha256": "6628a8642a7ef351c644d29ce5b110da2f1b4051ed9afe8eae409200dde79337"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/reritual-progress_report.json",
+    "size": 6787,
+    "sha256": "626aabca7b6b76c50c61d6e4e32b6532d6a51612abfce2594d068fcc688d950d"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/reritual-progress_ritual.png",
+    "size": 182270,
+    "sha256": "252f5d1c856cb659e137fe639c2cb41faa069445ad6d284ae61c12c224e995d1"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/reritual-progress_tree.txt",
+    "size": 197438,
+    "sha256": "c2ad0923f19d6038e5607f57ea5ba302f5361260cb72e828126d738e31a6b595"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/reritual-progress.png",
+    "size": 805545,
+    "sha256": "84bc99a2d79ff14eec33cba6b89dce2790431a4b67b1766b148c82e6ec0ec059"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/reritual-ready_report.json",
+    "size": 6760,
+    "sha256": "01bf4aa41a6b35285084775219d03ad68adf241ede61d28afeeb2e1ce3be2eec"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/reritual-ready_ritual.png",
+    "size": 596417,
+    "sha256": "7a7239a0d8135d162393a2c12130dbe04e60e5be85b3f80994c66c1d6638267c"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/reritual-ready_tree.txt",
+    "size": 197875,
+    "sha256": "f416aa950255d71131476339340edf5babc506a7362f7748742f0ca2abbbde2a"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/reritual-ready.png",
+    "size": 1145077,
+    "sha256": "406194d0229aff9deba8951371465d7c7ed6109f80ae9cf8791d5b98f6cd442b"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ritual-details_report.json",
+    "size": 6776,
+    "sha256": "4683cf7ec8142c62afd1285d7c0c14f2da817f3336c3e3b09778fc647b0ed050"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ritual-details_ritual.png",
+    "size": 455620,
+    "sha256": "7419124ffe0710d1b032b0b9ec4014d513a8a0a56d58e324f7ee14b80f893ea7"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ritual-details_tree.txt",
+    "size": 197723,
+    "sha256": "d47d40c2d0c1c88a1ac80e4b95b966e7719163ac4d11b4a72c163ba20845e4c7"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ritual-details.png",
+    "size": 1018833,
+    "sha256": "0827c49e7b35dce9e3c2942eeb9157c957448982b54aa9749db60bb1fb0255a5"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ritual-progress_report.json",
+    "size": 6779,
+    "sha256": "1b76b2152cc0aaa146e75b541f4b169cc2b2b416d77830e4f6c7717f01abbd4b"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ritual-progress_ritual.png",
+    "size": 164006,
+    "sha256": "dae0688143d69916706bfd4432134f1dc6f653fdffe82fce25a7cdc14acfb6d6"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ritual-progress_tree.txt",
+    "size": 197425,
+    "sha256": "de72af14790ac86a005a7510547a4fc272945c9efa28d9b71fff5fe8b61751d1"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/ritual-progress.png",
+    "size": 797880,
+    "sha256": "6d2138b3f9773c4a03449ce5e423fed2ced7a16d428b80c3ef2f5d70edcf2f32"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/unique-ready_report.json",
+    "size": 6781,
+    "sha256": "1447547be3e7968b8642788d98f6f9e0982e27a0b403e67859e0f457388c5a43"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/unique-ready_ritual.png",
+    "size": 624766,
+    "sha256": "1f91f44939a61977a417c92a51ebb08f50abd4d05db1503c2e95b03a8bb96ae1"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/unique-ready_tree.txt",
+    "size": 197892,
+    "sha256": "35d133e26c62bd56a9f0eab5466f61e286a0faf71ae69039b458a86624a3e507"
+  },
+  {
+    "path": "ai_gui_assessment/images/engineering/simp_chinese/unique-ready.png",
+    "size": 1168622,
+    "sha256": "d689e530470f87a126536dcbc5612a802c3bc1aa1649b7bdbb2c2075bced2be0"
+  },
+  {
+    "path": "assets/archives/historical_ai_cartoon_previous_20261021.zip",
+    "size": 1139116880,
+    "sha256": "388be0b896c4bdf78f1e7458814c0222eeb6abdda8e740ed868ceab643216cad"
+  },
+  {
+    "path": "assets/archives/oil_cartoon_previous_20261021.zip",
+    "size": 60796128,
+    "sha256": "b134ce48e3a8c9e67c36758f07638cec1cde296c18ac56aa71f3a82c792341f9"
+  }
+]

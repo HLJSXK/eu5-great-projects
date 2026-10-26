@@ -1,0 +1,47 @@
+{
+  "node": {
+    "exit_code": 0,
+    "seconds": 0.45,
+    "command": [
+      "node",
+      "--test",
+      "tests/api.cjs",
+      "tests/resource_state.cjs",
+      "tests/media_job_polling.cjs",
+      "tests/shared_display.cjs",
+      "tests/validation_panel.cjs",
+      "tests/generators.cjs",
+      "tests/global_shell.cjs",
+      "tests/cost_reward.cjs",
+      "tests/localization_text.cjs",
+      "tests/localization.cjs",
+      "tests/victory_paths.cjs"
+    ]
+  },
+  "web": {
+    "exit_code": 0,
+    "seconds": 1.28,
+    "command": [
+      "C:\\Users\\Hades\\anaconda3\\envs\\eu5\\python.exe",
+      "-m",
+      "towards_victory_editor_web",
+      "--check"
+    ]
+  },
+  "browser": {
+    "exit_code": 0,
+    "seconds": 20.25,
+    "command": [
+      "node",
+      "tests/resource_state_browser.cjs"
+    ]
+  },
+  "validate": {
+    "exit_code": 0,
+    "seconds": 24.59,
+    "command": [
+      "C:\\Users\\Hades\\anaconda3\\envs\\eu5\\python.exe",
+      "scripts/validate.py"
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "audit_started": "2026-10-26",
+  "environment": {
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:12:53) [MSC v.1942 64 bit (AMD64)]",
+    "pillow": "12.3.0",
+    "node": "v22.19.0"
+  },
+  "baseline": {
+    "tv": "2cf4171b4e273c87efb8257baef895c7a6017ad6",
+    "gp": "165bf62",
+    "base": "33e60f14164ad06fc227b2d9e7c365b6db67c561",
+    "pre_fix_extraction_verifier": "passed with --source-repo ../eu5-towards-victory"
+  },
+  "full_pytest": {
+    "command": "python -m pytest -q -n 4 --dist worksteal tests --basetemp=.pytest-final3 -p no:cacheprovider",
+    "tv": {
+      "passed": 316,
+      "failed": 2,
+      "seconds": 125.98
+    },
+    "gp": {
+      "passed": 890,
+      "failed": 1,
+      "seconds": 151.01
+    }
+  },
+  "build": {
+    "command": "python scripts/build.py --check --date 2026-10-26",
+    "exit_code": 0,
+    "producers": 50,
+    "outputs": 81,
+    "gp_source_files": 189
+  },
+  "full_static_validation": {
+    "tv_files": 181,
+    "gp_files": 189,
+    "errors": 0,
+    "warnings": 0
+  },
+  "node": {
+    "tv": {
+      "passed": 105,
+      "failed": 0
+    },
+    "gp": {
+      "passed": 127,
+      "failed": 1
+    }
+  },
+  "final_focused_pytest": {
+    "tv_passed": 9,
+    "gp_passed": 18
+  },
+  "known_failures": [
+    "GP Python: old ritual_position_1 GUI expectation",
+    "GP Node: retired wonder_rituals.js missing at source commit as well",
+    "TV: two slow tests encounter prices.30 religion condition shape changed with unchanged codegen"
+  ],
+  "unverified": [
+    "EU5 gameplay and launcher load order",
+    "remote Pages publishing"
+  ],
+  "base_final_patch_sha256": "98f7037069c84e912d794b1e18ee51a080eda0e14ed289a7e4e337dbeb099ad5",
+  "gp_original_snapshot_delta": [
+    {
+      "path": "README.md",
+      "extraction_sha256": "ae7c818217ade420a660f4af6e2104ab817e17b50e6e7dce3087712e84d59363",
+      "final_sha256": "f8fbb146d1c463a75c103580486ad3315c9b93aed3fc2ce05d406bfb9632acda"
+    },
+    {
+      "path": "docs/knowledge/BRIEF.md",
+      "extraction_sha256": "c6828766106d386d7a10a84ec31213ba8c4765a675f34553d8f64ad69bea3255",
+      "final_sha256": "a5a154a402d97baa7807517b20c59a5ef7f5de1e19658181973e53482c299701"
+    },
+    {
+      "path": "docs/knowledge/anti_patterns.yaml",
+      "extraction_sha256": "d1ad01bb2e18e02283ef54e10cce1d8814c5211202bf780c6922c7ca0bec4e47",
+      "final_sha256": "598e1bda5a409ed33c9291fe17d9260856f6ec3cb5cc88206b07449972cad1f1"
+    },
+    {
+      "path": "docs/knowledge/risk_cards/generic_actions.md",
+      "extraction_sha256": "50ed1952d7c4fc46c581fa1bc8215f92ff8f560d433483e580dd377f68741ef1",
+      "final_sha256": "1fa598bf0b6a3f6008e6cbf7d2fa24226616b5d8d1d13c4bf689d0a4be9bd6d1"
+    },
+    {
+      "path": "docs/knowledge/risk_cards/gui.md",
+      "extraction_sha256": "09e6bc2f6ccb1a97aab2912111f7ed9021440907b44ee444d857e176a6f7d849",
+      "final_sha256": "47e3e851b09b41f6656fa5b2cb5b6b0ce08ad138a8b198c97c5d1f477078759d"
+    },
+    {
+      "path": "docs/knowledge/risk_cards/international_organizations.md",
+      "extraction_sha256": "a7151fc64b4dcbd4aa07c9c1421a42bad78272ff75515c325ff76489246f6313",
+      "final_sha256": "7e5bfe1053f93cf4e5f962789310599ceacd5c79f0ddde055ac1a5245cd02ca9"
+    },
+    {
+      "path": "scripts/generate.py",
+      "extraction_sha256": "7f8290d6a29d82fcef3e1a87a407a84f1891836174daeee0e46db01d1fa99de4",
+      "final_sha256": "cedcaffab5d64df0787693025766c99bad852c76a9a5149d264613807c3f4643"
+    },
+    {
+      "path": "scripts/in_game/common/customizable_localization/gen_character_title.py",
+      "extraction_sha256": "a02c62d164bb8b35c058cdc7e4a8e12c0f60237904f1fbe621dad9e34a9e8241",
+      "final_sha256": "6580b400521c4a502c367e26d4de15d597f92a7c4c564213df3880ab75824cde"
+    },
+    {
+      "path": "unique_wonders_site/README.md",
+      "extraction_sha256": "fead52f68439fba3ed48ab60225d9506af44ca3da36d3e98ad424387e90a23d3",
+      "final_sha256": "bfa8954ded9109a5963eb14f16a5f209c63371543000fd3894842fba21ae1c77"
+    }
+  ],
+  "new_regression_test": {
+    "path": "tests/test_generate_freshness.py",
+    "sha256": "f30c0a9f7ef4ee2fe5810435548be602db793d30cff49b62a6c556dbb4130ba4"
+  },
+  "policy": "Original extraction_provenance.json is immutable evidence. Snapshot deltas here are the reviewed final-audit repairs, not generator drift. No gameplay outputs were changed in this pass.",
+  "final_changed_validation": {
+    "tv": {
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "files_checked": 101
+    },
+    "gp": {
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "files_checked": 24
+    }
+  }
+}

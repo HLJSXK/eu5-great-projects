@@ -633,3 +633,28 @@
     cleaned up on ritual reset, leaking state across a ritual restart. Fixed by re-running the generator with no data changes;
     always re-run generators after editing a content module's naming helpers even when no runtime error has been observed
     yet.
+- id: mechanic_similarity_audit_short_triggers_file_dominates_combined_ratio
+  pattern: ''
+  detectability: advisory
+  bad: Reading the historical ritual similarity audit's combined_ratio (effects+triggers
+    together) as a direct proxy for mechanic-shape similarity when every wonder being compared has a very short triggers file
+    (2-3 blocks total)
+  correction: When a wonder ritual's triggers file is short, most of its content is the mandatory, near-identical site_control_trigger
+    (owns = location:X) and active_trigger (has_variable = tv_wonder_locked / var:tv_wonder_locked ?= <id> / has_variable
+    = tv_wonder_ritual_in_progress) every ritual in the mod must define. On short files this boilerplate can push combined_ratio
+    over the 0.15 gate even when the effects files (the actual mechanic) are genuinely dissimilar. Read the printed effects_ratio
+    and triggers_ratio components separately, not just combined_ratio; judge homogenization primarily from effects_ratio plus
+    a direct read of the mechanic. Adding one genuine, wonder-specific, differently-shaped extra trigger per wonder (vary
+    the shape across wonders too -- a flat comparison for one, an OR-of-AND compound for another -- reusing the same shape
+    across two wonders' 'extra' triggers just recreates the same problem one level up) and wiring it into a real triggered_desc
+    reduces but does not eliminate this artifact on very short files.
+  category: workflow
+  scope: any
+  source: docs/knowledge/risk_cards/wonders.md rule 13 resolution note, 2026-07
+  notes: 'Historical evidence from the retired audit_unique_wonder_ritual_mechanic_similarity.py tool; it is not an executable validation command. Observed while resolving wonder_ritual_choice_branch_retry_reward_template_trap: after the four-agent rewrite, Dome
+    of the Rock <-> St. Peter''s Basilica triggers_ratio swung from 0.99 (both had a redundant eligibility_trigger wrapping
+    active_trigger+site_control_trigger) to 0.30 (after removing eligibility_trigger and adding an OR-of-AND compound trigger
+    to Dome) to 0.909 for a different pair, Bank of Saint George <-> St. Peter''s Basilica, purely because their two ''extra''
+    triggers were accidentally given the identical AND-of-4-conditions shape. combined_ratio for that pair barely moved (0.300
+    -> 0.302) despite the swing, confirming the metric is noisy on short files and should not be chased below 0.15 in isolation
+    from the effects-file ratio.'

@@ -1,0 +1,58 @@
+{
+  "deleted_move_bijection": 5527,
+  "missing_retained_targets": [],
+  "original_snapshot_differences_after_final_fixes": [
+    "README.md",
+    "docs/knowledge/BRIEF.md",
+    "docs/knowledge/anti_patterns.yaml",
+    "scripts/generate.py",
+    "scripts/in_game/common/customizable_localization/gen_character_title.py",
+    "unique_wonders_site/README.md"
+  ],
+  "symbols": {
+    "in_game/common/generic_actions": {
+      "tv": 327,
+      "gp": 35,
+      "duplicates": []
+    },
+    "main_menu/gui/messagetypes": {
+      "tv": 331,
+      "gp": 35,
+      "duplicates": []
+    },
+    "in_game/common/scripted_effects": {
+      "tv": 1196,
+      "gp": 4968,
+      "duplicates": []
+    },
+    "in_game/common/scripted_triggers": {
+      "tv": 656,
+      "gp": 3083,
+      "duplicates": []
+    },
+    "main_menu/common/game_concepts": {
+      "tv": 53,
+      "gp": 1385,
+      "duplicates": []
+    }
+  },
+  "localization_duplicates": {
+    "english": [],
+    "simp_chinese": []
+  },
+  "title_keys": {
+    "tv": 416,
+    "gp": 412,
+    "tv_only": [
+      "character_title_tv_chief_artist",
+      "character_title_tv_chief_scientist",
+      "character_title_tv_grand_general",
+      "character_title_tv_grand_merchant"
+    ]
+  },
+  "local_rule_counts": {
+    "eu5-towards-victory": 24,
+    "eu5-great-projects": 32,
+    "eu5-modding-base": 369
+  }
+}

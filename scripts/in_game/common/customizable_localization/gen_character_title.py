@@ -1,11 +1,10 @@
 """
-Generate per-root full-copy character_title.txt outputs.
+Generate Great Projects' full-copy character_title.txt.
 
 The engine treats top-level customizable localization keys as unique database
-entries. ``character_title_prefix`` must therefore be generated as a full
-vanilla copy in each root. Standalone roots keep only their own titles; the main
-mod keeps the TV+Engineering union and must be sorted after Engineering
-Department when both are enabled.
+entries. Keep the complete vanilla singleton plus GP's Engineering title, using
+only local io_leaders.yaml and shared-base vanilla data. TV independently owns a
+superset for its runtime integration and must load after GP when both are enabled.
 """
 
 import sys

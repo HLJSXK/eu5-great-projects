@@ -1,0 +1,3 @@
+```text
+PASS great_projects_editor_web: 6 tabs, owned resource, absent foreign route, read-only preview, two viewports, no JS exceptions.
+```
