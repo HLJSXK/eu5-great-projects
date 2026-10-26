@@ -17,7 +17,7 @@ def verify(source_repo: Path | None = None) -> list[str]:
             problems.append(f"Final snapshot differs: {row['path']}")
     if source_repo:
         commit = manifest['source_commit']
-        raw = subprocess.check_output(['git', '-C', str(source_repo.resolve()), 'ls-tree', '-rz', commit])
+        raw = subprocess.check_output(['git', '-c', f'safe.directory={source_repo.resolve().as_posix()}', '-C', str(source_repo.resolve()), 'ls-tree', '-rz', commit])
         blobs = {line.split(b'\t', 1)[1].decode(): line.split()[2].decode() for line in raw.split(b'\0') if line}
         for row in manifest['files']:
             if row.get('source_blob') and blobs.get(row['source']) != row['source_blob']:

@@ -53867,8 +53867,8 @@
     },
     {
       "path": "scripts/verify_extraction.py",
-      "sha256": "cbe7cf9b19090ce1be07796783319cb658073584f884923d714de846d63799af",
-      "bytes": 1564
+      "sha256": "943efa835a3c17913a09b01eca52598cd9f72491e7d55184dc111494f422c530",
+      "bytes": 1624
     },
     {
       "path": "scripts_engineering_department/audit_unique_wonder_site_requirements.py",
