@@ -1,5 +1,32 @@
 # ED 模块离线 GUI 预览
 
+## 地点窗口与展开 tooltip
+
+`location.py` 读取当前 `src/in_game/gui/location_window.gui` 的实际窗口和奇观悬停定义，
+输出地点窗口、展开 tooltip 的合成图，以及按布局边界裁出的独立图片、元素树和诊断。
+
+```powershell
+C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\location.py --state multiple --strict
+C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\location.py --all --strict
+```
+
+状态包括 `single`（单奇观）、`multiple`（三奇观）、`empty`（无奇观）、
+`overflow`（六奇观，tooltip 显示五项并提示剩余一项）、`unbuilt`（等级零）。
+默认输出目录为 `ai_gui_assessment/images/location/`；合成图为 `location_<state>.png`，
+独立图为 `*_panel.png` 和 `*_tooltip.png`，总索引为 `location_index.json`。
+支持 `--no-tooltip`、`--mocks`、`--scale`、`--width`、`--height`、`--language` 和显式路径参数。
+
+地点、经济和队列数据来自 `fixtures/location.json` 中逐条列出的虚构样例；默认选择基础设施页，
+次级列表为空，奇观采用朴素落成状态。国家／地点修正读取所选 Mod 当前生成的 static modifiers，
+格式来自 modifier 索引；地点条件明确显示为示例，未执行游戏条件或脚本。
+3D 地景使用占位区域，旗帜和实机悬停时序不在预览范围内。
+
+共享渲染器的 `preview.render_tree(tooltip_selector=..., tooltip_position=...)` 保留 tooltip
+所属按钮的祖先和数据列表上下文；报告记录来源、尺寸和裁切状态。单轴自动尺寸传播确保卡片
+撑开 tooltip；隐藏效果块不再提前转换 `textcontext`。严格模式会拒绝超出画布的 tooltip。
+
+## 工程部面板
+
 `engineering.py` 使用共享渲染器，直接展开 `src` 中实际的 `organization_panel` 实例及其覆盖块，读取所选游戏安装的字体、纹理和本地化。覆盖工程部的总览、勘测和物流、建造与仪式三个页签，无需启动游戏。
 
 ```powershell

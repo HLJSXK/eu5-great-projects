@@ -105,8 +105,9 @@ def append_final_building_completion_sync_hidden_event_effects(lines: list[str],
     lines.append(f"{final_building_completion_sync_hidden_event_execute_effect_name()} = {{")
     lines.append(f"{T}remove_variable = {FINAL_BUILDING_COMPLETION_SYNC_QUEUED_VAR}")
     lines.append(f"{T}tv_wonder_mechanics_sync_location_final_building_level_map_from_buildings_effect = yes")
-    # Only actual completed final buildings open native canals. This callback is
-    # deferred one day because the engine updates completed levels asynchronously.
+    # Start the same native construction as the vanilla canal decision, after the
+    # engine has committed the completed building level. Native construction owns
+    # the remaining work and eventual opening; expansions must not restart it.
     for wonder in wonders:
         if not wonder.get("native_canal"):
             continue
@@ -114,12 +115,12 @@ def append_final_building_completion_sync_hidden_event_effects(lines: list[str],
             f"{T}if = {{",
             f"{T}{T}limit = {{",
             f"{T}{T}{T}this = location:{wonder['location']}",
-            f"{T}{T}{T}OR = {{",
-            *[f"{T}{T}{T}{T}{loc_level(building, '>=', 1)}" for building in [wonder["final_building"]]],
-            f"{T}{T}{T}}}",
+            f"{T}{T}{T}exists = owner",
+            f"{T}{T}{T}{loc_level(wonder['final_building'], '>=', 1)}",
+            f"{T}{T}{T}is_canal_open = no",
+            f"{T}{T}{T}NOT = {{ has_canal_construction = yes }}",
             f"{T}{T}}}",
-            # Temporary crash isolation: retain the delayed callback and its other effects.
-            f"{T}{T}# TEMP crash isolation: set_canal_open = yes",
+            f"{T}{T}start_canal_construction = {{ }}",
             f"{T}}}",
         ])
     lines.append(f"{T}tv_wonder_mechanics_refresh_location_display_state_effect = yes")

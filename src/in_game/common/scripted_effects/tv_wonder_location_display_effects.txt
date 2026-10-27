@@ -3930,7 +3930,6 @@ tv_wonder_unique_suez_ancient_canal_handle_final_building_level_changed_effect =
 		tv_wonder_mechanics_refresh_country_auto_level_map_effect = yes
 		if = { limit = { var:tv_wonder_project_mode ?= 3 var:tv_wonder_locked ?= 129 var:tv_wonder_site ?= scope:tv_wonder_priority_site scope:tv_wonder_priority_site = { NOT = { has_building = building_type:tv_wonder_unique_suez_ancient_canal_inaugurated } } } tv_wonder_ritual_cancel_reritual_effect = yes }
 	}
-	if = { limit = { NOT = { has_building = building_type:tv_wonder_unique_suez_ancient_canal_inaugurated } } set_canal_open = no }
 	tv_wonder_mechanics_refresh_location_display_state_effect = yes
 }
 

@@ -663,8 +663,6 @@ def append_final_building_level_changed_effects(lines: list[str], all_wonders: l
             "\t\ttv_wonder_mechanics_refresh_country_auto_level_map_effect = yes",
             f"\t\tif = {{ limit = {{ var:tv_wonder_project_mode ?= 3 var:tv_wonder_locked ?= {wid} var:tv_wonder_site ?= scope:tv_wonder_priority_site scope:tv_wonder_priority_site = {{ NOT = {{ has_building = building_type:{wonder['final_building']} }} }} }} tv_wonder_ritual_cancel_reritual_effect = yes }}",
             "\t}"])
-        if wonder.get("native_canal"):
-            lines.append(f"\tif = {{ limit = {{ NOT = {{ has_building = building_type:{wonder['final_building']} }} }} set_canal_open = no }}")
         lines.extend(["\ttv_wonder_mechanics_refresh_location_display_state_effect = yes", "}", ""])
 
 

@@ -226,11 +226,12 @@ tv_wonder_execute_final_building_completion_sync_hidden_event_effect = {
 	if = {
 		limit = {
 			this = location:suez
-			OR = {
-				location_building_level = { building_type = building_type:tv_wonder_unique_suez_ancient_canal_inaugurated value >= 1 }
-			}
+			exists = owner
+			location_building_level = { building_type = building_type:tv_wonder_unique_suez_ancient_canal_inaugurated value >= 1 }
+			is_canal_open = no
+			NOT = { has_canal_construction = yes }
 		}
-		# TEMP crash isolation: set_canal_open = yes
+		start_canal_construction = { }
 	}
 	tv_wonder_mechanics_refresh_location_display_state_effect = yes
 }
