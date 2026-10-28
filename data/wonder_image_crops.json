@@ -3306,6 +3306,74 @@
         "width": 1.0,
         "height": 0.61111111
       }
+    },
+    "tv_wonder_unique_amber_room": {
+      "source": "assets/generated_wonders/tv_wonder_unique_amber_room.png",
+      "source_width": 1600,
+      "source_height": 1200,
+      "rect": {
+        "x": 0.0,
+        "y": 245.0,
+        "width": 1600.0,
+        "height": 651.8519
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.20416667,
+        "width": 1.0,
+        "height": 0.54320988
+      }
+    },
+    "tv_wonder_unique_parthenon": {
+      "source": "assets/generated_wonders/tv_wonder_unique_parthenon.png",
+      "source_width": 976,
+      "source_height": 672,
+      "rect": {
+        "x": 0.0,
+        "y": 60.0,
+        "width": 976.0,
+        "height": 397.6296
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.08928571,
+        "width": 1.0,
+        "height": 0.59171076
+      }
+    },
+    "tv_wonder_unique_bangkok_grand_palace": {
+      "source": "assets/generated_wonders/tv_wonder_unique_bangkok_grand_palace.png",
+      "source_width": 3216,
+      "source_height": 2576,
+      "rect": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 3216.0,
+        "height": 1310.2222
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 0.50862664
+      }
+    },
+    "tv_wonder_unique_wat_arun": {
+      "source": "assets/generated_wonders/tv_wonder_unique_wat_arun.png",
+      "source_width": 1008,
+      "source_height": 672,
+      "rect": {
+        "x": 0.0,
+        "y": 12.0,
+        "width": 1008.0,
+        "height": 410.6667
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.01785714,
+        "width": 1.0,
+        "height": 0.61111111
+      }
     }
   }
 }

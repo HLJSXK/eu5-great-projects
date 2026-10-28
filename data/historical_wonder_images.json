@@ -2716,6 +2716,90 @@
       ],
       "dds_sha256": "ed3e360ff194d6ab658ce445fd1cfd0358f50e1dd87517e2f6153013291b67f5",
       "cropped_dds_sha256": "fc6bcb76693a1a09fabeb6f2e6e1cd8bda7e7cc519556f2f12f4a6c72b714fb1"
+    },
+    {
+      "name": "琥珀宫",
+      "stem": "tv_wonder_unique_amber_room",
+      "source": "assets/historical/processed/琥珀宫_ai_cartoon.png",
+      "reference": "assets/historical/琥珀宫.jpg",
+      "width": 1600,
+      "height": 1200,
+      "sha256": "35f704869efd1afcd6baeda03f41188a94cc231f7e2805f6fde077f357b1810f",
+      "png": "assets/generated_wonders/tv_wonder_unique_amber_room.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_amber_room.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_amber_room_cropped.dds",
+      "crop_rect": [
+        0.0,
+        245.000004,
+        1600.0,
+        651.8518518518518
+      ],
+      "dds_sha256": "e0ac99659048ee17fb449e6739f1944df33c878b87b6635adebccee51376f88b",
+      "cropped_dds_sha256": "a0ceb83d426b6fa5bce8011d9ead92b6e390083eec2c7a4fac11ab7f0a53c600",
+      "integrated_at": "2026-10-28T17:25:49.051268+08:00"
+    },
+    {
+      "name": "帕特农神庙",
+      "stem": "tv_wonder_unique_parthenon",
+      "source": "assets/historical/processed/帕特农神庙_ai_cartoon.png",
+      "reference": "assets/historical/帕特农神庙.jpg",
+      "width": 976,
+      "height": 672,
+      "sha256": "0a3d707e840296dd1892a72ecb4ebd3324700312c2a8f08c8334b7e36c263181",
+      "png": "assets/generated_wonders/tv_wonder_unique_parthenon.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_parthenon.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_parthenon_cropped.dds",
+      "crop_rect": [
+        0.0,
+        59.99999712,
+        976.0,
+        397.6296296296296
+      ],
+      "dds_sha256": "eac06c09e2a989dcd62defb0b3c0ba68c6079ff5294eac3ea34d519a37b8bf97",
+      "cropped_dds_sha256": "db866a75ea2cb2ce7b4354e8e23a4c022a4ffcc9b8b5270ecd07e930934d70bf",
+      "integrated_at": "2026-10-28T17:26:10.110768+08:00"
+    },
+    {
+      "name": "曼谷大皇宫",
+      "stem": "tv_wonder_unique_bangkok_grand_palace",
+      "source": "assets/historical/processed/曼谷大皇宫_ai_cartoon.png",
+      "reference": "assets/historical/曼谷大皇宫.jpg",
+      "width": 3216,
+      "height": 2576,
+      "sha256": "89147b325cd3b49e782f8982ed74340e1e07a3942c6167b6b5af323ced0e3837",
+      "png": "assets/generated_wonders/tv_wonder_unique_bangkok_grand_palace.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bangkok_grand_palace.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bangkok_grand_palace_cropped.dds",
+      "crop_rect": [
+        0.0,
+        0.0,
+        3216.0,
+        1310.2222222222222
+      ],
+      "dds_sha256": "856b0a05deb10abfd9c08aedaf6aa51954c25165c57b25439bb6bbe7c8ec7036",
+      "cropped_dds_sha256": "54c79819fd2216c505c2ecc27009a18a2e6d8b32a9edecdee132bf77d8ea1c30",
+      "integrated_at": "2026-10-28T17:27:17.407268+08:00"
+    },
+    {
+      "name": "郑王庙",
+      "stem": "tv_wonder_unique_wat_arun",
+      "source": "assets/historical/processed/郑王庙_ai_cartoon.png",
+      "reference": "assets/historical/郑王庙.jpg",
+      "width": 1008,
+      "height": 672,
+      "sha256": "0fa3cc931d7a0002fc126f0c29569a84385a8cdaad8abfb9da1f5d8b9bc71bce",
+      "png": "assets/generated_wonders/tv_wonder_unique_wat_arun.png",
+      "dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wat_arun.dds",
+      "cropped_dds": "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wat_arun_cropped.dds",
+      "crop_rect": [
+        0.0,
+        11.999998080000001,
+        1007.9999981672727,
+        410.66666591999996
+      ],
+      "dds_sha256": "8dda021c8bfc005e13eaa63fb1516354964a3e4a792aa1b76bb47c6fe9fae051",
+      "cropped_dds_sha256": "899c107e141dca8a489e95979a8485fffb7fe9d35e36bca46d9e675a5826834d",
+      "integrated_at": "2026-10-28T17:27:39.152268+08:00"
     }
   ]
 }
