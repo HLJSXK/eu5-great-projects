@@ -18,8 +18,15 @@ python -m pytest -q
 Set `EU5_MODDING_BASE` before bootstrap for another base location. The ignored
 `.eu5-base` junction/symlink is the sole development dependency; TV is not needed.
 Run `python -m great_projects_editor_web --no-browser` for the editor at port 8763.
-`build.bat` packages locally; explicit `--deploy <game-mod-directory>` deploys
-`tv_engineering_department` and the three named compatibility submods.
+`build.bat` builds and deploys `tv_engineering_department` and the three named
+compatibility submods by default. The target matches the original Towards Victory build:
+`C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis V\game\mod`.
+Deployment mirrors each package with `robocopy /MIR`, removing stale files in those
+four package directories. The target mod directory must already exist.
+Use `build.bat --package-only` to package into `build/` without deploying,
+`build.bat --check` to check without packaging or deploying, or
+`build.bat --deploy <game-mod-directory>` to override the deployment target.
+The same options and defaults apply to `python scripts/build.py`.
 For local image processing install `requirements-image.txt` as well. Browser/Node tests
 require Node 22+ and Chrome; the test script accepts EU5_PYTHON and CHROME_PATH.
 Runtime dependencies remain Community Mod Framework 2.x and Construction Manager.
