@@ -453,6 +453,8 @@ This is an index only. Use `scripts/ai_context.py` for task-relevant summaries o
 | `gui_estate_hover_missing_typed_context` | advisory | gui | country |
 | `gui_goods_name_from_static_key_helper` | advisory | gui | any |
 | `gui_template_inside_types_group` | advisory | gui | any |
+| `gui_renderer_font_default_overwrites_explicit_size` | advisory | gui | any |
+| `script_profiler_capture_not_reset_by_restart` | advisory | workflow | any |
 | `card_common_list_missing_fixed_vertical_size_overlaps_in_vbox` | advisory | gui | any |
 | `card_common_shrinking_height_chain_broken_by_one_fixed_height_wrapper` | advisory | gui | any |
 | `card_common_text_wrapped_in_expanding_widget_blows_out_fixed_card` | advisory | gui | any |

@@ -1,9 +1,9 @@
 # ED 模块离线 GUI 预览
 
-## 地点窗口与展开 tooltip
+## 地点窗口与伟大工程弹出面板
 
-`location.py` 读取当前 `src/in_game/gui/location_window.gui` 的实际窗口和奇观悬停定义，
-输出地点窗口、展开 tooltip 的合成图，以及按布局边界裁出的独立图片、元素树和诊断。
+`location.py` 读取当前 `src/in_game/gui/location_window.gui` 的实际窗口，以及伟大工程按钮
+挂载的 `contextmenu_widget`，输出地点窗口、点击弹出面板的合成图、独立图片、元素树和诊断。
 
 ```powershell
 C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\location.py --state multiple --strict
@@ -11,19 +11,21 @@ C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\location.py --all
 ```
 
 状态包括 `single`（单奇观）、`multiple`（三奇观）、`empty`（无奇观）、
-`overflow`（六奇观，tooltip 显示五项并提示剩余一项）、`unbuilt`（等级零）。
+`overflow`（六奇观，面板显示五项并提示剩余一项）、`unbuilt`（等级零）。
 默认输出目录为 `ai_gui_assessment/images/location/`；合成图为 `location_<state>.png`，
-独立图为 `*_panel.png` 和 `*_tooltip.png`，总索引为 `location_index.json`。
-支持 `--no-tooltip`、`--mocks`、`--scale`、`--width`、`--height`、`--language` 和显式路径参数。
+独立图为 `*_panel.png` 和 `*_menu.png`，总索引为 `location_index.json`。
+`--closed` 预览收起状态，`--selected-slot 3` 预览第三项详情（所选状态须包含该项）。
+支持 `--mocks`、`--scale`、`--width`、`--height`、`--language` 和显式路径参数。
 
 地点、经济和队列数据来自 `fixtures/location.json` 中逐条列出的虚构样例；默认选择基础设施页，
 次级列表为空，奇观采用朴素落成状态。国家／地点修正读取所选 Mod 当前生成的 static modifiers，
 格式来自 modifier 索引；地点条件明确显示为示例，未执行游戏条件或脚本。
 3D 地景使用占位区域，旗帜和实机悬停时序不在预览范围内。
 
-共享渲染器的 `preview.render_tree(tooltip_selector=..., tooltip_position=...)` 保留 tooltip
-所属按钮的祖先和数据列表上下文；报告记录来源、尺寸和裁切状态。单轴自动尺寸传播确保卡片
-撑开 tooltip；隐藏效果块不再提前转换 `textcontext`。严格模式会拒绝超出画布的 tooltip。
+弹出内容按实际按钮的挂载定义展开，地点上下文由该类型自身绑定。离线样例提供原生弹出
+容器的 `ExtraTooltipInfo` 和选中项目状态，在地点窗右侧放置预览；不执行实际点击、自动定位、
+滚动或关闭行为。原生容器将高度限制为 650，详情图片和效果表只展开所选项目。
+布局及裁图仍由共享 `preview.render_tree` 处理，不改写生产 GUI 的布局或效果内容。
 
 ## 工程部面板
 

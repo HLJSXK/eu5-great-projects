@@ -1,4 +1,4 @@
-"""Render the shipped location window and its expanded wonder tooltip.
+"""Render the shipped location window and its click-open wonder menu.
 
 All scenario values are fictional. Modifier tables read the selected mod's
 generated definitions; native trigger/effect evaluation is not emulated.
@@ -43,7 +43,7 @@ def wonder_variables(wonders):
     return result
 
 
-def scenario_mocks(state, resources):
+def scenario_mocks(state, resources, selected_slot=1):
     from eu5_gui_renderer.fixtures import object_mocks, variable_mocks, requirements_list, string_pair_list, modifier_sample_lines
     from eu5_gui_renderer.paths import MOD, LANGUAGE
     from eu5_gui_renderer.pdx import parse
@@ -56,6 +56,12 @@ def scenario_mocks(state, resources):
         if expression == 'LocationView.GetLocation':
             result.extend(object_mocks('Location', context))
     result.extend(variable_mocks('Location.MakeScope', wonder_variables(STATES[state])))
+    for slot in range(1, source.TOOLTIP_SLOT_MAX + 1):
+        result.append((re.escape(source.menu_slot_selected_expr(slot).replace(' ', '')), slot == selected_slot))
+    # The native context-menu host provides this object, just as it does for
+    # production_method_chooser_menu. This is popup context, not wonder data.
+    result.append((re.escape('ExtraTooltipInfo.GetTintColor'), [1, 1, 1, 1]))
+    result.append((re.escape('ExtraTooltipInfo.TooltipIsReady'), True))
     result.append((re.escape("GetGlobalVariable('hagia_sophia_now_mosque').IsSet"), False))
     metadata = json.loads((WORKSPACE / 'data/index/modifier_localization.json').read_text(encoding='utf-8'))['modifiers']
     modifiers = {}
@@ -81,37 +87,63 @@ def scenario_mocks(state, resources):
     return result
 
 
-def is_wonder_owner(node):
-    if not node.tooltipwidget:
-        return False
-    return any(n.key == 'blockoverride:title_text' and any(
-        c.key == 'text' and c.value == 'TV_LOCATION_WONDER_TOOLTIP_TITLE' for c in n.value)
-        for n in node.tooltipwidget[1])
+def wonder_menu_spec(resources):
+    """Read the actual button attachment; do not render a detached mock menu."""
+    from eu5_gui_renderer.paths import MOD
+
+    def visit(nodes):
+        for node in nodes:
+            if not node.is_block():
+                continue
+            if any(c.key == 'name' and c.value == 'tv_location_wonders_button' for c in node.value):
+                return next(c for c in node.value if c.key == 'contextmenu_widget').value[0]
+            found = visit(node.value)
+            if found is not None:
+                return found
+
+    spec = visit(resources.db.roots[str(MOD / GUI_PATH)])
+    if spec is None:
+        raise ValueError('Missing shipped wonder button/contextmenu_widget')
+    return spec
 
 
-def build(resources, expander, panel_width, height):
+def build(resources, expander, panel_width, height, menu=False):
     from eu5_gui_renderer.gui import Element, build_target
     from eu5_gui_renderer.paths import MOD
     panel = build_target(resources.db, expander, 'location_window', MOD / GUI_PATH)
     panel.props.update(size=[str(panel_width), str(height)], position=['0', '0'],
                        parentanchor='top|left', widgetanchor='top|left')
-    return Element('widget', 'location_preview', children=[panel]), panel
+    root = Element('widget', 'location_preview', children=[panel])
+    popup = None
+    if menu:
+        spec = wonder_menu_spec(resources)
+        popup = expander.build(spec.key, spec.value, {}, spec.src, spec.line)
+        # Native positioning/input is not executed by the offline renderer.
+        popup.props.update(position=[str(panel_width + 25), '24'], parentanchor='top|left',
+                           widgetanchor='top|left')
+        root.children.append(popup)
+    return root, panel, popup
 
 
-def render(state, resources, *, width=1420, height=1280, scale=1, tooltip=True, extra_mocks=None,
-           output=None):
+def render(state, resources, *, width=1420, height=1080, scale=1, menu=True, selected_slot=1,
+           extra_mocks=None, output=None):
     from eu5_gui_renderer.gui import Expander
     from eu5_gui_renderer.paths import OUTPUT, MOD
     from eu5_gui_renderer.preview import render_tree
     expander = Expander(resources.db)
-    root, panel = build(resources, expander, 560, height)
-    return render_tree(root, expander, resources, (extra_mocks or []) + scenario_mocks(state, resources),
+    if STATES[state] and not 1 <= selected_slot <= min(5, len(STATES[state])):
+        raise ValueError('selected_slot must refer to a displayed wonder')
+    root, panel, popup = build(resources, expander, 560, height, menu=menu and bool(STATES[state]))
+    details = {'panel': panel}
+    if popup is not None:
+        details['menu'] = popup
+    return render_tree(root, expander, resources, (extra_mocks or []) + scenario_mocks(state, resources, selected_slot),
         width=width, height=height, scale=scale, output=output or OUTPUT / f'location_{state}.png',
-        detail_elements={'panel': panel}, tooltip_selector=is_wonder_owner if tooltip and STATES[state] else None,
-        tooltip_position=(585, 24), metadata={'scenario': 'location', 'state': state, 'sample_data': True,
+        detail_elements=details, metadata={'scenario': 'location', 'state': state, 'sample_data': True,
+            'menu_open': popup is not None, 'selected_slot': selected_slot,
             'gui': str(MOD / GUI_PATH), 'wonders': STATES[state],
             'sample_tables': 'Modifier values from current selected mod static definitions; site checks are explicit sample results.',
-            'unsupported': ['No save, script execution, native hover timing, 3D map, portraits or procedural flags.',
+            'unsupported': ['No save, script execution, native popup placement, clicks, scrolling, 3D map, portraits or procedural flags.',
                             'Queues and secondary lists are empty sample data; infrastructure tab is selected.']})
 
 
@@ -120,7 +152,8 @@ def main(argv=None):
     selection = parser.add_mutually_exclusive_group()
     selection.add_argument('--state', choices=STATES, default='multiple')
     selection.add_argument('--all', action='store_true')
-    parser.add_argument('--no-tooltip', action='store_true')
+    parser.add_argument('--closed', action='store_true')
+    parser.add_argument('--selected-slot', type=int, default=1)
     parser.add_argument('--strict', action='store_true')
     parser.add_argument('--workspace', type=Path, default=WORKSPACE)
     parser.add_argument('--renderer-root', type=Path)
@@ -130,7 +163,7 @@ def main(argv=None):
     parser.add_argument('--mocks', type=Path)
     parser.add_argument('--language', default='simp_chinese')
     parser.add_argument('--width', type=int, default=1420)
-    parser.add_argument('--height', type=int, default=1280)
+    parser.add_argument('--height', type=int, default=1080)
     parser.add_argument('--scale', type=float, default=1)
     args = parser.parse_args(argv)
     try:
@@ -143,7 +176,7 @@ def main(argv=None):
         reports = []
         for state in STATES if args.all else [args.state]:
             report = render(state, resources, width=args.width, height=args.height, scale=args.scale,
-                            tooltip=not args.no_tooltip, extra_mocks=extra)
+                            menu=not args.closed, selected_slot=args.selected_slot, extra_mocks=extra)
             reports.append(report)
             print(f"Rendered {report['output']}; unknown={len(report['unknown_expressions'])}, contexts={len(report['unresolved_contexts'])}, missing_textures={len(report['missing_textures'])}", flush=True)
         write_report(OUTPUT / 'location_index.json', reports)

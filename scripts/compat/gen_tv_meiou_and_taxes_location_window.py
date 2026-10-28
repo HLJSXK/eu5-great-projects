@@ -24,7 +24,6 @@ OVERLAY_MARKER = "\n\t\t\t\tvbox = {\n\t\t\t\t\texpand = {}\n"
 
 
 def inject_tv_overlay(base_gui: str) -> str:
-    base_gui = tv_location_window.position_scene_queue(base_gui)
     if base_gui.count(OVERLAY_MARKER) != 1:
         raise RuntimeError("Could not find location scene overlay insertion point in M&T location_window.gui")
     replacement = "\n" + tv_location_window.render_scene_overlay() + OVERLAY_MARKER
@@ -34,7 +33,7 @@ def inject_tv_overlay(base_gui: str) -> str:
 def generate() -> str:
     base_gui = migrate_panel("mnt_location_window_1_4.patch", BASE_FILE)
     lines = render_header(SCRIPT_REL, DATA_REL)
-    lines.append(tv_location_window.render_tooltip_template())
+    lines.append(tv_location_window.render_wonder_menu_types())
     lines.append(inject_tv_overlay(base_gui))
     return "\n".join(line.rstrip() for line in "\n".join(lines).splitlines()).rstrip() + "\n"
 

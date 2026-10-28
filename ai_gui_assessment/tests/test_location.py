@@ -1,4 +1,4 @@
-"""Actual location window, visibility branches and expanded tooltip regressions."""
+"""Actual location window, menu selection and empty/overflow regressions."""
 from pathlib import Path
 import sys
 import tempfile
@@ -19,7 +19,7 @@ class LocationPreviewTests(unittest.TestCase):
         from eu5_gui_renderer.preview import load_resources
         cls.resources = load_resources()
 
-    def test_actual_panel_and_tooltip_states_are_complete_and_diagnostic_free(self):
+    def test_actual_panel_and_menu_states_are_complete_and_diagnostic_free(self):
         from eu5_gui_renderer.preview import has_diagnostics
         from PIL import Image
         with tempfile.TemporaryDirectory() as folder:
@@ -29,17 +29,32 @@ class LocationPreviewTests(unittest.TestCase):
                     self.assertFalse(has_diagnostics(report), report)
                     self.assertEqual(report['gui'], str(WORKSPACE / 'src' / location.GUI_PATH))
                     self.assertTrue(Path(report['details']['panel']).is_file())
+                    self.assertIsNone(report['tooltip'])
                     if not wonders:
-                        self.assertIsNone(report['tooltip'])
+                        self.assertFalse(report['menu_open'])
+                        self.assertNotIn('menu', report['details'])
                         continue
-                    popup = report['tooltip']
-                    self.assertIn('location_window.gui', popup['owner']['source'])
-                    self.assertEqual(popup['bounds'][2], 790)
-                    self.assertGreaterEqual(popup['bounds'][3], 200 * min(5, len(wonders)) + 77)
-                    self.assertLess(popup['bounds'][3], 1280)
-                    with Image.open(report['details']['tooltip']) as image:
-                        self.assertEqual(image.width, 790)
+                    self.assertTrue(report['menu_open'])
+                    with Image.open(report['details']['menu']) as image:
+                        self.assertGreaterEqual(image.width, 462)
+                        self.assertLess(image.width, 540)
+                        self.assertLessEqual(image.height, 672)
                         self.assertGreater(len(image.getcolors(image.width * image.height)), 500)
+
+    def test_selecting_later_project_and_closed_menu(self):
+        from eu5_gui_renderer.preview import has_diagnostics
+        with tempfile.TemporaryDirectory() as folder:
+            selected = location.render('multiple', self.resources, selected_slot=3,
+                                       output=Path(folder) / 'selected.png')
+            self.assertFalse(has_diagnostics(selected), selected)
+            tree = Path(selected['tree']).read_text(encoding='utf-8')
+            # Only the selected detail should be laid out; changing the selection
+            # must not leave every project's large image/effect block expanded.
+            self.assertEqual(sum('300x200@' in line for line in tree.splitlines()), 1)
+            closed = location.render('multiple', self.resources, menu=False,
+                                     output=Path(folder) / 'closed.png')
+            self.assertFalse(has_diagnostics(closed), closed)
+            self.assertNotIn('menu', closed['details'])
 
     def test_unknown_binding_is_not_filled_by_fixture(self):
         from eu5_gui_renderer.data import Evaluator, Unknown
