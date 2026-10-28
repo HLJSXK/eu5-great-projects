@@ -27,7 +27,7 @@ def inject_tv_overlay(base_gui: str) -> str:
     if base_gui.count(OVERLAY_MARKER) != 1:
         raise RuntimeError("Could not find location scene overlay insertion point in Standard of Living location_window.gui")
     replacement = "\n" + tv_location_window.render_scene_overlay() + OVERLAY_MARKER
-    return base_gui.replace(OVERLAY_MARKER, replacement, 1)
+    return tv_location_window.inject_wonder_panel(base_gui.replace(OVERLAY_MARKER, replacement, 1))
 
 
 def generate() -> str:

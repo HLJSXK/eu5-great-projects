@@ -43,7 +43,7 @@ def wonder_variables(wonders):
     return result
 
 
-def scenario_mocks(state, resources, selected_slot=1):
+def scenario_mocks(state, resources, selected_slot=1, menu=True):
     from eu5_gui_renderer.fixtures import object_mocks, variable_mocks, requirements_list, string_pair_list, modifier_sample_lines
     from eu5_gui_renderer.paths import MOD, LANGUAGE
     from eu5_gui_renderer.pdx import parse
@@ -58,10 +58,7 @@ def scenario_mocks(state, resources, selected_slot=1):
     result.extend(variable_mocks('Location.MakeScope', wonder_variables(STATES[state])))
     for slot in range(1, source.TOOLTIP_SLOT_MAX + 1):
         result.append((re.escape(source.menu_slot_selected_expr(slot).replace(' ', '')), slot == selected_slot))
-    # The native context-menu host provides this object, just as it does for
-    # production_method_chooser_menu. This is popup context, not wonder data.
-    result.append((re.escape('ExtraTooltipInfo.GetTintColor'), [1, 1, 1, 1]))
-    result.append((re.escape('ExtraTooltipInfo.TooltipIsReady'), True))
+    result.append((re.escape(f"LocationView.Vars.Exists('{source.MENU_OPEN_VAR}')"), menu))
     result.append((re.escape("GetGlobalVariable('hagia_sophia_now_mosque').IsSet"), False))
     metadata = json.loads((WORKSPACE / 'data/index/modifier_localization.json').read_text(encoding='utf-8'))['modifiers']
     modifiers = {}
@@ -87,26 +84,6 @@ def scenario_mocks(state, resources, selected_slot=1):
     return result
 
 
-def wonder_menu_spec(resources):
-    """Read the actual button attachment; do not render a detached mock menu."""
-    from eu5_gui_renderer.paths import MOD
-
-    def visit(nodes):
-        for node in nodes:
-            if not node.is_block():
-                continue
-            if any(c.key == 'name' and c.value == 'tv_location_wonders_button' for c in node.value):
-                return next(c for c in node.value if c.key == 'contextmenu_widget').value[0]
-            found = visit(node.value)
-            if found is not None:
-                return found
-
-    spec = visit(resources.db.roots[str(MOD / GUI_PATH)])
-    if spec is None:
-        raise ValueError('Missing shipped wonder button/contextmenu_widget')
-    return spec
-
-
 def build(resources, expander, panel_width, height, menu=False):
     from eu5_gui_renderer.gui import Element, build_target
     from eu5_gui_renderer.paths import MOD
@@ -114,15 +91,12 @@ def build(resources, expander, panel_width, height, menu=False):
     panel.props.update(size=[str(panel_width), str(height)], position=['0', '0'],
                        parentanchor='top|left', widgetanchor='top|left')
     root = Element('widget', 'location_preview', children=[panel])
-    popup = None
-    if menu:
-        spec = wonder_menu_spec(resources)
-        popup = expander.build(spec.key, spec.value, {}, spec.src, spec.line)
-        # Native positioning/input is not executed by the offline renderer.
-        popup.props.update(position=[str(panel_width + 25), '24'], parentanchor='top|left',
-                           widgetanchor='top|left')
-        root.children.append(popup)
-    return root, panel, popup
+    # Use the shipped child and its anchors. Artificially positioning a detached
+    # copy here used to conceal overlap in the actual context-menu attachment.
+    popup = next((child for child in panel.children if child.props.get('name') == 'tv_location_wonders_panel'), None)
+    if popup is None:
+        raise ValueError('Missing shipped wonder panel in location window')
+    return root, panel, popup if menu else None
 
 
 def render(state, resources, *, width=1420, height=1080, scale=1, menu=True, selected_slot=1,
@@ -137,13 +111,13 @@ def render(state, resources, *, width=1420, height=1080, scale=1, menu=True, sel
     details = {'panel': panel}
     if popup is not None:
         details['menu'] = popup
-    return render_tree(root, expander, resources, (extra_mocks or []) + scenario_mocks(state, resources, selected_slot),
+    return render_tree(root, expander, resources, (extra_mocks or []) + scenario_mocks(state, resources, selected_slot, menu),
         width=width, height=height, scale=scale, output=output or OUTPUT / f'location_{state}.png',
         detail_elements=details, metadata={'scenario': 'location', 'state': state, 'sample_data': True,
             'menu_open': popup is not None, 'selected_slot': selected_slot,
             'gui': str(MOD / GUI_PATH), 'wonders': STATES[state],
             'sample_tables': 'Modifier values from current selected mod static definitions; site checks are explicit sample results.',
-            'unsupported': ['No save, script execution, native popup placement, clicks, scrolling, 3D map, portraits or procedural flags.',
+            'unsupported': ['No save, script execution, clicks, scrolling, 3D map, portraits or procedural flags.',
                             'Queues and secondary lists are empty sample data; infrastructure tab is selected.']})
 
 

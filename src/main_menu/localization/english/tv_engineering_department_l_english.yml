@@ -76,6 +76,8 @@
  TV_ENGINEERING_WONDER_TAB: "[tv_wonder_construction|E]"
  TV_ENGINEERING_WONDER_TAB_TOOLTIP: "Future [tv_wonder_construction|e] stages."
  TV_LOCATION_WONDER_TOOLTIP_TITLE: "All Great Projects at This Location"
+ TV_LOCATION_WONDER_OPEN_DETAILS: "Show projects"
+ TV_LOCATION_WONDER_CLOSE_DETAILS: "Hide projects"
  TV_LOCATION_WONDER_LEVEL_SHORT: "Level"
  TV_LOCATION_WONDER_NO_EFFECT: "No Effects"
  TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE: "National Modifiers"

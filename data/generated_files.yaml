@@ -1,4 +1,12 @@
 ﻿generated:
+- script: scripts_engineering_department/gen_location_wonder_arrows.py
+  output: assets/generated_icons/tv_wonder_arrow_right.png
+- script: scripts_engineering_department/gen_location_wonder_arrows.py
+  output: assets/generated_icons/tv_wonder_arrow_left.png
+- script: scripts_engineering_department/gen_location_wonder_arrows.py
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_arrow_right.dds
+- script: scripts_engineering_department/gen_location_wonder_arrows.py
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_arrow_left.dds
 - script: scripts/in_game/common/generic_actions/gen_tv_io_leader_actions.py
   data: data/io_leaders.yaml
   output: src/in_game/common/generic_actions/tv_engineering_department_leader_actions.txt

@@ -1,3 +1,4 @@
+import re
 import sys
 from pathlib import Path
 
@@ -41,6 +42,7 @@ FULL_IMAGE_CONCEPT_PREFIX = "tv_wonder_display_full_image_"
 TOOLTIP_SLOT_MAX = 5
 # A separate button beside the vanilla queue keeps foreign wonders inspectable.
 MENU_SELECTION_VAR = "tv_location_wonder_detail"
+MENU_OPEN_VAR = "tv_location_wonders_open"
 MENU_MAX_HEIGHT = 650
 PANEL_TEXT_HEIGHT = 14
 PANEL_TEXT_FONT_SIZE = 14
@@ -429,11 +431,13 @@ def render_tooltip_effect_block(indent: str, *, slot: int) -> list[str]:
     lines.extend(render_tooltip_construction_conditions_block(indent + T * 2, slot=slot))
     lines.extend(
         [
-            f"{indent}{T}{T}TooltipTextBlock = {{",
+            f"{indent}{T}{T}text_multi = {{",
             f'{indent}{T}{T}{T}visible = "[{no_effect_visible}]"',
-            f'{indent}{T}{T}{T}blockoverride "text" {{',
-            f'{indent}{T}{T}{T}{T}text = "TV_LOCATION_WONDER_NO_EFFECT"',
-            f"{indent}{T}{T}{T}}}",
+            f'{indent}{T}{T}{T}text = "TV_LOCATION_WONDER_NO_EFFECT"',
+            f"{indent}{T}{T}{T}layoutpolicy_horizontal = expanding",
+            f"{indent}{T}{T}{T}autoresize = yes",
+            f"{indent}{T}{T}{T}max_width = {TOOLTIP_MODIFIER_COLUMNS_WIDTH}",
+            f"{indent}{T}{T}{T}minimumsize = {{ {TOOLTIP_MODIFIER_COLUMNS_WIDTH} -1 }}",
             f"{indent}{T}{T}}}",
             f"{indent}{T}{T}hbox = {{",
             f'{indent}{T}{T}{T}visible = "[{base_effect_visible}]"',
@@ -541,14 +545,6 @@ def menu_slot_selected_expr(slot: int) -> str:
     return f"LocationView.Vars.{predicate}('{MENU_SELECTION_VAR}', '{slot}')"
 
 
-def menu_count_expr() -> str:
-    count = "'(int32)0'"
-    for slot in range(1, TOOLTIP_SLOT_MAX + 1):
-        count = f"Select_int32({slot_has_id_expr('tooltip', slot)}, '(int32){slot}', {count})"
-    overflow = f"Select_int32({OVERFLOW_VAR}.IsSet, FixedPointToInt({OVERFLOW_VAR}.GetValue), '(int32)0')"
-    return f"Add_int32({count}, {overflow})"
-
-
 def render_menu_slot(indent: str, *, slot: int) -> list[str]:
     selected = menu_slot_selected_expr(slot)
     lines = [
@@ -603,12 +599,44 @@ def render_menu_slot(indent: str, *, slot: int) -> list[str]:
 
 
 def render_wonder_menu_types() -> str:
-    # Native contextmenu_widget supplies ExtraTooltipInfo to the existing effect
-    # tables. A plain detached widget would lose that context and break their tint.
+    # ContextMenuBase's scroll layout, with panel audio instead of its
+    # ExtraTooltipInfo-dependent sound widget. This is an ordinary child panel.
+    frame = """\ttype tv_location_wonders_frame = container {
+\t\tusing = bg_context_menu
+\t\tusing = snd_UI_panel
+\t\talwaystransparent = no
+\t\tfilter_mouse = all
+\t\tscrollarea = {
+\t\t\tscrollbarpolicy_horizontal = always_off
+\t\t\tautoresizeviewport = yes
+\t\t\tautoresizescrollarea = yes
+\t\t\tblock "contextmenu_scroll_maximumsize" {}
+\t\t\tviewportwidget = { widget = { scissor = yes } }
+\t\t\tscrollbar_vertical = { using = Scrollbar_Vertical }
+\t\t\tscrollwidget = {
+\t\t\t\twidget = {
+\t\t\t\t\tvbox = {
+\t\t\t\t\t\tset_parent_size_to_minimum = yes
+\t\t\t\t\t\tmargin = { 11 11 }
+\t\t\t\t\t\tignoreinvisible = yes
+\t\t\t\t\t\tspacing = 6
+\t\t\t\t\t\tblock "contextmenu_content" {}
+\t\t\t\t\t}
+\t\t\t\t}
+\t\t\t}
+\t\t}
+\t\twidget = {
+\t\t\tusing = bg_tooltip_frame
+\t\t\t# Both frame backgrounds bind tint even when their lock layer is hidden.
+\t\t\tblockoverride "tooltip_bg_color" { tintcolor = { 1 1 1 1 } }
+\t\t}
+\t}"""
     lines = [
         "types tv_location_wonder_menu_types {",
-        f"{T}type tv_location_wonders_menu = ContextMenuBase {{",
+        frame,
+        f"{T}type tv_location_wonders_menu = tv_location_wonders_frame {{",
         f'{T}{T}datacontext = "[LocationView.GetLocation]"',
+        f'{T}{T}blockoverride "tooltip_text_color" {{ fonttintcolor = {{ 1 1 1 1 }} }}',
         f'{T}{T}blockoverride "contextmenu_scroll_maximumsize" {{ maximumsize = {{ -1 {MENU_MAX_HEIGHT} }} }}',
         f'{T}{T}blockoverride "contextmenu_content" {{',
         f"{T}{T}{T}hbox = {{",
@@ -623,7 +651,7 @@ def render_wonder_menu_types() -> str:
         f"{T}{T}{T}{T}widget = {{",
         f"{T}{T}{T}{T}{T}size = {{ 25 25 }}",
         f"{T}{T}{T}{T}{T}button_close_alt = {{",
-        f'{T}{T}{T}{T}{T}{T}blockoverride "close_on_action" {{ on_action = "[ExtraTooltipInfo.CloseContextMenu]" }}',
+        f'{T}{T}{T}{T}{T}{T}blockoverride "close_on_action" {{ on_action = "[LocationView.Vars.Clear(\'{MENU_OPEN_VAR}\')]" }}',
         f"{T}{T}{T}{T}{T}}}",
         f"{T}{T}{T}{T}}}",
         f"{T}{T}{T}}}",
@@ -637,36 +665,67 @@ def render_wonder_menu_types() -> str:
 
 def render_scene_overlay() -> str:
     indent = T * 4
+    opened = f"LocationView.Vars.Exists('{MENU_OPEN_VAR}')"
+    label = f"SelectLocalization({opened}, 'TV_LOCATION_WONDER_CLOSE_DETAILS', 'TV_LOCATION_WONDER_OPEN_DETAILS')"
     return "\n".join([
         f"{indent}header_button_left = {{",
         f'{indent}{T}name = "tv_location_wonders_button"',
         f'{indent}{T}datacontext = "[LocationView.GetLocation]"',
         f'{indent}{T}visible = "[{slot_has_id_expr("tooltip", 1)}]"',
-        f"{indent}{T}size = {{ 52 34 }}",
+        f"{indent}{T}size = {{ 170 34 }}",
         f"{indent}{T}parentanchor = top|right",
         f"{indent}{T}widgetanchor = top|right",
-        f"{indent}{T}position = {{ -70 8 }}",
+        f"{indent}{T}position = {{ -8 8 }}",
+        f'{indent}{T}down = "[{opened}]"',
         f'{indent}{T}blockoverride "header_button_full_content" {{}}',
         f"{indent}{T}action_tooltip = {{",
         f"{indent}{T}{T}click_type = left",
         f"{indent}{T}{T}click_mode = single",
-        f'{indent}{T}{T}title = "TV_LOCATION_WONDER_TOOLTIP_TITLE"',
+        f'{indent}{T}{T}title = "[{label}]"',
         f'{indent}{T}{T}on_action = "[LocationView.CloseBuildingQueueMenu]"',
         f'{indent}{T}{T}on_action = "[LocationView.Vars.Clear(\'{MENU_SELECTION_VAR}\')]"',
-        f'{indent}{T}{T}on_action = "[PdxGuiWidget.ToggleContextMenu]"',
+        f'{indent}{T}{T}on_action = "[LocationView.Vars.Toggle(\'{MENU_OPEN_VAR}\')]"',
         f"{indent}{T}}}",
         f"{indent}{T}tooltipwidget = {{ BasicFunctionalTooltip = {{}} }}",
-        f"{indent}{T}contextmenu_widget = {{ tv_location_wonders_menu = {{}} }}",
         f"{indent}{T}hbox = {{",
         f"{indent}{T}{T}layoutpolicy_horizontal = expanding",
-        f"{indent}{T}{T}margin_left = 6",
-        f"{indent}{T}{T}margin_right = 5",
-        f'{indent}{T}{T}text_single = {{ align = center fontsize = 13 minimumsize = {{ 13 -1 }} maximumsize = {{ 13 -1 }} raw_text = "[{menu_count_expr()}]" }}',
-        f"{indent}{T}{T}expand = {{}}",
-        f'{indent}{T}{T}icon = {{ size = {{ 24 24 }} texture = "gfx/interface/icons/location_icons/new/prosperity.dds" }}',
+        f"{indent}{T}{T}margin = {{ 10 0 }}",
+        f"{indent}{T}{T}spacing = 6",
+        f'{indent}{T}{T}text_single = {{ layoutpolicy_horizontal = expanding autoresize = no align = center|nobaseline fontsize = 15 text = "[{label}]" }}',
+        f'{indent}{T}{T}icon = {{ visible = "[Not({opened})]" size = {{ 24 24 }} texture = "gfx/interface/icons/location_icons/tv_wonder_arrow_right.dds" }}',
+        f'{indent}{T}{T}icon = {{ visible = "[{opened}]" size = {{ 24 24 }} texture = "gfx/interface/icons/location_icons/tv_wonder_arrow_left.dds" }}',
         f"{indent}{T}}}",
         f"{indent}}}",
     ])
+
+
+def inject_wonder_panel(gui: str) -> str:
+    # Anchor to the whole lateral view, not the inset scene or its button.
+    marker = '\n\twidgetid = "location_window"'
+    if gui.count(marker) != 1:
+        raise RuntimeError("Could not find location window root for wonder panel")
+    panel = "\n".join([
+        "", f"{T}tv_location_wonders_menu = {{",
+        f'{T}{T}name = "tv_location_wonders_panel"',
+        f"{T}{T}parentanchor = top|right",
+        f"{T}{T}widgetanchor = top|left",
+        f"{T}{T}position = {{ 0 0 }}",
+        f"{T}{T}allow_outside = yes",
+        f'{T}{T}visible = "[And(LocationView.Vars.Exists(\'{MENU_OPEN_VAR}\'), {slot_has_id_expr("tooltip", 1)})]"',
+        f"{T}}}", "",
+    ])
+    gui = gui.replace(marker, marker + panel, 1)
+    # Opening either side panel closes the other, matching the wonder button.
+    gui, count = re.subn(
+        r'(?m)^(\s*)on_action = "(\[LocationView\.OpenConstructionQueue\([^\n]+)"',
+        lambda match: (
+            f'{match[1]}on_action = "[LocationView.Vars.Clear(\'{MENU_OPEN_VAR}\')]"\n'
+            f'{match[1]}on_action = "{match[2]}"'
+        ), gui,
+    )
+    if count == 0:
+        raise RuntimeError("Could not find native construction queue actions")
+    return gui
 
 
 def inject_overlay(vanilla: str) -> str:
@@ -674,7 +733,7 @@ def inject_overlay(vanilla: str) -> str:
     replacement = "\n" + render_scene_overlay() + marker
     if vanilla.count(marker) != 1:
         raise RuntimeError("Could not find location scene overlay insertion point in Glorp UI location_window.gui")
-    return vanilla.replace(marker, replacement, 1)
+    return inject_wonder_panel(vanilla.replace(marker, replacement, 1))
 
 
 def generate() -> str:
