@@ -132,6 +132,56 @@ def test_scale_limits_handle_missing_other_and_recorded_survey_keys(wonders):
         assert not re.search(r'"(?:global_|local_)?variable_map\([^"\n]*\$', path.read_text(encoding='utf-8-sig')), path
 
 
+def test_location_display_reset_initializes_empty_slots_and_clears_previous_ritual():
+    effects = source_blocks('common/scripted_effects/tv_wonder_location_display_effects.txt')
+    reset = effects['tv_wonder_mechanics_clear_location_display_state_effect']
+    fields = {
+        f'tv_wonder_{group}_slot_{slot}_{suffix}'
+        for group, count in (('display', 3), ('tooltip', 5))
+        for slot in range(1, count + 1)
+        for suffix in ('level', 'ritual_style', 'ritual_completed')
+    } | {'tv_wonder_tooltip_overflow_count'}
+
+    def apply_scalars(nodes, state):
+        for node in nodes:
+            if node.key == 'remove_variable':
+                state.pop(node.value, None)
+            elif node.key == 'set_variable':
+                state[child(node.children, 'name').value] = int(child(node.children, 'value').value)
+            else:
+                raise AssertionError(f'Unexpected reset/push operation: {node.key}')
+
+    state = {}
+    for style in (1, 2, 3, 0, -1):
+        apply_scalars(reset, state)
+        assert {key: state[key] for key in fields} == dict.fromkeys(fields, 0)
+        assert not any(key.endswith('_id') and '_slot_' in key for key in state)
+        # Populate the first slot using the shipped push body, then clear it on
+        # the next iteration: re-dedication, plain completion and shell reuse.
+        for group in ('display', 'tooltip'):
+            branch = effects[f'tv_wonder_mechanics_push_location_{group}_slot_effect'][0]
+            body = expand(tuple(n for n in branch.children if n.key != 'limit'), {
+                'wonder_id': 3, 'wonder_level': 6,
+                'wonder_ritual_style': style, 'wonder_ritual_completed': int(style > 0),
+            })
+            apply_scalars(body, state)
+            assert state[f'tv_wonder_{group}_slot_1_ritual_style'] == style
+        state['tv_wonder_tooltip_overflow_count'] = 4
+    apply_scalars(reset, state)
+    assert all(state[key] == 0 for key in fields)
+
+    refresh = 'tv_wonder_mechanics_refresh_location_display_state_effect'
+    world = 'tv_wonder_mechanics_refresh_world_location_display_state_effect'
+    assert effects[refresh][0].key == 'tv_wonder_mechanics_clear_location_display_state_effect'
+    assert child(effects[world], 'every_location_in_the_world').children[0].key == refresh
+    hooks = source_blocks('common/on_action/tv_engineering_department_on_action.txt')
+    bridges = source_blocks('common/on_action/tv_engineering_department_pulse_bridges.txt')
+    for phase in ('start', 'load'):
+        callback = f'tv_wonder_initialize_location_display_state_on_game_{phase}'
+        assert callback in {n.key for n in walk(bridges[f'on_game_{phase}'])}
+        assert world in {n.key for n in walk(hooks[callback])}
+
+
 def test_all_local_display_references_resolve_to_level_scaled_definitions(wonders):
     effects = source_blocks('common/scripted_effects/tv_wonder_location_display_effects.txt')
     refs = {child(n.children, 'modifier').value for n in walk(

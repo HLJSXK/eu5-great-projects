@@ -430,6 +430,13 @@ def expand_wonder_localization_data(localization: dict[str, dict[str, str]]) -> 
                     if row["location_modifier"]: language_values[f"STATIC_MODIFIER_NAME_{row['location_modifier']}"] = flavor[f"name_{suffix}"]
                 language_values[row["name_key"]] = language_values[f"TV_WONDER_RITUAL_NAME_{n}_{wonder['id']}"]
                 language_values[row["desc_key"]] = language_values[f"TV_WONDER_RITUAL_DESC_{n}_{wonder['id']}"]
+                # Standard native links expose the full modifier tooltip and
+                # keep country/local modifiers distinguishable on hover.
+                modifiers = [("COUNTRY", row["modifier"]), ("LOCAL", row["location_modifier"])]
+                language_values[f"TV_WONDER_RITUAL_MODIFIERS_{n}_{wonder['id']}"] = "\n".join(
+                    f"$TV_LOCATION_WONDER_{scope}_MODIFIERS_TITLE$ [ShowModifier('{modifier}')]"
+                    for scope, modifier in modifiers if modifier
+                )
     for wonder in wonders:
         rows = ritual_styles(wonder, mechanics)
         for language in LANGUAGES:
@@ -487,6 +494,7 @@ def collapse_wonder_localization_data(localization: dict[str, dict[str, str]]) -
             collapsed[language].pop(f"TV_WONDER_RITUAL_ESTATE_PREFS_{wonder['id']}", None)
             for style in (1, 2, 3):
                 collapsed[language].pop(f"TV_WONDER_RITUAL_VALUE_{wonder['id']}_{style}", None)
+                collapsed[language].pop(f"TV_WONDER_RITUAL_MODIFIERS_{style}_{wonder['id']}", None)
     for _, concept_name in _wonder_concept_pairs(wonders):
         for language in LANGUAGES:
             collapsed[language].pop(concept_name, None)

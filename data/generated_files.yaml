@@ -7,6 +7,32 @@
   output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_arrow_right.dds
 - script: scripts_engineering_department/gen_location_wonder_arrows.py
   output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_arrow_left.dds
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: assets/generated_icons/tv_wonder_level_1.png
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: assets/generated_icons/tv_wonder_level_2.png
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: assets/generated_icons/tv_wonder_level_3.png
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: assets/generated_icons/tv_wonder_level_4.png
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: assets/generated_icons/tv_wonder_level_5.png
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: assets/generated_icons/tv_wonder_level_6.png
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: assets/generated_icons/tv_wonder_level_medallions.png
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_level_1.dds
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_level_2.dds
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_level_3.dds
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_level_4.dds
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_level_5.dds
+- script: scripts_engineering_department/gen_wonder_level_medallions.py
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_level_6.dds
 - script: scripts/in_game/common/generic_actions/gen_tv_io_leader_actions.py
   data: data/io_leaders.yaml
   output: src/in_game/common/generic_actions/tv_engineering_department_leader_actions.txt

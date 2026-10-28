@@ -28,11 +28,24 @@ GUI widgets.
    effect-name concatenation. Store numeric ids and generate branches or use a
    typed datamodel object with a real key accessor.
 
-5. Ritual cards render the real completion effect with `ShowScriptedEffectForScope`.
-   Estate reactions are confirmed separately; only existing estates are displayed.
+5. Engineering Department ritual choices render the real completion effect with
+   `ShowScriptedEffectForScope`. Location-gallery ritual cards show their own
+   country/local modifiers through standard `ShowModifier` links inside hover
+   tooltips, including styles that are not currently active. Keep modifier links
+   hit-testable. Estate reactions remain part of the separate confirmation flow.
 
 6. Prefer GUI display variables refreshed from lifecycle points.
    Do not call expensive rebuilds from hover, tooltip, or render-only paths.
+
+7. Keep location ritual modifier details in hover tooltips, not on the cards.
+   The visible rows contain the ritual name and active-state indication only.
+   Historical pitfall when using compact summaries elsewhere:
+   `ShowOnlyIconModifierEffect` still emits hard line breaks between modifiers;
+   `text_single` does not remove them (user in-game screenshot, 2026-10-29).
+   To display such output horizontally, preserve a newline between lists and use
+   `StringToRowList(...).GetRows` with `HorizontalModifiersList`, following
+   vanilla `ambitions_lateralview.gui`. Override the item text to `multiline = no`.
+   Do not restore the compact location summaries; that layout was superseded.
 
 ## Validation
 

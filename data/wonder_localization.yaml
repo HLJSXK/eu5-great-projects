@@ -557,8 +557,8 @@
     tv_wonder_sacred_mountain_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Sacred Mountain.
     tv_wonder_sacred_mountain_desc: An unconsecrated Sacred Mountain preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_sacred_mountain_ritual_burden_modifier: The Altar's Toll
-    tv_wonder_golden_sanctuary: Sacred Mountain - Royal Sacrifice
-    tv_wonder_golden_sanctuary_desc: The Royal Sacrifice branch of the Sacred Mountain.
+    tv_wonder_golden_sanctuary: '$tv_wonder_sacred_mountain$'
+    tv_wonder_golden_sanctuary_desc: '$game_concept_tv_wonder_sacred_mountain_desc$'
     tv_wonder_ascetic_mountain: Sacred Mountain - Meditation Ceremony
     tv_wonder_ascetic_mountain_desc: The Meditation Ceremony branch of the Sacred Mountain.
     tv_wonder_theocratic_center: Sacred Mountain - Divine Investiture
@@ -582,8 +582,8 @@
     tv_wonder_triumphal_axis_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Triumphal Axis.
     tv_wonder_triumphal_axis_desc: An unconsecrated Triumphal Axis preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_triumphal_axis_ritual_burden_modifier: Cost of the Audience
-    tv_wonder_sun_king_axis: Triumphal Axis - Foreign Emissaries
-    tv_wonder_sun_king_axis_desc: The Foreign Emissaries branch of the Triumphal Axis.
+    tv_wonder_sun_king_axis: '$tv_wonder_triumphal_axis$'
+    tv_wonder_sun_king_axis_desc: '$game_concept_tv_wonder_triumphal_axis_desc$'
     tv_wonder_military_city: Triumphal Axis - Triumph Parade
     tv_wonder_military_city_desc: The Triumph Parade branch of the Triumphal Axis.
     tv_wonder_civic_capital: Triumphal Axis - Civic Festival
@@ -607,8 +607,8 @@
     tv_wonder_great_port_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Great Port.
     tv_wonder_great_port_desc: An unconsecrated Great Port preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_great_port_ritual_burden_modifier: The Auctioneer's Cut
-    tv_wonder_golden_trade_port: Great Port - Golden Auction
-    tv_wonder_golden_trade_port_desc: The Golden Auction branch of the Great Port.
+    tv_wonder_golden_trade_port: '$tv_wonder_great_port$'
+    tv_wonder_golden_trade_port_desc: '$game_concept_tv_wonder_great_port_desc$'
     tv_wonder_imperial_naval_port: Great Port - Fleet Review
     tv_wonder_imperial_naval_port_desc: The Fleet Review branch of the Great Port.
     tv_wonder_free_trade_metropolis: Great Port - Free Trade Festival
@@ -632,8 +632,8 @@
     tv_wonder_giant_necropolis_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Giant Necropolis Complex.
     tv_wonder_giant_necropolis_desc: An unconsecrated Giant Necropolis Complex preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_giant_necropolis_ritual_burden_modifier: Cost of Interment
-    tv_wonder_dynastic_necropolis: Giant Necropolis Complex - Dynastic Burial
-    tv_wonder_dynastic_necropolis_desc: The Dynastic Burial branch of the Giant Necropolis Complex.
+    tv_wonder_dynastic_necropolis: '$tv_wonder_giant_necropolis$'
+    tv_wonder_dynastic_necropolis_desc: '$game_concept_tv_wonder_giant_necropolis_desc$'
     tv_wonder_ancestor_shrine: Giant Necropolis Complex - Ancestor Festival
     tv_wonder_ancestor_shrine_desc: The Ancestor Festival branch of the Giant Necropolis Complex.
     tv_wonder_quiet_land: Giant Necropolis Complex - Quiet Land
@@ -657,8 +657,8 @@
     tv_wonder_great_lighthouse_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Great Lighthouse.
     tv_wonder_great_lighthouse_desc: An unconsecrated Great Lighthouse preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_great_lighthouse_ritual_burden_modifier: Oil for the Eternal Flame
-    tv_wonder_eternal_lighthouse: Great Lighthouse - Eternal Flame
-    tv_wonder_eternal_lighthouse_desc: The Eternal Flame branch of the Great Lighthouse.
+    tv_wonder_eternal_lighthouse: '$tv_wonder_great_lighthouse$'
+    tv_wonder_eternal_lighthouse_desc: '$game_concept_tv_wonder_great_lighthouse_desc$'
     tv_wonder_navigator_lighthouse: Great Lighthouse - Navigator Guild
     tv_wonder_navigator_lighthouse_desc: The Navigator Guild branch of the Great Lighthouse.
     tv_wonder_long_watch_lighthouse: Great Lighthouse - Long Watch
@@ -682,8 +682,8 @@
     tv_wonder_hydraulic_workshop_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Hydraulic Workshop Complex.
     tv_wonder_hydraulic_workshop_desc: An unconsecrated Hydraulic Workshop Complex preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_hydraulic_workshop_ritual_burden_modifier: Offerings to the Water Spirit
-    tv_wonder_water_god_workshop: Hydraulic Workshop Complex - Water Festival
-    tv_wonder_water_god_workshop_desc: The Water Festival branch of the Hydraulic Workshop Complex.
+    tv_wonder_water_god_workshop: '$tv_wonder_hydraulic_workshop$'
+    tv_wonder_water_god_workshop_desc: '$game_concept_tv_wonder_hydraulic_workshop_desc$'
     tv_wonder_hydraulic_artisan_guildhall: Hydraulic Workshop Complex - Artisan Guild Charter
     tv_wonder_hydraulic_artisan_guildhall_desc: The Artisan Guild Charter branch of the Hydraulic Workshop Complex.
     tv_wonder_waterwheel_workshop: Hydraulic Workshop Complex - Waterwheel Workshop
@@ -707,8 +707,8 @@
     tv_wonder_mining_city_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Mining City.
     tv_wonder_mining_city_desc: An unconsecrated Mining City preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_mining_city_ritual_burden_modifier: The Miners' Due
-    tv_wonder_miners_oath_city: Mining City - Miners' Rights
-    tv_wonder_miners_oath_city_desc: The Miners' Rights branch of the Mining City.
+    tv_wonder_miners_oath_city: '$tv_wonder_mining_city$'
+    tv_wonder_miners_oath_city_desc: '$game_concept_tv_wonder_mining_city_desc$'
     tv_wonder_royal_mint_city: Mining City - Royal Mint
     tv_wonder_royal_mint_city_desc: The Royal Mint branch of the Mining City.
     tv_wonder_deep_shaft_city: Mining City - Deep Drainage
@@ -732,8 +732,8 @@
     tv_wonder_giant_observatory_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Giant Observatory.
     tv_wonder_giant_observatory_desc: An unconsecrated Giant Observatory preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_giant_observatory_ritual_burden_modifier: Cost of the Star Charts
-    tv_wonder_star_catalog_observatory: Giant Observatory - Star Catalog
-    tv_wonder_star_catalog_observatory_desc: The Star Catalog branch of the Giant Observatory.
+    tv_wonder_star_catalog_observatory: '$tv_wonder_giant_observatory$'
+    tv_wonder_star_catalog_observatory_desc: '$game_concept_tv_wonder_giant_observatory_desc$'
     tv_wonder_nautical_almanac_observatory: Giant Observatory - Nautical Almanac
     tv_wonder_nautical_almanac_observatory_desc: The Nautical Almanac branch of the Giant Observatory.
     tv_wonder_eclipse_observatory: Giant Observatory - Eclipse Proclamation
@@ -757,8 +757,8 @@
     tv_wonder_palace_of_nations_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Palace of Nations.
     tv_wonder_palace_of_nations_desc: An unconsecrated Palace of Nations preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_palace_of_nations_ritual_burden_modifier: Upkeep of the Congress
-    tv_wonder_congress_palace: Palace of Nations - Congress of Nations
-    tv_wonder_congress_palace_desc: The Congress of Nations branch of the Palace of Nations.
+    tv_wonder_congress_palace: '$tv_wonder_palace_of_nations$'
+    tv_wonder_congress_palace_desc: '$game_concept_tv_wonder_palace_of_nations_desc$'
     tv_wonder_tribute_gallery: Palace of Nations - Tribute Gallery
     tv_wonder_tribute_gallery_desc: The Tribute Gallery branch of the Palace of Nations.
     tv_wonder_embassy_palace: Palace of Nations - Embassy Quarter
@@ -782,8 +782,8 @@
     tv_wonder_university_city_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the University City.
     tv_wonder_university_city_desc: An unconsecrated University City preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_university_city_ritual_burden_modifier: Stipends for the Convocation
-    tv_wonder_scholars_convocation: University City - Scholars Convocation
-    tv_wonder_scholars_convocation_desc: The Scholars Convocation branch of the University City.
+    tv_wonder_scholars_convocation: '$tv_wonder_university_city$'
+    tv_wonder_scholars_convocation_desc: '$game_concept_tv_wonder_university_city_desc$'
     tv_wonder_public_lectures: University City - Public Lectures
     tv_wonder_public_lectures_desc: The Public Lectures branch of the University City.
     tv_wonder_collegiate_charter: University City - Collegiate Charter
@@ -807,8 +807,8 @@
     tv_wonder_sky_dome_grand_temple_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Sky Dome Grand Temple.
     tv_wonder_sky_dome_grand_temple_desc: An unconsecrated Sky Dome Grand Temple preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_sky_dome_grand_temple_ritual_burden_modifier: Cost of Consecration
-    tv_wonder_dome_consecration: Sky Dome Grand Temple - Dome Consecration
-    tv_wonder_dome_consecration_desc: The Dome Consecration branch of the Sky Dome Grand Temple.
+    tv_wonder_dome_consecration: '$tv_wonder_sky_dome_grand_temple$'
+    tv_wonder_dome_consecration_desc: '$game_concept_tv_wonder_sky_dome_grand_temple_desc$'
     tv_wonder_pilgrim_treasury: Sky Dome Grand Temple - Pilgrim Treasury
     tv_wonder_pilgrim_treasury_desc: The Pilgrim Treasury branch of the Sky Dome Grand Temple.
     tv_wonder_celestial_synod: Sky Dome Grand Temple - Celestial Synod
@@ -832,8 +832,8 @@
     tv_wonder_giant_tower_temple_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Giant Tower Temple.
     tv_wonder_giant_tower_temple_desc: An unconsecrated Giant Tower Temple preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_giant_tower_temple_ritual_burden_modifier: Fuel for the Beacon Rite
-    tv_wonder_beacon_rite_temple: Giant Tower Temple - Beacon Rite
-    tv_wonder_beacon_rite_temple_desc: The Beacon Rite branch of the Giant Tower Temple.
+    tv_wonder_beacon_rite_temple: '$tv_wonder_giant_tower_temple$'
+    tv_wonder_beacon_rite_temple_desc: '$game_concept_tv_wonder_giant_tower_temple_desc$'
     tv_wonder_pilgrim_stair_temple: Giant Tower Temple - Pilgrim Stair
     tv_wonder_pilgrim_stair_temple_desc: The Pilgrim Stair branch of the Giant Tower Temple.
     tv_wonder_temple_school_tower: Giant Tower Temple - Temple School
@@ -857,8 +857,8 @@
     tv_wonder_river_extension_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the River Extension.
     tv_wonder_river_extension_desc: An unconsecrated River Extension preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_river_extension_ritual_burden_modifier: Toll of the New Bridge
-    tv_wonder_bridge_opening: River Extension - Bridge Opening
-    tv_wonder_bridge_opening_desc: The Bridge Opening branch of the River Extension.
+    tv_wonder_bridge_opening: '$tv_wonder_river_extension$'
+    tv_wonder_bridge_opening_desc: '$game_concept_tv_wonder_river_extension_desc$'
     tv_wonder_river_fair: River Extension - River Fair
     tv_wonder_river_fair_desc: The River Fair branch of the River Extension.
     tv_wonder_canal_authority: River Extension - Canal Authority
@@ -882,8 +882,8 @@
     tv_wonder_national_shipyard_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the National Shipyard.
     tv_wonder_national_shipyard_desc: An unconsecrated National Shipyard preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_national_shipyard_ritual_burden_modifier: Timber Levy for the Keel
-    tv_wonder_keel_laying_yard: National Shipyard - Keel Laying
-    tv_wonder_keel_laying_yard_desc: The Keel Laying branch of the National Shipyard.
+    tv_wonder_keel_laying_yard: '$tv_wonder_national_shipyard$'
+    tv_wonder_keel_laying_yard_desc: '$game_concept_tv_wonder_national_shipyard_desc$'
     tv_wonder_fleet_muster_yard: National Shipyard - Fleet Muster
     tv_wonder_fleet_muster_yard_desc: The Fleet Muster branch of the National Shipyard.
     tv_wonder_admiralty_yard: National Shipyard - Admiralty Yard
@@ -907,8 +907,8 @@
     tv_wonder_star_fortress_city_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Star Fortress City.
     tv_wonder_star_fortress_city_desc: An unconsecrated Star Fortress City preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_star_fortress_city_ritual_burden_modifier: Cost of the Trial Bastion
-    tv_wonder_bastion_trial_fortress: Star Fortress City - Bastion Trial
-    tv_wonder_bastion_trial_fortress_desc: The Bastion Trial branch of the Star Fortress City.
+    tv_wonder_bastion_trial_fortress: '$tv_wonder_star_fortress_city$'
+    tv_wonder_bastion_trial_fortress_desc: '$game_concept_tv_wonder_star_fortress_city_desc$'
     tv_wonder_siege_games_fortress: Star Fortress City - Siege Games
     tv_wonder_siege_games_fortress_desc: The Siege Games branch of the Star Fortress City.
     tv_wonder_arsenal_quarter_fortress: Star Fortress City - Arsenal Quarter
@@ -932,8 +932,8 @@
     tv_wonder_great_wall_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Great Wall.
     tv_wonder_great_wall_desc: An unconsecrated Great Wall preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_great_wall_ritual_burden_modifier: Provisions for the Muster
-    tv_wonder_frontier_muster_wall: Great Wall - Frontier Muster
-    tv_wonder_frontier_muster_wall_desc: The Frontier Muster branch of the Great Wall.
+    tv_wonder_frontier_muster_wall: '$tv_wonder_great_wall$'
+    tv_wonder_frontier_muster_wall_desc: '$game_concept_tv_wonder_great_wall_desc$'
     tv_wonder_signal_fires_wall: Great Wall - Signal Fires
     tv_wonder_signal_fires_wall_desc: The Signal Fires branch of the Great Wall.
     tv_wonder_wall_oath: Great Wall - Wall Oath
@@ -957,8 +957,8 @@
     tv_wonder_giant_armory_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Giant Armory.
     tv_wonder_giant_armory_desc: An unconsecrated Giant Armory preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_giant_armory_ritual_burden_modifier: Cost of the Arms Muster
-    tv_wonder_muster_of_arms: Giant Armory - Muster of Arms
-    tv_wonder_muster_of_arms_desc: The Muster of Arms branch of the Giant Armory.
+    tv_wonder_muster_of_arms: '$tv_wonder_giant_armory$'
+    tv_wonder_muster_of_arms_desc: '$game_concept_tv_wonder_giant_armory_desc$'
     tv_wonder_foundry_contracts: Giant Armory - Foundry Contracts
     tv_wonder_foundry_contracts_desc: The Foundry Contracts branch of the Giant Armory.
     tv_wonder_master_armourers: Giant Armory - Master Armourers
@@ -982,8 +982,8 @@
     tv_wonder_library_of_nation_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Library of Nation.
     tv_wonder_library_of_nation_desc: An unconsecrated Library of Nation preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_library_of_nation_ritual_burden_modifier: Cost of Cataloguing
-    tv_wonder_national_catalog_library: Library of Nation - National Catalog
-    tv_wonder_national_catalog_library_desc: The National Catalog branch of the Library of Nation.
+    tv_wonder_national_catalog_library: '$tv_wonder_library_of_nation$'
+    tv_wonder_national_catalog_library_desc: '$game_concept_tv_wonder_library_of_nation_desc$'
     tv_wonder_copyists_endowment_library: Library of Nation - Copyists Endowment
     tv_wonder_copyists_endowment_library_desc: The Copyists Endowment branch of the Library of Nation.
     tv_wonder_legal_deposit_library: Library of Nation - Legal Deposit
@@ -1008,8 +1008,8 @@
     tv_wonder_large_canal_system_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Large Canal.
     tv_wonder_large_canal_system_desc: An unconsecrated Large Canal preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_large_canal_system_ritual_burden_modifier: Water Rights Levy
-    tv_wonder_irrigation_canal_system: Large Canal - Irrigation Priority
-    tv_wonder_irrigation_canal_system_desc: The Irrigation Priority branch of the Large Canal.
+    tv_wonder_irrigation_canal_system: '$tv_wonder_large_canal_system$'
+    tv_wonder_irrigation_canal_system_desc: '$game_concept_tv_wonder_large_canal_system_desc$'
     tv_wonder_grain_transport_canal_system: Large Canal - Grain Transport Priority
     tv_wonder_grain_transport_canal_system_desc: The Grain Transport Priority branch of the Large Canal.
     tv_wonder_flood_control_canal_system: Large Canal - Flood Control Priority
@@ -1034,8 +1034,8 @@
     tv_wonder_mountain_terrace_network_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Mountain Terrace Network.
     tv_wonder_mountain_terrace_network_desc: An unconsecrated Mountain Terrace Network preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_mountain_terrace_network_ritual_burden_modifier: Toil of the Terraces
-    tv_wonder_grain_terraces: Mountain Terrace Network - Grain Terraces
-    tv_wonder_grain_terraces_desc: The Grain Terraces branch of the Mountain Terrace Network.
+    tv_wonder_grain_terraces: '$tv_wonder_mountain_terrace_network$'
+    tv_wonder_grain_terraces_desc: '$game_concept_tv_wonder_mountain_terrace_network_desc$'
     tv_wonder_cash_crop_terraces: Mountain Terrace Network - Cash-Crop Terraces
     tv_wonder_cash_crop_terraces_desc: The Cash-Crop Terraces branch of the Mountain Terrace Network.
     tv_wonder_sacred_mountain_terraces: Mountain Terrace Network - Sacred Mountain Terraces
@@ -1060,8 +1060,8 @@
     tv_wonder_giant_dam_project_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Giant Dam Project.
     tv_wonder_giant_dam_project_desc: An unconsecrated Giant Dam Project preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_giant_dam_project_ritual_burden_modifier: Levy for the Flood Works
-    tv_wonder_estuary_flood_dam: Giant Dam Project - Estuary Flood Defense
-    tv_wonder_estuary_flood_dam_desc: The Estuary Flood Defense branch of the Giant Dam Project.
+    tv_wonder_estuary_flood_dam: '$tv_wonder_giant_dam_project$'
+    tv_wonder_estuary_flood_dam_desc: '$game_concept_tv_wonder_giant_dam_project_desc$'
     tv_wonder_marsh_reclamation_dam: Giant Dam Project - Marsh Reclamation
     tv_wonder_marsh_reclamation_dam_desc: The Marsh Reclamation branch of the Giant Dam Project.
     tv_wonder_water_powered_workshops: Giant Dam Project - Water-Powered Workshops
@@ -1086,8 +1086,8 @@
     tv_wonder_royal_granary_system_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Royal Granary.
     tv_wonder_royal_granary_system_desc: An unconsecrated Royal Granary preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_royal_granary_system_ritual_burden_modifier: Cost of Price Stabilization
-    tv_wonder_grain_price_granaries: Royal Granary - Grain Price Stabilization
-    tv_wonder_grain_price_granaries_desc: The Grain Price Stabilization branch of the Royal Granary.
+    tv_wonder_grain_price_granaries: '$tv_wonder_royal_granary_system$'
+    tv_wonder_grain_price_granaries_desc: '$game_concept_tv_wonder_royal_granary_system_desc$'
     tv_wonder_wartime_granaries: Royal Granary - Wartime Reserves
     tv_wonder_wartime_granaries_desc: The Wartime Reserves branch of the Royal Granary.
     tv_wonder_disaster_relief_granaries: Royal Granary - Disaster Relief
@@ -1112,8 +1112,8 @@
     tv_wonder_imperial_post_road_network_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Imperial Post Road Network.
     tv_wonder_imperial_post_road_network_desc: An unconsecrated Imperial Post Road Network preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_imperial_post_road_network_ritual_burden_modifier: Upkeep of the Post Roads
-    tv_wonder_military_post_roads: Imperial Post Road Network - Military Post Roads
-    tv_wonder_military_post_roads_desc: The Military Post Roads branch of the Imperial Post Road Network.
+    tv_wonder_military_post_roads: '$tv_wonder_imperial_post_road_network$'
+    tv_wonder_military_post_roads_desc: '$game_concept_tv_wonder_imperial_post_road_network_desc$'
     tv_wonder_trade_post_roads: Imperial Post Road Network - Trade Post Roads
     tv_wonder_trade_post_roads_desc: The Trade Post Roads branch of the Imperial Post Road Network.
     tv_wonder_royal_tour_avenue: Imperial Post Road Network - Royal Tour Avenue
@@ -1138,8 +1138,8 @@
     tv_wonder_canal_hub_city_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Canal Hub City.
     tv_wonder_canal_hub_city_desc: An unconsecrated Canal Hub City preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_canal_hub_city_ritual_burden_modifier: Toll of the Grain Barges
-    tv_wonder_grain_transport_hub: Canal Hub City - Grain Transport Hub
-    tv_wonder_grain_transport_hub_desc: The Grain Transport Hub branch of the Canal Hub City.
+    tv_wonder_grain_transport_hub: '$tv_wonder_canal_hub_city$'
+    tv_wonder_grain_transport_hub_desc: '$game_concept_tv_wonder_canal_hub_city_desc$'
     tv_wonder_financial_warehouse_hub: Canal Hub City - Financial Warehouse Hub
     tv_wonder_financial_warehouse_hub_desc: The Financial Warehouse Hub branch of the Canal Hub City.
     tv_wonder_industrial_workshop_belt: Canal Hub City - Industrial Workshop Belt
@@ -1164,8 +1164,8 @@
     tv_wonder_frontier_colonization_belt_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Frontier Colonization Belt.
     tv_wonder_frontier_colonization_belt_desc: An unconsecrated Frontier Colonization Belt preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_frontier_colonization_belt_ritual_burden_modifier: Cost of the Colony Belt
-    tv_wonder_military_colony_belt: Frontier Colonization Belt - Military Colony Belt
-    tv_wonder_military_colony_belt_desc: The Military Colony Belt branch of the Frontier Colonization Belt.
+    tv_wonder_military_colony_belt: '$tv_wonder_frontier_colonization_belt$'
+    tv_wonder_military_colony_belt_desc: '$game_concept_tv_wonder_frontier_colonization_belt_desc$'
     tv_wonder_settler_reclamation_belt: Frontier Colonization Belt - Settler Reclamation Belt
     tv_wonder_settler_reclamation_belt_desc: The Settler Reclamation Belt branch of the Frontier Colonization Belt.
     tv_wonder_religious_colonization_belt: Frontier Colonization Belt - Religious Colonization Belt
@@ -1190,8 +1190,8 @@
     tv_wonder_coastal_beacon_network_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Coastal Beacon Network.
     tv_wonder_coastal_beacon_network_desc: An unconsecrated Coastal Beacon Network preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_coastal_beacon_network_ritual_burden_modifier: Fuel for the Beacon Chain
-    tv_wonder_beacon_communication_network: Coastal Beacon Network - Beacon Communication
-    tv_wonder_beacon_communication_network_desc: The Beacon Communication branch of the Coastal Beacon Network.
+    tv_wonder_beacon_communication_network: '$tv_wonder_coastal_beacon_network$'
+    tv_wonder_beacon_communication_network_desc: '$game_concept_tv_wonder_coastal_beacon_network_desc$'
     tv_wonder_coastal_battery_network: Coastal Beacon Network - Coastal Battery Defense
     tv_wonder_coastal_battery_network_desc: The Coastal Battery Defense branch of the Coastal Beacon Network.
     tv_wonder_customs_patrol_network: Coastal Beacon Network - Customs Patrol
@@ -1216,8 +1216,8 @@
     tv_wonder_knightly_fortress_order_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Knightly Fortress Order.
     tv_wonder_knightly_fortress_order_desc: An unconsecrated Knightly Fortress Order preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_knightly_fortress_order_ritual_burden_modifier: Tithes for the Order
-    tv_wonder_crusader_knightly_order: Knightly Fortress Order - Crusader Knightly Order
-    tv_wonder_crusader_knightly_order_desc: The Crusader Knightly Order branch of the Knightly Fortress Order.
+    tv_wonder_crusader_knightly_order: '$tv_wonder_knightly_fortress_order$'
+    tv_wonder_crusader_knightly_order_desc: '$game_concept_tv_wonder_knightly_fortress_order_desc$'
     tv_wonder_frontier_lord_order: Knightly Fortress Order - Frontier Lord Order
     tv_wonder_frontier_lord_order_desc: The Frontier Lord Order branch of the Knightly Fortress Order.
     tv_wonder_mercenary_fortress_system: Knightly Fortress Order - Mercenary Fortress
@@ -1242,8 +1242,8 @@
     tv_wonder_war_college_system_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the War College.
     tv_wonder_war_college_system_desc: An unconsecrated War College preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_war_college_system_ritual_burden_modifier: Cost of the War College
-    tv_wonder_firearms_tactics_college: War College - Firearms Tactics
-    tv_wonder_firearms_tactics_college_desc: The Firearms Tactics branch of the War College.
+    tv_wonder_firearms_tactics_college: '$tv_wonder_war_college_system$'
+    tv_wonder_firearms_tactics_college_desc: '$game_concept_tv_wonder_war_college_system_desc$'
     tv_wonder_cavalry_tradition_college: War College - Cavalry Tradition
     tv_wonder_cavalry_tradition_college_desc: The Cavalry Tradition branch of the War College.
     tv_wonder_naval_command_college: War College - Naval Command
@@ -1268,8 +1268,8 @@
     tv_wonder_great_clock_bell_system_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Great Clock and Bell Tower.
     tv_wonder_great_clock_bell_system_desc: An unconsecrated Great Clock and Bell Tower preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_great_clock_bell_system_ritual_burden_modifier: Upkeep of the Bell Tower
-    tv_wonder_worship_clock_bells: Great Clock and Bell Tower - Worship Timekeeping
-    tv_wonder_worship_clock_bells_desc: The Worship Timekeeping branch of the Great Clock and Bell Tower.
+    tv_wonder_worship_clock_bells: '$tv_wonder_great_clock_bell_system$'
+    tv_wonder_worship_clock_bells_desc: '$game_concept_tv_wonder_great_clock_bell_system_desc$'
     tv_wonder_curfew_clock_bells: Great Clock and Bell Tower - Urban Curfew
     tv_wonder_curfew_clock_bells_desc: The Urban Curfew branch of the Great Clock and Bell Tower.
     tv_wonder_astronomical_calendar_bells: Great Clock and Bell Tower - Astronomical Calendar
@@ -1294,8 +1294,8 @@
     tv_wonder_royal_art_district_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Royal Art District.
     tv_wonder_royal_art_district_desc: An unconsecrated Royal Art District preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_royal_art_district_ritual_burden_modifier: Patronage of the Court Artists
-    tv_wonder_court_art_district: Royal Art District - Court Art
-    tv_wonder_court_art_district_desc: The Court Art branch of the Royal Art District.
+    tv_wonder_court_art_district: '$tv_wonder_royal_art_district$'
+    tv_wonder_court_art_district_desc: '$game_concept_tv_wonder_royal_art_district_desc$'
     tv_wonder_folk_art_district: Royal Art District - Folk Art
     tv_wonder_folk_art_district_desc: The Folk Art branch of the Royal Art District.
     tv_wonder_foreign_style_district: Royal Art District - Foreign Style Synthesis
@@ -1320,8 +1320,8 @@
     tv_wonder_grand_theater_festival_district_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Grand Theater and Festival District.
     tv_wonder_grand_theater_festival_district_desc: An unconsecrated Grand Theater and Festival District preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_grand_theater_festival_district_ritual_burden_modifier: Cost of the Court Stage
-    tv_wonder_court_theater: Grand Theater and Festival District - Court Theater
-    tv_wonder_court_theater_desc: The Court Theater branch of the Grand Theater and Festival District.
+    tv_wonder_court_theater: '$tv_wonder_grand_theater_festival_district$'
+    tv_wonder_court_theater_desc: '$game_concept_tv_wonder_grand_theater_festival_district_desc$'
     tv_wonder_religious_theater: Grand Theater and Festival District - Religious Theater
     tv_wonder_religious_theater_desc: The Religious Theater branch of the Grand Theater and Festival District.
     tv_wonder_popular_festival_ground: Grand Theater and Festival District - Popular Festival Ground
@@ -1346,8 +1346,8 @@
     tv_wonder_world_embassy_quarter_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Embassy Quarter.
     tv_wonder_world_embassy_quarter_desc: An unconsecrated Embassy Quarter preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_world_embassy_quarter_ritual_burden_modifier: Upkeep of Trade Envoys
-    tv_wonder_trade_diplomacy_embassies: Embassy Quarter - Trade Diplomacy
-    tv_wonder_trade_diplomacy_embassies_desc: The Trade Diplomacy branch of the Embassy Quarter.
+    tv_wonder_trade_diplomacy_embassies: '$tv_wonder_world_embassy_quarter$'
+    tv_wonder_trade_diplomacy_embassies_desc: '$game_concept_tv_wonder_world_embassy_quarter_desc$'
     tv_wonder_intelligence_embassies: Embassy Quarter - Intelligence Diplomacy
     tv_wonder_intelligence_embassies_desc: The Intelligence Diplomacy branch of the Embassy Quarter.
     tv_wonder_religious_diplomacy_embassies: Embassy Quarter - Religious Diplomacy
@@ -1372,8 +1372,8 @@
     tv_wonder_law_code_stele_project_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Law Code Stele Project.
     tv_wonder_law_code_stele_project_desc: An unconsecrated Law Code Stele Project preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_law_code_stele_project_ritual_burden_modifier: Cost of Carving the Stele
-    tv_wonder_religious_law_steles: Law Code Stele Project - Religious Law
-    tv_wonder_religious_law_steles_desc: The Religious Law branch of the Law Code Stele Project.
+    tv_wonder_religious_law_steles: '$tv_wonder_law_code_stele_project$'
+    tv_wonder_religious_law_steles_desc: '$game_concept_tv_wonder_law_code_stele_project_desc$'
     tv_wonder_written_law_steles: Law Code Stele Project - Written Law
     tv_wonder_written_law_steles_desc: The Written Law branch of the Law Code Stele Project.
     tv_wonder_imperial_edict_steles: Law Code Stele Project - Imperial Edicts
@@ -1398,8 +1398,8 @@
     tv_wonder_world_market_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the World Market.
     tv_wonder_world_market_desc: An unconsecrated World Market preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_world_market_ritual_burden_modifier: Tariffs on Fine Goods
-    tv_wonder_luxury_goods_market: World Market - Luxury Goods Trade
-    tv_wonder_luxury_goods_market_desc: The Luxury Goods Trade branch of the World Market.
+    tv_wonder_luxury_goods_market: '$tv_wonder_world_market$'
+    tv_wonder_luxury_goods_market_desc: '$game_concept_tv_wonder_world_market_desc$'
     tv_wonder_grain_market: World Market - Grain Trade
     tv_wonder_grain_market_desc: The Grain Trade branch of the World Market.
     tv_wonder_entrepot_market: World Market - International Entrepot
@@ -1424,8 +1424,8 @@
     tv_wonder_royal_mint_system_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Royal Mint.
     tv_wonder_royal_mint_system_desc: An unconsecrated Royal Mint preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_royal_mint_system_ritual_burden_modifier: Cost of the Standard's Upkeep
-    tv_wonder_silver_gold_standard_mint: Royal Mint - Silver-Gold Standard
-    tv_wonder_silver_gold_standard_mint_desc: The Silver-Gold Standard branch of the Royal Mint.
+    tv_wonder_silver_gold_standard_mint: '$tv_wonder_royal_mint_system$'
+    tv_wonder_silver_gold_standard_mint_desc: '$game_concept_tv_wonder_royal_mint_system_desc$'
     tv_wonder_copper_coinage_mint: Royal Mint - Copper Coinage
     tv_wonder_copper_coinage_mint_desc: The Copper Coinage branch of the Royal Mint.
     tv_wonder_international_settlement_mint: Royal Mint - International Settlement
@@ -1450,8 +1450,8 @@
     tv_wonder_national_bank_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the National Bank.
     tv_wonder_national_bank_desc: An unconsecrated National Bank preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_national_bank_ritual_burden_modifier: Interest on the Public Debt
-    tv_wonder_public_credit_bank: National Bank - Public Credit Subscription
-    tv_wonder_public_credit_bank_desc: The Public Credit Subscription branch of the National Bank.
+    tv_wonder_public_credit_bank: '$tv_wonder_national_bank$'
+    tv_wonder_public_credit_bank_desc: '$game_concept_tv_wonder_national_bank_desc$'
     tv_wonder_state_debt_office: National Bank - State Debt Office
     tv_wonder_state_debt_office_desc: The State Debt Office branch of the National Bank.
     tv_wonder_merchant_clearing_bank: National Bank - Merchant Clearing House
@@ -1476,8 +1476,8 @@
     tv_wonder_guild_alliance_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Guild Alliance.
     tv_wonder_guild_alliance_desc: An unconsecrated Guild Alliance preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_guild_alliance_ritual_burden_modifier: Dues to the Guild Alliance
-    tv_wonder_artisan_guild_alliance: Guild Alliance - Artisan Guild Alliance
-    tv_wonder_artisan_guild_alliance_desc: The Artisan Guild Alliance branch of the Guild Alliance.
+    tv_wonder_artisan_guild_alliance: '$tv_wonder_guild_alliance$'
+    tv_wonder_artisan_guild_alliance_desc: '$game_concept_tv_wonder_guild_alliance_desc$'
     tv_wonder_overseas_merchant_guilds: Guild Alliance - Overseas Merchant Guilds
     tv_wonder_overseas_merchant_guilds_desc: The Overseas Merchant Guilds branch of the Guild Alliance.
     tv_wonder_financial_guilds: Guild Alliance - Financial Guilds
@@ -1502,8 +1502,8 @@
     tv_wonder_maritime_trade_station_network_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Maritime Trade Station Network.
     tv_wonder_maritime_trade_station_network_desc: An unconsecrated Maritime Trade Station Network preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_maritime_trade_station_network_ritual_burden_modifier: Levy on the Spice Fleets
-    tv_wonder_spice_trade_stations: Maritime Trade Station Network - Spice Trade
-    tv_wonder_spice_trade_stations_desc: The Spice Trade branch of the Maritime Trade Station Network.
+    tv_wonder_spice_trade_stations: '$tv_wonder_maritime_trade_station_network$'
+    tv_wonder_spice_trade_stations_desc: '$game_concept_tv_wonder_maritime_trade_station_network_desc$'
     tv_wonder_slave_trade_stations: Maritime Trade Station Network - Slave Trade
     tv_wonder_slave_trade_stations_desc: The Slave Trade branch of the Maritime Trade Station Network.
     tv_wonder_colonial_supply_stations: Maritime Trade Station Network - Colonial Supply
@@ -1528,8 +1528,8 @@
     tv_wonder_giant_workshop_complex_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Giant Workshop Complex.
     tv_wonder_giant_workshop_complex_desc: An unconsecrated Giant Workshop Complex preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_giant_workshop_complex_ritual_burden_modifier: Cost of the Looms
-    tv_wonder_textile_workshop_complex: Giant Workshop Complex - Textile Manufacturing
-    tv_wonder_textile_workshop_complex_desc: The Textile Manufacturing branch of the Giant Workshop Complex.
+    tv_wonder_textile_workshop_complex: '$tv_wonder_giant_workshop_complex$'
+    tv_wonder_textile_workshop_complex_desc: '$game_concept_tv_wonder_giant_workshop_complex_desc$'
     tv_wonder_military_workshop_complex: Giant Workshop Complex - Military Manufacturing
     tv_wonder_military_workshop_complex_desc: The Military Manufacturing branch of the Giant Workshop Complex.
     tv_wonder_luxury_craft_workshop_complex: Giant Workshop Complex - Luxury Craftsmanship
@@ -1554,8 +1554,8 @@
     tv_wonder_world_monument_group_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the World Monument Group.
     tv_wonder_world_monument_group_desc: An unconsecrated World Monument Group preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_world_monument_group_ritual_burden_modifier: Upkeep of the Memorial
-    tv_wonder_conquest_monument_group: World Monument Group - Conquest Memorial
-    tv_wonder_conquest_monument_group_desc: The Conquest Memorial branch of the World Monument Group.
+    tv_wonder_conquest_monument_group: '$tv_wonder_world_monument_group$'
+    tv_wonder_conquest_monument_group_desc: '$game_concept_tv_wonder_world_monument_group_desc$'
     tv_wonder_national_unity_monument_group: World Monument Group - National Unity
     tv_wonder_national_unity_monument_group_desc: The National Unity branch of the World Monument Group.
     tv_wonder_world_exposition_monument_group: World Monument Group - World Exposition
@@ -1580,8 +1580,8 @@
     tv_wonder_city_expansion_project_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the City Expansion Project.
     tv_wonder_city_expansion_project_desc: An unconsecrated City Expansion Project preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_city_expansion_project_ritual_burden_modifier: Cost of the New Charter
-    tv_wonder_city_charter: City Expansion Project - City Charter
-    tv_wonder_city_charter_desc: The City Charter branch of the City Expansion Project.
+    tv_wonder_city_charter: '$tv_wonder_city_expansion_project$'
+    tv_wonder_city_charter_desc: '$game_concept_tv_wonder_city_expansion_project_desc$'
     tv_wonder_civic_grid: City Expansion Project - Civic Grid
     tv_wonder_civic_grid_desc: The Civic Grid branch of the City Expansion Project.
     tv_wonder_urban_renewal: City Expansion Project - Urban Renewal
@@ -2723,8 +2723,8 @@
     tv_wonder_megalithic_circle_ritual_annex: Solstice Watchers' Hut
     tv_wonder_megalithic_circle_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Megalithic Circle.
     STATIC_MODIFIER_NAME_tv_wonder_megalithic_circle_ritual_burden_modifier: Offerings at the Solstice
-    tv_wonder_solstice_gathering_circle: Megalithic Circle - Solstice Gathering
-    tv_wonder_solstice_gathering_circle_desc: The Solstice Gathering branch of the Megalithic Circle.
+    tv_wonder_solstice_gathering_circle: '$tv_wonder_megalithic_circle$'
+    tv_wonder_solstice_gathering_circle_desc: '$game_concept_tv_wonder_megalithic_circle_desc$'
     tv_wonder_astral_alignment_circle: Megalithic Circle - Astral Alignment
     tv_wonder_astral_alignment_circle_desc: The Astral Alignment branch of the Megalithic Circle.
     tv_wonder_ancestral_moot_circle: Megalithic Circle - Ancestral Moot
@@ -2749,8 +2749,8 @@
     tv_wonder_grand_cathedral_ritual_annex: Choir Sacristy
     tv_wonder_grand_cathedral_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Grand Cathedral.
     STATIC_MODIFIER_NAME_tv_wonder_grand_cathedral_ritual_burden_modifier: Cost of the Dedication
-    tv_wonder_high_choir_cathedral: Grand Cathedral - High Choir Dedication
-    tv_wonder_high_choir_cathedral_desc: The High Choir Dedication branch of the Grand Cathedral.
+    tv_wonder_high_choir_cathedral: '$tv_wonder_grand_cathedral$'
+    tv_wonder_high_choir_cathedral_desc: '$game_concept_tv_wonder_grand_cathedral_desc$'
     tv_wonder_pilgrim_nave_cathedral: Grand Cathedral - Pilgrim Nave
     tv_wonder_pilgrim_nave_cathedral_desc: The Pilgrim Nave branch of the Grand Cathedral.
     tv_wonder_civic_bells_cathedral: Grand Cathedral - Civic Bell Consecration
@@ -2775,8 +2775,8 @@
     tv_wonder_great_monastery_ritual_annex: Scriptorium Wing
     tv_wonder_great_monastery_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Great Monastery.
     STATIC_MODIFIER_NAME_tv_wonder_great_monastery_ritual_burden_modifier: Upkeep of the Scriptorium
-    tv_wonder_scriptorium_monastery: Great Monastery - Scriptorium Rule
-    tv_wonder_scriptorium_monastery_desc: The Scriptorium Rule branch of the Great Monastery.
+    tv_wonder_scriptorium_monastery: '$tv_wonder_great_monastery$'
+    tv_wonder_scriptorium_monastery_desc: '$game_concept_tv_wonder_great_monastery_desc$'
     tv_wonder_pilgrim_refectory_monastery: Great Monastery - Pilgrim Refectory
     tv_wonder_pilgrim_refectory_monastery_desc: The Pilgrim Refectory branch of the Great Monastery.
     tv_wonder_fortified_cloister_monastery: Great Monastery - Fortified Cloister
@@ -3001,8 +3001,8 @@
     tv_wonder_city_great_tower_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the City Great Tower.
     tv_wonder_city_great_tower_desc: An unconsecrated City Great Tower preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_city_great_tower_ritual_burden_modifier: Upkeep of the Watchtower
-    tv_wonder_civic_watchtower: City Great Tower - Civic Watchtower
-    tv_wonder_civic_watchtower_desc: The Civic Watchtower branch of the City Great Tower.
+    tv_wonder_civic_watchtower: '$tv_wonder_city_great_tower$'
+    tv_wonder_civic_watchtower_desc: '$game_concept_tv_wonder_city_great_tower_desc$'
     tv_engineering_department.500.d_city_great_tower_1: The town watch takes the tower as its post, and the right to ring the alarm passes from the lord's castle to the city council.
     tv_wonder_bell_campanile: City Great Tower - Bell Campanile
     tv_wonder_bell_campanile_desc: The Bell Campanile branch of the City Great Tower.
@@ -3031,8 +3031,8 @@
     tv_wonder_great_sculpture_group_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Great Sculpture Group.
     tv_wonder_great_sculpture_group_desc: An unconsecrated Great Sculpture Group preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_great_sculpture_group_ritual_burden_modifier: Cost of the Sculpture Yard
-    tv_wonder_royal_sculpture_yard: Great Sculpture Group - Royal Sculpture Yard
-    tv_wonder_royal_sculpture_yard_desc: The Royal Sculpture Yard branch of the Great Sculpture Group.
+    tv_wonder_royal_sculpture_yard: '$tv_wonder_great_sculpture_group$'
+    tv_wonder_royal_sculpture_yard_desc: '$game_concept_tv_wonder_great_sculpture_group_desc$'
     tv_engineering_department.500.d_great_sculpture_group_1: Colossal statues of the ruler and the dynasty are unveiled in the yard, and foreign envoys are brought to view them before their audience.
     tv_wonder_pilgrim_statue_garden: Great Sculpture Group - Pilgrim Statue Garden
     tv_wonder_pilgrim_statue_garden_desc: The Pilgrim Statue Garden branch of the Great Sculpture Group.
@@ -3061,8 +3061,8 @@
     tv_wonder_coastal_defense_cannon_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Coastal Defense Cannon.
     tv_wonder_coastal_defense_cannon_desc: An unconsecrated Coastal Defense Cannon preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_coastal_defense_cannon_ritual_burden_modifier: Powder for the Battery
-    tv_wonder_strait_battery_cannon: Coastal Defense Cannon - Strait Battery
-    tv_wonder_strait_battery_cannon_desc: The Strait Battery branch of the Coastal Defense Cannon.
+    tv_wonder_strait_battery_cannon: '$tv_wonder_coastal_defense_cannon$'
+    tv_wonder_strait_battery_cannon_desc: '$game_concept_tv_wonder_coastal_defense_cannon_desc$'
     tv_engineering_department.500.d_coastal_defense_cannon_1: The guns are ranged on the strait, and foreign ships are ordered to strike their sails and pay passage before going through.
     tv_wonder_harbor_chain_cannon: Coastal Defense Cannon - Harbor Chain Battery
     tv_wonder_harbor_chain_cannon_desc: The Harbor Chain Battery branch of the Coastal Defense Cannon.
@@ -3091,8 +3091,8 @@
     tv_wonder_naval_school_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Naval School.
     tv_wonder_naval_school_desc: An unconsecrated Naval School preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_naval_school_ritual_burden_modifier: Tuition of the Navigation School
-    tv_wonder_admiralty_navigation_school: Naval School - Admiralty Navigation School
-    tv_wonder_admiralty_navigation_school_desc: The Admiralty Navigation School branch of the Naval School.
+    tv_wonder_admiralty_navigation_school: '$tv_wonder_naval_school$'
+    tv_wonder_admiralty_navigation_school_desc: '$game_concept_tv_wonder_naval_school_desc$'
     tv_engineering_department.500.d_naval_school_1: Cadets enroll to learn navigation, gunnery and seamanship, and the first class goes to sea on the admiralty's own training ships.
     tv_wonder_pilotage_chart_house: Naval School - Pilotage Chart House
     tv_wonder_pilotage_chart_house_desc: The Pilotage Chart House branch of the Naval School.
@@ -3521,8 +3521,8 @@
     tv_wonder_colonial_trade_company_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Colonial Trade Company.
     tv_wonder_colonial_trade_company_desc: An unconsecrated Colonial Trade Company preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_colonial_trade_company_ritual_burden_modifier: Dues Under the Charter
-    tv_wonder_chartered_company_exchange: Colonial Trade Company - Company Charter
-    tv_wonder_chartered_company_exchange_desc: The Company Charter branch of the Colonial Trade Company.
+    tv_wonder_chartered_company_exchange: '$tv_wonder_colonial_trade_company$'
+    tv_wonder_chartered_company_exchange_desc: '$game_concept_tv_wonder_colonial_trade_company_desc$'
     tv_wonder_overseas_factory_forts: Colonial Trade Company - Factory Forts
     tv_wonder_overseas_factory_forts_desc: The Factory Forts branch of the Colonial Trade Company.
     tv_wonder_colonial_ledger_house: Colonial Trade Company - Colonial Ledgers
@@ -3547,8 +3547,8 @@
     tv_wonder_great_assembly_hall_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Great Assembly Hall.
     tv_wonder_great_assembly_hall_desc: An unconsecrated Great Assembly Hall preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_great_assembly_hall_ritual_burden_modifier: Cost of Convening the Estates
-    tv_wonder_estates_convocation_hall: Great Assembly Hall - Estates Convocation
-    tv_wonder_estates_convocation_hall_desc: The Estates Convocation branch of the Great Assembly Hall.
+    tv_wonder_estates_convocation_hall: '$tv_wonder_great_assembly_hall$'
+    tv_wonder_estates_convocation_hall_desc: '$game_concept_tv_wonder_great_assembly_hall_desc$'
     tv_wonder_royal_audience_hall: Great Assembly Hall - Royal Audience
     tv_wonder_royal_audience_hall_desc: The Royal Audience branch of the Great Assembly Hall.
     tv_wonder_public_deliberation_hall: Great Assembly Hall - Public Deliberation
@@ -3573,8 +3573,8 @@
     tv_wonder_mobile_fortress_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Mobile Fortress.
     tv_wonder_mobile_fortress_desc: An unconsecrated Mobile Fortress preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_mobile_fortress_ritual_burden_modifier: Provisions for the Wagon Camp
-    tv_wonder_wagon_camp_muster: Mobile Fortress - Wagon Camp Muster
-    tv_wonder_wagon_camp_muster_desc: The Wagon Camp Muster branch of the Mobile Fortress.
+    tv_wonder_wagon_camp_muster: '$tv_wonder_mobile_fortress$'
+    tv_wonder_wagon_camp_muster_desc: '$game_concept_tv_wonder_mobile_fortress_desc$'
     tv_wonder_frontier_sich_camp: Mobile Fortress - Frontier Sich
     tv_wonder_frontier_sich_camp_desc: The Frontier Sich branch of the Mobile Fortress.
     tv_wonder_steppe_field_fort: Mobile Fortress - Steppe Field Fort
@@ -3599,8 +3599,8 @@
     tv_wonder_ancient_city_ruins_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Ancient City Ruins.
     tv_wonder_ancient_city_ruins_desc: An unconsecrated Ancient City Ruins preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_ancient_city_ruins_ritual_burden_modifier: Cost of Restoration
-    tv_wonder_restored_citadel_ruins: Ancient City Ruins - Citadel Restoration
-    tv_wonder_restored_citadel_ruins_desc: The Citadel Restoration branch of the Ancient City Ruins.
+    tv_wonder_restored_citadel_ruins: '$tv_wonder_ancient_city_ruins$'
+    tv_wonder_restored_citadel_ruins_desc: '$game_concept_tv_wonder_ancient_city_ruins_desc$'
     tv_wonder_antiquarian_quarter_ruins: Ancient City Ruins - Antiquarian Quarter
     tv_wonder_antiquarian_quarter_ruins_desc: The Antiquarian Quarter branch of the Ancient City Ruins.
     tv_wonder_pilgrim_ruins_preserve: Ancient City Ruins - Pilgrim Preserve
@@ -4045,8 +4045,8 @@
     tv_wonder_summer_palace_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Summer Palace.
     tv_wonder_summer_palace_desc: An unconsecrated Summer Palace preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_summer_palace_ritual_burden_modifier: Upkeep of the Retreat
-    tv_wonder_royal_retreat_palace: Summer Palace - Royal Retreat Audience
-    tv_wonder_royal_retreat_palace_desc: The Royal Retreat Audience branch of the Summer Palace.
+    tv_wonder_royal_retreat_palace: '$tv_wonder_summer_palace$'
+    tv_wonder_royal_retreat_palace_desc: '$game_concept_tv_wonder_summer_palace_desc$'
     tv_engineering_department.500.d_summer_palace_1: The court moves to the palace for the season and the ruler's council sits there, so governors must travel to the retreat to receive their orders.
     tv_wonder_garden_court_palace: Summer Palace - Garden Court
     tv_wonder_garden_court_palace_desc: The Garden Court branch of the Summer Palace.
@@ -4958,8 +4958,8 @@
     tv_wonder_pirate_port_desc: An unconsecrated Pirate Port preserved as completed construction.
     STATIC_MODIFIER_NAME_tv_wonder_pirate_port_ritual_burden_modifier: Tribute to the Privateer Haven
     STATIC_MODIFIER_NAME_tv_wonder_pirate_port_ritual_blessing_modifier: The Haven's Lasting Protection
-    tv_wonder_privateer_haven: Pirate Port - Privateer Haven
-    tv_wonder_privateer_haven_desc: The Privateer Haven branch of the Pirate Port.
+    tv_wonder_privateer_haven: '$tv_wonder_pirate_port$'
+    tv_wonder_privateer_haven_desc: '$game_concept_tv_wonder_pirate_port_desc$'
     tv_engineering_department.500.d_pirate_port_1: Captains receive letters of marque at the harbor office, and a share of every prize taken from foreign shipping is pledged to the crown.
     tv_wonder_harbor_redoubt: Pirate Port - Harbor Redoubt
     tv_wonder_harbor_redoubt_desc: The Harbor Redoubt branch of the Pirate Port.
@@ -5766,8 +5766,8 @@
     tv_wonder_grand_garden_complex_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the Grand Garden Complex.
     STATIC_MODIFIER_NAME_tv_wonder_grand_garden_complex_ritual_burden_modifier: Garden Maintenance Levy
     STATIC_MODIFIER_NAME_tv_wonder_grand_garden_complex_ritual_blessing_modifier: Living Landscape Patronage
-    tv_wonder_royal_pleasure_gardens: Grand Garden Complex - Royal Pleasure Gardens
-    tv_wonder_royal_pleasure_gardens_desc: The Royal Pleasure Gardens branch of the Grand Garden Complex.
+    tv_wonder_royal_pleasure_gardens: '$tv_wonder_grand_garden_complex$'
+    tv_wonder_royal_pleasure_gardens_desc: '$game_concept_tv_wonder_grand_garden_complex_desc$'
     tv_engineering_department.500.d_grand_garden_complex_1: The gardens are opened to the nobility for a season of hunts, masques and promenades, with places assigned by rank.
     tv_wonder_scholars_landscape_garden: Grand Garden Complex - Scholars' Landscape Garden
     tv_wonder_scholars_landscape_garden_desc: The Scholars' Landscape Garden branch of the Grand Garden Complex.
@@ -5797,8 +5797,8 @@
     tv_wonder_state_examination_complex_ritual_annex_desc: An auxiliary ritual annex used to complete the second ceremony branch of the State Examination Complex.
     STATIC_MODIFIER_NAME_tv_wonder_state_examination_complex_ritual_burden_modifier: Examination Season Stipends
     STATIC_MODIFIER_NAME_tv_wonder_state_examination_complex_ritual_blessing_modifier: Merit Registry Discipline
-    tv_wonder_classics_examination_yard: State Examination Complex - Classics Examination Yard
-    tv_wonder_classics_examination_yard_desc: The Classics Examination Yard branch of the State Examination Complex.
+    tv_wonder_classics_examination_yard: '$tv_wonder_state_examination_complex$'
+    tv_wonder_classics_examination_yard_desc: '$game_concept_tv_wonder_state_examination_complex_desc$'
     tv_engineering_department.500.d_state_examination_complex_1: Candidates are locked into the examination cells for three days to write on the classics, and the names of those who pass are posted at the gate.
     tv_wonder_open_merit_hall: State Examination Complex - Open Merit Hall
     tv_wonder_open_merit_hall_desc: The Open Merit Hall branch of the State Examination Complex.
@@ -9566,8 +9566,8 @@
     tv_wonder_colonial_trade_company_ritual_annex_desc: 用于完成殖民贸易公司第二仪式分支的附属仪式建筑。
     tv_wonder_colonial_trade_company_desc: 尚未落成、但已作为完整工程保留下来的殖民贸易公司。
     STATIC_MODIFIER_NAME_tv_wonder_colonial_trade_company_ritual_burden_modifier: 特许状税捐
-    tv_wonder_chartered_company_exchange: 殖民贸易公司 - 公司特许状
-    tv_wonder_chartered_company_exchange_desc: 殖民贸易公司的公司特许状分支。
+    tv_wonder_chartered_company_exchange: '$tv_wonder_colonial_trade_company$'
+    tv_wonder_chartered_company_exchange_desc: '$game_concept_tv_wonder_colonial_trade_company_desc$'
     tv_wonder_overseas_factory_forts: 殖民贸易公司 - 商馆堡垒
     tv_wonder_overseas_factory_forts_desc: 殖民贸易公司的商馆堡垒分支。
     tv_wonder_colonial_ledger_house: 殖民贸易公司 - 殖民账簿
@@ -9592,8 +9592,8 @@
     tv_wonder_great_assembly_hall_ritual_annex_desc: 用于完成大会堂第二仪式分支的附属仪式建筑。
     tv_wonder_great_assembly_hall_desc: 尚未落成、但已作为完整工程保留下来的大会堂。
     STATIC_MODIFIER_NAME_tv_wonder_great_assembly_hall_ritual_burden_modifier: 等级会议之费
-    tv_wonder_estates_convocation_hall: 大会堂 - 等级会议
-    tv_wonder_estates_convocation_hall_desc: 大会堂的等级会议分支。
+    tv_wonder_estates_convocation_hall: '$tv_wonder_great_assembly_hall$'
+    tv_wonder_estates_convocation_hall_desc: '$game_concept_tv_wonder_great_assembly_hall_desc$'
     tv_wonder_royal_audience_hall: 大会堂 - 王家朝会
     tv_wonder_royal_audience_hall_desc: 大会堂的王家朝会分支。
     tv_wonder_public_deliberation_hall: 大会堂 - 公共议政
@@ -9618,8 +9618,8 @@
     tv_wonder_mobile_fortress_ritual_annex_desc: 用于完成流动要塞第二仪式分支的附属仪式建筑。
     tv_wonder_mobile_fortress_desc: 尚未落成、但已作为完整工程保留下来的流动要塞。
     STATIC_MODIFIER_NAME_tv_wonder_mobile_fortress_ritual_burden_modifier: 车营粮秣
-    tv_wonder_wagon_camp_muster: 流动要塞 - 车营集结
-    tv_wonder_wagon_camp_muster_desc: 流动要塞的车营集结分支。
+    tv_wonder_wagon_camp_muster: '$tv_wonder_mobile_fortress$'
+    tv_wonder_wagon_camp_muster_desc: '$game_concept_tv_wonder_mobile_fortress_desc$'
     tv_wonder_frontier_sich_camp: 流动要塞 - 边疆塞契
     tv_wonder_frontier_sich_camp_desc: 流动要塞的边疆塞契分支。
     tv_wonder_steppe_field_fort: 流动要塞 - 草原野战堡
@@ -9644,8 +9644,8 @@
     tv_wonder_ancient_city_ruins_ritual_annex_desc: 用于完成古城遗迹第二仪式分支的附属仪式建筑。
     tv_wonder_ancient_city_ruins_desc: 尚未落成、但已作为完整工程保留下来的古城遗迹。
     STATIC_MODIFIER_NAME_tv_wonder_ancient_city_ruins_ritual_burden_modifier: 修复之费
-    tv_wonder_restored_citadel_ruins: 古城遗迹 - 城堡修复
-    tv_wonder_restored_citadel_ruins_desc: 古城遗迹的城堡修复分支。
+    tv_wonder_restored_citadel_ruins: '$tv_wonder_ancient_city_ruins$'
+    tv_wonder_restored_citadel_ruins_desc: '$game_concept_tv_wonder_ancient_city_ruins_desc$'
     tv_wonder_antiquarian_quarter_ruins: 古城遗迹 - 博古街区
     tv_wonder_antiquarian_quarter_ruins_desc: 古城遗迹的博古街区分支。
     tv_wonder_pilgrim_ruins_preserve: 古城遗迹 - 朝圣遗址保护区
@@ -10270,8 +10270,8 @@
     tv_wonder_megalithic_circle_ritual_annex: 观日者庐
     tv_wonder_megalithic_circle_ritual_annex_desc: 用于完成巨石环第二落成路线的附属仪式建筑。
     STATIC_MODIFIER_NAME_tv_wonder_megalithic_circle_ritual_burden_modifier: 至日献祭
-    tv_wonder_solstice_gathering_circle: 巨石环 - 至日集会
-    tv_wonder_solstice_gathering_circle_desc: 巨石环的至日集会分支。
+    tv_wonder_solstice_gathering_circle: '$tv_wonder_megalithic_circle$'
+    tv_wonder_solstice_gathering_circle_desc: '$game_concept_tv_wonder_megalithic_circle_desc$'
     tv_wonder_astral_alignment_circle: 巨石环 - 星象准线
     tv_wonder_astral_alignment_circle_desc: 巨石环的星象准线分支。
     tv_wonder_ancestral_moot_circle: 巨石环 - 祖灵大会
@@ -10296,8 +10296,8 @@
     tv_wonder_grand_cathedral_ritual_annex: 唱诗偏堂
     tv_wonder_grand_cathedral_ritual_annex_desc: 用于完成大教堂第二落成路线的附属仪式建筑。
     STATIC_MODIFIER_NAME_tv_wonder_grand_cathedral_ritual_burden_modifier: 奉献礼之资
-    tv_wonder_high_choir_cathedral: 大教堂 - 高坛奉献礼
-    tv_wonder_high_choir_cathedral_desc: 大教堂的高坛奉献礼分支。
+    tv_wonder_high_choir_cathedral: '$tv_wonder_grand_cathedral$'
+    tv_wonder_high_choir_cathedral_desc: '$game_concept_tv_wonder_grand_cathedral_desc$'
     tv_wonder_pilgrim_nave_cathedral: 大教堂 - 朝圣中殿
     tv_wonder_pilgrim_nave_cathedral_desc: 大教堂的朝圣中殿分支。
     tv_wonder_civic_bells_cathedral: 大教堂 - 城钟祝圣
@@ -10322,8 +10322,8 @@
     tv_wonder_great_monastery_ritual_annex: 缮写偏院
     tv_wonder_great_monastery_ritual_annex_desc: 用于完成大型修道院第二落成路线的附属仪式建筑。
     STATIC_MODIFIER_NAME_tv_wonder_great_monastery_ritual_burden_modifier: 缮写院供给
-    tv_wonder_scriptorium_monastery: 大型修道院 - 缮写院规
-    tv_wonder_scriptorium_monastery_desc: 大型修道院的缮写院规分支。
+    tv_wonder_scriptorium_monastery: '$tv_wonder_great_monastery$'
+    tv_wonder_scriptorium_monastery_desc: '$game_concept_tv_wonder_great_monastery_desc$'
     tv_wonder_pilgrim_refectory_monastery: 大型修道院 - 香客斋堂
     tv_wonder_pilgrim_refectory_monastery_desc: 大型修道院的香客斋堂分支。
     tv_wonder_fortified_cloister_monastery: 大型修道院 - 坚壁回廊
@@ -10480,8 +10480,8 @@
     tv_wonder_sacred_mountain_ritual_annex_desc: 用于完成圣山奇观第二仪式分支的附属建筑。
     tv_wonder_sacred_mountain_desc: 尚未落成、但已作为完整工程保留下来的圣山奇观。
     STATIC_MODIFIER_NAME_tv_wonder_sacred_mountain_ritual_burden_modifier: 祭坛之重
-    tv_wonder_golden_sanctuary: 圣山 - 王室献祭
-    tv_wonder_golden_sanctuary_desc: 圣山奇观的王室献祭仪式分支。
+    tv_wonder_golden_sanctuary: '$tv_wonder_sacred_mountain$'
+    tv_wonder_golden_sanctuary_desc: '$game_concept_tv_wonder_sacred_mountain_desc$'
     tv_wonder_ascetic_mountain: 圣山 - 冥想仪式
     tv_wonder_ascetic_mountain_desc: 圣山奇观的冥想仪式仪式分支。
     tv_wonder_theocratic_center: 圣山 - 神授仪式
@@ -10505,8 +10505,8 @@
     tv_wonder_triumphal_axis_ritual_annex_desc: 用于完成凯旋轴线第二仪式分支的附属建筑。
     tv_wonder_triumphal_axis_desc: 尚未落成、但已作为完整工程保留下来的凯旋轴线。
     STATIC_MODIFIER_NAME_tv_wonder_triumphal_axis_ritual_burden_modifier: 觐见之耗
-    tv_wonder_sun_king_axis: 凯旋轴线 - 外国使节觐见
-    tv_wonder_sun_king_axis_desc: 凯旋轴线的外国使节觐见仪式分支。
+    tv_wonder_sun_king_axis: '$tv_wonder_triumphal_axis$'
+    tv_wonder_sun_king_axis_desc: '$game_concept_tv_wonder_triumphal_axis_desc$'
     tv_wonder_military_city: 凯旋轴线 - 凯旋阅兵
     tv_wonder_military_city_desc: 凯旋轴线的凯旋阅兵仪式分支。
     tv_wonder_civic_capital: 凯旋轴线 - 公民庆典
@@ -10530,8 +10530,8 @@
     tv_wonder_great_port_ritual_annex_desc: 用于完成巨港第二仪式分支的附属建筑。
     tv_wonder_great_port_desc: 尚未落成、但已作为完整工程保留下来的巨港。
     STATIC_MODIFIER_NAME_tv_wonder_great_port_ritual_burden_modifier: 拍卖抽成
-    tv_wonder_golden_trade_port: 巨港 - 黄金拍卖
-    tv_wonder_golden_trade_port_desc: 巨港的黄金拍卖仪式分支。
+    tv_wonder_golden_trade_port: '$tv_wonder_great_port$'
+    tv_wonder_golden_trade_port_desc: '$game_concept_tv_wonder_great_port_desc$'
     tv_wonder_imperial_naval_port: 巨港 - 舰队检阅
     tv_wonder_imperial_naval_port_desc: 巨港的舰队检阅仪式分支。
     tv_wonder_free_trade_metropolis: 巨港 - 自由贸易节
@@ -10555,8 +10555,8 @@
     tv_wonder_giant_necropolis_ritual_annex_desc: 用于完成国家陵墓第二仪式分支的附属建筑。
     tv_wonder_giant_necropolis_desc: 尚未落成、但已作为完整工程保留下来的国家陵墓。
     STATIC_MODIFIER_NAME_tv_wonder_giant_necropolis_ritual_burden_modifier: 合葬之费
-    tv_wonder_dynastic_necropolis: 国家陵墓 - 王朝合葬
-    tv_wonder_dynastic_necropolis_desc: 国家陵墓的王朝合葬仪式分支。
+    tv_wonder_dynastic_necropolis: '$tv_wonder_giant_necropolis$'
+    tv_wonder_dynastic_necropolis_desc: '$game_concept_tv_wonder_giant_necropolis_desc$'
     tv_wonder_ancestor_shrine: 国家陵墓 - 祖先祭仪
     tv_wonder_ancestor_shrine_desc: 国家陵墓的祖先祭仪仪式分支。
     tv_wonder_quiet_land: 国家陵墓 - 寂静之地
@@ -10580,8 +10580,8 @@
     tv_wonder_great_lighthouse_ritual_annex_desc: 用于完成大灯塔第二仪式分支的附属建筑。
     tv_wonder_great_lighthouse_desc: 尚未落成、但已作为完整工程保留下来的大灯塔。
     STATIC_MODIFIER_NAME_tv_wonder_great_lighthouse_ritual_burden_modifier: 长明灯油
-    tv_wonder_eternal_lighthouse: 大灯塔 - 长明火祭
-    tv_wonder_eternal_lighthouse_desc: 大灯塔的长明火祭仪式分支。
+    tv_wonder_eternal_lighthouse: '$tv_wonder_great_lighthouse$'
+    tv_wonder_eternal_lighthouse_desc: '$game_concept_tv_wonder_great_lighthouse_desc$'
     tv_wonder_navigator_lighthouse: 大灯塔 - 领航员行会
     tv_wonder_navigator_lighthouse_desc: 大灯塔的领航员行会仪式分支。
     tv_wonder_long_watch_lighthouse: 大灯塔 - 长夜守望
@@ -10605,8 +10605,8 @@
     tv_wonder_hydraulic_workshop_ritual_annex_desc: 用于完成水利工坊复合体第二仪式分支的附属建筑。
     tv_wonder_hydraulic_workshop_desc: 尚未落成、但已作为完整工程保留下来的水利工坊复合体。
     STATIC_MODIFIER_NAME_tv_wonder_hydraulic_workshop_ritual_burden_modifier: 水神供奉
-    tv_wonder_water_god_workshop: 水利工坊复合体 - 水神大祭
-    tv_wonder_water_god_workshop_desc: 水利工坊复合体的水神大祭仪式分支。
+    tv_wonder_water_god_workshop: '$tv_wonder_hydraulic_workshop$'
+    tv_wonder_water_god_workshop_desc: '$game_concept_tv_wonder_hydraulic_workshop_desc$'
     tv_wonder_hydraulic_artisan_guildhall: 水利工坊复合体 - 工匠行会法
     tv_wonder_hydraulic_artisan_guildhall_desc: 水利工坊复合体的工匠行会法仪式分支。
     tv_wonder_waterwheel_workshop: 水利工坊复合体 - 水轮工坊
@@ -10630,8 +10630,8 @@
     tv_wonder_mining_city_ritual_annex_desc: 用于完成矿业都市第二仪式分支的附属建筑。
     tv_wonder_mining_city_desc: 尚未落成、但已作为完整工程保留下来的矿业都市。
     STATIC_MODIFIER_NAME_tv_wonder_mining_city_ritual_burden_modifier: 矿工之偿
-    tv_wonder_miners_oath_city: 矿业都市 - 矿工权利宣誓
-    tv_wonder_miners_oath_city_desc: 矿业都市的矿工权利宣誓仪式分支。
+    tv_wonder_miners_oath_city: '$tv_wonder_mining_city$'
+    tv_wonder_miners_oath_city_desc: '$game_concept_tv_wonder_mining_city_desc$'
     tv_wonder_royal_mint_city: 矿业都市 - 王家铸币厂
     tv_wonder_royal_mint_city_desc: 矿业都市的王家铸币厂仪式分支。
     tv_wonder_deep_shaft_city: 矿业都市 - 深井排水
@@ -10655,8 +10655,8 @@
     tv_wonder_giant_observatory_ritual_annex_desc: 用于完成天文观象台第二仪式分支的附属建筑。
     tv_wonder_giant_observatory_desc: 尚未落成、但已作为完整工程保留下来的天文观象台。
     STATIC_MODIFIER_NAME_tv_wonder_giant_observatory_ritual_burden_modifier: 星表编纂之费
-    tv_wonder_star_catalog_observatory: 天文观象台 - 星表编纂
-    tv_wonder_star_catalog_observatory_desc: 天文观象台的星表编纂仪式分支。
+    tv_wonder_star_catalog_observatory: '$tv_wonder_giant_observatory$'
+    tv_wonder_star_catalog_observatory_desc: '$game_concept_tv_wonder_giant_observatory_desc$'
     tv_wonder_nautical_almanac_observatory: 天文观象台 - 航海历书
     tv_wonder_nautical_almanac_observatory_desc: 天文观象台的航海历书仪式分支。
     tv_wonder_eclipse_observatory: 天文观象台 - 日食宣告
@@ -10680,8 +10680,8 @@
     tv_wonder_palace_of_nations_ritual_annex_desc: 用于完成万国宫城第二仪式分支的附属建筑。
     tv_wonder_palace_of_nations_desc: 尚未落成、但已作为完整工程保留下来的万国宫城。
     STATIC_MODIFIER_NAME_tv_wonder_palace_of_nations_ritual_burden_modifier: 朝会供帐
-    tv_wonder_congress_palace: 万国宫城 - 万国朝会
-    tv_wonder_congress_palace_desc: 万国宫城的万国朝会仪式分支。
+    tv_wonder_congress_palace: '$tv_wonder_palace_of_nations$'
+    tv_wonder_congress_palace_desc: '$game_concept_tv_wonder_palace_of_nations_desc$'
     tv_wonder_tribute_gallery: 万国宫城 - 贡礼长廊
     tv_wonder_tribute_gallery_desc: 万国宫城的贡礼长廊仪式分支。
     tv_wonder_embassy_palace: 万国宫城 - 常设使馆区
@@ -10705,8 +10705,8 @@
     tv_wonder_university_city_ritual_annex_desc: 用于完成大学城第二仪式分支的附属建筑。
     tv_wonder_university_city_desc: 尚未落成、但已作为完整工程保留下来的大学城。
     STATIC_MODIFIER_NAME_tv_wonder_university_city_ritual_burden_modifier: 学者束脩
-    tv_wonder_scholars_convocation: 大学城 - 学者大会
-    tv_wonder_scholars_convocation_desc: 大学城的学者大会仪式分支。
+    tv_wonder_scholars_convocation: '$tv_wonder_university_city$'
+    tv_wonder_scholars_convocation_desc: '$game_concept_tv_wonder_university_city_desc$'
     tv_wonder_public_lectures: 大学城 - 公开讲学
     tv_wonder_public_lectures_desc: 大学城的公开讲学仪式分支。
     tv_wonder_collegiate_charter: 大学城 - 学院特许状
@@ -10730,8 +10730,8 @@
     tv_wonder_sky_dome_grand_temple_ritual_annex_desc: 用于完成天穹大圣殿第二仪式分支的附属建筑。
     tv_wonder_sky_dome_grand_temple_desc: 尚未落成、但已作为完整工程保留下来的天穹大圣殿。
     STATIC_MODIFIER_NAME_tv_wonder_sky_dome_grand_temple_ritual_burden_modifier: 祝圣之资
-    tv_wonder_dome_consecration: 天穹大圣殿 - 穹顶祝圣
-    tv_wonder_dome_consecration_desc: 天穹大圣殿的穹顶祝圣仪式分支。
+    tv_wonder_dome_consecration: '$tv_wonder_sky_dome_grand_temple$'
+    tv_wonder_dome_consecration_desc: '$game_concept_tv_wonder_sky_dome_grand_temple_desc$'
     tv_wonder_pilgrim_treasury: 天穹大圣殿 - 朝圣金库
     tv_wonder_pilgrim_treasury_desc: 天穹大圣殿的朝圣金库仪式分支。
     tv_wonder_celestial_synod: 天穹大圣殿 - 天穹宗会
@@ -10755,8 +10755,8 @@
     tv_wonder_giant_tower_temple_ritual_annex_desc: 用于完成巨塔式神庙第二仪式分支的附属建筑。
     tv_wonder_giant_tower_temple_desc: 尚未落成、但已作为完整工程保留下来的巨塔式神庙。
     STATIC_MODIFIER_NAME_tv_wonder_giant_tower_temple_ritual_burden_modifier: 灯火之薪
-    tv_wonder_beacon_rite_temple: 巨塔式神庙 - 灯火仪式
-    tv_wonder_beacon_rite_temple_desc: 巨塔式神庙的灯火仪式仪式分支。
+    tv_wonder_beacon_rite_temple: '$tv_wonder_giant_tower_temple$'
+    tv_wonder_beacon_rite_temple_desc: '$game_concept_tv_wonder_giant_tower_temple_desc$'
     tv_wonder_pilgrim_stair_temple: 巨塔式神庙 - 朝圣阶梯
     tv_wonder_pilgrim_stair_temple_desc: 巨塔式神庙的朝圣阶梯仪式分支。
     tv_wonder_temple_school_tower: 巨塔式神庙 - 神庙学校
@@ -10780,8 +10780,8 @@
     tv_wonder_river_extension_ritual_annex_desc: 用于完成河道拓宽工程第二仪式分支的附属建筑。
     tv_wonder_river_extension_desc: 尚未落成、但已作为完整工程保留下来的河道拓宽工程。
     STATIC_MODIFIER_NAME_tv_wonder_river_extension_ritual_burden_modifier: 新桥通行税
-    tv_wonder_bridge_opening: 河道拓宽工程 - 开桥典礼
-    tv_wonder_bridge_opening_desc: 河道拓宽工程的开桥典礼仪式分支。
+    tv_wonder_bridge_opening: '$tv_wonder_river_extension$'
+    tv_wonder_bridge_opening_desc: '$game_concept_tv_wonder_river_extension_desc$'
     tv_wonder_river_fair: 河道拓宽工程 - 河市节
     tv_wonder_river_fair_desc: 河道拓宽工程的河市节仪式分支。
     tv_wonder_canal_authority: 河道拓宽工程 - 运河署
@@ -10805,8 +10805,8 @@
     tv_wonder_national_shipyard_ritual_annex_desc: 用于完成国家船坞第二仪式分支的附属建筑。
     tv_wonder_national_shipyard_desc: 尚未落成、但已作为完整工程保留下来的国家船坞。
     STATIC_MODIFIER_NAME_tv_wonder_national_shipyard_ritual_burden_modifier: 龙骨木料税
-    tv_wonder_keel_laying_yard: 国家船坞 - 铺龙骨礼
-    tv_wonder_keel_laying_yard_desc: 国家船坞的铺龙骨礼仪式分支。
+    tv_wonder_keel_laying_yard: '$tv_wonder_national_shipyard$'
+    tv_wonder_keel_laying_yard_desc: '$game_concept_tv_wonder_national_shipyard_desc$'
     tv_wonder_fleet_muster_yard: 国家船坞 - 舰队集结
     tv_wonder_fleet_muster_yard_desc: 国家船坞的舰队集结仪式分支。
     tv_wonder_admiralty_yard: 国家船坞 - 海军署船坞
@@ -10830,8 +10830,8 @@
     tv_wonder_star_fortress_city_ritual_annex_desc: 用于完成星型要塞城第二仪式分支的附属建筑。
     tv_wonder_star_fortress_city_desc: 尚未落成、但已作为完整工程保留下来的星型要塞城。
     STATIC_MODIFIER_NAME_tv_wonder_star_fortress_city_ritual_burden_modifier: 棱堡试验之耗
-    tv_wonder_bastion_trial_fortress: 星型要塞城 - 棱堡试验
-    tv_wonder_bastion_trial_fortress_desc: 星型要塞城的棱堡试验仪式分支。
+    tv_wonder_bastion_trial_fortress: '$tv_wonder_star_fortress_city$'
+    tv_wonder_bastion_trial_fortress_desc: '$game_concept_tv_wonder_star_fortress_city_desc$'
     tv_wonder_siege_games_fortress: 星型要塞城 - 围城演习
     tv_wonder_siege_games_fortress_desc: 星型要塞城的围城演习仪式分支。
     tv_wonder_arsenal_quarter_fortress: 星型要塞城 - 军械城区
@@ -10855,8 +10855,8 @@
     tv_wonder_great_wall_ritual_annex_desc: 用于完成长城第二仪式分支的附属建筑。
     tv_wonder_great_wall_desc: 尚未落成、但已作为完整工程保留下来的长城。
     STATIC_MODIFIER_NAME_tv_wonder_great_wall_ritual_burden_modifier: 集结粮饷
-    tv_wonder_frontier_muster_wall: 长城 - 边疆集结
-    tv_wonder_frontier_muster_wall_desc: 长城的边疆集结仪式分支。
+    tv_wonder_frontier_muster_wall: '$tv_wonder_great_wall$'
+    tv_wonder_frontier_muster_wall_desc: '$game_concept_tv_wonder_great_wall_desc$'
     tv_wonder_signal_fires_wall: 长城 - 烽火传警
     tv_wonder_signal_fires_wall_desc: 长城的烽火传警仪式分支。
     tv_wonder_wall_oath: 长城 - 长城誓言
@@ -10880,8 +10880,8 @@
     tv_wonder_giant_armory_ritual_annex_desc: 用于完成巨型军械库第二仪式分支的附属建筑。
     tv_wonder_giant_armory_desc: 尚未落成、但已作为完整工程保留下来的巨型军械库。
     STATIC_MODIFIER_NAME_tv_wonder_giant_armory_ritual_burden_modifier: 武备集结之耗
-    tv_wonder_muster_of_arms: 巨型军械库 - 武备集结
-    tv_wonder_muster_of_arms_desc: 巨型军械库的武备集结仪式分支。
+    tv_wonder_muster_of_arms: '$tv_wonder_giant_armory$'
+    tv_wonder_muster_of_arms_desc: '$game_concept_tv_wonder_giant_armory_desc$'
     tv_wonder_foundry_contracts: 巨型军械库 - 铸造契约
     tv_wonder_foundry_contracts_desc: 巨型军械库的铸造契约仪式分支。
     tv_wonder_master_armourers: 巨型军械库 - 大师甲匠
@@ -10905,8 +10905,8 @@
     tv_wonder_library_of_nation_ritual_annex_desc: 用于完成国家图书馆第二仪式分支的附属建筑。
     tv_wonder_library_of_nation_desc: 尚未落成、但已作为完整工程保留下来的国家图书馆。
     STATIC_MODIFIER_NAME_tv_wonder_library_of_nation_ritual_burden_modifier: 编目之资
-    tv_wonder_national_catalog_library: 国家图书馆 - 国家目录
-    tv_wonder_national_catalog_library_desc: 国家图书馆的国家目录仪式分支。
+    tv_wonder_national_catalog_library: '$tv_wonder_library_of_nation$'
+    tv_wonder_national_catalog_library_desc: '$game_concept_tv_wonder_library_of_nation_desc$'
     tv_wonder_copyists_endowment_library: 国家图书馆 - 抄写员基金
     tv_wonder_copyists_endowment_library_desc: 国家图书馆的抄写员基金仪式分支。
     tv_wonder_legal_deposit_library: 国家图书馆 - 法定缴存
@@ -10931,8 +10931,8 @@
     tv_wonder_large_canal_system_ritual_annex_desc: 用于完成大水渠第二仪式分支的附属建筑。
     tv_wonder_large_canal_system_desc: 尚未落成、但已作为完整工程保留下来的大水渠。
     STATIC_MODIFIER_NAME_tv_wonder_large_canal_system_ritual_burden_modifier: 水权之赋
-    tv_wonder_irrigation_canal_system: 大水渠 - 灌溉优先
-    tv_wonder_irrigation_canal_system_desc: 大水渠的灌溉优先仪式分支。
+    tv_wonder_irrigation_canal_system: '$tv_wonder_large_canal_system$'
+    tv_wonder_irrigation_canal_system_desc: '$game_concept_tv_wonder_large_canal_system_desc$'
     tv_wonder_grain_transport_canal_system: 大水渠 - 漕运优先
     tv_wonder_grain_transport_canal_system_desc: 大水渠的漕运优先仪式分支。
     tv_wonder_flood_control_canal_system: 大水渠 - 防洪优先
@@ -10957,8 +10957,8 @@
     tv_wonder_mountain_terrace_network_ritual_annex_desc: 用于完成山地梯田网络第二仪式分支的附属建筑。
     tv_wonder_mountain_terrace_network_desc: 尚未落成、但已作为完整工程保留下来的山地梯田网络。
     STATIC_MODIFIER_NAME_tv_wonder_mountain_terrace_network_ritual_burden_modifier: 梯田劳役
-    tv_wonder_grain_terraces: 山地梯田网络 - 粮食梯田
-    tv_wonder_grain_terraces_desc: 山地梯田网络的粮食梯田仪式分支。
+    tv_wonder_grain_terraces: '$tv_wonder_mountain_terrace_network$'
+    tv_wonder_grain_terraces_desc: '$game_concept_tv_wonder_mountain_terrace_network_desc$'
     tv_wonder_cash_crop_terraces: 山地梯田网络 - 经济作物梯田
     tv_wonder_cash_crop_terraces_desc: 山地梯田网络的经济作物梯田仪式分支。
     tv_wonder_sacred_mountain_terraces: 山地梯田网络 - 圣山梯田
@@ -10983,8 +10983,8 @@
     tv_wonder_giant_dam_project_ritual_annex_desc: 用于完成巨堤第二仪式分支的附属建筑。
     tv_wonder_giant_dam_project_desc: 尚未落成、但已作为完整工程保留下来的巨堤。
     STATIC_MODIFIER_NAME_tv_wonder_giant_dam_project_ritual_burden_modifier: 防洪徭役
-    tv_wonder_estuary_flood_dam: 巨堤 - 河口防洪
-    tv_wonder_estuary_flood_dam_desc: 巨堤的河口防洪仪式分支。
+    tv_wonder_estuary_flood_dam: '$tv_wonder_giant_dam_project$'
+    tv_wonder_estuary_flood_dam_desc: '$game_concept_tv_wonder_giant_dam_project_desc$'
     tv_wonder_marsh_reclamation_dam: 巨堤 - 沼泽开垦
     tv_wonder_marsh_reclamation_dam_desc: 巨堤的沼泽开垦仪式分支。
     tv_wonder_water_powered_workshops: 巨堤 - 水力驱动工坊
@@ -11009,8 +11009,8 @@
     tv_wonder_royal_granary_system_ritual_annex_desc: 用于完成皇家粮仓第二仪式分支的附属建筑。
     tv_wonder_royal_granary_system_desc: 尚未落成、但已作为完整工程保留下来的皇家粮仓。
     STATIC_MODIFIER_NAME_tv_wonder_royal_granary_system_ritual_burden_modifier: 平抑粮价之费
-    tv_wonder_grain_price_granaries: 皇家粮仓 - 平抑粮价
-    tv_wonder_grain_price_granaries_desc: 皇家粮仓的平抑粮价仪式分支。
+    tv_wonder_grain_price_granaries: '$tv_wonder_royal_granary_system$'
+    tv_wonder_grain_price_granaries_desc: '$game_concept_tv_wonder_royal_granary_system_desc$'
     tv_wonder_wartime_granaries: 皇家粮仓 - 战时储备
     tv_wonder_wartime_granaries_desc: 皇家粮仓的战时储备仪式分支。
     tv_wonder_disaster_relief_granaries: 皇家粮仓 - 赈灾
@@ -11035,8 +11035,8 @@
     tv_wonder_imperial_post_road_network_ritual_annex_desc: 用于完成帝国驿道网络第二仪式分支的附属建筑。
     tv_wonder_imperial_post_road_network_desc: 尚未落成、但已作为完整工程保留下来的帝国驿道网络。
     STATIC_MODIFIER_NAME_tv_wonder_imperial_post_road_network_ritual_burden_modifier: 驿道维护
-    tv_wonder_military_post_roads: 帝国驿道网络 - 军事驿道
-    tv_wonder_military_post_roads_desc: 帝国驿道网络的军事驿道仪式分支。
+    tv_wonder_military_post_roads: '$tv_wonder_imperial_post_road_network$'
+    tv_wonder_military_post_roads_desc: '$game_concept_tv_wonder_imperial_post_road_network_desc$'
     tv_wonder_trade_post_roads: 帝国驿道网络 - 商贸驿道
     tv_wonder_trade_post_roads_desc: 帝国驿道网络的商贸驿道仪式分支。
     tv_wonder_royal_tour_avenue: 帝国驿道网络 - 皇家巡游大道
@@ -11061,8 +11061,8 @@
     tv_wonder_canal_hub_city_ritual_annex_desc: 用于完成运河枢纽城第二仪式分支的附属建筑。
     tv_wonder_canal_hub_city_desc: 尚未落成、但已作为完整工程保留下来的运河枢纽城。
     STATIC_MODIFIER_NAME_tv_wonder_canal_hub_city_ritual_burden_modifier: 漕船过闸税
-    tv_wonder_grain_transport_hub: 运河枢纽城 - 漕运中心
-    tv_wonder_grain_transport_hub_desc: 运河枢纽城的漕运中心仪式分支。
+    tv_wonder_grain_transport_hub: '$tv_wonder_canal_hub_city$'
+    tv_wonder_grain_transport_hub_desc: '$game_concept_tv_wonder_canal_hub_city_desc$'
     tv_wonder_financial_warehouse_hub: 运河枢纽城 - 金融货栈
     tv_wonder_financial_warehouse_hub_desc: 运河枢纽城的金融货栈仪式分支。
     tv_wonder_industrial_workshop_belt: 运河枢纽城 - 工业工坊带
@@ -11087,8 +11087,8 @@
     tv_wonder_frontier_colonization_belt_ritual_annex_desc: 用于完成边疆垦殖带第二仪式分支的附属建筑。
     tv_wonder_frontier_colonization_belt_desc: 尚未落成、但已作为完整工程保留下来的边疆垦殖带。
     STATIC_MODIFIER_NAME_tv_wonder_frontier_colonization_belt_ritual_burden_modifier: 军屯垦拓之耗
-    tv_wonder_military_colony_belt: 边疆垦殖带 - 军屯殖民
-    tv_wonder_military_colony_belt_desc: 边疆垦殖带的军屯殖民仪式分支。
+    tv_wonder_military_colony_belt: '$tv_wonder_frontier_colonization_belt$'
+    tv_wonder_military_colony_belt_desc: '$game_concept_tv_wonder_frontier_colonization_belt_desc$'
     tv_wonder_settler_reclamation_belt: 边疆垦殖带 - 移民垦荒
     tv_wonder_settler_reclamation_belt_desc: 边疆垦殖带的移民垦荒仪式分支。
     tv_wonder_religious_colonization_belt: 边疆垦殖带 - 宗教拓殖
@@ -11113,8 +11113,8 @@
     tv_wonder_coastal_beacon_network_ritual_annex_desc: 用于完成海岸烽火网络第二仪式分支的附属建筑。
     tv_wonder_coastal_beacon_network_desc: 尚未落成、但已作为完整工程保留下来的海岸烽火网络。
     STATIC_MODIFIER_NAME_tv_wonder_coastal_beacon_network_ritual_burden_modifier: 烽燧薪火
-    tv_wonder_beacon_communication_network: 海岸烽火网络 - 烽火通讯
-    tv_wonder_beacon_communication_network_desc: 海岸烽火网络的烽火通讯仪式分支。
+    tv_wonder_beacon_communication_network: '$tv_wonder_coastal_beacon_network$'
+    tv_wonder_beacon_communication_network_desc: '$game_concept_tv_wonder_coastal_beacon_network_desc$'
     tv_wonder_coastal_battery_network: 海岸烽火网络 - 炮台防御
     tv_wonder_coastal_battery_network_desc: 海岸烽火网络的炮台防御仪式分支。
     tv_wonder_customs_patrol_network: 海岸烽火网络 - 海关巡查
@@ -11139,8 +11139,8 @@
     tv_wonder_knightly_fortress_order_ritual_annex_desc: 用于完成骑士要塞团第二仪式分支的附属建筑。
     tv_wonder_knightly_fortress_order_desc: 尚未落成、但已作为完整工程保留下来的骑士要塞团。
     STATIC_MODIFIER_NAME_tv_wonder_knightly_fortress_order_ritual_burden_modifier: 骑士团什一税
-    tv_wonder_crusader_knightly_order: 骑士要塞团 - 圣战骑士团
-    tv_wonder_crusader_knightly_order_desc: 骑士要塞团的圣战骑士团仪式分支。
+    tv_wonder_crusader_knightly_order: '$tv_wonder_knightly_fortress_order$'
+    tv_wonder_crusader_knightly_order_desc: '$game_concept_tv_wonder_knightly_fortress_order_desc$'
     tv_wonder_frontier_lord_order: 骑士要塞团 - 边疆领主团
     tv_wonder_frontier_lord_order_desc: 骑士要塞团的边疆领主团仪式分支。
     tv_wonder_mercenary_fortress_system: 骑士要塞团 - 雇佣军要塞
@@ -11165,8 +11165,8 @@
     tv_wonder_war_college_system_ritual_annex_desc: 用于完成战争学院第二仪式分支的附属建筑。
     tv_wonder_war_college_system_desc: 尚未落成、但已作为完整工程保留下来的战争学院。
     STATIC_MODIFIER_NAME_tv_wonder_war_college_system_ritual_burden_modifier: 战术教习之费
-    tv_wonder_firearms_tactics_college: 战争学院 - 火器战术
-    tv_wonder_firearms_tactics_college_desc: 战争学院的火器战术仪式分支。
+    tv_wonder_firearms_tactics_college: '$tv_wonder_war_college_system$'
+    tv_wonder_firearms_tactics_college_desc: '$game_concept_tv_wonder_war_college_system_desc$'
     tv_wonder_cavalry_tradition_college: 战争学院 - 骑兵传统
     tv_wonder_cavalry_tradition_college_desc: 战争学院的骑兵传统仪式分支。
     tv_wonder_naval_command_college: 战争学院 - 海军指挥
@@ -11191,8 +11191,8 @@
     tv_wonder_great_clock_bell_system_ritual_annex_desc: 用于完成巨钟报时塔第二仪式分支的附属建筑。
     tv_wonder_great_clock_bell_system_desc: 尚未落成、但已作为完整工程保留下来的巨钟报时塔。
     STATIC_MODIFIER_NAME_tv_wonder_great_clock_bell_system_ritual_burden_modifier: 报时钟楼维护
-    tv_wonder_worship_clock_bells: 巨钟报时塔 - 礼拜报时
-    tv_wonder_worship_clock_bells_desc: 巨钟报时塔的礼拜报时仪式分支。
+    tv_wonder_worship_clock_bells: '$tv_wonder_great_clock_bell_system$'
+    tv_wonder_worship_clock_bells_desc: '$game_concept_tv_wonder_great_clock_bell_system_desc$'
     tv_wonder_curfew_clock_bells: 巨钟报时塔 - 城市宵禁
     tv_wonder_curfew_clock_bells_desc: 巨钟报时塔的城市宵禁仪式分支。
     tv_wonder_astronomical_calendar_bells: 巨钟报时塔 - 天文历法
@@ -11217,8 +11217,8 @@
     tv_wonder_royal_art_district_ritual_annex_desc: 用于完成皇家艺术园区第二仪式分支的附属建筑。
     tv_wonder_royal_art_district_desc: 尚未落成、但已作为完整工程保留下来的皇家艺术园区。
     STATIC_MODIFIER_NAME_tv_wonder_royal_art_district_ritual_burden_modifier: 宫廷艺匠供养
-    tv_wonder_court_art_district: 皇家艺术园区 - 宫廷艺术
-    tv_wonder_court_art_district_desc: 皇家艺术园区的宫廷艺术仪式分支。
+    tv_wonder_court_art_district: '$tv_wonder_royal_art_district$'
+    tv_wonder_court_art_district_desc: '$game_concept_tv_wonder_royal_art_district_desc$'
     tv_wonder_folk_art_district: 皇家艺术园区 - 民间艺术
     tv_wonder_folk_art_district_desc: 皇家艺术园区的民间艺术仪式分支。
     tv_wonder_foreign_style_district: 皇家艺术园区 - 外来风格融合
@@ -11243,8 +11243,8 @@
     tv_wonder_grand_theater_festival_district_ritual_annex_desc: 用于完成大剧场与庆典区第二仪式分支的附属建筑。
     tv_wonder_grand_theater_festival_district_desc: 尚未落成、但已作为完整工程保留下来的大剧场与庆典区。
     STATIC_MODIFIER_NAME_tv_wonder_grand_theater_festival_district_ritual_burden_modifier: 宫廷戏台之资
-    tv_wonder_court_theater: 大剧场与庆典区 - 宫廷戏剧
-    tv_wonder_court_theater_desc: 大剧场与庆典区的宫廷戏剧仪式分支。
+    tv_wonder_court_theater: '$tv_wonder_grand_theater_festival_district$'
+    tv_wonder_court_theater_desc: '$game_concept_tv_wonder_grand_theater_festival_district_desc$'
     tv_wonder_religious_theater: 大剧场与庆典区 - 宗教戏剧
     tv_wonder_religious_theater_desc: 大剧场与庆典区的宗教戏剧仪式分支。
     tv_wonder_popular_festival_ground: 大剧场与庆典区 - 群众节庆
@@ -11269,8 +11269,8 @@
     tv_wonder_world_embassy_quarter_ritual_annex_desc: 用于完成万国使馆区第二仪式分支的附属建筑。
     tv_wonder_world_embassy_quarter_desc: 尚未落成、但已作为完整工程保留下来的万国使馆区。
     STATIC_MODIFIER_NAME_tv_wonder_world_embassy_quarter_ritual_burden_modifier: 商贸使团供给
-    tv_wonder_trade_diplomacy_embassies: 万国使馆区 - 商贸外交
-    tv_wonder_trade_diplomacy_embassies_desc: 万国使馆区的商贸外交仪式分支。
+    tv_wonder_trade_diplomacy_embassies: '$tv_wonder_world_embassy_quarter$'
+    tv_wonder_trade_diplomacy_embassies_desc: '$game_concept_tv_wonder_world_embassy_quarter_desc$'
     tv_wonder_intelligence_embassies: 万国使馆区 - 情报外交
     tv_wonder_intelligence_embassies_desc: 万国使馆区的情报外交仪式分支。
     tv_wonder_religious_diplomacy_embassies: 万国使馆区 - 宗教外交
@@ -11295,8 +11295,8 @@
     tv_wonder_law_code_stele_project_ritual_annex_desc: 用于完成法典石碑工程第二仪式分支的附属建筑。
     tv_wonder_law_code_stele_project_desc: 尚未落成、但已作为完整工程保留下来的法典石碑工程。
     STATIC_MODIFIER_NAME_tv_wonder_law_code_stele_project_ritual_burden_modifier: 法典刻石之费
-    tv_wonder_religious_law_steles: 法典石碑工程 - 宗教法
-    tv_wonder_religious_law_steles_desc: 法典石碑工程的宗教法仪式分支。
+    tv_wonder_religious_law_steles: '$tv_wonder_law_code_stele_project$'
+    tv_wonder_religious_law_steles_desc: '$game_concept_tv_wonder_law_code_stele_project_desc$'
     tv_wonder_written_law_steles: 法典石碑工程 - 成文法
     tv_wonder_written_law_steles_desc: 法典石碑工程的成文法仪式分支。
     tv_wonder_imperial_edict_steles: 法典石碑工程 - 皇权敕令
@@ -11321,8 +11321,8 @@
     tv_wonder_world_market_ritual_annex_desc: 用于完成万国大市场第二仪式分支的附属建筑。
     tv_wonder_world_market_desc: 尚未落成、但已作为完整工程保留下来的万国大市场。
     STATIC_MODIFIER_NAME_tv_wonder_world_market_ritual_burden_modifier: 珍货关税
-    tv_wonder_luxury_goods_market: 万国大市场 - 奢侈品贸易
-    tv_wonder_luxury_goods_market_desc: 万国大市场的奢侈品贸易仪式分支。
+    tv_wonder_luxury_goods_market: '$tv_wonder_world_market$'
+    tv_wonder_luxury_goods_market_desc: '$game_concept_tv_wonder_world_market_desc$'
     tv_wonder_grain_market: 万国大市场 - 粮食贸易
     tv_wonder_grain_market_desc: 万国大市场的粮食贸易仪式分支。
     tv_wonder_entrepot_market: 万国大市场 - 国际转口
@@ -11347,8 +11347,8 @@
     tv_wonder_royal_mint_system_ritual_annex_desc: 用于完成皇家铸币厂第二仪式分支的附属建筑。
     tv_wonder_royal_mint_system_desc: 尚未落成、但已作为完整工程保留下来的皇家铸币厂。
     STATIC_MODIFIER_NAME_tv_wonder_royal_mint_system_ritual_burden_modifier: 本位维持之费
-    tv_wonder_silver_gold_standard_mint: 皇家铸币厂 - 金银本位
-    tv_wonder_silver_gold_standard_mint_desc: 皇家铸币厂的金银本位仪式分支。
+    tv_wonder_silver_gold_standard_mint: '$tv_wonder_royal_mint_system$'
+    tv_wonder_silver_gold_standard_mint_desc: '$game_concept_tv_wonder_royal_mint_system_desc$'
     tv_wonder_copper_coinage_mint: 皇家铸币厂 - 铜币流通
     tv_wonder_copper_coinage_mint_desc: 皇家铸币厂的铜币流通仪式分支。
     tv_wonder_international_settlement_mint: 皇家铸币厂 - 国际结算
@@ -11373,8 +11373,8 @@
     tv_wonder_national_bank_ritual_annex_desc: 用于完成国家银行第二仪式分支的附属建筑。
     tv_wonder_national_bank_desc: 尚未落成、但已作为完整工程保留下来的国家银行。
     STATIC_MODIFIER_NAME_tv_wonder_national_bank_ritual_burden_modifier: 公债利息
-    tv_wonder_public_credit_bank: 国家银行 - 公共信用认购
-    tv_wonder_public_credit_bank_desc: 国家银行的公共信用认购仪式分支。
+    tv_wonder_public_credit_bank: '$tv_wonder_national_bank$'
+    tv_wonder_public_credit_bank_desc: '$game_concept_tv_wonder_national_bank_desc$'
     tv_wonder_state_debt_office: 国家银行 - 国债管理署
     tv_wonder_state_debt_office_desc: 国家银行的国债管理署仪式分支。
     tv_wonder_merchant_clearing_bank: 国家银行 - 商人清算所
@@ -11399,8 +11399,8 @@
     tv_wonder_guild_alliance_ritual_annex_desc: 用于完成商业行会大厅第二仪式分支的附属建筑。
     tv_wonder_guild_alliance_desc: 尚未落成、但已作为完整工程保留下来的商业行会大厅。
     STATIC_MODIFIER_NAME_tv_wonder_guild_alliance_ritual_burden_modifier: 联盟会费
-    tv_wonder_artisan_guild_alliance: 商业行会大厅 - 手工业联盟
-    tv_wonder_artisan_guild_alliance_desc: 商业行会大厅的手工业联盟仪式分支。
+    tv_wonder_artisan_guild_alliance: '$tv_wonder_guild_alliance$'
+    tv_wonder_artisan_guild_alliance_desc: '$game_concept_tv_wonder_guild_alliance_desc$'
     tv_wonder_overseas_merchant_guilds: 商业行会大厅 - 远洋商帮
     tv_wonder_overseas_merchant_guilds_desc: 商业行会大厅的远洋商帮仪式分支。
     tv_wonder_financial_guilds: 商业行会大厅 - 金融同业
@@ -11425,8 +11425,8 @@
     tv_wonder_maritime_trade_station_network_ritual_annex_desc: 用于完成海上贸易站网络第二仪式分支的附属建筑。
     tv_wonder_maritime_trade_station_network_desc: 尚未落成、但已作为完整工程保留下来的海上贸易站网络。
     STATIC_MODIFIER_NAME_tv_wonder_maritime_trade_station_network_ritual_burden_modifier: 香料船税
-    tv_wonder_spice_trade_stations: 海上贸易站网络 - 香料贸易
-    tv_wonder_spice_trade_stations_desc: 海上贸易站网络的香料贸易仪式分支。
+    tv_wonder_spice_trade_stations: '$tv_wonder_maritime_trade_station_network$'
+    tv_wonder_spice_trade_stations_desc: '$game_concept_tv_wonder_maritime_trade_station_network_desc$'
     tv_wonder_slave_trade_stations: 海上贸易站网络 - 奴隶贸易
     tv_wonder_slave_trade_stations_desc: 海上贸易站网络的奴隶贸易仪式分支。
     tv_wonder_colonial_supply_stations: 海上贸易站网络 - 殖民补给
@@ -11451,8 +11451,8 @@
     tv_wonder_giant_workshop_complex_ritual_annex_desc: 用于完成巨型工坊第二仪式分支的附属建筑。
     tv_wonder_giant_workshop_complex_desc: 尚未落成、但已作为完整工程保留下来的巨型工坊。
     STATIC_MODIFIER_NAME_tv_wonder_giant_workshop_complex_ritual_burden_modifier: 织机运营之费
-    tv_wonder_textile_workshop_complex: 巨型工坊 - 纺织制造
-    tv_wonder_textile_workshop_complex_desc: 巨型工坊的纺织制造仪式分支。
+    tv_wonder_textile_workshop_complex: '$tv_wonder_giant_workshop_complex$'
+    tv_wonder_textile_workshop_complex_desc: '$game_concept_tv_wonder_giant_workshop_complex_desc$'
     tv_wonder_military_workshop_complex: 巨型工坊 - 军工制造
     tv_wonder_military_workshop_complex_desc: 巨型工坊的军工制造仪式分支。
     tv_wonder_luxury_craft_workshop_complex: 巨型工坊 - 奢侈品工艺
@@ -11477,8 +11477,8 @@
     tv_wonder_world_monument_group_ritual_annex_desc: 用于完成纪念碑群第二仪式分支的附属建筑。
     tv_wonder_world_monument_group_desc: 尚未落成、但已作为完整工程保留下来的纪念碑群。
     STATIC_MODIFIER_NAME_tv_wonder_world_monument_group_ritual_burden_modifier: 纪念碑维护
-    tv_wonder_conquest_monument_group: 纪念碑群 - 征服纪念
-    tv_wonder_conquest_monument_group_desc: 纪念碑群的征服纪念仪式分支。
+    tv_wonder_conquest_monument_group: '$tv_wonder_world_monument_group$'
+    tv_wonder_conquest_monument_group_desc: '$game_concept_tv_wonder_world_monument_group_desc$'
     tv_wonder_national_unity_monument_group: 纪念碑群 - 民族统一
     tv_wonder_national_unity_monument_group_desc: 纪念碑群的民族统一仪式分支。
     tv_wonder_world_exposition_monument_group: 纪念碑群 - 世界博览
@@ -11503,8 +11503,8 @@
     tv_wonder_city_expansion_project_ritual_annex_desc: 用于完成城市扩建工程第二仪式分支的附属建筑。
     tv_wonder_city_expansion_project_desc: 尚未落成、但已作为完整工程保留下来的城市扩建工程。
     STATIC_MODIFIER_NAME_tv_wonder_city_expansion_project_ritual_burden_modifier: 宪章颁行之费
-    tv_wonder_city_charter: 城市扩建工程 - 城市宪章
-    tv_wonder_city_charter_desc: 城市扩建工程的城市宪章仪式分支。
+    tv_wonder_city_charter: '$tv_wonder_city_expansion_project$'
+    tv_wonder_city_charter_desc: '$game_concept_tv_wonder_city_expansion_project_desc$'
     tv_wonder_civic_grid: 城市扩建工程 - 市政方格网
     tv_wonder_civic_grid_desc: 城市扩建工程的市政方格网仪式分支。
     tv_wonder_urban_renewal: 城市扩建工程 - 城区更新
@@ -12865,8 +12865,8 @@
     tv_wonder_city_great_tower_ritual_annex_desc: 用于完成城市巨塔第二仪式分支的附属建筑。
     tv_wonder_city_great_tower_desc: 尚未落成、但已作为完整工程保留下来的城市巨塔。
     STATIC_MODIFIER_NAME_tv_wonder_city_great_tower_ritual_burden_modifier: 瞭望塔维护
-    tv_wonder_civic_watchtower: 城市巨塔 - 市政瞭望塔
-    tv_wonder_civic_watchtower_desc: 城市巨塔的市政瞭望塔分支。
+    tv_wonder_civic_watchtower: '$tv_wonder_city_great_tower$'
+    tv_wonder_civic_watchtower_desc: '$game_concept_tv_wonder_city_great_tower_desc$'
     tv_engineering_department.500.d_city_great_tower_1: 城市守夜队以塔为岗，敲警钟的权力从领主城堡转到了市议会手中。
     tv_wonder_bell_campanile: 城市巨塔 - 钟楼高塔
     tv_wonder_bell_campanile_desc: 城市巨塔的钟楼高塔分支。
@@ -12895,8 +12895,8 @@
     tv_wonder_great_sculpture_group_ritual_annex_desc: 用于完成大雕塑群第二仪式分支的附属建筑。
     tv_wonder_great_sculpture_group_desc: 尚未落成、但已作为完整工程保留下来的大雕塑群。
     STATIC_MODIFIER_NAME_tv_wonder_great_sculpture_group_ritual_burden_modifier: 雕塑庭之费
-    tv_wonder_royal_sculpture_yard: 大雕塑群 - 王家雕塑庭
-    tv_wonder_royal_sculpture_yard_desc: 大雕塑群的王家雕塑庭分支。
+    tv_wonder_royal_sculpture_yard: '$tv_wonder_great_sculpture_group$'
+    tv_wonder_royal_sculpture_yard_desc: '$game_concept_tv_wonder_great_sculpture_group_desc$'
     tv_engineering_department.500.d_great_sculpture_group_1: 统治者和王族的巨像在雕塑庭揭幕，外国使节在觐见前被带来观看。
     tv_wonder_pilgrim_statue_garden: 大雕塑群 - 朝圣雕像园
     tv_wonder_pilgrim_statue_garden_desc: 大雕塑群的朝圣雕像园分支。
@@ -12925,8 +12925,8 @@
     tv_wonder_coastal_defense_cannon_ritual_annex_desc: 用于完成海防大炮第二仪式分支的附属建筑。
     tv_wonder_coastal_defense_cannon_desc: 尚未落成、但已作为完整工程保留下来的海防大炮。
     STATIC_MODIFIER_NAME_tv_wonder_coastal_defense_cannon_ritual_burden_modifier: 炮台火药之耗
-    tv_wonder_strait_battery_cannon: 海防大炮 - 海峡炮台
-    tv_wonder_strait_battery_cannon_desc: 海防大炮的海峡炮台分支。
+    tv_wonder_strait_battery_cannon: '$tv_wonder_coastal_defense_cannon$'
+    tv_wonder_strait_battery_cannon_desc: '$game_concept_tv_wonder_coastal_defense_cannon_desc$'
     tv_engineering_department.500.d_coastal_defense_cannon_1: 大炮瞄准海峡，外国船只奉命降帆、缴纳通行费后方可通过。
     tv_wonder_harbor_chain_cannon: 海防大炮 - 港链炮台
     tv_wonder_harbor_chain_cannon_desc: 海防大炮的港链炮台分支。
@@ -12955,8 +12955,8 @@
     tv_wonder_naval_school_ritual_annex_desc: 用于完成海军学校第二仪式分支的附属建筑。
     tv_wonder_naval_school_desc: 尚未落成、但已作为完整工程保留下来的海军学校。
     STATIC_MODIFIER_NAME_tv_wonder_naval_school_ritual_burden_modifier: 航法学校束脩
-    tv_wonder_admiralty_navigation_school: 海军学校 - 海军署航法学校
-    tv_wonder_admiralty_navigation_school_desc: 海军学校的海军署航法学校分支。
+    tv_wonder_admiralty_navigation_school: '$tv_wonder_naval_school$'
+    tv_wonder_admiralty_navigation_school_desc: '$game_concept_tv_wonder_naval_school_desc$'
     tv_engineering_department.500.d_naval_school_1: 学员入学学习航海、炮术和船艺，首届学员登上海军署自己的训练船出海。
     tv_wonder_pilotage_chart_house: 海军学校 - 领航海图馆
     tv_wonder_pilotage_chart_house_desc: 海军学校的领航海图馆分支。
@@ -13385,8 +13385,8 @@
     tv_wonder_summer_palace_ritual_annex_desc: 用于完成夏宫第二仪式分支的附属建筑。
     tv_wonder_summer_palace_desc: 尚未落成、但已作为完整工程保留下来的夏宫。
     STATIC_MODIFIER_NAME_tv_wonder_summer_palace_ritual_burden_modifier: 离宫供帐
-    tv_wonder_royal_retreat_palace: 夏宫 - 王家离宫朝会
-    tv_wonder_royal_retreat_palace_desc: 夏宫的王家离宫朝会分支。
+    tv_wonder_royal_retreat_palace: '$tv_wonder_summer_palace$'
+    tv_wonder_royal_retreat_palace_desc: '$game_concept_tv_wonder_summer_palace_desc$'
     tv_engineering_department.500.d_summer_palace_1: 宫廷移驻离宫度过整个季节，御前会议也在此召开，各地总督须赶来离宫领受命令。
     tv_wonder_garden_court_palace: 夏宫 - 园林宫廷
     tv_wonder_garden_court_palace_desc: 夏宫的园林宫廷分支。
@@ -13947,8 +13947,8 @@
     tv_wonder_pirate_port_desc: 尚未落成、但已作为完整工程保留下来的海盗港。
     STATIC_MODIFIER_NAME_tv_wonder_pirate_port_ritual_burden_modifier: 私掠港贡金
     STATIC_MODIFIER_NAME_tv_wonder_pirate_port_ritual_blessing_modifier: 私掠庇护长存
-    tv_wonder_privateer_haven: 海盗港 - 私掠船庇护所
-    tv_wonder_privateer_haven_desc: 海盗港的私掠船庇护所分支。
+    tv_wonder_privateer_haven: '$tv_wonder_pirate_port$'
+    tv_wonder_privateer_haven_desc: '$game_concept_tv_wonder_pirate_port_desc$'
     tv_engineering_department.500.d_pirate_port_1: 船长们在港务处领取私掠许可证，从外国船只夺得的每份战利品都要分一成给王室。
     tv_wonder_harbor_redoubt: 海盗港 - 港湾堡垒
     tv_wonder_harbor_redoubt_desc: 海盗港的港湾堡垒分支。
@@ -14755,8 +14755,8 @@
     tv_wonder_grand_garden_complex_ritual_annex_desc: 用于完成园林群第二仪式分支的附属建筑。
     STATIC_MODIFIER_NAME_tv_wonder_grand_garden_complex_ritual_burden_modifier: 园林营造供费
     STATIC_MODIFIER_NAME_tv_wonder_grand_garden_complex_ritual_blessing_modifier: 山水园林赞助
-    tv_wonder_royal_pleasure_gardens: 园林群 - 王家游赏园
-    tv_wonder_royal_pleasure_gardens_desc: 园林群的王家游赏园仪式分支。
+    tv_wonder_royal_pleasure_gardens: '$tv_wonder_grand_garden_complex$'
+    tv_wonder_royal_pleasure_gardens_desc: '$game_concept_tv_wonder_grand_garden_complex_desc$'
     tv_engineering_department.500.d_grand_garden_complex_1: 园林向贵族开放一季，举行狩猎、假面舞会和散步游园，按爵位分配席次。
     tv_wonder_scholars_landscape_garden: 园林群 - 文士山水园
     tv_wonder_scholars_landscape_garden_desc: 园林群的文士山水园仪式分支。
@@ -14786,8 +14786,8 @@
     tv_wonder_state_examination_complex_ritual_annex_desc: 用于完成国家考试院第二仪式分支的附属建筑。
     STATIC_MODIFIER_NAME_tv_wonder_state_examination_complex_ritual_burden_modifier: 贡试季供费
     STATIC_MODIFIER_NAME_tv_wonder_state_examination_complex_ritual_blessing_modifier: 铨选名册秩序
-    tv_wonder_classics_examination_yard: 国家考试院 - 经义贡试院
-    tv_wonder_classics_examination_yard_desc: 国家考试院的经义贡试院仪式分支。
+    tv_wonder_classics_examination_yard: '$tv_wonder_state_examination_complex$'
+    tv_wonder_classics_examination_yard_desc: '$game_concept_tv_wonder_state_examination_complex_desc$'
     tv_engineering_department.500.d_state_examination_complex_1: 考生被锁进号舍三天，就经典作文，及第者的名字张贴在贡院门前。
     tv_wonder_open_merit_hall: 国家考试院 - 公选取士堂
     tv_wonder_open_merit_hall_desc: 国家考试院的公选取士堂仪式分支。

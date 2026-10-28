@@ -9487,37 +9487,37 @@ tv_wonder_mechanics_clear_location_display_state_effect = {
 	remove_variable = tv_wonder_map_has_potential_unique
 	set_variable = { name = tv_wonder_tooltip_overflow_count value = 0 }
 	remove_variable = tv_wonder_display_slot_1_id
-	remove_variable = tv_wonder_display_slot_1_level
-	remove_variable = tv_wonder_display_slot_1_ritual_style
-	remove_variable = tv_wonder_display_slot_1_ritual_completed
+	set_variable = { name = tv_wonder_display_slot_1_level value = 0 }
+	set_variable = { name = tv_wonder_display_slot_1_ritual_style value = 0 }
+	set_variable = { name = tv_wonder_display_slot_1_ritual_completed value = 0 }
 	remove_variable = tv_wonder_display_slot_2_id
-	remove_variable = tv_wonder_display_slot_2_level
-	remove_variable = tv_wonder_display_slot_2_ritual_style
-	remove_variable = tv_wonder_display_slot_2_ritual_completed
+	set_variable = { name = tv_wonder_display_slot_2_level value = 0 }
+	set_variable = { name = tv_wonder_display_slot_2_ritual_style value = 0 }
+	set_variable = { name = tv_wonder_display_slot_2_ritual_completed value = 0 }
 	remove_variable = tv_wonder_display_slot_3_id
-	remove_variable = tv_wonder_display_slot_3_level
-	remove_variable = tv_wonder_display_slot_3_ritual_style
-	remove_variable = tv_wonder_display_slot_3_ritual_completed
+	set_variable = { name = tv_wonder_display_slot_3_level value = 0 }
+	set_variable = { name = tv_wonder_display_slot_3_ritual_style value = 0 }
+	set_variable = { name = tv_wonder_display_slot_3_ritual_completed value = 0 }
 	remove_variable = tv_wonder_tooltip_slot_1_id
-	remove_variable = tv_wonder_tooltip_slot_1_level
-	remove_variable = tv_wonder_tooltip_slot_1_ritual_style
-	remove_variable = tv_wonder_tooltip_slot_1_ritual_completed
+	set_variable = { name = tv_wonder_tooltip_slot_1_level value = 0 }
+	set_variable = { name = tv_wonder_tooltip_slot_1_ritual_style value = 0 }
+	set_variable = { name = tv_wonder_tooltip_slot_1_ritual_completed value = 0 }
 	remove_variable = tv_wonder_tooltip_slot_2_id
-	remove_variable = tv_wonder_tooltip_slot_2_level
-	remove_variable = tv_wonder_tooltip_slot_2_ritual_style
-	remove_variable = tv_wonder_tooltip_slot_2_ritual_completed
+	set_variable = { name = tv_wonder_tooltip_slot_2_level value = 0 }
+	set_variable = { name = tv_wonder_tooltip_slot_2_ritual_style value = 0 }
+	set_variable = { name = tv_wonder_tooltip_slot_2_ritual_completed value = 0 }
 	remove_variable = tv_wonder_tooltip_slot_3_id
-	remove_variable = tv_wonder_tooltip_slot_3_level
-	remove_variable = tv_wonder_tooltip_slot_3_ritual_style
-	remove_variable = tv_wonder_tooltip_slot_3_ritual_completed
+	set_variable = { name = tv_wonder_tooltip_slot_3_level value = 0 }
+	set_variable = { name = tv_wonder_tooltip_slot_3_ritual_style value = 0 }
+	set_variable = { name = tv_wonder_tooltip_slot_3_ritual_completed value = 0 }
 	remove_variable = tv_wonder_tooltip_slot_4_id
-	remove_variable = tv_wonder_tooltip_slot_4_level
-	remove_variable = tv_wonder_tooltip_slot_4_ritual_style
-	remove_variable = tv_wonder_tooltip_slot_4_ritual_completed
+	set_variable = { name = tv_wonder_tooltip_slot_4_level value = 0 }
+	set_variable = { name = tv_wonder_tooltip_slot_4_ritual_style value = 0 }
+	set_variable = { name = tv_wonder_tooltip_slot_4_ritual_completed value = 0 }
 	remove_variable = tv_wonder_tooltip_slot_5_id
-	remove_variable = tv_wonder_tooltip_slot_5_level
-	remove_variable = tv_wonder_tooltip_slot_5_ritual_style
-	remove_variable = tv_wonder_tooltip_slot_5_ritual_completed
+	set_variable = { name = tv_wonder_tooltip_slot_5_level value = 0 }
+	set_variable = { name = tv_wonder_tooltip_slot_5_ritual_style value = 0 }
+	set_variable = { name = tv_wonder_tooltip_slot_5_ritual_completed value = 0 }
 }
 
 tv_wonder_mechanics_refresh_location_display_state_effect = {

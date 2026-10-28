@@ -33,6 +33,42 @@ DATA_REL = (
     ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui"
 )
 T = "\t"
+UI_SCALE = 0.75
+
+
+def scale_gui_layout(gui: str) -> str:
+    """Emit smaller pixel bounds/fonts for our widgets, leaving bindings intact.
+
+    Quoted strings and comments are consumed unchanged before matching layout
+    properties. This must never scale wonder ids, levels, colors or expressions.
+    Percentage dimensions and the -1 auto-size sentinel retain their meaning.
+    """
+    pattern = re.compile(
+        r'"(?:\\.|[^"\\])*"|\#[^\n]*|'
+        r'\b(?P<property>size|minimumsize|maximumsize|position|margin(?:_left|_right|_top|_bottom)?|'
+        r'spacing|max_width|min_width|fontsize(?:_min)?)'
+        r'(?P<equals>\s*=\s*)'
+        r'(?P<value>\{\s*-?\d+(?:\.\d+)?%?(?:\s+-?\d+(?:\.\d+)?%?)*\s*\}|-?\d+(?:\.\d+)?)'
+    )
+
+    def replace(match: re.Match) -> str:
+        prop = match['property']
+        if prop is None:
+            return match[0]
+
+        def number(token: re.Match) -> str:
+            value = token[0]
+            if value.endswith('%') or (value == '-1' and prop in ('size', 'minimumsize', 'maximumsize')):
+                return value
+            scaled = float(value) * UI_SCALE
+            if prop.startswith('fontsize'):
+                scaled = max(1, int(scaled))
+            return f'{scaled:g}'
+
+        value = re.sub(r'-?\d+(?:\.\d+)?%?', number, match['value'])
+        return prop + match['equals'] + value
+
+    return pattern.sub(replace, gui)
 
 OVERFLOW_VAR = "LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_overflow_count')"
 LOCATION_SCOPE = "LocationView.GetLocation.MakeScope.Self"
@@ -41,18 +77,23 @@ IMAGE_CONCEPT_PREFIX = "tv_wonder_display_image_"
 FULL_IMAGE_CONCEPT_PREFIX = "tv_wonder_display_full_image_"
 TOOLTIP_SLOT_MAX = 5
 # A separate button beside the vanilla queue keeps foreign wonders inspectable.
-MENU_SELECTION_VAR = "tv_location_wonder_detail"
 MENU_OPEN_VAR = "tv_location_wonders_open"
-MENU_MAX_HEIGHT = 650
-PANEL_TEXT_HEIGHT = 14
-PANEL_TEXT_FONT_SIZE = 14
+MENU_MAX_HEIGHT = 820
+CARD_SPACING = 4
+RITUAL_HEADER_HEIGHT = 48
+RITUAL_GROUP_WIDTH = 224
+MENU_WIDTH = 300 + CARD_SPACING + RITUAL_GROUP_WIDTH
+PANEL_TEXT_HEIGHT = 24
+PANEL_TEXT_FONT_SIZE = 18
 PANEL_TEXT_MARGIN_X = 5
 PANEL_TEXT_MARGIN_Y = 3
 TOOLTIP_EFFECT_COLUMN_WIDTH = 462
 TOOLTIP_IMAGE_WIDTH = 300
 TOOLTIP_IMAGE_HEIGHT = 200
-TOOLTIP_IMAGE_OVERLAY_HEIGHT = 24
+TOOLTIP_IMAGE_OVERLAY_HEIGHT = 32
 TOOLTIP_IMAGE_NAME_WIDTH = 205
+# 48 displayed pixels at UI_SCALE, matching the medallion asset design range.
+LEVEL_MEDALLION_SIZE = 64
 TOOLTIP_EFFECT_MARGIN_X = 8
 TOOLTIP_MODIFIER_COLUMN_SPACING = 8
 # Match Engineering Department suitability columns: 444 = 218 + 8 + 218.
@@ -108,10 +149,6 @@ def slot_ritual_style_var(slot_type: str, slot: int) -> str:
     return compact_slot_var(slot, "ritual_style") if slot_type == "compact" else tooltip_slot_var(slot, "ritual_style")
 
 
-def slot_ritual_completed_var(slot_type: str, slot: int) -> str:
-    return compact_slot_var(slot, "ritual_completed") if slot_type == "compact" else tooltip_slot_var(slot, "ritual_completed")
-
-
 def fixed_point_to_int_string(var_expr: str) -> str:
     return f"ToString_int32(FixedPointToInt({var_expr}.GetValue))"
 
@@ -124,66 +161,29 @@ def slot_level_string(slot_type: str, slot: int) -> str:
     return fixed_point_to_int_string(slot_level_var(slot_type, slot))
 
 
-def slot_ritual_style_string(slot_type: str, slot: int) -> str:
-    return fixed_point_to_int_string(slot_ritual_style_var(slot_type, slot))
-
-
 def slot_display_concept_expr(slot_type: str, slot: int) -> str:
     return f"Concatenate('{DISPLAY_CONCEPT_PREFIX}', {slot_id_string(slot_type, slot)})"
 
 
 def var_enabled_expr(var_expr: str) -> str:
-    return f"And({var_expr}.IsSet, Not(EqualTo_CFixedPoint({var_expr}.GetValue, '(CFixedPoint)0.0')))"
+    return f"Not(EqualTo_CFixedPoint({var_expr}.GetValue, '(CFixedPoint)0.0'))"
 
 
 def slot_has_id_expr(slot_type: str, slot: int) -> str:
     return f"{slot_id_var(slot_type, slot)}.IsSet"
 
 
-def slot_has_payload_expr(slot_type: str, slot: int) -> str:
+def slot_building_type_expr(slot_type: str, slot: int) -> str:
+    # The existing index stores building_type scopes, so promote the map value
+    # directly. No per-wonder localization adapter or raw-key recovery is needed.
     return (
-        f"And({slot_id_var(slot_type, slot)}.IsSet, "
-        f"And({slot_level_var(slot_type, slot)}.IsSet, "
-        f"And({slot_ritual_style_var(slot_type, slot)}.IsSet, {slot_ritual_completed_var(slot_type, slot)}.IsSet)))"
-    )
-
-
-def slot_level_is_expr(slot_type: str, slot: int, level: int) -> str:
-    level_var = slot_level_var(slot_type, slot)
-    return f"And({level_var}.IsSet, EqualTo_CFixedPoint({level_var}.GetValue, '(CFixedPoint){level}.0'))"
-
-
-def slot_has_base_effect_payload_expr(slot_type: str, slot: int) -> str:
-    return (
-        f"And3({slot_has_payload_expr(slot_type, slot)}, "
-        f"Not({slot_level_is_expr(slot_type, slot, 0)}), "
-        f"Not(EqualTo_CFixedPoint({slot_ritual_style_var(slot_type, slot)}.GetValue, '(CFixedPoint)-1.0')))"
-    )
-
-
-def slot_no_effect_payload_expr(slot_type: str, slot: int) -> str:
-    return (
-        f"And({slot_has_payload_expr(slot_type, slot)}, "
-        f"{slot_level_is_expr(slot_type, slot, 0)})"
-    )
-
-
-def slot_has_ritual_effect_payload_expr(slot_type: str, slot: int) -> str:
-    return (
-        f"And({slot_has_base_effect_payload_expr(slot_type, slot)}, "
-        f"{var_enabled_expr(slot_ritual_completed_var(slot_type, slot))})"
-    )
-
-
-def slot_ritual_no_effect_payload_expr(slot_type: str, slot: int) -> str:
-    return (
-        f"And({slot_has_base_effect_payload_expr(slot_type, slot)}, "
-        f"Not({var_enabled_expr(slot_ritual_completed_var(slot_type, slot))}))"
+        "GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', "
+        f"MakeScopeValue({slot_id_var(slot_type, slot)}.GetValue)).GetBuildingType"
     )
 
 
 def slot_name_expr(slot_type: str, slot: int) -> str:
-    return f"SelectGameConcept({slot_has_id_expr(slot_type, slot)}, {slot_display_concept_expr(slot_type, slot)}, 'tv_wonder_construction')"
+    return f"{slot_building_type_expr(slot_type, slot)}.GetName"
 
 
 def slot_image_expr(slot_type: str, slot: int) -> str:
@@ -194,26 +194,25 @@ def slot_full_image_expr(slot_type: str, slot: int) -> str:
     return image_expression(None, f"{slot_id_var(slot_type, slot)}.GetValue", f"Concatenate('{FULL_IMAGE_CONCEPT_PREFIX}', {slot_id_string(slot_type, slot)})")
 
 
+def slot_modifier_level_string(slot_type: str, slot: int) -> str:
+    # No level-0 modifier exists. Keep even an eagerly evaluated hidden table's
+    # reference valid; the unbuilt/shell tooltip displays only the no-effect text.
+    return f"ToString_int32(FixedPointToInt(Max_CFixedPoint({slot_level_var(slot_type, slot)}.GetValue, '(CFixedPoint)1.0')))"
+
+
 def slot_modifier_key_expr(slot_type: str, slot: int) -> str:
+    level_expr = slot_modifier_level_string(slot_type, slot)
     return (
         f"Concatenate('{DISPLAY_CONCEPT_PREFIX}', "
-        f"Concatenate({slot_id_string(slot_type, slot)}, Concatenate('_level_', {slot_level_string(slot_type, slot)})))"
+        f"Concatenate({slot_id_string(slot_type, slot)}, Concatenate('_level_', {level_expr})))"
     )
 
 
 def slot_local_modifier_key_expr(slot_type: str, slot: int) -> str:
+    level_expr = slot_modifier_level_string(slot_type, slot)
     return (
         f"Concatenate('{DISPLAY_CONCEPT_PREFIX}', "
-        f"Concatenate({slot_id_string(slot_type, slot)}, Concatenate('_local_level_', {slot_level_string(slot_type, slot)})))"
-    )
-
-
-def slot_ritual_effect_key_expr(slot_type: str, slot: int) -> str:
-    return (
-        f"Concatenate('{DISPLAY_CONCEPT_PREFIX}', "
-        f"Concatenate({slot_id_string(slot_type, slot)}, "
-        f"Concatenate('_ritual_', Concatenate({slot_ritual_style_string(slot_type, slot)}, "
-        "'_location_tooltip_effect'))))"
+        f"Concatenate({slot_id_string(slot_type, slot)}, Concatenate('_local_level_', {level_expr})))"
     )
 
 
@@ -224,37 +223,11 @@ def slot_base_site_rules_trigger_key_expr(slot_type: str, slot: int) -> str:
     )
 
 
-def render_level_line(indent: str, *, slot_type: str, slot: int) -> list[str]:
-    level_var = slot_level_var(slot_type, slot)
-    return [
-        f"{indent}hbox = {{",
-        f"{indent}{T}layoutpolicy_horizontal = expanding",
-        f"{indent}{T}layoutpolicy_vertical = fixed",
-        f"{indent}{T}size = {{ -1 18 }}",
-        f"{indent}{T}spacing = 4",
-        f"{indent}{T}text_single = {{",
-        f'{indent}{T}{T}text = "TV_LOCATION_WONDER_LEVEL_SHORT"',
-        f"{indent}{T}{T}align = left|nobaseline",
-        f"{indent}{T}{T}fontsize = 13",
-        f"{indent}{T}}}",
-        f"{indent}{T}text_single = {{",
-        f'{indent}{T}{T}visible = "[{level_var}.IsSet]"',
-        f'{indent}{T}{T}text = "[{level_var}.GetValue|0]"',
-        f"{indent}{T}{T}align = left|nobaseline",
-        f"{indent}{T}{T}fontsize = 13",
-        f"{indent}{T}}}",
-        f'{indent}{T}text_single = {{ visible = "[EqualTo_CFixedPoint({slot_ritual_style_var(slot_type, slot)}.GetValue, \'(CFixedPoint)0.0\')]" text = "TV_WONDER_RITUAL_PLAIN_STATE" fontsize = 13 }}',
-        f'{indent}{T}text_single = {{ visible = "[EqualTo_CFixedPoint({slot_ritual_style_var(slot_type, slot)}.GetValue, \'(CFixedPoint)-1.0\')]" text = "TV_WONDER_RITUAL_SHELL_STATE" fontsize = 13 }}',
-        f'{indent}{T}text_single = {{ visible = "[{var_enabled_expr(slot_ritual_completed_var(slot_type, slot))}]" text = "[Localize(Concatenate(Concatenate(\'game_concept_tv_wonder_display_\', {slot_id_string(slot_type, slot)}), Concatenate(\'_ritual_\', {slot_ritual_style_string(slot_type, slot)})))]" fontsize = 13 }}',
-        f"{indent}{T}expand = {{}}",
-        f"{indent}}}",
-    ]
-
-
 def render_tooltip_image_overlay(indent: str, *, slot: int) -> list[str]:
     level_var = slot_level_var("tooltip", slot)
     return [
         f"{indent}widget = {{",
+        f"{indent}{T}alwaystransparent = yes",
         f"{indent}{T}size = {{ 100% {TOOLTIP_IMAGE_OVERLAY_HEIGHT} }}",
         f"{indent}{T}parentanchor = top",
         f"{indent}{T}widgetanchor = top",
@@ -265,6 +238,7 @@ def render_tooltip_image_overlay(indent: str, *, slot: int) -> list[str]:
         f"{indent}{T}{T}margin = {{ {PANEL_TEXT_MARGIN_X} {PANEL_TEXT_MARGIN_Y} }}",
         f"{indent}{T}{T}spacing = 4",
         f"{indent}{T}{T}text_single = {{",
+        f"{indent}{T}{T}{T}alwaystransparent = no",
         f'{indent}{T}{T}{T}text = "[{slot_name_expr("tooltip", slot)}]"',
         f"{indent}{T}{T}{T}layoutpolicy_horizontal = fixed",
         f"{indent}{T}{T}{T}size = {{ {TOOLTIP_IMAGE_NAME_WIDTH} {PANEL_TEXT_HEIGHT} }}",
@@ -275,12 +249,13 @@ def render_tooltip_image_overlay(indent: str, *, slot: int) -> list[str]:
         f"{indent}{T}{T}}}",
         f"{indent}{T}{T}expand = {{}}",
         f"{indent}{T}{T}text_single = {{",
+        f"{indent}{T}{T}{T}alwaystransparent = yes",
         f'{indent}{T}{T}{T}text = "TV_LOCATION_WONDER_LEVEL_SHORT"',
         f"{indent}{T}{T}{T}align = right|nobaseline",
         f"{indent}{T}{T}{T}fontsize = {PANEL_TEXT_FONT_SIZE}",
         f"{indent}{T}{T}}}",
         f"{indent}{T}{T}text_single = {{",
-        f'{indent}{T}{T}{T}visible = "[{level_var}.IsSet]"',
+        f"{indent}{T}{T}{T}alwaystransparent = yes",
         f'{indent}{T}{T}{T}text = "[{level_var}.GetValue|0]"',
         f"{indent}{T}{T}{T}align = right|nobaseline",
         f"{indent}{T}{T}{T}fontsize = {PANEL_TEXT_FONT_SIZE}",
@@ -288,25 +263,6 @@ def render_tooltip_image_overlay(indent: str, *, slot: int) -> list[str]:
         f"{indent}{T}}}",
         f"{indent}}}",
     ]
-
-
-def render_tooltip_full_image(indent: str, *, slot: int) -> list[str]:
-    visible = slot_has_id_expr("tooltip", slot)
-    lines = [
-        f"{indent}widget = {{",
-        f'{indent}{T}visible = "[{visible}]"',
-        f"{indent}{T}layoutpolicy_horizontal = fixed",
-        f"{indent}{T}layoutpolicy_vertical = fixed",
-        f"{indent}{T}size = {{ {TOOLTIP_IMAGE_WIDTH} {TOOLTIP_IMAGE_HEIGHT} }}",
-        f"{indent}{T}using = bg_cabinet_card_frame",
-        f"{indent}{T}background = {{",
-        f'{indent}{T}{T}texture = "[{slot_full_image_expr("tooltip", slot)}]"',
-        f"{indent}{T}{T}fittype = fill",
-        f"{indent}{T}}}",
-    ]
-    lines.extend(render_tooltip_image_overlay(indent + T, slot=slot))
-    lines.append(f"{indent}}}")
-    return lines
 
 
 def render_modifier_column(
@@ -366,7 +322,7 @@ def render_tooltip_modifier_column(indent: str, *, title_key: str, modifier_key:
         column_width=TOOLTIP_MODIFIER_COLUMN_WIDTH,
         font_size=13,
         row_height=22,
-        vertical_policy="expanding",
+        vertical_policy="shrinking",
     )
 
 
@@ -384,12 +340,13 @@ def render_tooltip_construction_conditions_block(indent: str, *, slot: int) -> l
         f"{indent}{T}spacing = 2",
         f"{indent}{T}TooltipRequirementsList = {{",
         f"{indent}{T}{T}layoutpolicy_horizontal = expanding",
+        f'{indent}{T}{T}blockoverride "tooltip_minimumsize" {{ minimumsize = {{ 444 -1 }} }}',
+        f"{indent}{T}{T}maximumsize = {{ 444 -1 }}",
         f'{indent}{T}{T}textcontext = "[ShowTriggerConditionsForScope({trigger_key},{LOCATION_SCOPE})]"',
         f'{indent}{T}{T}blockoverride "field_text_format" {{',
         f"{indent}{T}{T}{T}fontsize = 13",
         f"{indent}{T}{T}}}",
         f'{indent}{T}{T}blockoverride "row_size" {{',
-        f"{indent}{T}{T}{T}maximumsize = {{ -1 22 }}",
         f"{indent}{T}{T}{T}minimumsize = {{ -1 22 }}",
         f"{indent}{T}{T}}}",
         f'{indent}{T}{T}blockoverride "block_title" {{',
@@ -405,112 +362,6 @@ def render_tooltip_construction_conditions_block(indent: str, *, slot: int) -> l
     ]
 
 
-def render_tooltip_effect_block(indent: str, *, slot: int) -> list[str]:
-    base_effect_visible = slot_has_base_effect_payload_expr("tooltip", slot)
-    ritual_effect_visible = slot_has_ritual_effect_payload_expr("tooltip", slot)
-    ritual_no_effect_visible = slot_ritual_no_effect_payload_expr("tooltip", slot)
-    no_effect_visible = slot_no_effect_payload_expr("tooltip", slot)
-    country_modifier_key = slot_modifier_key_expr("tooltip", slot)
-    local_modifier_key = slot_local_modifier_key_expr("tooltip", slot)
-    ritual_effect_key = slot_ritual_effect_key_expr("tooltip", slot)
-    lines = [
-        f"{indent}widget = {{",
-        f"{indent}{T}layoutpolicy_horizontal = fixed",
-        f"{indent}{T}layoutpolicy_vertical = shrinking",
-        f"{indent}{T}size = {{ {TOOLTIP_EFFECT_COLUMN_WIDTH} -1 }}",
-        f"{indent}{T}vbox = {{",
-        f"{indent}{T}{T}set_parent_size_to_minimum = yes",
-        f"{indent}{T}{T}margin_left = 8",
-        f"{indent}{T}{T}margin_right = 8",
-        f"{indent}{T}{T}margin_bottom = 6",
-        f"{indent}{T}{T}layoutpolicy_horizontal = expanding",
-        f"{indent}{T}{T}layoutpolicy_vertical = shrinking",
-        f"{indent}{T}{T}spacing = 0",
-        f"{indent}{T}{T}ignoreinvisible = yes",
-    ]
-    lines.extend(render_tooltip_construction_conditions_block(indent + T * 2, slot=slot))
-    lines.extend(
-        [
-            f"{indent}{T}{T}text_multi = {{",
-            f'{indent}{T}{T}{T}visible = "[{no_effect_visible}]"',
-            f'{indent}{T}{T}{T}text = "TV_LOCATION_WONDER_NO_EFFECT"',
-            f"{indent}{T}{T}{T}layoutpolicy_horizontal = expanding",
-            f"{indent}{T}{T}{T}autoresize = yes",
-            f"{indent}{T}{T}{T}max_width = {TOOLTIP_MODIFIER_COLUMNS_WIDTH}",
-            f"{indent}{T}{T}{T}minimumsize = {{ {TOOLTIP_MODIFIER_COLUMNS_WIDTH} -1 }}",
-            f"{indent}{T}{T}}}",
-            f"{indent}{T}{T}hbox = {{",
-            f'{indent}{T}{T}{T}visible = "[{base_effect_visible}]"',
-            f"{indent}{T}{T}{T}layoutpolicy_horizontal = fixed",
-            f"{indent}{T}{T}{T}layoutpolicy_vertical = shrinking",
-            f"{indent}{T}{T}{T}size = {{ {TOOLTIP_MODIFIER_COLUMNS_WIDTH} -1 }}",
-            f"{indent}{T}{T}{T}spacing = {TOOLTIP_MODIFIER_COLUMN_SPACING}",
-            f"{indent}{T}{T}{T}ignoreinvisible = yes",
-        ]
-    )
-    lines.extend(
-        render_tooltip_modifier_column(
-            indent + T * 3,
-            title_key="TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE",
-            modifier_key=country_modifier_key,
-        )
-    )
-    lines.extend(
-        render_tooltip_modifier_column(
-            indent + T * 3,
-            title_key="TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE",
-            modifier_key=local_modifier_key,
-        )
-    )
-    lines.extend(
-        [
-            f"{indent}{T}{T}}}",
-            f"{indent}{T}{T}hbox = {{",
-            f'{indent}{T}{T}{T}visible = "[{base_effect_visible}]"',
-            f"{indent}{T}{T}{T}layoutpolicy_horizontal = expanding",
-            f"{indent}{T}{T}{T}layoutpolicy_vertical = shrinking",
-            f"{indent}{T}{T}{T}margin_top = 6",
-            f"{indent}{T}{T}{T}text_single = {{",
-            f'{indent}{T}{T}{T}{T}text = "TV_LOCATION_WONDER_RITUAL_TITLE_PREFIX"',
-            f"{indent}{T}{T}{T}{T}align = left|nobaseline",
-            f"{indent}{T}{T}{T}{T}fontsize = 13",
-            f"{indent}{T}{T}{T}}}",
-            f"{indent}{T}{T}}}",
-            f"{indent}{T}{T}TooltipRequirementsList = {{",
-            f'{indent}{T}{T}{T}visible = "[{ritual_effect_visible}]"',
-            f"{indent}{T}{T}{T}layoutpolicy_horizontal = expanding",
-            f'{indent}{T}{T}{T}textcontext = "[ShowScriptedEffectForScope({ritual_effect_key},{LOCATION_SCOPE})]"',
-            f'{indent}{T}{T}{T}blockoverride "field_text_format" {{',
-            f"{indent}{T}{T}{T}{T}fontsize = 13",
-            f"{indent}{T}{T}{T}}}",
-            f'{indent}{T}{T}{T}blockoverride "row_size" {{',
-            f"{indent}{T}{T}{T}{T}maximumsize = {{ -1 22 }}",
-            f"{indent}{T}{T}{T}{T}minimumsize = {{ -1 22 }}",
-            f"{indent}{T}{T}{T}}}",
-            f'{indent}{T}{T}{T}blockoverride "block_title" {{',
-            f'{indent}{T}{T}{T}{T}block "block_title" {{',
-            f"{indent}{T}{T}{T}{T}{T}visible = no",
-            f"{indent}{T}{T}{T}{T}}}",
-            f"{indent}{T}{T}{T}}}",
-            f'{indent}{T}{T}{T}blockoverride "requirementslist_datamodel_is_empty" {{',
-            f"{indent}{T}{T}{T}{T}visible = no",
-            f"{indent}{T}{T}{T}}}",
-            f"{indent}{T}{T}}}",
-            f"{indent}{T}{T}text_single = {{",
-            f'{indent}{T}{T}{T}visible = "[{ritual_no_effect_visible}]"',
-            f'{indent}{T}{T}{T}text = "TV_LOCATION_WONDER_NO_EFFECT"',
-            f"{indent}{T}{T}{T}layoutpolicy_horizontal = expanding",
-            f"{indent}{T}{T}{T}size = {{ -1 22 }}",
-            f"{indent}{T}{T}{T}align = left|nobaseline",
-            f"{indent}{T}{T}{T}fontsize = 13",
-            f"{indent}{T}{T}}}",
-            f"{indent}{T}}}",
-            f"{indent}}}",
-        ]
-    )
-    return lines
-
-
 def render_overflow_line(indent: str) -> list[str]:
     visible = var_enabled_expr(OVERFLOW_VAR)
     return [
@@ -518,7 +369,7 @@ def render_overflow_line(indent: str) -> list[str]:
         f'{indent}{T}visible = "[{visible}]"',
         f"{indent}{T}layoutpolicy_horizontal = expanding",
         f"{indent}{T}layoutpolicy_vertical = fixed",
-        f"{indent}{T}size = {{ {TOOLTIP_EFFECT_COLUMN_WIDTH} 20 }}",
+        f"{indent}{T}size = {{ {MENU_WIDTH} 20 }}",
         f"{indent}{T}margin_left = 8",
         f"{indent}{T}spacing = 4",
         f"{indent}{T}text_single = {{",
@@ -540,62 +391,149 @@ def render_overflow_line(indent: str) -> list[str]:
     ]
 
 
-def menu_slot_selected_expr(slot: int) -> str:
-    predicate = "NotExistOrHasValue" if slot == 1 else "HasValue"
-    return f"LocationView.Vars.{predicate}('{MENU_SELECTION_VAR}', '{slot}')"
+def slot_localization_expr(slot: int, suffix: str = "") -> str:
+    return f"Localize(Concatenate('game_concept_', Concatenate({slot_display_concept_expr('tooltip', slot)}, '{suffix}')))"
+
+
+def slot_ritual_modifiers_expr(slot: int, style: int) -> str:
+    return f"Localize(Concatenate('TV_WONDER_RITUAL_MODIFIERS_{style}_', {slot_id_string('tooltip', slot)}))"
+
+
+def tooltip_content(body: str, title: str, *, title_font_size: int = 18) -> str:
+    # ContextualTooltipType's content slot is inside TooltipContentSection (vbox).
+    return f'''tooltipwidget = {{
+        ContextualTooltipType = {{
+            blockoverride "tooltip_title" {{
+                text_multi = {{ minimumsize = {{ 444 -1 }} max_width = 444 autoresize = yes
+                    margin = {{ 10 10 }} fontsize = {title_font_size} raw_text = "{title}" }}
+            }}
+            blockoverride "tooltip_content" {{ {body} }}
+        }}
+    }}'''
+
+
+def render_art_tooltip(slot: int) -> str:
+    building_type = slot_building_type_expr('tooltip', slot)
+    conditions = "\n".join(render_tooltip_construction_conditions_block("", slot=slot))
+    body = f'''text_single = {{ size = {{ 444 24 }} autoresize = no align = left|nobaseline
+            text = "TV_LOCATION_WONDER_HISTORY" fontsize = 15 }}
+        text_multi = {{ minimumsize = {{ 444 -1 }} max_width = 444 autoresize = yes
+            fontsize = 15 raw_text = "[{building_type}.GetFlavorText]" }}
+        text_single = {{ size = {{ 444 24 }} autoresize = no align = left|nobaseline
+            text = "TV_LOCATION_WONDER_CONDITIONS" fontsize = 15 }}
+        {conditions}'''
+    return tooltip_content(body, f"[{building_type}.GetNameWithNoTooltip]")
+
+
+def slot_current_effects_expr(slot: int) -> str:
+    return (
+        f"And(GreaterThan_CFixedPoint({slot_level_var('tooltip', slot)}.GetValue, '(CFixedPoint)0.0'), "
+        f"Not(EqualTo_CFixedPoint({slot_ritual_style_var('tooltip', slot)}.GetValue, '(CFixedPoint)-1.0')))"
+    )
+
+
+def render_level_tooltip(slot: int) -> str:
+    columns = []
+    for key, getter in (("COUNTRY", slot_modifier_key_expr), ("LOCAL", slot_local_modifier_key_expr)):
+        columns.extend(render_tooltip_modifier_column("", title_key=f"TV_LOCATION_WONDER_{key}_MODIFIERS_TITLE",
+            modifier_key=getter("tooltip", slot)))
+    active = slot_current_effects_expr(slot)
+    body = (f'hbox = {{ visible = "[{active}]" layoutpolicy_horizontal = fixed size = {{ 444 -1 }} spacing = 8 '
+            + "\n".join(columns) + ' }'
+            + f'''text_single = {{ visible = "[Not({active})]" size = {{ 444 24 }}
+                autoresize = no align = left|nobaseline fontsize = 15 text = "TV_LOCATION_WONDER_NO_EFFECT" }}''')
+    title = (f"[{slot_building_type_expr('tooltip', slot)}.GetNameWithNoTooltip] · "
+             f"[Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [{slot_level_var('tooltip', slot)}.GetValue|0]")
+    return tooltip_content(body, title)
+
+
+def slot_ritual_active_expr(slot: int, style: int) -> str:
+    # Lifecycle reset keeps the numeric style defined for every slot. Positive
+    # styles are projected only from implemented rituals; 0/-1 never highlight.
+    return f"EqualTo_CFixedPoint({slot_ritual_style_var('tooltip', slot)}.GetValue, '(CFixedPoint){style}.0')"
+
+
+def render_ritual_tooltip(slot: int, style: int) -> str:
+    # All three styles expose their own native modifier links on hover.
+    # Only the implemented style receives the active-state label.
+    active = slot_ritual_active_expr(slot, style)
+    body = f'''text_multi = {{ minimumsize = {{ 444 -1 }} max_width = 444 autoresize = yes
+        fontsize = 18 raw_text = "[{slot_localization_expr(slot, f'_ritual_{style}_desc')}]" }}
+        text_multi = {{ name = "tv_location_wonder_ritual_modifiers_{slot}_{style}"
+            minimumsize = {{ 444 -1 }} max_width = 444 autoresize = yes fontsize = 18
+            alwaystransparent = no raw_text = "[{slot_ritual_modifiers_expr(slot, style)}]" }}
+        text_single = {{ visible = "[{active}]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 18 }}'''
+    return tooltip_content(body, f"[{slot_localization_expr(slot, f'_ritual_{style}')}]", title_font_size=20)
 
 
 def render_menu_slot(indent: str, *, slot: int) -> list[str]:
-    selected = menu_slot_selected_expr(slot)
-    lines = [
-        f"{indent}vbox = {{",
-        f'{indent}{T}name = "tv_location_wonder_entry_{slot}"',
-        f'{indent}{T}visible = "[{slot_has_id_expr("tooltip", slot)}]"',
-        f"{indent}{T}minimumsize = {{ {TOOLTIP_EFFECT_COLUMN_WIDTH} -1 }}",
-        f"{indent}{T}layoutpolicy_horizontal = expanding",
-        f"{indent}{T}spacing = 6",
-        f"{indent}{T}card_list_button = {{",
-        f"{indent}{T}{T}size = {{ {TOOLTIP_EFFECT_COLUMN_WIDTH} 44 }}",
-        f'{indent}{T}{T}down = "[{selected}]"',
-        f"{indent}{T}{T}action_tooltip = {{",
-        f'{indent}{T}{T}{T}title = "[{slot_name_expr("tooltip", slot)}]"',
-        f'{indent}{T}{T}{T}on_action = "[LocationView.Vars.Set(\'{MENU_SELECTION_VAR}\', \'{slot}\')]"',
-        f"{indent}{T}{T}}}",
-        f"{indent}{T}{T}tooltipwidget = {{ BasicFunctionalTooltip = {{}} }}",
-        f"{indent}{T}{T}hbox = {{",
-        f"{indent}{T}{T}{T}layoutpolicy_horizontal = expanding",
-        f"{indent}{T}{T}{T}margin = {{ 8 5 }}",
-        f"{indent}{T}{T}{T}spacing = 8",
-        f"{indent}{T}{T}{T}icon = {{",
-        f"{indent}{T}{T}{T}{T}size = {{ 48 32 }}",
-        f'{indent}{T}{T}{T}{T}texture = "[{slot_image_expr("tooltip", slot)}]"',
-        f"{indent}{T}{T}{T}{T}fittype = centercrop",
-        f"{indent}{T}{T}{T}}}",
-        f"{indent}{T}{T}{T}text_single = {{",
-        f"{indent}{T}{T}{T}{T}layoutpolicy_horizontal = expanding",
-        f"{indent}{T}{T}{T}{T}autoresize = no",
-        f"{indent}{T}{T}{T}{T}fontsize = 15",
-        f"{indent}{T}{T}{T}{T}align = left|nobaseline",
-        f'{indent}{T}{T}{T}{T}text = "[{slot_name_expr("tooltip", slot)}]"',
-        f"{indent}{T}{T}{T}}}",
-        f'{indent}{T}{T}{T}text_single = {{ text = "TV_LOCATION_WONDER_LEVEL_SHORT" fontsize = 13 }}',
-        f'{indent}{T}{T}{T}text_single = {{ raw_text = "[{slot_level_var("tooltip", slot)}.GetValue|0]" fontsize = 13 }}',
-        f"{indent}{T}{T}}}",
-        f"{indent}{T}}}",
-        f"{indent}{T}vbox = {{",
-        f'{indent}{T}{T}name = "tv_location_wonder_detail_{slot}"',
-        f'{indent}{T}{T}visible = "[{selected}]"',
-        f"{indent}{T}{T}minimumsize = {{ {TOOLTIP_EFFECT_COLUMN_WIDTH} -1 }}",
-        f"{indent}{T}{T}layoutpolicy_horizontal = expanding",
-        f"{indent}{T}{T}spacing = 6",
-        f"{indent}{T}{T}using = bg_paper_card",
-        f"{indent}{T}{T}using = bg_cabinet_card_frame",
-    ]
-    lines.extend(render_tooltip_full_image(indent + T * 2, slot=slot))
-    lines.extend(render_level_line(indent + T * 2, slot_type="tooltip", slot=slot))
-    lines.extend(render_tooltip_effect_block(indent + T * 2, slot=slot))
-    lines.extend([f"{indent}{T}}}", f"{indent}}}"])
-    return lines
+    lines = [f'''hbox = {{
+        name = "tv_location_wonder_entry_{slot}"
+        visible = "[{slot_has_id_expr('tooltip', slot)}]"
+        layoutpolicy_horizontal = fixed
+        layoutpolicy_vertical = fixed
+        size = {{ {MENU_WIDTH} {TOOLTIP_IMAGE_HEIGHT} }}
+        spacing = {CARD_SPACING}
+        widget = {{
+            name = "tv_location_wonder_art_{slot}"
+            size = {{ {TOOLTIP_IMAGE_WIDTH} {TOOLTIP_IMAGE_HEIGHT} }}
+            alwaystransparent = no
+            background = {{ texture = "[{slot_full_image_expr('tooltip', slot)}]" fittype = fill }}
+            {render_art_tooltip(slot)}''']
+    # The building name keeps its native link; decorative parts pass hover to the art.
+    overlay = "\n".join(render_tooltip_image_overlay("", slot=slot))
+    lines += [overlay, f'''widget = {{
+            name = "tv_location_wonder_level_{slot}"
+            visible = "[GreaterThan_CFixedPoint({slot_level_var('tooltip', slot)}.GetValue, '(CFixedPoint)0.0')]"
+            parentanchor = bottom|right widgetanchor = bottom|right position = {{ -8 -6 }}
+            size = {{ {LEVEL_MEDALLION_SIZE} {LEVEL_MEDALLION_SIZE} }} alwaystransparent = no
+            {render_level_tooltip(slot)}''']
+    # Static texture handles are required by the engine. This remains one hover
+    # target; exactly one of the six transparent medallion sprites is visible.
+    for level in range(1, 7):
+        lines.append(f'''icon = {{
+            name = "tv_location_wonder_medallion_{slot}_{level}"
+            visible = "[EqualTo_CFixedPoint({slot_level_var('tooltip', slot)}.GetValue, '(CFixedPoint){level}.0')]"
+            size = {{ {LEVEL_MEDALLION_SIZE} {LEVEL_MEDALLION_SIZE} }} alwaystransparent = yes
+            texture = "gfx/interface/icons/location_icons/tv_wonder_level_{level}.dds"
+            fittype = fill
+        }}''')
+    lines.append('}')
+    ritual_height = (TOOLTIP_IMAGE_HEIGHT - RITUAL_HEADER_HEIGHT - 3 * CARD_SPACING) / 3
+    lines += ['}', f'''vbox = {{
+        name = "tv_location_wonder_ritual_group_{slot}"
+        size = {{ {RITUAL_GROUP_WIDTH} {TOOLTIP_IMAGE_HEIGHT} }}
+        layoutpolicy_horizontal = fixed layoutpolicy_vertical = fixed spacing = {CARD_SPACING}
+        widget = {{
+            name = "tv_location_wonder_ritual_header_{slot}"
+            size = {{ {RITUAL_GROUP_WIDTH} {RITUAL_HEADER_HEIGHT} }} alwaystransparent = yes
+            using = bg_card_header_01_production
+            using = bg_cabinet_card_frame
+            text_single = {{ size = {{ {RITUAL_GROUP_WIDTH} {RITUAL_HEADER_HEIGHT} }}
+                autoresize = no align = center|nobaseline using = Font_Type_Headers fontsize = 20
+                text = "TV_LOCATION_WONDER_RITUAL_HEADER" alwaystransparent = yes }}
+        }}
+        ''']
+    for style in (1, 2, 3):
+        active = slot_ritual_active_expr(slot, style)
+        lines.append(f'''widget = {{
+            name = "tv_location_wonder_ritual_{slot}_{style}"
+            size = {{ {RITUAL_GROUP_WIDTH} {ritual_height} }} alwaystransparent = no
+            using = bg_cabinet_card_frame
+            background = {{ using = color_black_texture alpha = 0.6 }}
+            widget = {{ visible = "[{active}]" size = {{ {RITUAL_GROUP_WIDTH} {ritual_height} }}
+                alwaystransparent = yes background = {{ using = color_yellow_texture alpha = 0.28 }} }}
+            widget = {{ visible = "[{active}]" size = {{ 3 {ritual_height} }}
+                alwaystransparent = yes background = {{ using = color_yellow_texture }} }}
+            text_single = {{ position = {{ 8 0 }} size = {{ {RITUAL_GROUP_WIDTH - 38} {ritual_height} }}
+                autoresize = no align = left|nobaseline fontsize = 18
+                raw_text = "[{slot_localization_expr(slot, f'_ritual_{style}')}]" alwaystransparent = yes }}
+            text_single = {{ visible = "[{active}]" position = {{ {RITUAL_GROUP_WIDTH - 30} {(ritual_height - 24) / 2} }} size = {{ 26 24 }}
+                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }}
+            {render_ritual_tooltip(slot, style)}
+        }}''')
+    lines.extend(['}', '}'])
+    return [indent + line for line in "\n".join(lines).splitlines()]
 
 
 def render_wonder_menu_types() -> str:
@@ -639,40 +577,24 @@ def render_wonder_menu_types() -> str:
         f'{T}{T}blockoverride "tooltip_text_color" {{ fonttintcolor = {{ 1 1 1 1 }} }}',
         f'{T}{T}blockoverride "contextmenu_scroll_maximumsize" {{ maximumsize = {{ -1 {MENU_MAX_HEIGHT} }} }}',
         f'{T}{T}blockoverride "contextmenu_content" {{',
-        f"{T}{T}{T}hbox = {{",
-        f"{T}{T}{T}{T}minimumsize = {{ {TOOLTIP_EFFECT_COLUMN_WIDTH} 42 }}",
-        f"{T}{T}{T}{T}layoutpolicy_horizontal = expanding",
-        f"{T}{T}{T}{T}using = bg_card_header_01_production",
-        f"{T}{T}{T}{T}using = bg_cabinet_card_frame",
-        f"{T}{T}{T}{T}margin = {{ 8 6 }}",
-        f"{T}{T}{T}{T}spacing = 8",
-        f'{T}{T}{T}{T}icon = {{ size = {{ 24 24 }} texture = "gfx/interface/icons/location_icons/new/prosperity.dds" }}',
-        f'{T}{T}{T}{T}text_single = {{ layoutpolicy_horizontal = expanding using = Font_Type_Headers text = "TV_LOCATION_WONDER_TOOLTIP_TITLE" }}',
-        f"{T}{T}{T}{T}widget = {{",
-        f"{T}{T}{T}{T}{T}size = {{ 25 25 }}",
-        f"{T}{T}{T}{T}{T}button_close_alt = {{",
-        f'{T}{T}{T}{T}{T}{T}blockoverride "close_on_action" {{ on_action = "[LocationView.Vars.Clear(\'{MENU_OPEN_VAR}\')]" }}',
-        f"{T}{T}{T}{T}{T}}}",
-        f"{T}{T}{T}{T}}}",
-        f"{T}{T}{T}}}",
     ]
     for slot in range(1, TOOLTIP_SLOT_MAX + 1):
         lines.extend(render_menu_slot(T * 3, slot=slot))
     lines.extend(render_overflow_line(T * 3))
     lines.extend([f"{T}{T}}}", f"{T}}}", "}", ""])
-    return "\n".join(lines)
+    return scale_gui_layout("\n".join(lines))
 
 
 def render_scene_overlay() -> str:
     indent = T * 4
     opened = f"LocationView.Vars.Exists('{MENU_OPEN_VAR}')"
     label = f"SelectLocalization({opened}, 'TV_LOCATION_WONDER_CLOSE_DETAILS', 'TV_LOCATION_WONDER_OPEN_DETAILS')"
-    return "\n".join([
+    return scale_gui_layout("\n".join([
         f"{indent}header_button_left = {{",
         f'{indent}{T}name = "tv_location_wonders_button"',
         f'{indent}{T}datacontext = "[LocationView.GetLocation]"',
         f'{indent}{T}visible = "[{slot_has_id_expr("tooltip", 1)}]"',
-        f"{indent}{T}size = {{ 170 34 }}",
+        f"{indent}{T}size = {{ 144 34 }}",
         f"{indent}{T}parentanchor = top|right",
         f"{indent}{T}widgetanchor = top|right",
         f"{indent}{T}position = {{ -8 8 }}",
@@ -683,20 +605,19 @@ def render_scene_overlay() -> str:
         f"{indent}{T}{T}click_mode = single",
         f'{indent}{T}{T}title = "[{label}]"',
         f'{indent}{T}{T}on_action = "[LocationView.CloseBuildingQueueMenu]"',
-        f'{indent}{T}{T}on_action = "[LocationView.Vars.Clear(\'{MENU_SELECTION_VAR}\')]"',
         f'{indent}{T}{T}on_action = "[LocationView.Vars.Toggle(\'{MENU_OPEN_VAR}\')]"',
         f"{indent}{T}}}",
         f"{indent}{T}tooltipwidget = {{ BasicFunctionalTooltip = {{}} }}",
         f"{indent}{T}hbox = {{",
         f"{indent}{T}{T}layoutpolicy_horizontal = expanding",
-        f"{indent}{T}{T}margin = {{ 10 0 }}",
-        f"{indent}{T}{T}spacing = 6",
-        f'{indent}{T}{T}text_single = {{ layoutpolicy_horizontal = expanding autoresize = no align = center|nobaseline fontsize = 15 text = "[{label}]" }}',
+        f"{indent}{T}{T}margin = {{ 8 0 }}",
+        f"{indent}{T}{T}spacing = 4",
+        f'{indent}{T}{T}text_single = {{ layoutpolicy_horizontal = expanding autoresize = no align = center|nobaseline fontsize = 18 text = "[{label}]" }}',
         f'{indent}{T}{T}icon = {{ visible = "[Not({opened})]" size = {{ 24 24 }} texture = "gfx/interface/icons/location_icons/tv_wonder_arrow_right.dds" }}',
         f'{indent}{T}{T}icon = {{ visible = "[{opened}]" size = {{ 24 24 }} texture = "gfx/interface/icons/location_icons/tv_wonder_arrow_left.dds" }}',
         f"{indent}{T}}}",
         f"{indent}}}",
-    ])
+    ]))
 
 
 def inject_wonder_panel(gui: str) -> str:

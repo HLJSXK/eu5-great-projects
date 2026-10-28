@@ -469,16 +469,19 @@ def append_location_display_clear_effect(lines: list[str]) -> None:
     lines.append(f"{T}remove_variable = {WONDER_MAP_GENERIC_LEVEL_VAR}")
     lines.append(f"{T}remove_variable = {WONDER_MAP_HAS_POTENTIAL_UNIQUE_VAR}")
     lines.append(f"{T}set_variable = {{ name = tv_wonder_tooltip_overflow_count value = 0 }}")
+    # Startup/load and every lifecycle refresh enter here. Keep GUI numeric
+    # payloads defined even for empty slots; only the id marks slot occupancy.
+    # GUI And/IsSet expressions do not short-circuit numeric reads.
     for slot in range(1, DISPLAY_SLOT_MAX + 1):
         lines.append(f"{T}remove_variable = {slot_id_var(slot)}")
-        lines.append(f"{T}remove_variable = {slot_level_var(slot)}")
-        lines.append(f"{T}remove_variable = {slot_ritual_style_var(slot)}")
-        lines.append(f"{T}remove_variable = {slot_ritual_completed_var(slot)}")
+        lines.append(f"{T}set_variable = {{ name = {slot_level_var(slot)} value = 0 }}")
+        lines.append(f"{T}set_variable = {{ name = {slot_ritual_style_var(slot)} value = 0 }}")
+        lines.append(f"{T}set_variable = {{ name = {slot_ritual_completed_var(slot)} value = 0 }}")
     for slot in range(1, TOOLTIP_SLOT_MAX + 1):
         lines.append(f"{T}remove_variable = {tooltip_slot_id_var(slot)}")
-        lines.append(f"{T}remove_variable = {tooltip_slot_level_var(slot)}")
-        lines.append(f"{T}remove_variable = {tooltip_slot_ritual_style_var(slot)}")
-        lines.append(f"{T}remove_variable = {tooltip_slot_ritual_completed_var(slot)}")
+        lines.append(f"{T}set_variable = {{ name = {tooltip_slot_level_var(slot)} value = 0 }}")
+        lines.append(f"{T}set_variable = {{ name = {tooltip_slot_ritual_style_var(slot)} value = 0 }}")
+        lines.append(f"{T}set_variable = {{ name = {tooltip_slot_ritual_completed_var(slot)} value = 0 }}")
     lines.append("}")
     lines.append("")
 

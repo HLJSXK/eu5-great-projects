@@ -1,8 +1,10 @@
-"""Actual location window, menu selection and empty/overflow regressions."""
+"""Shipped gallery geometry, hover routes and empty/overflow regressions."""
 from pathlib import Path
 import sys
 import tempfile
+import re
 import unittest
+from unittest.mock import patch
 
 WORKSPACE = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(WORKSPACE))
@@ -36,31 +38,132 @@ class LocationPreviewTests(unittest.TestCase):
                         continue
                     self.assertTrue(report['menu_open'])
                     with Image.open(report['details']['menu']) as image:
-                        self.assertGreaterEqual(image.width, 462)
-                        self.assertLess(image.width, 540)
-                        self.assertLessEqual(image.height, 672)
+                        self.assertGreaterEqual(image.width, 396)
+                        self.assertLess(image.width, 430)
+                        self.assertLessEqual(image.height, 633)
                         self.assertGreater(len(image.getcolors(image.width * image.height)), 500)
 
-    def test_selecting_later_project_and_closed_menu(self):
+    def test_all_artwork_visible_and_closed_menu(self):
         from eu5_gui_renderer.preview import has_diagnostics
         with tempfile.TemporaryDirectory() as folder:
-            selected = location.render('multiple', self.resources, selected_slot=3,
+            selected = location.render('multiple', self.resources,
                                        output=Path(folder) / 'selected.png')
             self.assertFalse(has_diagnostics(selected), selected)
             tree = Path(selected['tree']).read_text(encoding='utf-8')
-            # Only the selected detail should be laid out; changing the selection
-            # must not leave every project's large image/effect block expanded.
-            self.assertEqual(sum('300x200@' in line for line in tree.splitlines()), 1)
+            self.assertEqual(sum('225x150@' in line for line in tree.splitlines()), 3)
+            # One square medallion hover target per artwork.
+            from eu5_gui_renderer.gui import Expander
+            _, _, popup = location.build(self.resources, Expander(self.resources.db), 560, 1080, menu=True)
+            def visit(node):
+                yield node
+                for child in node.children:
+                    yield from visit(child)
+            badges = [node for node in visit(popup)
+                      if str(node.props.get('name', '')).startswith('tv_location_wonder_level_')]
+            self.assertEqual(len(badges), 5)
+            self.assertEqual({node.props['parentanchor'] for node in badges}, {'bottom|right'})
             closed = location.render('multiple', self.resources, menu=False,
                                      output=Path(folder) / 'closed.png')
             self.assertFalse(has_diagnostics(closed), closed)
             self.assertNotIn('menu', closed['details'])
+
+    def test_art_and_current_level_hover_render_separately(self):
+        from eu5_gui_renderer.preview import has_diagnostics
+        with tempfile.TemporaryDirectory() as folder:
+            for owner in ['tv_location_wonder_art_1', 'tv_location_wonder_level_1']:
+                with self.subTest(owner=owner):
+                    report = location.render('single', self.resources, hover=owner,
+                                             output=Path(folder) / f'{owner}.png')
+                    self.assertFalse(has_diagnostics(report), report)
+                    self.assertLessEqual(report['tooltip']['bounds'][2], 370)
+                    tree = Path(report['tooltip']['tree']).read_text(encoding='utf-8')
+                    if '_level_' in owner:
+                        self.assertNotIn('ShowScriptedEffectForScope', tree)
+                        self.assertNotIn('ShowTriggerConditionsForScope', tree)
+
+    def test_current_badge_effects_follow_all_levels_and_unbuilt_states(self):
+        from eu5_gui_renderer.data import Evaluator
+        from eu5_gui_renderer.preview import has_diagnostics
+        from scripts_engineering_department.in_game.gui import gen_location_window as source
+        cases = [(3, level, 0) for level in range(7)] + [(3, 3, -1), (102, 6, 2)]
+        with tempfile.TemporaryDirectory() as folder:
+            for ident, level, style in cases:
+                with self.subTest(wonder=ident, level=level, style=style), patch.dict(location.STATES, {'current': [(ident, level, style)]}):
+                    evaluator = Evaluator(location.scenario_mocks('current', self.resources), self.resources.loc, [])
+                    for local, getter in ((False, source.slot_modifier_key_expr), (True, source.slot_local_modifier_key_expr)):
+                        expression = getter('tooltip', 1).replace('LocationView.GetLocation.', 'Location.')
+                        self.assertEqual(evaluator.eval_str('[' + expression + ']'),
+                                         f'tv_wonder_display_{ident}_{"local_" if local else ""}level_{max(level, 1)}')
+                    active = source.slot_current_effects_expr(1).replace('LocationView.GetLocation.', 'Location.')
+                    self.assertEqual(evaluator.eval_str('[' + active + ']'), level > 0 and style != -1)
+                    from eu5_gui_renderer.gui import Expander
+                    _, _, menu = location.build(self.resources, Expander(self.resources.db), 560, 1080, menu=True)
+                    def visit(node):
+                        yield node
+                        for child in node.children:
+                            yield from visit(child)
+                    badge = next(node for node in visit(menu) if node.props.get('name') == 'tv_location_wonder_level_1')
+                    self.assertEqual(evaluator.eval_str(badge.props['visible'].replace('LocationView.GetLocation.', 'Location.')), level > 0)
+                    sprites = [node for node in badge.children if node.kind == 'icon' and
+                               evaluator.eval_str(node.props['visible'].replace('LocationView.GetLocation.', 'Location.'))]
+                    self.assertEqual(len(sprites), int(level > 0))
+                    if level:
+                        self.assertEqual(sprites[0].props['texture'], f'gfx/interface/icons/location_icons/tv_wonder_level_{level}.dds')
+                    report = location.render('current', self.resources, hover='tv_location_wonder_level_1' if level else None,
+                                             output=Path(folder) / f'{ident}_{level}_{style}.png')
+                    self.assertFalse(has_diagnostics(report), report)
+                    if level:
+                        self.assertLessEqual(report['tooltip']['bounds'][2], 370)
+                    else:
+                        self.assertIsNone(report['tooltip'])
+
+    def test_ritual_highlight_requires_implemented_style_and_plain_has_none(self):
+        from eu5_gui_renderer.data import Evaluator
+        from scripts_engineering_department.in_game.gui import gen_location_window as source
+        for state in ('empty', 'multiple', 'dedicated', 'unbuilt', 'shell'):
+            evaluator = Evaluator(location.scenario_mocks(state, self.resources), self.resources.loc, [])
+            for slot in range(1, 6):
+                for style in (1, 2, 3):
+                    expression = '[' + source.slot_ritual_active_expr(slot, style).replace('LocationView.GetLocation.', 'Location.') + ']'
+                    self.assertEqual(evaluator.eval_str(expression), state == 'dedicated' and slot == style)
 
     def test_unknown_binding_is_not_filled_by_fixture(self):
         from eu5_gui_renderer.data import Evaluator, Unknown
         evaluator = Evaluator(location.scenario_mocks('multiple', self.resources), self.resources.loc, [])
         self.assertIsInstance(evaluator.eval_str("[Location.MakeScope.GetVariable('new_unconfigured_variable').GetValue]"), Unknown)
         self.assertIsInstance(evaluator.eval_str('[ExtraTooltipInfo.GetTintColor]'), Unknown)
+
+    def test_ritual_modifiers_are_only_in_hover_and_all_styles_are_inspectable(self):
+        from eu5_gui_renderer.gui import Expander
+        from eu5_gui_renderer.preview import has_diagnostics
+        expander = Expander(self.resources.db)
+        _, _, menu = location.build(self.resources, expander, 560, 1080, menu=True)
+
+        def visit(node):
+            yield node
+            for child in node.children:
+                yield from visit(child)
+
+        self.assertFalse(any(str(node.props.get('name', '')).startswith('tv_location_wonder_ritual_modifiers_')
+                             for node in visit(menu)))
+        cards = [node for node in visit(menu) if re.fullmatch(
+            r'tv_location_wonder_ritual_\d+_[123]', str(node.props.get('name', '')))]
+        self.assertEqual(len(cards), 15)
+        for card in cards:
+            popup = expander.build_lazy(card.tooltipwidget)
+            links = [node for node in visit(popup) if str(node.props.get('name', '')).startswith('tv_location_wonder_ritual_modifiers_')]
+            self.assertEqual(len(links), 1)
+            self.assertEqual(links[0].props.get('alwaystransparent'), 'no')
+            self.assertNotIn('visible', links[0].props)
+        with tempfile.TemporaryDirectory() as folder:
+            for state in ('jerusalem', 'dedicated'):
+                for style in (1, 2, 3):
+                    with self.subTest(state=state, style=style):
+                        report = location.render(state, self.resources,
+                            hover=f'tv_location_wonder_ritual_1_{style}',
+                            output=Path(folder) / f'{state}_{style}.png')
+                        self.assertFalse(has_diagnostics(report), report)
+                        self.assertLessEqual(report['tooltip']['bounds'][2], 370)
 
     def test_panel_has_no_tooltip_context_bindings_even_in_hidden_layers(self):
         from eu5_gui_renderer.gui import Expander
