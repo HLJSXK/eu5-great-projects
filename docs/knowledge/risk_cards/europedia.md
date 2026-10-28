@@ -3,6 +3,27 @@
 Load this card before editing `encyclopedia_lateralview.gui`, adding new browsable Europedia
 content, or wiring any `game_concept` into a curated (as opposed to search/link-only) display.
 
+## Approved content scope — 2026-10-28
+
+百科固定保留 **15 张机制说明卡、1 张凯旋轴线、1 张托普卡帕宫，共 17 张卡片**。
+这是用户确认的长期内容设计；其余 193 张奇观百科卡片已经删除，不能通过默认遍历全部
+奇观数据、隐藏控件或保留测试开关重新带回。`europedia_render.py` 的
+`WONDER_CARD_KEYS` 仅列出 `triumphal_axis` 和 `unique_topkapi_palace`，
+`select_wonder_cards()` 从当前玩法数据解析这两个示例。新增玩法奇观不会自动新增百科卡片。
+主模组、生成片段和 Prosper or Perish 兼容覆盖必须采用同一范围。
+本决定只删除百科卡片，不删除其他奇观的玩法、图像、概念或游戏内提示。
+
+**缩减不仅因为加载期卡死；原本的全量展开设计本身也不好。** 将相同的机制解释、等级效果、
+选址说明和三种仪式结构重复铺在 195 张大卡片中，造成大量重复文字、冗长滚动和信息噪声，
+让机制教学与逐个奇观的数据展示混在一起，难以阅读和定位。百科应集中讲清通用机制，
+用一个通用奇观和一个独特奇观作完整示例。即使以后解决了性能问题，也不应恢复这种全量目录。
+
+加载期证据与设计决定分开记录：原全量版本包含 210 张卡片；用户报告新游戏初始化卡死，
+移除 402 个新增动态表格后仍卡死，改为筛选变量未设置时隐藏所有卡片后也仍卡死。
+仅生成一张完整的凯旋轴线卡片、保留其动态表格和仪式预览时，用户确认可以加载。
+这些结果没有证明具体引擎死锁、某个函数或纯控件数量就是唯一根因；隐藏控件不能作为已验证的
+延迟创建方案。17 张卡片的最终范围来自上述设计取舍，不依赖将猜测写成确定根因。
+
 ## Required Checks
 
 1. There is no native, data-driven way to add an Encyclopedia sidebar page/category.
@@ -20,44 +41,43 @@ content, or wiring any `game_concept` into a curated (as opposed to search/link-
    `"[Not(GetVariableSystem.HasValue(...))]"` guards, and every vanilla sidebar button additionally
    gets `onclick = "[GetVariableSystem.Clear('<var>')]"` so clicking back into a real page exits the
    custom view. `src/in_game/gui/encyclopedia_lateralview.gui` implements this with
-   `tv_encyclopedia_active` (tab toggle) and `tv_encyclopedia_filter` (all/mechanics/generic/unique
-   category filter buttons within the tab).
+   `tv_encyclopedia_active` (tab toggle) and `tv_encyclopedia_filter` (all/overview/mechanics/
+   generic/unique filter buttons within the tab).
 
 3. Preserve vanilla's `default_format = "#yellow_titles"` exactly on card titles.
    The reference mod's own copy of this line dropped the leading `#` (`"yellow_titles"`) — a
    drift, not an intentional variant. Copy the vanilla card template verbatim for this field.
 
-4. Custom cards reference existing localization via literal `text = "game_concept_<id>"` /
-   `"game_concept_<id>_desc"` widget fields, not `[id|e]` link syntax.
-   This is a plain `text_single`/`text_multi` `text=` lookup (same mechanism vanilla's own card
-   template uses via `EncyclopediaEntry.GetTitle`/`GetBody`), distinct from `[id|e]` cross-link
-   markup used inside body prose elsewhere. The `id` still needs a real registered `game_concept`
-   block for the key to resolve — reusing an already-registered concept's keys (as this mod's tab
-   does) needs no new concept registration, only the two loc keys to already exist.
+4. The tab's own text lives in a generated Europedia localization pair, not in the concept
+   files. `src/main_menu/localization/{english,simp_chinese}/tv_europedia_l_*.yml` are generated
+   by `scripts_engineering_department/main_menu/localization/*/gen_tv_europedia_l_*.py` from the
+   same two sources the cards are (`europedia_content.py` for the hand-written mechanic cards and
+   `europedia_render.py` for the text every wonder card shares), so a card can never reference a
+   key that does not exist. Cards read plain localization with `text = "<KEY>"`, and prose links
+   with `raw_text = "<[link]>"` — never `[id|e]` for the card title itself.
 
-   For the fixed Engineering Department / Great Project mechanic cards specifically (the
-   `MECHANICS` list in `gen_tv_encyclopedia_wonders_cards_gui.py`), a concept in that
-   generator's `EXPANDED_MECHANICS` set uses an optional third key,
-   `game_concept_<id>_europedia_desc`, as its card body instead of `_desc`
-   (`body_key_for()` picks the key). This lets Europedia carry a longer, more detailed
-   explanation than the concise `_desc` used for in-game tooltips/`[id|e]` cross-links
-   elsewhere, without lengthening the tooltip text itself. Only add `_europedia_desc` for
-   ids in `EXPANDED_MECHANICS`; concepts outside that set fall back to the normal `_desc` and
-   need no extra key. Ground any new `_europedia_desc` prose in confirmed mechanic facts from
-   `docs/knowledge/PROJECT_OVERVIEW.md` / `docs/knowledge/risk_cards/wonders.md` — do not
-   invent numbers or behavior not already documented there.
+   Wonder cards take their title and lead from the existing `game_concept_<concept>` /
+   `game_concept_<concept>_desc` pair; everything else on those cards is generated from the wonder
+   data (effects, dedications, estates, size, category). Do not hand-write per-wonder prose into
+   the concept files: those keys are the wonder's in-game tooltip too, and the previous
+   `game_concept_<id>_europedia_desc` mechanism was removed with the 2026-10-28 rewrite.
 
-5. Bound card text width explicitly (shared with `docs/knowledge/risk_cards/wonders.md` rule 11).
-   Use `text_multi` with matching `max_width`/`min_width` (1450, matching vanilla) and
-   `autoresize = yes`; an unconstrained elastic `hbox`/`vbox` column can blow out a card's bounded
-   width.
+5. Card layout lives in `src/in_game/gui/shared/tv_europedia_style.gui`, a new-types file (it
+   overrides no vanilla file, so it cannot conflict with another mod's GUI). A card is a header
+   tab, a `tv_eu_lead` paragraph, then sections; each section is a `tv_eu_section` heading
+   followed by `tv_eu_text`, a `tv_eu_step` flow, a `tv_eu_scale_step` ladder, a `tv_eu_panel`
+   comparison, a `tv_eu_entry` list or a `tv_eu_choice` trio. Build cards through
+   `scripts_engineering_department/europedia_render.py` rather than emitting them by hand, and put
+   hand-written prose in `europedia_content.py`, which carries English and Simplified Chinese side
+   by side. Keep card text bounded: `tv_eu_text` is a `text_multi` with matching
+   `max_width`/`min_width` (1450, matching vanilla) and `autoresize = yes`, because an
+   unconstrained elastic column blows out a card's width.
 
 6. Do not build per-entry texture paths with a runtime `Concatenate` inside `texture =`.
-   Since a custom card list this size (100+ entries) is always machine-generated from data already
-   available at generation time, bake each entry's literal DDS path into the generated `.gui` text
-   directly (as `gen_tv_encyclopedia_wonders_cards_gui.py` does via `wonder.get("image")`/
-   `wonder['key']`) rather than reaching for a dynamic `Concatenate(...)` expression at GUI-eval
-   time, which renders blank (see `docs/knowledge/risk_cards/gui.md` rule 19).
+   The two example images are known at generation time. Bake their literal DDS paths into the
+   generated `.gui` text through the generator's `wonder_icon_texture()` helper. A runtime
+   `Concatenate(...)` path expression can render blank (see `docs/knowledge/risk_cards/gui.md`
+   rule 19). Do not restore the removed full-database card loop for image routing.
 
 7. Preserve the scrollbox sizing contract on custom content. The custom tab's visible root and
    its `scrollbox` must use `layoutpolicy_expanding`; the static card-list root inside
@@ -66,6 +86,20 @@ content, or wiring any `game_concept` into a curated (as opposed to search/link-
    scrollbox receives no stable content height and the cards/buttons can collapse into the panel's
    upper-left corner. This follows the same expanding-content shape used by vanilla
    `ui_library.gui`.
+
+   Two more engine limits bite this panel specifically:
+
+   - `Or` and `And` take **exactly two** arguments. `Or(a, b, c)` logs
+     `Function 'Or' expected 2 arguments, got 3` and the whole widget expression is dropped
+     (2026-10-28, the filter guards). The numbered forms exist for wider tests and take exactly
+     their number: `Or3`/`And3`, `Or4`/`And4`, `Or5`/`And5` (counted in vanilla's own GUI: Or3 75,
+     Or4 6, Or5 7, And3 223, And4 30, And5 11). Either nest two-argument `Or` or use `Or3`; `Not`
+     takes one argument.
+     `tests/test_wonder_ritual_rework.py::test_encyclopedia_gui_expressions_match_engine_arity`
+     checks the whole panel for this.
+   - The filter variable does not exist until a filter button is pressed, so every card guard must
+     also accept the unset case (`Not(GetVariableSystem.Exists('tv_encyclopedia_filter'))`), or the
+     tab opens empty on first visit.
 
 8. **`encyclopedia_lateralview.gui` full-file-override conflicts with other Workshop mods.**
    EU5's Jomini GUI loader replaces a `.gui` file wholesale per relative path — it does not
@@ -96,9 +130,18 @@ content, or wiring any `game_concept` into a curated (as opposed to search/link-
 
 ## Validation
 
-Run `validate.py --changed --fix --ai-report`, then manually open the Europedia panel in-game,
-click the custom tab and each filter button, scroll the full card list, and hover a few cards —
-text-width and blank-icon failures typically only surface on render/hover, not statically.
+Run `validate.py --changed --fix --ai-report` (it checks that the generated localization exists
+and is fresh), then manually open the Europedia panel in-game, click the custom tab and each of
+the five filter buttons, scroll the full card list, and hover a few cards — text-width, blank-icon
+and empty `ShowModifierEffect` rows only surface on render/hover, not statically.
+
+`tests/test_wonder_ritual_rework.py::test_encyclopedia_keeps_only_approved_cards` checks all
+15 mechanic cards, exactly the two approved examples and six native ritual previews in the
+generator and both deployed source roots. Missing or duplicate example keys fail generation.
+`test_encyclopedia_renders_three_native_previews_in_the_body` also checks that each example's
+three completion previews use the real scripted effects in body text, never a `text_single` or
+`icon`. Verify a fresh new-game load and both example cards in game; static checks do not prove
+native initialization or rendering behavior.
 
 ## Relevant Anti-Patterns
 

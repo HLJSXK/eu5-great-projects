@@ -13,38 +13,31 @@
  # ── Engineering Department / Wonder Construction ──────────────────────────
  game_concept_tv_engineering_department: "Dział Inżynierii"
  game_concept_tv_engineering_department_desc: "Nieunikalna organizacja międzynarodowa tworzona automatycznie dla każdego kraju podczas inicjowania kampanii. Posiada biuro [tv_great_engineer|e] i zarządza każdym etapem [tv_wonder_construction|e]: [tv_wonder_concept|e], oddziałem [tv_wonder_survey|e], organizacją, logistyką i końcowym [tv_wonder_ceremony|e]."
- game_concept_tv_engineering_department_europedia_desc: "Ustanawiana automatycznie dla każdego kraju na początku kampanii lub przy pierwszym dodaniu Działu Inżynierii do istniejącego zapisu, jest to stała instytucja odpowiedzialna za każdą próbę [tv_wonder_construction|e] w danym kraju. Jej pojedynczy oficer, [tv_great_engineer|e], osobiście kieruje rurociągiem: jego umiejętności administracyjne rozwijają się o [tv_wonder_concept|e], ich umiejętności wojskowe rozwijają się o [tv_wonder_survey|e], a ich staż pracy decyduje o tym, kto zostanie zapamiętany w końcowym [tv_wonder_ceremony|e]. Rozpoczęty już projekt nie zostaje zresetowany w wyniku utraty lub zastąpienia Wielkiego Inżyniera, ale wolne biuro wstrzymuje prace nad koncepcjami i przeglądami do czasu wyznaczenia następcy."
 
  game_concept_tv_great_engineer: "Wielki Inżynier"
  game_concept_tv_great_engineer_desc: "Wyznaczona postać, która prowadzi [tv_engineering_department|e]. [tv_great_engineer|e] jest przechowywany jako zmienna kraju i można go wyznaczyć, zastąpić lub usunąć z panelu [tv_engineering_department|e]."
 
  game_concept_tv_wonder_concept: "Poczęcie"
  game_concept_tv_wonder_concept_desc: "Etap propozycji otwierający nowy [tv_wonder_construction|e]. Co miesiąc postęp umiejętności administracyjnych [tv_great_engineer|e] Postęp poczęcia; po jego ukończeniu [tv_great_engineer|e] przedstawia wykonalny projekt [tv_wonder_small|e], [tv_wonder_medium|e] lub [tv_wonder_large|e] do realizacji w kraju."
- game_concept_tv_wonder_concept_europedia_desc: "Poczęcie rozpoczyna się w momencie wyznaczenia [tv_great_engineer|e]: ukryty licznik postępu zaczyna się od 0 i nieznacznie wzrasta co miesiąc, w zależności od umiejętności administracyjnych funkcjonariusza. Ukończenie koncepcji słabego administratora może zająć lata, podczas gdy w kraju, w którym kolejno pojawia się kilku zdolnych administratorów, postępuje skumulowany postęp niezależnie od tego, kto obecnie sprawuje ten urząd. Po ukończeniu Inżynier nie pozwala krajowi na swobodny wybór — proponuje jedno wykonalne przedsięwzięcie [tv_wonder_small|e], [tv_wonder_medium|e] lub [tv_wonder_large|e], ukształtowane na podstawie tego, co kraj może obecnie wesprzeć, do realizacji."
 
  game_concept_tv_wonder_survey: "Ankieta"
  game_concept_tv_wonder_survey_desc: "Etap oceny lokalizacji [tv_wonder_construction|e]. Postęp badania rośnie co miesiąc w zależności od umiejętności wojskowych [tv_great_engineer|e], ujawnia [tv_wonder_scale_competence|e], [tv_wonder_logistics_competence|e] i [tv_wonder_organization_competence|e] i pozwala krajowi potwierdzić miejsce budowy po zakończeniu odczytów."
- game_concept_tv_wonder_survey_europedia_desc: "Po rozstrzygnięciu debaty inspektorzy oceniają trzy ukryte cechy wybranej lokalizacji — [tv_wonder_scale_competence|e], [tv_wonder_organization_competence|e] i [tv_wonder_logistics_competence|e] — każda łącząca naturalną przydatność lokalizacji z umiejętnościami administracyjnymi [tv_great_engineer|e]. Wszystkie trzy odczyty rosną razem w miarę gromadzenia się postępu badań wynikającego z umiejętności wojskowych Inżyniera i żaden z nich nie może zostać ponownie ulepszony po rozpoczęciu budowy, więc kraj porównujący marginalną lokalizację z dłuższym oczekiwaniem na lepszy dokonuje prawdziwego kompromisu."
 
  game_concept_tv_wonder_debate: "Debata"
  game_concept_tv_wonder_debate_desc: "Etap debaty krajowej [tv_wonder_construction|e]. Zaspokajanie wymagań dotyczących nieruchomości i debatowanie nad wydarzeniami buduje [tv_wonder_domestic_support|e]; gdy osiągnie 100, kraj może ogłosić zakończenie debaty i przejść do [tv_wonder_survey|e]."
- game_concept_tv_wonder_debate_europedia_desc: "Zanim jakakolwiek podstawa zostanie podjęta, proponowany projekt musi przetrwać krajową debatę. Szlachta, mieszczanie i duchowni zgłaszają żądania, których zaspokojenie zapewnia [tv_wonder_domestic_support|e], a wydarzenia debaty dają jeszcze więcej. Wsparcie odbywa się w skali 0–200, ale do zamknięcia debaty i przejścia do [tv_wonder_survey|e] potrzeba tylko pierwszych 100 punktów. Poparcie nie gromadzi się w nieskończoność: po zakończeniu debaty zmniejsza się ono nieco co miesiąc, więc kraj, który może już zamknąć debatę, niewiele zyskuje, pozostawiając ją otwartą, a projekt, który pozwala na zmniejszenie wsparcia do zera, zanim zasłuży na ceremonię, grozi całkowitym upadkiem."
 
 
  game_concept_tv_wonder_ceremony: "Ceremonia"
  game_concept_tv_wonder_ceremony_desc:0 "The dedication of a completed Great Project. Generic and unique wonders offer three styles or a plain inauguration. Dedication is recorded independently from the final building; its rewards and societal tendency end when the wonder is lost or its dedication fades."
- game_concept_tv_wonder_ceremony_europedia_desc:0 "All three styles last 24 months. Confirmation pays a size-based cost and settles the satisfaction of existing estates. Completion grants the chosen rewards and societal change. Plain inauguration is immediate, retaining the base effects and construction rewards while every participating estate opposes it. Domestic support does not decay during rituals. Unique wonders inherit their generic mechanism's rewards with their own flavor text. Expansion retains an existing dedication; plain expansions choose again. During active conception, a decision can rededicate a plain wonder."
 
  game_concept_tv_wonder_construction: "Świetny projekt"
  game_concept_tv_wonder_construction_desc: "Mechanizm Wielkiego Projektu zarządzany przez [tv_engineering_department|e]. [tv_great_engineer|e] kończy [tv_wonder_concept|e] i proponuje projekt [tv_wonder_small|e], [tv_wonder_medium|e] lub [tv_wonder_large|e]; po [tv_wonder_debate|e] wewnętrznej i [tv_wonder_survey|e] postępują cztery [tv_wonder_construction_part|e]y. Każdy $tv_wonder_labor_camp$ zużywa narzędzia, drewno i mur z lokalnego rynku."
- game_concept_tv_wonder_construction_europedia_desc: "Wielki Projekt prowadzi cud od pomysłu do pomnika. [tv_great_engineer|e] proponuje wykonalne przedsięwzięcie, kraj rozwiązuje [tv_wonder_debate|e], a [tv_wonder_survey|e] potwierdza miejsce. Cztery [tv_wonder_construction_part|e]y postępują, a każdy $tv_wonder_labor_camp$ zużywa dobra lokalnego rynku aż do [tv_wonder_ceremony|e]. Ukończony projekt [tv_wonder_generic|e] może później rozwijać się przez [tv_wonder_expansion|e]."
 
  game_concept_tv_wonder_expansion: "Ekspansja"
  game_concept_tv_wonder_expansion_desc:0 "Raise an inaugurated wonder at the same site. A dedicated wonder retains its dedication and skips the ritual phase without repeating ritual rewards. A plain wonder may choose a dedication or remain plain after expansion. Preserved survey competence and base construction rewards follow the usual rules."
 
  game_concept_tv_wonder_construction_part: "Część konstrukcyjna"
  game_concept_tv_wonder_construction_part_desc: "Jedna z czterech równoległych ścieżek — podstawa, główna struktura, funkcja i zwieńczenie — którymi [tv_wonder_construction|e] postępuje jednocześnie. Poziom projektu zależy od tego, która z czterech części pozostaje w tyle, dlatego postęp musi być rozłożony równomiernie, a nie pędzony jedną ścieżką."
- game_concept_tv_wonder_construction_part_europedia_desc: "Każdy Wielki Projekt to tak naprawdę cztery budynki wznoszone równolegle – Fundament, Główna Konstrukcja, Funkcja i Zwieńczenie – każdy rozwijany niezależnie, przy użyciu własnej pracy i materiałów. Ogólny poziom projektu nie jest średnią z czterech; jest ograniczony w tej części, która została najbardziej w tyle. Wlewanie wszystkich zasobów w jedną eksponatową ścieżkę, zaniedbując pozostałe, powoduje jedynie zatrzymanie całego pomnika na poziomie jego najsłabszej części, więc zrównoważony postęp we wszystkich czterech pokonuje wyścig o ukończenie dowolnego z nich jako pierwszy."
 
  game_concept_tv_wonder_small: "Mały projekt"
  game_concept_tv_wonder_small_desc: "Klasa wielkości [tv_wonder_construction|e]. Małe projekty mogą być budowane więcej niż raz. Ich wpływ na kraj bazowy ogranicza się do przepływu wartości, podczas gdy efekty lokalne i efekty ceremonii są nieograniczone.\nKażdy poziom małego projektu kosztuje zazwyczaj około #Y 10 000@gold!#!."
@@ -57,11 +50,9 @@
 
  game_concept_tv_wonder_generic: "Ogólny cud"
  game_concept_tv_wonder_generic_desc: "[tv_wonder_construction|e] zaproponowany przez [tv_great_engineer|e] i swobodnie umiejscowiony w skali [tv_wonder_small|e], [tv_wonder_medium|e] lub [tv_wonder_large|e], w przeciwieństwie do [tv_wonder_unique|e] zamocowanego na mapie. Jego inauguracja pozwala wybrać styl [tv_wonder_ceremony|e]."
- game_concept_tv_wonder_generic_europedia_desc: "Ogólny cud nie jest powiązany z żadną stałą lokalizacją: kraj sam wybiera miejsce budowy, gdy [tv_wonder_survey|e] potwierdzi odpowiednią lokalizację, w którejkolwiek z klas [tv_wonder_small|e], [tv_wonder_medium|e] lub [tv_wonder_large|e] zaproponowanej przez [tv_great_engineer|e]. Małe, ogólne projekty można nawet przebudować więcej niż raz w nowym miejscu, zapewniając krajowi powtarzalny dostęp do nagród ceremonii tego archetypu — w przeciwieństwie do [tv_wonder_unique|e], który istnieje dokładnie raz, w jednym miejscu, przez całą grę."
 
  game_concept_tv_wonder_unique: "Unikalny cud"
  game_concept_tv_wonder_unique_desc: "Historyczny [tv_wonder_construction|e] ustawiony w określonym miejscu na mapie, w przeciwieństwie do swobodnie rozmieszczonego [tv_wonder_generic|e]. Większość unikalnych cudów automatycznie przechodzi przez 8-etapowy [tv_wonder_ceremony|e] po zakończeniu budowy; zamiast tego kilka z nich ma własną dedykowaną ceremonię ręczną."
- game_concept_tv_wonder_unique_europedia_desc: "Unikalny cud jest od początku kampanii powiązany z jedną lokalizacją w świecie rzeczywistym i tylko kraj, który faktycznie kontroluje tę lokalizację, może go zbudować — nie ma możliwości swobodnego wyboru lokalizacji, jak w przypadku [tv_wonder_generic|e]. W zamian za tę historyczną stałość, 134 ze 136 unikalnych cudów moda po ukończeniu dzieli jednolity, automatyczny, ośmioetapowy [tv_wonder_ceremony|e], który nie wymaga dalszego udziału gracza, aby osiągnąć stałą nagrodę. Jedynymi wyjątkami są latarnia morska Pharos i Hagia Sophia, a w każdym z nich przeprowadzany jest własny, wieloetapowy rytuał."
 
  game_concept_tv_wonder_domestic_support: "Wsparcie krajowe"
  game_concept_tv_wonder_domestic_support_desc: "Zasób [tv_wonder_construction|e] reprezentujący elitarną i publiczną chęć utrzymania dużego Wielkiego Projektu. Osiągnij 100, aby zakończyć początkową debatę; wsparcie może być przechowywane do 200 i zanika po zakończeniu debaty."
@@ -76,12 +67,3 @@
  game_concept_tv_wonder_logistics_competence_desc: "Ocena dróg, wozów, portów, mostów i punktów przekazania określająca, czy dobra docierają na miejsce na czas."
 
  # ── Europedia Tab UI ─────────────────────────────────────────────────────────────────────────
- TV_ENCYCLOPEDIA_TAB_TITLE: "Dział Inżynierii"
- TV_ENCYCLOPEDIA_FILTER_ALL: "Wszystko"
- TV_ENCYCLOPEDIA_FILTER_ALL_TOOLTIP: "Pokaż każdy wpis Działu Inżynierii."
- TV_ENCYCLOPEDIA_FILTER_MECHANICS: "Mechanika"
- TV_ENCYCLOPEDIA_FILTER_MECHANICS_TOOLTIP: "Pokaż tylko wpisy dotyczące mechaniki Wielkiego Projektu."
- TV_ENCYCLOPEDIA_FILTER_GENERIC: "Ogólne cuda"
- TV_ENCYCLOPEDIA_FILTER_GENERIC_TOOLTIP: "Pokaż tylko ogólne wpisy dotyczące Cudów."
- TV_ENCYCLOPEDIA_FILTER_UNIQUE: "Unikalne cuda"
- TV_ENCYCLOPEDIA_FILTER_UNIQUE_TOOLTIP: "Pokaż tylko unikalne wpisy Cudów."

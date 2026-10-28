@@ -1,0 +1,380 @@
+﻿# Great Projects Europedia card style.
+#
+# Every card in in_game/gui/encyclopedia_lateralview.gui builds from these types. A card is
+# 1450 wide: a header tab carrying the title, then a lead paragraph, then sections. A section
+# is a heading (icon, gold title, a gold rule fading out to the right) followed by any of:
+#
+#   tv_eu_text      body text
+#   tv_eu_flow      an hbox of up to four tv_eu_step with tv_eu_arrow between (how it works)
+#   tv_eu_scale     an hbox of up to seven tv_eu_scale_step (a ladder, weakest to strongest)
+#   tv_eu_panel     two side-by-side comparison panels with a tv_eu_sign between them
+#   tv_eu_entry     a paper strip: a fixed icon column on the left, a gold title and text right
+#   tv_eu_goods_row a fixed label, then tv_eu_item icons in a row
+#
+# Every icon that names a thing carries a hoverable game link under it (tv_eu_link): the blue
+# or golden text a player already knows to hover. Only headings, arrows, medallions and the
+# header stand without one.
+#
+# This file adds a new types group; it does not override a vanilla file, so it cannot conflict
+# with another mod.
+
+types tv_europedia_style
+{
+	# A whole card: the paper sheet, its header tab and everything under it. Override
+	# "card_color" to change the sheet's tint. Everything below this type is a piece of a card.
+	type tv_eu_card = vbox {
+		set_parent_size_to_minimum = yes
+		margin = { 0 10 }
+
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			spacing = 10
+			margin_bottom = 24
+
+			max_width = 1450
+			min_width = 1450
+			using = bg_paper_card
+
+			blockoverride "card_color" {
+				using = color_intense_bg_blue_texture
+				blend_mode = multiply
+			}
+
+			block "card_header" {}
+			block "card_body" {}
+		}
+	}
+
+	# Lead paragraph: the card's one-paragraph summary, flavour type, centred.
+	type tv_eu_lead = text_multi {
+		max_width = 1450
+		min_width = 1450
+		autoresize = yes
+		margin = { 140 6 }
+		align = hcenter|nobaseline
+		using = Font_Type_Flavor
+		fontsize = 17
+	}
+
+	# Section heading: an icon, a gold title and a gold rule fading out to the right.
+	# Override "section_icon" (a texture line) and "section_title" (a text line).
+	type tv_eu_section = hbox {
+		layoutpolicy_horizontal = expanding
+		margin = { 40 0 }
+		margin_top = 16
+		spacing = 10
+
+		icon = {
+			size = { 34 34 }
+			block "section_icon" { texture = "gfx/interface/icons/flat_icons/effect.dds" }
+		}
+		text_single = {
+			using = Font_Type_Headers
+			fontsize = 19
+			default_format = "#yellow_titles"
+			autoresize = yes
+			block "section_title" { text = "" }
+		}
+		icon = {
+			layoutpolicy_horizontal = expanding
+			size = { 20 2 }
+			using = color_gold_texture
+			alpha = 0.7
+			modify_texture = {
+				texture = "gfx/interface/component_masks/mask_fade_horizontal_right.dds"
+				blend_mode = alphamultiply
+			}
+		}
+	}
+
+	# Body text of a section, indented like the heading.
+	type tv_eu_text = text_multi {
+		max_width = 1450
+		min_width = 1450
+		autoresize = yes
+		margin = { 40 4 }
+	}
+
+	# One step of a flow: a paper panel with an icon, its link caption, a title and a short text.
+	# Four steps and three tv_eu_arrow fit a card row (hbox, margin { 40 0 }, spacing 8).
+	# Override "step_icon", "step_link" (a tv_eu_link naming what the icon shows), "step_title",
+	# "step_text".
+	type tv_eu_step = vbox {
+		minimumsize = { 305 236 }
+		maximumsize = { 305 -1 }
+		margin = { 14 14 }
+		spacing = 8
+		using = bg_paper_card
+
+		icon = {
+			size = { 60 60 }
+			block "step_icon" { texture = "gfx/interface/icons/flat_icons/effect.dds" }
+		}
+		block "step_link" {}
+		text_single = {
+			using = Font_Type_Headers
+			fontsize = 16
+			default_format = "#yellow_titles"
+			autoresize = yes
+			block "step_title" { text = "" }
+		}
+		text_multi = {
+			max_width = 277
+			min_width = 277
+			autoresize = yes
+			align = hcenter|nobaseline
+			block "step_text" { text = "" }
+		}
+		expand = {}
+	}
+
+	# The arrow between two flow steps, and between two items.
+	type tv_eu_arrow = icon {
+		size = { 30 30 }
+		texture = "gfx/interface/buttons/flats/button_simple_right.dds"
+		using = color_gold
+	}
+
+	# A hoverable game link: [ShowGoodsName('x')|e], [ShowBuildingTypeName('x')|e],
+	# [ShowEstateTypeName('x')], [ShowSocietyDirectionName('x')], [ShowModifier('x')] or a
+	# concept link. Set raw_text.
+	type tv_eu_link = text_multi {
+		max_width = 277
+		min_width = 277
+		autoresize = yes
+		align = hcenter|nobaseline
+		fontsize = 15
+		raw_text = ""
+	}
+
+	# An icon with its link caption (fixed 100 wide, icon on top). Override "item_icon"
+	# (texture, optionally alpha), "item_size" (the icon's size inside its 48 box) and
+	# "item_link".
+	type tv_eu_item = vbox {
+		minimumsize = { 100 -1 }
+		maximumsize = { 100 -1 }
+		layoutpolicy_vertical = expanding
+		spacing = 4
+
+		widget = {
+			size = { 48 48 }
+			icon = {
+				parentanchor = center
+				block "item_size" { size = { 100% 100% } }
+				block "item_icon" { texture = "gfx/interface/icons/flat_icons/effect.dds" }
+			}
+			block "item_overlay" {}
+		}
+		text_multi = {
+			max_width = 100
+			min_width = 100
+			autoresize = yes
+			align = hcenter|nobaseline
+			fontsize = 14
+			block "item_link" { raw_text = "" }
+		}
+		expand = {}
+	}
+
+	# The arrow between items, level with their icons.
+	type tv_eu_item_arrow = vbox {
+		layoutpolicy_vertical = expanding
+		widget = {
+			size = { 30 48 }
+			tv_eu_arrow = { parentanchor = center }
+		}
+		expand = {}
+	}
+
+	# One step of a scale (weakest to strongest, left to right): a 64 px medallion over a label.
+	# Seven fit a card row (hbox, spacing 10). Override "medallion" (widgets drawn in a 64 x 64
+	# box) and "scale_label" (a text line, usually a concept link holding the details).
+	type tv_eu_scale_step = vbox {
+		minimumsize = { 180 -1 }
+		maximumsize = { 180 -1 }
+		spacing = 6
+
+		widget = {
+			size = { 64 64 }
+			block "medallion" {}
+		}
+		text_multi = {
+			max_width = 176
+			min_width = 176
+			autoresize = yes
+			align = hcenter|nobaseline
+			block "scale_label" { text = "" }
+		}
+	}
+
+	# A wide paper panel for side-by-side comparisons: two fit a card row (hbox, margin { 40 0 }),
+	# with a tv_eu_sign between them. Override "panel_icons" (tv_eu_item, tv_eu_item_arrow),
+	# "panel_title" and "panel_text".
+	type tv_eu_panel = vbox {
+		minimumsize = { 640 200 }
+		maximumsize = { 640 -1 }
+		margin = { 18 14 }
+		spacing = 8
+		using = bg_paper_card
+
+		hbox = {
+			spacing = 10
+			block "panel_icons" {}
+		}
+		text_single = {
+			using = Font_Type_Headers
+			fontsize = 17
+			default_format = "#yellow_titles"
+			autoresize = yes
+			block "panel_title" { text = "" }
+		}
+		text_multi = {
+			max_width = 604
+			min_width = 604
+			autoresize = yes
+			align = hcenter|nobaseline
+			block "panel_text" { text = "" }
+		}
+		expand = {}
+	}
+
+	# One of three side-by-side choices (a wonder's dedications): a paper card with an axis icon,
+	# a gold title, the flavour text and whatever the caller puts under it. Three fit a card row
+	# (hbox, margin { 40 0 }, spacing 10). Override "choice_icon" (a texture line, not a widget),
+	# "choice_title", "choice_text" and "choice_extra" (a container of widgets).
+	type tv_eu_choice = vbox {
+		minimumsize = { 440 -1 }
+		maximumsize = { 440 -1 }
+		margin = { 16 14 }
+		spacing = 8
+		using = bg_paper_card
+
+		icon = {
+			size = { 48 48 }
+			block "choice_icon" { texture = "gfx/interface/icons/flat_icons/effect.dds" }
+		}
+		text_single = {
+			using = Font_Type_Headers
+			fontsize = 17
+			default_format = "#yellow_titles"
+			autoresize = yes
+			block "choice_title" { text = "" }
+		}
+		text_multi = {
+			max_width = 408
+			min_width = 408
+			autoresize = yes
+			block "choice_text" { text = "" }
+		}
+		block "choice_extra" {}
+		expand = {}
+	}
+
+	# A big gold sign between panels or flow steps ("or", "+", "-", "="). Override "sign_text".
+	type tv_eu_sign = text_single {
+		minimumsize = { 50 -1 }
+		align = hcenter|nobaseline
+		using = Font_Type_Headers
+		fontsize = 30
+		default_format = "#yellow_titles"
+		autoresize = yes
+		block "sign_text" { raw_text = "" }
+	}
+
+	# One entry of a list (a wonder's dedication, a mechanic's rule): a paper strip with a fixed
+	# icon column on the left and a gold title over the text on the right. Entries stack in a
+	# vbox (margin { 40 0 }, spacing 8). Override "entry_icons", "entry_title", "entry_text".
+	type tv_eu_entry = hbox {
+		margin = { 18 12 }
+		spacing = 20
+		using = bg_paper_card
+
+		hbox = {
+			minimumsize = { 390 -1 }
+			maximumsize = { 390 -1 }
+			spacing = 6
+			expand = {}
+			block "entry_icons" {}
+			expand = {}
+		}
+		vbox = {
+			spacing = 4
+			text_single = {
+				size = { 920 26 }
+				align = left|nobaseline
+				using = Font_Type_Headers
+				fontsize = 17
+				default_format = "#yellow_titles"
+				autoresize = no
+				block "entry_title" { text = "" }
+			}
+			text_multi = {
+				max_width = 920
+				min_width = 920
+				autoresize = yes
+				block "entry_text" { text = "" }
+			}
+		}
+	}
+
+	# tv_eu_entry with room for four items and two arrows. Keep one width per list.
+	type tv_eu_entry_wide = hbox {
+		margin = { 18 12 }
+		spacing = 20
+		using = bg_paper_card
+
+		hbox = {
+			minimumsize = { 500 -1 }
+			maximumsize = { 500 -1 }
+			spacing = 6
+			expand = {}
+			block "entry_icons" {}
+			expand = {}
+		}
+		vbox = {
+			spacing = 4
+			text_single = {
+				size = { 810 26 }
+				align = left|nobaseline
+				using = Font_Type_Headers
+				fontsize = 17
+				default_format = "#yellow_titles"
+				autoresize = no
+				block "entry_title" { text = "" }
+			}
+			text_multi = {
+				max_width = 810
+				min_width = 810
+				autoresize = yes
+				block "entry_text" { text = "" }
+			}
+		}
+	}
+
+	# A labelled row of items: a fixed-width label, then tv_eu_item. Override "row_label" (a text
+	# line) and "row_goods".
+	type tv_eu_goods_row = hbox {
+		layoutpolicy_horizontal = expanding
+		spacing = 12
+
+		text_multi = {
+			max_width = 230
+			min_width = 230
+			autoresize = yes
+			block "row_label" { text = "" }
+		}
+		hbox = {
+			spacing = 4
+			block "row_goods" {}
+		}
+		expand = {}
+	}
+
+	# Bare icons without a link caption: only for decoration that names nothing.
+	type tv_eu_goods = icon {
+		size = { 40 40 }
+	}
+	type tv_eu_icon = icon {
+		size = { 52 52 }
+	}
+}

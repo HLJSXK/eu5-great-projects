@@ -27,6 +27,8 @@ MECHANICS_INPUTS = (
 UNIQUE_INPUT = ("data/unique_wonders.yaml",)
 COST_REWARD_INPUT = ("data/cost_reward_units.yaml",)
 ALL_WONDER_INPUTS = WONDERS_INPUT + DESIGN_NOTES_INPUT + MECHANICS_INPUTS + UNIQUE_INPUT
+EUROPEDIA_SOURCE = "scripts_engineering_department/europedia_content.py"
+EUROPEDIA_RENDER = "scripts_engineering_department/europedia_render.py"
 WONDER_LOADER_INPUTS = ALL_WONDER_INPUTS + COST_REWARD_INPUT + (".eu5-base/reference_official_defines/docs/modifiers.log", ".eu5-base/reference_game_files/game/main_menu/common/static_modifiers/country.txt")
 LOCALIZATION_INPUTS = WONDER_LOADER_INPUTS + ("data/wonder_localization.yaml",)
 MECHANICS_EFFECTS_INPUTS = WONDER_LOADER_INPUTS + ("data/pulse_registry.yaml",)
@@ -183,8 +185,18 @@ WONDER_GENERATORS = (
     ),
     GeneratorSpec(
         "scripts_engineering_department/in_game/gui/gen_tv_encyclopedia_wonders_cards_gui.py",
-        inputs=WONDER_LOADER_INPUTS,
+        inputs=WONDER_LOADER_INPUTS + (EUROPEDIA_SOURCE, EUROPEDIA_RENDER),
         input_groups=ALL_SOURCE_GROUPS,
+    ),
+    GeneratorSpec(
+        "scripts_engineering_department/main_menu/localization/english/gen_tv_europedia_l_english.py",
+        inputs=(EUROPEDIA_SOURCE, EUROPEDIA_RENDER),
+        input_groups=("localization",),
+    ),
+    GeneratorSpec(
+        "scripts_engineering_department/main_menu/localization/simp_chinese/gen_tv_europedia_l_simp_chinese.py",
+        inputs=(EUROPEDIA_SOURCE, EUROPEDIA_RENDER),
+        input_groups=("localization",),
     ),
     GeneratorSpec(
         "scripts_engineering_department/in_game/gui/merge_tv_encyclopedia_wonders_cards_gui.py",

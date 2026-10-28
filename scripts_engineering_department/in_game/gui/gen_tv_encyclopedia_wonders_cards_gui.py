@@ -1,30 +1,19 @@
-"""Generate the "Towards Victory" Europedia tab card list as a standalone fragment.
+"""Generate the Great Projects Europedia card list as a standalone fragment.
 
-Merged into src/in_game/gui/encyclopedia_lateralview.gui
-(a hand-authored full override of the vanilla Europedia panel -- EU5 has no
-native, data-driven way to register a new Encyclopedia sidebar page/category,
-see docs/knowledge/risk_cards/europedia.md) by
-scripts_engineering_department/in_game/gui/merge_tv_encyclopedia_wonders_cards_gui.py, which inserts or
-replaces a `# BEGIN/END GENERATED TV_ENCYCLOPEDIA_CARDS` marker pair right after
-the `# TV_ENCYCLOPEDIA_CARDS_ANCHOR` comment in that shell file.
+Merged into src/in_game/gui/encyclopedia_lateralview.gui (a hand-authored full override of the
+vanilla Europedia panel -- EU5 has no native, data-driven way to register a new Encyclopedia
+sidebar page, see docs/knowledge/risk_cards/europedia.md) by
+scripts_engineering_department/in_game/gui/merge_tv_encyclopedia_wonders_cards_gui.py, which
+inserts or replaces a `# BEGIN/END GENERATED TV_ENCYCLOPEDIA_CARDS` marker pair right after the
+`# TV_ENCYCLOPEDIA_CARDS_ANCHOR` comment in that shell file.
 
-One card per entry, in three groups: the fixed Engineering Department mechanic
-concepts (MECHANICS below, textures mirrored from
-src/main_menu/common/game_concepts/tv_game_concepts.txt -- not re-derived), then
-every generic wonder archetype, then every unique wonder, both from the shared
-wonder_mechanics data package (the same merged list
-gen_tv_engineering_department_wonder_mechanics_concepts.py already uses).
+The cards themselves are built by scripts_engineering_department/europedia_render.py from
+europedia_content.py (15 mechanic cards) and the shared wonder data package (Triumphal Axis
+and Topkapi Palace only). Their text is generated separately, from the same two
+sources, into the English and Simplified Chinese Europedia localization files, so a card can
+never reference a key that does not exist.
 
-Generic/unique wonder cards reuse an EXISTING game_concept_<id>/_desc
-localization pair verbatim -- no new prose is authored for those. Mechanic
-cards in EXPANDED_MECHANICS instead prefer an optional
-game_concept_<id>_europedia_desc key (see body_key_for()): Europedia can carry
-a longer, more detailed explanation than the concise game_concept_<id>_desc
-used for in-game tooltips/[id|e] cross-links, so the two are kept as separate
-localization keys rather than lengthening the tooltip text itself. Mechanic
-concepts not in EXPANDED_MECHANICS fall back to the normal _desc key. Each
-card is gated by a `tv_encyclopedia_filter` value ('mechanics' / 'generic' /
-'unique') so the shell's filter buttons can show it.
+Card style: src/in_game/gui/shared/tv_europedia_style.gui.
 """
 
 import sys
@@ -36,197 +25,37 @@ if hasattr(sys.stdout, "reconfigure"):
 REPO_ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
 
-from wonder_mechanics.io import load_all_wonder_mechanics_data
-from wonder_mechanics.rituals import ritual_styles  # noqa: E402
-from wonder_mechanics.render import render_header  # noqa: E402
+from europedia_render import append_card, render_all, select_wonder_cards  # noqa: E402,F401
+from wonder_identity import image_expression  # noqa: E402
 from wonder_image_crop_lib import cropped_wonder_image_name  # noqa: E402
-from wonder_identity import image_expression
+from wonder_mechanics.io import load_all_wonder_mechanics_data  # noqa: E402
+from wonder_mechanics.render import render_header  # noqa: E402
 
 OUT_FILE = REPO_ROOT / "data" / "generated_fragments" / "tv_encyclopedia_wonders_cards.gui"
 SCRIPT_REL = "scripts_engineering_department/in_game/gui/gen_tv_encyclopedia_wonders_cards_gui.py"
+DATA_REL = (
+    "scripts_engineering_department/europedia_content.py + scripts_engineering_department/europedia_render.py + data/wonders.yaml + "
+    "data/wonder_final_buildings.yaml + data/wonder_generic_rituals.yaml + "
+    "data/wonder_base_modifiers.yaml + data/wonder_site_rules.yaml + data/unique_wonders.yaml"
+)
 MARKER = "TV_ENCYCLOPEDIA_CARDS"
-T = "\t"
-
-MECHANICS_TEXTURE = "gfx/interface/icons/location_icons/new/prosperity.dds"
-MECHANICS = [
-    "tv_engineering_department",
-    "tv_great_engineer",
-    "tv_wonder_concept",
-    "tv_wonder_debate",
-    "tv_wonder_survey",
-    "tv_wonder_ceremony",
-    "tv_wonder_construction",
-    "tv_wonder_expansion",
-    "tv_wonder_construction_part",
-    "tv_wonder_small",
-    "tv_wonder_medium",
-    "tv_wonder_large",
-    "tv_wonder_generic",
-    "tv_wonder_unique",
-    "tv_wonder_domestic_support",
-    "tv_wonder_scale_competence",
-    "tv_wonder_organization_competence",
-    "tv_wonder_logistics_competence",
-]
-
-# Mechanic concepts that get a longer, Europedia-only explanation via an
-# optional game_concept_<id>_europedia_desc key instead of the concise
-# tooltip-facing game_concept_<id>_desc. See body_key_for().
-EXPANDED_MECHANICS = {
-    "tv_engineering_department",
-    "tv_wonder_concept",
-    "tv_wonder_debate",
-    "tv_wonder_survey",
-    "tv_wonder_construction",
-    "tv_wonder_construction_part",
-    "tv_wonder_ceremony",
-    "tv_wonder_generic",
-    "tv_wonder_unique",
-}
 
 
-def body_key_for(concept: str) -> str:
-    if concept in EXPANDED_MECHANICS:
-        return f"game_concept_{concept}_europedia_desc"
-    return f"game_concept_{concept}_desc"
-
-
-def wonder_icon_texture(wonder: dict) -> str:
+def wonder_icon_texture(wonder: dict, wonders: list[dict]) -> str:
     if wonder.get("identity_variants"):
         return '[' + image_expression([wonder], None, f"'tv_wonder_display_image_{wonder['id']}'", cropped=True) + ']'
     image = wonder.get("image", f"tv_wonder_{wonder['key']}")
     return f"gfx/interface/icons/towards_victory/wonders/{cropped_wonder_image_name(image)}.dds"
 
 
-def append_card(lines: list[str], *, category: str, texture: str, title_key: str, body_key: str, wonder: dict | None = None, mechanics: dict | None = None) -> None:
-    lines.append(f"{T}vbox = {{")
-    lines.append(
-        f"{T}{T}visible = \"[Or(GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', '{category}'))]\""
-    )
-    lines.append(f"{T}{T}set_parent_size_to_minimum = yes")
-    lines.append(f"{T}{T}margin = {{ 0 10 }}")
-    lines.append("")
-    lines.append(f"{T}{T}vbox = {{")
-    lines.append(f"{T}{T}{T}layoutpolicy_horizontal = expanding")
-    lines.append(f"{T}{T}{T}spacing = 10")
-    lines.append(f"{T}{T}{T}using = bg_paper_card")
-    lines.append("")
-    lines.append(f"{T}{T}{T}blockoverride \"card_color\" {{")
-    lines.append(f"{T}{T}{T}{T}using = color_intense_bg_blue_texture")
-    lines.append(f"{T}{T}{T}{T}blend_mode = multiply")
-    lines.append(f"{T}{T}{T}}}")
-    lines.append("")
-    lines.append(f"{T}{T}{T}max_width = 1450")
-    lines.append(f"{T}{T}{T}min_width = 1450")
-    lines.append("")
-    lines.append(f"{T}{T}{T}icon = {{")
-    lines.append(f"{T}{T}{T}{T}layoutpolicy_horizontal = expanding")
-    lines.append(f"{T}{T}{T}{T}using = button_main_tab_texture")
-    lines.append(f"{T}{T}{T}{T}frame = 4")
-    lines.append("")
-    lines.append(f"{T}{T}{T}{T}modify_texture = {{")
-    lines.append(f"{T}{T}{T}{T}{T}using = color_intense_bg_blue_texture")
-    lines.append(f"{T}{T}{T}{T}{T}blend_mode = multiply")
-    lines.append(f"{T}{T}{T}{T}}}")
-    lines.append("")
-    lines.append(f"{T}{T}{T}{T}modify_texture = {{")
-    lines.append(f"{T}{T}{T}{T}{T}using = overlay_leather_texture")
-    lines.append(f"{T}{T}{T}{T}{T}blend_mode = overlay")
-    lines.append(f"{T}{T}{T}{T}{T}alpha = 0.2")
-    lines.append(f"{T}{T}{T}{T}}}")
-    lines.append("")
-    lines.append(f"{T}{T}{T}{T}hbox = {{")
-    lines.append(f"{T}{T}{T}{T}{T}margin = {{ 40 0 }}")
-    lines.append(f"{T}{T}{T}{T}{T}margin_top = 8")
-    lines.append("")
-    lines.append(f"{T}{T}{T}{T}{T}icon = {{")
-    lines.append(f"{T}{T}{T}{T}{T}{T}name = \"image\"")
-    lines.append(f'{T}{T}{T}{T}{T}{T}texture = "{texture}"')
-    lines.append(f"{T}{T}{T}{T}{T}{T}size = {{ 45 45 }}")
-    lines.append(f"{T}{T}{T}{T}{T}}}")
-    lines.append("")
-    lines.append(f"{T}{T}{T}{T}{T}text_single = {{")
-    lines.append(f"{T}{T}{T}{T}{T}{T}name = \"title\"")
-    lines.append(f"{T}{T}{T}{T}{T}{T}using = layoutpolicy_expanding")
-    lines.append(f"{T}{T}{T}{T}{T}{T}using = Font_Size_Medium")
-    lines.append(f"{T}{T}{T}{T}{T}{T}fontsize = 18")
-    lines.append(f"{T}{T}{T}{T}{T}{T}autoresize = no")
-    lines.append("")
-    lines.append(f"{T}{T}{T}{T}{T}{T}default_format = \"#yellow_titles\"")
-    lines.append(f'{T}{T}{T}{T}{T}{T}text = "{title_key}"')
-    lines.append(f"{T}{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}}}")
-    lines.append("")
-    lines.append(f"{T}{T}{T}TooltipScrolledContentSection = {{")
-    lines.append(f"{T}{T}{T}{T}blockoverride \"section_content\" {{")
-    lines.append(f"{T}{T}{T}{T}{T}vbox = {{")
-    lines.append(f"{T}{T}{T}{T}{T}{T}set_parent_dimension_to_minimum = height")
-    lines.append(f"{T}{T}{T}{T}{T}{T}layoutpolicy_horizontal = expanding")
-    lines.append("")
-    lines.append(f"{T}{T}{T}{T}{T}{T}text_multi = {{")
-    lines.append(f"{T}{T}{T}{T}{T}{T}{T}name = \"body\"")
-    lines.append(f"{T}{T}{T}{T}{T}{T}{T}max_width = 1450")
-    lines.append(f"{T}{T}{T}{T}{T}{T}{T}min_width = 1450")
-    lines.append(f"{T}{T}{T}{T}{T}{T}{T}autoresize = yes")
-    lines.append("")
-    lines.append(f'{T}{T}{T}{T}{T}{T}{T}text = "{body_key}"')
-    lines.append(f"{T}{T}{T}{T}{T}{T}{T}margin = {{ 40 10 }}")
-    lines.append(f"{T}{T}{T}{T}{T}{T}}}")
-    if wonder is not None:
-        lines.append('\t\t\t\t\t\ttext_multi = { max_width = 1370 autoresize = yes margin = { 40 4 } text = "TV_WONDER_RITUAL_CATALOGUE_NOTE" }')
-        for row in ritual_styles(wonder, mechanics):
-            n = row["style"]
-            lines.extend([
-                f'\t\t\t\t\t\ttext_multi = {{ max_width = 1370 autoresize = yes margin = {{ 40 4 }} text = "{row["name_key"]}" fontsize = 18 }}',
-                f'\t\t\t\t\t\ttext_multi = {{ max_width = 1370 autoresize = yes margin = {{ 40 4 }} text = "{row["desc_key"]}" }}',
-                f'\t\t\t\t\t\ttext_multi = {{ max_width = 1370 autoresize = yes margin = {{ 40 4 }} text = "TV_WONDER_RITUAL_VALUE_{wonder["id"]}_{n}" }}',
-                f"\t\t\t\t\t\ttext_multi = {{ max_width = 1370 autoresize = yes margin = {{ 40 4 }} raw_text = \"[ShowScriptedEffectForScope('tv_wonder_display_{wonder['id']}_ritual_{n}_catalogue_effect',Player.MakeScope.Self)]\" }}",
-            ])
-        lines.append(f'\t\t\t\t\t\ttext_multi = {{ max_width = 1370 autoresize = yes margin = {{ 40 10 }} text = "TV_WONDER_RITUAL_ESTATE_PREFS_{wonder["id"]}" }}')
-    lines.append(f"{T}{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}{T}block \"block_scrollarea\" {{")
-    lines.append(f"{T}{T}{T}{T}{T}maximumsize = {{ -1 800 }}")
-    lines.append(f"{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}}}")
-    lines.append(f"{T}{T}}}")
-    lines.append(f"{T}}}")
-
-
 def generate() -> str:
     wonders, mechanics = load_all_wonder_mechanics_data()
-    lines = render_header(SCRIPT_REL)
+    textures = {int(wonder["id"]): wonder_icon_texture(wonder, wonders) for wonder in select_wonder_cards(wonders)}
+    rendered = render_all(wonders, mechanics, textures)
+
+    lines = render_header(SCRIPT_REL, DATA_REL)
     lines.append(f"# BEGIN GENERATED {MARKER}")
-    lines.append("vbox = {")
-    lines.append(f"{T}using = layoutpolicy_expanding")
-    lines.append(f"{T}set_parent_dimension_to_minimum = height")
-    lines.append(f"{T}spacing = 4")
-    lines.append("")
-
-    for concept in MECHANICS:
-        append_card(
-            lines,
-            category="mechanics",
-            texture=MECHANICS_TEXTURE,
-            title_key=f"game_concept_{concept}",
-            body_key=body_key_for(concept),
-        )
-        lines.append("")
-
-    for wonder in wonders:
-        category = "unique" if wonder["is_unique"] else "generic"
-        append_card(
-            lines,
-            category=category,
-            texture=wonder_icon_texture(wonder),
-            title_key=f"game_concept_{wonder['concept']}",
-            body_key=f"game_concept_{wonder['concept']}_desc",
-            wonder=wonder, mechanics=mechanics,
-        )
-        lines.append("")
-
-    lines.append("}")
+    lines.extend(rendered["gui"])
     lines.append(f"# END GENERATED {MARKER}")
     return "\n".join(line.rstrip() for line in lines).rstrip() + "\n"
 

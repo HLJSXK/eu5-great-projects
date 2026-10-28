@@ -214,6 +214,83 @@ def test_encyclopedia_renders_three_native_previews_in_the_body(data):
     assert len(previews) == 3
 
 
+def test_encyclopedia_keeps_only_approved_cards(data):
+    from scripts_engineering_department.europedia_content import CARDS
+    from scripts_engineering_department.europedia_render import render_all, select_wonder_cards
+
+    wonders, mechanics = data
+    examples = select_wonder_cards(list(reversed(wonders)) + [{'key': 'future_wonder'}])
+    assert [w['key'] for w in examples] == ['triumphal_axis', 'unique_topkapi_palace']
+    assert [w['is_unique'] for w in examples] == [False, True]
+    assert len(CARDS) == 15
+    textures = {int(w['id']): 'test.dds' for w in examples}
+    rendered = render_all(wonders, mechanics, textures)
+    surfaces = ['\n'.join(rendered['gui'])]
+    for relative in (
+        'src/in_game/gui/encyclopedia_lateralview.gui',
+        'submods/tv_prosper_or_perish_compat/in_game/gui/encyclopedia_lateralview.gui',
+    ):
+        text = (ROOT / relative).read_text(encoding='utf-8-sig')
+        surfaces.append(text.split('# BEGIN GENERATED TV_ENCYCLOPEDIA_CARDS', 1)[1]
+                       .split('# END GENERATED TV_ENCYCLOPEDIA_CARDS', 1)[0])
+    for text in surfaces:
+        assert len(re.findall(r'\btv_eu_card\s*=\s*\{', text)) == 17
+        for card in CARDS:
+            assert f'text = "TV_EU_{card["id"].upper()}_TITLE"' in text
+        actual = {w['key'] for w in wonders if f'text = "game_concept_{w["concept"]}"' in text}
+        assert actual == {'triumphal_axis', 'unique_topkapi_palace'}
+        previews = re.findall(r"ShowScriptedEffectForScope\('(tv_wonder_display_\d+_ritual_\d+_catalogue_effect)'", text)
+        assert len(previews) == 6
+        assert set(previews) == {
+            f'tv_wonder_display_{w["id"]}_ritual_{style}_catalogue_effect'
+            for w in examples for style in (1, 2, 3)
+        }
+
+
+@pytest.mark.parametrize('damage', ['missing', 'duplicate'])
+def test_encyclopedia_rejects_ambiguous_example_data(data, damage):
+    from scripts_engineering_department.europedia_render import select_wonder_cards
+
+    wonders = list(data[0])
+    topkapi = next(w for w in wonders if w['key'] == 'unique_topkapi_palace')
+    if damage == 'missing':
+        wonders.remove(topkapi)
+    else:
+        wonders.append(topkapi)
+    with pytest.raises(ValueError, match='unique_topkapi_palace'):
+        select_wonder_cards(wonders)
+
+
+def test_encyclopedia_gui_expressions_match_engine_arity():
+    """Or/And take exactly two arguments; a third is a load error, not a silent miss.
+
+    The engine rejects `Or(a, b, c)` with "Function 'Or' expected 2 arguments, got 3" and then
+    drops the whole widget expression, so a three-way visibility test has to nest.
+    """
+    text = (ROOT / 'src/in_game/gui/encyclopedia_lateralview.gui').read_text(encoding='utf-8-sig')
+    # Or/And take exactly two arguments; the numbered forms take exactly their number. Vanilla
+    # itself uses Or3/Or4/Or5 and And3/And4/And5, so both spellings are legal and both are checked.
+    expected = {'Or': 1, 'Or3': 2, 'Or4': 3, 'Or5': 4,
+                'And': 1, 'And3': 2, 'And4': 3, 'And5': 4, 'Not': 0}
+    wrong = []
+    for name, arity in expected.items():
+        for match in re.finditer(rf'\b{name}\(', text):
+            index, depth, commas = match.end(), 1, 0
+            while index < len(text) and depth:
+                char = text[index]
+                if char == '(':
+                    depth += 1
+                elif char == ')':
+                    depth -= 1
+                elif char == ',' and depth == 1:
+                    commas += 1
+                index += 1
+            if commas != arity:
+                line = text.count('\n', 0, match.start()) + 1
+                wrong.append(f'{name} with {commas} argument(s) at line {line}')
+    assert not wrong, wrong
+
+
 def _run_plain_cache(nodes, *, level, old_level):
     """Execute the generated cache subset; engine calendar/queues are outside this test."""
     maps = {'tv_wonder_plain_level_by_wonder_id': {999: 6}}

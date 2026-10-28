@@ -22,6 +22,13 @@ wrappers or read-path repair. Generated outputs belong to data/generated_files.y
 Generic actions require an AI actions list, message type and all five notification
 localization fields (HEADER, TITLE, SETUP, LOG, MAP) in both languages.
 
+Europedia has a permanent scope of 15 mechanic cards plus Triumphal Axis and
+Topkapi Palace as two worked examples. The full 195-wonder card catalogue was
+removed for both initialization risk and poor information design: repeated
+explanations and long scrolling obscure the mechanics. Do not restore it as a
+performance fix or automatically add cards for new wonders. See
+`docs/knowledge/risk_cards/europedia.md` for the decision and test evidence.
+
 ## Archived Work
 
 The October 22 archived vanilla-takeover, AI-observer and editor-refactor work

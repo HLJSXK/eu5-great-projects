@@ -105,8 +105,10 @@ filename_routes:
 - id: europedia
   substrings:
   - encyclopedia_lateralview
+  - europedia
+  - tv_europedia
   card: europedia.md
-  summary: full-panel override and tab-toggle constraints
+  summary: permanent 17-card scope, design rationale, tab toggles and card generation
   reason: Europedia has no data-driven custom-tab registration point
 - id: wonder_ceremony
   substrings:

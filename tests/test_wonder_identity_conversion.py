@@ -132,10 +132,14 @@ def test_identity_images_use_registered_texture_handles_and_real_assets():
     concepts = (MOD / 'main_menu/common/game_concepts/tv_engineering_department_wonder_mechanics_concepts.txt').read_text(encoding='utf-8-sig')
     for kind in ('image', 'full_image'):
         assert f'tv_wonder_identity_{kind}_102_mosque = ' in concepts
-    for filename in ('location_window.gui', 'panels/organization/tv_engineering_department.gui', 'encyclopedia_lateralview.gui'):
+    for filename in ('location_window.gui', 'panels/organization/tv_engineering_department.gui'):
         text = (MOD / 'in_game/gui' / filename).read_text(encoding='utf-8-sig')
         assert "GetConceptTexture(Select_CString(" in text
         assert "GetGlobalVariable('hagia_sophia_now_mosque').IsSet" in text
+    # Europedia's two approved examples exclude Hagia Sophia; live gameplay
+    # panels must still retain its dynamic identity and registered image handles.
+    encyclopedia = (MOD / 'in_game/gui/encyclopedia_lateralview.gui').read_text(encoding='utf-8-sig')
+    assert 'game_concept_tv_wonder_unique_hagia_sophia' not in encyclopedia
     image_tasks = core.load_wonder_image_tasks()
     assert len([t for t in image_tasks if t['key'] == 'unique_hagia_sophia_mosque']) == 1
     for suffix in ('', '_cropped'):

@@ -13,38 +13,31 @@
  # ── Engineering Department / Wonder Construction ──────────────────────────
  game_concept_tv_engineering_department: "공학과"
  game_concept_tv_engineering_department_desc: "캠페인 초기화 시 모든 국가에 자동으로 설립되는 고유하지 않은 국제기구입니다. [tv_great_engineer|e] 사무실을 보유하고 [tv_wonder_construction|e]: [tv_wonder_concept|e], 사이트 [tv_wonder_survey|e], 조직, 물류 및 최종 [tv_wonder_ceremony|e]의 모든 단계를 관리합니다."
- game_concept_tv_engineering_department_europedia_desc: "캠페인 시작 시 또는 엔지니어링 부서가 기존 저장에 처음 추가될 때 모든 국가에 대해 자동으로 설정되며, 이는 국가가 시도하는 모든 [tv_wonder_construction|e] 뒤에 있는 상설 기관입니다. 단일 장교인 [tv_great_engineer|e]가 개인적으로 파이프라인을 주도합니다. 관리 기술은 [tv_wonder_concept|e]를 향상시키고, 군사 기술은 [tv_wonder_survey|e]를 향상시키며, 재직 기간에 따라 최종 [tv_wonder_ceremony|e]에서 누가 기억되는지가 결정됩니다. 이미 진행 중인 프로젝트는 위대한 엔지니어를 잃거나 교체해도 재설정되지 않지만, 빈 사무실은 후임자가 임명될 때까지 구상 및 조사 진행을 지연시킵니다."
 
  game_concept_tv_great_engineer: "위대한 엔지니어"
  game_concept_tv_great_engineer_desc: "[tv_engineering_department|e]를 이끄는 임명된 캐릭터입니다. [tv_great_engineer|e]는 국가 변수로 저장되며 [tv_engineering_department|e] 패널에서 지정, 교체 또는 해제될 수 있습니다."
 
  game_concept_tv_wonder_concept: "개념"
  game_concept_tv_wonder_concept_desc: "새로운 [tv_wonder_construction|e]를 여는 제안 단계입니다. 매달 [tv_great_engineer|e]의 관리 기술은 개념 진행을 향상시킵니다. 일단 완료되면 [tv_great_engineer|e]는 국가가 추구할 수 있는 실행 가능한 [tv_wonder_small|e], [tv_wonder_medium|e] 또는 [tv_wonder_large|e] 프로젝트를 제시합니다."
- game_concept_tv_wonder_concept_europedia_desc: "[tv_great_engineer|e]가 임명되는 순간 개념이 시작됩니다. 숨겨진 진행률 측정기는 0에서 시작하여 경찰관의 관리 기술에 따라 매달 조금씩 올라갑니다. 약한 관리자는 개념을 완성하는 데 수년이 걸릴 수 있지만, 여러 명의 유능한 관리자를 연속으로 순환하는 국가는 현재 누가 직책을 맡고 있는지에 관계없이 누적된 발전을 이어갑니다. 완료 시 엔지니어는 국가가 자유롭게 선택하도록 허용하지 않습니다. 그들은 국가가 현재 지원할 수 있는 것에 따라 국가가 추구할 수 있는 실행 가능한 [tv_wonder_small|e], [tv_wonder_medium|e] 또는 [tv_wonder_large|e] 사업을 제안합니다."
 
  game_concept_tv_wonder_survey: "설문조사"
  game_concept_tv_wonder_survey_desc: "[tv_wonder_construction|e]의 현장 평가 단계. 설문 조사 진행 상황은 [tv_great_engineer|e]의 군사 기술에서 매월 증가하고 [tv_wonder_scale_competence|e], [tv_wonder_logistics_competence|e] 및 [tv_wonder_organization_competence|e]를 공개하며 판독이 완료되면 국가에서 건설 현장을 확인할 수 있습니다."
- game_concept_tv_wonder_survey_europedia_desc: "논쟁이 해결되면 조사관은 선택한 사이트의 세 가지 숨겨진 특성([tv_wonder_scale_competence|e], [tv_wonder_organization_competence|e] 및 [tv_wonder_logistics_competence|e])을 평가합니다. 각 특성은 사이트 자체의 자연스러운 적합성과 [tv_great_engineer|e]의 관리 기술을 혼합합니다. 엔지니어의 군사 기술에서 조사 진행 상황이 누적됨에 따라 세 가지 수치가 모두 함께 상승하고 건설이 시작되면 그 중 어느 것도 다시 개선될 수 없으므로 더 나은 사이트를 위해 더 오래 기다려야 하는 한계 사이트를 저울질하는 국가는 진정한 절충안을 만들고 있습니다."
 
  game_concept_tv_wonder_debate: "토론"
  game_concept_tv_wonder_debate_desc: "[tv_wonder_construction|e]의 국내 토론 무대. 부동산 요구 사항을 충족하고 토론 이벤트를 통해 [tv_wonder_domestic_support|e]를 구축합니다. 100에 도달하면 해당 국가는 토론 종료를 선언하고 [tv_wonder_survey|e]로 넘어갈 수 있습니다."
- game_concept_tv_wonder_debate_europedia_desc: "기반이 무너지기 전에 제안된 프로젝트는 국내 논쟁에서 살아남아야 합니다. 귀족, 시민, 성직자는 각각 만족도가 [tv_wonder_domestic_support|e]를 부여하는 요구를 제기하고 토론 이벤트는 그 외에도 더 많은 것을 부여합니다. 지원은 0~200 범위에서 실행되지만 토론을 종료하고 [tv_wonder_survey|e]로 이동하려면 처음 100점만 필요합니다. 지지는 영원히 축적되지 않습니다. 일단 토론이 끝나면 매월 조금씩 쇠퇴하므로 이미 토론을 종결할 수 있는 국가는 이를 열어두어도 거의 이익을 얻지 못하며, 지지가 쇠퇴하기 전에 0으로 만드는 프로젝트는 완전히 무너질 위험이 있습니다."
 
 
  game_concept_tv_wonder_ceremony: "시상식"
  game_concept_tv_wonder_ceremony_desc:0 "The dedication of a completed Great Project. Generic and unique wonders offer three styles or a plain inauguration. Dedication is recorded independently from the final building; its rewards and societal tendency end when the wonder is lost or its dedication fades."
- game_concept_tv_wonder_ceremony_europedia_desc:0 "All three styles last 24 months. Confirmation pays a size-based cost and settles the satisfaction of existing estates. Completion grants the chosen rewards and societal change. Plain inauguration is immediate, retaining the base effects and construction rewards while every participating estate opposes it. Domestic support does not decay during rituals. Unique wonders inherit their generic mechanism's rewards with their own flavor text. Expansion retains an existing dedication; plain expansions choose again. During active conception, a decision can rededicate a plain wonder."
 
  game_concept_tv_wonder_construction: "훌륭한 프로젝트"
  game_concept_tv_wonder_construction_desc: "[tv_engineering_department|e]가 관리하는 대사업 체계입니다. [tv_great_engineer|e]가 [tv_wonder_concept|e]를 완성해 [tv_wonder_small|e], [tv_wonder_medium|e] 또는 [tv_wonder_large|e] 계획을 제안합니다. 국내 [tv_wonder_debate|e]와 [tv_wonder_survey|e]를 마치면 네 [tv_wonder_construction_part|e]가 진행됩니다. 각 $tv_wonder_labor_camp$는 현지 시장의 도구·목재·석재를 소비합니다."
- game_concept_tv_wonder_construction_europedia_desc: "대사업은 구상에서 기념물 완공까지 진행됩니다. [tv_great_engineer|e]가 실행 가능한 계획을 제안하고 국가가 [tv_wonder_debate|e]를 해결하면 [tv_wonder_survey|e]가 장소를 확인합니다. 네 [tv_wonder_construction_part|e]가 진행되며 각 $tv_wonder_labor_camp$가 현지 시장의 물자를 소비해 [tv_wonder_ceremony|e]로 마무리합니다. 완공한 [tv_wonder_generic|e]은 [tv_wonder_expansion|e]으로 확장할 수 있습니다."
 
  game_concept_tv_wonder_expansion: "확장"
  game_concept_tv_wonder_expansion_desc:0 "Raise an inaugurated wonder at the same site. A dedicated wonder retains its dedication and skips the ritual phase without repeating ritual rewards. A plain wonder may choose a dedication or remain plain after expansion. Preserved survey competence and base construction rewards follow the usual rules."
 
  game_concept_tv_wonder_construction_part: "건설부분"
  game_concept_tv_wonder_construction_part_desc: "[tv_wonder_construction|e]가 한 번에 진행하는 4개의 병렬 트랙(Foundation, Main Structure, Function 및 Crowning) 중 하나입니다. 프로젝트의 수준은 네 부분 중 가장 뒤처진 부분에 따라 결정되므로 진행 상황은 한 방향으로 급하게 진행되기보다는 균등하게 분산되어야 합니다."
- game_concept_tv_wonder_construction_part_europedia_desc: "모든 위대한 프로젝트는 실제로 기초, 주요 구조, 기능, 크라운 등 4개의 건물이 동시에 솟아오르는 것이며, 각 건물은 자체 노동력과 자재를 사용하여 독립적으로 발전합니다. 프로젝트의 전반적인 수준은 4가지의 평균이 아닙니다. 가장 뒤떨어진 부분으로 제한됩니다. 모든 리소스를 하나의 대표 트랙에 쏟아 붓고 다른 트랙은 무시하는 것은 가장 약한 부분 수준에서 전체 기념물을 정지시킬 뿐이므로 네 가지 모두에 걸쳐 균형 잡힌 진행이 하나를 먼저 완료하기 위한 경쟁을 이깁니다."
 
  game_concept_tv_wonder_small: "소규모 프로젝트"
  game_concept_tv_wonder_small_desc: "[tv_wonder_construction|e] 크기 클래스. 소규모 프로젝트는 두 번 이상 구축될 수 있습니다. 기본 국가 효과는 가치 이동으로 제한되는 반면, 지역 효과 및 의식 효과는 제한되지 않습니다. \n소규모 프로젝트의 각 레벨에는 일반적으로 #Y 10,000@gold!#! 정도의 비용이 듭니다."
@@ -57,11 +50,9 @@
 
  game_concept_tv_wonder_generic: "일반 불가사의"
  game_concept_tv_wonder_generic_desc: "[tv_wonder_construction|e]가 제안하고 지도에 고정된 [tv_great_engineer|e]와 달리 [tv_wonder_small|e], [tv_wonder_medium|e] 또는 [tv_wonder_large|e] 축척에 자유롭게 배치된 [tv_wonder_unique|e]입니다. 취임식을 통해 [tv_wonder_ceremony|e] 스타일을 선택할 수 있습니다."
- game_concept_tv_wonder_generic_europedia_desc: "일반적인 경이로움은 고정된 위치에 묶여 있지 않습니다. [tv_wonder_survey|e]가 [tv_wonder_small|e], [tv_wonder_medium|e] 또는 [tv_wonder_large|e] 클래스 중 [tv_great_engineer|e]가 제안한 적합한 부지를 확인하면 국가 자체가 건설 위치를 선택합니다. 소규모 일반 프로젝트는 새 사이트에서 두 번 이상 재구축할 수도 있으며, 이는 게임 전체에 대해 정확히 한 번, 한 장소에 존재하는 [tv_wonder_unique|e]와 달리 국가가 해당 원형의 세레모니 보상에 반복적으로 액세스할 수 있도록 해줍니다."
 
  game_concept_tv_wonder_unique: "독특한 불가사의"
  game_concept_tv_wonder_unique_desc: "자유롭게 위치하는 [tv_wonder_construction|e]와 달리 특정 지도 위치에 고정된 역사적인 [tv_wonder_generic|e]입니다. 대부분의 독특한 경이로움은 건설이 완료되면 8단계 [tv_wonder_ceremony|e]를 통해 자동으로 진행됩니다. 대신 일부는 전용 수동 의식을 가지고 있습니다."
- game_concept_tv_wonder_unique_europedia_desc: "독특한 경이로움은 캠페인 시작부터 실제 위치 하나에 묶여 있으며, 해당 위치를 실제로 통제하는 국가만이 그것을 건설할 수 있습니다. [tv_wonder_generic|e]처럼 자유 위치 선택은 없습니다. 이러한 역사적 고정성에 대한 대가로, 모드의 고유 불가사의 136개 중 134개는 완료되면 균일한 자동 8단계 [tv_wonder_ceremony|e]를 공유하므로 영구 보상을 받기 위해 추가 플레이어 입력이 필요하지 않습니다. 파로스 등대(Pharos Lighthouse)와 하기아 소피아(Hagia Sophia)는 유일한 예외이며, 각각 자체 맞춤형 다단계 의식을 운영합니다."
 
  game_concept_tv_wonder_domestic_support: "국내지원"
  game_concept_tv_wonder_domestic_support_desc: "주요 위대한 프로젝트를 유지하려는 엘리트 및 대중의 의지를 나타내는 [tv_wonder_construction|e] 리소스입니다. 100에 도달하면 초기 토론이 종료됩니다. 지원은 최대 200까지 저장될 수 있으며 토론이 끝나면 소멸됩니다."
@@ -76,12 +67,3 @@
  game_concept_tv_wonder_logistics_competence_desc: "도로, 수레, 항구, 다리와 인계 지점을 평가해 필요한 때 물자가 현장에 도달하는지 정합니다."
 
  # ── Europedia Tab UI ─────────────────────────────────────────────────────────────────────────
- TV_ENCYCLOPEDIA_TAB_TITLE: "공학과"
- TV_ENCYCLOPEDIA_FILTER_ALL: "모두"
- TV_ENCYCLOPEDIA_FILTER_ALL_TOOLTIP: "모든 엔지니어링 부서 항목을 표시합니다."
- TV_ENCYCLOPEDIA_FILTER_MECHANICS: "역학"
- TV_ENCYCLOPEDIA_FILTER_MECHANICS_TOOLTIP: "Great Project 기계공 항목만 표시합니다."
- TV_ENCYCLOPEDIA_FILTER_GENERIC: "일반 불가사의"
- TV_ENCYCLOPEDIA_FILTER_GENERIC_TOOLTIP: "일반적인 Wonder 항목만 표시합니다."
- TV_ENCYCLOPEDIA_FILTER_UNIQUE: "독특한 불가사의"
- TV_ENCYCLOPEDIA_FILTER_UNIQUE_TOOLTIP: "고유한 불가사의 항목만 표시합니다."
