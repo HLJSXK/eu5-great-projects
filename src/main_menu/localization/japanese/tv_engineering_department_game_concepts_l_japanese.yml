@@ -67,7 +67,7 @@
  game_concept_tv_wonder_logistics_competence_desc: "道路、荷車、港、橋、および引き渡し地点の [tv_wonder_survey|e] 読み取り値。これにより、石工が必要なときに [tv_wonder_materials|e] が現場に到達するかどうかが決まります。"
 
  # ── Europedia Tab UI ─────────────────────────────────────────────────────────────────────────
- game_concept_tv_wonder_materials: "建築資材"
+ game_concept_tv_wonder_materials: "$tv_wonder_materials$"
  game_concept_tv_wonder_materials_desc: "A produced market good used to maintain $tv_wonder_labor_camp$ during an active [tv_wonder_construction|e]. Each $tv_wonder_material_dispatch_point$ converts basic construction goods into [tv_wonder_materials|e], so supply and price are handled through the normal market."
  game_concept_tv_wonder_materials_europedia_desc: "ワンダー マテリアルは事前に備蓄されているわけではありません。各 $tv_wonder_material_dispatch_point$ は、既に市場に流通している通常の建設資材から需要に応じてワンダー マテリアルを精製し、現場で実際に稼働している $tv_wonder_labor_camp$ 建物は建設中にそれらを消費します。チェーンの両端が通常の市場にあるため、大規模プロジェクトは同じ基本財をめぐって国の他の経済圏と競合し、不足は強制停止ではなく建設の遅れとして現れます。"
  game_concept_tv_wonder_construction_europedia_desc: "偉大なプロジェクトとは、アイデアから記念碑まで驚異を運ぶ全国的な糸です。 [tv_great_engineer|e] は、まず [tv_wonder_concept|e] を完了して、実行可能な [tv_wonder_small|e]、[tv_wonder_medium|e]、または [tv_wonder_large|e] の取り組みを提案します。その後、国は国内 [tv_wonder_debate|e] を解決します。 [tv_wonder_survey|e] は、選択したサイトがそれに耐えられることを確認します。その後、初めて適切な建設が開始され、4 つの [tv_wonder_construction_part|e] が [tv_wonder_materials|e] 上で立ち上がり、プロジェクト全体が最終レベルに達し、[tv_wonder_ceremony|e] で終了するまで労働力が組織化されます。完成した [tv_wonder_generic|e] プロジェクトは、初期の段階を繰り返すことなく、後で [tv_wonder_expansion|e] を通じてさらに進めることができます。"

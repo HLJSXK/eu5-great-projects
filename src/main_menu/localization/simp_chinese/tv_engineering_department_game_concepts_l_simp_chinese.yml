@@ -63,5 +63,5 @@
  game_concept_tv_wonder_logistics_competence_desc: "[tv_wonder_survey|e]读数，衡量道路、车队、港口、桥梁与交接点能否让[tv_wonder_materials|e]在匠人需要时抵达工地。"
 
  # ── 百科页签 UI ─────────────────────────────────────────────────────────────────────────
- game_concept_tv_wonder_materials: "建材"
+ game_concept_tv_wonder_materials: "$tv_wonder_materials$"
  game_concept_tv_wonder_materials_desc: "一种用于维护$tv_wonder_labor_camp$的市场商品，仅在[tv_wonder_construction|e]进行期间需要。每座$tv_wonder_material_dispatch_point$把基础建筑商品加工成[tv_wonder_materials|e]，其供给与价格由普通市场处理。"

@@ -63,5 +63,5 @@
  game_concept_tv_wonder_logistics_competence_desc: "A [tv_wonder_survey|e] reading for roads, carts, ports, bridges, and handover points that determine whether [tv_wonder_materials|e] reach the site when the masons need them."
 
  # ── Europedia Tab UI ─────────────────────────────────────────────────────────────────────────
- game_concept_tv_wonder_materials: "Building Materials"
+ game_concept_tv_wonder_materials: "$tv_wonder_materials$"
  game_concept_tv_wonder_materials_desc: "A produced market good used to maintain $tv_wonder_labor_camp$ during an active [tv_wonder_construction|e]. Each $tv_wonder_material_dispatch_point$ converts basic construction goods into [tv_wonder_materials|e], so supply and price are handled through the normal market."
