@@ -253,11 +253,43 @@ def append_broadcast_effect(lines: list[str], wonder: dict) -> None:
     lines.append("")
 
 
-def append_visible_effect(lines: list[str], wonder: dict) -> None:
+def append_base_instant_effects(lines: list[str], wonder: dict, mechanics: dict) -> None:
+    """Use persistent project levels and literal payouts in native option previews.
+
+    Mode 1 is new construction; mode 2 pays only the expansion delta. No hooks
+    are installed in load, ownership, external level changes or rededication.
+    """
+    from wonder_mechanics.modifiers import wonder_base_instant_effects
+    from in_game.common.scripted_effects.gen_tv_engineering_department_wonder_mechanics_effects import reward_effect_lines
+
+    if not wonder_base_instant_effects(wonder, mechanics):
+        return
+    for base_level in range(6):
+        mode = 1 if base_level == 0 else 2
+        lines.append(f"{T}{T}if = {{")
+        conditions = f"var:tv_wonder_project_mode ?= {mode}"
+        if base_level:
+            conditions += f" var:tv_wonder_project_base_level ?= {base_level}"
+        lines.append(f"{T}{T}{T}limit = {{ {conditions} tv_wonder_construction_site_selected_trigger = yes }}")
+        for level in range(base_level + 1, 7):
+            head = "if" if level == base_level + 1 else "else_if"
+            lines.append(f"{T}{T}{T}{head} = {{")
+            lines.append(f"{T}{T}{T}{T}limit = {{ var:tv_wonder_level ?= {level} }}")
+            rewards = wonder_base_instant_effects(wonder, mechanics, level - base_level)
+            # The shared ritual renderer rounds floats to three decimals. Base
+            # effects preserve the engine's five-decimal precision as literals.
+            rewards = [{**entry, "value": f"{entry['value']:.5f}".rstrip("0").rstrip(".")} for entry in rewards]
+            lines.extend(reward_effect_lines(rewards, 4))
+            lines.append(f"{T}{T}{T}}}")
+        lines.append(f"{T}{T}}}")
+
+
+def append_visible_effect(lines: list[str], wonder: dict, mechanics: dict) -> None:
     lines.append(f"{finalization_visible_effect_name(wonder)} = {{")
     lines.append(f"{T}if = {{")
     lines.append(f"{T}{T}limit = {{ has_variable = tv_wonder_finalization_preview_ready var:tv_wonder_locked ?= {wonder['id']} }}")
     lines.append(f"{T}{T}tv_wonder_apply_finalization_visible_rewards_effect = yes")
+    append_base_instant_effects(lines, wonder, mechanics)
     lines.append(f"{T}}}")
     lines.append("}")
     lines.append("")
@@ -310,7 +342,7 @@ def generate() -> str:
         append_construct_final_building_effect(lines, wonder)
         append_destroy_intermediate_buildings_effect(lines, wonder)
         append_broadcast_effect(lines, wonder)
-        append_visible_effect(lines, wonder)
+        append_visible_effect(lines, wonder, mechanics)
         append_hidden_effect(lines, wonder, mechanics)
     return "\n".join(lines).rstrip() + "\n"
 

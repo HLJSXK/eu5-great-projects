@@ -5,7 +5,6 @@
   size: medium
   category: cultural_category
   pop_type: clergy
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: sacred_mountain
   mechanic_key: sacred_mountain
@@ -17,7 +16,6 @@
   size: large
   category: government_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: triumphal_axis
   mechanic_key: triumphal_axis
@@ -29,7 +27,6 @@
   size: small
   category: infrastructure_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: great_port
   mechanic_key: great_port
@@ -41,7 +38,6 @@
   size: large
   category: cultural_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: giant_necropolis
   mechanic_key: giant_necropolis
@@ -53,7 +49,6 @@
   size: medium
   category: infrastructure_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: great_lighthouse
   mechanic_key: great_lighthouse
@@ -65,7 +60,6 @@
   size: medium
   category: infrastructure_category
   pop_type: laborers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: hydraulic_workshop
   mechanic_key: hydraulic_workshop
@@ -77,7 +71,6 @@
   size: small
   category: infrastructure_category
   pop_type: laborers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: mining_city
   mechanic_key: mining_city
@@ -89,7 +82,6 @@
   size: large
   category: cultural_category
   pop_type: clergy
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: giant_observatory
   mechanic_key: giant_observatory
@@ -101,7 +93,6 @@
   size: large
   category: government_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: palace_of_nations
   mechanic_key: palace_of_nations
@@ -113,7 +104,6 @@
   size: small
   category: cultural_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: university_city
   mechanic_key: university_city
@@ -125,7 +115,6 @@
   size: medium
   category: cultural_category
   pop_type: clergy
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: sky_dome_grand_temple
   mechanic_key: sky_dome_grand_temple
@@ -137,7 +126,6 @@
   size: small
   category: cultural_category
   pop_type: clergy
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: giant_tower_temple
   mechanic_key: giant_tower_temple
@@ -149,7 +137,6 @@
   size: small
   category: infrastructure_category
   pop_type: laborers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: river_extension
   mechanic_key: river_extension
@@ -161,7 +148,6 @@
   size: medium
   category: infrastructure_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: national_shipyard
   mechanic_key: national_shipyard
@@ -173,7 +159,6 @@
   size: small
   category: military_category
   pop_type: soldiers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: star_fortress_city
   mechanic_key: star_fortress_city
@@ -185,7 +170,6 @@
   size: small
   category: military_category
   pop_type: soldiers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: great_wall
   mechanic_key: great_wall
@@ -197,7 +181,6 @@
   size: small
   category: military_category
   pop_type: soldiers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: giant_armory
   mechanic_key: giant_armory
@@ -209,7 +192,6 @@
   size: medium
   category: cultural_category
   pop_type: clergy
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: library_of_nation
   mechanic_key: library_of_nation
@@ -221,7 +203,6 @@
   size: large
   category: infrastructure_category
   pop_type: laborers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: large_canal_system
   mechanic_key: large_canal_system
@@ -233,7 +214,6 @@
   size: small
   category: infrastructure_category
   pop_type: laborers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: mountain_terrace_network
   mechanic_key: mountain_terrace_network
@@ -245,7 +225,6 @@
   size: small
   category: infrastructure_category
   pop_type: laborers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: giant_dam_project
   mechanic_key: giant_dam_project
@@ -257,7 +236,6 @@
   size: medium
   category: infrastructure_category
   pop_type: laborers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: royal_granary_system
   mechanic_key: royal_granary_system
@@ -269,7 +247,6 @@
   size: small
   category: infrastructure_category
   pop_type: laborers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: imperial_post_road_network
   mechanic_key: imperial_post_road_network
@@ -281,7 +258,6 @@
   size: small
   category: infrastructure_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: canal_hub_city
   mechanic_key: canal_hub_city
@@ -293,7 +269,6 @@
   size: small
   category: infrastructure_category
   pop_type: laborers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: frontier_colonization_belt
   mechanic_key: frontier_colonization_belt
@@ -305,7 +280,6 @@
   size: small
   category: military_category
   pop_type: soldiers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: coastal_beacon_network
   mechanic_key: coastal_beacon_network
@@ -317,7 +291,6 @@
   size: small
   category: military_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: knightly_fortress_order
   mechanic_key: knightly_fortress_order
@@ -329,7 +302,6 @@
   size: medium
   category: military_category
   pop_type: soldiers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: war_college_system
   mechanic_key: war_college_system
@@ -341,7 +313,6 @@
   size: small
   category: cultural_category
   pop_type: clergy
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: great_clock_bell_system
   mechanic_key: great_clock_bell_system
@@ -353,7 +324,6 @@
   size: large
   category: cultural_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: royal_art_district
   mechanic_key: royal_art_district
@@ -365,7 +335,6 @@
   size: large
   category: cultural_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: grand_theater_festival_district
   mechanic_key: grand_theater_festival_district
@@ -377,7 +346,6 @@
   size: medium
   category: government_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: world_embassy_quarter
   mechanic_key: world_embassy_quarter
@@ -389,7 +357,6 @@
   size: medium
   category: government_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: law_code_stele_project
   mechanic_key: law_code_stele_project
@@ -401,7 +368,6 @@
   size: medium
   category: infrastructure_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: world_market
   mechanic_key: world_market
@@ -413,7 +379,6 @@
   size: medium
   category: government_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: royal_mint_system
   mechanic_key: royal_mint_system
@@ -425,7 +390,6 @@
   size: small
   category: infrastructure_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: guild_alliance
   mechanic_key: guild_alliance
@@ -437,7 +401,6 @@
   size: small
   category: infrastructure_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: maritime_trade_station_network
   mechanic_key: maritime_trade_station_network
@@ -449,7 +412,6 @@
   size: small
   category: infrastructure_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: giant_workshop_complex
   mechanic_key: giant_workshop_complex
@@ -461,7 +423,6 @@
   size: medium
   category: cultural_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: world_monument_group
   mechanic_key: world_monument_group
@@ -473,7 +434,6 @@
   size: medium
   category: infrastructure_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: city_expansion_project
   mechanic_key: city_expansion_project
@@ -485,7 +445,6 @@
   size: medium
   category: cultural_category
   pop_type: clergy
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: megalithic_circle
   mechanic_key: megalithic_circle
@@ -497,7 +456,6 @@
   size: medium
   category: cultural_category
   pop_type: clergy
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: grand_cathedral
   mechanic_key: grand_cathedral
@@ -509,7 +467,6 @@
   size: small
   category: cultural_category
   pop_type: clergy
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: great_monastery
   mechanic_key: great_monastery
@@ -521,7 +478,6 @@
   size: small
   category: government_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: city_great_tower
   mechanic_key: city_great_tower
@@ -533,7 +489,6 @@
   size: large
   category: cultural_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: great_sculpture_group
   mechanic_key: great_sculpture_group
@@ -545,7 +500,6 @@
   size: small
   category: military_category
   pop_type: soldiers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: coastal_defense_cannon
   mechanic_key: coastal_defense_cannon
@@ -557,7 +511,6 @@
   size: medium
   category: military_category
   pop_type: soldiers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: naval_school
   mechanic_key: naval_school
@@ -569,7 +522,6 @@
   size: large
   category: infrastructure_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: colonial_trade_company
   mechanic_key: colonial_trade_company
@@ -581,7 +533,6 @@
   size: medium
   category: government_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: great_assembly_hall
   mechanic_key: great_assembly_hall
@@ -593,7 +544,6 @@
   size: small
   category: military_category
   pop_type: soldiers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: mobile_fortress
   mechanic_key: mobile_fortress
@@ -605,7 +555,6 @@
   size: large
   category: cultural_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: ancient_city_ruins
   mechanic_key: ancient_city_ruins
@@ -617,7 +566,6 @@
   size: medium
   category: government_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: summer_palace
   mechanic_key: summer_palace
@@ -629,7 +577,6 @@
   size: medium
   category: government_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: national_bank
   mechanic_key: national_bank
@@ -641,7 +588,6 @@
   size: medium
   category: military_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: pirate_port
   mechanic_key: pirate_port
@@ -653,7 +599,6 @@
   size: small
   category: cultural_category
   pop_type: nobles
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: grand_garden_complex
   mechanic_key: grand_garden_complex
@@ -665,7 +610,6 @@
   size: medium
   category: government_category
   pop_type: burghers
-  maintenance: tv_wonder_module_maintenance
   is_unique: false
   base_key: state_examination_complex
   mechanic_key: state_examination_complex

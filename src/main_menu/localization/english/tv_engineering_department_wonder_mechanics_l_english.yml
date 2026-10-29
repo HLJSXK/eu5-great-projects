@@ -8856,6 +8856,8 @@
  TV_WONDER_NO_BASE_LOCATION_EFFECT:0 "No local base effects"
  TV_WONDER_RITUAL_COMPLETE_PENDING:0 "Ritual complete · Permanent dedication"
  TV_LOCATION_WONDER_RITUAL_COMPLETION:0 "On completion:"
+ TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS:0 "[LocationView.GetLocation.GetOwner.GetName] gains:"
+ TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS:0 "[LocationView.GetLocation.GetName] gains:"
  TV_WONDER_RITUAL_CATALOGUE_NOTE:0 "Ritual completion effects follow. Local effects apply at the wonder site; the preview uses the capital as an example. Estate satisfaction is settled when the ritual begins."
  game_concept_tv_wonder_unique_amber_room_desc:0 "In the Catherine Palace at Tsarskoye Selo, walls of carved amber glow honey-gold between mirrored pilasters and gilded carving. Begun by Prussian craftsmen, sent to Russia as a royal gift, and enlarged by the court's own workshops, the room joins Baltic amber, Florentine stone mosaic, and Baroque woodwork in a single chamber. Rare materials, rare skill, and the wealth and patience to unite them: one room is enough to show a court's whole ambition."
  TV_ENGINEERING_PROPOSAL_UNIQUE_AMBER_ROOM_TEXT:0 "The engineer proposes an Amber Room for the palace at Tsarskoye Selo, calling amber carvers, mosaic cutters, and gilders into the court's service."

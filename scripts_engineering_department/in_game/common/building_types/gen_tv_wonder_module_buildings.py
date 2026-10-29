@@ -8,7 +8,7 @@ REPO_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
 
 from wonder_mechanics.io import load_all_wonder_mechanics
-from wonder_mechanics.naming import PARTS
+from wonder_mechanics.naming import PARTS, wonder_maintenance_method
 
 OUT_FILE = REPO_ROOT / "src" / "in_game" / "common" / "building_types" / "tv_wonder_module_buildings.txt"
 SCRIPT_REL = "scripts_engineering_department/in_game/common/building_types/gen_tv_wonder_module_buildings.py"
@@ -23,7 +23,7 @@ HEADER = [
 ]
 
 
-def building_block(name: str, wonder: dict, modifier_value: float) -> list[str]:
+def building_block(name: str, wonder: dict, modifier_value: float, *, stage: str) -> list[str]:
     return [
         f"{name} = {{",
         "\tis_special = yes",
@@ -56,7 +56,7 @@ def building_block(name: str, wonder: dict, modifier_value: float) -> list[str]:
         "\t}",
         "",
         "\tpossible_production_methods = {",
-        f"\t\t{wonder['maintenance']}",
+        f"\t\t{wonder_maintenance_method(wonder, stage)}",
         "\t}",
         "}",
         "",
@@ -68,8 +68,8 @@ def main() -> None:
     lines = HEADER[:]
     for wonder in wonders:
         for part in PARTS:
-            lines.extend(building_block(f"tv_wonder_{wonder['key']}_{part}", wonder, 0.1))
-        lines.extend(building_block(f"tv_wonder_{wonder['key']}", wonder, 0.4))
+            lines.extend(building_block(f"tv_wonder_{wonder['key']}_{part}", wonder, 0.1, stage="module"))
+        lines.extend(building_block(f"tv_wonder_{wonder['key']}", wonder, 0.4, stage="shell"))
     OUT_FILE.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8-sig", newline="\n")
     print(f"Wrote {OUT_FILE.relative_to(REPO_ROOT)}")
 

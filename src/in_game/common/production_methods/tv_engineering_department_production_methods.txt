@@ -104,72 +104,52 @@ tv_wonder_material_dispatch_point_production_steel_cutting = {
 	category = building_maintenance
 }
 
-tv_wonder_module_maintenance = {
-	lumber = 1
-	masonry = 1
-	tools = 1
+# Per building level: x = 1/2/3 for small/medium/large wonders.
+# Modules use x materials; shells use 2x; inaugurated wonders use 2x materials + 2x tools.
+tv_wonder_module_small_maintenance = {
+	tv_wonder_materials = 1
 	category = building_maintenance
 }
 
-tv_wonder_sacred_monument_maintenance = {
-	marble = 4
-	paper = 2
-	beeswax = 2
+tv_wonder_module_medium_maintenance = {
+	tv_wonder_materials = 2
 	category = building_maintenance
 }
 
-tv_wonder_axis_monument_maintenance = {
-	marble = 4
-	paper = 2
-	fine_cloth = 1
+tv_wonder_module_large_maintenance = {
+	tv_wonder_materials = 3
 	category = building_maintenance
 }
 
-tv_wonder_port_monument_maintenance = {
-	lumber = 4
-	masonry = 3
+tv_wonder_shell_small_maintenance = {
+	tv_wonder_materials = 2
+	category = building_maintenance
+}
+
+tv_wonder_shell_medium_maintenance = {
+	tv_wonder_materials = 4
+	category = building_maintenance
+}
+
+tv_wonder_shell_large_maintenance = {
+	tv_wonder_materials = 6
+	category = building_maintenance
+}
+
+tv_wonder_final_small_maintenance = {
+	tv_wonder_materials = 2
 	tools = 2
 	category = building_maintenance
 }
 
-tv_wonder_necropolis_maintenance = {
-	marble = 5
-	stone = 4
-	beeswax = 2
-	category = building_maintenance
-}
-
-tv_wonder_lighthouse_maintenance = {
-	lumber = 5
-	glass = 3
-	beeswax = 3
-	category = building_maintenance
-}
-
-tv_wonder_lighthouse_flame_maintenance = {
-	lumber = 15
-	glass = 3
-	beeswax = 3
-	category = building_maintenance
-}
-
-tv_wonder_hydraulic_workshop_maintenance = {
-	lumber = 4
+tv_wonder_final_medium_maintenance = {
+	tv_wonder_materials = 4
 	tools = 4
-	masonry = 3
 	category = building_maintenance
 }
 
-tv_wonder_mining_city_maintenance = {
-	tools = 5
-	lumber = 4
-	masonry = 4
-	category = building_maintenance
-}
-
-tv_wonder_navigator_guild_maintenance = {
-	lumber = 2
-	paper = 2
-	tools = 1
+tv_wonder_final_large_maintenance = {
+	tv_wonder_materials = 6
+	tools = 6
 	category = building_maintenance
 }

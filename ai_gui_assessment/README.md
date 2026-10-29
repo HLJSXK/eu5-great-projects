@@ -1,5 +1,54 @@
 # ED 模块离线 GUI 预览
 
+## 组织与物流正式面板
+
+`org_logistics.py` 展开工程部实际组织面板中的新控件，使用显式样例填充显示缓存。
+它与下方设计原型分开：正式预览不生成替代 GUI，输出来自 `src` 的布局及动作定义。
+
+```powershell
+C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts_engineering_department/gen_wonder_org_logistics.py
+C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment/org_logistics.py --strict
+C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment/org_logistics.py --strict --language english
+```
+
+输出在 `images/org_logistics_mod/<language>/`，包括整页、实际布局裁出的
+`*_org_logistics_active.png` / `*_org_logistics_locked.png`、元素树和诊断。支持
+`--state active|locked|full`；使用较高画布检查完整滚动内容，不模拟滚动输入。
+
+`gen_wonder_org_logistics.py` 负责正式 GUI 类型、显示缓存脚本、连接线 DDS 和本地化。
+中文、英文为完整文本，其余语言暂用英文。维护配方与八种工艺来自当前生产方式，
+基准价来自共享游戏镜像和本 Mod。生成物全部登记在 `data/generated_files.yaml`。
+工程部主面板实例化这些类型，两个建设按钮沿用原生产界面过滤入口，无新增通用动作。
+
+大标题直接复用其他五个步骤的 `tv_engineering_department_card_common`，继承相同的
+50 高度、装饰底板、字体、居中图标与百科按钮，活动和锁定状态使用同一个组件。
+百科悬停恢复原有“组织”5 条与“物流”3 条说明，复用既有本地化键；分节标题、
+带框 `TooltipManualTableField` 行及原生“打开欧陆百科”动作尾部与其他步骤一致。
+使用 `--hover-help --strict` 可检查活动、锁定和满配状态的完整悬停，
+例如 `--state active --hover-help --strict --language english`。
+内容区沿用原版 `card_common` 的纸张、木框，按钮为 `button_regular`，进度条为原版
+小型带框进度条。上半部直接使用 `building_view.gui` 的 `card_list_button` 与
+`production_method_simple`，显示各工艺的投入数量/物资图标、箭头和产出，名称及配方
+使用原版 `ProductionMethod_tooltip`。国家缓存只保存建材工坊的 `BuildingType` 引用，
+GUI 从 `GetPossibleProductionMethods → GetMethods` 读取真实工艺及其投入产出，
+不再绘制原料供需节点和手工工艺框。可用 `--state active --hover-method 1 --strict`
+检查原版工艺悬停；预览按当前配方提供显式的类型化数据模型样例。
+
+工程部总览没有选定某一座工坊，因此不显示单座建筑的选中状态、实际投入倍率或利润，
+也不在这里切换某座建筑的工艺；建设工坊入口仍打开原版生产界面。下半部市场/工地结果、
+三格营地指标、两张价格卡及四格结算保持原有布局，供需与价格状态使用原版小色标。
+
+显示缓存由现有 `tv_wonder_update_construction_progress_display_effect` 在施工指标之后
+刷新，项目清理与重新勘测同时移除。计算先在临时变量中完成，再一次写入国家显示变量；
+GUI 与悬停不触发刷新。工地就业读取实际雇员/岗位，市场数值来自工地所属市场。
+维护为按已建等级和市场价计算的名义月耗用，实际建筑支出仍由生产界面展示。
+
+正式结算沿用既有算法，包括工具与建材共同影响、取整、组织上限与 CMM 的 100 级上限。
+因此设计原型的建材 84% 与工具 80% 样例，在正式面板中显示物资效率 82%、月进度 4,837；
+没有把原型的单一建材倍率写入玩法。市场数据随工程结算刷新，不是独立实时行情图。
+工艺悬停展示真实配方，物资按钮沿用原版物资详情；价格卡悬停展示供需、价格与基准差，未绘制价格历史曲线。
+离线严格检查不等于实机点击、悬停或脚本执行验证。
+
 ## 组织与物流设计预览
 
 运行 `C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment/org_logistics_mockups.py --strict`，

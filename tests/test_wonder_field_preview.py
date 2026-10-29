@@ -87,6 +87,41 @@ def test_structure_diff_uses_source_mapping_without_editor_options(service):
     assert 'options' not in json.dumps(row)
 
 
+def test_instant_base_effect_preview_commit_and_clear(service, monkeypatch):
+    from scripts_engineering_department.wonder_mechanics import _core
+    original_load = _core.load_yaml
+    monkeypatch.setattr(_core, 'load_yaml', lambda path: original_load(
+        sources.WONDER_BASE_MODIFIERS_FILE if path.name == 'wonder_base_modifiers.yaml' else path
+    ))
+    wonder = next(w for w in service.wonders if not w['is_unique'])
+    key = f"mechanics.base_instant_effects.{wonder['key']}"
+    draft = {wonder['id']: {'mechanics': {key: json.dumps({'rows': [{'type': 'gold', 'value': '2.5'}]})}}}
+    report = preview(service, draft)
+    row = next(row for row in report['diff'] if row['field'] == 'base_instant_effects')
+    assert row['after'] == [{'type': 'gold', 'value': 2.5}]
+    assert not row['before_present']
+    base = {item.path: item.sha256 for item in service._base}
+    service.commit_resource(draft, base, regenerate=False)
+    saved = yaml.safe_load(sources.WONDER_BASE_MODIFIERS_FILE.read_bytes())
+    assert saved['base_instant_effects'][wonder['key']] == row['after']
+    assert saved['base_modifiers'] == service.mechanics_data['base_modifiers']
+    base = {item.path: item.sha256 for item in service._base}
+    service.commit_resource({wonder['id']: {'mechanics': {key: '{"rows":[]}'}}}, base, regenerate=False)
+    assert wonder['key'] not in yaml.safe_load(sources.WONDER_BASE_MODIFIERS_FILE.read_bytes())['base_instant_effects']
+
+
+def test_unique_instant_base_effects_are_scaled_readonly(service):
+    service.mechanics_data = deepcopy(service.mechanics_data)
+    wonder = next(w for w in service.wonders if w['is_unique'])
+    service.mechanics_data['base_instant_effects'] = {wonder['mechanic_key']: [{'type': 'gold', 'value': 2.5}]}
+    field = next(f for s in service.get_wonder_payload(wonder['id'])['mechanics']['sections']
+                 for f in s['fields'] if f['target_kind'] == 'base_instant_effects')
+    assert field['editable'] is False
+    assert float(json.loads(field['original_value'])['rows'][0]['value']) == 5
+    report = preview(service, {wonder['id']: {'mechanics': {field['key']: '{"rows":[]}'}}})
+    assert report['diff'] == []
+
+
 def test_prototype_selection_reports_both_written_source_fields(service):
     wonder = next(w for w in service.wonders if w['is_unique'])
     prototype = next(w for w in service.wonders if not w['is_unique'] and w['key'] != wonder['base_key'])

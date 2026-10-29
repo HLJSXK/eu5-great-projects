@@ -127,6 +127,8 @@ def validate_worksite_maintenance_input_contract() -> None:
                          "tv_wonder_material_workshop_need_display", "tv_wonder_material_input_shortage_construction_progress"):
             require(f"remove_variable = {variable}" in body, f"{effect} must clear {variable}")
     gui = (ENGINEERING_DEPARTMENT_ROOT / "in_game/gui/panels/organization/tv_engineering_department.gui").read_text(encoding="utf-8-sig")
+    require("tv_org_logistics_active = {" in gui, "Organization panel must instantiate the production logistics widget")
+    gui += (ENGINEERING_DEPARTMENT_ROOT / "in_game/gui/tv_wonder_org_logistics.gui").read_text(encoding="utf-8-sig")
     for filter_key in ("uses_tv_wonder_materials", "tv_wonder_materials"):
         require(f"OpenLateralViewWithFilter('production', '{filter_key}')" in gui,
                 f"Missing production entry point: {filter_key}")

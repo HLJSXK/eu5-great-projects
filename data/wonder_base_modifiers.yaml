@@ -97,3 +97,9 @@
   grand_garden_complex: {}
   state_examination_complex:
     global_pop_promotion_speed_modifier: 0.05
+
+# Per-prototype instant effects, paid per newly completed project level.
+# Entries use the ritual one-shot vocabulary: [{type: <id>, value: <number>}].
+# Unique wonders inherit the list and apply base_effect_multiplier.
+# No gameplay instant effects are configured yet.
+base_instant_effects: {}

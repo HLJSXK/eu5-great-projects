@@ -177,7 +177,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_level_modifiers_1_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)1.0')))))))]"
 			    }
@@ -185,7 +186,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_level_modifiers_1_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)1.0')))))))]"
 			    }
@@ -294,7 +296,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_1_1_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    }
@@ -302,7 +305,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_1_1_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    }
@@ -349,7 +353,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_1_2_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    }
@@ -357,7 +362,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_1_2_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    }
@@ -404,7 +410,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_1_3_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    }
@@ -412,7 +419,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_1_3_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    }
@@ -543,7 +551,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_level_modifiers_2_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)1.0')))))))]"
 			    }
@@ -551,7 +560,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_level_modifiers_2_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)1.0')))))))]"
 			    }
@@ -660,7 +670,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_2_1_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    }
@@ -668,7 +679,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_2_1_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    }
@@ -715,7 +727,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_2_2_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    }
@@ -723,7 +736,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_2_2_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    }
@@ -770,7 +784,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_2_3_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    }
@@ -778,7 +793,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_2_3_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    }
@@ -909,7 +925,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_level_modifiers_3_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)1.0')))))))]"
 			    }
@@ -917,7 +934,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_level_modifiers_3_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)1.0')))))))]"
 			    }
@@ -1026,7 +1044,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_3_1_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    }
@@ -1034,7 +1053,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_3_1_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    }
@@ -1081,7 +1101,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_3_2_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    }
@@ -1089,7 +1110,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_3_2_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    }
@@ -1136,7 +1158,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_3_3_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    }
@@ -1144,7 +1167,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_3_3_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    }
@@ -1275,7 +1299,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_level_modifiers_4_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)1.0')))))))]"
 			    }
@@ -1283,7 +1308,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_level_modifiers_4_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)1.0')))))))]"
 			    }
@@ -1392,7 +1418,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_4_1_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    }
@@ -1400,7 +1427,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_4_1_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    }
@@ -1447,7 +1475,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_4_2_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    }
@@ -1455,7 +1484,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_4_2_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    }
@@ -1502,7 +1532,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_4_3_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    }
@@ -1510,7 +1541,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_4_3_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    }
@@ -1641,7 +1673,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_level_modifiers_5_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)1.0')))))))]"
 			    }
@@ -1649,7 +1682,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_level_modifiers_5_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)1.0')))))))]"
 			    }
@@ -1758,7 +1792,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_5_1_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    }
@@ -1766,7 +1801,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_5_1_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    }
@@ -1813,7 +1849,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_5_2_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    }
@@ -1821,7 +1858,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_5_2_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    }
@@ -1868,7 +1906,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_5_3_country"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_COUNTRY_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    }
@@ -1876,7 +1915,8 @@ types tv_location_wonder_menu_types {
 			        name = "tv_location_wonder_ritual_modifiers_5_3_local"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
-			        blockoverride "block_title" { visible = no }
+			        blockoverride "block_title" { visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+			            text = "TV_LOCATION_WONDER_RITUAL_LOCAL_GAINS" }
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    }

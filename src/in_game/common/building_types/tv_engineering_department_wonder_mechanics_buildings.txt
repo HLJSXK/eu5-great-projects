@@ -54,7 +54,7 @@ tv_wonder_golden_sanctuary = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -129,7 +129,7 @@ tv_wonder_sun_king_axis = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_axis_monument_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -200,7 +200,7 @@ tv_wonder_golden_trade_port = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_port_monument_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -273,7 +273,7 @@ tv_wonder_dynastic_necropolis = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_necropolis_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -346,7 +346,7 @@ tv_wonder_eternal_lighthouse = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_lighthouse_flame_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -421,7 +421,7 @@ tv_wonder_water_god_workshop = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_hydraulic_workshop_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -501,7 +501,7 @@ tv_wonder_miners_oath_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_mining_city_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -577,7 +577,7 @@ tv_wonder_star_catalog_observatory = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -649,7 +649,7 @@ tv_wonder_congress_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_axis_monument_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -721,7 +721,7 @@ tv_wonder_scholars_convocation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -793,7 +793,7 @@ tv_wonder_dome_consecration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -865,7 +865,7 @@ tv_wonder_beacon_rite_temple = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -940,7 +940,7 @@ tv_wonder_bridge_opening = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_hydraulic_workshop_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -1013,7 +1013,7 @@ tv_wonder_keel_laying_yard = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_port_monument_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -1086,7 +1086,7 @@ tv_wonder_bastion_trial_fortress = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_axis_monument_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -1160,7 +1160,7 @@ tv_wonder_frontier_muster_wall = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_axis_monument_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -1233,7 +1233,7 @@ tv_wonder_muster_of_arms = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_mining_city_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -1304,7 +1304,7 @@ tv_wonder_national_catalog_library = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -1381,7 +1381,7 @@ tv_wonder_irrigation_canal_system = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -1457,7 +1457,7 @@ tv_wonder_grain_terraces = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -1533,7 +1533,7 @@ tv_wonder_estuary_flood_dam = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -1605,7 +1605,7 @@ tv_wonder_grain_price_granaries = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -1677,7 +1677,7 @@ tv_wonder_military_post_roads = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -1754,7 +1754,7 @@ tv_wonder_grain_transport_hub = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -1827,7 +1827,7 @@ tv_wonder_military_colony_belt = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -1899,7 +1899,7 @@ tv_wonder_beacon_communication_network = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -1972,7 +1972,7 @@ tv_wonder_crusader_knightly_order = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -2043,7 +2043,7 @@ tv_wonder_firearms_tactics_college = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -2114,7 +2114,7 @@ tv_wonder_worship_clock_bells = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -2190,7 +2190,7 @@ tv_wonder_court_art_district = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -2266,7 +2266,7 @@ tv_wonder_court_theater = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -2340,7 +2340,7 @@ tv_wonder_trade_diplomacy_embassies = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -2411,7 +2411,7 @@ tv_wonder_religious_law_steles = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -2485,7 +2485,7 @@ tv_wonder_luxury_goods_market = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -2562,7 +2562,7 @@ tv_wonder_silver_gold_standard_mint = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -2634,7 +2634,7 @@ tv_wonder_artisan_guild_alliance = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -2707,7 +2707,7 @@ tv_wonder_spice_trade_stations = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -2778,7 +2778,7 @@ tv_wonder_textile_workshop_complex = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -2861,7 +2861,7 @@ tv_wonder_conquest_monument_group = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -2935,7 +2935,7 @@ tv_wonder_city_charter = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -3007,7 +3007,7 @@ tv_wonder_solstice_gathering_circle = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -3078,7 +3078,7 @@ tv_wonder_high_choir_cathedral = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -3151,7 +3151,7 @@ tv_wonder_scriptorium_monastery = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -3224,7 +3224,7 @@ tv_wonder_civic_watchtower = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_axis_monument_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -3300,7 +3300,7 @@ tv_wonder_royal_sculpture_yard = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -3372,7 +3372,7 @@ tv_wonder_strait_battery_cannon = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_axis_monument_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -3443,7 +3443,7 @@ tv_wonder_admiralty_navigation_school = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_port_monument_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -3518,7 +3518,7 @@ tv_wonder_chartered_company_exchange = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_port_monument_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -3593,7 +3593,7 @@ tv_wonder_estates_convocation_hall = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_axis_monument_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -3666,7 +3666,7 @@ tv_wonder_wagon_camp_muster = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_axis_monument_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -3738,7 +3738,7 @@ tv_wonder_restored_citadel_ruins = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_sacred_monument_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -3810,7 +3810,7 @@ tv_wonder_royal_retreat_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_axis_monument_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -3885,7 +3885,7 @@ tv_wonder_public_credit_bank = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -3958,7 +3958,7 @@ tv_wonder_privateer_haven = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_port_monument_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -4033,7 +4033,7 @@ tv_wonder_royal_pleasure_gardens = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -4107,7 +4107,7 @@ tv_wonder_classics_examination_yard = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -4181,7 +4181,7 @@ tv_wonder_unique_pharos_lighthouse_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -4254,7 +4254,7 @@ tv_wonder_unique_hagia_sophia_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -4327,7 +4327,7 @@ tv_wonder_unique_dome_of_the_rock_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -4400,7 +4400,7 @@ tv_wonder_unique_angkor_wat_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -4478,7 +4478,7 @@ tv_wonder_unique_potala_palace_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -4551,7 +4551,7 @@ tv_wonder_unique_alhambra_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -4629,7 +4629,7 @@ tv_wonder_unique_machu_picchu_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -4703,7 +4703,7 @@ tv_wonder_unique_himeji_castle_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -4777,7 +4777,7 @@ tv_wonder_unique_taj_mahal_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -4853,7 +4853,7 @@ tv_wonder_unique_forbidden_city_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -4926,7 +4926,7 @@ tv_wonder_unique_topkapi_palace_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -4999,7 +4999,7 @@ tv_wonder_unique_st_peters_basilica_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -5077,7 +5077,7 @@ tv_wonder_unique_lalibela_churches_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -5151,7 +5151,7 @@ tv_wonder_unique_venetian_arsenal_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -5223,7 +5223,7 @@ tv_wonder_unique_malacca_port_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -5297,7 +5297,7 @@ tv_wonder_unique_red_fort_delhi_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -5373,7 +5373,7 @@ tv_wonder_unique_versailles_palace_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -5449,7 +5449,7 @@ tv_wonder_unique_tenochtitlan_causeways_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -5527,7 +5527,7 @@ tv_wonder_unique_amsterdam_canal_ring_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -5600,7 +5600,7 @@ tv_wonder_unique_mecca_haram_expansion_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -5675,7 +5675,7 @@ tv_wonder_unique_ming_great_wall_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -5751,7 +5751,7 @@ tv_wonder_unique_bank_of_saint_george_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -5835,7 +5835,7 @@ tv_wonder_unique_cahokia_mounds_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -5910,7 +5910,7 @@ tv_wonder_unique_great_zimbabwe_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -5986,7 +5986,7 @@ tv_wonder_unique_isfahan_square_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -6064,7 +6064,7 @@ tv_wonder_unique_grand_canal_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -6137,7 +6137,7 @@ tv_wonder_unique_inca_royal_road_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -6213,7 +6213,7 @@ tv_wonder_unique_roman_aqueducts_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -6291,7 +6291,7 @@ tv_wonder_unique_suez_ancient_canal_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -6365,7 +6365,7 @@ tv_wonder_unique_kremlin_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -6449,7 +6449,7 @@ tv_wonder_unique_teotihuacan_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -6525,7 +6525,7 @@ tv_wonder_unique_angkor_hydraulic_system_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -6602,7 +6602,7 @@ tv_wonder_unique_dutch_polders_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -6679,7 +6679,7 @@ tv_wonder_unique_machu_picchu_terraces_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -6753,7 +6753,7 @@ tv_wonder_unique_british_navy_dockyards_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -6827,7 +6827,7 @@ tv_wonder_unique_spanish_silver_fleet_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -6900,7 +6900,7 @@ tv_wonder_unique_ottoman_hajj_road_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -6976,7 +6976,7 @@ tv_wonder_unique_persian_qanat_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -7050,7 +7050,7 @@ tv_wonder_unique_longjiang_shipyard_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -7134,7 +7134,7 @@ tv_wonder_unique_jerusalem_holy_city_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -7207,7 +7207,7 @@ tv_wonder_unique_stonehenge_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -7281,7 +7281,7 @@ tv_wonder_unique_tower_of_london_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -7353,7 +7353,7 @@ tv_wonder_unique_notre_dame_de_paris_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -7425,7 +7425,7 @@ tv_wonder_unique_st_basils_cathedral_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -7499,7 +7499,7 @@ tv_wonder_unique_trinity_lavra_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -7575,7 +7575,7 @@ tv_wonder_unique_winter_palace_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -7651,7 +7651,7 @@ tv_wonder_unique_gyeongbokgung_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -7729,7 +7729,7 @@ tv_wonder_unique_changbai_mountain_altar_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -7803,7 +7803,7 @@ tv_wonder_unique_belgrade_fortress_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -7877,7 +7877,7 @@ tv_wonder_unique_meteora_monasteries_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -7951,7 +7951,7 @@ tv_wonder_unique_belem_tower_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -8025,7 +8025,7 @@ tv_wonder_unique_iberian_inquisition_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -8097,7 +8097,7 @@ tv_wonder_unique_santa_maria_del_fiore_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -8171,7 +8171,7 @@ tv_wonder_unique_leaning_tower_of_pisa_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -8243,7 +8243,7 @@ tv_wonder_unique_milan_cathedral_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -8315,7 +8315,7 @@ tv_wonder_unique_vatican_archives_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -8388,7 +8388,7 @@ tv_wonder_unique_temple_of_heaven_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -8465,7 +8465,7 @@ tv_wonder_unique_dujiangyan_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -8538,7 +8538,7 @@ tv_wonder_unique_porcelain_tower_of_nanjing_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -8610,7 +8610,7 @@ tv_wonder_unique_jingdezhen_imperial_kilns_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -8687,7 +8687,7 @@ tv_wonder_unique_mogao_caves_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -8760,7 +8760,7 @@ tv_wonder_unique_canton_thirteen_factories_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -8833,7 +8833,7 @@ tv_wonder_unique_dardanelles_fortress_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -8907,7 +8907,7 @@ tv_wonder_unique_escorial_monastery_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -8981,7 +8981,7 @@ tv_wonder_unique_toledo_armory_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -9054,7 +9054,7 @@ tv_wonder_unique_camino_de_santiago_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -9126,7 +9126,7 @@ tv_wonder_unique_sagres_navigation_school_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -9200,7 +9200,7 @@ tv_wonder_unique_milan_arsenal_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -9273,7 +9273,7 @@ tv_wonder_unique_university_of_bologna_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -9354,7 +9354,7 @@ tv_wonder_unique_carrara_marble_quarries_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -9430,7 +9430,7 @@ tv_wonder_unique_east_india_company_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -9503,7 +9503,7 @@ tv_wonder_unique_peacock_throne_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -9576,7 +9576,7 @@ tv_wonder_unique_varanasi_ghats_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -9649,7 +9649,7 @@ tv_wonder_unique_brihadishvara_temple_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -9721,7 +9721,7 @@ tv_wonder_unique_konark_sun_temple_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -9797,7 +9797,7 @@ tv_wonder_unique_fatehpur_sikri_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -9869,7 +9869,7 @@ tv_wonder_unique_calicut_port_city_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -9950,7 +9950,7 @@ tv_wonder_unique_wieliczka_salt_mine_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -10024,7 +10024,7 @@ tv_wonder_unique_wawel_castle_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -10099,7 +10099,7 @@ tv_wonder_unique_zamosc_ideal_city_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -10171,7 +10171,7 @@ tv_wonder_unique_gdansk_port_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -10245,7 +10245,7 @@ tv_wonder_unique_malbork_castle_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -10321,7 +10321,7 @@ tv_wonder_unique_brest_synagogue_quarter_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -10394,7 +10394,7 @@ tv_wonder_unique_vilnius_university_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -10468,7 +10468,7 @@ tv_wonder_unique_cave_monastery_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -10542,7 +10542,7 @@ tv_wonder_unique_zaporizhian_sich_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -10619,7 +10619,7 @@ tv_wonder_unique_registan_square_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -10692,7 +10692,7 @@ tv_wonder_unique_khiva_old_city_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -10765,7 +10765,7 @@ tv_wonder_unique_bukhara_kalyan_minaret_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -10838,7 +10838,7 @@ tv_wonder_unique_ferghana_palace_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -10913,7 +10913,7 @@ tv_wonder_unique_tashkent_old_bazaar_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -10986,7 +10986,7 @@ tv_wonder_unique_louvre_palace_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -11059,7 +11059,7 @@ tv_wonder_unique_fontainebleau_palace_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -11131,7 +11131,7 @@ tv_wonder_unique_bordeaux_port_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -11203,7 +11203,7 @@ tv_wonder_unique_marseille_old_port_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -11275,7 +11275,7 @@ tv_wonder_unique_lyon_silk_workshops_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -11353,7 +11353,7 @@ tv_wonder_unique_mont_saint_michel_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -11427,7 +11427,7 @@ tv_wonder_unique_carcassonne_castle_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -11501,7 +11501,7 @@ tv_wonder_unique_brest_naval_port_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -11574,7 +11574,7 @@ tv_wonder_unique_colmar_old_town_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -11646,7 +11646,7 @@ tv_wonder_unique_house_of_wisdom_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -11718,7 +11718,7 @@ tv_wonder_unique_echmiadzin_cathedral_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -11792,7 +11792,7 @@ tv_wonder_unique_narikala_fortress_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -11865,7 +11865,7 @@ tv_wonder_unique_baku_ateshgah_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -11940,7 +11940,7 @@ tv_wonder_unique_sanaa_old_city_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -12013,7 +12013,7 @@ tv_wonder_unique_schoenbrunn_palace_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -12089,7 +12089,7 @@ tv_wonder_unique_electoral_conference_hall_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -12161,7 +12161,7 @@ tv_wonder_unique_aachen_cathedral_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -12235,7 +12235,7 @@ tv_wonder_unique_nuremberg_imperial_castle_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -12311,7 +12311,7 @@ tv_wonder_unique_augsburg_bank_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -12383,7 +12383,7 @@ tv_wonder_unique_cologne_cathedral_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -12456,7 +12456,7 @@ tv_wonder_unique_hanseatic_kontor_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -12532,7 +12532,7 @@ tv_wonder_unique_hanseatic_town_hall_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -12609,7 +12609,7 @@ tv_wonder_unique_dresden_art_gallery_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -12681,7 +12681,7 @@ tv_wonder_unique_munich_royal_brewery_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -12754,7 +12754,7 @@ tv_wonder_unique_heidelberg_university_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -12827,7 +12827,7 @@ tv_wonder_unique_fez_old_city_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -12900,7 +12900,7 @@ tv_wonder_unique_kairouan_holy_city_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -12974,7 +12974,7 @@ tv_wonder_unique_algiers_pirate_port_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -13047,7 +13047,7 @@ tv_wonder_unique_sankore_university_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -13120,7 +13120,7 @@ tv_wonder_unique_great_mosque_of_djenne_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -13194,7 +13194,7 @@ tv_wonder_unique_walls_of_benin_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -13270,7 +13270,7 @@ tv_wonder_unique_suzhou_classical_gardens_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -13346,7 +13346,7 @@ tv_wonder_unique_fin_garden_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -13421,7 +13421,7 @@ tv_wonder_unique_jiangnan_examination_hall_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -13496,7 +13496,7 @@ tv_wonder_unique_thang_long_temple_of_literature_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -13573,7 +13573,7 @@ tv_wonder_unique_maragheh_observatory_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -13645,7 +13645,7 @@ tv_wonder_unique_xian_bell_and_drum_towers_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -13717,7 +13717,7 @@ tv_wonder_unique_behistun_inscription_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -13790,7 +13790,7 @@ tv_wonder_unique_beijing_imperial_granaries_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -13868,7 +13868,7 @@ tv_wonder_unique_bursa_imperial_mint_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -13940,7 +13940,7 @@ tv_wonder_unique_enderun_palace_school_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -14015,7 +14015,7 @@ tv_wonder_unique_ayutthaya_foreign_quarters_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -14089,7 +14089,7 @@ tv_wonder_unique_yunnan_weisuo_colonies_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -14162,7 +14162,7 @@ tv_wonder_unique_zhoushan_beacon_network_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {
@@ -14239,7 +14239,7 @@ tv_wonder_unique_amber_room_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -14323,7 +14323,7 @@ tv_wonder_unique_parthenon_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_medium_maintenance
 	}
 
 	on_destroyed = {
@@ -14396,7 +14396,7 @@ tv_wonder_unique_bangkok_grand_palace_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_large_maintenance
 	}
 
 	on_destroyed = {
@@ -14469,7 +14469,7 @@ tv_wonder_unique_wat_arun_inaugurated = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_final_small_maintenance
 	}
 
 	on_destroyed = {

@@ -34,7 +34,7 @@ tv_wonder_sacred_mountain_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -69,7 +69,7 @@ tv_wonder_sacred_mountain_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -104,7 +104,7 @@ tv_wonder_sacred_mountain_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -139,7 +139,7 @@ tv_wonder_sacred_mountain_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -174,7 +174,7 @@ tv_wonder_sacred_mountain = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -209,7 +209,7 @@ tv_wonder_triumphal_axis_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -244,7 +244,7 @@ tv_wonder_triumphal_axis_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -279,7 +279,7 @@ tv_wonder_triumphal_axis_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -314,7 +314,7 @@ tv_wonder_triumphal_axis_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -349,7 +349,7 @@ tv_wonder_triumphal_axis = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -384,7 +384,7 @@ tv_wonder_great_port_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -419,7 +419,7 @@ tv_wonder_great_port_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -454,7 +454,7 @@ tv_wonder_great_port_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -489,7 +489,7 @@ tv_wonder_great_port_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -524,7 +524,7 @@ tv_wonder_great_port = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -559,7 +559,7 @@ tv_wonder_giant_necropolis_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -594,7 +594,7 @@ tv_wonder_giant_necropolis_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -629,7 +629,7 @@ tv_wonder_giant_necropolis_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -664,7 +664,7 @@ tv_wonder_giant_necropolis_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -699,7 +699,7 @@ tv_wonder_giant_necropolis = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -734,7 +734,7 @@ tv_wonder_great_lighthouse_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -769,7 +769,7 @@ tv_wonder_great_lighthouse_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -804,7 +804,7 @@ tv_wonder_great_lighthouse_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -839,7 +839,7 @@ tv_wonder_great_lighthouse_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -874,7 +874,7 @@ tv_wonder_great_lighthouse = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -909,7 +909,7 @@ tv_wonder_hydraulic_workshop_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -944,7 +944,7 @@ tv_wonder_hydraulic_workshop_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -979,7 +979,7 @@ tv_wonder_hydraulic_workshop_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -1014,7 +1014,7 @@ tv_wonder_hydraulic_workshop_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -1049,7 +1049,7 @@ tv_wonder_hydraulic_workshop = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -1084,7 +1084,7 @@ tv_wonder_mining_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -1119,7 +1119,7 @@ tv_wonder_mining_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -1154,7 +1154,7 @@ tv_wonder_mining_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -1189,7 +1189,7 @@ tv_wonder_mining_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -1224,7 +1224,7 @@ tv_wonder_mining_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -1259,7 +1259,7 @@ tv_wonder_giant_observatory_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -1294,7 +1294,7 @@ tv_wonder_giant_observatory_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -1329,7 +1329,7 @@ tv_wonder_giant_observatory_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -1364,7 +1364,7 @@ tv_wonder_giant_observatory_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -1399,7 +1399,7 @@ tv_wonder_giant_observatory = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -1434,7 +1434,7 @@ tv_wonder_palace_of_nations_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -1469,7 +1469,7 @@ tv_wonder_palace_of_nations_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -1504,7 +1504,7 @@ tv_wonder_palace_of_nations_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -1539,7 +1539,7 @@ tv_wonder_palace_of_nations_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -1574,7 +1574,7 @@ tv_wonder_palace_of_nations = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -1609,7 +1609,7 @@ tv_wonder_university_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -1644,7 +1644,7 @@ tv_wonder_university_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -1679,7 +1679,7 @@ tv_wonder_university_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -1714,7 +1714,7 @@ tv_wonder_university_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -1749,7 +1749,7 @@ tv_wonder_university_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -1784,7 +1784,7 @@ tv_wonder_sky_dome_grand_temple_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -1819,7 +1819,7 @@ tv_wonder_sky_dome_grand_temple_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -1854,7 +1854,7 @@ tv_wonder_sky_dome_grand_temple_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -1889,7 +1889,7 @@ tv_wonder_sky_dome_grand_temple_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -1924,7 +1924,7 @@ tv_wonder_sky_dome_grand_temple = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -1959,7 +1959,7 @@ tv_wonder_giant_tower_temple_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -1994,7 +1994,7 @@ tv_wonder_giant_tower_temple_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2029,7 +2029,7 @@ tv_wonder_giant_tower_temple_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2064,7 +2064,7 @@ tv_wonder_giant_tower_temple_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2099,7 +2099,7 @@ tv_wonder_giant_tower_temple = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -2134,7 +2134,7 @@ tv_wonder_river_extension_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2169,7 +2169,7 @@ tv_wonder_river_extension_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2204,7 +2204,7 @@ tv_wonder_river_extension_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2239,7 +2239,7 @@ tv_wonder_river_extension_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2274,7 +2274,7 @@ tv_wonder_river_extension = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -2309,7 +2309,7 @@ tv_wonder_national_shipyard_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -2344,7 +2344,7 @@ tv_wonder_national_shipyard_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -2379,7 +2379,7 @@ tv_wonder_national_shipyard_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -2414,7 +2414,7 @@ tv_wonder_national_shipyard_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -2449,7 +2449,7 @@ tv_wonder_national_shipyard = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -2484,7 +2484,7 @@ tv_wonder_star_fortress_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2519,7 +2519,7 @@ tv_wonder_star_fortress_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2554,7 +2554,7 @@ tv_wonder_star_fortress_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2589,7 +2589,7 @@ tv_wonder_star_fortress_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2624,7 +2624,7 @@ tv_wonder_star_fortress_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -2659,7 +2659,7 @@ tv_wonder_great_wall_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2694,7 +2694,7 @@ tv_wonder_great_wall_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2729,7 +2729,7 @@ tv_wonder_great_wall_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2764,7 +2764,7 @@ tv_wonder_great_wall_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2799,7 +2799,7 @@ tv_wonder_great_wall = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -2834,7 +2834,7 @@ tv_wonder_giant_armory_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2869,7 +2869,7 @@ tv_wonder_giant_armory_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2904,7 +2904,7 @@ tv_wonder_giant_armory_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2939,7 +2939,7 @@ tv_wonder_giant_armory_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -2974,7 +2974,7 @@ tv_wonder_giant_armory = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -3009,7 +3009,7 @@ tv_wonder_library_of_nation_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -3044,7 +3044,7 @@ tv_wonder_library_of_nation_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -3079,7 +3079,7 @@ tv_wonder_library_of_nation_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -3114,7 +3114,7 @@ tv_wonder_library_of_nation_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -3149,7 +3149,7 @@ tv_wonder_library_of_nation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -3184,7 +3184,7 @@ tv_wonder_large_canal_system_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -3219,7 +3219,7 @@ tv_wonder_large_canal_system_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -3254,7 +3254,7 @@ tv_wonder_large_canal_system_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -3289,7 +3289,7 @@ tv_wonder_large_canal_system_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -3324,7 +3324,7 @@ tv_wonder_large_canal_system = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -3359,7 +3359,7 @@ tv_wonder_mountain_terrace_network_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3394,7 +3394,7 @@ tv_wonder_mountain_terrace_network_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3429,7 +3429,7 @@ tv_wonder_mountain_terrace_network_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3464,7 +3464,7 @@ tv_wonder_mountain_terrace_network_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3499,7 +3499,7 @@ tv_wonder_mountain_terrace_network = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -3534,7 +3534,7 @@ tv_wonder_giant_dam_project_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3569,7 +3569,7 @@ tv_wonder_giant_dam_project_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3604,7 +3604,7 @@ tv_wonder_giant_dam_project_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3639,7 +3639,7 @@ tv_wonder_giant_dam_project_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3674,7 +3674,7 @@ tv_wonder_giant_dam_project = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -3709,7 +3709,7 @@ tv_wonder_royal_granary_system_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -3744,7 +3744,7 @@ tv_wonder_royal_granary_system_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -3779,7 +3779,7 @@ tv_wonder_royal_granary_system_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -3814,7 +3814,7 @@ tv_wonder_royal_granary_system_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -3849,7 +3849,7 @@ tv_wonder_royal_granary_system = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -3884,7 +3884,7 @@ tv_wonder_imperial_post_road_network_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3919,7 +3919,7 @@ tv_wonder_imperial_post_road_network_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3954,7 +3954,7 @@ tv_wonder_imperial_post_road_network_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -3989,7 +3989,7 @@ tv_wonder_imperial_post_road_network_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4024,7 +4024,7 @@ tv_wonder_imperial_post_road_network = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -4059,7 +4059,7 @@ tv_wonder_canal_hub_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4094,7 +4094,7 @@ tv_wonder_canal_hub_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4129,7 +4129,7 @@ tv_wonder_canal_hub_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4164,7 +4164,7 @@ tv_wonder_canal_hub_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4199,7 +4199,7 @@ tv_wonder_canal_hub_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -4234,7 +4234,7 @@ tv_wonder_frontier_colonization_belt_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4269,7 +4269,7 @@ tv_wonder_frontier_colonization_belt_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4304,7 +4304,7 @@ tv_wonder_frontier_colonization_belt_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4339,7 +4339,7 @@ tv_wonder_frontier_colonization_belt_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4374,7 +4374,7 @@ tv_wonder_frontier_colonization_belt = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -4409,7 +4409,7 @@ tv_wonder_coastal_beacon_network_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4444,7 +4444,7 @@ tv_wonder_coastal_beacon_network_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4479,7 +4479,7 @@ tv_wonder_coastal_beacon_network_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4514,7 +4514,7 @@ tv_wonder_coastal_beacon_network_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4549,7 +4549,7 @@ tv_wonder_coastal_beacon_network = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -4584,7 +4584,7 @@ tv_wonder_knightly_fortress_order_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4619,7 +4619,7 @@ tv_wonder_knightly_fortress_order_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4654,7 +4654,7 @@ tv_wonder_knightly_fortress_order_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4689,7 +4689,7 @@ tv_wonder_knightly_fortress_order_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4724,7 +4724,7 @@ tv_wonder_knightly_fortress_order = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -4759,7 +4759,7 @@ tv_wonder_war_college_system_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -4794,7 +4794,7 @@ tv_wonder_war_college_system_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -4829,7 +4829,7 @@ tv_wonder_war_college_system_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -4864,7 +4864,7 @@ tv_wonder_war_college_system_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -4899,7 +4899,7 @@ tv_wonder_war_college_system = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -4934,7 +4934,7 @@ tv_wonder_great_clock_bell_system_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -4969,7 +4969,7 @@ tv_wonder_great_clock_bell_system_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -5004,7 +5004,7 @@ tv_wonder_great_clock_bell_system_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -5039,7 +5039,7 @@ tv_wonder_great_clock_bell_system_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -5074,7 +5074,7 @@ tv_wonder_great_clock_bell_system = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -5109,7 +5109,7 @@ tv_wonder_royal_art_district_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -5144,7 +5144,7 @@ tv_wonder_royal_art_district_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -5179,7 +5179,7 @@ tv_wonder_royal_art_district_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -5214,7 +5214,7 @@ tv_wonder_royal_art_district_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -5249,7 +5249,7 @@ tv_wonder_royal_art_district = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -5284,7 +5284,7 @@ tv_wonder_grand_theater_festival_district_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -5319,7 +5319,7 @@ tv_wonder_grand_theater_festival_district_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -5354,7 +5354,7 @@ tv_wonder_grand_theater_festival_district_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -5389,7 +5389,7 @@ tv_wonder_grand_theater_festival_district_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -5424,7 +5424,7 @@ tv_wonder_grand_theater_festival_district = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -5459,7 +5459,7 @@ tv_wonder_world_embassy_quarter_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5494,7 +5494,7 @@ tv_wonder_world_embassy_quarter_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5529,7 +5529,7 @@ tv_wonder_world_embassy_quarter_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5564,7 +5564,7 @@ tv_wonder_world_embassy_quarter_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5599,7 +5599,7 @@ tv_wonder_world_embassy_quarter = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -5634,7 +5634,7 @@ tv_wonder_law_code_stele_project_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5669,7 +5669,7 @@ tv_wonder_law_code_stele_project_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5704,7 +5704,7 @@ tv_wonder_law_code_stele_project_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5739,7 +5739,7 @@ tv_wonder_law_code_stele_project_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5774,7 +5774,7 @@ tv_wonder_law_code_stele_project = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -5809,7 +5809,7 @@ tv_wonder_world_market_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5844,7 +5844,7 @@ tv_wonder_world_market_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5879,7 +5879,7 @@ tv_wonder_world_market_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5914,7 +5914,7 @@ tv_wonder_world_market_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -5949,7 +5949,7 @@ tv_wonder_world_market = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -5984,7 +5984,7 @@ tv_wonder_royal_mint_system_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6019,7 +6019,7 @@ tv_wonder_royal_mint_system_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6054,7 +6054,7 @@ tv_wonder_royal_mint_system_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6089,7 +6089,7 @@ tv_wonder_royal_mint_system_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6124,7 +6124,7 @@ tv_wonder_royal_mint_system = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -6159,7 +6159,7 @@ tv_wonder_guild_alliance_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6194,7 +6194,7 @@ tv_wonder_guild_alliance_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6229,7 +6229,7 @@ tv_wonder_guild_alliance_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6264,7 +6264,7 @@ tv_wonder_guild_alliance_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6299,7 +6299,7 @@ tv_wonder_guild_alliance = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -6334,7 +6334,7 @@ tv_wonder_maritime_trade_station_network_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6369,7 +6369,7 @@ tv_wonder_maritime_trade_station_network_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6404,7 +6404,7 @@ tv_wonder_maritime_trade_station_network_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6439,7 +6439,7 @@ tv_wonder_maritime_trade_station_network_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6474,7 +6474,7 @@ tv_wonder_maritime_trade_station_network = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -6509,7 +6509,7 @@ tv_wonder_giant_workshop_complex_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6544,7 +6544,7 @@ tv_wonder_giant_workshop_complex_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6579,7 +6579,7 @@ tv_wonder_giant_workshop_complex_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6614,7 +6614,7 @@ tv_wonder_giant_workshop_complex_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -6649,7 +6649,7 @@ tv_wonder_giant_workshop_complex = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -6684,7 +6684,7 @@ tv_wonder_world_monument_group_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6719,7 +6719,7 @@ tv_wonder_world_monument_group_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6754,7 +6754,7 @@ tv_wonder_world_monument_group_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6789,7 +6789,7 @@ tv_wonder_world_monument_group_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6824,7 +6824,7 @@ tv_wonder_world_monument_group = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -6859,7 +6859,7 @@ tv_wonder_city_expansion_project_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6894,7 +6894,7 @@ tv_wonder_city_expansion_project_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6929,7 +6929,7 @@ tv_wonder_city_expansion_project_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6964,7 +6964,7 @@ tv_wonder_city_expansion_project_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -6999,7 +6999,7 @@ tv_wonder_city_expansion_project = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -7034,7 +7034,7 @@ tv_wonder_megalithic_circle_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -7069,7 +7069,7 @@ tv_wonder_megalithic_circle_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -7104,7 +7104,7 @@ tv_wonder_megalithic_circle_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -7139,7 +7139,7 @@ tv_wonder_megalithic_circle_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -7174,7 +7174,7 @@ tv_wonder_megalithic_circle = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -7209,7 +7209,7 @@ tv_wonder_grand_cathedral_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -7244,7 +7244,7 @@ tv_wonder_grand_cathedral_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -7279,7 +7279,7 @@ tv_wonder_grand_cathedral_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -7314,7 +7314,7 @@ tv_wonder_grand_cathedral_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -7349,7 +7349,7 @@ tv_wonder_grand_cathedral = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -7384,7 +7384,7 @@ tv_wonder_great_monastery_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -7419,7 +7419,7 @@ tv_wonder_great_monastery_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -7454,7 +7454,7 @@ tv_wonder_great_monastery_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -7489,7 +7489,7 @@ tv_wonder_great_monastery_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -7524,7 +7524,7 @@ tv_wonder_great_monastery = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -7559,7 +7559,7 @@ tv_wonder_city_great_tower_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -7594,7 +7594,7 @@ tv_wonder_city_great_tower_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -7629,7 +7629,7 @@ tv_wonder_city_great_tower_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -7664,7 +7664,7 @@ tv_wonder_city_great_tower_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -7699,7 +7699,7 @@ tv_wonder_city_great_tower = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -7734,7 +7734,7 @@ tv_wonder_great_sculpture_group_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -7769,7 +7769,7 @@ tv_wonder_great_sculpture_group_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -7804,7 +7804,7 @@ tv_wonder_great_sculpture_group_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -7839,7 +7839,7 @@ tv_wonder_great_sculpture_group_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -7874,7 +7874,7 @@ tv_wonder_great_sculpture_group = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -7909,7 +7909,7 @@ tv_wonder_coastal_defense_cannon_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -7944,7 +7944,7 @@ tv_wonder_coastal_defense_cannon_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -7979,7 +7979,7 @@ tv_wonder_coastal_defense_cannon_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -8014,7 +8014,7 @@ tv_wonder_coastal_defense_cannon_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -8049,7 +8049,7 @@ tv_wonder_coastal_defense_cannon = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -8084,7 +8084,7 @@ tv_wonder_naval_school_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -8119,7 +8119,7 @@ tv_wonder_naval_school_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -8154,7 +8154,7 @@ tv_wonder_naval_school_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -8189,7 +8189,7 @@ tv_wonder_naval_school_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -8224,7 +8224,7 @@ tv_wonder_naval_school = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -8259,7 +8259,7 @@ tv_wonder_colonial_trade_company_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -8294,7 +8294,7 @@ tv_wonder_colonial_trade_company_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -8329,7 +8329,7 @@ tv_wonder_colonial_trade_company_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -8364,7 +8364,7 @@ tv_wonder_colonial_trade_company_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -8399,7 +8399,7 @@ tv_wonder_colonial_trade_company = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -8434,7 +8434,7 @@ tv_wonder_great_assembly_hall_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -8469,7 +8469,7 @@ tv_wonder_great_assembly_hall_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -8504,7 +8504,7 @@ tv_wonder_great_assembly_hall_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -8539,7 +8539,7 @@ tv_wonder_great_assembly_hall_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -8574,7 +8574,7 @@ tv_wonder_great_assembly_hall = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -8609,7 +8609,7 @@ tv_wonder_mobile_fortress_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -8644,7 +8644,7 @@ tv_wonder_mobile_fortress_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -8679,7 +8679,7 @@ tv_wonder_mobile_fortress_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -8714,7 +8714,7 @@ tv_wonder_mobile_fortress_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -8749,7 +8749,7 @@ tv_wonder_mobile_fortress = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -8784,7 +8784,7 @@ tv_wonder_ancient_city_ruins_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -8819,7 +8819,7 @@ tv_wonder_ancient_city_ruins_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -8854,7 +8854,7 @@ tv_wonder_ancient_city_ruins_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -8889,7 +8889,7 @@ tv_wonder_ancient_city_ruins_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -8924,7 +8924,7 @@ tv_wonder_ancient_city_ruins = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -8959,7 +8959,7 @@ tv_wonder_summer_palace_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -8994,7 +8994,7 @@ tv_wonder_summer_palace_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9029,7 +9029,7 @@ tv_wonder_summer_palace_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9064,7 +9064,7 @@ tv_wonder_summer_palace_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9099,7 +9099,7 @@ tv_wonder_summer_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -9134,7 +9134,7 @@ tv_wonder_national_bank_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9169,7 +9169,7 @@ tv_wonder_national_bank_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9204,7 +9204,7 @@ tv_wonder_national_bank_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9239,7 +9239,7 @@ tv_wonder_national_bank_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9274,7 +9274,7 @@ tv_wonder_national_bank = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -9309,7 +9309,7 @@ tv_wonder_pirate_port_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9344,7 +9344,7 @@ tv_wonder_pirate_port_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9379,7 +9379,7 @@ tv_wonder_pirate_port_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9414,7 +9414,7 @@ tv_wonder_pirate_port_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9449,7 +9449,7 @@ tv_wonder_pirate_port = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -9484,7 +9484,7 @@ tv_wonder_grand_garden_complex_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -9519,7 +9519,7 @@ tv_wonder_grand_garden_complex_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -9554,7 +9554,7 @@ tv_wonder_grand_garden_complex_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -9589,7 +9589,7 @@ tv_wonder_grand_garden_complex_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -9624,7 +9624,7 @@ tv_wonder_grand_garden_complex = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -9659,7 +9659,7 @@ tv_wonder_state_examination_complex_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9694,7 +9694,7 @@ tv_wonder_state_examination_complex_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9729,7 +9729,7 @@ tv_wonder_state_examination_complex_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9764,7 +9764,7 @@ tv_wonder_state_examination_complex_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9799,7 +9799,7 @@ tv_wonder_state_examination_complex = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -9834,7 +9834,7 @@ tv_wonder_unique_pharos_lighthouse_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9869,7 +9869,7 @@ tv_wonder_unique_pharos_lighthouse_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9904,7 +9904,7 @@ tv_wonder_unique_pharos_lighthouse_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9939,7 +9939,7 @@ tv_wonder_unique_pharos_lighthouse_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -9974,7 +9974,7 @@ tv_wonder_unique_pharos_lighthouse = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -10009,7 +10009,7 @@ tv_wonder_unique_hagia_sophia_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10044,7 +10044,7 @@ tv_wonder_unique_hagia_sophia_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10079,7 +10079,7 @@ tv_wonder_unique_hagia_sophia_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10114,7 +10114,7 @@ tv_wonder_unique_hagia_sophia_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10149,7 +10149,7 @@ tv_wonder_unique_hagia_sophia = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -10184,7 +10184,7 @@ tv_wonder_unique_dome_of_the_rock_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10219,7 +10219,7 @@ tv_wonder_unique_dome_of_the_rock_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10254,7 +10254,7 @@ tv_wonder_unique_dome_of_the_rock_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10289,7 +10289,7 @@ tv_wonder_unique_dome_of_the_rock_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10324,7 +10324,7 @@ tv_wonder_unique_dome_of_the_rock = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -10359,7 +10359,7 @@ tv_wonder_unique_angkor_wat_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -10394,7 +10394,7 @@ tv_wonder_unique_angkor_wat_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -10429,7 +10429,7 @@ tv_wonder_unique_angkor_wat_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -10464,7 +10464,7 @@ tv_wonder_unique_angkor_wat_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -10499,7 +10499,7 @@ tv_wonder_unique_angkor_wat = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -10534,7 +10534,7 @@ tv_wonder_unique_potala_palace_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10569,7 +10569,7 @@ tv_wonder_unique_potala_palace_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10604,7 +10604,7 @@ tv_wonder_unique_potala_palace_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10639,7 +10639,7 @@ tv_wonder_unique_potala_palace_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10674,7 +10674,7 @@ tv_wonder_unique_potala_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -10709,7 +10709,7 @@ tv_wonder_unique_alhambra_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -10744,7 +10744,7 @@ tv_wonder_unique_alhambra_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -10779,7 +10779,7 @@ tv_wonder_unique_alhambra_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -10814,7 +10814,7 @@ tv_wonder_unique_alhambra_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -10849,7 +10849,7 @@ tv_wonder_unique_alhambra = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -10884,7 +10884,7 @@ tv_wonder_unique_machu_picchu_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10919,7 +10919,7 @@ tv_wonder_unique_machu_picchu_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10954,7 +10954,7 @@ tv_wonder_unique_machu_picchu_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -10989,7 +10989,7 @@ tv_wonder_unique_machu_picchu_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -11024,7 +11024,7 @@ tv_wonder_unique_machu_picchu = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -11059,7 +11059,7 @@ tv_wonder_unique_himeji_castle_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -11094,7 +11094,7 @@ tv_wonder_unique_himeji_castle_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -11129,7 +11129,7 @@ tv_wonder_unique_himeji_castle_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -11164,7 +11164,7 @@ tv_wonder_unique_himeji_castle_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -11199,7 +11199,7 @@ tv_wonder_unique_himeji_castle = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -11234,7 +11234,7 @@ tv_wonder_unique_taj_mahal_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11269,7 +11269,7 @@ tv_wonder_unique_taj_mahal_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11304,7 +11304,7 @@ tv_wonder_unique_taj_mahal_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11339,7 +11339,7 @@ tv_wonder_unique_taj_mahal_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11374,7 +11374,7 @@ tv_wonder_unique_taj_mahal = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -11409,7 +11409,7 @@ tv_wonder_unique_forbidden_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11444,7 +11444,7 @@ tv_wonder_unique_forbidden_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11479,7 +11479,7 @@ tv_wonder_unique_forbidden_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11514,7 +11514,7 @@ tv_wonder_unique_forbidden_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11549,7 +11549,7 @@ tv_wonder_unique_forbidden_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -11584,7 +11584,7 @@ tv_wonder_unique_topkapi_palace_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11619,7 +11619,7 @@ tv_wonder_unique_topkapi_palace_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11654,7 +11654,7 @@ tv_wonder_unique_topkapi_palace_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11689,7 +11689,7 @@ tv_wonder_unique_topkapi_palace_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -11724,7 +11724,7 @@ tv_wonder_unique_topkapi_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -11759,7 +11759,7 @@ tv_wonder_unique_st_peters_basilica_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -11794,7 +11794,7 @@ tv_wonder_unique_st_peters_basilica_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -11829,7 +11829,7 @@ tv_wonder_unique_st_peters_basilica_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -11864,7 +11864,7 @@ tv_wonder_unique_st_peters_basilica_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -11899,7 +11899,7 @@ tv_wonder_unique_st_peters_basilica = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -11934,7 +11934,7 @@ tv_wonder_unique_lalibela_churches_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -11969,7 +11969,7 @@ tv_wonder_unique_lalibela_churches_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -12004,7 +12004,7 @@ tv_wonder_unique_lalibela_churches_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -12039,7 +12039,7 @@ tv_wonder_unique_lalibela_churches_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -12074,7 +12074,7 @@ tv_wonder_unique_lalibela_churches = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -12109,7 +12109,7 @@ tv_wonder_unique_venetian_arsenal_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -12144,7 +12144,7 @@ tv_wonder_unique_venetian_arsenal_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -12179,7 +12179,7 @@ tv_wonder_unique_venetian_arsenal_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -12214,7 +12214,7 @@ tv_wonder_unique_venetian_arsenal_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -12249,7 +12249,7 @@ tv_wonder_unique_venetian_arsenal = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -12284,7 +12284,7 @@ tv_wonder_unique_malacca_port_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12319,7 +12319,7 @@ tv_wonder_unique_malacca_port_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12354,7 +12354,7 @@ tv_wonder_unique_malacca_port_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12389,7 +12389,7 @@ tv_wonder_unique_malacca_port_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12424,7 +12424,7 @@ tv_wonder_unique_malacca_port = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -12459,7 +12459,7 @@ tv_wonder_unique_red_fort_delhi_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12494,7 +12494,7 @@ tv_wonder_unique_red_fort_delhi_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12529,7 +12529,7 @@ tv_wonder_unique_red_fort_delhi_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12564,7 +12564,7 @@ tv_wonder_unique_red_fort_delhi_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12599,7 +12599,7 @@ tv_wonder_unique_red_fort_delhi = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -12634,7 +12634,7 @@ tv_wonder_unique_versailles_palace_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -12669,7 +12669,7 @@ tv_wonder_unique_versailles_palace_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -12704,7 +12704,7 @@ tv_wonder_unique_versailles_palace_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -12739,7 +12739,7 @@ tv_wonder_unique_versailles_palace_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -12774,7 +12774,7 @@ tv_wonder_unique_versailles_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -12809,7 +12809,7 @@ tv_wonder_unique_tenochtitlan_causeways_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12844,7 +12844,7 @@ tv_wonder_unique_tenochtitlan_causeways_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12879,7 +12879,7 @@ tv_wonder_unique_tenochtitlan_causeways_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12914,7 +12914,7 @@ tv_wonder_unique_tenochtitlan_causeways_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -12949,7 +12949,7 @@ tv_wonder_unique_tenochtitlan_causeways = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -12984,7 +12984,7 @@ tv_wonder_unique_amsterdam_canal_ring_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -13019,7 +13019,7 @@ tv_wonder_unique_amsterdam_canal_ring_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -13054,7 +13054,7 @@ tv_wonder_unique_amsterdam_canal_ring_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -13089,7 +13089,7 @@ tv_wonder_unique_amsterdam_canal_ring_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -13124,7 +13124,7 @@ tv_wonder_unique_amsterdam_canal_ring = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -13159,7 +13159,7 @@ tv_wonder_unique_mecca_haram_expansion_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13194,7 +13194,7 @@ tv_wonder_unique_mecca_haram_expansion_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13229,7 +13229,7 @@ tv_wonder_unique_mecca_haram_expansion_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13264,7 +13264,7 @@ tv_wonder_unique_mecca_haram_expansion_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13299,7 +13299,7 @@ tv_wonder_unique_mecca_haram_expansion = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -13334,7 +13334,7 @@ tv_wonder_unique_ming_great_wall_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -13369,7 +13369,7 @@ tv_wonder_unique_ming_great_wall_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -13404,7 +13404,7 @@ tv_wonder_unique_ming_great_wall_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -13439,7 +13439,7 @@ tv_wonder_unique_ming_great_wall_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -13474,7 +13474,7 @@ tv_wonder_unique_ming_great_wall = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -13509,7 +13509,7 @@ tv_wonder_unique_bank_of_saint_george_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13544,7 +13544,7 @@ tv_wonder_unique_bank_of_saint_george_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13579,7 +13579,7 @@ tv_wonder_unique_bank_of_saint_george_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13614,7 +13614,7 @@ tv_wonder_unique_bank_of_saint_george_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13649,7 +13649,7 @@ tv_wonder_unique_bank_of_saint_george = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -13684,7 +13684,7 @@ tv_wonder_unique_cahokia_mounds_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13719,7 +13719,7 @@ tv_wonder_unique_cahokia_mounds_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13754,7 +13754,7 @@ tv_wonder_unique_cahokia_mounds_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13789,7 +13789,7 @@ tv_wonder_unique_cahokia_mounds_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13824,7 +13824,7 @@ tv_wonder_unique_cahokia_mounds = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -13859,7 +13859,7 @@ tv_wonder_unique_great_zimbabwe_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13894,7 +13894,7 @@ tv_wonder_unique_great_zimbabwe_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13929,7 +13929,7 @@ tv_wonder_unique_great_zimbabwe_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13964,7 +13964,7 @@ tv_wonder_unique_great_zimbabwe_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -13999,7 +13999,7 @@ tv_wonder_unique_great_zimbabwe = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -14034,7 +14034,7 @@ tv_wonder_unique_isfahan_square_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14069,7 +14069,7 @@ tv_wonder_unique_isfahan_square_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14104,7 +14104,7 @@ tv_wonder_unique_isfahan_square_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14139,7 +14139,7 @@ tv_wonder_unique_isfahan_square_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14174,7 +14174,7 @@ tv_wonder_unique_isfahan_square = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -14209,7 +14209,7 @@ tv_wonder_unique_grand_canal_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14244,7 +14244,7 @@ tv_wonder_unique_grand_canal_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14279,7 +14279,7 @@ tv_wonder_unique_grand_canal_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14314,7 +14314,7 @@ tv_wonder_unique_grand_canal_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14349,7 +14349,7 @@ tv_wonder_unique_grand_canal = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -14384,7 +14384,7 @@ tv_wonder_unique_inca_royal_road_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -14419,7 +14419,7 @@ tv_wonder_unique_inca_royal_road_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -14454,7 +14454,7 @@ tv_wonder_unique_inca_royal_road_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -14489,7 +14489,7 @@ tv_wonder_unique_inca_royal_road_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -14524,7 +14524,7 @@ tv_wonder_unique_inca_royal_road = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -14559,7 +14559,7 @@ tv_wonder_unique_roman_aqueducts_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -14594,7 +14594,7 @@ tv_wonder_unique_roman_aqueducts_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -14629,7 +14629,7 @@ tv_wonder_unique_roman_aqueducts_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -14664,7 +14664,7 @@ tv_wonder_unique_roman_aqueducts_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -14699,7 +14699,7 @@ tv_wonder_unique_roman_aqueducts = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -14734,7 +14734,7 @@ tv_wonder_unique_suez_ancient_canal_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14769,7 +14769,7 @@ tv_wonder_unique_suez_ancient_canal_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14804,7 +14804,7 @@ tv_wonder_unique_suez_ancient_canal_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14839,7 +14839,7 @@ tv_wonder_unique_suez_ancient_canal_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -14874,7 +14874,7 @@ tv_wonder_unique_suez_ancient_canal = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -14909,7 +14909,7 @@ tv_wonder_unique_kremlin_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -14944,7 +14944,7 @@ tv_wonder_unique_kremlin_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -14979,7 +14979,7 @@ tv_wonder_unique_kremlin_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15014,7 +15014,7 @@ tv_wonder_unique_kremlin_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15049,7 +15049,7 @@ tv_wonder_unique_kremlin = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -15084,7 +15084,7 @@ tv_wonder_unique_teotihuacan_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15119,7 +15119,7 @@ tv_wonder_unique_teotihuacan_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15154,7 +15154,7 @@ tv_wonder_unique_teotihuacan_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15189,7 +15189,7 @@ tv_wonder_unique_teotihuacan_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15224,7 +15224,7 @@ tv_wonder_unique_teotihuacan = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -15259,7 +15259,7 @@ tv_wonder_unique_angkor_hydraulic_system_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15294,7 +15294,7 @@ tv_wonder_unique_angkor_hydraulic_system_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15329,7 +15329,7 @@ tv_wonder_unique_angkor_hydraulic_system_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15364,7 +15364,7 @@ tv_wonder_unique_angkor_hydraulic_system_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15399,7 +15399,7 @@ tv_wonder_unique_angkor_hydraulic_system = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -15434,7 +15434,7 @@ tv_wonder_unique_dutch_polders_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15469,7 +15469,7 @@ tv_wonder_unique_dutch_polders_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15504,7 +15504,7 @@ tv_wonder_unique_dutch_polders_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15539,7 +15539,7 @@ tv_wonder_unique_dutch_polders_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15574,7 +15574,7 @@ tv_wonder_unique_dutch_polders = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -15609,7 +15609,7 @@ tv_wonder_unique_machu_picchu_terraces_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15644,7 +15644,7 @@ tv_wonder_unique_machu_picchu_terraces_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15679,7 +15679,7 @@ tv_wonder_unique_machu_picchu_terraces_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15714,7 +15714,7 @@ tv_wonder_unique_machu_picchu_terraces_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15749,7 +15749,7 @@ tv_wonder_unique_machu_picchu_terraces = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -15784,7 +15784,7 @@ tv_wonder_unique_british_navy_dockyards_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15819,7 +15819,7 @@ tv_wonder_unique_british_navy_dockyards_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15854,7 +15854,7 @@ tv_wonder_unique_british_navy_dockyards_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15889,7 +15889,7 @@ tv_wonder_unique_british_navy_dockyards_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -15924,7 +15924,7 @@ tv_wonder_unique_british_navy_dockyards = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -15959,7 +15959,7 @@ tv_wonder_unique_spanish_silver_fleet_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -15994,7 +15994,7 @@ tv_wonder_unique_spanish_silver_fleet_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -16029,7 +16029,7 @@ tv_wonder_unique_spanish_silver_fleet_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -16064,7 +16064,7 @@ tv_wonder_unique_spanish_silver_fleet_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -16099,7 +16099,7 @@ tv_wonder_unique_spanish_silver_fleet = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -16134,7 +16134,7 @@ tv_wonder_unique_ottoman_hajj_road_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -16169,7 +16169,7 @@ tv_wonder_unique_ottoman_hajj_road_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -16204,7 +16204,7 @@ tv_wonder_unique_ottoman_hajj_road_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -16239,7 +16239,7 @@ tv_wonder_unique_ottoman_hajj_road_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -16274,7 +16274,7 @@ tv_wonder_unique_ottoman_hajj_road = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -16309,7 +16309,7 @@ tv_wonder_unique_persian_qanat_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16344,7 +16344,7 @@ tv_wonder_unique_persian_qanat_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16379,7 +16379,7 @@ tv_wonder_unique_persian_qanat_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16414,7 +16414,7 @@ tv_wonder_unique_persian_qanat_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16449,7 +16449,7 @@ tv_wonder_unique_persian_qanat = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -16484,7 +16484,7 @@ tv_wonder_unique_longjiang_shipyard_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16519,7 +16519,7 @@ tv_wonder_unique_longjiang_shipyard_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16554,7 +16554,7 @@ tv_wonder_unique_longjiang_shipyard_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16589,7 +16589,7 @@ tv_wonder_unique_longjiang_shipyard_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16624,7 +16624,7 @@ tv_wonder_unique_longjiang_shipyard = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -16659,7 +16659,7 @@ tv_wonder_unique_jerusalem_holy_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16694,7 +16694,7 @@ tv_wonder_unique_jerusalem_holy_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16729,7 +16729,7 @@ tv_wonder_unique_jerusalem_holy_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16764,7 +16764,7 @@ tv_wonder_unique_jerusalem_holy_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16799,7 +16799,7 @@ tv_wonder_unique_jerusalem_holy_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -16834,7 +16834,7 @@ tv_wonder_unique_stonehenge_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16869,7 +16869,7 @@ tv_wonder_unique_stonehenge_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16904,7 +16904,7 @@ tv_wonder_unique_stonehenge_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16939,7 +16939,7 @@ tv_wonder_unique_stonehenge_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -16974,7 +16974,7 @@ tv_wonder_unique_stonehenge = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -17009,7 +17009,7 @@ tv_wonder_unique_tower_of_london_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -17044,7 +17044,7 @@ tv_wonder_unique_tower_of_london_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -17079,7 +17079,7 @@ tv_wonder_unique_tower_of_london_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -17114,7 +17114,7 @@ tv_wonder_unique_tower_of_london_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -17149,7 +17149,7 @@ tv_wonder_unique_tower_of_london = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -17184,7 +17184,7 @@ tv_wonder_unique_notre_dame_de_paris_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -17219,7 +17219,7 @@ tv_wonder_unique_notre_dame_de_paris_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -17254,7 +17254,7 @@ tv_wonder_unique_notre_dame_de_paris_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -17289,7 +17289,7 @@ tv_wonder_unique_notre_dame_de_paris_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -17324,7 +17324,7 @@ tv_wonder_unique_notre_dame_de_paris = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -17359,7 +17359,7 @@ tv_wonder_unique_st_basils_cathedral_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -17394,7 +17394,7 @@ tv_wonder_unique_st_basils_cathedral_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -17429,7 +17429,7 @@ tv_wonder_unique_st_basils_cathedral_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -17464,7 +17464,7 @@ tv_wonder_unique_st_basils_cathedral_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -17499,7 +17499,7 @@ tv_wonder_unique_st_basils_cathedral = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -17534,7 +17534,7 @@ tv_wonder_unique_trinity_lavra_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -17569,7 +17569,7 @@ tv_wonder_unique_trinity_lavra_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -17604,7 +17604,7 @@ tv_wonder_unique_trinity_lavra_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -17639,7 +17639,7 @@ tv_wonder_unique_trinity_lavra_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -17674,7 +17674,7 @@ tv_wonder_unique_trinity_lavra = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -17709,7 +17709,7 @@ tv_wonder_unique_winter_palace_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -17744,7 +17744,7 @@ tv_wonder_unique_winter_palace_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -17779,7 +17779,7 @@ tv_wonder_unique_winter_palace_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -17814,7 +17814,7 @@ tv_wonder_unique_winter_palace_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -17849,7 +17849,7 @@ tv_wonder_unique_winter_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -17884,7 +17884,7 @@ tv_wonder_unique_gyeongbokgung_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -17919,7 +17919,7 @@ tv_wonder_unique_gyeongbokgung_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -17954,7 +17954,7 @@ tv_wonder_unique_gyeongbokgung_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -17989,7 +17989,7 @@ tv_wonder_unique_gyeongbokgung_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -18024,7 +18024,7 @@ tv_wonder_unique_gyeongbokgung = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -18059,7 +18059,7 @@ tv_wonder_unique_changbai_mountain_altar_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -18094,7 +18094,7 @@ tv_wonder_unique_changbai_mountain_altar_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -18129,7 +18129,7 @@ tv_wonder_unique_changbai_mountain_altar_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -18164,7 +18164,7 @@ tv_wonder_unique_changbai_mountain_altar_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -18199,7 +18199,7 @@ tv_wonder_unique_changbai_mountain_altar = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -18234,7 +18234,7 @@ tv_wonder_unique_belgrade_fortress_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18269,7 +18269,7 @@ tv_wonder_unique_belgrade_fortress_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18304,7 +18304,7 @@ tv_wonder_unique_belgrade_fortress_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18339,7 +18339,7 @@ tv_wonder_unique_belgrade_fortress_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18374,7 +18374,7 @@ tv_wonder_unique_belgrade_fortress = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -18409,7 +18409,7 @@ tv_wonder_unique_meteora_monasteries_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18444,7 +18444,7 @@ tv_wonder_unique_meteora_monasteries_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18479,7 +18479,7 @@ tv_wonder_unique_meteora_monasteries_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18514,7 +18514,7 @@ tv_wonder_unique_meteora_monasteries_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18549,7 +18549,7 @@ tv_wonder_unique_meteora_monasteries = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -18584,7 +18584,7 @@ tv_wonder_unique_belem_tower_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18619,7 +18619,7 @@ tv_wonder_unique_belem_tower_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18654,7 +18654,7 @@ tv_wonder_unique_belem_tower_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18689,7 +18689,7 @@ tv_wonder_unique_belem_tower_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18724,7 +18724,7 @@ tv_wonder_unique_belem_tower = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -18759,7 +18759,7 @@ tv_wonder_unique_iberian_inquisition_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18794,7 +18794,7 @@ tv_wonder_unique_iberian_inquisition_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18829,7 +18829,7 @@ tv_wonder_unique_iberian_inquisition_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18864,7 +18864,7 @@ tv_wonder_unique_iberian_inquisition_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -18899,7 +18899,7 @@ tv_wonder_unique_iberian_inquisition = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -18934,7 +18934,7 @@ tv_wonder_unique_santa_maria_del_fiore_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -18969,7 +18969,7 @@ tv_wonder_unique_santa_maria_del_fiore_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19004,7 +19004,7 @@ tv_wonder_unique_santa_maria_del_fiore_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19039,7 +19039,7 @@ tv_wonder_unique_santa_maria_del_fiore_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19074,7 +19074,7 @@ tv_wonder_unique_santa_maria_del_fiore = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -19109,7 +19109,7 @@ tv_wonder_unique_leaning_tower_of_pisa_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -19144,7 +19144,7 @@ tv_wonder_unique_leaning_tower_of_pisa_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -19179,7 +19179,7 @@ tv_wonder_unique_leaning_tower_of_pisa_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -19214,7 +19214,7 @@ tv_wonder_unique_leaning_tower_of_pisa_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -19249,7 +19249,7 @@ tv_wonder_unique_leaning_tower_of_pisa = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -19284,7 +19284,7 @@ tv_wonder_unique_milan_cathedral_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19319,7 +19319,7 @@ tv_wonder_unique_milan_cathedral_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19354,7 +19354,7 @@ tv_wonder_unique_milan_cathedral_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19389,7 +19389,7 @@ tv_wonder_unique_milan_cathedral_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19424,7 +19424,7 @@ tv_wonder_unique_milan_cathedral = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -19459,7 +19459,7 @@ tv_wonder_unique_vatican_archives_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19494,7 +19494,7 @@ tv_wonder_unique_vatican_archives_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19529,7 +19529,7 @@ tv_wonder_unique_vatican_archives_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19564,7 +19564,7 @@ tv_wonder_unique_vatican_archives_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19599,7 +19599,7 @@ tv_wonder_unique_vatican_archives = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -19634,7 +19634,7 @@ tv_wonder_unique_temple_of_heaven_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19669,7 +19669,7 @@ tv_wonder_unique_temple_of_heaven_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19704,7 +19704,7 @@ tv_wonder_unique_temple_of_heaven_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19739,7 +19739,7 @@ tv_wonder_unique_temple_of_heaven_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -19774,7 +19774,7 @@ tv_wonder_unique_temple_of_heaven = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -19809,7 +19809,7 @@ tv_wonder_unique_dujiangyan_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -19844,7 +19844,7 @@ tv_wonder_unique_dujiangyan_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -19879,7 +19879,7 @@ tv_wonder_unique_dujiangyan_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -19914,7 +19914,7 @@ tv_wonder_unique_dujiangyan_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -19949,7 +19949,7 @@ tv_wonder_unique_dujiangyan = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -19984,7 +19984,7 @@ tv_wonder_unique_porcelain_tower_of_nanjing_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20019,7 +20019,7 @@ tv_wonder_unique_porcelain_tower_of_nanjing_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20054,7 +20054,7 @@ tv_wonder_unique_porcelain_tower_of_nanjing_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20089,7 +20089,7 @@ tv_wonder_unique_porcelain_tower_of_nanjing_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20124,7 +20124,7 @@ tv_wonder_unique_porcelain_tower_of_nanjing = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -20159,7 +20159,7 @@ tv_wonder_unique_jingdezhen_imperial_kilns_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20194,7 +20194,7 @@ tv_wonder_unique_jingdezhen_imperial_kilns_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20229,7 +20229,7 @@ tv_wonder_unique_jingdezhen_imperial_kilns_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20264,7 +20264,7 @@ tv_wonder_unique_jingdezhen_imperial_kilns_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20299,7 +20299,7 @@ tv_wonder_unique_jingdezhen_imperial_kilns = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -20334,7 +20334,7 @@ tv_wonder_unique_mogao_caves_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -20369,7 +20369,7 @@ tv_wonder_unique_mogao_caves_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -20404,7 +20404,7 @@ tv_wonder_unique_mogao_caves_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -20439,7 +20439,7 @@ tv_wonder_unique_mogao_caves_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -20474,7 +20474,7 @@ tv_wonder_unique_mogao_caves = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -20509,7 +20509,7 @@ tv_wonder_unique_canton_thirteen_factories_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20544,7 +20544,7 @@ tv_wonder_unique_canton_thirteen_factories_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20579,7 +20579,7 @@ tv_wonder_unique_canton_thirteen_factories_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20614,7 +20614,7 @@ tv_wonder_unique_canton_thirteen_factories_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20649,7 +20649,7 @@ tv_wonder_unique_canton_thirteen_factories = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -20684,7 +20684,7 @@ tv_wonder_unique_dardanelles_fortress_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20719,7 +20719,7 @@ tv_wonder_unique_dardanelles_fortress_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20754,7 +20754,7 @@ tv_wonder_unique_dardanelles_fortress_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20789,7 +20789,7 @@ tv_wonder_unique_dardanelles_fortress_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20824,7 +20824,7 @@ tv_wonder_unique_dardanelles_fortress = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -20859,7 +20859,7 @@ tv_wonder_unique_escorial_monastery_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20894,7 +20894,7 @@ tv_wonder_unique_escorial_monastery_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20929,7 +20929,7 @@ tv_wonder_unique_escorial_monastery_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20964,7 +20964,7 @@ tv_wonder_unique_escorial_monastery_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -20999,7 +20999,7 @@ tv_wonder_unique_escorial_monastery = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -21034,7 +21034,7 @@ tv_wonder_unique_toledo_armory_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21069,7 +21069,7 @@ tv_wonder_unique_toledo_armory_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21104,7 +21104,7 @@ tv_wonder_unique_toledo_armory_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21139,7 +21139,7 @@ tv_wonder_unique_toledo_armory_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21174,7 +21174,7 @@ tv_wonder_unique_toledo_armory = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -21209,7 +21209,7 @@ tv_wonder_unique_camino_de_santiago_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21244,7 +21244,7 @@ tv_wonder_unique_camino_de_santiago_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21279,7 +21279,7 @@ tv_wonder_unique_camino_de_santiago_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21314,7 +21314,7 @@ tv_wonder_unique_camino_de_santiago_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21349,7 +21349,7 @@ tv_wonder_unique_camino_de_santiago = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -21384,7 +21384,7 @@ tv_wonder_unique_sagres_navigation_school_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -21419,7 +21419,7 @@ tv_wonder_unique_sagres_navigation_school_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -21454,7 +21454,7 @@ tv_wonder_unique_sagres_navigation_school_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -21489,7 +21489,7 @@ tv_wonder_unique_sagres_navigation_school_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -21524,7 +21524,7 @@ tv_wonder_unique_sagres_navigation_school = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -21559,7 +21559,7 @@ tv_wonder_unique_milan_arsenal_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21594,7 +21594,7 @@ tv_wonder_unique_milan_arsenal_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21629,7 +21629,7 @@ tv_wonder_unique_milan_arsenal_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21664,7 +21664,7 @@ tv_wonder_unique_milan_arsenal_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21699,7 +21699,7 @@ tv_wonder_unique_milan_arsenal = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -21734,7 +21734,7 @@ tv_wonder_unique_university_of_bologna_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21769,7 +21769,7 @@ tv_wonder_unique_university_of_bologna_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21804,7 +21804,7 @@ tv_wonder_unique_university_of_bologna_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21839,7 +21839,7 @@ tv_wonder_unique_university_of_bologna_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21874,7 +21874,7 @@ tv_wonder_unique_university_of_bologna = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -21909,7 +21909,7 @@ tv_wonder_unique_carrara_marble_quarries_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21944,7 +21944,7 @@ tv_wonder_unique_carrara_marble_quarries_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -21979,7 +21979,7 @@ tv_wonder_unique_carrara_marble_quarries_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -22014,7 +22014,7 @@ tv_wonder_unique_carrara_marble_quarries_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -22049,7 +22049,7 @@ tv_wonder_unique_carrara_marble_quarries = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -22084,7 +22084,7 @@ tv_wonder_unique_east_india_company_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -22119,7 +22119,7 @@ tv_wonder_unique_east_india_company_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -22154,7 +22154,7 @@ tv_wonder_unique_east_india_company_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -22189,7 +22189,7 @@ tv_wonder_unique_east_india_company_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -22224,7 +22224,7 @@ tv_wonder_unique_east_india_company = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -22259,7 +22259,7 @@ tv_wonder_unique_peacock_throne_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -22294,7 +22294,7 @@ tv_wonder_unique_peacock_throne_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -22329,7 +22329,7 @@ tv_wonder_unique_peacock_throne_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -22364,7 +22364,7 @@ tv_wonder_unique_peacock_throne_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -22399,7 +22399,7 @@ tv_wonder_unique_peacock_throne = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -22434,7 +22434,7 @@ tv_wonder_unique_varanasi_ghats_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -22469,7 +22469,7 @@ tv_wonder_unique_varanasi_ghats_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -22504,7 +22504,7 @@ tv_wonder_unique_varanasi_ghats_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -22539,7 +22539,7 @@ tv_wonder_unique_varanasi_ghats_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -22574,7 +22574,7 @@ tv_wonder_unique_varanasi_ghats = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -22609,7 +22609,7 @@ tv_wonder_unique_brihadishvara_temple_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -22644,7 +22644,7 @@ tv_wonder_unique_brihadishvara_temple_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -22679,7 +22679,7 @@ tv_wonder_unique_brihadishvara_temple_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -22714,7 +22714,7 @@ tv_wonder_unique_brihadishvara_temple_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -22749,7 +22749,7 @@ tv_wonder_unique_brihadishvara_temple = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -22784,7 +22784,7 @@ tv_wonder_unique_konark_sun_temple_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -22819,7 +22819,7 @@ tv_wonder_unique_konark_sun_temple_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -22854,7 +22854,7 @@ tv_wonder_unique_konark_sun_temple_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -22889,7 +22889,7 @@ tv_wonder_unique_konark_sun_temple_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -22924,7 +22924,7 @@ tv_wonder_unique_konark_sun_temple = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -22959,7 +22959,7 @@ tv_wonder_unique_fatehpur_sikri_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -22994,7 +22994,7 @@ tv_wonder_unique_fatehpur_sikri_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -23029,7 +23029,7 @@ tv_wonder_unique_fatehpur_sikri_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -23064,7 +23064,7 @@ tv_wonder_unique_fatehpur_sikri_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -23099,7 +23099,7 @@ tv_wonder_unique_fatehpur_sikri = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -23134,7 +23134,7 @@ tv_wonder_unique_calicut_port_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23169,7 +23169,7 @@ tv_wonder_unique_calicut_port_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23204,7 +23204,7 @@ tv_wonder_unique_calicut_port_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23239,7 +23239,7 @@ tv_wonder_unique_calicut_port_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23274,7 +23274,7 @@ tv_wonder_unique_calicut_port_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -23309,7 +23309,7 @@ tv_wonder_unique_wieliczka_salt_mine_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23344,7 +23344,7 @@ tv_wonder_unique_wieliczka_salt_mine_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23379,7 +23379,7 @@ tv_wonder_unique_wieliczka_salt_mine_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23414,7 +23414,7 @@ tv_wonder_unique_wieliczka_salt_mine_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23449,7 +23449,7 @@ tv_wonder_unique_wieliczka_salt_mine = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -23484,7 +23484,7 @@ tv_wonder_unique_wawel_castle_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23519,7 +23519,7 @@ tv_wonder_unique_wawel_castle_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23554,7 +23554,7 @@ tv_wonder_unique_wawel_castle_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23589,7 +23589,7 @@ tv_wonder_unique_wawel_castle_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23624,7 +23624,7 @@ tv_wonder_unique_wawel_castle = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -23659,7 +23659,7 @@ tv_wonder_unique_zamosc_ideal_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -23694,7 +23694,7 @@ tv_wonder_unique_zamosc_ideal_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -23729,7 +23729,7 @@ tv_wonder_unique_zamosc_ideal_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -23764,7 +23764,7 @@ tv_wonder_unique_zamosc_ideal_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -23799,7 +23799,7 @@ tv_wonder_unique_zamosc_ideal_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -23834,7 +23834,7 @@ tv_wonder_unique_gdansk_port_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23869,7 +23869,7 @@ tv_wonder_unique_gdansk_port_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23904,7 +23904,7 @@ tv_wonder_unique_gdansk_port_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23939,7 +23939,7 @@ tv_wonder_unique_gdansk_port_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -23974,7 +23974,7 @@ tv_wonder_unique_gdansk_port = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -24009,7 +24009,7 @@ tv_wonder_unique_malbork_castle_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24044,7 +24044,7 @@ tv_wonder_unique_malbork_castle_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24079,7 +24079,7 @@ tv_wonder_unique_malbork_castle_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24114,7 +24114,7 @@ tv_wonder_unique_malbork_castle_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24149,7 +24149,7 @@ tv_wonder_unique_malbork_castle = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -24184,7 +24184,7 @@ tv_wonder_unique_brest_synagogue_quarter_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -24219,7 +24219,7 @@ tv_wonder_unique_brest_synagogue_quarter_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -24254,7 +24254,7 @@ tv_wonder_unique_brest_synagogue_quarter_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -24289,7 +24289,7 @@ tv_wonder_unique_brest_synagogue_quarter_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -24324,7 +24324,7 @@ tv_wonder_unique_brest_synagogue_quarter = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -24359,7 +24359,7 @@ tv_wonder_unique_vilnius_university_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24394,7 +24394,7 @@ tv_wonder_unique_vilnius_university_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24429,7 +24429,7 @@ tv_wonder_unique_vilnius_university_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24464,7 +24464,7 @@ tv_wonder_unique_vilnius_university_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24499,7 +24499,7 @@ tv_wonder_unique_vilnius_university = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -24534,7 +24534,7 @@ tv_wonder_unique_cave_monastery_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24569,7 +24569,7 @@ tv_wonder_unique_cave_monastery_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24604,7 +24604,7 @@ tv_wonder_unique_cave_monastery_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24639,7 +24639,7 @@ tv_wonder_unique_cave_monastery_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24674,7 +24674,7 @@ tv_wonder_unique_cave_monastery = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -24709,7 +24709,7 @@ tv_wonder_unique_zaporizhian_sich_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24744,7 +24744,7 @@ tv_wonder_unique_zaporizhian_sich_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24779,7 +24779,7 @@ tv_wonder_unique_zaporizhian_sich_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24814,7 +24814,7 @@ tv_wonder_unique_zaporizhian_sich_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -24849,7 +24849,7 @@ tv_wonder_unique_zaporizhian_sich = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -24884,7 +24884,7 @@ tv_wonder_unique_registan_square_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -24919,7 +24919,7 @@ tv_wonder_unique_registan_square_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -24954,7 +24954,7 @@ tv_wonder_unique_registan_square_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -24989,7 +24989,7 @@ tv_wonder_unique_registan_square_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25024,7 +25024,7 @@ tv_wonder_unique_registan_square = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -25059,7 +25059,7 @@ tv_wonder_unique_khiva_old_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25094,7 +25094,7 @@ tv_wonder_unique_khiva_old_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25129,7 +25129,7 @@ tv_wonder_unique_khiva_old_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25164,7 +25164,7 @@ tv_wonder_unique_khiva_old_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25199,7 +25199,7 @@ tv_wonder_unique_khiva_old_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -25234,7 +25234,7 @@ tv_wonder_unique_bukhara_kalyan_minaret_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -25269,7 +25269,7 @@ tv_wonder_unique_bukhara_kalyan_minaret_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -25304,7 +25304,7 @@ tv_wonder_unique_bukhara_kalyan_minaret_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -25339,7 +25339,7 @@ tv_wonder_unique_bukhara_kalyan_minaret_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -25374,7 +25374,7 @@ tv_wonder_unique_bukhara_kalyan_minaret = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -25409,7 +25409,7 @@ tv_wonder_unique_ferghana_palace_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25444,7 +25444,7 @@ tv_wonder_unique_ferghana_palace_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25479,7 +25479,7 @@ tv_wonder_unique_ferghana_palace_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25514,7 +25514,7 @@ tv_wonder_unique_ferghana_palace_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25549,7 +25549,7 @@ tv_wonder_unique_ferghana_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -25584,7 +25584,7 @@ tv_wonder_unique_tashkent_old_bazaar_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -25619,7 +25619,7 @@ tv_wonder_unique_tashkent_old_bazaar_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -25654,7 +25654,7 @@ tv_wonder_unique_tashkent_old_bazaar_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -25689,7 +25689,7 @@ tv_wonder_unique_tashkent_old_bazaar_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -25724,7 +25724,7 @@ tv_wonder_unique_tashkent_old_bazaar = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -25759,7 +25759,7 @@ tv_wonder_unique_louvre_palace_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25794,7 +25794,7 @@ tv_wonder_unique_louvre_palace_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25829,7 +25829,7 @@ tv_wonder_unique_louvre_palace_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25864,7 +25864,7 @@ tv_wonder_unique_louvre_palace_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -25899,7 +25899,7 @@ tv_wonder_unique_louvre_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -25934,7 +25934,7 @@ tv_wonder_unique_fontainebleau_palace_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -25969,7 +25969,7 @@ tv_wonder_unique_fontainebleau_palace_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -26004,7 +26004,7 @@ tv_wonder_unique_fontainebleau_palace_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -26039,7 +26039,7 @@ tv_wonder_unique_fontainebleau_palace_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -26074,7 +26074,7 @@ tv_wonder_unique_fontainebleau_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -26109,7 +26109,7 @@ tv_wonder_unique_bordeaux_port_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26144,7 +26144,7 @@ tv_wonder_unique_bordeaux_port_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26179,7 +26179,7 @@ tv_wonder_unique_bordeaux_port_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26214,7 +26214,7 @@ tv_wonder_unique_bordeaux_port_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26249,7 +26249,7 @@ tv_wonder_unique_bordeaux_port = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -26284,7 +26284,7 @@ tv_wonder_unique_marseille_old_port_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26319,7 +26319,7 @@ tv_wonder_unique_marseille_old_port_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26354,7 +26354,7 @@ tv_wonder_unique_marseille_old_port_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26389,7 +26389,7 @@ tv_wonder_unique_marseille_old_port_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26424,7 +26424,7 @@ tv_wonder_unique_marseille_old_port = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -26459,7 +26459,7 @@ tv_wonder_unique_lyon_silk_workshops_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26494,7 +26494,7 @@ tv_wonder_unique_lyon_silk_workshops_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26529,7 +26529,7 @@ tv_wonder_unique_lyon_silk_workshops_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26564,7 +26564,7 @@ tv_wonder_unique_lyon_silk_workshops_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26599,7 +26599,7 @@ tv_wonder_unique_lyon_silk_workshops = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -26634,7 +26634,7 @@ tv_wonder_unique_mont_saint_michel_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -26669,7 +26669,7 @@ tv_wonder_unique_mont_saint_michel_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -26704,7 +26704,7 @@ tv_wonder_unique_mont_saint_michel_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -26739,7 +26739,7 @@ tv_wonder_unique_mont_saint_michel_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -26774,7 +26774,7 @@ tv_wonder_unique_mont_saint_michel = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -26809,7 +26809,7 @@ tv_wonder_unique_carcassonne_castle_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26844,7 +26844,7 @@ tv_wonder_unique_carcassonne_castle_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26879,7 +26879,7 @@ tv_wonder_unique_carcassonne_castle_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26914,7 +26914,7 @@ tv_wonder_unique_carcassonne_castle_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -26949,7 +26949,7 @@ tv_wonder_unique_carcassonne_castle = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -26984,7 +26984,7 @@ tv_wonder_unique_brest_naval_port_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27019,7 +27019,7 @@ tv_wonder_unique_brest_naval_port_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27054,7 +27054,7 @@ tv_wonder_unique_brest_naval_port_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27089,7 +27089,7 @@ tv_wonder_unique_brest_naval_port_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27124,7 +27124,7 @@ tv_wonder_unique_brest_naval_port = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -27159,7 +27159,7 @@ tv_wonder_unique_colmar_old_town_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -27194,7 +27194,7 @@ tv_wonder_unique_colmar_old_town_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -27229,7 +27229,7 @@ tv_wonder_unique_colmar_old_town_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -27264,7 +27264,7 @@ tv_wonder_unique_colmar_old_town_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -27299,7 +27299,7 @@ tv_wonder_unique_colmar_old_town = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -27334,7 +27334,7 @@ tv_wonder_unique_house_of_wisdom_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27369,7 +27369,7 @@ tv_wonder_unique_house_of_wisdom_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27404,7 +27404,7 @@ tv_wonder_unique_house_of_wisdom_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27439,7 +27439,7 @@ tv_wonder_unique_house_of_wisdom_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27474,7 +27474,7 @@ tv_wonder_unique_house_of_wisdom = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -27509,7 +27509,7 @@ tv_wonder_unique_echmiadzin_cathedral_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27544,7 +27544,7 @@ tv_wonder_unique_echmiadzin_cathedral_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27579,7 +27579,7 @@ tv_wonder_unique_echmiadzin_cathedral_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27614,7 +27614,7 @@ tv_wonder_unique_echmiadzin_cathedral_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -27649,7 +27649,7 @@ tv_wonder_unique_echmiadzin_cathedral = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -27684,7 +27684,7 @@ tv_wonder_unique_narikala_fortress_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -27719,7 +27719,7 @@ tv_wonder_unique_narikala_fortress_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -27754,7 +27754,7 @@ tv_wonder_unique_narikala_fortress_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -27789,7 +27789,7 @@ tv_wonder_unique_narikala_fortress_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -27824,7 +27824,7 @@ tv_wonder_unique_narikala_fortress = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -27859,7 +27859,7 @@ tv_wonder_unique_baku_ateshgah_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -27894,7 +27894,7 @@ tv_wonder_unique_baku_ateshgah_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -27929,7 +27929,7 @@ tv_wonder_unique_baku_ateshgah_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -27964,7 +27964,7 @@ tv_wonder_unique_baku_ateshgah_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -27999,7 +27999,7 @@ tv_wonder_unique_baku_ateshgah = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -28034,7 +28034,7 @@ tv_wonder_unique_sanaa_old_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28069,7 +28069,7 @@ tv_wonder_unique_sanaa_old_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28104,7 +28104,7 @@ tv_wonder_unique_sanaa_old_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28139,7 +28139,7 @@ tv_wonder_unique_sanaa_old_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28174,7 +28174,7 @@ tv_wonder_unique_sanaa_old_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -28209,7 +28209,7 @@ tv_wonder_unique_schoenbrunn_palace_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -28244,7 +28244,7 @@ tv_wonder_unique_schoenbrunn_palace_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -28279,7 +28279,7 @@ tv_wonder_unique_schoenbrunn_palace_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -28314,7 +28314,7 @@ tv_wonder_unique_schoenbrunn_palace_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -28349,7 +28349,7 @@ tv_wonder_unique_schoenbrunn_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -28384,7 +28384,7 @@ tv_wonder_unique_electoral_conference_hall_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28419,7 +28419,7 @@ tv_wonder_unique_electoral_conference_hall_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28454,7 +28454,7 @@ tv_wonder_unique_electoral_conference_hall_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28489,7 +28489,7 @@ tv_wonder_unique_electoral_conference_hall_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28524,7 +28524,7 @@ tv_wonder_unique_electoral_conference_hall = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -28559,7 +28559,7 @@ tv_wonder_unique_aachen_cathedral_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28594,7 +28594,7 @@ tv_wonder_unique_aachen_cathedral_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28629,7 +28629,7 @@ tv_wonder_unique_aachen_cathedral_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28664,7 +28664,7 @@ tv_wonder_unique_aachen_cathedral_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28699,7 +28699,7 @@ tv_wonder_unique_aachen_cathedral = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -28734,7 +28734,7 @@ tv_wonder_unique_nuremberg_imperial_castle_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -28769,7 +28769,7 @@ tv_wonder_unique_nuremberg_imperial_castle_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -28804,7 +28804,7 @@ tv_wonder_unique_nuremberg_imperial_castle_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -28839,7 +28839,7 @@ tv_wonder_unique_nuremberg_imperial_castle_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -28874,7 +28874,7 @@ tv_wonder_unique_nuremberg_imperial_castle = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -28909,7 +28909,7 @@ tv_wonder_unique_augsburg_bank_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28944,7 +28944,7 @@ tv_wonder_unique_augsburg_bank_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -28979,7 +28979,7 @@ tv_wonder_unique_augsburg_bank_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -29014,7 +29014,7 @@ tv_wonder_unique_augsburg_bank_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -29049,7 +29049,7 @@ tv_wonder_unique_augsburg_bank = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -29084,7 +29084,7 @@ tv_wonder_unique_cologne_cathedral_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -29119,7 +29119,7 @@ tv_wonder_unique_cologne_cathedral_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -29154,7 +29154,7 @@ tv_wonder_unique_cologne_cathedral_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -29189,7 +29189,7 @@ tv_wonder_unique_cologne_cathedral_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -29224,7 +29224,7 @@ tv_wonder_unique_cologne_cathedral = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -29259,7 +29259,7 @@ tv_wonder_unique_hanseatic_kontor_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -29294,7 +29294,7 @@ tv_wonder_unique_hanseatic_kontor_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -29329,7 +29329,7 @@ tv_wonder_unique_hanseatic_kontor_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -29364,7 +29364,7 @@ tv_wonder_unique_hanseatic_kontor_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -29399,7 +29399,7 @@ tv_wonder_unique_hanseatic_kontor = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -29434,7 +29434,7 @@ tv_wonder_unique_hanseatic_town_hall_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -29469,7 +29469,7 @@ tv_wonder_unique_hanseatic_town_hall_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -29504,7 +29504,7 @@ tv_wonder_unique_hanseatic_town_hall_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -29539,7 +29539,7 @@ tv_wonder_unique_hanseatic_town_hall_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -29574,7 +29574,7 @@ tv_wonder_unique_hanseatic_town_hall = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -29609,7 +29609,7 @@ tv_wonder_unique_dresden_art_gallery_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -29644,7 +29644,7 @@ tv_wonder_unique_dresden_art_gallery_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -29679,7 +29679,7 @@ tv_wonder_unique_dresden_art_gallery_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -29714,7 +29714,7 @@ tv_wonder_unique_dresden_art_gallery_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -29749,7 +29749,7 @@ tv_wonder_unique_dresden_art_gallery = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -29784,7 +29784,7 @@ tv_wonder_unique_munich_royal_brewery_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -29819,7 +29819,7 @@ tv_wonder_unique_munich_royal_brewery_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -29854,7 +29854,7 @@ tv_wonder_unique_munich_royal_brewery_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -29889,7 +29889,7 @@ tv_wonder_unique_munich_royal_brewery_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -29924,7 +29924,7 @@ tv_wonder_unique_munich_royal_brewery = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -29959,7 +29959,7 @@ tv_wonder_unique_heidelberg_university_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -29994,7 +29994,7 @@ tv_wonder_unique_heidelberg_university_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30029,7 +30029,7 @@ tv_wonder_unique_heidelberg_university_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30064,7 +30064,7 @@ tv_wonder_unique_heidelberg_university_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30099,7 +30099,7 @@ tv_wonder_unique_heidelberg_university = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -30134,7 +30134,7 @@ tv_wonder_unique_fez_old_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -30169,7 +30169,7 @@ tv_wonder_unique_fez_old_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -30204,7 +30204,7 @@ tv_wonder_unique_fez_old_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -30239,7 +30239,7 @@ tv_wonder_unique_fez_old_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -30274,7 +30274,7 @@ tv_wonder_unique_fez_old_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -30309,7 +30309,7 @@ tv_wonder_unique_kairouan_holy_city_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -30344,7 +30344,7 @@ tv_wonder_unique_kairouan_holy_city_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -30379,7 +30379,7 @@ tv_wonder_unique_kairouan_holy_city_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -30414,7 +30414,7 @@ tv_wonder_unique_kairouan_holy_city_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -30449,7 +30449,7 @@ tv_wonder_unique_kairouan_holy_city = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -30484,7 +30484,7 @@ tv_wonder_unique_algiers_pirate_port_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -30519,7 +30519,7 @@ tv_wonder_unique_algiers_pirate_port_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -30554,7 +30554,7 @@ tv_wonder_unique_algiers_pirate_port_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -30589,7 +30589,7 @@ tv_wonder_unique_algiers_pirate_port_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -30624,7 +30624,7 @@ tv_wonder_unique_algiers_pirate_port = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -30659,7 +30659,7 @@ tv_wonder_unique_sankore_university_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30694,7 +30694,7 @@ tv_wonder_unique_sankore_university_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30729,7 +30729,7 @@ tv_wonder_unique_sankore_university_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30764,7 +30764,7 @@ tv_wonder_unique_sankore_university_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30799,7 +30799,7 @@ tv_wonder_unique_sankore_university = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -30834,7 +30834,7 @@ tv_wonder_unique_great_mosque_of_djenne_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30869,7 +30869,7 @@ tv_wonder_unique_great_mosque_of_djenne_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30904,7 +30904,7 @@ tv_wonder_unique_great_mosque_of_djenne_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30939,7 +30939,7 @@ tv_wonder_unique_great_mosque_of_djenne_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -30974,7 +30974,7 @@ tv_wonder_unique_great_mosque_of_djenne = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -31009,7 +31009,7 @@ tv_wonder_unique_walls_of_benin_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31044,7 +31044,7 @@ tv_wonder_unique_walls_of_benin_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31079,7 +31079,7 @@ tv_wonder_unique_walls_of_benin_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31114,7 +31114,7 @@ tv_wonder_unique_walls_of_benin_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31149,7 +31149,7 @@ tv_wonder_unique_walls_of_benin = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -31184,7 +31184,7 @@ tv_wonder_unique_suzhou_classical_gardens_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31219,7 +31219,7 @@ tv_wonder_unique_suzhou_classical_gardens_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31254,7 +31254,7 @@ tv_wonder_unique_suzhou_classical_gardens_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31289,7 +31289,7 @@ tv_wonder_unique_suzhou_classical_gardens_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31324,7 +31324,7 @@ tv_wonder_unique_suzhou_classical_gardens = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -31359,7 +31359,7 @@ tv_wonder_unique_fin_garden_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31394,7 +31394,7 @@ tv_wonder_unique_fin_garden_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31429,7 +31429,7 @@ tv_wonder_unique_fin_garden_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31464,7 +31464,7 @@ tv_wonder_unique_fin_garden_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -31499,7 +31499,7 @@ tv_wonder_unique_fin_garden = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -31534,7 +31534,7 @@ tv_wonder_unique_jiangnan_examination_hall_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -31569,7 +31569,7 @@ tv_wonder_unique_jiangnan_examination_hall_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -31604,7 +31604,7 @@ tv_wonder_unique_jiangnan_examination_hall_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -31639,7 +31639,7 @@ tv_wonder_unique_jiangnan_examination_hall_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -31674,7 +31674,7 @@ tv_wonder_unique_jiangnan_examination_hall = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -31709,7 +31709,7 @@ tv_wonder_unique_thang_long_temple_of_literature_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -31744,7 +31744,7 @@ tv_wonder_unique_thang_long_temple_of_literature_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -31779,7 +31779,7 @@ tv_wonder_unique_thang_long_temple_of_literature_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -31814,7 +31814,7 @@ tv_wonder_unique_thang_long_temple_of_literature_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -31849,7 +31849,7 @@ tv_wonder_unique_thang_long_temple_of_literature = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -31884,7 +31884,7 @@ tv_wonder_unique_maragheh_observatory_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -31919,7 +31919,7 @@ tv_wonder_unique_maragheh_observatory_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -31954,7 +31954,7 @@ tv_wonder_unique_maragheh_observatory_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -31989,7 +31989,7 @@ tv_wonder_unique_maragheh_observatory_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -32024,7 +32024,7 @@ tv_wonder_unique_maragheh_observatory = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -32059,7 +32059,7 @@ tv_wonder_unique_xian_bell_and_drum_towers_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -32094,7 +32094,7 @@ tv_wonder_unique_xian_bell_and_drum_towers_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -32129,7 +32129,7 @@ tv_wonder_unique_xian_bell_and_drum_towers_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -32164,7 +32164,7 @@ tv_wonder_unique_xian_bell_and_drum_towers_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -32199,7 +32199,7 @@ tv_wonder_unique_xian_bell_and_drum_towers = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -32234,7 +32234,7 @@ tv_wonder_unique_behistun_inscription_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32269,7 +32269,7 @@ tv_wonder_unique_behistun_inscription_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32304,7 +32304,7 @@ tv_wonder_unique_behistun_inscription_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32339,7 +32339,7 @@ tv_wonder_unique_behistun_inscription_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32374,7 +32374,7 @@ tv_wonder_unique_behistun_inscription = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -32409,7 +32409,7 @@ tv_wonder_unique_beijing_imperial_granaries_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32444,7 +32444,7 @@ tv_wonder_unique_beijing_imperial_granaries_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32479,7 +32479,7 @@ tv_wonder_unique_beijing_imperial_granaries_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32514,7 +32514,7 @@ tv_wonder_unique_beijing_imperial_granaries_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32549,7 +32549,7 @@ tv_wonder_unique_beijing_imperial_granaries = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -32584,7 +32584,7 @@ tv_wonder_unique_bursa_imperial_mint_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32619,7 +32619,7 @@ tv_wonder_unique_bursa_imperial_mint_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32654,7 +32654,7 @@ tv_wonder_unique_bursa_imperial_mint_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32689,7 +32689,7 @@ tv_wonder_unique_bursa_imperial_mint_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32724,7 +32724,7 @@ tv_wonder_unique_bursa_imperial_mint = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -32759,7 +32759,7 @@ tv_wonder_unique_enderun_palace_school_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32794,7 +32794,7 @@ tv_wonder_unique_enderun_palace_school_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32829,7 +32829,7 @@ tv_wonder_unique_enderun_palace_school_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32864,7 +32864,7 @@ tv_wonder_unique_enderun_palace_school_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32899,7 +32899,7 @@ tv_wonder_unique_enderun_palace_school = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -32934,7 +32934,7 @@ tv_wonder_unique_ayutthaya_foreign_quarters_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -32969,7 +32969,7 @@ tv_wonder_unique_ayutthaya_foreign_quarters_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -33004,7 +33004,7 @@ tv_wonder_unique_ayutthaya_foreign_quarters_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -33039,7 +33039,7 @@ tv_wonder_unique_ayutthaya_foreign_quarters_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -33074,7 +33074,7 @@ tv_wonder_unique_ayutthaya_foreign_quarters = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -33109,7 +33109,7 @@ tv_wonder_unique_yunnan_weisuo_colonies_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -33144,7 +33144,7 @@ tv_wonder_unique_yunnan_weisuo_colonies_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -33179,7 +33179,7 @@ tv_wonder_unique_yunnan_weisuo_colonies_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -33214,7 +33214,7 @@ tv_wonder_unique_yunnan_weisuo_colonies_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -33249,7 +33249,7 @@ tv_wonder_unique_yunnan_weisuo_colonies = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -33284,7 +33284,7 @@ tv_wonder_unique_zhoushan_beacon_network_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -33319,7 +33319,7 @@ tv_wonder_unique_zhoushan_beacon_network_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -33354,7 +33354,7 @@ tv_wonder_unique_zhoushan_beacon_network_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -33389,7 +33389,7 @@ tv_wonder_unique_zhoushan_beacon_network_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -33424,7 +33424,7 @@ tv_wonder_unique_zhoushan_beacon_network = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }
 
@@ -33459,7 +33459,7 @@ tv_wonder_unique_amber_room_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -33494,7 +33494,7 @@ tv_wonder_unique_amber_room_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -33529,7 +33529,7 @@ tv_wonder_unique_amber_room_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -33564,7 +33564,7 @@ tv_wonder_unique_amber_room_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -33599,7 +33599,7 @@ tv_wonder_unique_amber_room = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -33634,7 +33634,7 @@ tv_wonder_unique_parthenon_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -33669,7 +33669,7 @@ tv_wonder_unique_parthenon_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -33704,7 +33704,7 @@ tv_wonder_unique_parthenon_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -33739,7 +33739,7 @@ tv_wonder_unique_parthenon_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_medium_maintenance
 	}
 }
 
@@ -33774,7 +33774,7 @@ tv_wonder_unique_parthenon = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_medium_maintenance
 	}
 }
 
@@ -33809,7 +33809,7 @@ tv_wonder_unique_bangkok_grand_palace_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -33844,7 +33844,7 @@ tv_wonder_unique_bangkok_grand_palace_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -33879,7 +33879,7 @@ tv_wonder_unique_bangkok_grand_palace_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -33914,7 +33914,7 @@ tv_wonder_unique_bangkok_grand_palace_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_large_maintenance
 	}
 }
 
@@ -33949,7 +33949,7 @@ tv_wonder_unique_bangkok_grand_palace = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_large_maintenance
 	}
 }
 
@@ -33984,7 +33984,7 @@ tv_wonder_unique_wat_arun_foundation = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -34019,7 +34019,7 @@ tv_wonder_unique_wat_arun_body = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -34054,7 +34054,7 @@ tv_wonder_unique_wat_arun_function = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -34089,7 +34089,7 @@ tv_wonder_unique_wat_arun_decoration = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_module_small_maintenance
 	}
 }
 
@@ -34124,6 +34124,6 @@ tv_wonder_unique_wat_arun = {
 	}
 
 	possible_production_methods = {
-		tv_wonder_module_maintenance
+		tv_wonder_shell_small_maintenance
 	}
 }

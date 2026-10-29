@@ -320,15 +320,17 @@ def slot_current_effects_expr(slot: int) -> str:
     )
 
 
-def native_effect_rows(name: str, effects: str) -> str:
+def native_effect_rows(name: str, effects: str, *, title_key: str | None = None) -> str:
     # One shared native section frame; its country/local rows stack vertically.
     # Let the native table's GetRows/GetFooter visibility handle empty output.
     # IsUTF8StringNotEmpty fails on these CString producers in the game.
+    title = 'visible = no' if title_key is None else f'''visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+            text = "{title_key}"'''
     return f'''TooltipStringPairList = {{
         name = "{name}"
         margin = {{ 0 0 }}
         blockoverride "bg_listbase" {{}}
-        blockoverride "block_title" {{ visible = no }}
+        blockoverride "block_title" {{ {title} }}
         blockoverride "stringpair_datamodel_is_empty" {{ visible = no }}
         textcontext = "[{effects}]"
     }}'''
@@ -356,7 +358,8 @@ def native_wonder_tooltip(title: str, subtitle: str, icons: str, section: str, h
 def render_level_tooltip(slot: int) -> str:
     active = slot_current_effects_expr(slot)
     rows = '\n'.join(native_effect_rows(f'tv_location_wonder_level_modifiers_{slot}_{scope}',
-        f"ShowModifierEffect({getter('tooltip', slot)})")
+        f"ShowModifierEffect({getter('tooltip', slot)})",
+        title_key=f'TV_LOCATION_WONDER_RITUAL_{scope.upper()}_GAINS')
         for scope, getter in (('country', slot_modifier_key_expr), ('local', slot_local_modifier_key_expr)))
     effects = f'''vbox = {{ visible = "[{active}]" layoutpolicy_horizontal = expanding ignoreinvisible = yes
         {rows}
@@ -385,7 +388,8 @@ def slot_ritual_active_expr(slot: int, style: int) -> str:
 def render_ritual_tooltip(slot: int, style: int) -> str:
     active = slot_ritual_active_expr(slot, style)
     effects = '\n'.join(native_effect_rows(f'tv_location_wonder_ritual_modifiers_{slot}_{style}_{scope.lower()}',
-        slot_ritual_modifiers_expr(slot, style, scope)) for scope in ('COUNTRY', 'LOCAL'))
+        slot_ritual_modifiers_expr(slot, style, scope),
+        title_key=f'TV_LOCATION_WONDER_RITUAL_{scope}_GAINS') for scope in ('COUNTRY', 'LOCAL'))
     # Native effect rows/footer also cover multi-line and conditional one-shot
     # rewards. Use their data model to hide an empty completion heading.
     effects += f'''\nTooltipStringPairList = {{

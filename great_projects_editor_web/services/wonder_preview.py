@@ -30,7 +30,7 @@ def source_fields(path, data):
     else:
         for group, entries in data.items():
             for key, value in entries.items():
-                if group == 'base_modifiers':
+                if group in {'base_modifiers', 'base_instant_effects'}:
                     yield ('mechanics', '', key, group), value
                 else:
                     for field, item in value.items():
@@ -98,7 +98,10 @@ class WonderPreview:
                         sources.WONDER_GENERIC_RITUALS_FILE, {"generic_rituals": self.mechanics_data.get("generic_rituals", {})}
                     ),
                     sources.WONDER_BASE_MODIFIERS_FILE: yaml_bytes(
-                        sources.WONDER_BASE_MODIFIERS_FILE, {"base_modifiers": self.mechanics_data.get("base_modifiers", {})}
+                        sources.WONDER_BASE_MODIFIERS_FILE, {
+                            "base_modifiers": self.mechanics_data.get("base_modifiers", {}),
+                            "base_instant_effects": self.mechanics_data.get("base_instant_effects", {}),
+                        }
                     ),
                     sources.WONDER_SITE_RULES_FILE: yaml_bytes(
                         sources.WONDER_SITE_RULES_FILE, {"site_rules": self.mechanics_data.get("site_rules", {})}

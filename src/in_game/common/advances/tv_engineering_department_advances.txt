@@ -1,0 +1,4 @@
+﻿# Steel-edged sizing becomes available with steel mill technology.
+INJECT:steel_mill_advance = {
+	unlock_production_method = tv_wonder_material_dispatch_point_production_steel_cutting
+}

@@ -4,7 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from scripts_engineering_department.wonder_mechanics.modifiers import authored_final_building_local_modifiers
+from scripts_engineering_department.wonder_mechanics.modifiers import authored_final_building_local_modifiers, wonder_base_instant_effects
 from scripts_engineering_department.wonder_mechanics.naming import final_building, mechanic_key
 from scripts_engineering_department.wonder_mechanics.schema import (
     site_preference_script_for_key,
@@ -178,7 +178,7 @@ def build_mechanics_specs_for_wonder(
         )
     _add_mechanics_spec(
         specs,
-        group="Base Modifiers",
+        group="Base Effects",
         label="Per-level base modifiers",
         key=f"mechanics.base_modifiers.{wonder['key']}",
         source_kind=shared_source_kind,
@@ -203,6 +203,27 @@ def build_mechanics_specs_for_wonder(
         ),
         editable=not inherits_from_prototype,
         prototype_key=prototype_key if inherits_from_prototype else "",
+    )
+
+    instant_state = build_reward_editor_state(
+        rows=reward_rows_from_list(wonder_base_instant_effects(wonder, mechanics_data)),
+        options=option_catalogs["reward_type"],
+    )
+    _add_mechanics_spec(
+        specs, group="Base Effects", label="Per-new-level instant effects",
+        key=f"mechanics.base_instant_effects.{wonder['key']}", source_kind=shared_source_kind,
+        file_path=sources.WONDER_BASE_MODIFIERS_FILE,
+        original_value=serialize_structured_editor_value(instant_state),
+        field_type="reward_editor", target_kind="base_instant_effects", target_key=prototype_key,
+        structured_value=instant_state,
+        editable=not inherits_from_prototype,
+        prototype_key=prototype_key if inherits_from_prototype else "",
+        target_path=f"base_instant_effects.{prototype_key}",
+        help_text=(
+            "Paid at project finalization for newly completed levels only. Expansion pays the added levels; "
+            "rededication, ownership changes and external level changes do not pay. An empty list grants nothing. "
+            + (f"Inherited from the prototype; displayed values include x{base_effect_multiplier}." if inherits_from_prototype else "")
+        ),
     )
 
     if wonder.get("is_unique"):

@@ -27,6 +27,7 @@ from scripts_engineering_department.wonder_mechanics.io import load_all_wonder_m
 from scripts_engineering_department.wonder_mechanics.modifiers import (
     authored_final_building_local_modifiers,
     scale_numeric_modifier_mapping,
+    wonder_base_instant_effects,
 )
 from scripts_engineering_department.wonder_mechanics.naming import final_building, mechanic_key
 from scripts_engineering_department.wonder_mechanics.rituals import ritual_style
@@ -697,6 +698,12 @@ def build_record(
 
     if not displayed_base_modifiers:
         effects.append(effect_section("base_modifiers", "Per-level country effects", "每级国家效果", [], scope="country", meta={"empty_base": True}))
+    instant = effect_section(
+        "base_instant_effects", "Instant effects per newly completed level", "每新增落成一级的即时效果",
+        rows_from_rewards(wonder_base_instant_effects(wonder, mechanics)), scope="reward",
+    )
+    if instant is not None:
+        effects.append(instant)
     for style in (1, 2, 3):
         append_ritual_plan_sections(effects, wonder=wonder, mechanics=mechanics, loc_data=loc_data, modifier_index=modifier_index, style=style)
 

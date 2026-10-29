@@ -243,6 +243,8 @@ def test_crlf_mechanics_edit_changes_only_edited_source(service):
     for key, path in mechanics_sources.items():
         service.mechanics_data[key] = {"sample": 1}
         text = wonder_io.dump_yaml_document({key: {"sample": 1}})
+        if key == "base_modifiers":
+            text = wonder_io.dump_yaml_document({key: {"sample": 1}, "base_instant_effects": {}})
         path.write_bytes(text.replace("\n", "\r\n").encode())
     service._base = snapshot_files(sources.wonder_source_paths(), repo_root=sources.REPO_ROOT)
     service.mechanics_data["buildings"]["sample"] = 2
@@ -305,6 +307,8 @@ def test_generator_outputs_follow_registered_plan():
     mechanics = wonder_generation_plan({"mechanics": True}, repo_root=root)
     assert set(localization.outputs) == {
         *sources.GENERATED_LOC_FILES.values(),
+        root / "src/main_menu/localization/english/tv_europedia_l_english.yml",
+        root / "src/main_menu/localization/simp_chinese/tv_europedia_l_simp_chinese.yml",
         root / "src/main_menu/localization/english/tv_wonder_ownership_l_english.yml",
         root / "src/main_menu/localization/simp_chinese/tv_wonder_ownership_l_simp_chinese.yml",
         root / "src/in_game/events/tv_wonder_finalization_events.txt",

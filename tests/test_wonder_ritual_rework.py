@@ -221,6 +221,41 @@ def test_confirmation_pays_and_settles_estates_before_timer_but_completion_does_
     assert availability and all(value.startswith('societal_value_type:') for value in availability)
 
 
+def test_finish_construction_preview_hides_internal_rolls_and_explains_deferred_demolition():
+    project = source_blocks('common/scripted_effects/tv_engineering_department_effects.txt')
+    phase = source_blocks('common/scripted_effects/tv_wonder_ritual_phase_effects.txt')
+    effects = {**project, **phase}
+
+    def preview_nodes(body, active=()):
+        for node in body:
+            if node.key in ('hidden_effect', 'limit'):
+                continue
+            yield node
+            if node.key in effects and node.key not in active:
+                yield from preview_nodes(effects[node.key], (*active, node.key))
+            else:
+                yield from preview_nodes(node.children, active)
+
+    finish = project['tv_wonder_finish_construction_effect']
+    visible = tuple(preview_nodes(finish))
+    assert not any(n.key in ('random_list', 'destroy_building_forcefully') for n in visible)
+    assert contains(visible, 'custom_tooltip', 'tv_engineering_department.202.a.tt')
+    assert contains(visible, 'remove_location_modifier', 'tv_wonder_construction_migration_attraction_location_modifier')
+    support = next(n for n in visible if n.key == 'tv_change_wonder_domestic_support_effect')
+    assert child(support.children, 'value').value == '20'
+
+    # Initialization must still execute, and demolition stays in the delayed event.
+    hidden = child(child(finish, 'if').children, 'hidden_effect').children
+    assert contains(hidden, 'tv_wonder_ritual_enter_phase_effect', 'yes')
+    assert contains(phase['tv_wonder_ritual_roll_estates_effect'], 'random_list')
+    event = source_blocks('events/tv_engineering_department_events.txt')['tv_engineering_department.202']
+    option = child(event, 'option').children
+    assert contains(child(option, 'hidden_effect').children, 'tv_wonder_destroy_labor_camp_effect', 'yes')
+    scheduled = next(n for n in walk(finish) if n.key == 'trigger_event_non_silently')
+    assert child(scheduled.children, 'id').value == 'tv_engineering_department.202'
+    assert child(scheduled.children, 'days').value == '1'
+
+
 def test_ritual_lifecycle_syncs_cmf_attention_after_state_changes():
     phase = source_blocks('common/scripted_effects/tv_wonder_ritual_phase_effects.txt')
     sync = 'tv_engineering_department_sync_attention_alert_effect'

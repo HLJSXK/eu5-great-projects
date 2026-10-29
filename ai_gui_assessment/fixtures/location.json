@@ -115,6 +115,7 @@
       "GetOwner.IsPlayer": true,
       "GetOwner.IsAllied": false,
       "GetOwner.GetID": 1,
+      "GetOwner.GetName": "拜占庭",
       "GetOwner.GetGovernment.GetEstates": [],
       "GetOwner.GetDiplomacy.IsSubjectOf(GetPlayer)": false,
       "GetController.IsPlayer": true,

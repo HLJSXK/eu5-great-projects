@@ -410,6 +410,41 @@ def _require_int(
     return value
 
 
+def validate_base_instant_effects(value: object, *, mechanic_keys: set[str]) -> dict:
+    """Validate sparse prototype packages using the existing one-shot vocabulary."""
+    import math
+
+    context = "base_instant_effects"
+    result = deepcopy(_require_mapping(value, context))
+    unknown = set(result) - mechanic_keys
+    if unknown:
+        raise ValueError(f"{context}: unknown prototypes: {sorted(unknown)}")
+    for key, entries in result.items():
+        for index, entry in enumerate(_require_list(entries, f"{context}.{key}")):
+            ctx = f"{context}.{key}[{index}]"
+            _expect_keys(_require_mapping(entry, ctx), required={"type", "value"}, optional=set(), context=ctx)
+            if not isinstance(entry["type"], str) or entry["type"] not in ONE_SHOT_REWARD_EFFECTS:
+                raise ValueError(f"{ctx}: unknown instant effect type {entry['type']!r}")
+            amount = _numeric_modifier_value(entry["value"])
+            if amount is None or not math.isfinite(amount):
+                raise ValueError(f"{ctx}.value must be a finite number")
+            entry["value"] = amount
+    return result
+
+
+def wonder_base_instant_effects(wonder: dict, mechanics: dict, levels: int = 1) -> list[dict]:
+    """Return a fresh, scaled package; never scale command names or scope fields."""
+    if type(levels) is not int or not 0 <= levels <= 6:
+        raise ValueError("Instant base effect levels must be an integer from 0 through 6")
+    if levels == 0:
+        return []
+    multiplier = wonder.get("base_effect_multiplier", 1) * levels
+    return [
+        {"type": entry["type"], "value": float(entry["value"]) * multiplier}
+        for entry in mechanics.get("base_instant_effects", {}).get(mechanic_key(wonder), [])
+    ]
+
+
 def _require_number_text(value: object, context: str) -> str:
     if isinstance(value, bool):
         raise TypeError(f"{context} must be a number or numeric string, got bool")
@@ -645,7 +680,6 @@ def _validate_generic_wonder_record(raw: object) -> dict:
             "size",
             "category",
             "pop_type",
-            "maintenance",
             "final_building",
             "is_unique",
             "base_key",
@@ -674,7 +708,6 @@ def _validate_generic_wonder_record(raw: object) -> dict:
         "size": _validate_wonder_size(wonder["size"], f"{context}.size"),
         "category": _require_string(wonder["category"], f"{context}.category"),
         "pop_type": _require_string(wonder["pop_type"], f"{context}.pop_type"),
-        "maintenance": _require_string(wonder["maintenance"], f"{context}.maintenance"),
         "final_building": _require_string(wonder["final_building"], f"{context}.final_building"),
         "is_unique": False,
         "base_key": key,
@@ -886,7 +919,7 @@ def _validate_buildings_section(raw: object, *, mechanic_keys: set[str]) -> dict
         _expect_keys(
             entry,
             required={"final_local"},
-            optional={"final_maintenance", "final_attributes", "include_local_cultural_baseline"},
+            optional={"final_attributes", "include_local_cultural_baseline"},
             context=entry_context,
         )
         normalized_entry = {
@@ -896,11 +929,6 @@ def _validate_buildings_section(raw: object, *, mechanic_keys: set[str]) -> dict
                 f"{entry_context}.include_local_cultural_baseline",
             ),
         }
-        if "final_maintenance" in entry:
-            normalized_entry["final_maintenance"] = _validate_string_mapping(
-                entry["final_maintenance"],
-                f"{entry_context}.final_maintenance",
-            )
         if "final_attributes" in entry:
             normalized_entry["final_attributes"] = _validate_building_attributes(
                 entry["final_attributes"],
@@ -961,10 +989,13 @@ def load_mechanics_source_data() -> dict:
     )
 
     base_modifiers_raw = load_yaml(WONDER_BASE_MODIFIERS_FILE)
-    _expect_keys(base_modifiers_raw, required={"base_modifiers"}, optional=set(), context=str(WONDER_BASE_MODIFIERS_FILE))
+    _expect_keys(base_modifiers_raw, required={"base_modifiers", "base_instant_effects"}, optional=set(), context=str(WONDER_BASE_MODIFIERS_FILE))
     base_modifiers = _validate_modifier_by_key_mapping(
         base_modifiers_raw["base_modifiers"],
         f"{WONDER_BASE_MODIFIERS_FILE}.base_modifiers",
+    )
+    base_instant_effects = validate_base_instant_effects(
+        base_modifiers_raw["base_instant_effects"], mechanic_keys=mechanic_keys,
     )
     rules = load_yaml(REPO_ROOT / "data/wonder_ritual_rules.yaml")
     _expect_keys(rules, required={"ritual_rules"}, optional=set(), context="wonder_ritual_rules")
@@ -991,6 +1022,7 @@ def load_mechanics_source_data() -> dict:
         "buildings": buildings,
         "generic_rituals": generic_rituals,
         "base_modifiers": base_modifiers,
+        "base_instant_effects": base_instant_effects,
         "ritual_rules": rule,
         "societal_axes": load_yaml(REPO_ROOT / "data/wonder_societal_axes.yaml")["societal_axes"],
     }
@@ -1744,8 +1776,12 @@ def load_wonder_image_tasks(*, include_unique: bool = True) -> list[dict]:
     return tasks
 
 
-def final_building_maintenance(wonder: dict, building_design: dict, building: str) -> str:
-    return building_design.get("final_maintenance", {}).get(building, building_design.get("maintenance", wonder["maintenance"]))
+def wonder_maintenance_method(wonder: dict, stage: str) -> str:
+    """Select upkeep by lifecycle stage and the wonder's own resolved size."""
+    if stage not in {"module", "shell", "final"}:
+        raise ValueError(f"Unknown wonder maintenance stage: {stage}")
+    size = _validate_wonder_size(wonder["size"], "wonder maintenance size")
+    return f"tv_wonder_{stage}_{size}_maintenance"
 
 
 def scale_numeric_modifier_mapping(mapping: dict[str, object], multiplier: int | float) -> dict[str, object]:

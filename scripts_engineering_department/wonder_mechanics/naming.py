@@ -48,6 +48,7 @@ from ._core import (
     wonder_auto_unscaled_modifier_name,
     wonder_image_name,
     wonder_image_prompt,
+    wonder_maintenance_method,
     wonder_ritual_composite_id,
     wonder_static_display_modifier_name,
     wonder_static_local_display_modifier_name,

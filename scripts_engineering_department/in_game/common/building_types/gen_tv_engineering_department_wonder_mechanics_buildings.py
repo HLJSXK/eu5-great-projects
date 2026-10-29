@@ -10,7 +10,6 @@ sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
 from wonder_mechanics.io import load_all_wonder_mechanics
 from wonder_mechanics.modifiers import (
     authored_final_building_local_modifiers,
-    final_building_maintenance,
     merge_numeric_modifier_mappings,
     wonder_base_country_modifiers,
 )
@@ -22,6 +21,7 @@ from wonder_mechanics.naming import (
     final_building_level_sync_hidden_event_id,
     final_building,
     mechanic_key,
+    wonder_maintenance_method,
 )
 from wonder_mechanics.render import render_header
 from wonder_mechanics.schema import site_trigger_lines_for_wonder
@@ -292,7 +292,7 @@ def generate() -> str:
                 base_country_modifiers,
                 include_local_cultural_baseline=building_design["include_local_cultural_baseline"],
             )
-            maintenance = final_building_maintenance(wonder, building_design, building)
+            maintenance = wonder_maintenance_method(wonder, "final")
             attributes = building_design.get("final_attributes", {}).get(building, {})
             lines.extend(
                 building_block(

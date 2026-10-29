@@ -31,6 +31,7 @@ STATE_NAMES = tuple(STATE_TABS)
 TABS = ("overview", "resolutions", "custom")
 # Explicit fixture vocabulary: newly introduced bindings remain diagnostic.
 PLAYER_VARIABLES = """
+tv_ol_ready
 tv_great_engineer_char tv_wonder_active_part tv_wonder_body_units
 tv_wonder_burghers_demand
 tv_wonder_ritual_choice tv_wonder_clergy_demand tv_wonder_cmm_skip_ceremony
@@ -235,10 +236,8 @@ def ritual_effect_sample(state: ScenarioState, loc) -> str:
         lines.extend(modifier_sample_lines(row[field], modifier_metadata(), loc))
     for reward in row["one_shot"]:
         lines.append(f"{loc.get(reward['type']) or reward['type']}: {reward['value']:+g}")
-    sv = row["societal_value"]
-    direction = loc.get(f"{sv['direction']}_focus") or sv["direction"]
-    lines.append(f"Societal change towards {direction}: {sv['shock']:+g}" if english
-                 else f"价值观向{direction}移动：{sv['shock']:+g}")
+    # Societal movement is already represented by the current monthly modifier.
+    # The retired immediate-shock field no longer exists in ritual data.
     return "\n".join(lines)
 
 
@@ -429,10 +428,15 @@ def render(state: ScenarioState, *, width: int = 570, height: int = 1800,
     card = next((node for node in walk(element)
                  if node.typename == "tv_engineering_department_card_common"
                  and any(child.props.get("name") == "tv_wonder_ritual_ledger" for child in walk(node))), None)
+    details = {"ritual": card} if card is not None else {}
+    for kind in ("active", "locked"):
+        panel = next((node for node in walk(element) if node.typename == f"tv_org_logistics_{kind}"), None)
+        if panel is not None:
+            details[f"org_logistics_{kind}"] = panel
     return render_tree(element, expander, resources, (extra_mocks or []) + mocks(state, resources.loc),
         width=width, height=height, scale=scale,
         output=output or OUTPUT / f"engineering_{state.name}.png",
-        detail_elements={"ritual": card} if card is not None else None, tooltip_selector=hover,
+        detail_elements=details, tooltip_selector=hover,
         metadata={
             "scenario": f"engineering-{state.tab}", "state": asdict(state), "sample_data": True,
             "gui": str(MOD / GUI_PATH), "unsupported": list(UNSUPPORTED),

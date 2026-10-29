@@ -219,7 +219,10 @@ export function previewPayloadForField(field, stateValue) {
         const mapping = rowsToModifierMapping(stateValue.rows);
         return field.target_kind === "ritual_reward" ? { [field.target_parent_key.split(".")[1]]: mapping } : mapping;
     }
-    if (field.field_type === "reward_editor") return { one_shot: rowsToRewardList(stateValue.rows) };
+    if (field.field_type === "reward_editor") {
+        const rewards = rowsToRewardList(stateValue.rows);
+        return field.target_kind === "base_instant_effects" ? rewards : { one_shot: rewards };
+    }
     return stateValue;
 }
 

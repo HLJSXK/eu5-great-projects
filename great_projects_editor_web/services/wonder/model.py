@@ -6,6 +6,7 @@ from typing import Any
 from urllib.parse import quote
 
 from scripts_engineering_department.wonder_localization_lib import normalize_editor_text
+from scripts_engineering_department.wonder_mechanics.modifiers import validate_base_instant_effects
 
 from . import sources
 from .field_types import serialize_mechanics_specs, serialize_specs
@@ -183,6 +184,17 @@ class WonderModel:
                 self.mechanics_data.setdefault("buildings", {}).setdefault(spec.target_key, {})[
                     spec.target_parent_key
                 ] = parsed
+                mechanics_file_changed = True
+                continue
+
+            if spec.target_kind == "base_instant_effects":
+                parsed = reward_list_from_rows(value, context=spec.key)
+                validated = validate_base_instant_effects({spec.target_key: parsed}, mechanic_keys={spec.target_key})
+                packages = self.mechanics_data.setdefault("base_instant_effects", {})
+                if parsed:
+                    packages[spec.target_key] = validated[spec.target_key]
+                else:
+                    packages.pop(spec.target_key, None)
                 mechanics_file_changed = True
                 continue
 

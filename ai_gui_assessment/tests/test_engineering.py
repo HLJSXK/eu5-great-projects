@@ -346,6 +346,8 @@ class EngineeringPreviewTests(unittest.TestCase):
         first = engineering.ritual_effect_sample(state, self.loc)
         self.assertIn("海上贸易效率: +20%", first)
         self.assertIn("重商主义", first)
+        self.assertNotIn("价值观向", first)
+        self.assertNotIn("Societal change towards", first)
         second = engineering.ritual_effect_sample(replace(state, player_variables={
             **state.player_variables, "tv_wonder_ritual_choice": 2}), self.loc)
         self.assertIn("移民吸引力: +1", second)

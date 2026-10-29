@@ -224,6 +224,7 @@ tv_wonder_change_construction_progress_effect = {
 tv_wonder_update_construction_progress_display_effect = {
 	tv_wonder_set_required_progress_effect = yes
 	tv_wonder_update_logistics_metrics_effect = yes
+	tv_wonder_update_org_logistics_display_effect = yes
 	set_variable = { name = tv_wonder_current_unit_progress value = 0 }
 	every_international_organizations_member_of = {
 		limit = {
@@ -1782,6 +1783,7 @@ tv_wonder_update_logistics_metrics_effect = {
 }
 
 tv_wonder_clear_current_survey_effect = {
+	tv_wonder_clear_org_logistics_display_effect = yes
 	remove_variable = tv_wonder_resume_project
 	remove_variable = tv_wonder_project_mode
 	remove_variable = tv_wonder_project_base_level
@@ -2240,8 +2242,15 @@ tv_wonder_finish_construction_effect = {
 		}
 		remove_variable = tv_wonder_active_part
 		tv_change_wonder_domestic_support_effect = { value = 20 }
-		tv_wonder_index_refresh_country_cache_effect = yes
-		tv_wonder_ritual_enter_phase_effect = yes
+		# Demolition runs in event 202's hidden option: its native building
+		# target cannot be resolved safely by this button's effect preview.
+		custom_tooltip = tv_engineering_department.202.a.tt
+		hidden_effect = {
+			tv_wonder_index_refresh_country_cache_effect = yes
+			# Estate preference rolls only initialize the upcoming ritual choices.
+			# Exposing them renders empty "Possible outcomes" in the finish tooltip.
+			tv_wonder_ritual_enter_phase_effect = yes
+		}
 		if = { limit = { var:tv_wonder_stage ?= 4 } trigger_event_non_silently = { id = tv_engineering_department.202 days = 1 } }
 	}
 }
@@ -2583,6 +2592,7 @@ tv_wonder_reinitialize_building_state_core_effect = {
 }
 
 tv_wonder_clear_project_state_core_effect = {
+	tv_wonder_clear_org_logistics_display_effect = yes
 	tv_wonder_ritual_clear_project_effect = yes
 	remove_variable = tv_wonder_finalization_reward_claimed
 	tv_wonder_destroy_labor_camp_effect = yes
