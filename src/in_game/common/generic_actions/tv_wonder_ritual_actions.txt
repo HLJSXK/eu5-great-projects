@@ -72,3 +72,93 @@ tv_wonder_ritual_cancel_reritual = {
 	ai_tick_frequency = 99999
 	ai_will_do = { add = -100 }
 }
+
+tv_wonder_location_reritual_1 = {
+	type = owncountry
+	force_click_and_confirm_or_hold = yes
+	potential = { scope:actor = { has_variable = tv_engineering_department_member } }
+	allow = { scope:actor = { tv_wonder_location_reritual_actor_trigger = yes }
+	scope:target ?= { tv_wonder_location_reritual_target_trigger = { slot = 1 } } }
+	effect = { hidden_effect = { if = { limit = { scope:actor = { tv_wonder_location_reritual_actor_trigger = yes }
+	scope:target ?= { tv_wonder_location_reritual_target_trigger = { slot = 1 } } }
+	scope:actor = {
+	set_variable = { name = tv_wonder_location_reritual_pending_id value = { value = scope:target.var:tv_wonder_tooltip_slot_1_id } }
+	set_variable = { name = tv_wonder_reritual_pending_site value = scope:target }
+	trigger_event_silently = { id = tv_engineering_department.2005 days = 0 }
+	}
+	} } }
+	ai_tick = never
+	show_in_gui_list = no
+}
+
+tv_wonder_location_reritual_2 = {
+	type = owncountry
+	force_click_and_confirm_or_hold = yes
+	potential = { scope:actor = { has_variable = tv_engineering_department_member } }
+	allow = { scope:actor = { tv_wonder_location_reritual_actor_trigger = yes }
+	scope:target ?= { tv_wonder_location_reritual_target_trigger = { slot = 2 } } }
+	effect = { hidden_effect = { if = { limit = { scope:actor = { tv_wonder_location_reritual_actor_trigger = yes }
+	scope:target ?= { tv_wonder_location_reritual_target_trigger = { slot = 2 } } }
+	scope:actor = {
+	set_variable = { name = tv_wonder_location_reritual_pending_id value = { value = scope:target.var:tv_wonder_tooltip_slot_2_id } }
+	set_variable = { name = tv_wonder_reritual_pending_site value = scope:target }
+	trigger_event_silently = { id = tv_engineering_department.2005 days = 0 }
+	}
+	} } }
+	ai_tick = never
+	show_in_gui_list = no
+}
+
+tv_wonder_location_reritual_3 = {
+	type = owncountry
+	force_click_and_confirm_or_hold = yes
+	potential = { scope:actor = { has_variable = tv_engineering_department_member } }
+	allow = { scope:actor = { tv_wonder_location_reritual_actor_trigger = yes }
+	scope:target ?= { tv_wonder_location_reritual_target_trigger = { slot = 3 } } }
+	effect = { hidden_effect = { if = { limit = { scope:actor = { tv_wonder_location_reritual_actor_trigger = yes }
+	scope:target ?= { tv_wonder_location_reritual_target_trigger = { slot = 3 } } }
+	scope:actor = {
+	set_variable = { name = tv_wonder_location_reritual_pending_id value = { value = scope:target.var:tv_wonder_tooltip_slot_3_id } }
+	set_variable = { name = tv_wonder_reritual_pending_site value = scope:target }
+	trigger_event_silently = { id = tv_engineering_department.2005 days = 0 }
+	}
+	} } }
+	ai_tick = never
+	show_in_gui_list = no
+}
+
+tv_wonder_location_reritual_4 = {
+	type = owncountry
+	force_click_and_confirm_or_hold = yes
+	potential = { scope:actor = { has_variable = tv_engineering_department_member } }
+	allow = { scope:actor = { tv_wonder_location_reritual_actor_trigger = yes }
+	scope:target ?= { tv_wonder_location_reritual_target_trigger = { slot = 4 } } }
+	effect = { hidden_effect = { if = { limit = { scope:actor = { tv_wonder_location_reritual_actor_trigger = yes }
+	scope:target ?= { tv_wonder_location_reritual_target_trigger = { slot = 4 } } }
+	scope:actor = {
+	set_variable = { name = tv_wonder_location_reritual_pending_id value = { value = scope:target.var:tv_wonder_tooltip_slot_4_id } }
+	set_variable = { name = tv_wonder_reritual_pending_site value = scope:target }
+	trigger_event_silently = { id = tv_engineering_department.2005 days = 0 }
+	}
+	} } }
+	ai_tick = never
+	show_in_gui_list = no
+}
+
+tv_wonder_location_reritual_5 = {
+	type = owncountry
+	force_click_and_confirm_or_hold = yes
+	potential = { scope:actor = { has_variable = tv_engineering_department_member } }
+	allow = { scope:actor = { tv_wonder_location_reritual_actor_trigger = yes }
+	scope:target ?= { tv_wonder_location_reritual_target_trigger = { slot = 5 } } }
+	effect = { hidden_effect = { if = { limit = { scope:actor = { tv_wonder_location_reritual_actor_trigger = yes }
+	scope:target ?= { tv_wonder_location_reritual_target_trigger = { slot = 5 } } }
+	scope:actor = {
+	set_variable = { name = tv_wonder_location_reritual_pending_id value = { value = scope:target.var:tv_wonder_tooltip_slot_5_id } }
+	set_variable = { name = tv_wonder_reritual_pending_site value = scope:target }
+	trigger_event_silently = { id = tv_engineering_department.2005 days = 0 }
+	}
+	} } }
+	ai_tick = never
+	show_in_gui_list = no
+}

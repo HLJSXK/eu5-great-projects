@@ -83,6 +83,23 @@ GUI widgets.
 
 ## Validation
 
+The ritual ledger uses 42-unit choice cards showing only the icon and ritual
+name. Each card has its own horizontal `flowcontainer` with `wrap_count = 7`
+for 36-unit supporting-estate widgets (32-unit estate icon plus a green check
+badge), filtered by that style's cached preference. Keep the art transparent to
+mouse input so the whole widget remains one hover target. Its native
+`ContextualTooltipType` uses the typed Estate name in the support headline and
+one `TooltipTextBlock` below for the cached preference source (local rewards,
+established preference, or this ritual's random preference). Keep absent/non-supporting
+estates hidden and the row height content-driven. Do not restore the bottom estate cards
+or the choice-card detail/count lines (user layout revision, 2026-10-29).
+Do not restore `dynamicgridbox` with `spacing`: the user's 2026-10-29 21:30:39
+runtime log rejected that property at panel line 4174, and the cards overlapped
+the terms and confirmation button. Fix `wonder_ritual_gui.py`, regenerate the
+mechanics fragment, then run its merge script. Preview regressions cover empty,
+sparse and seven-supporter rows, grouping before selection, and the fixed-width societal direction arrow;
+offline previews do not establish native acceptance after reload.
+
 ```powershell
 C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts\validate.py --changed --fix --ai-report
 ```

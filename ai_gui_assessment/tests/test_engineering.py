@@ -144,7 +144,8 @@ class EngineeringPreviewTests(unittest.TestCase):
                 self.assertIn("tv_wonder_ritual_preview_1", actions)
             else:
                 self.assertFalse(any(action and action.startswith('tv_wonder_ritual_preview_') for action in actions))
-                self.assertIn('TV_WONDER_RITUAL_LOCKED', {n.props.get('text') for n in nodes})
+                choices = [n for n in nodes if str(n.props.get('name', '')).startswith('tv_wonder_ritual_choice_')]
+                self.assertEqual(len(choices), 1)
             if name == "reritual-ready":
                 self.assertIn("tv_wonder_ritual_cancel_reritual", actions)
                 self.assertNotIn("tv_wonder_ritual_choose_plain", actions)
@@ -172,7 +173,7 @@ class EngineeringPreviewTests(unittest.TestCase):
         self.assertNotIn('TV_WONDER_RITUAL_PLAIN_COMPLETE', keys)
         self.assertFalse(log, log)
 
-    def test_no_selection_disables_confirmation_and_seven_estates_wrap(self):
+    def test_no_selection_disables_confirmation_and_shows_supporters(self):
         state = engineering.scenario_state('ceremony-ready')
         player = {**state.player_variables, 'tv_wonder_ritual_choice': None}
         root, engine, ev, log = self.page(state.name, state=replace(state, player_variables=player))
@@ -182,16 +183,100 @@ class EngineeringPreviewTests(unittest.TestCase):
         try: self.assertFalse(ev.truthy(action.props['enabled']))
         finally: engine.pop(pushed)
         self.assertFalse(log, log)
-        for estate in ('dhimmi_estate', 'tribes_estate', 'cossacks_estate'):
-            player[f'tv_wonder_estate_pref_{estate}'] = 1
-            player[f'tv_wonder_estate_pref_source_{estate}'] = 2
-        player['tv_wonder_ritual_choice'] = 1
-        root, engine, _, log = self.page(state.name, state=replace(state, player_variables=player))
-        cards = [n for n in self.visible_nodes(root, engine) if n.typename == 'tv_wonder_ritual_estate_card']
-        self.assertEqual(len(cards), 7)
-        self.assertEqual(len({n.y for n in cards}), 4)
-        self.assertTrue(all(0 <= n.x and n.x + n.w <= 570 for n in cards))
-        self.assertFalse(log, log)
+        supporters = [n for n in self.visible_nodes(root, engine) if n.typename == 'tv_wonder_ritual_supporter']
+        expected = {key.removeprefix('tv_wonder_estate_pref_') for key, value in player.items()
+                    if key.startswith('tv_wonder_estate_pref_') and not key.startswith('tv_wonder_estate_pref_source_')
+                    and value in (1, 2, 3)}
+        self.assertEqual({n.props['name'] for n in supporters}, expected)
+
+    def test_supporters_follow_each_choice_without_gaps_or_overlaps(self):
+        estates = ('nobles_estate', 'clergy_estate', 'burghers_estate', 'peasants_estate',
+                   'dhimmi_estate', 'tribes_estate', 'cossacks_estate')
+        state = engineering.scenario_state('ceremony-ready')
+        for active in ((), (0,), (0, 2, 5), tuple(range(7))):
+            with self.subTest(active=active):
+                player = dict(state.player_variables)
+                for i, estate in enumerate(estates):
+                    player[f'tv_wonder_estate_pref_{estate}'] = 1 if i in active else None
+                    player[f'tv_wonder_estate_pref_source_{estate}'] = 2 if i in active else None
+                root, engine, _, log = self.page(state.name, state=replace(state, player_variables=player))
+                nodes = list(self.visible_nodes(root, engine))
+                flow = next(n for n in nodes if n.props.get('name') == 'tv_wonder_ritual_supporters_1')
+                # dynamicgridbox accepted by the offline renderer previously
+                # failed in game: its spacing property is not supported.
+                self.assertEqual(flow.kind, 'flowcontainer')
+                icons = [n for n in nodes if n.typename == 'tv_wonder_ritual_supporter']
+                self.assertEqual([n.props['name'] for n in icons], [estates[i] for i in active])
+                self.assertEqual(len({n.y for n in icons}), int(bool(active)))
+                choice = next(n for n in nodes if n.props.get('name') == 'tv_wonder_ritual_choice_1')
+                next_choice = next(n for n in nodes if n.props.get('name') == 'tv_wonder_ritual_choice_2')
+                self.assertEqual(choice.h, 42)
+                labels = [n for n in self.visible_nodes(choice, engine) if n.kind == 'textbox' and n.props.get('raw_text')]
+                self.assertEqual(len(labels), 1)
+                for i, icon in enumerate(icons):
+                    self.assertGreaterEqual(icon.y, choice.y + choice.h)
+                    self.assertLessEqual(icon.y + icon.h, next_choice.y)
+                    self.assertGreaterEqual(icon.x, flow.x)
+                    self.assertLessEqual(icon.x + icon.w, flow.x + flow.w)
+                    if i:
+                        self.assertEqual(icon.x - icons[i - 1].x, 46)
+                    self.assertIsNotNone(icon.tooltipwidget)
+                    self.assertIn(f"GetEstateFromKey('{icon.props['name']}')", icon.props['datacontext'])
+                    badge = next(n for n in self.visible_nodes(icon, engine) if n.props.get('name') == 'support_badge')
+                    self.assertEqual(badge.props['alwaystransparent'], 'yes')
+                    self.assertGreaterEqual(badge.x, icon.x)
+                    self.assertGreaterEqual(badge.y, icon.y)
+                    self.assertLessEqual(badge.x + badge.w, icon.x + icon.w)
+                    self.assertLessEqual(badge.y + badge.h, icon.y + icon.h)
+                self.assertFalse(any(n.typename == 'tv_wonder_ritual_estate_card' for n in nodes))
+                arrows = [n for n in nodes if n.props.get('raw_text') in ('#Y ←#!', '#Y →#!')]
+                self.assertEqual(len(arrows), 1)
+                self.assertEqual(arrows[0].w, 216)
+                self.assertFalse(log, log)
+
+    def test_supporter_tooltips_resolve_each_estate_and_its_cached_reason(self):
+        estates = ('nobles_estate', 'clergy_estate', 'burghers_estate', 'peasants_estate',
+                   'dhimmi_estate', 'tribes_estate', 'cossacks_estate')
+        reasons = {1: 'LOCATION', 2: 'HISTORICAL', 3: 'RANDOM'}
+        state = engineering.scenario_state('ceremony-ready')
+        for offset in range(3):
+            player = {**state.player_variables, 'tv_wonder_ritual_choice': 3}
+            for i, estate in enumerate(estates):
+                player[f'tv_wonder_estate_pref_{estate}'] = i % 3 + 1
+                player[f'tv_wonder_estate_pref_source_{estate}'] = (i + offset) % 3 + 1
+            root, engine, ev, log = self.page(state.name, state=replace(state, player_variables=player))
+            owners = [n for n in self.visible_nodes(root, engine) if n.typename == 'tv_wonder_ritual_supporter']
+            self.assertEqual(len(owners), 7)
+            for owner in owners:
+                estate = owner.props['name']
+                with self.subTest(estate=estate, reason_offset=offset):
+                    popup = engine.ex.build_lazy(owner.tooltipwidget)
+                    pushed = engine.push(owner)
+                    ev.item_stack.append({'__type__': 'ExtraTooltipInfo', 'GetTintColor': [1, 1, 1, 1],
+                                          'TooltipIsReady': True, 'HasUIAction': False, 'GetUIAction': None})
+                    try:
+                        width, height = engine.measure(popup, 570)['hint']
+                        engine.place(popup, 0, 0, width, height)
+                        nodes = list(self.visible_nodes(popup, engine))
+                        self.assertEqual(sum(n.typename == 'ContextualTooltipHeader' for n in nodes), 1)
+                        self.assertEqual(sum(n.typename == 'TooltipTextBlock' for n in nodes), 1)
+                        labels = [n for n in nodes if n.props.get('text') in {
+                            'TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE',
+                            *(f'TV_WONDER_RITUAL_SUPPORT_REASON_{label}' for label in reasons.values())}]
+                        self.assertEqual(len(labels), 2)
+                        title, reason = labels
+                        self.assertIn(self.loc.get(estate), engine.text_of(title))
+                        self.assertIn('当前#G 支持#!该仪式风格', engine.text_of(title))
+                        source = player[f'tv_wonder_estate_pref_source_{estate}']
+                        self.assertEqual(engine.text_of(reason), self.loc.get(f'TV_WONDER_RITUAL_SUPPORT_REASON_{reasons[source]}'))
+                        self.assertGreaterEqual(reason.y, title.y + title.h)
+                        self.assertLessEqual(reason.x + reason.w, popup.x + popup.w)
+                    finally:
+                        ev.item_stack.pop()
+                        engine.pop(pushed)
+            self.assertFalse(log, log)
+            self.assertFalse(engine.missing_text)
+            self.assertFalse(engine.unresolved_contexts)
 
     def test_ritual_effect_samples_follow_selected_style_and_completion(self):
         state = engineering.scenario_state("ceremony-ready")
@@ -201,7 +286,7 @@ class EngineeringPreviewTests(unittest.TestCase):
         second = engineering.ritual_effect_sample(replace(state, player_variables={
             **state.player_variables, "tv_wonder_ritual_choice": 2}), self.loc)
         self.assertIn("移民吸引力: +1", second)
-        self.assertIn("+50%", second)
+        self.assertIn("每月海权主义倾向: +0.1", second)
         self.assertNotIn("海上贸易效率", second)
         third = engineering.ritual_effect_sample(replace(state, player_variables={
             **state.player_variables, "tv_wonder_ritual_choice": 3}), self.loc)
@@ -213,13 +298,18 @@ class EngineeringPreviewTests(unittest.TestCase):
         self.assertIn("已发放", completed)
         self.assertNotIn("+20%", completed)
 
-    def test_ritual_fixtures_render_current_choice_and_estate_reason(self):
+    def test_ritual_fixtures_render_supporters_under_their_preferred_style(self):
         for style in (2, 3):
             state = engineering.load_fixture(engineering.scenario_state("ceremony-ready"),
                 WORKSPACE / f"ai_gui_assessment/fixtures/ceremony_style_{style}.json")
             root, engine, _, log = self.page(state.name, state=state)
             nodes = list(self.visible_nodes(root, engine))
-            self.assertIn("TV_WONDER_RITUAL_REASON_LOCATION", {n.props.get("text") for n in nodes})
+            for n in (1, 2, 3):
+                row = next(node for node in nodes if node.props.get('name') == f'tv_wonder_ritual_supporters_{n}')
+                icons = [node for node in self.visible_nodes(row, engine) if node.typename == 'tv_wonder_ritual_supporter']
+                self.assertEqual({node.props['name'] for node in icons}, {
+                    key.removeprefix('tv_wonder_estate_pref_') for key, value in state.player_variables.items()
+                    if key.startswith('tv_wonder_estate_pref_') and not key.startswith('tv_wonder_estate_pref_source_') and value == n})
             confirm = next(n for n in nodes if n.props.get("scripted_action_tooltip", {}).get("action_name") == "tv_wonder_ritual_confirm")
             pushed = engine.push(confirm)
             try: self.assertEqual(engine.ev.truthy(confirm.props["enabled"]), style == 2)

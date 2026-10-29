@@ -6,14 +6,16 @@
 
 # BEGIN GENERATED TV_WONDER_RITUAL_TYPES
 types TVWonderRitualTypes {
-type tv_wonder_ritual_estate_card = widget {
-size = { 216 68 }
-background = { using = color_black_texture alpha = 0.22 }
-block "reaction_tint" {}
-icon = { position = { 8 8 } size = { 32 32 } block "estate_icon" {} }
-text_single = { position = { 48 5 } size = { 158 24 } autoresize = no fontsize = 15 align = nobaseline|left block "estate_name" {} }
-block "estate_reaction" {}
-block "estate_reason" {}
+type tv_wonder_ritual_supporter = widget {
+size = { 36 36 }
+alwaystransparent = no
+icon = { size = { 32 32 } alwaystransparent = yes block "estate_icon" {} }
+icon = {
+name = "support_badge"
+position = { 20 20 } size = { 16 16 }
+texture = "gfx/interface/icons/text_icons/trigger_yes.dds"
+alwaystransparent = yes
+}
 }
 }
 # END GENERATED TV_WONDER_RITUAL_TYPES
@@ -3874,152 +3876,644 @@ scripted_action_tooltip = { click_type = left click_mode = single action_name = 
 button_tooltip_override = { title = "tv_wonder_ritual_cancel_reritual" description = "tv_wonder_ritual_cancel_reritual_desc" }
 tooltipwidget = { using = action_tooltip_pop_out }
 } }
-widget = { visible = "[Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)1.0'))]" size = { 438 76 }
-button_regular = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" size = { 438 76 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
+vbox = { name = "tv_wonder_ritual_style_1" visible = "[Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)1.0'))]"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 4
+widget = { name = "tv_wonder_ritual_choice_1" size = { 438 42 }
+button_regular = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" size = { 438 42 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
 text = ""
 scripted_action_tooltip = { click_type = left click_mode = single action_name = "tv_wonder_ritual_preview_1" actor = "[InternationalOrganizationsView.GetPlayer]" }
 button_tooltip_override = { title = "tv_wonder_ritual_preview_1" description = "tv_wonder_ritual_preview_1_desc" }
 tooltipwidget = { using = action_tooltip_pop_out }
 }
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)1.0')]" size = { 438 76 } alwaystransparent = yes background = { using = color_yellow_texture alpha = 0.12 } }
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)1.0')]" size = { 3 76 } alwaystransparent = yes background = { using = color_yellow_texture } }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/land_vs_naval_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/land_vs_naval_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_right.dds" alwaystransparent = yes }
-text_single = { position = { 58 5 } size = { 340 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_1_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
-text_single = { position = { 58 30 } size = { 362 20 } autoresize = no fontsize = 13 raw_text = "[Localize(Concatenate(Concatenate('TV_WONDER_RITUAL_SIDE_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue))), Concatenate('_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue)))))] · [Localize(Concatenate('TV_WONDER_RITUAL_REWARD_KIND_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_reward_kind_1').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
-text_single = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" position = { 58 52 } size = { 350 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_COUNTS_1" align = nobaseline|left alwaystransparent = yes }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)1.0')]" position = { 408 5 } size = { 24 24 } raw_text = "@trigger_yes!" alwaystransparent = yes }
-text_single = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet]" position = { 58 52 } size = { 350 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_LOCKED" align = nobaseline|left alwaystransparent = yes }
+widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)1.0')]" size = { 438 42 } alwaystransparent = yes background = { using = color_yellow_texture alpha = 0.12 } }
+widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)1.0')]" size = { 3 42 } alwaystransparent = yes background = { using = color_yellow_texture } }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/land_vs_naval_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/land_vs_naval_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_right.dds" alwaystransparent = yes }
+text_single = { position = { 52 9 } size = { 374 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_1_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
 }
-widget = { visible = "[Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)2.0'))]" size = { 438 76 }
-button_regular = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" size = { 438 76 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
+flowcontainer = { name = "tv_wonder_ritual_supporters_1"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking size = { 438 -1 } maximumsize = { 438 -1 }
+direction = horizontal wrap_count = 7 spacing = 10 margin = { 10 0 } ignoreinvisible = yes
+tv_wonder_ritual_supporter = { name = "nobles_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, '(CFixedPoint)1.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('nobles_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/nobles_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/nobles_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "clergy_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').GetValue, '(CFixedPoint)1.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('clergy_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/clergy_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/clergy_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "burghers_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').GetValue, '(CFixedPoint)1.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('burghers_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/burghers_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/burghers_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "peasants_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').GetValue, '(CFixedPoint)1.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('peasants_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/peasants_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/peasants_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "dhimmi_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').GetValue, '(CFixedPoint)1.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('dhimmi_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/dhimmi_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/dhimmi_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "tribes_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').GetValue, '(CFixedPoint)1.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('tribes_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/tribes_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/tribes_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "cossacks_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').GetValue, '(CFixedPoint)1.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('cossacks_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/cossacks_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/cossacks_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+}
+}
+vbox = { name = "tv_wonder_ritual_style_2" visible = "[Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)2.0'))]"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 4
+widget = { name = "tv_wonder_ritual_choice_2" size = { 438 42 }
+button_regular = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" size = { 438 42 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
 text = ""
 scripted_action_tooltip = { click_type = left click_mode = single action_name = "tv_wonder_ritual_preview_2" actor = "[InternationalOrganizationsView.GetPlayer]" }
 button_tooltip_override = { title = "tv_wonder_ritual_preview_2" description = "tv_wonder_ritual_preview_2_desc" }
 tooltipwidget = { using = action_tooltip_pop_out }
 }
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)2.0')]" size = { 438 76 } alwaystransparent = yes background = { using = color_yellow_texture alpha = 0.12 } }
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)2.0')]" size = { 3 76 } alwaystransparent = yes background = { using = color_yellow_texture } }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/land_vs_naval_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/land_vs_naval_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_right.dds" alwaystransparent = yes }
-text_single = { position = { 58 5 } size = { 340 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_2_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
-text_single = { position = { 58 30 } size = { 362 20 } autoresize = no fontsize = 13 raw_text = "[Localize(Concatenate(Concatenate('TV_WONDER_RITUAL_SIDE_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue))), Concatenate('_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue)))))] · [Localize(Concatenate('TV_WONDER_RITUAL_REWARD_KIND_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_reward_kind_2').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
-text_single = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" position = { 58 52 } size = { 350 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_COUNTS_2" align = nobaseline|left alwaystransparent = yes }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)2.0')]" position = { 408 5 } size = { 24 24 } raw_text = "@trigger_yes!" alwaystransparent = yes }
-text_single = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet]" position = { 58 52 } size = { 350 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_LOCKED" align = nobaseline|left alwaystransparent = yes }
+widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)2.0')]" size = { 438 42 } alwaystransparent = yes background = { using = color_yellow_texture alpha = 0.12 } }
+widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)2.0')]" size = { 3 42 } alwaystransparent = yes background = { using = color_yellow_texture } }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/land_vs_naval_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/land_vs_naval_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_right.dds" alwaystransparent = yes }
+text_single = { position = { 52 9 } size = { 374 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_2_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
 }
-widget = { visible = "[Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)3.0'))]" size = { 438 76 }
-button_regular = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" size = { 438 76 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
+flowcontainer = { name = "tv_wonder_ritual_supporters_2"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking size = { 438 -1 } maximumsize = { 438 -1 }
+direction = horizontal wrap_count = 7 spacing = 10 margin = { 10 0 } ignoreinvisible = yes
+tv_wonder_ritual_supporter = { name = "nobles_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, '(CFixedPoint)2.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('nobles_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/nobles_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/nobles_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "clergy_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').GetValue, '(CFixedPoint)2.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('clergy_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/clergy_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/clergy_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "burghers_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').GetValue, '(CFixedPoint)2.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('burghers_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/burghers_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/burghers_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "peasants_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').GetValue, '(CFixedPoint)2.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('peasants_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/peasants_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/peasants_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "dhimmi_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').GetValue, '(CFixedPoint)2.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('dhimmi_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/dhimmi_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/dhimmi_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "tribes_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').GetValue, '(CFixedPoint)2.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('tribes_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/tribes_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/tribes_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "cossacks_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').GetValue, '(CFixedPoint)2.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('cossacks_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/cossacks_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/cossacks_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+}
+}
+vbox = { name = "tv_wonder_ritual_style_3" visible = "[Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)3.0'))]"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 4
+widget = { name = "tv_wonder_ritual_choice_3" size = { 438 42 }
+button_regular = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" size = { 438 42 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
 text = ""
 scripted_action_tooltip = { click_type = left click_mode = single action_name = "tv_wonder_ritual_preview_3" actor = "[InternationalOrganizationsView.GetPlayer]" }
 button_tooltip_override = { title = "tv_wonder_ritual_preview_3" description = "tv_wonder_ritual_preview_3_desc" }
 tooltipwidget = { using = action_tooltip_pop_out }
 }
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)3.0')]" size = { 438 76 } alwaystransparent = yes background = { using = color_yellow_texture alpha = 0.12 } }
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)3.0')]" size = { 3 76 } alwaystransparent = yes background = { using = color_yellow_texture } }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/land_vs_naval_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/land_vs_naval_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_right.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_left.dds" alwaystransparent = yes }
-icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 12 16 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_right.dds" alwaystransparent = yes }
-text_single = { position = { 58 5 } size = { 340 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_3_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
-text_single = { position = { 58 30 } size = { 362 20 } autoresize = no fontsize = 13 raw_text = "[Localize(Concatenate(Concatenate('TV_WONDER_RITUAL_SIDE_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue))), Concatenate('_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue)))))] · [Localize(Concatenate('TV_WONDER_RITUAL_REWARD_KIND_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_reward_kind_3').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
-text_single = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" position = { 58 52 } size = { 350 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_COUNTS_3" align = nobaseline|left alwaystransparent = yes }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)3.0')]" position = { 408 5 } size = { 24 24 } raw_text = "@trigger_yes!" alwaystransparent = yes }
-text_single = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet]" position = { 58 52 } size = { 350 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_LOCKED" align = nobaseline|left alwaystransparent = yes }
+widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)3.0')]" size = { 438 42 } alwaystransparent = yes background = { using = color_yellow_texture alpha = 0.12 } }
+widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)3.0')]" size = { 3 42 } alwaystransparent = yes background = { using = color_yellow_texture } }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)1.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)2.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)3.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)4.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)5.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)6.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)7.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)8.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)9.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/land_vs_naval_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)10.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/land_vs_naval_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)11.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)12.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)13.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)14.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)15.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)16.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_right.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)-1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_left.dds" alwaystransparent = yes }
+icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_right.dds" alwaystransparent = yes }
+text_single = { position = { 52 9 } size = { 374 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_3_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
+}
+flowcontainer = { name = "tv_wonder_ritual_supporters_3"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking size = { 438 -1 } maximumsize = { 438 -1 }
+direction = horizontal wrap_count = 7 spacing = 10 margin = { 10 0 } ignoreinvisible = yes
+tv_wonder_ritual_supporter = { name = "nobles_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, '(CFixedPoint)3.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('nobles_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/nobles_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/nobles_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "clergy_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').GetValue, '(CFixedPoint)3.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('clergy_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/clergy_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/clergy_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "burghers_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').GetValue, '(CFixedPoint)3.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('burghers_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/burghers_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/burghers_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "peasants_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').GetValue, '(CFixedPoint)3.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('peasants_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/peasants_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/peasants_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "dhimmi_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').GetValue, '(CFixedPoint)3.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('dhimmi_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/dhimmi_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/dhimmi_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "tribes_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').GetValue, '(CFixedPoint)3.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('tribes_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/tribes_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/tribes_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+tv_wonder_ritual_supporter = { name = "cossacks_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').GetValue, '(CFixedPoint)3.0'))]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('cossacks_estate')]"
+blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/cossacks_estate.dds" }
+tooltipwidget = { ContextualTooltipType = {
+blockoverride "title_icon_texture" { texture = "gfx/interface/icons/estates/cossacks_estate.dds" }
+blockoverride "title_text" { text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }
+blockoverride "concept_link" { visible = no }
+blockoverride "tooltip_content" {
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)1.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)2.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL" }
+}
+TooltipTextBlock = {
+visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)3.0')]"
+blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
+}
+}
+} }
+}
+}
 }
 widget = { visible = "[And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_project_mode').GetValue, '(CFixedPoint)3.0')))]" size = { 438 58 }
 button_regular = {  size = { 438 58 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
@@ -4166,124 +4660,8 @@ progresstexture = "gfx/interface/progressbars/progress_bar_blue_alt.dds"
 noprogresstexture = "gfx/interface/progressbars/slider_default_bg.dds"
 value = "[Max_float(FixedPointToFloat(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_position_selected').GetValue), '(float)0')]" }
 widget = { position = { 218 4 } size = { 2 16 } background = { using = color_white_texture alpha = 0.7 } }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_selected').GetValue, '(CFixedPoint)-1.0')]" size = { 216 24 } raw_text = "#Y ←#!" align = nobaseline|right }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_selected').GetValue, '(CFixedPoint)1.0')]" position = { 222 0 } size = { 216 24 } raw_text = "#Y →#!" align = nobaseline|left }
-}
-widget = { size = { 438 24 } background = { using = color_black_texture alpha = 0.3 }
-text_single = { position = { 8 0 } size = { 422 24 } autoresize = no fontsize = 14 text = "TV_WONDER_RITUAL_ESTATES_PENDING" align = nobaseline|left } }
-dynamicgridbox = { layoutpolicy_horizontal = expanding size = { 438 -1 } maximumsize = { 438 -1 } flipdirection = yes datamodel_wrap = 2 spacing = 6 ignoreinvisible = yes
-tv_wonder_ritual_estate_card = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').IsSet]"
-blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/nobles_estate.dds" }
-blockoverride "estate_name" { text = "nobles_estate" }
-blockoverride "reaction_tint" {
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" size = { 3 68 } background = { using = color_market_green_texture } }
-widget = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" size = { 3 68 } background = { using = color_mid_red_texture } }
-}
-blockoverride "estate_reaction" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_SUPPORT" align = nobaseline|left }
-text_single = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_OPPOSE" align = nobaseline|left }
-}
-blockoverride "estate_reason" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)1.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_LOCATION" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)2.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_HISTORICAL" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_nobles_estate').GetValue, '(CFixedPoint)3.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_RANDOM" align = nobaseline|left }
-} }
-tv_wonder_ritual_estate_card = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').IsSet]"
-blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/clergy_estate.dds" }
-blockoverride "estate_name" { text = "clergy_estate" }
-blockoverride "reaction_tint" {
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" size = { 3 68 } background = { using = color_market_green_texture } }
-widget = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" size = { 3 68 } background = { using = color_mid_red_texture } }
-}
-blockoverride "estate_reaction" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_SUPPORT" align = nobaseline|left }
-text_single = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_clergy_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_OPPOSE" align = nobaseline|left }
-}
-blockoverride "estate_reason" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)1.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_LOCATION" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)2.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_HISTORICAL" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_clergy_estate').GetValue, '(CFixedPoint)3.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_RANDOM" align = nobaseline|left }
-} }
-tv_wonder_ritual_estate_card = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').IsSet]"
-blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/burghers_estate.dds" }
-blockoverride "estate_name" { text = "burghers_estate" }
-blockoverride "reaction_tint" {
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" size = { 3 68 } background = { using = color_market_green_texture } }
-widget = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" size = { 3 68 } background = { using = color_mid_red_texture } }
-}
-blockoverride "estate_reaction" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_SUPPORT" align = nobaseline|left }
-text_single = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_burghers_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_OPPOSE" align = nobaseline|left }
-}
-blockoverride "estate_reason" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)1.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_LOCATION" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)2.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_HISTORICAL" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_burghers_estate').GetValue, '(CFixedPoint)3.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_RANDOM" align = nobaseline|left }
-} }
-tv_wonder_ritual_estate_card = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').IsSet]"
-blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/peasants_estate.dds" }
-blockoverride "estate_name" { text = "peasants_estate" }
-blockoverride "reaction_tint" {
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" size = { 3 68 } background = { using = color_market_green_texture } }
-widget = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" size = { 3 68 } background = { using = color_mid_red_texture } }
-}
-blockoverride "estate_reaction" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_SUPPORT" align = nobaseline|left }
-text_single = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_peasants_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_OPPOSE" align = nobaseline|left }
-}
-blockoverride "estate_reason" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)1.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_LOCATION" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)2.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_HISTORICAL" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_peasants_estate').GetValue, '(CFixedPoint)3.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_RANDOM" align = nobaseline|left }
-} }
-tv_wonder_ritual_estate_card = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').IsSet]"
-blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/dhimmi_estate.dds" }
-blockoverride "estate_name" { text = "dhimmi_estate" }
-blockoverride "reaction_tint" {
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" size = { 3 68 } background = { using = color_market_green_texture } }
-widget = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" size = { 3 68 } background = { using = color_mid_red_texture } }
-}
-blockoverride "estate_reaction" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_SUPPORT" align = nobaseline|left }
-text_single = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_dhimmi_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_OPPOSE" align = nobaseline|left }
-}
-blockoverride "estate_reason" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)1.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_LOCATION" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)2.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_HISTORICAL" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_dhimmi_estate').GetValue, '(CFixedPoint)3.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_RANDOM" align = nobaseline|left }
-} }
-tv_wonder_ritual_estate_card = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').IsSet]"
-blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/tribes_estate.dds" }
-blockoverride "estate_name" { text = "tribes_estate" }
-blockoverride "reaction_tint" {
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" size = { 3 68 } background = { using = color_market_green_texture } }
-widget = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" size = { 3 68 } background = { using = color_mid_red_texture } }
-}
-blockoverride "estate_reaction" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_SUPPORT" align = nobaseline|left }
-text_single = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_tribes_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_OPPOSE" align = nobaseline|left }
-}
-blockoverride "estate_reason" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)1.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_LOCATION" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)2.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_HISTORICAL" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_tribes_estate').GetValue, '(CFixedPoint)3.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_RANDOM" align = nobaseline|left }
-} }
-tv_wonder_ritual_estate_card = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').IsSet]"
-blockoverride "estate_icon" { texture = "gfx/interface/icons/estates/cossacks_estate.dds" }
-blockoverride "estate_name" { text = "cossacks_estate" }
-blockoverride "reaction_tint" {
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" size = { 3 68 } background = { using = color_market_green_texture } }
-widget = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" size = { 3 68 } background = { using = color_mid_red_texture } }
-}
-blockoverride "estate_reaction" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue)]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_SUPPORT" align = nobaseline|left }
-text_single = { visible = "[Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_cossacks_estate').GetValue, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))]" position = { 48 28 } size = { 158 20 } autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_OPPOSE" align = nobaseline|left }
-}
-blockoverride "estate_reason" {
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)1.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_LOCATION" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)2.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_HISTORICAL" align = nobaseline|left }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_source_cossacks_estate').GetValue, '(CFixedPoint)3.0')]" position = { 8 48 } size = { 200 18 } autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_RANDOM" align = nobaseline|left }
-} }
+text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_selected').GetValue, '(CFixedPoint)-1.0')]" size = { 216 24 } autoresize = no raw_text = "#Y ←#!" align = nobaseline|right }
+text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_selected').GetValue, '(CFixedPoint)1.0')]" position = { 222 0 } size = { 216 24 } autoresize = no raw_text = "#Y →#!" align = nobaseline|left }
 }
 }
 text_multi = { visible = "[And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0')))]" layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }

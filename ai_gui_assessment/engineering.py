@@ -268,6 +268,12 @@ def mocks(state: ScenarioState, loc=None) -> list:
         (state.organization_variables, "InternationalOrganizationsView.GetInternationalOrganization.MakeScope"),
     ]:
         result.extend(variable_mocks(prefix, store))
+    for key in player_variables:
+        if not key.startswith('tv_wonder_estate_pref_') or key.startswith('tv_wonder_estate_pref_source_'):
+            continue
+        estate = key.removeprefix('tv_wonder_estate_pref_')
+        result.append((_exact(f"InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('{estate}')"),
+                       {"__type__": "Estate", "GetLongNameWithNoTooltip": loc.get(estate) if loc else estate}))
     result.extend([
         (_exact("InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_great_engineer_char').GetCharacter"), character),
         (r"InternationalOrganizationsView\.GetPlayer(?:\.Self)?|Player(?:\.Self)?", country_context()),
@@ -282,6 +288,7 @@ def mocks(state: ScenarioState, loc=None) -> list:
          lambda match: match[1] == state.tab),
         (r"InternationalOrganizationsView\.Vars\.Exists\('[^']+'\)", False),
         (r"PdxGuiWidget\.IsUberButtonEnabled", True),
+        (r"PdxGuiWidget\.IsTooltipLocked|UsesTimerLocking", False),
         (r"InternationalOrganizationsView\.HasOverview", True),
         (r"InternationalOrganizationsView\.(?:HasActions|HasCandidates|HasLaws|HasSpecialMembers)", False),
         (r"InternationalOrganizationsView\.(?:GetActions|GetSpecialMemberItems)", []),
@@ -409,7 +416,7 @@ def configure(*, workspace: Path = WORKSPACE, renderer_root: Path | None = None,
 
 def render(state: ScenarioState, *, width: int = 570, height: int = 1800,
            scale: float = 1, output: Path | None = None, resources=None,
-           extra_mocks: list | None = None) -> dict:
+           extra_mocks: list | None = None, hover: str | None = None) -> dict:
     """Render after configure(); return the machine-readable diagnostics."""
     from eu5_gui_renderer.gui import Expander
     from eu5_gui_renderer.paths import MOD, OUTPUT
@@ -427,7 +434,7 @@ def render(state: ScenarioState, *, width: int = 570, height: int = 1800,
     return render_tree(element, expander, resources, (extra_mocks or []) + mocks(state, resources.loc),
         width=width, height=height, scale=scale,
         output=output or OUTPUT / f"engineering_{state.name}.png",
-        detail_elements={"ritual": card} if card is not None else None,
+        detail_elements={"ritual": card} if card is not None else None, tooltip_selector=hover,
         metadata={
             "scenario": f"engineering-{state.tab}", "state": asdict(state), "sample_data": True,
             "gui": str(MOD / GUI_PATH), "unsupported": list(UNSUPPORTED),
@@ -476,6 +483,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--tab", choices=TABS, help="override the preset's selected tab")
     parser.add_argument("--fixture", type=Path, help="JSON scope variables, objects, lists and action availability")
     parser.add_argument("--mocks", type=Path, help="JSON [expression regex, value] pairs; take precedence over samples")
+    parser.add_argument("--hover", help="preview a visible widget's native tooltip by name, such as nobles_estate")
     parser.add_argument("--strict", action="store_true", help="exit nonzero on unresolved bindings or assets")
     parser.add_argument("--workspace", type=Path, default=WORKSPACE)
     parser.add_argument("--renderer-root", type=Path)
@@ -492,8 +500,8 @@ def main(argv: list[str] | None = None) -> int:
         for name, tab in STATE_TABS.items():
             print(f"{name:24} {tab}")
         return 0
-    if args.all and (args.output or args.fixture or args.tab):
-        parser.error("--all cannot be combined with --output, --fixture or --tab")
+    if args.all and (args.output or args.fixture or args.tab or args.hover):
+        parser.error("--all cannot be combined with --output, --fixture, --tab or --hover")
     if args.width <= 0 or args.height <= 0 or args.scale <= 0:
         parser.error("width, height and scale must be positive")
     try:
@@ -511,7 +519,7 @@ def main(argv: list[str] | None = None) -> int:
         reports = []
         for state in states:
             report = render(state, width=args.width, height=args.height, scale=args.scale,
-                            output=args.output, resources=resources, extra_mocks=extra_mocks)
+                            output=args.output, resources=resources, extra_mocks=extra_mocks, hover=args.hover)
             reports.append(report)
             print(f"Rendered {report['output']} ({state.tab}); "
                   f"unknown={len(report['unknown_expressions'])}, "

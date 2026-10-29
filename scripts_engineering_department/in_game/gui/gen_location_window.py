@@ -434,12 +434,29 @@ def render_menu_slot(indent: str, *, slot: int) -> list[str]:
         layoutpolicy_horizontal = fixed layoutpolicy_vertical = fixed spacing = {CARD_SPACING}
         widget = {{
             name = "tv_location_wonder_ritual_header_{slot}"
-            size = {{ {RITUAL_GROUP_WIDTH} {RITUAL_HEADER_HEIGHT} }} alwaystransparent = yes
+            size = {{ {RITUAL_GROUP_WIDTH} {RITUAL_HEADER_HEIGHT} }} alwaystransparent = no
             using = bg_card_header_01_production
             using = bg_cabinet_card_frame
             text_single = {{ size = {{ {RITUAL_GROUP_WIDTH} {RITUAL_HEADER_HEIGHT} }}
                 autoresize = no align = center|nobaseline using = Font_Type_Headers fontsize = 20
                 text = "TV_LOCATION_WONDER_RITUAL_HEADER" alwaystransparent = yes }}
+            button_regular = {{
+                name = "tv_location_wonder_reritual_{slot}"
+                parentanchor = right|vcenter widgetanchor = right|vcenter position = {{ -6 0 }}
+                size = {{ 32 32 }}
+                visible = "[LocationView.GetLocation.GetOwner.IsPlayer]"
+                enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
+                scripted_action_tooltip = {{
+                    click_type = left click_mode = single
+                    action_name = "tv_wonder_location_reritual_{slot}"
+                    actor = "[LocationView.GetPlayer]"
+                    parameter = {{ parameter_name = "target" parameter_value = "[LocationView.GetLocation]" }}
+                }}
+                button_tooltip_override = {{ title = "tv_wonder_location_reritual_{slot}" description = "tv_wonder_location_reritual_{slot}_desc" }}
+                tooltipwidget = {{ using = action_tooltip_pop_out }}
+                icon = {{ parentanchor = center size = {{ 24 24 }}
+                    texture = "gfx/interface/icons/location_icons/tv_wonder_arrow_restart.dds" alwaystransparent = yes }}
+            }}
         }}
         ''']
     for style in (1, 2, 3):

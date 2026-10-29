@@ -4,23 +4,103 @@
 	category = building_maintenance
 }
 
-tv_wonder_material_dispatch_point_production = {
-	lumber = 2
-	masonry = 1
-	glass = 1
-	marble = 0.4
+# Workshop methods are ordered by processing sophistication and base profit.
+# All produce 1.00 materials (base value 5). Profit = output value - input value;
+# even the best method stays below the engine's 30% profit/input-cost ceiling.
+# Regional market prices, rather than location locks, determine the best method.
+
+# Rammed earth: timber formwork and plant fibers replace purchased metal tools.
+# Input value 4.95; base profit 0.05 (1.01% of input cost).
+tv_wonder_material_dispatch_point_production_rammed_earth = {
+	clay = 4.00
+	sand = 2.00
+	lumber = 0.90
+	fiber_crops = 0.30
 	produced = tv_wonder_materials
-	output = 2
+	output = 1.00
 	category = building_maintenance
 }
 
-tv_wonder_material_dispatch_point_production_no_marble = {
-	lumber = 1
-	masonry = 0.5
-	glass = 0.5
-	stone = 1
+# Timber framing: wooden joints and fiber lashings, with clay infill.
+# Input value 4.85; base profit 0.15 (3.09%).
+tv_wonder_material_dispatch_point_production_timber_frame = {
+	lumber = 2.50
+	clay = 1.00
+	fiber_crops = 0.30
 	produced = tv_wonder_materials
-	output = 1
+	output = 1.00
+	category = building_maintenance
+}
+
+# Wood-fired kilns: integrated brickmaking where timber is plentiful.
+# Input value 4.70; base profit 0.30 (6.38%).
+tv_wonder_material_dispatch_point_production_wood_kiln = {
+	clay = 4.00
+	sand = 1.20
+	lumber = 1.40
+	produced = tv_wonder_materials
+	output = 1.00
+	category = building_maintenance
+}
+
+# Coal-fired kilns: coal substitutes for timber fuel, without a tool industry.
+# Input value 4.55; base profit 0.45 (9.89%).
+tv_wonder_material_dispatch_point_production_coal_kiln = {
+	clay = 4.00
+	sand = 1.10
+	coal = 1.00
+	produced = tv_wonder_materials
+	output = 1.00
+	category = building_maintenance
+}
+
+# Dressed stone: tools cut waste; timber supports and sand finish the stone.
+# Input value 4.40; base profit 0.60 (13.64%). Existing runtime id retained.
+tv_wonder_material_dispatch_point_production_no_marble = {
+	stone = 2.50
+	lumber = 0.60
+	tools = 0.30
+	sand = 0.20
+	produced = tv_wonder_materials
+	output = 1.00
+	category = building_maintenance
+}
+
+# Marble finishing: abrasive sand reduces cutting-tool consumption.
+# Input value 4.25; base profit 0.75 (17.65%). Existing runtime id retained.
+tv_wonder_material_dispatch_point_production = {
+	marble = 0.50
+	sand = 0.50
+	lumber = 0.60
+	tools = 0.20
+	produced = tv_wonder_materials
+	output = 1.00
+	category = building_maintenance
+}
+
+# Patterned components: finished bricks, iron fastenings and paper plans.
+# Input value 4.10; base profit 0.90 (21.95%).
+tv_wonder_material_dispatch_point_production_patterned_components = {
+	masonry = 1.80
+	lumber = 0.80
+	iron = 0.10
+	tools = 0.20
+	paper = 0.10
+	produced = tv_wonder_materials
+	output = 1.00
+	category = building_maintenance
+}
+
+# Steel-edged sizing: durable cutting edges and templates reduce waste/tool wear.
+# Input value 3.90; base profit 1.10 (28.21%).
+tv_wonder_material_dispatch_point_production_steel_cutting = {
+	masonry = 1.50
+	lumber = 0.60
+	steel = 0.18
+	tools = 0.10
+	paper = 0.15
+	produced = tv_wonder_materials
+	output = 1.00
 	category = building_maintenance
 }
 

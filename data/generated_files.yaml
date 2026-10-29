@@ -7,6 +7,10 @@
   output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_arrow_right.dds
 - script: scripts_engineering_department/gen_location_wonder_arrows.py
   output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_arrow_left.dds
+- script: scripts_engineering_department/gen_location_wonder_arrows.py
+  output: assets/generated_icons/tv_wonder_arrow_restart.png
+- script: scripts_engineering_department/gen_location_wonder_arrows.py
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_arrow_restart.dds
 - script: scripts_engineering_department/gen_wonder_level_medallions.py
   output: assets/generated_icons/tv_wonder_level_1.png
 - script: scripts_engineering_department/gen_wonder_level_medallions.py
@@ -147,7 +151,7 @@
   data: data/wonder_localization.yaml
   output: src/main_menu/localization/simp_chinese/tv_wonder_ownership_l_simp_chinese.yml
 - script: scripts_engineering_department/in_game/gui/panels/organization/gen_tv_engineering_department_wonder_mechanics_gui.py
-  data: data/wonders.yaml + data/wonder_final_buildings.yaml + data/wonder_generic_rituals.yaml + data/wonder_base_modifiers.yaml
+  data: scripts_engineering_department/wonder_ritual_gui.py + data/wonders.yaml + data/wonder_final_buildings.yaml + data/wonder_generic_rituals.yaml + data/wonder_base_modifiers.yaml
     + data/wonder_site_rules.yaml + data/unique_wonders.yaml + data/wonder_societal_axes.yaml + data/wonder_ritual_rules.yaml
   output: data/generated_fragments/tv_engineering_department_wonder_mechanics.gui
 - script: scripts_engineering_department/in_game/gui/gen_location_window.py

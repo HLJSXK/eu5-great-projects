@@ -73,7 +73,13 @@ tv_wonder_material_dispatch_point = {
 	construction_demand = tv_wonder_material_dispatch_point_construction
 
 	possible_production_methods = {
-		tv_wonder_material_dispatch_point_production
+		tv_wonder_material_dispatch_point_production_rammed_earth
+		tv_wonder_material_dispatch_point_production_timber_frame
+		tv_wonder_material_dispatch_point_production_wood_kiln
+		tv_wonder_material_dispatch_point_production_coal_kiln
 		tv_wonder_material_dispatch_point_production_no_marble
+		tv_wonder_material_dispatch_point_production
+		tv_wonder_material_dispatch_point_production_patterned_components
+		tv_wonder_material_dispatch_point_production_steel_cutting
 	}
 }

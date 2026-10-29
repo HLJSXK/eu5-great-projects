@@ -65,6 +65,8 @@ ENGINEERING_DEPARTMENT_500_ID_RE = re.compile(r"var:tv_wonder_locked \?= (?P<id>
 ENGINEERING_DEPARTMENT_500_DESC_RE = re.compile(r"desc = tv_engineering_department\.500\.d_(?P<suffix>[A-Za-z0-9_]+?)(?:_(?P<style>\d+))?$")
 ENGINEERING_DEPARTMENT_WONDER_MECHANICS_EXCLUDED_LOC_KEYS = frozenset(
     {
+        # Owned by wonder_ritual_codegen.message_localization in every language.
+        "TV_LOCATION_WONDER_RERITUAL_TARGET_TT",
         "tv_wonder_ownership.800.t",
         "tv_wonder_ownership.800.d",
         "tv_wonder_ownership.800.a",

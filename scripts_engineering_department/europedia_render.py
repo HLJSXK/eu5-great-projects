@@ -37,7 +37,7 @@ from wonder_mechanics.rituals import location_reward_estate, ritual_styles  # no
 T = "\t"
 ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI"}
 
-FILTER_IDS = ("all", "overview", "mechanics", "generic", "unique")
+FILTER_IDS = ("all", "overview", "mechanics", "unique", "generic")
 PREFIX = "TV_EU"
 
 # Permanent editorial scope: 15 mechanic cards and these two worked examples.
@@ -64,19 +64,14 @@ def _q(text: str) -> str:
 
 
 def visible_by_filter(category: str) -> str:
-    """Show the card unless another filter is chosen.
+    """Show only this tab's cards; the first visit defaults to complete mechanics.
 
-    The filter variable only exists after a button is pressed, so the tab would open empty for
-    anyone who has not clicked one yet. The unset case therefore means "all", using the
-    single-argument Exists accessor vanilla itself guards optional UI variables with.
+    All is an empty reserved tab for now, not an aggregate of the other tabs.
     """
-    # Or takes exactly two arguments; Or3/Or4/Or5 exist for three, four and five, as vanilla's own
-    # GUI uses them (75, 6 and 7 occurrence there). This test is three-way, so Or3.
-    return (
-        "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), "
-        "GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), "
-        f"GetVariableSystem.HasValue('tv_encyclopedia_filter', '{category}'))]"
-    )
+    selected = f"GetVariableSystem.HasValue('tv_encyclopedia_filter', '{category}')"
+    if category == "mechanics":
+        return f"[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), {selected})]"
+    return f"[{selected}]"
 
 
 # --------------------------------------------------------------------------- card shell ----
@@ -555,7 +550,7 @@ def append_wonder_card(lines: list[str], wonder: dict, mechanics: dict, texture:
     keys = wonder_loc_keys(wonder["concept"])
     append_card(
         lines,
-        category="unique" if wonder["is_unique"] else "generic",
+        category="mechanics",
         texture=texture,
         title_key=keys["name"],
         body_key=keys["lead"],
@@ -625,10 +620,10 @@ def shared_localization() -> dict[str, tuple[str, str]]:
     }
     filters = {
         "all": ("All", "全部"),
-        "overview": ("Overview", "总览"),
-        "mechanics": ("Mechanics", "玩法机制"),
-        "generic": ("Generic Wonders", "通用奇观"),
-        "unique": ("Unique Wonders", "独特奇观"),
+        "overview": ("Getting Started", "入门"),
+        "mechanics": ("Complete Mechanics", "完整机制"),
+        "unique": ("Unique Projects", "独特工程"),
+        "generic": ("Generic Projects", "通用工程"),
     }
     out: dict[str, tuple[str, str]] = {}
     for name, value in wonder.items():
@@ -636,8 +631,8 @@ def shared_localization() -> dict[str, tuple[str, str]]:
     for name, value in filters.items():
         out[key("filter", name)] = value
         out[key("filter", name, "tooltip")] = (
-            f"Show only {value[0].lower()}." if name != "all" else "Show every page.",
-            f"只显示{value[1]}。" if name != "all" else "显示全部条目。",
+            f"Open the {value[0].lower()} tab.",
+            f"打开{value[1]}页签。",
         )
     out[key("tab", "title")] = ("Great Projects", "大工程")
     return out

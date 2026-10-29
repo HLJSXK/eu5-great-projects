@@ -10,7 +10,7 @@ vbox = {
 	spacing = 4
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'overview'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -131,7 +131,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -239,7 +239,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -347,7 +347,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -497,7 +497,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -651,7 +651,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -787,7 +787,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -892,7 +892,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -1099,7 +1099,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -1319,7 +1319,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -1539,7 +1539,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -1677,7 +1677,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -1827,7 +1827,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -1940,7 +1940,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -2056,7 +2056,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -2163,7 +2163,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'generic'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {
@@ -2414,7 +2414,7 @@ vbox = {
 	}
 
 	vbox = {
-		visible = "[Or3(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'all'), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'unique'))]"
+		visible = "[Or(Not(GetVariableSystem.Exists('tv_encyclopedia_filter')), GetVariableSystem.HasValue('tv_encyclopedia_filter', 'mechanics'))]"
 		tv_eu_card = {
 			blockoverride "card_header" {
 				icon = {

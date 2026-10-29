@@ -2,6 +2,7 @@
 """Validate scale-based Engineering Department wonder data rules."""
 
 from collections import Counter
+from decimal import Decimal
 import importlib.util
 import json
 import re
@@ -72,7 +73,7 @@ def require(condition: bool, message: str) -> None:
 
 
 def validate_worksite_maintenance_input_contract() -> None:
-    """Keep the restored production chain identical to the pre-removal revision."""
+    """Preserve restored integration; workshop recipes follow the regional rework."""
     import hashlib
 
     manifest = json.loads((REPO_ROOT / "tests/fixtures/wonder_materials_history.json").read_text(encoding="utf-8"))
@@ -80,8 +81,31 @@ def validate_worksite_maintenance_input_contract() -> None:
         text = (REPO_ROOT / entry["path"]).read_text(encoding="utf-8-sig")
         match = re.search(r"(?ms)^" + re.escape(entry["key"]) + r" = \{.*?^}", text)
         require(match is not None, f"Missing restored definition: {entry['key']}")
+        # The original fixture remains historical evidence, not a new balance snapshot.
+        # These two recipes are now covered by the economic contract below.
+        if entry["key"] in {
+            "tv_wonder_material_dispatch_point_production",
+            "tv_wonder_material_dispatch_point_production_no_marble",
+        }:
+            continue
+        historical_block = match[0]
+        if entry["key"] == "tv_wonder_material_dispatch_point":
+            # Only its method list changed: still enforce all other historical properties.
+            current_methods = extract_trigger_block(historical_block, "possible_production_methods")
+            historical_block = historical_block.replace(current_methods,
+                "possible_production_methods = {\n"
+                "\t\ttv_wonder_material_dispatch_point_production\n"
+                "\t\ttv_wonder_material_dispatch_point_production_no_marble\n\t}")
+        if entry["key"] == "tv_wonder_update_logistics_metrics_effect":
+            # Fixed output changed 2 -> 1, so the demand display now needs 20 workshops.
+            # Preserve the historical check for the rest of this logistics effect.
+            historical_block = re.sub(
+                r"(name = tv_wonder_material_workshop_need\s+value = \{\s+"
+                r"value = var:tv_wonder_effective_worksite_levels\s+multiply = )20\b",
+                r"\g<1>10", historical_block, count=1,
+            )
         require(
-            hashlib.sha256(match[0].encode()).hexdigest() == entry["sha256"],
+            hashlib.sha256(historical_block.encode()).hexdigest() == entry["sha256"],
             f"Restored definition differs from {manifest['source_commit']}: {entry['key']}",
         )
     for entry in manifest["assets"]:
@@ -112,6 +136,88 @@ def validate_worksite_maintenance_input_contract() -> None:
                     "tv_wonder_material_dispatch_point_production", "tv_wonder_material_dispatch_point_production_no_marble",
                     "TV_ENGINEERING_MATERIAL_WORKSHOP_PROGRESS_TT", "TV_WONDER_MATERIAL_INPUT_SHORTAGE_CONSTRUCTION_PROGRESS"):
             require(re.search(rf"^ {key}:", loc, re.MULTILINE), f"Missing {language} localization: {key}")
+    validate_material_workshop_production_contract()
+
+
+def load_material_workshop_economy():
+    """Read deployed recipes and actual goods prices, without a duplicated price table."""
+    goods_prices = {}
+    for folder in (
+        REPO_ROOT / ".eu5-base/reference_game_files/game/in_game/common/goods",
+        ENGINEERING_DEPARTMENT_ROOT / "in_game/common/goods",
+    ):
+        for path in sorted(folder.glob("*.txt")):
+            for key, body in re.findall(r"(?ms)^(\w+)\s*=\s*\{(.*?)^}", path.read_text(encoding="utf-8-sig")):
+                price = re.search(r"\bdefault_market_price\s*=\s*([\d.]+)", body)
+                if price:
+                    goods_prices[key] = Decimal(price[1])
+    buildings = (ENGINEERING_DEPARTMENT_ROOT / "in_game/common/building_types/tv_engineering_department_buildings.txt").read_text(encoding="utf-8-sig")
+    workshop = extract_trigger_block(buildings, "tv_wonder_material_dispatch_point")
+    method_list = extract_trigger_block(workshop, "possible_production_methods")
+    method_ids = re.findall(r"^\s*(tv_\w+)\s*$", method_list, re.MULTILINE)
+    script = ENGINEERING_DEPARTMENT_PRODUCTION_METHODS.read_text(encoding="utf-8-sig")
+    recipes = {}
+    for method in method_ids:
+        body = extract_trigger_block(script, method)
+        fields = re.findall(r"^\s+(\w+)\s*=\s*(\S+)\s*$", body, re.MULTILINE)
+        require(len(dict(fields)) == len(fields), f"Duplicate recipe field: {method}")
+        recipes[method] = dict(fields)
+    return goods_prices, method_ids, recipes
+
+
+def validate_material_workshop_production_contract() -> None:
+    prices, method_ids, recipes = load_material_workshop_economy()
+    require(5 <= len(method_ids) <= 10 and len(set(method_ids)) == len(method_ids),
+            "Workshop must expose 5-10 distinct regional methods.")
+    script = ENGINEERING_DEPARTMENT_PRODUCTION_METHODS.read_text(encoding="utf-8-sig")
+    declared = re.findall(r"(?m)^(tv_wonder_material_dispatch_point_production\w*) =", script)
+    require(set(declared) == set(method_ids) and len(declared) == len(method_ids),
+            "Every workshop method must be defined once and selectable.")
+    profits = []
+    inputs_by_method = []
+    for method, fields in recipes.items():
+        require(fields.get("produced") == "tv_wonder_materials", f"Wrong output good: {method}")
+        require(Decimal(fields.get("output", "0")) == 1, f"Output must be exactly 1.00: {method}")
+        require(fields.get("category") == "building_maintenance", f"Wrong category: {method}")
+        inputs = {key: Decimal(value) for key, value in fields.items()
+                  if key not in {"produced", "output", "category"}}
+        require(bool(inputs) and all(key in prices and value > 0 for key, value in inputs.items()),
+                f"Inputs must be positive amounts of defined goods: {method}")
+        require("tv_wonder_materials" not in inputs, f"Recipe must not consume its own output: {method}")
+        cost = sum(prices[key] * value for key, value in inputs.items())
+        profit = prices["tv_wonder_materials"] - cost
+        require(0 <= profit / cost < Decimal("0.30"), f"Base profit outside engine limits: {method}")
+        profits.append(profit)
+        inputs_by_method.append(inputs)
+    require(all(a < b for a, b in zip(profits, profits[1:])),
+            "Base profits must strictly increase with processing sophistication.")
+    require(profits[0] <= Decimal("0.05"), "The simplest method must barely break even.")
+    require(sum("tools" not in recipe for recipe in inputs_by_method) >= 3,
+            "Tool-poor regions need multiple independent production routes.")
+    require(any("marble" in recipe for recipe in inputs_by_method)
+            and any("marble" not in recipe for recipe in inputs_by_method[-2:]),
+            "Both marble-rich and marble-poor regions need advanced routes.")
+    worksite = extract_trigger_block(script, "tv_wonder_labor_camp_maintenance")
+    materials_demand = re.search(r"tv_wonder_materials\s*=\s*([\d.]+)", worksite)
+    effects = ENGINEERING_DEPARTMENT_EFFECTS.read_text(encoding="utf-8-sig")
+    workshop_need = re.search(
+        r"name = tv_wonder_material_workshop_need\s+value = \{\s+"
+        r"value = var:tv_wonder_effective_worksite_levels\s+multiply = ([\d.]+)", effects,
+    )
+    require(materials_demand is not None and workshop_need is not None,
+            "Worksite demand and workshop capacity display must remain connected.")
+    require(all(Decimal(workshop_need[1]) * Decimal(fields["output"]) == Decimal(materials_demand[1])
+                for fields in recipes.values()), "Workshop capacity display must reflect the new fixed output.")
+    for language in ("english", "simp_chinese"):
+        path = ENGINEERING_DEPARTMENT_ROOT / f"main_menu/localization/{language}/tv_engineering_department_l_{language}.yml"
+        require(path.read_bytes().startswith(b"\xef\xbb\xbf"), f"Missing localization BOM: {language}")
+        loc = path.read_text(encoding="utf-8-sig")
+        names = []
+        for method in method_ids:
+            values = re.findall(rf'^ {method}:(?:0)? "([^"\n]+)"$', loc, re.MULTILINE)
+            require(len(values) == 1, f"Missing/duplicate localized method name: {language}/{method}")
+            names.extend(values)
+        require(len(set(names)) == len(names), f"Method names must be distinct: {language}")
 
 
 def load_trigger_generator():

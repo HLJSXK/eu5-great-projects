@@ -245,12 +245,29 @@ types tv_location_wonder_menu_types {
 			        layoutpolicy_horizontal = fixed layoutpolicy_vertical = fixed spacing = 3
 			        widget = {
 			            name = "tv_location_wonder_ritual_header_1"
-			            size = { 168 36 } alwaystransparent = yes
+			            size = { 168 36 } alwaystransparent = no
 			            using = bg_card_header_01_production
 			            using = bg_cabinet_card_frame
 			            text_single = { size = { 168 36 }
 			                autoresize = no align = center|nobaseline using = Font_Type_Headers fontsize = 15
 			                text = "TV_LOCATION_WONDER_RITUAL_HEADER" alwaystransparent = yes }
+			            button_regular = {
+			                name = "tv_location_wonder_reritual_1"
+			                parentanchor = right|vcenter widgetanchor = right|vcenter position = { -4.5 0 }
+			                size = { 24 24 }
+			                visible = "[LocationView.GetLocation.GetOwner.IsPlayer]"
+			                enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
+			                scripted_action_tooltip = {
+			                    click_type = left click_mode = single
+			                    action_name = "tv_wonder_location_reritual_1"
+			                    actor = "[LocationView.GetPlayer]"
+			                    parameter = { parameter_name = "target" parameter_value = "[LocationView.GetLocation]" }
+			                }
+			                button_tooltip_override = { title = "tv_wonder_location_reritual_1" description = "tv_wonder_location_reritual_1_desc" }
+			                tooltipwidget = { using = action_tooltip_pop_out }
+			                icon = { parentanchor = center size = { 18 18 }
+			                    texture = "gfx/interface/icons/location_icons/tv_wonder_arrow_restart.dds" alwaystransparent = yes }
+			            }
 			        }
 
 			widget = {
@@ -561,12 +578,29 @@ types tv_location_wonder_menu_types {
 			        layoutpolicy_horizontal = fixed layoutpolicy_vertical = fixed spacing = 3
 			        widget = {
 			            name = "tv_location_wonder_ritual_header_2"
-			            size = { 168 36 } alwaystransparent = yes
+			            size = { 168 36 } alwaystransparent = no
 			            using = bg_card_header_01_production
 			            using = bg_cabinet_card_frame
 			            text_single = { size = { 168 36 }
 			                autoresize = no align = center|nobaseline using = Font_Type_Headers fontsize = 15
 			                text = "TV_LOCATION_WONDER_RITUAL_HEADER" alwaystransparent = yes }
+			            button_regular = {
+			                name = "tv_location_wonder_reritual_2"
+			                parentanchor = right|vcenter widgetanchor = right|vcenter position = { -4.5 0 }
+			                size = { 24 24 }
+			                visible = "[LocationView.GetLocation.GetOwner.IsPlayer]"
+			                enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
+			                scripted_action_tooltip = {
+			                    click_type = left click_mode = single
+			                    action_name = "tv_wonder_location_reritual_2"
+			                    actor = "[LocationView.GetPlayer]"
+			                    parameter = { parameter_name = "target" parameter_value = "[LocationView.GetLocation]" }
+			                }
+			                button_tooltip_override = { title = "tv_wonder_location_reritual_2" description = "tv_wonder_location_reritual_2_desc" }
+			                tooltipwidget = { using = action_tooltip_pop_out }
+			                icon = { parentanchor = center size = { 18 18 }
+			                    texture = "gfx/interface/icons/location_icons/tv_wonder_arrow_restart.dds" alwaystransparent = yes }
+			            }
 			        }
 
 			widget = {
@@ -877,12 +911,29 @@ types tv_location_wonder_menu_types {
 			        layoutpolicy_horizontal = fixed layoutpolicy_vertical = fixed spacing = 3
 			        widget = {
 			            name = "tv_location_wonder_ritual_header_3"
-			            size = { 168 36 } alwaystransparent = yes
+			            size = { 168 36 } alwaystransparent = no
 			            using = bg_card_header_01_production
 			            using = bg_cabinet_card_frame
 			            text_single = { size = { 168 36 }
 			                autoresize = no align = center|nobaseline using = Font_Type_Headers fontsize = 15
 			                text = "TV_LOCATION_WONDER_RITUAL_HEADER" alwaystransparent = yes }
+			            button_regular = {
+			                name = "tv_location_wonder_reritual_3"
+			                parentanchor = right|vcenter widgetanchor = right|vcenter position = { -4.5 0 }
+			                size = { 24 24 }
+			                visible = "[LocationView.GetLocation.GetOwner.IsPlayer]"
+			                enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
+			                scripted_action_tooltip = {
+			                    click_type = left click_mode = single
+			                    action_name = "tv_wonder_location_reritual_3"
+			                    actor = "[LocationView.GetPlayer]"
+			                    parameter = { parameter_name = "target" parameter_value = "[LocationView.GetLocation]" }
+			                }
+			                button_tooltip_override = { title = "tv_wonder_location_reritual_3" description = "tv_wonder_location_reritual_3_desc" }
+			                tooltipwidget = { using = action_tooltip_pop_out }
+			                icon = { parentanchor = center size = { 18 18 }
+			                    texture = "gfx/interface/icons/location_icons/tv_wonder_arrow_restart.dds" alwaystransparent = yes }
+			            }
 			        }
 
 			widget = {
@@ -1193,12 +1244,29 @@ types tv_location_wonder_menu_types {
 			        layoutpolicy_horizontal = fixed layoutpolicy_vertical = fixed spacing = 3
 			        widget = {
 			            name = "tv_location_wonder_ritual_header_4"
-			            size = { 168 36 } alwaystransparent = yes
+			            size = { 168 36 } alwaystransparent = no
 			            using = bg_card_header_01_production
 			            using = bg_cabinet_card_frame
 			            text_single = { size = { 168 36 }
 			                autoresize = no align = center|nobaseline using = Font_Type_Headers fontsize = 15
 			                text = "TV_LOCATION_WONDER_RITUAL_HEADER" alwaystransparent = yes }
+			            button_regular = {
+			                name = "tv_location_wonder_reritual_4"
+			                parentanchor = right|vcenter widgetanchor = right|vcenter position = { -4.5 0 }
+			                size = { 24 24 }
+			                visible = "[LocationView.GetLocation.GetOwner.IsPlayer]"
+			                enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
+			                scripted_action_tooltip = {
+			                    click_type = left click_mode = single
+			                    action_name = "tv_wonder_location_reritual_4"
+			                    actor = "[LocationView.GetPlayer]"
+			                    parameter = { parameter_name = "target" parameter_value = "[LocationView.GetLocation]" }
+			                }
+			                button_tooltip_override = { title = "tv_wonder_location_reritual_4" description = "tv_wonder_location_reritual_4_desc" }
+			                tooltipwidget = { using = action_tooltip_pop_out }
+			                icon = { parentanchor = center size = { 18 18 }
+			                    texture = "gfx/interface/icons/location_icons/tv_wonder_arrow_restart.dds" alwaystransparent = yes }
+			            }
 			        }
 
 			widget = {
@@ -1509,12 +1577,29 @@ types tv_location_wonder_menu_types {
 			        layoutpolicy_horizontal = fixed layoutpolicy_vertical = fixed spacing = 3
 			        widget = {
 			            name = "tv_location_wonder_ritual_header_5"
-			            size = { 168 36 } alwaystransparent = yes
+			            size = { 168 36 } alwaystransparent = no
 			            using = bg_card_header_01_production
 			            using = bg_cabinet_card_frame
 			            text_single = { size = { 168 36 }
 			                autoresize = no align = center|nobaseline using = Font_Type_Headers fontsize = 15
 			                text = "TV_LOCATION_WONDER_RITUAL_HEADER" alwaystransparent = yes }
+			            button_regular = {
+			                name = "tv_location_wonder_reritual_5"
+			                parentanchor = right|vcenter widgetanchor = right|vcenter position = { -4.5 0 }
+			                size = { 24 24 }
+			                visible = "[LocationView.GetLocation.GetOwner.IsPlayer]"
+			                enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
+			                scripted_action_tooltip = {
+			                    click_type = left click_mode = single
+			                    action_name = "tv_wonder_location_reritual_5"
+			                    actor = "[LocationView.GetPlayer]"
+			                    parameter = { parameter_name = "target" parameter_value = "[LocationView.GetLocation]" }
+			                }
+			                button_tooltip_override = { title = "tv_wonder_location_reritual_5" description = "tv_wonder_location_reritual_5_desc" }
+			                tooltipwidget = { using = action_tooltip_pop_out }
+			                icon = { parentanchor = center size = { 18 18 }
+			                    texture = "gfx/interface/icons/location_icons/tv_wonder_arrow_restart.dds" alwaystransparent = yes }
+			            }
 			        }
 
 			widget = {

@@ -83,7 +83,7 @@ C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\engineering.py --
 C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\engineering.py --state ceremony-ready --fixture ai_gui_assessment/fixtures/ceremony_style_3.json --strict --output ceremony_style_3.png
 ```
 
-仪式卡采用四行卷宗列表；进行中只保留已锁定风格，建设与仪式详情分别可展开。支持 / 反对数量和奖励类别取自与当前状态匹配的样例缓存。费用区在游戏中直接渲染实际 `tv_wonder_ritual_pay_effect`，离线只注明原生费用样例，不模拟国库与价格修正。朴素选项与进行中展开详情可复现为：
+三个仪式选项采用单行卡片，只显示图标与仪式名；每张卡片下方按偏好排列带绿色勾标的支持阶层图标，最多七个，不再显示底部阶层卡片。进行中只保留已锁定风格，建设与仪式详情分别可展开。阶层悬停采用原生提示框，标题说明该阶层当前支持此风格，下一行按缓存显示原因。可加 `--hover clergy_estate` 预览指定阶层的实际 tooltip 定义；离线不执行鼠标命中检测。费用区在游戏中直接渲染实际 `tv_wonder_ritual_pay_effect`，离线只注明原生费用样例，不模拟国库与价格修正。朴素选项与进行中展开详情可复现为：
 
 ```powershell
 C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\engineering.py --state ceremony-ready --fixture ai_gui_assessment/fixtures/ceremony_plain.json --strict --output ceremony_plain.png

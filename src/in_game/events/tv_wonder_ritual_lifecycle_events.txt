@@ -1971,6 +1971,14 @@ tv_engineering_department.2002 = {
 	immediate = { tv_wonder_reritual_lock_effect = yes }
 }
 
+tv_engineering_department.2005 = {
+	type = country_event
+	title = empty_text
+	desc = empty_text
+	hidden = yes
+	immediate = { tv_wonder_location_reritual_lock_effect = yes }
+}
+
 tv_engineering_department.2003 = {
 	type = country_event
 	title = TV_WONDER_RERITUAL_TITLE

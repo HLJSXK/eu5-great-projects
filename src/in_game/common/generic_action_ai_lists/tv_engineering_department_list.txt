@@ -41,5 +41,10 @@
 		tv_wonder_ritual_confirm
 		tv_wonder_ritual_choose_plain
 		tv_wonder_ritual_cancel_reritual
+		tv_wonder_location_reritual_1
+		tv_wonder_location_reritual_2
+		tv_wonder_location_reritual_3
+		tv_wonder_location_reritual_4
+		tv_wonder_location_reritual_5
 	}
 }

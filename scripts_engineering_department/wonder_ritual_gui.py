@@ -47,39 +47,35 @@ text_single = {{ position = {{ 8 0 }} size = {{ 422 24 }} autoresize = no fontsi
 
 
 def ritual_types():
-    # Independent slots prevent caller overrides from affecting sibling instances.
     return '''types TVWonderRitualTypes {
-type tv_wonder_ritual_estate_card = widget {
-size = { 216 68 }
-background = { using = color_black_texture alpha = 0.22 }
-block "reaction_tint" {}
-icon = { position = { 8 8 } size = { 32 32 } block "estate_icon" {} }
-text_single = { position = { 48 5 } size = { 158 24 } autoresize = no fontsize = 15 align = nobaseline|left block "estate_name" {} }
-block "estate_reaction" {}
-block "estate_reason" {}
+type tv_wonder_ritual_supporter = widget {
+size = { 36 36 }
+alwaystransparent = no
+icon = { size = { 32 32 } alwaystransparent = yes block "estate_icon" {} }
+icon = {
+name = "support_badge"
+position = { 20 20 } size = { 16 16 }
+texture = "gfx/interface/icons/text_icons/trigger_yes.dds"
+alwaystransparent = yes
+}
 }
 }'''
 
 
-def style_row(n, mechanics, pending, running):
+def style_row(n, mechanics, pending):
     choice = equals('tv_wonder_ritual_choice', n)
-    out = [f'''widget = {{ visible = "[Or({pending}, {choice})]" size = {{ 438 76 }}
-{button(f'tv_wonder_ritual_preview_{n}', '', pending, width=438, height=76)}
-widget = {{ visible = "[{choice}]" size = {{ 438 76 }} alwaystransparent = yes background = {{ using = color_yellow_texture alpha = 0.12 }} }}
-widget = {{ visible = "[{choice}]" size = {{ 3 76 }} alwaystransparent = yes background = {{ using = color_yellow_texture }} }}''']
+    out = [f'''vbox = {{ name = "tv_wonder_ritual_style_{n}" visible = "[Or({pending}, {choice})]"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 4
+widget = {{ name = "tv_wonder_ritual_choice_{n}" size = {{ 438 42 }}
+{button(f'tv_wonder_ritual_preview_{n}', '', pending, width=438, height=42)}
+widget = {{ visible = "[{choice}]" size = {{ 438 42 }} alwaystransparent = yes background = {{ using = color_yellow_texture alpha = 0.12 }} }}
+widget = {{ visible = "[{choice}]" size = {{ 3 42 }} alwaystransparent = yes background = {{ using = color_yellow_texture }} }}''']
     for axis_id, data in enumerate(mechanics['societal_axes'].values(), 1):
         for sign, side in ((-1, 'left'), (1, 'right')):
             show = f"And({equals(f'tv_wonder_ritual_display_axis_{n}', axis_id)}, {equals(f'tv_wonder_ritual_display_dir_{n}', sign)})"
-            out.append(f'icon = {{ visible = "[{show}]" position = {{ 12 16 }} size = {{ 36 36 }} texture = "{data[side + "_icon"]}" alwaystransparent = yes }}')
-    axis = f"ToString_int32(FixedPointToInt({variable(f'tv_wonder_ritual_display_axis_{n}')}.GetValue))"
-    direction = f"ToString_int32(FixedPointToInt({variable(f'tv_wonder_ritual_display_dir_{n}')}.GetValue))"
-    side_key = f"Localize(Concatenate(Concatenate('TV_WONDER_RITUAL_SIDE_', {axis}), Concatenate('_', {direction})))"
-    out += [f'''text_single = {{ position = {{ 58 5 }} size = {{ 340 24 }} autoresize = no fontsize = 17 raw_text = "{route(f'TV_WONDER_RITUAL_NAME_{n}_')}" align = nobaseline|left alwaystransparent = yes }}
-text_single = {{ position = {{ 58 30 }} size = {{ 362 20 }} autoresize = no fontsize = 13 raw_text = "[{side_key}] · [Localize(Concatenate('TV_WONDER_RITUAL_REWARD_KIND_', ToString_int32(FixedPointToInt({variable(f'tv_wonder_ritual_reward_kind_{n}')}.GetValue))))]" align = nobaseline|left alwaystransparent = yes }}
-text_single = {{ visible = "[{pending}]" position = {{ 58 52 }} size = {{ 350 20 }} autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_COUNTS_{n}" align = nobaseline|left alwaystransparent = yes }}
-text_single = {{ visible = "[{choice}]" position = {{ 408 5 }} size = {{ 24 24 }} raw_text = "@trigger_yes!" alwaystransparent = yes }}
-text_single = {{ visible = "[{running}]" position = {{ 58 52 }} size = {{ 350 20 }} autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_LOCKED" align = nobaseline|left alwaystransparent = yes }}
-}}''']
+            out.append(f'icon = {{ visible = "[{show}]" position = {{ 10 5 }} size = {{ 32 32 }} texture = "{data[side + "_icon"]}" alwaystransparent = yes }}')
+    out += [f'''text_single = {{ position = {{ 52 9 }} size = {{ 374 24 }} autoresize = no fontsize = 17 raw_text = "{route(f'TV_WONDER_RITUAL_NAME_{n}_')}" align = nobaseline|left alwaystransparent = yes }}
+}}''', supporting_estates(n), '}']
     return '\n'.join(out)
 
 
@@ -102,32 +98,43 @@ progresstexture = "gfx/interface/progressbars/progress_bar_blue_alt.dds"
 noprogresstexture = "gfx/interface/progressbars/slider_default_bg.dds"
 value = "[Max_float(FixedPointToFloat({position}.GetValue), '(float)0')]" }}
 widget = {{ position = {{ 218 4 }} size = {{ 2 16 }} background = {{ using = color_white_texture alpha = 0.7 }} }}
-text_single = {{ visible = "[EqualTo_CFixedPoint({direction}.GetValue, '(CFixedPoint)-1.0')]" size = {{ 216 24 }} raw_text = "#Y ←#!" align = nobaseline|right }}
-text_single = {{ visible = "[EqualTo_CFixedPoint({direction}.GetValue, '(CFixedPoint)1.0')]" position = {{ 222 0 }} size = {{ 216 24 }} raw_text = "#Y →#!" align = nobaseline|left }}
+text_single = {{ visible = "[EqualTo_CFixedPoint({direction}.GetValue, '(CFixedPoint)-1.0')]" size = {{ 216 24 }} autoresize = no raw_text = "#Y ←#!" align = nobaseline|right }}
+text_single = {{ visible = "[EqualTo_CFixedPoint({direction}.GetValue, '(CFixedPoint)1.0')]" position = {{ 222 0 }} size = {{ 216 24 }} autoresize = no raw_text = "#Y →#!" align = nobaseline|left }}
 }}''']
     return '\n'.join(out)
 
 
-def estate_cards():
-    out = ['dynamicgridbox = { layoutpolicy_horizontal = expanding size = { 438 -1 } maximumsize = { 438 -1 } flipdirection = yes datamodel_wrap = 2 spacing = 6 ignoreinvisible = yes']
+def supporter_tooltip(estate):
+    reasons = []
+    for source, label in ((1, 'LOCATION'), (2, 'HISTORICAL'), (3, 'RANDOM')):
+        reasons.append(f'''TooltipTextBlock = {{
+visible = "[{equals(f'tv_wonder_estate_pref_source_{estate}', source)}]"
+blockoverride "text" {{ text = "TV_WONDER_RITUAL_SUPPORT_REASON_{label}" }}
+}}''')
+    return f'''tooltipwidget = {{ ContextualTooltipType = {{
+blockoverride "title_icon_texture" {{ texture = "gfx/interface/icons/estates/{estate}.dds" }}
+blockoverride "title_text" {{ text = "TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE" }}
+blockoverride "concept_link" {{ visible = no }}
+blockoverride "tooltip_content" {{
+{chr(10).join(reasons)}
+}}
+}} }}'''
+
+
+def supporting_estates(style):
+    # At most seven icons fit in one row; hidden estates leave no gaps.
+    # Native flowcontainer supports spacing, unlike dynamicgridbox.
+    out = [f'''flowcontainer = {{ name = "tv_wonder_ritual_supporters_{style}"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking size = {{ 438 -1 }} maximumsize = {{ 438 -1 }}
+direction = horizontal wrap_count = 7 spacing = 10 margin = {{ 10 0 }} ignoreinvisible = yes''']
     for estate in ESTATES:
         pref = variable(f'tv_wonder_estate_pref_{estate}')
-        support = f"EqualTo_CFixedPoint({pref}.GetValue, {variable('tv_wonder_ritual_choice')}.GetValue)"
-        out += [f'''tv_wonder_ritual_estate_card = {{ visible = "[{pref}.IsSet]"
+        support = f"And({pref}.IsSet, {equals(f'tv_wonder_estate_pref_{estate}', style)})"
+        out.append(f'''tv_wonder_ritual_supporter = {{ name = "{estate}" visible = "[{support}]"
+datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('{estate}')]"
 blockoverride "estate_icon" {{ texture = "gfx/interface/icons/estates/{estate}.dds" }}
-blockoverride "estate_name" {{ text = "{estate}" }}
-blockoverride "reaction_tint" {{
-widget = {{ visible = "[{support}]" size = {{ 3 68 }} background = {{ using = color_market_green_texture }} }}
-widget = {{ visible = "[Not({support})]" size = {{ 3 68 }} background = {{ using = color_mid_red_texture }} }}
-}}
-blockoverride "estate_reaction" {{
-text_single = {{ visible = "[{support}]" position = {{ 48 28 }} size = {{ 158 20 }} autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_SUPPORT" align = nobaseline|left }}
-text_single = {{ visible = "[Not({support})]" position = {{ 48 28 }} size = {{ 158 20 }} autoresize = no fontsize = 13 text = "TV_WONDER_RITUAL_OPPOSE" align = nobaseline|left }}
-}}
-blockoverride "estate_reason" {{''']
-        for source, label in ((1, 'LOCATION'), (2, 'HISTORICAL'), (3, 'RANDOM')):
-            out.append(f'text_single = {{ visible = "[{equals(f"tv_wonder_estate_pref_source_{estate}", source)}]" position = {{ 8 48 }} size = {{ 200 18 }} autoresize = no fontsize = 12 text = "TV_WONDER_RITUAL_REASON_{label}" align = nobaseline|left }}')
-        out.append('} }')
+{supporter_tooltip(estate)}
+}}''')
     return '\n'.join(out + ['}'])
 
 
@@ -145,7 +152,7 @@ def ritual_card(mechanics):
 {text('TV_WONDER_RERITUAL_BANNER', width=282, size=14)}
 {button('tv_wonder_ritual_cancel_reritual', 'TV_WONDER_RITUAL_CANCEL_SHORT', pending, width=150)} }}''')
     for n in (1, 2, 3):
-        out.append(style_row(n, mechanics, pending, running))
+        out.append(style_row(n, mechanics, pending))
     out.append(f'''widget = {{ visible = "[And({pending}, Not({reritual}))]" size = {{ 438 58 }}
 {button('tv_wonder_ritual_preview_plain', '', width=438, height=58)}
 widget = {{ size = {{ 438 58 }} alwaystransparent = yes background = {{ using = color_black_texture alpha = 0.3 }} }}
@@ -166,8 +173,7 @@ onclick = "[GetVariableSystem.Toggle('tv_wonder_ritual_details_open')]" }''', '}
     out += [text('#F ' + route('TV_WONDER_RITUAL_DESC_', dynamic_style=True) + '#!', raw=True, size=14),
             section('TV_WONDER_RITUAL_SECTION_EFFECTS'),
             text("[ShowScriptedEffectForScope('tv_wonder_ritual_apply_choice_effect',InternationalOrganizationsView.GetPlayer.MakeScope.Self)]", raw=True, size=14),
-            section('TV_WONDER_RITUAL_SECTION_VALUES'), value_axis(mechanics),
-            section('TV_WONDER_RITUAL_ESTATES_PENDING'), estate_cards(), '}']
+            section('TV_WONDER_RITUAL_SECTION_VALUES'), value_axis(mechanics), '}']
     out.append(text('TV_WONDER_RITUAL_PLAIN_DETAIL', f'And({pending}, {plain})', size=14))
     out.append(f'vbox = {{ visible = "[{pending}]" layoutpolicy_horizontal = expanding ignoreinvisible = yes spacing = 6')
     out += [section('TV_WONDER_RITUAL_SECTION_TERMS'), text('TV_WONDER_RITUAL_TERMS', f"And(Not({plain}), Not({variable('tv_wonder_cmm_skip_ceremony')}.IsSet))", size=14),

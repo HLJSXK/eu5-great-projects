@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>组织和物流 · 面板设计稿</title>
+<style>
+:root{--ink:#e8e2d0;--dim:#9a97a8;--gold:#c9a24a;--gold2:#8a6f2f;--navy:#1a1c33;--navy2:#23264a;--navy3:#12132a;
+--teal:#2fb7d6;--teal2:#0e6f8a;--good:#7ec97e;--warn:#e0b34a;--bad:#d9674f;}
+*{box-sizing:border-box}
+body{margin:0;background:#0b0b14;color:var(--ink);font:13px/1.45 "Microsoft YaHei",sans-serif;padding:28px;display:flex;gap:32px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+.panel{width:540px;background:linear-gradient(#202342,#171934);border:2px solid var(--gold2);box-shadow:0 0 0 1px #000,0 8px 30px #000a;padding:8px}
+.state{width:540px;margin-bottom:10px;font-size:12px;color:var(--dim)}
+h1{font-size:14px;margin:0 0 6px;color:var(--gold)}
+.title{display:flex;align-items:center;justify-content:center;gap:8px;height:42px;border:1px solid var(--gold2);background:var(--navy3);font-size:16px;position:relative;margin-bottom:8px}
+.title .q{position:absolute;right:8px;width:26px;height:26px;border:1px solid var(--gold);color:var(--gold);text-align:center;line-height:24px;background:#2a2b4a}
+.card{background:var(--navy);border:1px solid #3a3c63;margin-bottom:8px}
+.sub{display:flex;align-items:center;justify-content:space-between;padding:6px 10px;background:var(--navy3);border-bottom:1px solid #3a3c63}
+.sub b{font-size:14px;color:var(--ink)} .sub .tag{font-size:11px;color:var(--dim)}
+.body{padding:10px}
+.hero{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.ico{width:46px;height:46px;border:1px solid var(--gold2);background:#0d0e1f;display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}
+.big{font-size:24px;color:#fff;line-height:1} .big small{font-size:12px;color:var(--dim)}
+.lbl{font-size:11px;color:var(--dim)}
+.grow{flex:1}
+.bar{height:14px;background:#0d0e1c;border:1px solid #000;position:relative;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(#37c4e6,#0e6f8a)}
+.bar i.w{background:linear-gradient(#f0c75e,#a07a1d)} .bar i.b{background:linear-gradient(#e6836c,#8f2f1f)}
+.bar u{position:absolute;top:0;bottom:0;width:2px;background:#fff9}
+.bar span{position:absolute;inset:0;text-align:center;font-size:10px;line-height:13px;text-shadow:0 0 3px #000}
+.ticks{display:flex;justify-content:space-between;font-size:10px;color:var(--dim);margin-top:2px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:10px 0}
+.stat{background:var(--navy3);border:1px solid #33355a;padding:6px 8px}
+.stat .v{font-size:16px;color:#fff} .stat .v.g{color:var(--good)} .stat .v.w{color:var(--warn)} .stat .v.b{color:var(--bad)}
+.row{display:flex;align-items:center;gap:8px;margin:6px 0}
+.row .n{width:78px;color:var(--dim);font-size:12px;flex:none} .row .r{width:74px;text-align:right;flex:none}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.chip{border:1px solid #3a3c63;background:#10112a;padding:2px 6px;font-size:11px;color:var(--dim)}
+.chip.on{border-color:var(--gold);color:var(--gold);background:#2a2412}
+.chip.dis{opacity:.45}
+.goods{display:flex;gap:6px;margin-top:6px}
+.g1{flex:1;background:var(--navy3);border:1px solid #33355a;padding:5px 7px}
+.g1 .top{display:flex;justify-content:space-between;font-size:12px}
+.mt{background:var(--navy3);border:1px solid #33355a;padding:6px 8px;margin-top:4px}
+.mh{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
+.mtab{width:100%;border-collapse:collapse;font-size:12px}
+.mtab td{padding:2px 4px;text-align:right} .mtab td:first-child{text-align:left}
+.mtab .th td{color:var(--dim);font-size:11px;border-bottom:1px solid #2c2e50}
+.mtab .tot td{border-top:1px solid #2c2e50;color:#fff;font-size:13px;padding-top:4px}
+.mtab .bad{color:var(--bad)} .mtab .warnc{color:var(--warn)}
+.prem{display:flex;justify-content:space-between;align-items:center;margin-top:6px;padding:4px 8px;background:#2d1712;border-left:3px solid var(--bad);font-size:12px}
+.prem b{color:var(--bad)}
+.bar.split{display:flex}.bar.split i{width:auto;background:linear-gradient(#f0c75e,#a07a1d)}
+.bar.split em{display:block;height:100%;background:repeating-linear-gradient(45deg,#e6836c,#e6836c 4px,#8f2f1f 4px,#8f2f1f 8px)}
+.bad2{color:var(--bad);font-weight:bold}
+.tags{display:flex;gap:6px;justify-content:flex-end;margin-top:5px}
+.pt{font-size:11px;padding:1px 7px;border:1px solid #3a3c63;background:#10112a}
+.pt.hi{color:var(--bad);border-color:var(--bad)} .pt.mid{color:var(--warn);border-color:var(--warn)}
+.btn{height:32px;margin-top:8px;border:1px solid var(--gold2);background:linear-gradient(#143c5c,#0a2238);text-align:center;line-height:30px;color:#fff}
+.btn.off{filter:grayscale(.8);opacity:.6}
+.flow{display:flex;align-items:stretch;gap:4px;font-size:12px}
+.flow>div{flex:1;background:var(--navy3);border:1px solid #33355a;padding:6px;text-align:center}
+.flow .op{flex:none;width:14px;border:0;background:none;padding:0;align-self:center;color:var(--dim)}
+.flow .v{font-size:15px;color:#fff} .flow .bot{border-color:var(--warn);box-shadow:inset 0 0 0 1px #e0b34a55}
+.flow .bot .v{color:var(--warn)}
+.diag{padding:7px 10px;border-left:3px solid var(--warn);background:#2a2412;font-size:12px}
+.diag.ok{border-color:var(--good);background:#142a1a}
+.diag.bad{border-color:var(--bad);background:#2d1712}
+.note{width:400px;font-size:12px;color:#c9c6d6}
+.note h2{font-size:13px;color:var(--gold);margin:14px 0 4px} .note table{border-collapse:collapse;width:100%}
+.note td,.note th{border:1px solid #2c2e50;padding:3px 6px;text-align:left;vertical-align:top} .note th{color:var(--gold);background:#14152b}
+code{color:#8fd3e8}
+</style></head><body>
+
+<div>
+<div class="state">状态 A：已勘测，营地运转中，建材略紧（瓶颈 = 建材）</div>
+<div class="panel">
+ <div class="title">🌿 组织和物流<div class="q">?</div></div>
+
+ <!-- ORGANIZATION -->
+ <div class="card">
+  <div class="sub"><b>🏛 组织</b><span class="tag">读数 62 ／ 决定营地规模</span></div>
+  <div class="body">
+   <div class="hero">
+    <div class="ico">⛺</div>
+    <div class="grow">
+     <div class="row" style="margin:0"><span class="big">7 <small>/ 12 级劳工营</small></span><span class="grow"></span><span class="lbl">组织 ÷ 5 = 12（上限 20）</span></div>
+     <div class="bar" style="margin-top:6px"><i style="width:58%"></i><u style="left:100%"></u><span>7 / 12</span></div>
+     <div class="ticks"><span>0</span><span>5</span><span>10</span><span>15</span><span>20</span></div>
+    </div>
+   </div>
+   <div class="grid">
+    <div class="stat"><div class="lbl">劳工就业</div><div class="v w">86%</div><div class="lbl">缺 140 名劳工</div></div>
+    <div class="stat"><div class="lbl">有效等级</div><div class="v">6.0</div><div class="lbl">7 级 × 86%</div></div>
+    <div class="stat"><div class="lbl">月进度（营地）</div><div class="v g">+6,000</div><div class="lbl">每有效级 1,000</div></div>
+   </div>
+   <div class="mt">
+    <div class="mh"><span>💰 月维护</span><span class="bad2">▲ 比基准多花 57 金</span></div>
+    <div class="bar split"><i style="width:76%"></i><em style="width:24%"></em><span>232 金 / 月</span></div>
+    <div class="tags"><span class="pt hi">🔨 工具 ▲45%</span><span class="pt mid">📦 建材 ▲24%</span></div>
+   </div>
+   <div class="btn">🔨 建设工地（7 / 12）</div>
+  </div>
+ </div>
+
+ <!-- LOGISTICS -->
+ <div class="card">
+  <div class="sub"><b>🪵 物流</b><span class="tag">读数 48 ／ 决定速度与建材</span></div>
+  <div class="body">
+   <div class="hero">
+    <div class="ico">🧱</div>
+    <div class="grow">
+     <div class="row" style="margin:0"><span class="big">98% <small>后勤乘数</small></span><span class="grow"></span><span class="lbl">50% + 读数 48</span></div>
+     <div class="bar" style="margin-top:6px"><i style="width:48%"></i><u style="left:50%"></u><span></span></div>
+     <div class="ticks"><span>50%</span><span>100%</span><span>150%</span></div>
+    </div>
+   </div>
+
+   <div class="row"><span class="n">建材产能</span><div class="grow"><div class="bar"><i style="width:64%"></i><span>工坊 3.2 / 需求 5.0</span></div></div><span class="r lbl">64%</span></div>
+   <div class="goods">
+    <div class="g1"><div class="top"><span>🔨 工具</span><span style="color:var(--good)">供需 1.12</span></div><div class="bar"><i style="width:100%"></i></div></div>
+    <div class="g1"><div class="top"><span>📦 建材</span><span style="color:var(--warn)">供需 0.68</span></div><div class="bar"><i class="w" style="width:68%"></i></div></div>
+   </div>
+   <div class="row" style="margin-top:8px"><span class="n">当前工艺</span><div class="chips" style="margin:0">
+     <span class="chip on">夯土 ×2</span><span class="chip on">木构 ×1</span><span class="chip dis">烧砖</span><span class="chip dis">石材精加工</span><span class="chip dis">标准化构件</span><span class="chip dis">+3</span></div></div>
+   <div class="lbl" style="margin-top:4px">8 种工艺，每种产出 1.00 建材；夯土 / 木构 / 烧砖无需外购工具。</div>
+   <div class="btn">🪵 建设建材工坊</div>
+  </div>
+ </div>
+
+ <!-- SUMMARY -->
+ <div class="card">
+  <div class="sub"><b>⚙ 每月进度结算</b><span class="tag">四项相乘，最弱者即瓶颈</span></div>
+  <div class="body">
+   <div class="flow">
+    <div><div class="lbl">营地</div><div class="v">6,000</div><div class="lbl">有效 6.0 级</div></div><div class="op">×</div>
+    <div><div class="lbl">后勤</div><div class="v">98%</div><div class="lbl">读数 48</div></div><div class="op">×</div>
+    <div class="bot"><div class="lbl">建材供应</div><div class="v">84%</div><div class="lbl">缺口 −16%</div></div><div class="op">=</div>
+    <div><div class="lbl">本月进度</div><div class="v" style="color:var(--teal)">4,940</div><div class="lbl">≈ 1.4 月 / 千</div></div>
+   </div>
+   <div class="diag" style="margin-top:8px">⚠ 瓶颈：<b>建材不足</b>，吞吐 −16%。再建 <b>1 座建材工坊</b>即可补平，每月约 +940 进度。</div>
+  </div>
+ </div>
+</div>
+</div>
+
+<div>
+<div class="state">状态 B：未勘测（锁定）／ 状态 C：满配</div>
+<div class="panel">
+ <div class="title">🌿 组织和物流<div class="q">?</div></div>
+ <div class="card"><div class="sub"><b>🏛 组织</b><span class="tag">读数 —</span></div>
+  <div class="body"><div class="hero"><div class="ico" style="opacity:.5">⛺</div><div class="grow"><div class="big" style="color:var(--dim)">— <small>/ — 级劳工营</small></div><div class="bar" style="margin-top:6px"><span>未勘测</span></div></div></div>
+  <div class="diag">🔒 你必须先完成<b>勘测</b>，才能进行组织和物流。</div><div class="btn off">🔨 建设工地</div></div></div>
+
+ <div class="card"><div class="sub"><b>⚙ 每月进度结算</b><span class="tag">满配示例</span></div>
+  <div class="body"><div class="flow">
+    <div><div class="lbl">营地</div><div class="v">20,000</div><div class="lbl">20 / 20 级</div></div><div class="op">×</div>
+    <div><div class="lbl">后勤</div><div class="v">150%</div><div class="lbl">读数 100</div></div><div class="op">×</div>
+    <div><div class="lbl">建材供应</div><div class="v">100%</div><div class="lbl">无缺口</div></div><div class="op">=</div>
+    <div><div class="lbl">本月进度</div><div class="v" style="color:var(--teal)">30,000</div><div class="lbl">&nbsp;</div></div></div>
+   <div class="diag ok" style="margin-top:8px">✔ 无瓶颈。组织与后勤均已拉满，再投入不会提速。</div></div></div>
+
+ <div class="note">
+ <h2>设计要点</h2>
+ <p>现状只有两条无标签进度条，玩家看不出“为什么慢”。新稿把两块分别改成「读数 → 上限/乘数 → 现状 → 缺口」四层，并在底部加一条结算链路直接点名瓶颈。</p>
+ <h2>数据绑定（沿用现有机制，无新玩法）</h2>
+ <table>
+ <tr><th>控件</th><th>来源</th></tr>
+ <tr><td>组织读数 / 营地上限</td><td>组织能力 ÷ 5，封顶 20</td></tr>
+ <tr><td>营地级数 / 上限</td><td>工地建筑等级 vs 上限（原进度条）</td></tr>
+ <tr><td>劳工就业</td><td>就业率；<code>TV_WONDER_LABOR_SHORTAGE_CONSTRUCTION_PROGRESS</code></td></tr>
+ <tr><td>月进度（营地）</td><td>有效级 × 1000</td></tr>
+ <tr><td>月维护条</td><td>金色段 = 按基准价算的维护费；红斜纹段 = 市价高出基准的部分；整条 = 本地市场实价下的月维护。悬停显示每种物资的用量、市价、基准价</td></tr>
+ <tr><td>价格标签</td><td>各物资市价相对基准的涨幅；≤ +10% 不显示，+10%~+30% 琥珀，&gt; +30% 红。价格不高于基准时红段与标签整体隐藏</td></tr>
+ <tr><td>后勤乘数</td><td>50% + 后勤读数 (50–150%)</td></tr>
+ <tr><td>建材产能条</td><td>有效工坊 / 工地所需产能（原进度条）</td></tr>
+ <tr><td>工具 / 建材供需</td><td>本地市场供需比，缺货时拉低效率</td></tr>
+ <tr><td>当前工艺</td><td>工坊 8 种生产方式，高亮正在使用者</td></tr>
+ <tr><td>建材供应 %</td><td><code>TV_WONDER_MATERIAL_INPUT_SHORTAGE_CONSTRUCTION_PROGRESS</code></td></tr>
+ </table>
+ <h2>交互</h2>
+ <p>读数、各条进度、结算链路每项悬停出公式拆解；瓶颈格以琥珀色描边，满配转绿；工地 / 工坊按钮在达到上限时变灰并提示“已达组织上限”；未勘测整张锁定。</p>
+ <p>月维护表的市价按偏离基准着色：≤ +10% 白，+10%~+30% 琥珀，&gt; +30% 红。悬停单行可看该物资的供需与价格走势，引导玩家去贸易或调整工坊工艺。</p>
+ <h2>待你确认的取舍</h2>
+ <p>“工艺 chips”和“瓶颈诊断建议句”是新增信息量最大的两块，若 GUI 动态列表成本高，可先砍掉 chips，保留其余。</p>
+ </div>
+</div>
+</body></html>

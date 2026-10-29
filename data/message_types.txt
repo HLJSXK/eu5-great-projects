@@ -353,3 +353,49 @@ PERFORM_tv_wonder_ritual_cancel_reritual_ACTION={
 	pausepopup=no
 	message_category = society
 }
+
+PERFORM_tv_wonder_location_reritual_1_ACTION={
+	log=yes
+	onmap=no
+	popup=no
+	idle=no
+	option=yes
+	pausepopup=no
+	message_category = society
+}
+PERFORM_tv_wonder_location_reritual_2_ACTION={
+	log=yes
+	onmap=no
+	popup=no
+	idle=no
+	option=yes
+	pausepopup=no
+	message_category = society
+}
+PERFORM_tv_wonder_location_reritual_3_ACTION={
+	log=yes
+	onmap=no
+	popup=no
+	idle=no
+	option=yes
+	pausepopup=no
+	message_category = society
+}
+PERFORM_tv_wonder_location_reritual_4_ACTION={
+	log=yes
+	onmap=no
+	popup=no
+	idle=no
+	option=yes
+	pausepopup=no
+	message_category = society
+}
+PERFORM_tv_wonder_location_reritual_5_ACTION={
+	log=yes
+	onmap=no
+	popup=no
+	idle=no
+	option=yes
+	pausepopup=no
+	message_category = society
+}

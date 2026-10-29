@@ -13,6 +13,10 @@ content, or wiring any `game_concept` into a curated (as opposed to search/link-
 主模组、生成片段和 Prosper or Perish 兼容覆盖必须采用同一范围。
 本决定只删除百科卡片，不删除其他奇观的玩法、图像、概念或游戏内提示。
 
+2026-10-29 页签调整：依次为 **全部、入门、完整机制、独特工程、通用工程**。
+现有 17 张卡片全部归入“完整机制”，其余四页暂时留空，“全部”暂不聚合内容。
+首次打开默认选中“完整机制”；保留原有 filter id，`overview` 对应“入门”。
+
 **缩减不仅因为加载期卡死；原本的全量展开设计本身也不好。** 将相同的机制解释、等级效果、
 选址说明和三种仪式结构重复铺在 195 张大卡片中，造成大量重复文字、冗长滚动和信息噪声，
 让机制教学与逐个奇观的数据展示混在一起，难以阅读和定位。百科应集中讲清通用机制，
@@ -42,7 +46,7 @@ content, or wiring any `game_concept` into a curated (as opposed to search/link-
    gets `onclick = "[GetVariableSystem.Clear('<var>')]"` so clicking back into a real page exits the
    custom view. `src/in_game/gui/encyclopedia_lateralview.gui` implements this with
    `tv_encyclopedia_active` (tab toggle) and `tv_encyclopedia_filter` (all/overview/mechanics/
-   generic/unique filter buttons within the tab).
+   unique/generic filter buttons within the tab).
 
 3. Preserve vanilla's `default_format = "#yellow_titles"` exactly on card titles.
    The reference mod's own copy of this line dropped the leading `#` (`"yellow_titles"`) — a
@@ -97,9 +101,9 @@ content, or wiring any `game_concept` into a curated (as opposed to search/link-
      takes one argument.
      `tests/test_wonder_ritual_rework.py::test_encyclopedia_gui_expressions_match_engine_arity`
      checks the whole panel for this.
-   - The filter variable does not exist until a filter button is pressed, so every card guard must
-     also accept the unset case (`Not(GetVariableSystem.Exists('tv_encyclopedia_filter'))`), or the
-     tab opens empty on first visit.
+   - The filter variable does not exist until a filter button is pressed. The mechanics button
+     and its cards accept the unset case (`Not(GetVariableSystem.Exists('tv_encyclopedia_filter'))`)
+     so the first visit selects Complete Mechanics. Other tabs match only their own value.
 
 8. **`encyclopedia_lateralview.gui` full-file-override conflicts with other Workshop mods.**
    EU5's Jomini GUI loader replaces a `.gui` file wholesale per relative path — it does not

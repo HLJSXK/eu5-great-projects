@@ -224,6 +224,129 @@ def test_plain_preview_only_selects_and_has_all_five_message_fields():
         assert all(loc[f'{registration}_{suffix}'] for suffix in ('HEADER', 'TITLE', 'SETUP', 'LOG', 'MAP'))
 
 
+@pytest.mark.parametrize('language', ['english', 'simp_chinese'])
+def test_generated_ritual_localization_has_one_owner_per_key(language):
+    from scripts_engineering_department.wonder_localization_lib import (
+        engineering_department_wonder_mechanics_localization_map,
+        load_wonder_localization_data,
+    )
+    from scripts_engineering_department.wonder_ritual_codegen import message_localization
+
+    # Compare freshly generated content so stale output files cannot hide a
+    # collision that reappears when the full generation pipeline runs.
+    localization = load_wonder_localization_data()
+    mechanics = engineering_department_wonder_mechanics_localization_map(language, localization[language])
+    messages = message_localization(language, localization)
+    message_keys = re.findall(r'(?m)^ ([A-Za-z0-9_.]+):0 ', messages)
+    assert len(message_keys) == len(set(message_keys))
+    assert not set(mechanics).intersection(message_keys)
+    assert message_keys.count('TV_LOCATION_WONDER_RERITUAL_TARGET_TT') == 1
+
+
+def test_gallery_rededication_actions_bind_exact_slots_and_register_all_messages():
+    from scripts_engineering_department.wonder_localization_lib import load_localization_map
+    from scripts_engineering_department.in_game.gui.gen_location_window import render_wonder_menu_types
+    actions = source_blocks('common/generic_actions/tv_wonder_ritual_actions.txt')
+    ai = source_blocks('common/generic_action_ai_lists/tv_engineering_department_list.txt')
+    members = child(ai['tv_engineering_department_list'], 'actions').children
+    policy = (ROOT / 'src/main_menu/gui/messagetypes/tv_engineering_department_messagetypes.txt').read_text(encoding='utf-8-sig')
+    gui = render_wonder_menu_types()
+    for slot in range(1, 6):
+        name = f'tv_wonder_location_reritual_{slot}'
+        action = actions[name]
+        # Like vanilla set_province_capital: an own-country operation with a
+        # GUI-supplied location target. type=location requires a recipient.
+        assert child(action, 'type').value == 'owncountry'
+        assert not contains(action, 'select_trigger')
+        assert contains(action, 'ai_tick', 'never')
+        assert contains(members, name)
+        assert f'PERFORM_{name}_ACTION=' in policy
+        for section in ('allow', 'effect'):
+            body = child(action, section).children
+            assert contains(body, 'tv_wonder_location_reritual_actor_trigger', 'yes')
+            guard = next(n for n in walk(body) if n.key == 'tv_wonder_location_reritual_target_trigger')
+            assert child(guard.children, 'slot').value == str(slot)
+        assignments = {child(n.children, 'name').value: child(n.children, 'value')
+                       for n in walk(child(action, 'effect').children) if n.key == 'set_variable'}
+        assert assignments['tv_wonder_reritual_pending_site'].value == 'scope:target'
+        assert child(assignments['tv_wonder_location_reritual_pending_id'].children, 'value').value == f'scope:target.var:tv_wonder_tooltip_slot_{slot}_id'
+        assert f'action_name = "{name}"' in gui
+        for path in (ROOT / 'src/main_menu/localization').glob('*/tv_wonder_ritual_messages_l_*.yml'):
+            assert path.read_bytes().startswith(b'\xef\xbb\xbf')
+            loc = load_localization_map(path)
+            assert loc[name] and loc[name + '_desc']
+            for suffix in ('HEADER', 'TITLE', 'SETUP', 'LOG', 'MAP'):
+                value = loc[f'PERFORM_{name}_ACTION_{suffix}']
+                assert value and '$' not in value
+    # Match vanilla location_window.gui's set_province_capital action: pass the
+    # typed Location directly, not a generic Scope wrapper at this UI boundary.
+    assert gui.count('parameter_name = "target" parameter_value = "[LocationView.GetLocation]"') == 5
+
+
+def test_gallery_target_accepts_initial_plain_wonders_without_conception_or_ritual_state(data):
+    triggers = source_blocks('common/scripted_triggers/tv_wonder_ritual_triggers.txt')
+    target = child(triggers['tv_wonder_location_reritual_target_trigger'], 'custom_tooltip').children
+    assert [(n.key, n.op, n.value) for n in target if n.key == 'owner'] == [('owner', '?=', 'scope:actor')]
+    candidates = child(target, 'OR').children
+    expected = {str(w['id']): w['final_building'] for w in data[0]}
+    actual = {}
+    for candidate in candidates:
+        assert candidate.key == 'AND'
+        # Only the card identity and a completed building matter. In particular,
+        # neither an initial/plain wonder nor the separate failed conception
+        # prerequisite may fail this location condition.
+        assert {n.key for n in candidate.children} == {
+            'var:tv_wonder_tooltip_slot_$slot$_id', 'has_building_with_at_least_one_level'}
+        ident = child(candidate.children, 'var:tv_wonder_tooltip_slot_$slot$_id')
+        assert ident.op == '?='
+        actual[ident.value] = child(candidate.children, 'has_building_with_at_least_one_level').value
+    assert actual == expected
+    # The user's 1337-04-01 autosave: Jerusalem, slots 1/2, both level 1,
+    # no ritual style or memory. Assert both existing building identities.
+    assert actual['140'] == 'tv_wonder_unique_jerusalem_holy_city_inaugurated'
+    assert actual['103'] == 'tv_wonder_unique_dome_of_the_rock_inaugurated'
+    actor = triggers['tv_wonder_location_reritual_actor_trigger']
+    assert contains(actor, 'has_variable', 'tv_wonder_concept_in_progress')
+
+
+def test_gallery_rededication_rechecks_site_revokes_only_selected_wonder_and_preserves_level(data):
+    phase = source_blocks('common/scripted_effects/tv_wonder_ritual_phase_effects.txt')
+    lock = phase['tv_wonder_location_reritual_lock_effect']
+    guarded = child(lock, 'if').children
+    limit = child(guarded, 'limit').children
+    assert contains(limit, 'has_variable', 'tv_engineering_department_member')
+    assert contains(limit, 'var:tv_wonder_stage', '0')
+    assert contains(limit, 'has_variable', 'tv_wonder_concept_in_progress')
+    # A stale slot, demolition, ownership transfer or a second copy must never
+    # redirect the click to another instance, mutate levels, or grant rewards.
+    keys = {n.key for n in walk(lock)}
+    assert not {'ordered_owned_location', 'every_owned_location', 'random_owned_location',
+                'location:', 'change_building_level_in_location', 'destroy_building',
+                'tv_wonder_ritual_apply_choice_effect', 'pay_price'} & keys
+    branches = [n.children for n in guarded if n.key == 'if']
+    assert len(branches) == len(data[0])
+    for wonder, branch in zip(data[0], branches):
+        assert contains(child(branch, 'limit').children, 'var:tv_wonder_location_reritual_pending_id', str(wonder['id']))
+        site = child(branch, 'var:tv_wonder_reritual_pending_site').children
+        effects = child(site, 'if').children
+        check = child(effects, 'limit').children
+        assert contains(check, 'owner', 'scope:tv_wonder_reritual_owner')
+        assert contains(check, 'has_building_with_at_least_one_level', wonder['final_building'])
+        assert effects[1].key == f"tv_wonder_{wonder['key']}_ritual_revoke_effect"
+        assert contains(effects, 'tv_wonder_ritual_enter_phase_effect', 'yes')
+        values = [(child(n.children, 'name').value, child(n.children, 'value').value)
+                  for n in walk(effects) if n.key == 'set_variable']
+        assert ('tv_wonder_project_mode', '3') in values
+        assert ('tv_wonder_stage', '4') in values
+        assert {value for name, value in values if name == 'tv_wonder_level'} == set('123456')
+    assert contains(lock, 'remove_variable', 'tv_wonder_reritual_pending_site')
+    assert contains(lock, 'remove_variable', 'tv_wonder_location_reritual_pending_id')
+    events = source_blocks('events/tv_wonder_ritual_lifecycle_events.txt')
+    assert contains(events['tv_engineering_department.2005'], 'hidden', 'yes')
+    assert contains(child(events['tv_engineering_department.2005'], 'immediate').children,
+                    'tv_wonder_location_reritual_lock_effect', 'yes')
+
+
 def test_memory_token_guards_stale_expiry_and_sync_keeps_other_instances():
     effects = source_blocks('common/scripted_effects/tv_wonder_ritual_state_effects.txt')
     grant = effects['tv_wonder_sacred_mountain_ritual_2_grant_effect']

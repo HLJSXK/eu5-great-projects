@@ -463,6 +463,7 @@ This is an index only. Use `scripts/ai_context.py` for task-relevant summaries o
 | `gui_renderer_font_default_overwrites_explicit_size` | advisory | gui | any |
 | `script_profiler_capture_not_reset_by_restart` | advisory | workflow | any |
 | `scripted_effect_braced_trigger_argument` | needs_parser | script | any |
+| `gui_dynamicgridbox_spacing_unsupported` | advisory | gui | any |
 | `gui_renderer_unknown_widget_silently_dropped` | advisory | gui | any |
 | `card_common_list_missing_fixed_vertical_size_overlaps_in_vbox` | advisory | gui | any |
 | `card_common_shrinking_height_chain_broken_by_one_fixed_height_wrapper` | advisory | gui | any |
@@ -509,10 +510,10 @@ This is an index only. Use `scripts/ai_context.py` for task-relevant summaries o
 | Category | Count | Index File |
 | --- | --- | --- |
 | GUI Icons | 381 | `data/index/icons.txt` |
-| Scripted Triggers | 3638 | `data/index/scripted_triggers.txt` |
-| Scripted Effects | 5534 | `data/index/scripted_effects.txt` |
+| Scripted Triggers | 3640 | `data/index/scripted_triggers.txt` |
+| Scripted Effects | 5535 | `data/index/scripted_effects.txt` |
 | Static Modifiers | 2676 | `data/index/static_modifiers.txt` |
-| English Loc Keys | 16238 | `data/index/loc_keys_en.txt` |
+| English Loc Keys | 16252 | `data/index/loc_keys_en.txt` |
 
 ## Codegen Script Map
 

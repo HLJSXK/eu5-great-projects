@@ -5,6 +5,7 @@ from wonder_mechanics.render import loc_line, variable_map_key_trigger
 ESTATES = ('nobles_estate', 'clergy_estate', 'burghers_estate', 'peasants_estate', 'dhimmi_estate', 'tribes_estate', 'cossacks_estate')
 STYLE_MAP = 'tv_wonder_ritual_style_by_id'
 MEMORY_MAP = 'tv_wonder_ritual_memory_by_id'
+LOCATION_RERITUAL_SLOTS = range(1, 6)
 
 
 def block(name, body):
@@ -271,6 +272,16 @@ NOT = { has_variable = tv_wonder_finalized }''')
     out += block('tv_wonder_ritual_outcome_ready_trigger', '''var:tv_wonder_stage ?= 4
 OR = { var:tv_wonder_finalization_outcome ?= 0 has_variable = tv_wonder_ritual_completed }''')
     out += block('tv_wonder_current_site_is_shell_trigger', 'OR = {\n' + '\n'.join(f'AND = {{ var:tv_wonder_locked ?= {w["id"]} var:tv_wonder_site ?= {{ has_building = building_type:tv_wonder_{w["key"]} NOT = {{ has_building = building_type:{w["final_building"]} }} }} }}' for w in wonders) + '\n}')
+    out += block('tv_wonder_location_reritual_actor_trigger', '''custom_tooltip = { text = TV_HAS_ENGINEERING_DEPARTMENT_MEMBER_TT has_variable = tv_engineering_department_member }
+custom_tooltip = { text = TV_WONDER_RERITUAL_NO_ACTIVE_PROJECT_TT var:tv_wonder_stage ?= 0 NOT = { has_variable = tv_wonder_reritual_pending_site } }
+custom_tooltip = { text = TV_WONDER_RERITUAL_CONCEPTION_TT has_variable = tv_wonder_concept_in_progress }''')
+    # The gallery supplies both the location and its slot. Validate the actual
+    # completed building, not just the display cache (which also includes shells).
+    # The native completion predicate accepts the bare building id and checks
+    # the actual location instance, including initially founded plain wonders.
+    candidates = '\n'.join(f'AND = {{ var:tv_wonder_tooltip_slot_$slot$_id ?= {w["id"]} has_building_with_at_least_one_level = {w["final_building"]} }}' for w in wonders)
+    out += block('tv_wonder_location_reritual_target_trigger',
+                 'custom_tooltip = { text = TV_LOCATION_WONDER_RERITUAL_TARGET_TT\nowner ?= scope:actor\nOR = {\n' + candidates + '\n}\n}')
     return out
 
 
@@ -280,17 +291,38 @@ def actions():
              ('tv_wonder_ritual_confirm','tv_wonder_ritual_can_confirm_trigger = yes','tv_wonder_ritual_confirm_effect = yes'),
              ('tv_wonder_ritual_choose_plain','tv_wonder_ritual_can_preview_trigger = yes NOT = { var:tv_wonder_project_mode ?= 3 }','tv_wonder_ritual_choose_plain_effect = yes'),
              ('tv_wonder_ritual_cancel_reritual','var:tv_wonder_project_mode ?= 3 tv_wonder_ritual_can_preview_trigger = yes','hidden_effect = { tv_wonder_ritual_cancel_reritual_effect = yes }')]
-    return ''.join(block(name, f'''type = owncountry
+    out = ''.join(block(name, f'''type = owncountry
 potential = {{ scope:actor = {{ has_variable = tv_engineering_department_member }} }}
 allow = {{ scope:actor = {{ {allow} }} }}
 effect = {{ scope:actor = {{ {effect} }} }}
 ai_tick = monthly
 ai_tick_frequency = 99999
 ai_will_do = {{ add = -100 }}''') for name,allow,effect in rows)
+    for slot in LOCATION_RERITUAL_SLOTS:
+        guard = f'''scope:actor = {{ tv_wonder_location_reritual_actor_trigger = yes }}
+scope:target ?= {{ tv_wonder_location_reritual_target_trigger = {{ slot = {slot} }} }}'''
+        # Match vanilla province_capital.txt: the country acts on a location
+        # supplied as target by the GUI. type=location would require recipient.
+        out += block(f'tv_wonder_location_reritual_{slot}', f'''type = owncountry
+force_click_and_confirm_or_hold = yes
+potential = {{ scope:actor = {{ has_variable = tv_engineering_department_member }} }}
+allow = {{ {guard} }}
+effect = {{ hidden_effect = {{ if = {{ limit = {{ {guard} }}
+scope:actor = {{
+set_variable = {{ name = tv_wonder_location_reritual_pending_id value = {{ value = scope:target.var:tv_wonder_tooltip_slot_{slot}_id }} }}
+set_variable = {{ name = tv_wonder_reritual_pending_site value = scope:target }}
+trigger_event_silently = {{ id = tv_engineering_department.2005 days = 0 }}
+}}
+}} }} }}
+ai_tick = never
+show_in_gui_list = no''')
+    return out
 
 
 def reritual_effects(wonders, mechanics):
     body = ['save_scope_as = tv_wonder_reritual_owner', 'remove_variable = tv_wonder_reritual_found']
+    direct = ['save_scope_as = tv_wonder_reritual_owner',
+              'save_scope_as = tv_wonder_ritual_sync_country']
     for w in wonders:
         valid = f'has_building = building_type:{w["final_building"]} NOT = {{ {has_style(w)} }}'
         level_capture = '\n'.join(
@@ -325,12 +357,27 @@ check_range_bounds = no
 {lock}
 }}'''
         body.append(f'if = {{ limit = {{ var:tv_wonder_reritual_pending_id ?= {w["id"]} }}\n{find}\n}}')
+        # This path runs only in a hidden event immediate. Never search for a
+        # different instance: two copies of a generic wonder may share an owner.
+        direct.append(f'''if = {{ limit = {{ var:tv_wonder_location_reritual_pending_id ?= {w['id']} }}
+var:tv_wonder_reritual_pending_site ?= {{
+if = {{ limit = {{ owner ?= scope:tv_wonder_reritual_owner has_building_with_at_least_one_level = {w['final_building']} }}
+tv_wonder_{w['key']}_ritual_revoke_effect = yes
+tv_wonder_mechanics_refresh_location_display_state_effect = yes
+{forgotten_plain_cache(w)}
+{lock}
+}}
+}}
+}}''')
     body.append('''if = { limit = { NOT = { has_variable = tv_wonder_reritual_found } }
 remove_from_variable_map = { name = tv_wonder_plain_level_by_wonder_id key = var:tv_wonder_reritual_pending_id }
 trigger_event_non_silently = { id = tv_engineering_department.2003 days = 1 }
 }
 remove_variable = tv_wonder_reritual_found''')
     out = block('tv_wonder_reritual_lock_effect', 'if = { limit = { var:tv_wonder_stage ?= 0 has_variable = tv_wonder_concept_in_progress has_variable = tv_wonder_reritual_pending_id }\n' + '\n'.join(body) + '\n}\nremove_variable = tv_wonder_reritual_pending_id')
+    out += block('tv_wonder_location_reritual_lock_effect',
+                 'if = { limit = { has_variable = tv_engineering_department_member var:tv_wonder_stage ?= 0 has_variable = tv_wonder_concept_in_progress has_variable = tv_wonder_location_reritual_pending_id }\n'
+                 + '\n'.join(direct) + '\n}\nremove_variable = tv_wonder_location_reritual_pending_id\nremove_variable = tv_wonder_reritual_pending_site\nremove_variable = tv_wonder_reritual_found')
     out += block('tv_wonder_reritual_finish_effect', '''if = { limit = { var:tv_wonder_project_mode ?= 3 has_variable = tv_wonder_ritual_reward_claimed }
 var:tv_wonder_site ?= { tv_wonder_mechanics_refresh_location_display_state_effect = yes }
 tv_wonder_clear_project_state_core_effect = yes
@@ -356,6 +403,7 @@ desc = TV_WONDER_RERITUAL_DESC
 outcome = neutral
 ''' + ''.join(choices) + 'option = { name = TV_WONDER_RERITUAL_LATER }'))
     out.append(block('tv_engineering_department.2002', 'type = country_event\ntitle = empty_text\ndesc = empty_text\nhidden = yes\nimmediate = { tv_wonder_reritual_lock_effect = yes }'))
+    out.append(block('tv_engineering_department.2005', 'type = country_event\ntitle = empty_text\ndesc = empty_text\nhidden = yes\nimmediate = { tv_wonder_location_reritual_lock_effect = yes }'))
     out.append(block('tv_engineering_department.2003', 'type = country_event\ntitle = TV_WONDER_RERITUAL_TITLE\ndesc = TV_WONDER_RERITUAL_STALE\noutcome = neutral\noption = { name = TV_WONDER_RITUAL_ACK }'))
     out.append(block('tv_engineering_department.2010', 'type = country_event\ntitle = TV_WONDER_RITUAL_FORGOTTEN_TITLE\ndesc = TV_WONDER_RITUAL_FORGOTTEN_DESC\noutcome = neutral\noption = { name = TV_WONDER_RITUAL_ACK }'))
     out.append(block('tv_engineering_department.2004', 'type = country_event\ntitle = empty_text\ndesc = empty_text\nhidden = yes\nimmediate = { tv_wonder_reritual_finish_effect = yes }'))
@@ -408,6 +456,13 @@ def message_localization(language, localization):
     labels = localization['simp_chinese' if language == 'simp_chinese' else 'english']
     header = '\n'.join(' ' + line for line in render_header('scripts_engineering_department/in_game/common/scripted_effects/gen_tv_wonder_ritual_state_effects.py', 'data/wonder_generic_rituals.yaml + data/wonder_localization.yaml'))
     lines = [f'l_{language}:', header]
+    lines.append(loc_line('TV_LOCATION_WONDER_RERITUAL_TARGET_TT', labels['TV_LOCATION_WONDER_RERITUAL_TARGET_TT']))
     lines.extend(loc_line(f'PERFORM_{action}_ACTION_{suffix}', labels[action])
                  for action in actions for suffix in ('HEADER', 'TITLE', 'SETUP', 'LOG', 'MAP'))
+    for slot in LOCATION_RERITUAL_SLOTS:
+        action = f'tv_wonder_location_reritual_{slot}'
+        lines.extend((loc_line(action, labels['TV_LOCATION_WONDER_RERITUAL']),
+                      loc_line(action + '_desc', labels['TV_LOCATION_WONDER_RERITUAL_DESC'])))
+        lines.extend(loc_line(f'PERFORM_{action}_ACTION_{suffix}', labels['TV_LOCATION_WONDER_RERITUAL'])
+                     for suffix in ('HEADER', 'TITLE', 'SETUP', 'LOG', 'MAP'))
     return '\n'.join(line.rstrip() for line in lines).rstrip() + '\n'

@@ -122,7 +122,7 @@ CARDS: list[dict] = [
     # ------------------------------------------------------------------ overview ----
     {
         "id": "overview",
-        "filter": "overview",
+        "filter": "mechanics",
         "icon": ICON_BOOK,
         "title": _t("Great Projects", "大工程"),
         "lead": _t(
@@ -880,15 +880,18 @@ CARDS: list[dict] = [
                     "laborers in that location, not just the building.\n"
                     "$BULLET$ #T Inputs:#! the camp buys its materials on the local market. A poor "
                     "market means an empty-handed camp. Material workshops turn ordinary construction "
-                    "goods into wonder materials, with marble and stone recipes; trade can also supply them.\n"
+                    "goods into wonder materials through eight methods, each yielding 1.00 materials. "
+                    "Earth, timber and kiln methods need no purchased tools; stone finishing and standardized "
+                    "components reward developed industries. Choose by market prices and supply, or import materials.\n"
                     "$BULLET$ #T Logistics:#! the survey reading, applied as a 50% to 150% multiplier "
                     "on whatever the above produces.",
                     "每月进度同时来自四样东西，任何一样都可能成为瓶颈：\n\n"
                     "$BULLET$ #T 劳工营：#! 每个有效等级每月提供固定进度。等级上限来自组织能力，而它每月光是"
                     "维持就要消耗 #high 工具与奇观建材#!。\n"
                     "$BULLET$ #T 就业：#! 岗位空缺的营地什么也产出不了。那个地点要有劳工，而不只是有一栋建筑。\n"
-                    "$BULLET$ #T 投入品：#! 营地在本地市场采购材料。建材工坊以大理石或石料配方将普通建造商品"
-                    "加工成奇观建材，也可以通过贸易进口。市场贫弱，营地就空着手。\n"
+                    "$BULLET$ #T 投入品：#! 营地在本地市场采购材料。建材工坊提供八种工艺，每种产出1.00份建材。"
+                    "夯土、木构和烧砖无需外购工具，石材精加工与标准化构件则发挥成熟产业的优势。"
+                    "应按市场价格与供应选择工艺，也可以通过贸易进口。市场贫弱，营地就空着手。\n"
                     "$BULLET$ #T 后勤：#! 勘测读数，以 50% 到 150% 的乘数作用在以上所有产出上。",
                 ),
             },
