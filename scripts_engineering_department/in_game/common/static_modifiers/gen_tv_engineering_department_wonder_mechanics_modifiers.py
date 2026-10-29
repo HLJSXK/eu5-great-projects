@@ -65,6 +65,9 @@ def generate() -> str:
             modifiers = wonder_base_country_modifiers(wonder, mechanics, level)
             lines.extend(modifier_block(wonder_static_display_modifier_name(wonder, level), modifiers))
             local_modifiers = merge_numeric_modifier_mappings(scale_numeric_modifier_mapping(local, level), raw_local)
+            # Omit the cultural baseline from display previews only.
+            local_modifiers = {key: value for key, value in local_modifiers.items()
+                               if key not in {"local_cultural_tradition", "local_cultural_influence"}}
             lines.extend(modifier_block(wonder_static_local_display_modifier_name(wonder, level), local_modifiers, category="location"))
         for row in ritual_styles(wonder, mechanics):
             for name, values, category in ((row["modifier"], row["country_modifier"], "country"), (row["location_modifier"], row["location_modifier_values"], "location")):

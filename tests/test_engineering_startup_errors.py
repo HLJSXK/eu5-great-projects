@@ -183,6 +183,7 @@ def test_location_display_reset_initializes_empty_slots_and_clears_previous_ritu
 
 
 def test_all_local_display_references_resolve_to_level_scaled_definitions(wonders):
+    hidden_cultural_modifiers = {'local_cultural_tradition', 'local_cultural_influence'}
     effects = source_blocks('common/scripted_effects/tv_wonder_location_display_effects.txt')
     refs = {child(n.children, 'modifier').value for n in walk(
         effects['tv_wonder_mechanics_reference_display_modifiers_effect']) if n.key == 'add_location_modifier'}
@@ -192,11 +193,14 @@ def test_all_local_display_references_resolve_to_level_scaled_definitions(wonder
     buildings = source_blocks('common/building_types/tv_engineering_department_wonder_mechanics_buildings.txt')
     for w in wonders:
         building = buildings[w['final_building']]
-        base = {n.key: float(n.value) for n in child(building, 'modifier').children if n.key.startswith('local_')}
+        # Cultural bonuses still belong to the building, but are hidden in previews.
+        base = {n.key: float(n.value) for n in child(building, 'modifier').children
+                if n.key.startswith('local_') and n.key not in hidden_cultural_modifiers}
         raw = next((n.children for n in building if n.key == 'raw_modifier'), ())
         for level in range(1, 7):
             body = modifiers[f"tv_wonder_display_{w['id']}_local_level_{level}"]
             assert child(child(body, 'game_data').children, 'category').value == 'location'
+            assert hidden_cultural_modifiers.isdisjoint(n.key for n in body)
             for key, value in base.items():
                 assert float(child(body, key).value) == pytest.approx(value * level, abs=0.0005)
             for node in raw:
