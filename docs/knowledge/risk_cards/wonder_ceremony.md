@@ -14,7 +14,11 @@ ritual styles; unique wonders inherit mechanics and own only bilingual flavor te
 3. Confirming charges the size-based scaled gold price and settles existing estates
    (+0.10 / -0.05); plain inauguration gives every participating estate -0.05.
    Completion grants modifiers, one-shot rewards and a signed 20-point societal
-   change. Expansion of a dedicated wonder repeats none of these ritual rewards.
+   change. Every expansion offers all three styles or plain inauguration again,
+   with the normal costs, duration and ritual rewards. The old dedication remains
+   until finalization; its hidden cleanup removes unselected local modifiers and
+   syncs country benefits without revoking benefits still held by other instances.
+   Plain inauguration revokes the old dedication and memory instead.
 4. Show the actual `tv_wonder_ritual_apply_choice_effect` with native effect rendering.
    State writes and scheduling are hidden. Do not substitute prose for effect
    previews. Estate satisfaction belongs in confirmation's native tooltip.

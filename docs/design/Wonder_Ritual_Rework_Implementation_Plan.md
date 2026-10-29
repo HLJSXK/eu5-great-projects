@@ -2,6 +2,7 @@
 
 > 日期：2026-10-23　状态：决策清单 D01–D38 已全部裁定，方案已同步；本轮采用 B 卷宗式界面，代码与生成物已实施；WP11 游戏内验收未执行
 > 实施记录：[实现与验收报告](../technical/ED_Ritual_Rework_Implementation.md)
+> 2026-10-29 用户修订：扩建一律重新自由选择三种仪式或朴素落成，按正常仪式结算费用、时长与奖励；旧仪式在本次落成时替换。此修订覆盖下文 D22、“沿用／结果 9”、扩建不重复结算及相关旧验收条目。当前实现契约见 `docs/knowledge/risk_cards/wonder_ceremony.md`。
 > 配套文件：[决策清单](Wonder_Ritual_Rework_Decisions.md)，[UI 方案](../../ai_gui_assessment/mockups/ritual_rework/README.md)
 > 本方案内凡是写着“建议”“默认”的地方，在决策清单中都有编号。用户裁定之前，实施方按决策清单里的推荐项理解，不要自己另选方案。
 

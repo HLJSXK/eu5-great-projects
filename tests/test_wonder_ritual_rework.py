@@ -98,6 +98,54 @@ def test_estate_sponsor_and_data_corrections(data):
     assert mechanics['generic_rituals']['giant_dam_project']['rituals'][2]['reward']['one_shot'][0]['value'] == 0.5
 
 
+def test_each_construction_round_requires_a_fresh_ritual_choice():
+    phase = source_blocks('common/scripted_effects/tv_wonder_ritual_phase_effects.txt')
+    enter = phase['tv_wonder_ritual_enter_phase_effect']
+    # Neither project mode nor a site's old dedication may bypass this entry.
+    assert all(n.key in ('remove_variable', 'set_variable',
+                         'tv_wonder_ritual_roll_estates_effect',
+                         'tv_wonder_ritual_refresh_display_effect') for n in enter)
+    cleared = {n.value for n in enter if n.key == 'remove_variable'}
+    assert {'tv_wonder_ritual_choice', 'tv_wonder_finalization_outcome',
+            'tv_wonder_ritual_reward_claimed', 'tv_wonder_ritual_in_progress',
+            'tv_wonder_ritual_completed'} <= cleared
+    assert contains(enter, 'tv_wonder_ritual_roll_estates_effect')
+    assert contains(enter, 'tv_wonder_ritual_refresh_display_effect')
+    triggers = source_blocks('common/scripted_triggers/tv_wonder_ritual_triggers.txt')
+    ready = triggers['tv_wonder_ritual_outcome_ready_trigger']
+    assert not contains(ready, 'var:tv_wonder_finalization_outcome', '9')
+    assert contains(ready, 'has_variable', 'tv_wonder_ritual_completed')
+    # All three real grants/settlements remain available on every round.
+    choice = phase['tv_wonder_ritual_apply_choice_effect']
+    for style in (1, 2, 3):
+        assert contains(choice, f'tv_wonder_ritual_apply_style_{style}_effect')
+
+
+def test_expansion_cleans_old_dedication_only_at_hidden_finalization(data):
+    from scripts_engineering_department.wonder_mechanics.naming import finalization_hidden_effect_name
+    effects = source_blocks('common/scripted_effects/tv_wonder_finalization_effects.txt')
+    for wonder in data[0]:
+        finish = effects[finalization_hidden_effect_name(wonder)]
+        expansion = next(n for n in walk(finish) if n.key == 'if' and
+                         contains(child(n.children, 'limit').children, 'var:tv_wonder_project_mode', '2'))
+        plain, styled = [n for n in expansion.children if n.key != 'limit']
+        assert contains(child(plain.children, 'limit').children, 'var:tv_wonder_finalization_outcome', '0')
+        assert contains(plain.children, 'save_scope_as', 'tv_wonder_ritual_sync_country')
+        assert contains(child(plain.children, 'var:tv_wonder_site').children,
+                        f"tv_wonder_{wonder['key']}_ritual_revoke_effect")
+        assert styled.key == 'else'
+        assert styled.children[-1].key == f"tv_wonder_{wonder['key']}_ritual_sync_country_effect"
+        # The selected local modifier survives, every other local style is removed.
+        for ritual in ritual_styles(wonder, data[1]):
+            if not ritual['location_modifier']:
+                continue
+            removal = next(n for n in styled.children if n.key == 'if' and
+                           contains(n.children, 'remove_location_modifier', ritual['location_modifier']))
+            condition = child(child(removal.children, 'limit').children, 'NOT')
+            assert contains(condition.children, 'var:tv_wonder_finalization_outcome', str(ritual['style']))
+        assert not contains(styled.children, f"tv_wonder_{wonder['key']}_ritual_revoke_effect")
+
+
 def test_confirmation_pays_and_settles_estates_before_timer_but_completion_does_not():
     effects = source_blocks('common/scripted_effects/tv_wonder_ritual_phase_effects.txt')
     confirm = effects['tv_wonder_ritual_confirm_effect']
@@ -403,7 +451,8 @@ def test_plain_lifecycle_supplements_maxima_without_country_rebuild(data):
 
     finish = final[finalization_hidden_effect_name(data[0][0])]
     plain = next(n for n in walk(finish) if n.key == 'if' and
-                 contains(child(n.children, 'limit').children, 'var:tv_wonder_finalization_outcome', '0'))
+                 contains(child(n.children, 'limit').children, 'var:tv_wonder_finalization_outcome', '0') and
+                 contains(n.children, 'name', 'tv_wonder_plain_level_by_wonder_id'))
     supplement = tuple(n for n in plain.children if n.key != 'limit')
     expiry = events['tv_engineering_department.3001']
     expired_instance = next(n for n in walk(expiry) if n.key == 'if' and

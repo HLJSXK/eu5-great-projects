@@ -23,7 +23,7 @@ tv_wonder_ritual_can_confirm_trigger = {
 
 tv_wonder_ritual_outcome_ready_trigger = {
 	var:tv_wonder_stage ?= 4
-	OR = { var:tv_wonder_finalization_outcome ?= 0 var:tv_wonder_finalization_outcome ?= 9 has_variable = tv_wonder_ritual_completed }
+	OR = { var:tv_wonder_finalization_outcome ?= 0 has_variable = tv_wonder_ritual_completed }
 }
 
 tv_wonder_current_site_is_shell_trigger = {

@@ -1119,12 +1119,11 @@ CARDS: list[dict] = [
                 "title": _t("Expanding a Dedicated Wonder", "扩建已落成的奇观"),
                 "icon": ICON_EXPANSION,
                 "body": _t(
-                    "Raising an already-dedicated wonder higher does not repeat any of this. It keeps "
-                    "its style, skips the ritual entirely, and pays only the ordinary completion "
-                    "rewards. A plain wonder that you expand may choose a style at the end, which is "
-                    "the cheapest way to dedicate anything in the game.",
-                    "把已落成的奇观继续建高，不会重复上述任何一步。它保留原有风格，直接跳过仪式，只领取普通的"
-                    "落成奖励。而处于朴素状态的奇观若被扩建，可以在结束时选择风格：这是全游戏最便宜的落成方式。",
+                    "Every expansion offers a fresh choice of all three ritual styles or a plain "
+                    "inauguration. The old dedication lasts until completion, when the new choice "
+                    "replaces it. A ritual follows the normal cost, duration, estate settlement and rewards.",
+                    "每次扩建结束都能重新自由选择三种仪式风格，或选择朴素落成。旧仪式持续到本次落成，"
+                    "届时由新选择替代。举行仪式仍按正常规则支付费用、等待完成、结算阶层态度并领取仪式奖励。",
                 ),
             },
         ],
@@ -1151,10 +1150,9 @@ CARDS: list[dict] = [
                         "title": _t("Expansion", "扩建"),
                         "text": _t(
                             "A new construction round on the same site, with its own survey readings "
-                            "and its own rewards. A dedicated wonder keeps its style; a plain one "
-                            "chooses at the end.",
-                            "在同一工地开启新一轮施工，自带勘测读数与自有奖励。已落成的奇观保留风格；朴素的奇观"
-                            "在结束时选择风格。",
+                            "and its own rewards. Every wonder freely chooses its ritual again at the end.",
+                            "在同一工地开启新一轮施工，自带勘测读数与自有奖励。无论原有仪式如何，"
+                            "都在结束时重新自由选择仪式。",
                         ),
                     },
                     {
@@ -1176,11 +1174,11 @@ CARDS: list[dict] = [
                     {
                         "title": _t("Expansion", "扩建"),
                         "text": _t(
-                            "Full completion rewards every time, and the wonder rises a level. A "
-                            "dedicated wonder repeats none of the ritual bonuses, which is the point: "
-                            "the ritual is paid for once.",
-                            "每次都有完整的落成奖励，奇观等级提升。已落成的奇观不会重复任何仪式奖励，这正是设计"
-                            "所在：仪式只付一次钱。",
+                            "Full completion rewards every time, and the wonder rises a level. Holding "
+                            "a ritual grants its rewards again and replaces the site's previous style; "
+                            "a plain inauguration removes the old dedication.",
+                            "每次都有完整的落成奖励，奇观等级提升。举行仪式会再次结算其奖励，并替换该地点的旧风格；"
+                            "选择朴素落成则移除原有仪式。",
                         ),
                         "items": [
                             {"icon": ICON_BUILD, "link": "[tv_wonder_expansion|e]"},

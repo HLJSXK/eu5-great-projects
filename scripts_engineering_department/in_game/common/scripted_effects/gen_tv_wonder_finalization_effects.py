@@ -10,6 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
 
 from wonder_mechanics.io import load_all_wonder_mechanics
+from wonder_mechanics.rituals import ritual_styles
 from wonder_mechanics.naming import (
     final_building_completion_sync_hidden_event_execute_effect_name,
     final_building_completion_sync_hidden_event_id,
@@ -262,10 +263,30 @@ def append_visible_effect(lines: list[str], wonder: dict) -> None:
     lines.append("")
 
 
-def append_hidden_effect(lines: list[str], wonder: dict) -> None:
+def append_hidden_effect(lines: list[str], wonder: dict, mechanics: dict) -> None:
     lines.extend([f"{finalization_hidden_effect_name(wonder)} = {{",
         f"\tif = {{ limit = {{ has_variable = tv_wonder_finalization_preview_ready var:tv_wonder_locked ?= {wonder['id']} }}",
-        "\ttv_wonder_complete_finalization_cleanup_effect = yes",
+        "\ttv_wonder_complete_finalization_cleanup_effect = yes"])
+    # This runs in the hidden finalization event, after the visible grant.
+    # Retain other instances' country benefits while removing this site's old style.
+    lines.extend([
+        "\tif = { limit = { var:tv_wonder_project_mode ?= 2 }",
+        "\t\tif = { limit = { var:tv_wonder_finalization_outcome ?= 0 }",
+        "\t\t\tsave_scope_as = tv_wonder_ritual_sync_country",
+        f"\t\t\tvar:tv_wonder_site ?= {{ tv_wonder_{wonder['key']}_ritual_revoke_effect = yes }}",
+        "\t\t}",
+        "\t\telse = {",
+    ])
+    for ritual in ritual_styles(wonder, mechanics):
+        if ritual['location_modifier']:
+            lines.append(
+                f"\t\t\tif = {{ limit = {{ NOT = {{ var:tv_wonder_finalization_outcome ?= {ritual['style']} }} }} "
+                f"var:tv_wonder_site ?= {{ remove_location_modifier = {ritual['location_modifier']} }} }}"
+            )
+    lines.extend([
+        f"\t\t\ttv_wonder_{wonder['key']}_ritual_sync_country_effect = yes",
+        "\t\t}",
+        "\t}",
         f"\t{destroy_intermediate_effect_name(wonder)} = yes",
         f"\tif = {{ limit = {{ var:tv_wonder_project_mode ?= 1 }} {broadcast_effect_name(wonder)} = yes }}",
         "\ttv_wonder_register_current_project_priority_candidate_from_variables_effect = yes",
@@ -279,7 +300,7 @@ def append_hidden_effect(lines: list[str], wonder: dict) -> None:
 
 
 def generate() -> str:
-    wonders, _mechanics = load_all_wonder_mechanics()
+    wonders, mechanics = load_all_wonder_mechanics()
     lines = render_header(SCRIPT_REL, DATA_REL)
     append_hidden_event_trigger_effect(lines)
     append_hidden_event_execute_effect(lines, wonders)
@@ -290,7 +311,7 @@ def generate() -> str:
         append_destroy_intermediate_buildings_effect(lines, wonder)
         append_broadcast_effect(lines, wonder)
         append_visible_effect(lines, wonder)
-        append_hidden_effect(lines, wonder)
+        append_hidden_effect(lines, wonder, mechanics)
     return "\n".join(lines).rstrip() + "\n"
 
 

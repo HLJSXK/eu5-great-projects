@@ -191,21 +191,19 @@ else = {{ {penalty} }}'''
             body.append(f'if = {{ limit = {{ country_has_estate = estate_type:{estate} has_variable = {var} }}\n{effect}\n}}')
         name = 'tv_wonder_ritual_settle_estates_effect' if mode == 'choice' else 'tv_wonder_ritual_settle_estates_plain_effect'
         out.append(block(name, '\n'.join(body)))
-    inherited = '\n'.join(f'''if = {{ limit = {{ var:tv_wonder_locked ?= {w['id']} var:tv_wonder_site ?= {{ {has_style(w)} }} }}
-set_variable = {{ name = tv_wonder_finalization_outcome value = 9 }}
-}}''' for w in wonders)
+    # Every construction round, including an already-dedicated expansion,
+    # starts a fresh choice. Keep the site's old dedication until completion.
     out.append(block('tv_wonder_ritual_enter_phase_effect', f'''remove_variable = tv_wonder_ritual_choice
 remove_variable = tv_wonder_finalization_outcome
 remove_variable = tv_wonder_ritual_reward_claimed
+remove_variable = tv_wonder_ritual_in_progress
+remove_variable = tv_wonder_ritual_completed
 set_variable = {{ name = tv_wonder_ritual_duration_months value = {rules['duration_months']} }}
 set_variable = {{ name = tv_wonder_ritual_months_completed value = 0 }}
 set_variable = {{ name = tv_wonder_ritual_progress_pct value = 0 }}
 set_variable = {{ name = tv_wonder_ritual_ai_wait_months value = 0 }}
-if = {{ limit = {{ var:tv_wonder_project_mode ?= 2 }}
-{inherited}
-}}
-if = {{ limit = {{ var:tv_wonder_finalization_outcome ?= 9 }} tv_wonder_finalize_effect = yes }}
-else = {{ tv_wonder_ritual_roll_estates_effect = yes tv_wonder_ritual_refresh_display_effect = yes }}'''))
+tv_wonder_ritual_roll_estates_effect = yes
+tv_wonder_ritual_refresh_display_effect = yes'''))
     out.append(block('tv_wonder_ritual_preview_effect', '''if = { limit = { tv_wonder_ritual_can_preview_trigger = yes }
 set_variable = { name = tv_wonder_ritual_choice value = $style$ }
 tv_wonder_ritual_refresh_display_effect = yes
@@ -269,7 +267,7 @@ NOT = { has_variable = tv_wonder_finalized }''')
     afford = '\n'.join(f'AND = {{ var:tv_wonder_locked_size ?= {n} can_pay_price = price:tv_wonder_ritual_{size}_price }}' for n,size in enumerate(('small','medium','large'),1))
     out += block('tv_wonder_ritual_can_confirm_trigger', 'tv_wonder_ritual_can_preview_trigger = yes\nOR = { var:tv_wonder_ritual_choice ?= 1 var:tv_wonder_ritual_choice ?= 2 var:tv_wonder_ritual_choice ?= 3 }\nOR = { has_variable = tv_wonder_cmm_skip_ceremony\n' + afford + '\n}')
     out += block('tv_wonder_ritual_outcome_ready_trigger', '''var:tv_wonder_stage ?= 4
-OR = { var:tv_wonder_finalization_outcome ?= 0 var:tv_wonder_finalization_outcome ?= 9 has_variable = tv_wonder_ritual_completed }''')
+OR = { var:tv_wonder_finalization_outcome ?= 0 has_variable = tv_wonder_ritual_completed }''')
     out += block('tv_wonder_current_site_is_shell_trigger', 'OR = {\n' + '\n'.join(f'AND = {{ var:tv_wonder_locked ?= {w["id"]} var:tv_wonder_site ?= {{ has_building = building_type:tv_wonder_{w["key"]} NOT = {{ has_building = building_type:{w["final_building"]} }} }} }}' for w in wonders) + '\n}')
     return out
 
