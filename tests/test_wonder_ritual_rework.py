@@ -33,7 +33,7 @@ def test_all_wonders_inherit_all_three_reward_carriers(data):
                     assert a[key] == b[key]
 
 
-def test_location_ritual_tooltip_links_every_granted_modifier_natively(data):
+def test_location_ritual_tooltip_expands_every_granted_modifier_natively(data):
     from scripts_engineering_department.wonder_localization_lib import (
         load_wonder_localization_data, collapse_wonder_localization_data,
     )
@@ -49,15 +49,15 @@ def test_location_ritual_tooltip_links_every_granted_modifier_natively(data):
             granted = {child(node.children, 'modifier').value for node in walk(grant)
                        if node.key in ('add_country_modifier', 'add_location_modifier')}
             assert granted <= modifiers.keys()
-            key = f"TV_WONDER_RITUAL_MODIFIERS_{style}_{wonder['id']}"
             for language in ('english', 'simp_chinese'):
-                value = localized[language][key]
-                calls = re.findall(r"\[ShowModifier\('([^']+)'\)\]", value)
+                calls = []
+                for scope, modifier in (('COUNTRY', row['modifier']), ('LOCAL', row['location_modifier'])):
+                    key = f"TV_WONDER_RITUAL_{scope}_MODIFIERS_{style}_{wonder['id']}"
+                    value = localized[language][key]
+                    assert value == (f"[ShowModifierEffect('{modifier}')]" if modifier else '')
+                    calls.extend(re.findall(r"\[ShowModifierEffect\('([^']+)'\)\]", value))
+                    assert key not in collapsed[language]
                 assert set(calls) == granted and len(calls) == len(granted)
-                assert value.count('\n') == len(calls) - 1
-                remainder = re.sub(r"\[ShowModifier\('[^']+'\)\]", '', value)
-                assert not re.sub(r'\$TV_LOCATION_WONDER_(?:COUNTRY|LOCAL)_MODIFIERS_TITLE\$', '', remainder).strip()
-                assert key not in collapsed[language]
 
 
 @pytest.mark.parametrize('damage', ['axis', 'duplicate_direction', 'missing_estate', 'wrong_scope', 'empty_reward', 'old_shape'])

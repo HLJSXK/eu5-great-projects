@@ -6,6 +6,8 @@ generated definitions; native trigger/effect evaluation is not emulated.
 from __future__ import annotations
 
 import argparse
+from copy import copy
+from dataclasses import replace
 import json
 from pathlib import Path
 import re
@@ -48,10 +50,9 @@ def wonder_variables(wonders):
     return result
 
 
-def scenario_mocks(state, resources, menu=True):
+def scenario_mocks(state, resources, menu=True, *, localized_tables=None):
     from eu5_gui_renderer.fixtures import object_mocks, variable_mocks, requirements_list, string_pair_list, modifier_sample_lines
     from eu5_gui_renderer.paths import MOD, LANGUAGE
-    from eu5_gui_renderer.data import Evaluator
     from eu5_gui_renderer.pdx import parse
     from scripts_engineering_department.in_game.gui import gen_location_window as source
     from scripts_engineering_department.wonder_mechanics.io import load_all_wonder_mechanics
@@ -84,20 +85,23 @@ def scenario_mocks(state, resources, menu=True):
             if node.is_block() and node.key.startswith('tv_wonder_'):
                 modifiers[node.key] = {n.key: (n.value == 'yes' if n.value in ('yes', 'no') else float(n.value))
                                        for n in node.value if n.key in metadata}
-    # Sample native link labels only. Nested ShowModifier tooltip interaction
-    # is supplied by the game, not simulated by this offline renderer.
-    evaluator = Evaluator(result, resources.loc, [])
-    for ident in {row[0] for row in STATES[state][:5]}:
+    # Sample expanded native tables from the actual reward definitions.
+    for slot, (ident, *_) in enumerate(STATES[state][:5], 1):
         for row in ritual_styles(wonders[ident], mechanics):
-            for modifier in (row['modifier'], row['location_modifier']):
+            for scope, modifier in (('COUNTRY', row['modifier']), ('LOCAL', row['location_modifier'])):
+                rows = []
                 if modifier:
                     if modifier not in modifiers:
                         raise ValueError(f'Missing ritual modifier: {modifier}')
-                    key = 'STATIC_MODIFIER_NAME_' + modifier
-                    if resources.loc.get(key) is None:
-                        raise ValueError(f'Missing ritual modifier name: {key}')
-                    label = evaluator.eval_str(f"[Localize('{key}')]")
-                    result.append((re.escape(f"ShowModifier('{modifier}')"), label))
+                    rows = [tuple(line.rsplit(': ', 1)) for line in modifier_sample_lines(modifiers[modifier], metadata, resources.loc)]
+                expression = source.slot_ritual_modifiers_expr(slot, row['style'], scope).replace('LocationView.GetLocation.', 'Location.').replace(' ', '')
+                key = f"TV_WONDER_RITUAL_{scope}_MODIFIERS_{row['style']}_{ident}"
+                expected = f"[ShowModifierEffect('{modifier}')]" if modifier else ''
+                if resources.loc.get(key) != expected:
+                    raise ValueError(f'Ritual table route does not match reward: {key}')
+                if localized_tables is not None:
+                    localized_tables[key] = string_pair_list(rows)
+                result.append((re.escape(f'IsUTF8StringNotEmpty({expression})'), bool(rows)))
     for index, (ident, current_level, *_) in enumerate(STATES[state][:5], 1):
         for local, getter in ((False, source.slot_modifier_key_expr), (True, source.slot_local_modifier_key_expr)):
             key = f'tv_wonder_display_{ident}_{"local_" if local else ""}level_{max(current_level, 1)}'
@@ -123,7 +127,11 @@ def build(resources, expander, panel_width, height, menu=False):
     root = Element('widget', 'location_preview', children=[panel])
     # Use the shipped child and its anchors. Artificially positioning a detached
     # copy here used to conceal overlap in the actual context-menu attachment.
-    popup = next((child for child in panel.children if child.props.get('name') == 'tv_location_wonders_panel'), None)
+    def visit(node):
+        yield node
+        for child in node.children:
+            yield from visit(child)
+    popup = next((child for child in visit(panel) if child.props.get('name') == 'tv_location_wonders_panel'), None)
     if popup is None:
         raise ValueError('Missing shipped wonder panel in location window')
     return root, panel, popup if menu else None
@@ -139,12 +147,18 @@ def render(state, resources, *, width=1600, height=1080, scale=1, menu=True,
     details = {'panel': panel}
     if popup is not None:
         details['menu'] = popup
-    return render_tree(root, expander, resources, (extra_mocks or []) + scenario_mocks(state, resources, menu),
+    # The renderer cannot parse localized native table markup. Supply the exact
+    # verified localization routes as table fixtures in this render's own copy.
+    tables = {}
+    mocks = scenario_mocks(state, resources, menu, localized_tables=tables)
+    sample_loc = copy(resources.loc)
+    sample_loc.d = {**resources.loc.d, **tables}
+    return render_tree(root, expander, replace(resources, loc=sample_loc), (extra_mocks or []) + mocks,
         width=width, height=height, scale=scale, output=output or OUTPUT / f'location_{state}.png',
         detail_elements=details, tooltip_selector=hover, metadata={'scenario': 'location', 'state': state, 'sample_data': True,
             'menu_open': popup is not None,
             'gui': str(MOD / GUI_PATH), 'wonders': STATES[state],
-            'sample_tables': 'Modifier values from current mod definitions; native modifier link names from current localization. Site checks are explicit sample results.',
+            'sample_tables': 'Expanded modifier values from current mod definitions. Site checks are explicit sample results.',
             'unsupported': ['No save, script execution, clicks, scrolling, 3D map, portraits or procedural flags.',
                             'Queues and secondary lists are empty sample data; infrastructure tab is selected.']})
 

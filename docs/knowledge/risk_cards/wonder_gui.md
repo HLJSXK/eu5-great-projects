@@ -30,9 +30,10 @@ GUI widgets.
 
 5. Engineering Department ritual choices render the real completion effect with
    `ShowScriptedEffectForScope`. Location-gallery ritual cards show their own
-   country/local modifiers through standard `ShowModifier` links inside hover
-   tooltips, including styles that are not currently active. Keep modifier links
-   hit-testable. Estate reactions remain part of the separate confirmation flow.
+   country/local modifiers expanded with `ShowModifierEffect` in separate
+   `TooltipStringPairList` tables inside hover tooltips, including inactive styles.
+   Do not replace the effect rows with `ShowModifier` name links (user correction,
+   2026-10-29). Estate reactions remain part of the separate confirmation flow.
 
 6. Prefer GUI display variables refreshed from lifecycle points.
    Do not call expensive rebuilds from hover, tooltip, or render-only paths.
@@ -54,6 +55,9 @@ GUI widgets.
    48-by-48 size; the artwork's separate `background` keeps its own fit setting.
    Fix `gen_location_window.py` and regenerate the main, M&T and SoL panels.
    Offline rendering alone did not detect this unsupported runtime property.
+
+9. Anchor the gallery to the city appearance's top edge, keeping it beside the
+   location window. Do not align it with the location window's title bar.
 
 ## Validation
 

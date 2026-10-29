@@ -1416,9 +1416,6 @@ def ritual_styles(wonder: dict, mechanics: dict) -> list[dict]:
         country = deepcopy(reward.get("country_modifier", {}))
         country[f"monthly_towards_{sv['direction']}"] = rules["societal_value"]["monthly"]
         location = deepcopy(reward.get("location_modifier", {}))
-        if location:
-            estate = location_reward_estate(wonder).removesuffix("_estate")
-            location[f"local_{estate}_estate_power"] = location.get(f"local_{estate}_estate_power", 0) + 0.5
         prefix = f"tv_wonder_{wonder['key']}_ritual_{n}"
         result.append({"style": n, "ritual_id": wonder["id"] * 100 + n,
             "modifier": prefix + "_modifier", "location_modifier": prefix + "_location_modifier" if location else None,

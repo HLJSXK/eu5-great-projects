@@ -404,22 +404,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -960,22 +944,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -1505,22 +1473,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -2066,22 +2018,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -2611,22 +2547,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -3161,22 +3081,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -3768,22 +3672,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -4335,22 +4223,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -4879,22 +4751,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -5425,22 +5281,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -5945,22 +5785,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -6484,22 +6308,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -7039,22 +6847,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -7599,22 +7391,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -8149,22 +7925,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -8722,22 +8482,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -9284,22 +9028,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -9797,22 +9525,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -10377,22 +10089,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -10945,22 +10641,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -11510,22 +11190,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -12043,22 +11707,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -12593,22 +12241,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -13169,22 +12801,6 @@
               "decimals": 4,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -13731,22 +13347,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -14276,22 +13876,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -14842,22 +14426,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -15372,22 +14940,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -15897,22 +15449,6 @@
               "description": {
                 "en": "This impacts how much time it takes to expand the number of Pops gathering Raw Materials in a Location.",
                 "zh": "影响在一个地点中增加采集Raw Materials的人口数量所需的时间。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -16474,22 +16010,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -17046,22 +16566,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -17570,22 +17074,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -18072,22 +17560,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -18670,22 +18142,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -19228,22 +18684,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -19774,22 +19214,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -20335,22 +19759,6 @@
               "decimals": 4,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -20865,22 +20273,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -21442,22 +20834,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -21999,22 +21375,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -22525,22 +21885,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -23027,22 +22371,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -23572,22 +22900,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -24139,22 +23451,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -24691,22 +23987,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -25236,22 +24516,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -25749,22 +25013,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -26336,22 +25584,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -26876,22 +26108,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -27438,22 +26654,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -27971,22 +27171,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -28505,22 +27689,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -29056,22 +28224,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -29601,22 +28753,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -30157,22 +29293,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -30681,22 +29801,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -31234,22 +30338,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -31767,22 +30855,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -32295,22 +31367,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -32842,22 +31898,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -33413,22 +32453,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -33965,22 +32989,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -34536,22 +33544,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -35094,22 +34086,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -35663,22 +34639,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -36227,22 +35187,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -36779,22 +35723,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -37307,22 +36235,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -37883,22 +36795,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -38451,22 +37347,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -39004,22 +37884,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -39562,22 +38426,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -40121,22 +38969,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -40689,22 +39521,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -41273,22 +40089,6 @@
               "decimals": 4,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -41801,22 +40601,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -42387,22 +41171,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -42946,22 +41714,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -43531,22 +42283,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -44137,22 +42873,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -44696,22 +43416,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -45289,22 +43993,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -45847,22 +44535,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -46405,22 +45077,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -46993,22 +45649,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -47551,22 +46191,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -48136,22 +46760,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -48694,22 +47302,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -49267,22 +47859,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -49843,22 +48419,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -50411,22 +48971,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -50980,22 +49524,6 @@
               "decimals": 4,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -51538,22 +50066,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -52096,22 +50608,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -52664,22 +51160,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -53249,22 +51729,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -53775,22 +52239,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -54333,22 +52781,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -54843,22 +53275,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -55353,22 +53769,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -55906,22 +54306,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -56475,22 +54859,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -57034,22 +55402,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -57610,22 +55962,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -58168,22 +56504,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -58721,22 +57041,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -59296,22 +57600,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -59854,22 +58142,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -60364,22 +58636,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -60934,22 +59190,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -61444,22 +59684,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -61965,22 +60189,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -62493,22 +60701,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -63071,22 +61263,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -63613,22 +61789,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -64151,22 +62311,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -64711,22 +62855,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -65265,22 +63393,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -65813,22 +63925,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -66371,22 +64467,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -66946,22 +65026,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -67504,22 +65568,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -68025,22 +66073,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -68595,22 +66627,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -69149,22 +67165,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -69764,22 +67764,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -70359,22 +68343,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -70911,22 +68879,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -71439,22 +69391,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -71986,22 +69922,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -72496,22 +70416,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -73044,22 +70948,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -73597,22 +71485,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -74212,22 +72084,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -74770,22 +72626,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -75335,22 +73175,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -75896,22 +73720,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -76470,22 +74278,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -77018,22 +74810,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -77572,22 +75348,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -78125,22 +75885,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -78700,22 +76444,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -79280,22 +77008,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -79821,22 +77533,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -80363,22 +78059,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -80915,22 +78595,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -81521,22 +79185,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -82073,22 +79721,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -82615,22 +80247,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -83168,22 +80784,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -83721,22 +81321,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -84259,22 +81843,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -84830,22 +82398,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -85388,22 +82940,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -85956,22 +83492,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -86497,22 +84017,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -87018,22 +84522,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -87528,22 +85016,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -88086,22 +85558,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -88628,22 +86084,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -89234,22 +86674,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -89786,22 +87210,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -90334,22 +87742,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -90844,22 +88236,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -91402,22 +88778,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -91961,22 +89321,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -92471,22 +89815,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -93025,22 +90353,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -93573,22 +90885,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -94153,22 +91449,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -94691,22 +91971,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -95245,22 +92509,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -95786,22 +93034,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -96314,22 +93546,6 @@
               "description": {
                 "en": "This impacts the Unrest in a Location.",
                 "zh": "影响地点的Unrest。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
               },
               "value_kind": "percent",
               "decimals": 2,
@@ -96872,22 +94088,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -97426,22 +94626,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -97968,22 +95152,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -98526,22 +95694,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -99090,22 +96242,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -99654,22 +96790,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -100186,22 +97306,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -100718,22 +97822,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -101293,22 +98381,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -101831,22 +98903,6 @@
               "decimals": 2,
               "category": "location",
               "color": "bad"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -102341,22 +99397,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -102882,22 +99922,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -103448,22 +100472,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -103986,22 +100994,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -104518,22 +101510,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -105088,22 +102064,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -105641,22 +102601,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_peasants_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Peasants Power",
-                "zh": "本地农民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Commoners in this Location.",
-                "zh": "这影响该地点的平民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -106221,22 +103165,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_burghers_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Burghers Power",
-                "zh": "本地市民阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Burghers in this Location.",
-                "zh": "这影响该地点的市民的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -106806,22 +103734,6 @@
               "decimals": 0,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -107358,22 +104270,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_nobles_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Nobles Power",
-                "zh": "本地贵族阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Nobility in this Location.",
-                "zh": "这影响该地点的贵族的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {
@@ -107900,22 +104796,6 @@
               "decimals": 2,
               "category": "location",
               "color": "good"
-            },
-            {
-              "key": "local_clergy_estate_power",
-              "value": 0.5,
-              "label": {
-                "en": "Local Clergy Power",
-                "zh": "本地教士阶层力量"
-              },
-              "description": {
-                "en": "This impacts the Estate Power of the Clergy in this Location.",
-                "zh": "这影响该地点的教士的Estate Power。"
-              },
-              "value_kind": "percent",
-              "decimals": 2,
-              "category": "location",
-              "color": "bad"
             }
           ],
           "meta": {

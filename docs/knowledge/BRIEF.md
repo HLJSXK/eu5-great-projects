@@ -512,7 +512,7 @@ This is an index only. Use `scripts/ai_context.py` for task-relevant summaries o
 | Scripted Triggers | 3638 | `data/index/scripted_triggers.txt` |
 | Scripted Effects | 5534 | `data/index/scripted_effects.txt` |
 | Static Modifiers | 2676 | `data/index/static_modifiers.txt` |
-| English Loc Keys | 15653 | `data/index/loc_keys_en.txt` |
+| English Loc Keys | 16238 | `data/index/loc_keys_en.txt` |
 
 ## Codegen Script Map
 

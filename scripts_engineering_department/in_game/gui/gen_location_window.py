@@ -395,8 +395,8 @@ def slot_localization_expr(slot: int, suffix: str = "") -> str:
     return f"Localize(Concatenate('game_concept_', Concatenate({slot_display_concept_expr('tooltip', slot)}, '{suffix}')))"
 
 
-def slot_ritual_modifiers_expr(slot: int, style: int) -> str:
-    return f"Localize(Concatenate('TV_WONDER_RITUAL_MODIFIERS_{style}_', {slot_id_string('tooltip', slot)}))"
+def slot_ritual_modifiers_expr(slot: int, style: int, scope: str) -> str:
+    return f"Localize(Concatenate('TV_WONDER_RITUAL_{scope}_MODIFIERS_{style}_', {slot_id_string('tooltip', slot)}))"
 
 
 def tooltip_content(body: str, title: str, *, title_font_size: int = 18) -> str:
@@ -454,15 +454,23 @@ def slot_ritual_active_expr(slot: int, style: int) -> str:
 
 
 def render_ritual_tooltip(slot: int, style: int) -> str:
-    # All three styles expose their own native modifier links on hover.
-    # Only the implemented style receives the active-state label.
+    # Expand both reward scopes with the same native tables used by level hovers.
     active = slot_ritual_active_expr(slot, style)
     body = f'''text_multi = {{ minimumsize = {{ 444 -1 }} max_width = 444 autoresize = yes
-        fontsize = 18 raw_text = "[{slot_localization_expr(slot, f'_ritual_{style}_desc')}]" }}
-        text_multi = {{ name = "tv_location_wonder_ritual_modifiers_{slot}_{style}"
-            minimumsize = {{ 444 -1 }} max_width = 444 autoresize = yes fontsize = 18
-            alwaystransparent = no raw_text = "[{slot_ritual_modifiers_expr(slot, style)}]" }}
-        text_single = {{ visible = "[{active}]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 18 }}'''
+        fontsize = 18 raw_text = "[{slot_localization_expr(slot, f'_ritual_{style}_desc')}]" }}'''
+    for scope in ('COUNTRY', 'LOCAL'):
+        effects = slot_ritual_modifiers_expr(slot, style, scope)
+        body += f'''TooltipStringPairList = {{
+            name = "tv_location_wonder_ritual_modifiers_{slot}_{style}_{scope.lower()}"
+            visible = "[IsUTF8StringNotEmpty({effects})]"
+            layoutpolicy_horizontal = fixed maximumsize = {{ 444 -1 }}
+            blockoverride "tooltip_minimumsize" {{ minimumsize = {{ 444 -1 }} }}
+            blockoverride "block_title" {{ text = "TV_LOCATION_WONDER_{scope}_MODIFIERS_TITLE" }}
+            blockoverride "field_text_format" {{ fontsize = 18 max_width = 300 autoresize = yes }}
+            blockoverride "row_size" {{ minimumsize = {{ -1 28 }} }}
+            textcontext = "[{effects}]"
+        }}'''
+    body += f'''text_single = {{ visible = "[{active}]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 18 }}'''
     return tooltip_content(body, f"[{slot_localization_expr(slot, f'_ritual_{style}')}]", title_font_size=20)
 
 
@@ -621,21 +629,23 @@ def render_scene_overlay() -> str:
 
 
 def inject_wonder_panel(gui: str) -> str:
-    # Anchor to the whole lateral view, not the inset scene or its button.
-    marker = '\n\twidgetid = "location_window"'
+    # Follow the city appearance's actual top, including each compat panel's
+    # header height. Undo window_main_tabs_margin_alt's 15px right inset only.
+    marker = '\n\t\t\t# SCENE\n\t\t\twidget = {'
     if gui.count(marker) != 1:
-        raise RuntimeError("Could not find location window root for wonder panel")
+        raise RuntimeError("Could not find city appearance for wonder panel")
     panel = "\n".join([
-        "", f"{T}tv_location_wonders_menu = {{",
+        '', f'{T}name = "tv_location_city_appearance"',
+        f'{T}allow_outside = yes', f"{T}tv_location_wonders_menu = {{",
         f'{T}{T}name = "tv_location_wonders_panel"',
         f"{T}{T}parentanchor = top|right",
         f"{T}{T}widgetanchor = top|left",
-        f"{T}{T}position = {{ 0 0 }}",
+        f"{T}{T}position = {{ 15 0 }}",
         f"{T}{T}allow_outside = yes",
         f'{T}{T}visible = "[And(LocationView.Vars.Exists(\'{MENU_OPEN_VAR}\'), {slot_has_id_expr("tooltip", 1)})]"',
         f"{T}}}", "",
     ])
-    gui = gui.replace(marker, marker + panel, 1)
+    gui = gui.replace(marker, marker + '\n'.join(T * 3 + line if line else line for line in panel.split('\n')), 1)
     # Opening either side panel closes the other, matching the wonder button.
     gui, count = re.subn(
         r'(?m)^(\s*)on_action = "(\[LocationView\.OpenConstructionQueue\([^\n]+)"',

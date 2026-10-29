@@ -151,10 +151,10 @@ class LocationPreviewTests(unittest.TestCase):
         self.assertEqual(len(cards), 15)
         for card in cards:
             popup = expander.build_lazy(card.tooltipwidget)
-            links = [node for node in visit(popup) if str(node.props.get('name', '')).startswith('tv_location_wonder_ritual_modifiers_')]
-            self.assertEqual(len(links), 1)
-            self.assertEqual(links[0].props.get('alwaystransparent'), 'no')
-            self.assertNotIn('visible', links[0].props)
+            tables = [node for node in visit(popup) if str(node.props.get('name', '')).startswith('tv_location_wonder_ritual_modifiers_')]
+            self.assertEqual(len(tables), 2)
+            self.assertTrue(all(node.typename == 'TooltipStringPairList' for node in tables))
+            self.assertTrue(all('ritual_style' not in node.props['visible'] for node in tables))
         with tempfile.TemporaryDirectory() as folder:
             for state in ('jerusalem', 'dedicated'):
                 for style in (1, 2, 3):
@@ -210,7 +210,14 @@ class LocationPreviewTests(unittest.TestCase):
                     self.assertFalse(has_diagnostics(report), report)
                     self.assertGreater(menu.w, 0)
                     self.assertAlmostEqual(menu.x, panel.x + panel.w)
-                    self.assertAlmostEqual(menu.y, panel.y)
+                    def visit(node):
+                        yield node
+                        for child in node.children:
+                            yield from visit(child)
+                    scene = next(node for node in visit(panel)
+                                 if node.props.get('name') == 'tv_location_city_appearance')
+                    self.assertAlmostEqual(menu.y, scene.y)
+                    self.assertGreater(menu.y, panel.y)
 
     def test_compact_slots_tooltip_slots_and_overflow_are_independent(self):
         values = location.wonder_variables(location.STATES['overflow'])
