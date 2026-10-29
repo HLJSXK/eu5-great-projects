@@ -75,7 +75,7 @@ class LocationPreviewTests(unittest.TestCase):
                     report = location.render('single', self.resources, hover=owner,
                                              output=Path(folder) / f'{owner}.png')
                     self.assertFalse(has_diagnostics(report), report)
-                    self.assertLessEqual(report['tooltip']['bounds'][2], 370)
+                    self.assertLessEqual(report['tooltip']['bounds'][2], 450)
                     tree = Path(report['tooltip']['tree']).read_text(encoding='utf-8')
                     if '_level_' in owner:
                         self.assertNotIn('ShowScriptedEffectForScope', tree)
@@ -113,7 +113,7 @@ class LocationPreviewTests(unittest.TestCase):
                                              output=Path(folder) / f'{ident}_{level}_{style}.png')
                     self.assertFalse(has_diagnostics(report), report)
                     if level:
-                        self.assertLessEqual(report['tooltip']['bounds'][2], 370)
+                        self.assertLessEqual(report['tooltip']['bounds'][2], 450)
                     else:
                         self.assertIsNone(report['tooltip'])
 
@@ -129,9 +129,14 @@ class LocationPreviewTests(unittest.TestCase):
 
     def test_unknown_binding_is_not_filled_by_fixture(self):
         from eu5_gui_renderer.data import Evaluator, Unknown
+        from scripts_engineering_department.in_game.gui import gen_location_window as source
         evaluator = Evaluator(location.scenario_mocks('multiple', self.resources), self.resources.loc, [])
         self.assertIsInstance(evaluator.eval_str("[Location.MakeScope.GetVariable('new_unconfigured_variable').GetValue]"), Unknown)
         self.assertIsInstance(evaluator.eval_str('[ExtraTooltipInfo.GetTintColor]'), Unknown)
+        # These failed in game; fixture booleans previously concealed the failure.
+        for producer in (source.slot_ritual_modifiers_expr(1, 1, 'COUNTRY'),
+                         f"ShowModifierEffect({source.slot_modifier_key_expr('tooltip', 1)})"):
+            self.assertIsInstance(evaluator.eval_str(f'[IsUTF8StringNotEmpty({producer})]'), Unknown)
 
     def test_ritual_modifiers_are_only_in_hover_and_all_styles_are_inspectable(self):
         from eu5_gui_renderer.gui import Expander
@@ -154,7 +159,7 @@ class LocationPreviewTests(unittest.TestCase):
             tables = [node for node in visit(popup) if str(node.props.get('name', '')).startswith('tv_location_wonder_ritual_modifiers_')]
             self.assertEqual(len(tables), 2)
             self.assertTrue(all(node.typename == 'TooltipStringPairList' for node in tables))
-            self.assertTrue(all('ritual_style' not in node.props['visible'] for node in tables))
+            self.assertTrue(all('ritual_style' not in node.props.get('visible', '') for node in tables))
         with tempfile.TemporaryDirectory() as folder:
             for state in ('jerusalem', 'dedicated'):
                 for style in (1, 2, 3):
@@ -163,7 +168,42 @@ class LocationPreviewTests(unittest.TestCase):
                             hover=f'tv_location_wonder_ritual_1_{style}',
                             output=Path(folder) / f'{state}_{style}.png')
                         self.assertFalse(has_diagnostics(report), report)
-                        self.assertLessEqual(report['tooltip']['bounds'][2], 370)
+                        self.assertLessEqual(report['tooltip']['bounds'][2], 450)
+                        tree = Path(report['tooltip']['tree']).read_text(encoding='utf-8')
+                        # Hidden nodes remain in the dump; no empty placeholder
+                        # may reserve a visible row in the effects section.
+                        self.assertNotRegex(tree, r'TooltipListEmptyContent<[^>]+> \d+x[1-9]\d*@')
+
+    def test_gallery_tooltips_use_native_header_and_two_sections(self):
+        from eu5_gui_renderer.gui import Expander
+        expander = Expander(self.resources.db)
+        _, panel, _ = location.build(self.resources, expander, 560, 1080, menu=True)
+
+        def visit(node):
+            yield node
+            for child in node.children:
+                yield from visit(child)
+
+        owners = [node for node in visit(panel) if re.fullmatch(
+            r'tv_location_wonder_(?:(?:art|level)_\d+|ritual_\d+_[123])', str(node.props.get('name', '')))]
+        self.assertEqual(len(owners), 25)
+        for owner in owners:
+            popup = expander.build_lazy(owner.tooltipwidget)
+            nodes = list(visit(popup))
+            self.assertEqual(sum(node.typename == 'ContextualTooltipHeader' for node in nodes), 1)
+            sections = [node for node in nodes if node.props.get('name') in
+                        ('tv_wonder_effects_section', 'tv_wonder_conditions_section', 'tv_wonder_history_section')]
+            if '_art_' in owner.props['name']:
+                self.assertEqual([node.typename for node in sections], ['TooltipRequirementsList', 'TooltipFlavorTextBlock'])
+                self.assertIn('ShowTriggerConditionsForScope(', sections[0].props['textcontext'])
+                self.assertIn('LocationView.GetLocation.MakeScope.Self', sections[0].props['textcontext'])
+                continue
+            self.assertEqual([node.typename for node in sections], ['TooltipListBase', 'TooltipFlavorTextBlock'])
+            # Both reward scopes occupy the same full-width vertical section.
+            row_parents = [parent for parent in visit(sections[0]) for node in parent.children
+                           if node.typename == 'TooltipStringPairList']
+            self.assertEqual(len(row_parents), 2)
+            self.assertTrue(all(parent.kind == 'vbox' for parent in row_parents))
 
     def test_panel_has_no_tooltip_context_bindings_even_in_hidden_layers(self):
         from eu5_gui_renderer.gui import Expander

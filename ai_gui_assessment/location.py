@@ -67,6 +67,8 @@ def scenario_mocks(state, resources, menu=True, *, localized_tables=None):
     result.extend(variable_mocks('Location.MakeScope', wonder_variables(STATES[state])))
     result.append((re.escape(f"LocationView.Vars.Exists('{source.MENU_OPEN_VAR}')"), menu))
     result.append((re.escape("GetGlobalVariable('hagia_sophia_now_mosque').IsSet"), False))
+    # Show the native delayed flavor section in this settled-hover sample.
+    result.append((re.escape('ExtraTooltipInfo.IsDelayedInfoShowing'), True))
     # Native building links use the current final-building name. The offline
     # renderer samples that text only; it does not emulate native link interaction.
     all_wonders, mechanics = load_all_wonder_mechanics()
@@ -86,7 +88,7 @@ def scenario_mocks(state, resources, menu=True, *, localized_tables=None):
                 modifiers[node.key] = {n.key: (n.value == 'yes' if n.value in ('yes', 'no') else float(n.value))
                                        for n in node.value if n.key in metadata}
     # Sample expanded native tables from the actual reward definitions.
-    for slot, (ident, *_) in enumerate(STATES[state][:5], 1):
+    for ident in {entry[0] for entry in STATES[state][:5]}:
         for row in ritual_styles(wonders[ident], mechanics):
             for scope, modifier in (('COUNTRY', row['modifier']), ('LOCAL', row['location_modifier'])):
                 rows = []
@@ -94,14 +96,12 @@ def scenario_mocks(state, resources, menu=True, *, localized_tables=None):
                     if modifier not in modifiers:
                         raise ValueError(f'Missing ritual modifier: {modifier}')
                     rows = [tuple(line.rsplit(': ', 1)) for line in modifier_sample_lines(modifiers[modifier], metadata, resources.loc)]
-                expression = source.slot_ritual_modifiers_expr(slot, row['style'], scope).replace('LocationView.GetLocation.', 'Location.').replace(' ', '')
                 key = f"TV_WONDER_RITUAL_{scope}_MODIFIERS_{row['style']}_{ident}"
                 expected = f"[ShowModifierEffect('{modifier}')]" if modifier else ''
                 if resources.loc.get(key) != expected:
                     raise ValueError(f'Ritual table route does not match reward: {key}')
                 if localized_tables is not None:
                     localized_tables[key] = string_pair_list(rows)
-                result.append((re.escape(f'IsUTF8StringNotEmpty({expression})'), bool(rows)))
     for index, (ident, current_level, *_) in enumerate(STATES[state][:5], 1):
         for local, getter in ((False, source.slot_modifier_key_expr), (True, source.slot_local_modifier_key_expr)):
             key = f'tv_wonder_display_{ident}_{"local_" if local else ""}level_{max(current_level, 1)}'

@@ -90,18 +90,12 @@ PANEL_TEXT_HEIGHT = 24
 PANEL_TEXT_FONT_SIZE = 18
 PANEL_TEXT_MARGIN_X = 5
 PANEL_TEXT_MARGIN_Y = 3
-TOOLTIP_EFFECT_COLUMN_WIDTH = 462
 TOOLTIP_IMAGE_WIDTH = 300
 TOOLTIP_IMAGE_HEIGHT = 200
 TOOLTIP_IMAGE_OVERLAY_HEIGHT = 32
 TOOLTIP_IMAGE_NAME_WIDTH = 205
 # 48 displayed pixels at UI_SCALE, matching the medallion asset design range.
 LEVEL_MEDALLION_SIZE = 64
-TOOLTIP_EFFECT_MARGIN_X = 8
-TOOLTIP_MODIFIER_COLUMN_SPACING = 8
-# Match Engineering Department suitability columns: 444 = 218 + 8 + 218.
-TOOLTIP_MODIFIER_COLUMNS_WIDTH = TOOLTIP_EFFECT_COLUMN_WIDTH - TOOLTIP_EFFECT_MARGIN_X * 2 - 2
-TOOLTIP_MODIFIER_COLUMN_WIDTH = (TOOLTIP_MODIFIER_COLUMNS_WIDTH - TOOLTIP_MODIFIER_COLUMN_SPACING) // 2
 
 
 def extract_top_level_block(text: str, start_marker: str) -> str:
@@ -268,103 +262,6 @@ def render_tooltip_image_overlay(indent: str, *, slot: int) -> list[str]:
     ]
 
 
-def render_modifier_column(
-    indent: str,
-    *,
-    title_key: str,
-    modifier_key: str,
-    column_width: int,
-    font_size: int,
-    row_height: int,
-    vertical_policy: str,
-) -> list[str]:
-    return [
-        f"{indent}vbox = {{",
-        f"{indent}{T}layoutpolicy_horizontal = fixed",
-        f"{indent}{T}layoutpolicy_vertical = {vertical_policy}",
-        f"{indent}{T}minimumsize = {{ {column_width} -1 }}",
-        f"{indent}{T}maximumsize = {{ {column_width} -1 }}",
-        f"{indent}{T}spacing = 2",
-        f"{indent}{T}text_single = {{",
-        f'{indent}{T}{T}text = "{title_key}"',
-        f"{indent}{T}{T}max_width = {column_width}",
-        f"{indent}{T}{T}align = left|nobaseline",
-        f"{indent}{T}{T}fontsize = {font_size}",
-        f"{indent}{T}}}",
-        f"{indent}{T}TooltipStringPairList = {{",
-        f"{indent}{T}{T}layoutpolicy_horizontal = fixed",
-        f"{indent}{T}{T}maximumsize = {{ {column_width} -1 }}",
-        f'{indent}{T}{T}blockoverride "tooltip_minimumsize" {{ minimumsize = {{ {column_width} -1 }} }}',
-        f'{indent}{T}{T}blockoverride "field_text_format" {{',
-        f"{indent}{T}{T}{T}fontsize = {font_size}",
-        f"{indent}{T}{T}{T}autoresize = yes",
-        # Label (left) and value (right) columns share this one column_width budget as two
-        # side-by-side TooltipTableColumn/TooltipTableField instances (~30px margin+spacing
-        # chrome each, ~60px combined), leaving the value column's own short text its remaining
-        # share. 140 confirmed in-game by the user as the widest the label can go without the
-        # row overflowing again.
-        f"{indent}{T}{T}{T}max_width = 140",
-        f"{indent}{T}{T}{T}elide = right",
-        f"{indent}{T}{T}}}",
-        f'{indent}{T}{T}blockoverride "row_size" {{',
-        f"{indent}{T}{T}{T}maximumsize = {{ -1 {row_height} }}",
-        f"{indent}{T}{T}{T}minimumsize = {{ -1 {row_height} }}",
-        f"{indent}{T}{T}}}",
-        f'{indent}{T}{T}textcontext = "[ShowModifierEffect({modifier_key})]"',
-        f"{indent}{T}}}",
-        f"{indent}{T}expand = {{}}",
-        f"{indent}}}",
-    ]
-
-
-def render_tooltip_modifier_column(indent: str, *, title_key: str, modifier_key: str) -> list[str]:
-    return render_modifier_column(
-        indent,
-        title_key=title_key,
-        modifier_key=modifier_key,
-        column_width=TOOLTIP_MODIFIER_COLUMN_WIDTH,
-        font_size=13,
-        row_height=22,
-        vertical_policy="shrinking",
-    )
-
-
-def render_tooltip_construction_conditions_block(indent: str, *, slot: int) -> list[str]:
-    visible = slot_has_id_expr("tooltip", slot)
-    trigger_key = slot_base_site_rules_trigger_key_expr("tooltip", slot)
-    return [
-        f"{indent}vbox = {{",
-        f'{indent}{T}visible = "[{visible}]"',
-        f"{indent}{T}layoutpolicy_horizontal = fixed",
-        f"{indent}{T}layoutpolicy_vertical = shrinking",
-        f"{indent}{T}minimumsize = {{ {TOOLTIP_MODIFIER_COLUMNS_WIDTH} -1 }}",
-        f"{indent}{T}maximumsize = {{ {TOOLTIP_MODIFIER_COLUMNS_WIDTH} -1 }}",
-        f"{indent}{T}margin_bottom = 6",
-        f"{indent}{T}spacing = 2",
-        f"{indent}{T}TooltipRequirementsList = {{",
-        f"{indent}{T}{T}layoutpolicy_horizontal = expanding",
-        f'{indent}{T}{T}blockoverride "tooltip_minimumsize" {{ minimumsize = {{ 444 -1 }} }}',
-        f"{indent}{T}{T}maximumsize = {{ 444 -1 }}",
-        f'{indent}{T}{T}textcontext = "[ShowTriggerConditionsForScope({trigger_key},{LOCATION_SCOPE})]"',
-        f'{indent}{T}{T}blockoverride "field_text_format" {{',
-        f"{indent}{T}{T}{T}fontsize = 13",
-        f"{indent}{T}{T}}}",
-        f'{indent}{T}{T}blockoverride "row_size" {{',
-        f"{indent}{T}{T}{T}minimumsize = {{ -1 22 }}",
-        f"{indent}{T}{T}}}",
-        f'{indent}{T}{T}blockoverride "block_title" {{',
-        f'{indent}{T}{T}{T}block "block_title" {{',
-        f"{indent}{T}{T}{T}{T}visible = no",
-        f"{indent}{T}{T}{T}}}",
-        f"{indent}{T}{T}}}",
-        f'{indent}{T}{T}blockoverride "requirementslist_datamodel_is_empty" {{',
-        f"{indent}{T}{T}{T}visible = no",
-        f"{indent}{T}{T}}}",
-        f"{indent}{T}}}",
-        f"{indent}}}",
-    ]
-
-
 def render_overflow_line(indent: str) -> list[str]:
     visible = var_enabled_expr(OVERFLOW_VAR)
     return [
@@ -402,30 +299,18 @@ def slot_ritual_modifiers_expr(slot: int, style: int, scope: str) -> str:
     return f"Localize(Concatenate('TV_WONDER_RITUAL_{scope}_MODIFIERS_{style}_', {slot_id_string('tooltip', slot)}))"
 
 
-def tooltip_content(body: str, title: str, *, title_font_size: int = 18) -> str:
-    # ContextualTooltipType's content slot is inside TooltipContentSection (vbox).
-    return f'''tooltipwidget = {{
-        ContextualTooltipType = {{
-            blockoverride "tooltip_title" {{
-                text_multi = {{ minimumsize = {{ 444 -1 }} max_width = 444 autoresize = yes
-                    margin = {{ 10 10 }} fontsize = {title_font_size} raw_text = "{title}" }}
-            }}
-            blockoverride "tooltip_content" {{ {body} }}
-        }}
-    }}'''
-
-
 def render_art_tooltip(slot: int) -> str:
     building_type = slot_building_type_expr('tooltip', slot)
-    conditions = "\n".join(render_tooltip_construction_conditions_block("", slot=slot))
-    body = f'''text_single = {{ size = {{ 444 24 }} autoresize = no align = left|nobaseline
-            text = "TV_LOCATION_WONDER_HISTORY" fontsize = 15 }}
-        text_multi = {{ minimumsize = {{ 444 -1 }} max_width = 444 autoresize = yes
-            fontsize = 15 raw_text = "[{building_type}.GetFlavorText]" }}
-        text_single = {{ size = {{ 444 24 }} autoresize = no align = left|nobaseline
-            text = "TV_LOCATION_WONDER_CONDITIONS" fontsize = 15 }}
-        {conditions}'''
-    return tooltip_content(body, f"[{building_type}.GetNameWithNoTooltip]")
+    trigger_key = slot_base_site_rules_trigger_key_expr('tooltip', slot)
+    conditions = f'''TooltipRequirementsList = {{
+        name = "tv_wonder_conditions_section"
+        blockoverride "block_title" {{ text = "TV_LOCATION_WONDER_CONDITIONS" }}
+        blockoverride "requirementslist_datamodel_is_empty" {{ visible = no }}
+        textcontext = "[ShowTriggerConditionsForScope({trigger_key},{LOCATION_SCOPE})]"
+    }}'''
+    icons = '''icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" }'''
+    return native_wonder_tooltip(f'[{building_type}.GetNameWithNoTooltip]', '[tv_wonder_construction|e]',
+        icons, conditions, f'[{building_type}.GetFlavorText]')
 
 
 def slot_current_effects_expr(slot: int) -> str:
@@ -435,19 +320,60 @@ def slot_current_effects_expr(slot: int) -> str:
     )
 
 
+def native_effect_rows(name: str, effects: str) -> str:
+    # One shared native section frame; its country/local rows stack vertically.
+    # Let the native table's GetRows/GetFooter visibility handle empty output.
+    # IsUTF8StringNotEmpty fails on these CString producers in the game.
+    return f'''TooltipStringPairList = {{
+        name = "{name}"
+        margin = {{ 0 0 }}
+        blockoverride "bg_listbase" {{}}
+        blockoverride "block_title" {{ visible = no }}
+        blockoverride "stringpair_datamodel_is_empty" {{ visible = no }}
+        textcontext = "[{effects}]"
+    }}'''
+
+
+def native_wonder_tooltip(title: str, subtitle: str, icons: str, section: str, history: str) -> str:
+    # Same composition as ProductionMethod_tooltip / timed_modifier_tooltip.
+    # Inherit native header, row typography and delayed flavor treatment.
+    return f'''tooltipwidget = {{
+        ContextualTooltipType = {{
+            blockoverride "title_icon" {{ {icons} }}
+            blockoverride "title_text" {{ text = "{title}" }}
+            blockoverride "concept_link" {{ text = "{subtitle}" }}
+            blockoverride "tooltip_content" {{
+                {section}
+                TooltipFlavorTextBlock = {{
+                    name = "tv_wonder_history_section"
+                    blockoverride "text" {{ text = "{history}" }}
+                }}
+            }}
+        }}
+    }}'''
+
+
 def render_level_tooltip(slot: int) -> str:
-    columns = []
-    for key, getter in (("COUNTRY", slot_modifier_key_expr), ("LOCAL", slot_local_modifier_key_expr)):
-        columns.extend(render_tooltip_modifier_column("", title_key=f"TV_LOCATION_WONDER_{key}_MODIFIERS_TITLE",
-            modifier_key=getter("tooltip", slot)))
     active = slot_current_effects_expr(slot)
-    body = (f'hbox = {{ visible = "[{active}]" layoutpolicy_horizontal = fixed size = {{ 444 -1 }} spacing = 8 '
-            + "\n".join(columns) + ' }'
-            + f'''text_single = {{ visible = "[Not({active})]" size = {{ 444 24 }}
-                autoresize = no align = left|nobaseline fontsize = 15 text = "TV_LOCATION_WONDER_NO_EFFECT" }}''')
-    title = (f"[{slot_building_type_expr('tooltip', slot)}.GetNameWithNoTooltip] · "
-             f"[Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [{slot_level_var('tooltip', slot)}.GetValue|0]")
-    return tooltip_content(body, title)
+    rows = '\n'.join(native_effect_rows(f'tv_location_wonder_level_modifiers_{slot}_{scope}',
+        f"ShowModifierEffect({getter('tooltip', slot)})")
+        for scope, getter in (('country', slot_modifier_key_expr), ('local', slot_local_modifier_key_expr)))
+    effects = f'''vbox = {{ visible = "[{active}]" layoutpolicy_horizontal = expanding ignoreinvisible = yes
+        {rows}
+    }}
+    TooltipTextBlock = {{ visible = "[Not({active})]"
+        blockoverride "bg_listbase" {{}}
+        blockoverride "text" {{ text = "TV_LOCATION_WONDER_NO_EFFECT" }}
+    }}'''
+    icons = '\n'.join(f'''icon = {{ using = tooltip_title_icon_size
+        visible = "[EqualTo_CFixedPoint({slot_level_var('tooltip', slot)}.GetValue, '(CFixedPoint){level}.0')]"
+        texture = "gfx/interface/icons/location_icons/tv_wonder_level_{level}.dds"
+    }}''' for level in range(1, 7))
+    building = slot_building_type_expr('tooltip', slot)
+    subtitle = f"[Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [{slot_level_var('tooltip', slot)}.GetValue|0]"
+    section = f'TooltipListBase = {{ name = "tv_wonder_effects_section" {effects} }}'
+    return native_wonder_tooltip(f'[{building}.GetNameWithNoTooltip]', subtitle, icons,
+                                 section, f'[{building}.GetFlavorText]')
 
 
 def slot_ritual_active_expr(slot: int, style: int) -> str:
@@ -457,24 +383,15 @@ def slot_ritual_active_expr(slot: int, style: int) -> str:
 
 
 def render_ritual_tooltip(slot: int, style: int) -> str:
-    # Expand both reward scopes with the same native tables used by level hovers.
     active = slot_ritual_active_expr(slot, style)
-    body = f'''text_multi = {{ minimumsize = {{ 444 -1 }} max_width = 444 autoresize = yes
-        fontsize = 18 raw_text = "[{slot_localization_expr(slot, f'_ritual_{style}_desc')}]" }}'''
-    for scope in ('COUNTRY', 'LOCAL'):
-        effects = slot_ritual_modifiers_expr(slot, style, scope)
-        body += f'''TooltipStringPairList = {{
-            name = "tv_location_wonder_ritual_modifiers_{slot}_{style}_{scope.lower()}"
-            visible = "[IsUTF8StringNotEmpty({effects})]"
-            layoutpolicy_horizontal = fixed maximumsize = {{ 444 -1 }}
-            blockoverride "tooltip_minimumsize" {{ minimumsize = {{ 444 -1 }} }}
-            blockoverride "block_title" {{ text = "TV_LOCATION_WONDER_{scope}_MODIFIERS_TITLE" }}
-            blockoverride "field_text_format" {{ fontsize = 18 max_width = 300 autoresize = yes }}
-            blockoverride "row_size" {{ minimumsize = {{ -1 28 }} }}
-            textcontext = "[{effects}]"
-        }}'''
-    body += f'''text_single = {{ visible = "[{active}]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 18 }}'''
-    return tooltip_content(body, f"[{slot_localization_expr(slot, f'_ritual_{style}')}]", title_font_size=20)
+    effects = '\n'.join(native_effect_rows(f'tv_location_wonder_ritual_modifiers_{slot}_{style}_{scope.lower()}',
+        slot_ritual_modifiers_expr(slot, style, scope)) for scope in ('COUNTRY', 'LOCAL'))
+    icons = '''icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" }'''
+    subtitle = (f"[{slot_building_type_expr('tooltip', slot)}.GetNameWithNoTooltip] · "
+                f"[SelectLocalization({active}, 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]")
+    section = f'TooltipListBase = {{ name = "tv_wonder_effects_section" {effects} }}'
+    return native_wonder_tooltip(f"[{slot_localization_expr(slot, f'_ritual_{style}')}]", subtitle,
+        icons, section, f"[{slot_localization_expr(slot, f'_ritual_{style}_desc')}]")
 
 
 def render_menu_slot(indent: str, *, slot: int) -> list[str]:
@@ -605,7 +522,7 @@ def render_scene_overlay() -> str:
         f'{indent}{T}name = "tv_location_wonders_button"',
         f'{indent}{T}datacontext = "[LocationView.GetLocation]"',
         f'{indent}{T}visible = "[{slot_has_id_expr("tooltip", 1)}]"',
-        f"{indent}{T}size = {{ 144 34 }}",
+        f"{indent}{T}size = {{ 144 40 }}",
         f"{indent}{T}parentanchor = top|right",
         f"{indent}{T}widgetanchor = top|right",
         f"{indent}{T}position = {{ -8 8 }}",

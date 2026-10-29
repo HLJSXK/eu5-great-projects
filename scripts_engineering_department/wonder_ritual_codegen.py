@@ -203,7 +203,8 @@ set_variable = {{ name = tv_wonder_ritual_months_completed value = 0 }}
 set_variable = {{ name = tv_wonder_ritual_progress_pct value = 0 }}
 set_variable = {{ name = tv_wonder_ritual_ai_wait_months value = 0 }}
 tv_wonder_ritual_roll_estates_effect = yes
-tv_wonder_ritual_refresh_display_effect = yes'''))
+tv_wonder_ritual_refresh_display_effect = yes
+hidden_effect = {{ tv_engineering_department_sync_attention_alert_effect = yes }}'''))
     out.append(block('tv_wonder_ritual_preview_effect', '''if = { limit = { tv_wonder_ritual_can_preview_trigger = yes }
 set_variable = { name = tv_wonder_ritual_choice value = $style$ }
 tv_wonder_ritual_refresh_display_effect = yes
@@ -215,6 +216,7 @@ else_if = { limit = { var:tv_wonder_ritual_choice ?= 2 } tv_wonder_ritual_settle
 else_if = { limit = { var:tv_wonder_ritual_choice ?= 3 } tv_wonder_ritual_settle_estates_effect = { style = 3 } }
 hidden_effect = {
 set_variable = { name = tv_wonder_ritual_in_progress value = 1 }
+tv_engineering_department_sync_attention_alert_effect = yes
 if = { limit = { has_variable = tv_wonder_cmm_skip_ceremony } tv_wonder_ritual_complete_effect = yes }
 }
 }'''))

@@ -104,7 +104,8 @@ def test_each_construction_round_requires_a_fresh_ritual_choice():
     # Neither project mode nor a site's old dedication may bypass this entry.
     assert all(n.key in ('remove_variable', 'set_variable',
                          'tv_wonder_ritual_roll_estates_effect',
-                         'tv_wonder_ritual_refresh_display_effect') for n in enter)
+                         'tv_wonder_ritual_refresh_display_effect',
+                         'hidden_effect') for n in enter)
     cleared = {n.value for n in enter if n.key == 'remove_variable'}
     assert {'tv_wonder_ritual_choice', 'tv_wonder_finalization_outcome',
             'tv_wonder_ritual_reward_claimed', 'tv_wonder_ritual_in_progress',
@@ -158,6 +159,48 @@ def test_confirmation_pays_and_settles_estates_before_timer_but_completion_does_
     assert all(child(n.children, 'value').value == '-0.05' for n in walk(plain) if n.key == 'add_estate_satisfaction')
     availability = [n.value for n in walk(effects['tv_wonder_ritual_refresh_display_effect']) if n.key == 'has_societal_value']
     assert availability and all(value.startswith('societal_value_type:') for value in availability)
+
+
+def test_ritual_lifecycle_syncs_cmf_attention_after_state_changes():
+    phase = source_blocks('common/scripted_effects/tv_wonder_ritual_phase_effects.txt')
+    sync = 'tv_engineering_department_sync_attention_alert_effect'
+    # Both construction and rededication use this entry: show the choice alert
+    # only after the previous round's in-progress/completed state is cleared.
+    enter = phase['tv_wonder_ritual_enter_phase_effect']
+    assert enter[-1].key == 'hidden_effect'
+    assert contains(enter[-1].children, sync, 'yes')
+    project = source_blocks('common/scripted_effects/tv_engineering_department_effects.txt')
+    assert contains(project['tv_wonder_finish_construction_effect'], 'tv_wonder_ritual_enter_phase_effect')
+    assert contains(phase['tv_wonder_reritual_lock_effect'], 'tv_wonder_ritual_enter_phase_effect')
+
+    confirm = child(phase['tv_wonder_ritual_confirm_effect'], 'if').children
+    assert contains(child(confirm, 'limit').children, 'tv_wonder_ritual_can_confirm_trigger', 'yes')
+    hidden = child(confirm, 'hidden_effect').children
+    started = next(i for i, n in enumerate(hidden) if n.key == 'set_variable'
+                   and child(n.children, 'name').value == 'tv_wonder_ritual_in_progress')
+    synced = next(i for i, n in enumerate(hidden) if n.key == sync)
+    skipped = next(i for i, n in enumerate(hidden) if contains(n.children, 'tv_wonder_ritual_complete_effect'))
+    # Remove the persistent CMF alert immediately, including CMM instant finish.
+    assert started < synced < skipped
+    assert not contains(phase['tv_wonder_ritual_preview_effect'], sync)
+
+
+def test_ritual_cmf_alert_uses_choice_availability_and_removes_inactive_alert():
+    trigger = 'tv_engineering_department_ceremony_style_alert_trigger'
+    alert = 'tv_engineering_department_ceremony_style_alert'
+    triggers = source_blocks('common/scripted_triggers/tv_engineering_department_chief_alert_trigger.txt')
+    assert contains(triggers[trigger], 'tv_wonder_ritual_can_preview_trigger', 'yes')
+    ready = source_blocks('common/scripted_triggers/tv_wonder_ritual_triggers.txt')['tv_wonder_ritual_can_preview_trigger']
+    for state in ('tv_wonder_ritual_in_progress', 'tv_wonder_ritual_completed', 'tv_wonder_finalized'):
+        assert any(n.key == 'NOT' and contains(n.children, 'has_variable', state) for n in ready)
+    sync = source_blocks('common/scripted_effects/tv_engineering_department_chief_alert_effects.txt')['tv_engineering_department_sync_attention_alert_effect']
+    index = next(i for i, n in enumerate(sync) if n.key == 'if'
+                 and contains(child(n.children, 'limit').children, trigger, 'yes'))
+    assert contains(child(sync[index].children, 'cmf_show_alert').children, 'alert', alert)
+    remove = sync[index + 1]
+    assert remove.key == 'else_if'
+    assert contains(child(child(remove.children, 'limit').children, 'cmf_is_alert_active').children, 'alert', alert)
+    assert contains(child(remove.children, 'cmf_remove_alert').children, 'alert', alert)
 
 
 def test_plain_preview_only_selects_and_has_all_five_message_fields():

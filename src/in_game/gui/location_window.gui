@@ -85,45 +85,21 @@ types tv_location_wonder_menu_types {
 			            background = { texture = "[GetConceptTexture(Select_CString(And(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue, '(CFixedPoint)102.0'), GetGlobalVariable('hagia_sophia_now_mosque').IsSet), 'tv_wonder_identity_full_image_102_mosque', Concatenate('tv_wonder_display_full_image_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)))))]" fittype = fill }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 13 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[tv_wonder_construction|e]" }
+			            blockoverride "tooltip_content" {
+			                TooltipRequirementsList = {
+			        name = "tv_wonder_conditions_section"
+			        blockoverride "block_title" { text = "TV_LOCATION_WONDER_CONDITIONS" }
+			        blockoverride "requirementslist_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
+			    }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_single = { size = { 333 18 } autoresize = no align = left|nobaseline
-			            text = "TV_LOCATION_WONDER_HISTORY" fontsize = 11 }
-			        text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			            fontsize = 11 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetFlavorText]" }
-			        text_single = { size = { 333 18 } autoresize = no align = left|nobaseline
-			            text = "TV_LOCATION_WONDER_CONDITIONS" fontsize = 11 }
-			        vbox = {
-				visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').IsSet]"
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 333 -1 }
-				maximumsize = { 333 -1 }
-				margin_bottom = 4.5
-				spacing = 1.5
-				TooltipRequirementsList = {
-					layoutpolicy_horizontal = expanding
-					blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-					maximumsize = { 333 -1 }
-					textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
-					blockoverride "field_text_format" {
-						fontsize = 9
-					}
-					blockoverride "row_size" {
-						minimumsize = { -1 16.5 }
-					}
-					blockoverride "block_title" {
-						block "block_title" {
-							visible = no
-						}
-					}
-					blockoverride "requirementslist_datamodel_is_empty" {
-						visible = no
-					}
-				}
-			} }
 			        }
 			    }
 			widget = {
@@ -169,71 +145,60 @@ types tv_location_wonder_menu_types {
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 13 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue|0]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_2.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_3.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)4.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_4.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)5.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_5.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)6.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_6.dds"
+			    } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue|0]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" vbox = { visible = "[And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_ritual_style').GetValue, '(CFixedPoint)-1.0')))]" layoutpolicy_horizontal = expanding ignoreinvisible = yes
+			        TooltipStringPairList = {
+			        name = "tv_location_wonder_level_modifiers_1_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)1.0')))))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_level_modifiers_1_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)1.0')))))))]"
+			    }
+			    }
+			    TooltipTextBlock = { visible = "[Not(And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_ritual_style').GetValue, '(CFixedPoint)-1.0'))))]"
+			        blockoverride "bg_listbase" {}
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_NO_EFFECT" }
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { hbox = { visible = "[And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_ritual_style').GetValue, '(CFixedPoint)-1.0')))]" layoutpolicy_horizontal = fixed size = { 333 -1 } spacing = 6 vbox = {
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 163.5 -1 }
-				maximumsize = { 163.5 -1 }
-				spacing = 1.5
-				text_single = {
-					text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE"
-					max_width = 163.5
-					align = left|nobaseline
-					fontsize = 9
-				}
-				TooltipStringPairList = {
-					layoutpolicy_horizontal = fixed
-					maximumsize = { 163.5 -1 }
-					blockoverride "tooltip_minimumsize" { minimumsize = { 163.5 -1 } }
-					blockoverride "field_text_format" {
-						fontsize = 9
-						autoresize = yes
-						max_width = 105
-						elide = right
-					}
-					blockoverride "row_size" {
-						maximumsize = { -1 16.5 }
-						minimumsize = { -1 16.5 }
-					}
-					textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)1.0')))))))]"
-				}
-				expand = {}
-			}
-			vbox = {
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 163.5 -1 }
-				maximumsize = { 163.5 -1 }
-				spacing = 1.5
-				text_single = {
-					text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE"
-					max_width = 163.5
-					align = left|nobaseline
-					fontsize = 9
-				}
-				TooltipStringPairList = {
-					layoutpolicy_horizontal = fixed
-					maximumsize = { 163.5 -1 }
-					blockoverride "tooltip_minimumsize" { minimumsize = { 163.5 -1 } }
-					blockoverride "field_text_format" {
-						fontsize = 9
-						autoresize = yes
-						max_width = 105
-						elide = right
-					}
-					blockoverride "row_size" {
-						maximumsize = { -1 16.5 }
-						minimumsize = { -1 16.5 }
-					}
-					textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)1.0')))))))]"
-				}
-				expand = {}
-			} }text_single = { visible = "[Not(And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_ritual_style').GetValue, '(CFixedPoint)-1.0'))))]" size = { 333 18 }
-			                autoresize = no align = left|nobaseline fontsize = 11 text = "TV_LOCATION_WONDER_NO_EFFECT" } }
 			        }
 			    }
 			icon = {
@@ -304,30 +269,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_1')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_1')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_ritual_style').GetValue, '(CFixedPoint)1.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_1_1_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_1_1_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_1_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_1_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_1_1_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_1_1_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_ritual_style').GetValue, '(CFixedPoint)1.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -347,30 +313,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_2')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_2')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_ritual_style').GetValue, '(CFixedPoint)2.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_1_2_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_1_2_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_2_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_2_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_1_2_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_1_2_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_ritual_style').GetValue, '(CFixedPoint)2.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -390,30 +357,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_3')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_3')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_ritual_style').GetValue, '(CFixedPoint)3.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_1_3_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_1_3_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_3_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))), '_ritual_3_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_1_3_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_1_3_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_ritual_style').GetValue, '(CFixedPoint)3.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -433,45 +401,21 @@ types tv_location_wonder_menu_types {
 			            background = { texture = "[GetConceptTexture(Select_CString(And(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue, '(CFixedPoint)102.0'), GetGlobalVariable('hagia_sophia_now_mosque').IsSet), 'tv_wonder_identity_full_image_102_mosque', Concatenate('tv_wonder_display_full_image_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)))))]" fittype = fill }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 13 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[tv_wonder_construction|e]" }
+			            blockoverride "tooltip_content" {
+			                TooltipRequirementsList = {
+			        name = "tv_wonder_conditions_section"
+			        blockoverride "block_title" { text = "TV_LOCATION_WONDER_CONDITIONS" }
+			        blockoverride "requirementslist_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
+			    }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_single = { size = { 333 18 } autoresize = no align = left|nobaseline
-			            text = "TV_LOCATION_WONDER_HISTORY" fontsize = 11 }
-			        text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			            fontsize = 11 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetFlavorText]" }
-			        text_single = { size = { 333 18 } autoresize = no align = left|nobaseline
-			            text = "TV_LOCATION_WONDER_CONDITIONS" fontsize = 11 }
-			        vbox = {
-				visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').IsSet]"
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 333 -1 }
-				maximumsize = { 333 -1 }
-				margin_bottom = 4.5
-				spacing = 1.5
-				TooltipRequirementsList = {
-					layoutpolicy_horizontal = expanding
-					blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-					maximumsize = { 333 -1 }
-					textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
-					blockoverride "field_text_format" {
-						fontsize = 9
-					}
-					blockoverride "row_size" {
-						minimumsize = { -1 16.5 }
-					}
-					blockoverride "block_title" {
-						block "block_title" {
-							visible = no
-						}
-					}
-					blockoverride "requirementslist_datamodel_is_empty" {
-						visible = no
-					}
-				}
-			} }
 			        }
 			    }
 			widget = {
@@ -517,71 +461,60 @@ types tv_location_wonder_menu_types {
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 13 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue|0]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_2.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_3.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)4.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_4.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)5.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_5.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)6.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_6.dds"
+			    } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue|0]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" vbox = { visible = "[And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_ritual_style').GetValue, '(CFixedPoint)-1.0')))]" layoutpolicy_horizontal = expanding ignoreinvisible = yes
+			        TooltipStringPairList = {
+			        name = "tv_location_wonder_level_modifiers_2_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)1.0')))))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_level_modifiers_2_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)1.0')))))))]"
+			    }
+			    }
+			    TooltipTextBlock = { visible = "[Not(And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_ritual_style').GetValue, '(CFixedPoint)-1.0'))))]"
+			        blockoverride "bg_listbase" {}
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_NO_EFFECT" }
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { hbox = { visible = "[And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_ritual_style').GetValue, '(CFixedPoint)-1.0')))]" layoutpolicy_horizontal = fixed size = { 333 -1 } spacing = 6 vbox = {
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 163.5 -1 }
-				maximumsize = { 163.5 -1 }
-				spacing = 1.5
-				text_single = {
-					text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE"
-					max_width = 163.5
-					align = left|nobaseline
-					fontsize = 9
-				}
-				TooltipStringPairList = {
-					layoutpolicy_horizontal = fixed
-					maximumsize = { 163.5 -1 }
-					blockoverride "tooltip_minimumsize" { minimumsize = { 163.5 -1 } }
-					blockoverride "field_text_format" {
-						fontsize = 9
-						autoresize = yes
-						max_width = 105
-						elide = right
-					}
-					blockoverride "row_size" {
-						maximumsize = { -1 16.5 }
-						minimumsize = { -1 16.5 }
-					}
-					textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)1.0')))))))]"
-				}
-				expand = {}
-			}
-			vbox = {
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 163.5 -1 }
-				maximumsize = { 163.5 -1 }
-				spacing = 1.5
-				text_single = {
-					text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE"
-					max_width = 163.5
-					align = left|nobaseline
-					fontsize = 9
-				}
-				TooltipStringPairList = {
-					layoutpolicy_horizontal = fixed
-					maximumsize = { 163.5 -1 }
-					blockoverride "tooltip_minimumsize" { minimumsize = { 163.5 -1 } }
-					blockoverride "field_text_format" {
-						fontsize = 9
-						autoresize = yes
-						max_width = 105
-						elide = right
-					}
-					blockoverride "row_size" {
-						maximumsize = { -1 16.5 }
-						minimumsize = { -1 16.5 }
-					}
-					textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)1.0')))))))]"
-				}
-				expand = {}
-			} }text_single = { visible = "[Not(And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_ritual_style').GetValue, '(CFixedPoint)-1.0'))))]" size = { 333 18 }
-			                autoresize = no align = left|nobaseline fontsize = 11 text = "TV_LOCATION_WONDER_NO_EFFECT" } }
 			        }
 			    }
 			icon = {
@@ -652,30 +585,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_1')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_1')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_ritual_style').GetValue, '(CFixedPoint)1.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_2_1_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_2_1_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_1_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_1_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_2_1_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_2_1_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_ritual_style').GetValue, '(CFixedPoint)1.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -695,30 +629,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_2')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_2')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_ritual_style').GetValue, '(CFixedPoint)2.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_2_2_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_2_2_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_2_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_2_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_2_2_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_2_2_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_ritual_style').GetValue, '(CFixedPoint)2.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -738,30 +673,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_3')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_3')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_ritual_style').GetValue, '(CFixedPoint)3.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_2_3_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_2_3_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_3_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))), '_ritual_3_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_2_3_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_2_3_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_ritual_style').GetValue, '(CFixedPoint)3.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -781,45 +717,21 @@ types tv_location_wonder_menu_types {
 			            background = { texture = "[GetConceptTexture(Select_CString(And(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue, '(CFixedPoint)102.0'), GetGlobalVariable('hagia_sophia_now_mosque').IsSet), 'tv_wonder_identity_full_image_102_mosque', Concatenate('tv_wonder_display_full_image_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)))))]" fittype = fill }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 13 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[tv_wonder_construction|e]" }
+			            blockoverride "tooltip_content" {
+			                TooltipRequirementsList = {
+			        name = "tv_wonder_conditions_section"
+			        blockoverride "block_title" { text = "TV_LOCATION_WONDER_CONDITIONS" }
+			        blockoverride "requirementslist_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
+			    }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_single = { size = { 333 18 } autoresize = no align = left|nobaseline
-			            text = "TV_LOCATION_WONDER_HISTORY" fontsize = 11 }
-			        text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			            fontsize = 11 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetFlavorText]" }
-			        text_single = { size = { 333 18 } autoresize = no align = left|nobaseline
-			            text = "TV_LOCATION_WONDER_CONDITIONS" fontsize = 11 }
-			        vbox = {
-				visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').IsSet]"
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 333 -1 }
-				maximumsize = { 333 -1 }
-				margin_bottom = 4.5
-				spacing = 1.5
-				TooltipRequirementsList = {
-					layoutpolicy_horizontal = expanding
-					blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-					maximumsize = { 333 -1 }
-					textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
-					blockoverride "field_text_format" {
-						fontsize = 9
-					}
-					blockoverride "row_size" {
-						minimumsize = { -1 16.5 }
-					}
-					blockoverride "block_title" {
-						block "block_title" {
-							visible = no
-						}
-					}
-					blockoverride "requirementslist_datamodel_is_empty" {
-						visible = no
-					}
-				}
-			} }
 			        }
 			    }
 			widget = {
@@ -865,71 +777,60 @@ types tv_location_wonder_menu_types {
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 13 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue|0]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_2.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_3.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)4.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_4.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)5.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_5.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)6.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_6.dds"
+			    } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue|0]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" vbox = { visible = "[And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_ritual_style').GetValue, '(CFixedPoint)-1.0')))]" layoutpolicy_horizontal = expanding ignoreinvisible = yes
+			        TooltipStringPairList = {
+			        name = "tv_location_wonder_level_modifiers_3_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)1.0')))))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_level_modifiers_3_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)1.0')))))))]"
+			    }
+			    }
+			    TooltipTextBlock = { visible = "[Not(And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_ritual_style').GetValue, '(CFixedPoint)-1.0'))))]"
+			        blockoverride "bg_listbase" {}
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_NO_EFFECT" }
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { hbox = { visible = "[And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_ritual_style').GetValue, '(CFixedPoint)-1.0')))]" layoutpolicy_horizontal = fixed size = { 333 -1 } spacing = 6 vbox = {
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 163.5 -1 }
-				maximumsize = { 163.5 -1 }
-				spacing = 1.5
-				text_single = {
-					text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE"
-					max_width = 163.5
-					align = left|nobaseline
-					fontsize = 9
-				}
-				TooltipStringPairList = {
-					layoutpolicy_horizontal = fixed
-					maximumsize = { 163.5 -1 }
-					blockoverride "tooltip_minimumsize" { minimumsize = { 163.5 -1 } }
-					blockoverride "field_text_format" {
-						fontsize = 9
-						autoresize = yes
-						max_width = 105
-						elide = right
-					}
-					blockoverride "row_size" {
-						maximumsize = { -1 16.5 }
-						minimumsize = { -1 16.5 }
-					}
-					textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)1.0')))))))]"
-				}
-				expand = {}
-			}
-			vbox = {
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 163.5 -1 }
-				maximumsize = { 163.5 -1 }
-				spacing = 1.5
-				text_single = {
-					text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE"
-					max_width = 163.5
-					align = left|nobaseline
-					fontsize = 9
-				}
-				TooltipStringPairList = {
-					layoutpolicy_horizontal = fixed
-					maximumsize = { 163.5 -1 }
-					blockoverride "tooltip_minimumsize" { minimumsize = { 163.5 -1 } }
-					blockoverride "field_text_format" {
-						fontsize = 9
-						autoresize = yes
-						max_width = 105
-						elide = right
-					}
-					blockoverride "row_size" {
-						maximumsize = { -1 16.5 }
-						minimumsize = { -1 16.5 }
-					}
-					textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)1.0')))))))]"
-				}
-				expand = {}
-			} }text_single = { visible = "[Not(And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_ritual_style').GetValue, '(CFixedPoint)-1.0'))))]" size = { 333 18 }
-			                autoresize = no align = left|nobaseline fontsize = 11 text = "TV_LOCATION_WONDER_NO_EFFECT" } }
 			        }
 			    }
 			icon = {
@@ -1000,30 +901,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_1')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_1')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_ritual_style').GetValue, '(CFixedPoint)1.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_3_1_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_3_1_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_1_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_1_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_3_1_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_3_1_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_ritual_style').GetValue, '(CFixedPoint)1.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -1043,30 +945,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_2')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_2')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_ritual_style').GetValue, '(CFixedPoint)2.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_3_2_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_3_2_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_2_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_2_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_3_2_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_3_2_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_ritual_style').GetValue, '(CFixedPoint)2.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -1086,30 +989,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_3')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_3')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_ritual_style').GetValue, '(CFixedPoint)3.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_3_3_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_3_3_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_3_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))), '_ritual_3_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_3_3_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_3_3_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_ritual_style').GetValue, '(CFixedPoint)3.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -1129,45 +1033,21 @@ types tv_location_wonder_menu_types {
 			            background = { texture = "[GetConceptTexture(Select_CString(And(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue, '(CFixedPoint)102.0'), GetGlobalVariable('hagia_sophia_now_mosque').IsSet), 'tv_wonder_identity_full_image_102_mosque', Concatenate('tv_wonder_display_full_image_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)))))]" fittype = fill }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 13 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[tv_wonder_construction|e]" }
+			            blockoverride "tooltip_content" {
+			                TooltipRequirementsList = {
+			        name = "tv_wonder_conditions_section"
+			        blockoverride "block_title" { text = "TV_LOCATION_WONDER_CONDITIONS" }
+			        blockoverride "requirementslist_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
+			    }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_single = { size = { 333 18 } autoresize = no align = left|nobaseline
-			            text = "TV_LOCATION_WONDER_HISTORY" fontsize = 11 }
-			        text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			            fontsize = 11 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetFlavorText]" }
-			        text_single = { size = { 333 18 } autoresize = no align = left|nobaseline
-			            text = "TV_LOCATION_WONDER_CONDITIONS" fontsize = 11 }
-			        vbox = {
-				visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').IsSet]"
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 333 -1 }
-				maximumsize = { 333 -1 }
-				margin_bottom = 4.5
-				spacing = 1.5
-				TooltipRequirementsList = {
-					layoutpolicy_horizontal = expanding
-					blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-					maximumsize = { 333 -1 }
-					textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
-					blockoverride "field_text_format" {
-						fontsize = 9
-					}
-					blockoverride "row_size" {
-						minimumsize = { -1 16.5 }
-					}
-					blockoverride "block_title" {
-						block "block_title" {
-							visible = no
-						}
-					}
-					blockoverride "requirementslist_datamodel_is_empty" {
-						visible = no
-					}
-				}
-			} }
 			        }
 			    }
 			widget = {
@@ -1213,71 +1093,60 @@ types tv_location_wonder_menu_types {
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 13 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue|0]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_2.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_3.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)4.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_4.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)5.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_5.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)6.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_6.dds"
+			    } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue|0]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" vbox = { visible = "[And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_ritual_style').GetValue, '(CFixedPoint)-1.0')))]" layoutpolicy_horizontal = expanding ignoreinvisible = yes
+			        TooltipStringPairList = {
+			        name = "tv_location_wonder_level_modifiers_4_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)1.0')))))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_level_modifiers_4_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)1.0')))))))]"
+			    }
+			    }
+			    TooltipTextBlock = { visible = "[Not(And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_ritual_style').GetValue, '(CFixedPoint)-1.0'))))]"
+			        blockoverride "bg_listbase" {}
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_NO_EFFECT" }
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { hbox = { visible = "[And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_ritual_style').GetValue, '(CFixedPoint)-1.0')))]" layoutpolicy_horizontal = fixed size = { 333 -1 } spacing = 6 vbox = {
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 163.5 -1 }
-				maximumsize = { 163.5 -1 }
-				spacing = 1.5
-				text_single = {
-					text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE"
-					max_width = 163.5
-					align = left|nobaseline
-					fontsize = 9
-				}
-				TooltipStringPairList = {
-					layoutpolicy_horizontal = fixed
-					maximumsize = { 163.5 -1 }
-					blockoverride "tooltip_minimumsize" { minimumsize = { 163.5 -1 } }
-					blockoverride "field_text_format" {
-						fontsize = 9
-						autoresize = yes
-						max_width = 105
-						elide = right
-					}
-					blockoverride "row_size" {
-						maximumsize = { -1 16.5 }
-						minimumsize = { -1 16.5 }
-					}
-					textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)1.0')))))))]"
-				}
-				expand = {}
-			}
-			vbox = {
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 163.5 -1 }
-				maximumsize = { 163.5 -1 }
-				spacing = 1.5
-				text_single = {
-					text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE"
-					max_width = 163.5
-					align = left|nobaseline
-					fontsize = 9
-				}
-				TooltipStringPairList = {
-					layoutpolicy_horizontal = fixed
-					maximumsize = { 163.5 -1 }
-					blockoverride "tooltip_minimumsize" { minimumsize = { 163.5 -1 } }
-					blockoverride "field_text_format" {
-						fontsize = 9
-						autoresize = yes
-						max_width = 105
-						elide = right
-					}
-					blockoverride "row_size" {
-						maximumsize = { -1 16.5 }
-						minimumsize = { -1 16.5 }
-					}
-					textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)1.0')))))))]"
-				}
-				expand = {}
-			} }text_single = { visible = "[Not(And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_ritual_style').GetValue, '(CFixedPoint)-1.0'))))]" size = { 333 18 }
-			                autoresize = no align = left|nobaseline fontsize = 11 text = "TV_LOCATION_WONDER_NO_EFFECT" } }
 			        }
 			    }
 			icon = {
@@ -1348,30 +1217,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_1')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_1')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_ritual_style').GetValue, '(CFixedPoint)1.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_4_1_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_4_1_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_1_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_1_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_4_1_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_4_1_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_ritual_style').GetValue, '(CFixedPoint)1.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -1391,30 +1261,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_2')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_2')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_ritual_style').GetValue, '(CFixedPoint)2.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_4_2_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_4_2_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_2_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_2_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_4_2_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_4_2_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_ritual_style').GetValue, '(CFixedPoint)2.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -1434,30 +1305,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_3')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_3')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_ritual_style').GetValue, '(CFixedPoint)3.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_4_3_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_4_3_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_3_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))), '_ritual_3_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_4_3_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_4_3_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_ritual_style').GetValue, '(CFixedPoint)3.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -1477,45 +1349,21 @@ types tv_location_wonder_menu_types {
 			            background = { texture = "[GetConceptTexture(Select_CString(And(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue, '(CFixedPoint)102.0'), GetGlobalVariable('hagia_sophia_now_mosque').IsSet), 'tv_wonder_identity_full_image_102_mosque', Concatenate('tv_wonder_display_full_image_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)))))]" fittype = fill }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 13 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[tv_wonder_construction|e]" }
+			            blockoverride "tooltip_content" {
+			                TooltipRequirementsList = {
+			        name = "tv_wonder_conditions_section"
+			        blockoverride "block_title" { text = "TV_LOCATION_WONDER_CONDITIONS" }
+			        blockoverride "requirementslist_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
+			    }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_single = { size = { 333 18 } autoresize = no align = left|nobaseline
-			            text = "TV_LOCATION_WONDER_HISTORY" fontsize = 11 }
-			        text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			            fontsize = 11 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetFlavorText]" }
-			        text_single = { size = { 333 18 } autoresize = no align = left|nobaseline
-			            text = "TV_LOCATION_WONDER_CONDITIONS" fontsize = 11 }
-			        vbox = {
-				visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').IsSet]"
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 333 -1 }
-				maximumsize = { 333 -1 }
-				margin_bottom = 4.5
-				spacing = 1.5
-				TooltipRequirementsList = {
-					layoutpolicy_horizontal = expanding
-					blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-					maximumsize = { 333 -1 }
-					textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
-					blockoverride "field_text_format" {
-						fontsize = 9
-					}
-					blockoverride "row_size" {
-						minimumsize = { -1 16.5 }
-					}
-					blockoverride "block_title" {
-						block "block_title" {
-							visible = no
-						}
-					}
-					blockoverride "requirementslist_datamodel_is_empty" {
-						visible = no
-					}
-				}
-			} }
 			        }
 			    }
 			widget = {
@@ -1561,71 +1409,60 @@ types tv_location_wonder_menu_types {
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 13 raw_text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue|0]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_2.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_3.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)4.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_4.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)5.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_5.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)6.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_6.dds"
+			    } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue|0]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" vbox = { visible = "[And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_ritual_style').GetValue, '(CFixedPoint)-1.0')))]" layoutpolicy_horizontal = expanding ignoreinvisible = yes
+			        TooltipStringPairList = {
+			        name = "tv_location_wonder_level_modifiers_5_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)1.0')))))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_level_modifiers_5_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)1.0')))))))]"
+			    }
+			    }
+			    TooltipTextBlock = { visible = "[Not(And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_ritual_style').GetValue, '(CFixedPoint)-1.0'))))]"
+			        blockoverride "bg_listbase" {}
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_NO_EFFECT" }
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { hbox = { visible = "[And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_ritual_style').GetValue, '(CFixedPoint)-1.0')))]" layoutpolicy_horizontal = fixed size = { 333 -1 } spacing = 6 vbox = {
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 163.5 -1 }
-				maximumsize = { 163.5 -1 }
-				spacing = 1.5
-				text_single = {
-					text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE"
-					max_width = 163.5
-					align = left|nobaseline
-					fontsize = 9
-				}
-				TooltipStringPairList = {
-					layoutpolicy_horizontal = fixed
-					maximumsize = { 163.5 -1 }
-					blockoverride "tooltip_minimumsize" { minimumsize = { 163.5 -1 } }
-					blockoverride "field_text_format" {
-						fontsize = 9
-						autoresize = yes
-						max_width = 105
-						elide = right
-					}
-					blockoverride "row_size" {
-						maximumsize = { -1 16.5 }
-						minimumsize = { -1 16.5 }
-					}
-					textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), Concatenate('_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)1.0')))))))]"
-				}
-				expand = {}
-			}
-			vbox = {
-				layoutpolicy_horizontal = fixed
-				layoutpolicy_vertical = shrinking
-				minimumsize = { 163.5 -1 }
-				maximumsize = { 163.5 -1 }
-				spacing = 1.5
-				text_single = {
-					text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE"
-					max_width = 163.5
-					align = left|nobaseline
-					fontsize = 9
-				}
-				TooltipStringPairList = {
-					layoutpolicy_horizontal = fixed
-					maximumsize = { 163.5 -1 }
-					blockoverride "tooltip_minimumsize" { minimumsize = { 163.5 -1 } }
-					blockoverride "field_text_format" {
-						fontsize = 9
-						autoresize = yes
-						max_width = 105
-						elide = right
-					}
-					blockoverride "row_size" {
-						maximumsize = { -1 16.5 }
-						minimumsize = { -1 16.5 }
-					}
-					textcontext = "[ShowModifierEffect(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), Concatenate('_local_level_', ToString_int32(FixedPointToInt(Max_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)1.0')))))))]"
-				}
-				expand = {}
-			} }text_single = { visible = "[Not(And(GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)0.0'), Not(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_ritual_style').GetValue, '(CFixedPoint)-1.0'))))]" size = { 333 18 }
-			                autoresize = no align = left|nobaseline fontsize = 11 text = "TV_LOCATION_WONDER_NO_EFFECT" } }
 			        }
 			    }
 			icon = {
@@ -1696,30 +1533,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_1')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_1')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_ritual_style').GetValue, '(CFixedPoint)1.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_5_1_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_5_1_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_1_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_1_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_5_1_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_5_1_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_ritual_style').GetValue, '(CFixedPoint)1.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -1739,30 +1577,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_2')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_2')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_ritual_style').GetValue, '(CFixedPoint)2.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_5_2_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_5_2_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_2_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_2_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_5_2_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_5_2_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_ritual_style').GetValue, '(CFixedPoint)2.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -1782,30 +1621,31 @@ types tv_location_wonder_menu_types {
 			                raw_text = "@trigger_yes!" alwaystransparent = yes align = center|nobaseline }
 			            tooltipwidget = {
 			        ContextualTooltipType = {
-			            blockoverride "tooltip_title" {
-			                text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			                    margin = { 7.5 7.5 } fontsize = 15 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_3')))]" }
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" } }
+			            blockoverride "title_text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_3')))]" }
+			            blockoverride "concept_link" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetNameWithNoTooltip] · [SelectLocalization(EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_ritual_style').GetValue, '(CFixedPoint)3.0'), 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]" }
+			            blockoverride "tooltip_content" {
+			                TooltipListBase = { name = "tv_wonder_effects_section" TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_5_3_country"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
+			    }
+			TooltipStringPairList = {
+			        name = "tv_location_wonder_ritual_modifiers_5_3_local"
+			        margin = { 0 0 }
+			        blockoverride "bg_listbase" {}
+			        blockoverride "block_title" { visible = no }
+			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
+			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
+			    } }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_3_desc')))]" }
+			                }
 			            }
-			            blockoverride "tooltip_content" { text_multi = { minimumsize = { 333 -1 } max_width = 333 autoresize = yes
-			        fontsize = 13 raw_text = "[Localize(Concatenate('game_concept_', Concatenate(Concatenate('tv_wonder_display_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))), '_ritual_3_desc')))]" }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_5_3_country"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_COUNTRY_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COUNTRY_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
-			        }TooltipStringPairList = {
-			            name = "tv_location_wonder_ritual_modifiers_5_3_local"
-			            visible = "[IsUTF8StringNotEmpty(Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)))))]"
-			            layoutpolicy_horizontal = fixed maximumsize = { 333 -1 }
-			            blockoverride "tooltip_minimumsize" { minimumsize = { 333 -1 } }
-			            blockoverride "block_title" { text = "TV_LOCATION_WONDER_LOCAL_MODIFIERS_TITLE" }
-			            blockoverride "field_text_format" { fontsize = 13 max_width = 225 autoresize = yes }
-			            blockoverride "row_size" { minimumsize = { -1 21 } }
-			            textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
-			        }text_single = { visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_ritual_style').GetValue, '(CFixedPoint)3.0')]" text = "TV_LOCATION_WONDER_RITUAL_ACTIVE" fontsize = 13 } }
 			        }
 			    }
 			        }
@@ -5240,7 +5080,7 @@ lateralview = {
 					name = "tv_location_wonders_button"
 					datacontext = "[LocationView.GetLocation]"
 					visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').IsSet]"
-					size = { 108 25.5 }
+					size = { 108 30 }
 					parentanchor = top|right
 					widgetanchor = top|right
 					position = { -6 6 }

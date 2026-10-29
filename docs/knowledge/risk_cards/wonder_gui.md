@@ -30,8 +30,8 @@ GUI widgets.
 
 5. Engineering Department ritual choices render the real completion effect with
    `ShowScriptedEffectForScope`. Location-gallery ritual cards show their own
-   country/local modifiers expanded with `ShowModifierEffect` in separate
-   `TooltipStringPairList` tables inside hover tooltips, including inactive styles.
+   country/local modifiers expanded with `ShowModifierEffect` in native
+   `TooltipStringPairList` rows inside hover tooltips, including inactive styles.
    Do not replace the effect rows with `ShowModifier` name links (user correction,
    2026-10-29). Estate reactions remain part of the separate confirmation flow.
 
@@ -62,6 +62,24 @@ GUI widgets.
    2026-10-29 game test, even with `allow_outside` on the scene and gallery.
    Offline tooltip selection bypasses mouse hit testing and did not catch this.
    Preserve the working root attachment; test hierarchy as well as alignment.
+
+10. Level and ritual hovers use the native `ContextualTooltipType` header slots
+    (`title_icon`, `title_text`, `concept_link`) and exactly two framed sections:
+    effects stacked one per row in one `TooltipListBase`, then history in the
+    native delayed `TooltipFlavorTextBlock`. Keep native sizing, fonts and
+    backgrounds. Do not restore side-by-side country/local effect columns or
+    replace the header/flavor widgets with custom text (user request, 2026-10-29).
+    Artwork hovers use the same native header and history section, with a native
+    `TooltipRequirementsList` for construction conditions as the first section.
+    Preserve its location-scoped trigger preview and native row sizing/fonts.
+
+11. Let `TooltipStringPairList` handle empty rows/footer through its native data
+    model predicates; hide `stringpair_datamodel_is_empty` for absent local rewards.
+    Do not gate these tables with `IsUTF8StringNotEmpty(Localize(...))` or
+    `IsUTF8StringNotEmpty(ShowModifierEffect(...))`: both CString-producing paths
+    continuously logged `FetchData failed` during the user's 2026-10-29 hover test.
+    Do not mock the entire visibility predicate to a boolean in the preview;
+    sample only its underlying data so unsupported expressions remain diagnostic.
 
 ## Validation
 
