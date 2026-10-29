@@ -56,8 +56,12 @@ GUI widgets.
    Fix `gen_location_window.py` and regenerate the main, M&T and SoL panels.
    Offline rendering alone did not detect this unsupported runtime property.
 
-9. Anchor the gallery to the city appearance's top edge, keeping it beside the
-   location window. Do not align it with the location window's title bar.
+9. Keep the gallery a direct child of the location `lateralview`, with a vertical
+   offset aligning its top with the city appearance (163 native GUI units).
+   Nesting it under the scene widget broke every gallery hover in the user's
+   2026-10-29 game test, even with `allow_outside` on the scene and gallery.
+   Offline tooltip selection bypasses mouse hit testing and did not catch this.
+   Preserve the working root attachment; test hierarchy as well as alignment.
 
 ## Validation
 

@@ -5314,6 +5314,15 @@ template religion_breakdown_tooltip {
 lateralview = {
 	name = "location_window"
 	widgetid = "location_window"
+	tv_location_wonders_menu = {
+		name = "tv_location_wonders_panel"
+		parentanchor = top|right
+		widgetanchor = top|left
+		position = { 0 163 }
+		allow_outside = yes
+		visible = "[And(LocationView.Vars.Exists('tv_location_wonders_open'), LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').IsSet)]"
+	}
+
 
 	widget = {
 		visible = "[TutorialIsRunning]"
@@ -6284,16 +6293,6 @@ lateralview = {
 			# SCENE
 			widget = {
 				name = "tv_location_city_appearance"
-				allow_outside = yes
-				tv_location_wonders_menu = {
-					name = "tv_location_wonders_panel"
-					parentanchor = top|right
-					widgetanchor = top|left
-					position = { 15 0 }
-					allow_outside = yes
-					visible = "[And(LocationView.Vars.Exists('tv_location_wonders_open'), LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').IsSet)]"
-				}
-
 				layoutpolicy_horizontal = expanding
 				size = { -1 220 }
 

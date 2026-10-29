@@ -204,6 +204,9 @@ class LocationPreviewTests(unittest.TestCase):
                 with self.subTest(width=width):
                     expander = Expander(self.resources.db)
                     root, panel, menu = location.build(self.resources, expander, width, 1080, menu=True)
+                    # A visually correct scene child lost every gallery hover
+                    # in game. Offline tooltip rendering bypasses hit testing.
+                    self.assertIn(menu, panel.children)
                     report = render_tree(root, expander, self.resources,
                         location.scenario_mocks('multiple', self.resources), width=1420, height=1080,
                         output=Path(folder) / f'width_{width}.png')

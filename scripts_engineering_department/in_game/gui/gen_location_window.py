@@ -78,6 +78,9 @@ FULL_IMAGE_CONCEPT_PREFIX = "tv_wonder_display_full_image_"
 TOOLTIP_SLOT_MAX = 5
 # A separate button beside the vanilla queue keeps foreign wonders inspectable.
 MENU_OPEN_VAR = "tv_location_wonders_open"
+# Native header (40), content top margin (5), province row (45), location row (73).
+# This is in native panel units, not the gallery's UI_SCALE.
+MENU_TOP = 40 + 5 + 45 + 73
 MENU_MAX_HEIGHT = 820
 CARD_SPACING = 4
 RITUAL_HEADER_HEIGHT = 48
@@ -629,23 +632,27 @@ def render_scene_overlay() -> str:
 
 
 def inject_wonder_panel(gui: str) -> str:
-    # Follow the city appearance's actual top, including each compat panel's
-    # header height. Undo window_main_tabs_margin_alt's 15px right inset only.
-    marker = '\n\t\t\t# SCENE\n\t\t\twidget = {'
-    if gui.count(marker) != 1:
+    # Keep the gallery directly under the lateralview: nesting it outside the
+    # scene's bounds broke all gallery hovers in game despite allow_outside.
+    # Name the scene for alignment checks without changing its input hierarchy.
+    scene_marker = '\n\t\t\t# SCENE\n\t\t\twidget = {'
+    if gui.count(scene_marker) != 1:
         raise RuntimeError("Could not find city appearance for wonder panel")
+    gui = gui.replace(scene_marker, scene_marker + f'\n{T * 4}name = "tv_location_city_appearance"', 1)
+    marker = '\n\twidgetid = "location_window"'
+    if gui.count(marker) != 1:
+        raise RuntimeError("Could not find location window root for wonder panel")
     panel = "\n".join([
-        '', f'{T}name = "tv_location_city_appearance"',
-        f'{T}allow_outside = yes', f"{T}tv_location_wonders_menu = {{",
+        '', f"{T}tv_location_wonders_menu = {{",
         f'{T}{T}name = "tv_location_wonders_panel"',
         f"{T}{T}parentanchor = top|right",
         f"{T}{T}widgetanchor = top|left",
-        f"{T}{T}position = {{ 15 0 }}",
+        f"{T}{T}position = {{ 0 {MENU_TOP} }}",
         f"{T}{T}allow_outside = yes",
         f'{T}{T}visible = "[And(LocationView.Vars.Exists(\'{MENU_OPEN_VAR}\'), {slot_has_id_expr("tooltip", 1)})]"',
         f"{T}}}", "",
     ])
-    gui = gui.replace(marker, marker + '\n'.join(T * 3 + line if line else line for line in panel.split('\n')), 1)
+    gui = gui.replace(marker, marker + panel, 1)
     # Opening either side panel closes the other, matching the wonder button.
     gui, count = re.subn(
         r'(?m)^(\s*)on_action = "(\[LocationView\.OpenConstructionQueue\([^\n]+)"',
