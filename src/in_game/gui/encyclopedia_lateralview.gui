@@ -481,42 +481,52 @@ vbox = {
 				spacing = 8
 
 				tv_eu_step = {
+					minimumsize = { 237 236 }
+					maximumsize = { 237 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/advances.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_concept|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 209 max_width = 209 raw_text = "[tv_wonder_concept|e]" } }
 					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P1_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P1_TEXT" }
+					blockoverride "step_text" { min_width = 209 max_width = 209 text = "TV_EU_OVERVIEW_S1_P1_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 237 236 }
+					maximumsize = { 237 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/estates/estates.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_debate|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 209 max_width = 209 raw_text = "[tv_wonder_debate|e]" } }
 					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P2_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P2_TEXT" }
+					blockoverride "step_text" { min_width = 209 max_width = 209 text = "TV_EU_OVERVIEW_S1_P2_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 237 236 }
+					maximumsize = { 237 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/mapmodes.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_survey|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 209 max_width = 209 raw_text = "[tv_wonder_survey|e]" } }
 					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P3_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P3_TEXT" }
+					blockoverride "step_text" { min_width = 209 max_width = 209 text = "TV_EU_OVERVIEW_S1_P3_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 237 236 }
+					maximumsize = { 237 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/building_panel/build.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_construction|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 209 max_width = 209 raw_text = "[tv_wonder_construction|e]" } }
 					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P4_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P4_TEXT" }
+					blockoverride "step_text" { min_width = 209 max_width = 209 text = "TV_EU_OVERVIEW_S1_P4_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 237 236 }
+					maximumsize = { 237 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/hre_parliament.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_ceremony|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 209 max_width = 209 raw_text = "[tv_wonder_ceremony|e]" } }
 					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P5_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P5_TEXT" }
+					blockoverride "step_text" { min_width = 209 max_width = 209 text = "TV_EU_OVERVIEW_S1_P5_TEXT" }
 				}
 			}
 
@@ -808,34 +818,42 @@ vbox = {
 				spacing = 8
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/government.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_great_engineer|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_great_engineer|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CONCEPTION_S1_P1_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CONCEPTION_S1_P1_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CONCEPTION_S1_P1_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/advances.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_concept|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_concept|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CONCEPTION_S1_P2_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CONCEPTION_S1_P2_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CONCEPTION_S1_P2_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/hre_parliament.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_small|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_small|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CONCEPTION_S1_P3_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CONCEPTION_S1_P3_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CONCEPTION_S1_P3_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/estates/estates.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_debate|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_debate|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CONCEPTION_S1_P4_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CONCEPTION_S1_P4_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CONCEPTION_S1_P4_TEXT" }
 				}
 			}
 
@@ -1240,34 +1258,42 @@ vbox = {
 				spacing = 8
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/mapmodes.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_survey|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_survey|e]" } }
 					blockoverride "step_title" { text = "TV_EU_SURVEY_S1_P1_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_SURVEY_S1_P1_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_SURVEY_S1_P1_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/government.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_great_engineer|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_great_engineer|e]" } }
 					blockoverride "step_title" { text = "TV_EU_SURVEY_S1_P2_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_SURVEY_S1_P2_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_SURVEY_S1_P2_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/mass_upgrade.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_scale_competence|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_scale_competence|e]" } }
 					blockoverride "step_title" { text = "TV_EU_SURVEY_S1_P3_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_SURVEY_S1_P3_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_SURVEY_S1_P3_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/building_panel/build.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_construction|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_construction|e]" } }
 					blockoverride "step_title" { text = "TV_EU_SURVEY_S1_P4_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_SURVEY_S1_P4_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_SURVEY_S1_P4_TEXT" }
 				}
 			}
 
@@ -1544,34 +1570,42 @@ vbox = {
 				spacing = 8
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_foundation.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_construction_part|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_construction_part|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CONSTRUCTION_S1_P1_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CONSTRUCTION_S1_P1_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CONSTRUCTION_S1_P1_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_body.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_construction_part|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_construction_part|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CONSTRUCTION_S1_P2_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CONSTRUCTION_S1_P2_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CONSTRUCTION_S1_P2_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_function.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_construction_part|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_construction_part|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CONSTRUCTION_S1_P3_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CONSTRUCTION_S1_P3_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CONSTRUCTION_S1_P3_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_decoration.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_construction_part|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_construction_part|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CONSTRUCTION_S1_P4_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CONSTRUCTION_S1_P4_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CONSTRUCTION_S1_P4_TEXT" }
 				}
 			}
 
@@ -1756,34 +1790,42 @@ vbox = {
 				spacing = 8
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_complete.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_construction|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_construction|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CEREMONY_S1_P1_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CEREMONY_S1_P1_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CEREMONY_S1_P1_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/advances.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_ceremony|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_ceremony|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CEREMONY_S1_P2_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CEREMONY_S1_P2_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CEREMONY_S1_P2_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/gold.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_ceremony|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_ceremony|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CEREMONY_S1_P3_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CEREMONY_S1_P3_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CEREMONY_S1_P3_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/power_projection.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_ceremony|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_ceremony|e]" } }
 					blockoverride "step_title" { text = "TV_EU_CEREMONY_S1_P4_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_CEREMONY_S1_P4_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_CEREMONY_S1_P4_TEXT" }
 				}
 			}
 
@@ -2106,34 +2148,42 @@ vbox = {
 				spacing = 8
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/estates/estates.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_domestic_support|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_domestic_support|e]" } }
 					blockoverride "step_title" { text = "TV_EU_SUPPORT_S1_P1_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_SUPPORT_S1_P1_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_SUPPORT_S1_P1_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/alerts_icons/unhappy_estates.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_domestic_support|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_domestic_support|e]" } }
 					blockoverride "step_title" { text = "TV_EU_SUPPORT_S1_P2_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_SUPPORT_S1_P2_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_SUPPORT_S1_P2_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/gold.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[ShowEstateTypeName('nobles_estate')]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[ShowEstateTypeName('nobles_estate')]" } }
 					blockoverride "step_title" { text = "TV_EU_SUPPORT_S1_P3_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_SUPPORT_S1_P3_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_SUPPORT_S1_P3_TEXT" }
 				}
 				tv_eu_arrow = {}
 
 				tv_eu_step = {
+					minimumsize = { 305 236 }
+					maximumsize = { 305 -1 }
 					blockoverride "step_icon" { texture = "gfx/interface/icons/alerts_icons/starving_provinces.dds" }
-					blockoverride "step_link" { tv_eu_link = { raw_text = "[tv_wonder_domestic_support|e]" } }
+					blockoverride "step_link" { tv_eu_link = { min_width = 277 max_width = 277 raw_text = "[tv_wonder_domestic_support|e]" } }
 					blockoverride "step_title" { text = "TV_EU_SUPPORT_S1_P4_TITLE" }
-					blockoverride "step_text" { text = "TV_EU_SUPPORT_S1_P4_TEXT" }
+					blockoverride "step_text" { min_width = 277 max_width = 277 text = "TV_EU_SUPPORT_S1_P4_TEXT" }
 				}
 			}
 

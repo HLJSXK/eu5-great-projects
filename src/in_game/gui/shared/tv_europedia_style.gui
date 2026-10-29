@@ -5,7 +5,7 @@
 # is a heading (icon, gold title, a gold rule fading out to the right) followed by any of:
 #
 #   tv_eu_text      body text
-#   tv_eu_flow      an hbox of up to four tv_eu_step with tv_eu_arrow between (how it works)
+#   tv_eu_flow      an hbox of tv_eu_step with tv_eu_arrow between (how it works)
 #   tv_eu_scale     an hbox of up to seven tv_eu_scale_step (a ladder, weakest to strongest)
 #   tv_eu_panel     two side-by-side comparison panels with a tv_eu_sign between them
 #   tv_eu_entry     a paper strip: a fixed icon column on the left, a gold title and text right
@@ -97,6 +97,7 @@ types tv_europedia_style
 
 	# One step of a flow: a paper panel with an icon, its link caption, a title and a short text.
 	# Four steps and three tv_eu_arrow fit a card row (hbox, margin { 40 0 }, spacing 8).
+	# europedia_render.py narrows the steps AND their link/body text for longer flows.
 	# Override "step_icon", "step_link" (a tv_eu_link naming what the icon shows), "step_title",
 	# "step_text".
 	type tv_eu_step = vbox {

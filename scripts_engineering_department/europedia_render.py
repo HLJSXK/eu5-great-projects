@@ -242,6 +242,12 @@ def render_content_card(card: dict) -> tuple[list[str], dict[str, tuple[str, str
             body_text(lines, body_key)
 
         elif kind == "flow":
+            # Match tv_eu_card's 1450 width, the row's 40px side margins,
+            # 30px arrows and two 8px gaps per arrow. The overview has five
+            # steps; the style's default 305px step only fits four.
+            step_count = len(section["steps"])
+            step_width = min(305, (1450 - 2 * 40 - (step_count - 1) * (30 + 2 * 8)) // step_count)
+            text_width = step_width - 2 * 14
             lines.append(f"{T}{T}{T}hbox = {{")
             lines.append(f"{T}{T}{T}{T}margin = {{ 40 0 }}")
             lines.append(f"{T}{T}{T}{T}spacing = 8")
@@ -252,10 +258,12 @@ def render_content_card(card: dict) -> tuple[list[str], dict[str, tuple[str, str
                 loc[step_text] = step["text"]
                 lines.append("")
                 lines.append(f"{T}{T}{T}{T}tv_eu_step = {{")
+                lines.append(f"{T}{T}{T}{T}{T}minimumsize = {{ {step_width} 236 }}")
+                lines.append(f"{T}{T}{T}{T}{T}maximumsize = {{ {step_width} -1 }}")
                 lines.append(f'{T}{T}{T}{T}{T}blockoverride "step_icon" {{ texture = {_q(step["icon"])} }}')
-                lines.append(f'{T}{T}{T}{T}{T}blockoverride "step_link" {{ tv_eu_link = {{ raw_text = {_q(step.get("link") or "")} }} }}')
+                lines.append(f'{T}{T}{T}{T}{T}blockoverride "step_link" {{ tv_eu_link = {{ min_width = {text_width} max_width = {text_width} raw_text = {_q(step.get("link") or "")} }} }}')
                 lines.append(f'{T}{T}{T}{T}{T}blockoverride "step_title" {{ text = {_q(step_title)} }}')
-                lines.append(f'{T}{T}{T}{T}{T}blockoverride "step_text" {{ text = {_q(step_text)} }}')
+                lines.append(f'{T}{T}{T}{T}{T}blockoverride "step_text" {{ min_width = {text_width} max_width = {text_width} text = {_q(step_text)} }}')
                 lines.append(f"{T}{T}{T}{T}}}")
                 if step_index < len(section["steps"]):
                     lines.append(f"{T}{T}{T}{T}tv_eu_arrow = {{}}")
