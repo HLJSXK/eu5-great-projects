@@ -161,7 +161,7 @@ class LocationPreviewTests(unittest.TestCase):
             self.assertTrue(all(node.typename == 'TooltipStringPairList' for node in tables))
             self.assertTrue(all('ritual_style' not in node.props.get('visible', '') for node in tables))
         with tempfile.TemporaryDirectory() as folder:
-            for state in ('jerusalem', 'dedicated'):
+            for state in ('jerusalem', 'dedicated', 'marseille'):
                 for style in (1, 2, 3):
                     with self.subTest(state=state, style=style):
                         report = location.render(state, self.resources,
@@ -173,6 +173,12 @@ class LocationPreviewTests(unittest.TestCase):
                         # Hidden nodes remain in the dump; no empty placeholder
                         # may reserve a visible row in the effects section.
                         self.assertNotRegex(tree, r'TooltipListEmptyContent<[^>]+> \d+x[1-9]\d*@')
+                        if state == 'marseille':
+                            # Only the free-port ritual pays a one-shot reward.
+                            heading = next(line for line in tree.splitlines()
+                                           if 'txt=TV_LOCATION_WONDER_RITUAL_COMPLETION' in line)
+                            height = int(re.search(r'textbox<textbox> \d+x(\d+)@', heading).group(1))
+                            self.assertEqual(height > 0, style == 3)
 
     def test_gallery_tooltips_use_native_header_and_two_sections(self):
         from eu5_gui_renderer.gui import Expander
@@ -202,7 +208,7 @@ class LocationPreviewTests(unittest.TestCase):
             # Both reward scopes occupy the same full-width vertical section.
             row_parents = [parent for parent in visit(sections[0]) for node in parent.children
                            if node.typename == 'TooltipStringPairList']
-            self.assertEqual(len(row_parents), 2)
+            self.assertEqual(len(row_parents), 3 if '_ritual_' in owner.props['name'] else 2)
             self.assertTrue(all(parent.kind == 'vbox' for parent in row_parents))
 
     def test_panel_has_no_tooltip_context_bindings_even_in_hidden_layers(self):

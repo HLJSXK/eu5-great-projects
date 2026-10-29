@@ -34,6 +34,13 @@ GUI widgets.
    `TooltipStringPairList` rows inside hover tooltips, including inactive styles.
    Do not replace the effect rows with `ShowModifier` name links (user correction,
    2026-10-29). Estate reactions remain part of the separate confirmation flow.
+   One-shot rewards appear below these rows under the native "On completion:"
+   heading in the same effects frame. Generate location-scoped completion effects
+   from the shared reward renderer, and route them through `ShowScriptedEffectForScope`;
+   they must not depend on an active project's `tv_wonder_site`. Hide the heading
+   using the native table's rows/footer predicates when the ritual has no one-shot
+   reward. The Marseille free-port preview covers this case; offline samples do
+   not establish the engine's actual effect text or hover behavior.
 
 6. Prefer GUI display variables refreshed from lifecycle points.
    Do not call expensive rebuilds from hover, tooltip, or render-only paths.

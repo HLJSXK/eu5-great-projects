@@ -91,6 +91,11 @@ owner = {{ add_country_modifier = {{ modifier = {mod} years = -1 mode = replace 
             if loc:
                 preview += f'\nadd_location_modifier = {{ modifier = {loc} years = -1 mode = replace }}'
             out.append(block(f'tv_wonder_display_{wid}_ritual_{n}_location_tooltip_effect', preview))
+            if r['one_shot']:
+                # Reuse the reward renderer with the hovered location as root;
+                # completed sites need no active project's tv_wonder_site.
+                completion = '\n'.join(location_reward_lines(r['one_shot'], 0))
+                out.append(block(f'tv_wonder_display_{wid}_ritual_{n}_completion_effect', completion))
             # The encyclopedia has no active project/site. Render the same
             # native reward commands using the viewer's capital as the example
             # location, without writing project or dedication state.

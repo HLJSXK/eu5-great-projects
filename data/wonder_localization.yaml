@@ -8943,6 +8943,7 @@
     TV_WONDER_NO_BASE_COUNTRY_EFFECT: No national base effects
     TV_WONDER_NO_BASE_LOCATION_EFFECT: No local base effects
     TV_WONDER_RITUAL_COMPLETE_PENDING: "Ritual complete · Permanent dedication"
+    TV_LOCATION_WONDER_RITUAL_COMPLETION: 'On completion:'
     TV_WONDER_RITUAL_CATALOGUE_NOTE: Ritual completion effects follow. Local effects apply at the wonder site; the preview uses the capital as an example. Estate satisfaction is settled when the ritual begins.
     game_concept_tv_wonder_unique_amber_room_desc: 'In the Catherine Palace at Tsarskoye Selo, walls of carved amber glow honey-gold between mirrored pilasters and gilded carving. Begun by Prussian craftsmen, sent to Russia as a royal gift, and enlarged by the court''s own workshops, the room joins Baltic amber, Florentine stone mosaic, and Baroque woodwork in a single chamber. Rare materials, rare skill, and the wealth and patience to unite them: one room is enough to show a court''s whole ambition.'
     TV_ENGINEERING_PROPOSAL_UNIQUE_AMBER_ROOM_TEXT: The engineer proposes an Amber Room for the palace at Tsarskoye Selo, calling amber carvers, mosaic cutters, and gilders into the court's service.
@@ -17887,6 +17888,7 @@
     TV_WONDER_NO_BASE_COUNTRY_EFFECT: 无基础国家效果
     TV_WONDER_NO_BASE_LOCATION_EFFECT: 无基础地点效果
     TV_WONDER_RITUAL_COMPLETE_PENDING: "仪式已完成 · 永久生效"
+    TV_LOCATION_WONDER_RITUAL_COMPLETION: 完成时：
     TV_WONDER_RITUAL_CATALOGUE_NOTE: 仪式完成效果如下。地点效果在实际游戏中作用于奇观所在地，下方以首都演示；阶层满意度在举行仪式时结算。
     game_concept_tv_wonder_unique_amber_room_desc: 皇村叶卡捷琳娜宫内，四壁嵌满雕花琥珀，在镜面壁柱与鎏金木雕之间透出蜂蜜般的光泽。这些饰板最初出自普鲁士匠人之手，作为国礼送到俄国后，又经宫廷作坊增补扩建，波罗的海琥珀、佛罗伦萨彩石镶嵌与巴洛克木雕从此同处一室。稀有的材料、罕见的手艺，再加上把它们聚到一起的财力与耐心，单凭这一间厅室，便足以道尽一座宫廷的气派。
     TV_ENGINEERING_PROPOSAL_UNIQUE_AMBER_ROOM_TEXT: 大工程师提议在皇村营建琥珀宫，召集琥珀雕工、彩石镶嵌匠与鎏金匠为宫廷效力。

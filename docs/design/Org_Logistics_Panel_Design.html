@@ -53,6 +53,27 @@ h1{font-size:14px;margin:0 0 6px;color:var(--gold)}
 .tags{display:flex;gap:6px;justify-content:flex-end;margin-top:5px}
 .pt{font-size:11px;padding:1px 7px;border:1px solid #3a3c63;background:#10112a}
 .pt.hi{color:var(--bad);border-color:var(--bad)} .pt.mid{color:var(--warn);border-color:var(--warn)}
+.mh2{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.mt1{font-size:12px;color:var(--dim)} .mtot{font-size:22px;color:var(--gold);line-height:1} .mtot small{font-size:11px;color:var(--dim)}
+.mex{margin-left:auto;font-size:12px;font-weight:bold;color:var(--bad);border:1px solid var(--bad);padding:0 7px;background:#2d1712}
+.pc2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.pc{display:grid;grid-template-columns:36px 1fr;grid-template-rows:auto auto;gap:2px 8px;padding:6px 8px;border:1px solid #3a3c63;background:#0f1026;border-left-width:4px}
+.pc.hi{border-color:var(--bad);background:#2a1512} .pc.mid{border-color:var(--warn);background:#272111}
+.pico{grid-row:1/3;width:36px;height:36px;border:1px solid var(--gold2);background:#0d0e1f;display:flex;align-items:center;justify-content:center;font-size:18px;align-self:center}
+.pn{font-size:12px;color:var(--ink)} .pn small{font-size:10px;color:var(--dim)}
+.pp{font-size:20px;line-height:1.1;color:#fff} .pp small{font-size:10px;color:var(--dim)}
+.pc.hi .pp{color:var(--bad)} .pc.mid .pp{color:var(--warn)}
+.pbase{grid-column:2;display:flex;align-items:center;gap:8px}
+.bdg{font-size:11px;font-weight:bold;padding:0 5px;color:#111}
+.pc.hi .bdg{background:var(--bad)} .pc.mid .bdg{background:var(--warn)}
+.lgd{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:11px;color:var(--dim);margin-top:4px}
+.lgd i{display:inline-block;width:14px;height:4px;margin-right:4px;vertical-align:middle}
+.lgd i.dsh{background:repeating-linear-gradient(90deg,#9a97a8 0 4px,transparent 4px 7px)}
+#g .e{fill:none;stroke-linecap:butt;opacity:.38} #g .f{fill:none;stroke:#fff;stroke-width:1.4;stroke-dasharray:5 9;opacity:.8;animation:fl 1.1s linear infinite}
+@keyframes fl{to{stroke-dashoffset:-14}}
+#g .nd{fill:#0f1026;stroke-width:1.5} #g text{font-family:"Microsoft YaHei",sans-serif;fill:#e8e2d0}
+#g .nm{font-size:12px} #g .pr{font-size:16px;font-weight:bold} #g .sm{font-size:10px;fill:#9a97a8}
+#g .bd{font-size:10px;font-weight:bold;fill:#111}
 .btn{height:32px;margin-top:8px;border:1px solid var(--gold2);background:linear-gradient(#143c5c,#0a2238);text-align:center;line-height:30px;color:#fff}
 .btn.off{filter:grayscale(.8);opacity:.6}
 .flow{display:flex;align-items:stretch;gap:4px;font-size:12px}
@@ -92,9 +113,19 @@ code{color:#8fd3e8}
     <div class="stat"><div class="lbl">月进度（营地）</div><div class="v g">+6,000</div><div class="lbl">每有效级 1,000</div></div>
    </div>
    <div class="mt">
-    <div class="mh"><span>💰 月维护</span><span class="bad2">▲ 比基准多花 57 金</span></div>
-    <div class="bar split"><i style="width:76%"></i><em style="width:24%"></em><span>232 金 / 月</span></div>
-    <div class="tags"><span class="pt hi">🔨 工具 ▲45%</span><span class="pt mid">📦 建材 ▲24%</span></div>
+    <div class="mh2"><span class="mt1">💰 月维护</span><span class="mtot">1,173 <small>金/月</small></span></div>
+    <div class="pc2">
+     <div class="pc hi">
+      <div class="pico">🔨</div>
+      <div class="pmid"><div class="pn">工具 <small>× 70 / 月</small></div><div class="pp">4.35 <small>金</small></div></div>
+      <div class="pbase"><span class="bdg">▲ 45%</span><span class="lbl">基准 3.00</span></div>
+     </div>
+     <div class="pc mid">
+      <div class="pico">📦</div>
+      <div class="pmid"><div class="pn">建材 <small>× 140 / 月</small></div><div class="pp">6.20 <small>金</small></div></div>
+      <div class="pbase"><span class="bdg">▲ 24%</span><span class="lbl">基准 5.00</span></div>
+     </div>
+    </div>
    </div>
    <div class="btn">🔨 建设工地（7 / 12）</div>
   </div>
@@ -102,7 +133,7 @@ code{color:#8fd3e8}
 
  <!-- LOGISTICS -->
  <div class="card">
-  <div class="sub"><b>🪵 物流</b><span class="tag">读数 48 ／ 决定速度与建材</span></div>
+  <div class="sub"><b>🌲 物流</b><span class="tag">读数 48 ／ 决定速度与建材</span></div>
   <div class="body">
    <div class="hero">
     <div class="ico">🧱</div>
@@ -113,15 +144,9 @@ code{color:#8fd3e8}
     </div>
    </div>
 
-   <div class="row"><span class="n">建材产能</span><div class="grow"><div class="bar"><i style="width:64%"></i><span>工坊 3.2 / 需求 5.0</span></div></div><span class="r lbl">64%</span></div>
-   <div class="goods">
-    <div class="g1"><div class="top"><span>🔨 工具</span><span style="color:var(--good)">供需 1.12</span></div><div class="bar"><i style="width:100%"></i></div></div>
-    <div class="g1"><div class="top"><span>📦 建材</span><span style="color:var(--warn)">供需 0.68</span></div><div class="bar"><i class="w" style="width:68%"></i></div></div>
-   </div>
-   <div class="row" style="margin-top:8px"><span class="n">当前工艺</span><div class="chips" style="margin:0">
-     <span class="chip on">夯土 ×2</span><span class="chip on">木构 ×1</span><span class="chip dis">烧砖</span><span class="chip dis">石材精加工</span><span class="chip dis">标准化构件</span><span class="chip dis">+3</span></div></div>
-   <div class="lbl" style="margin-top:4px">8 种工艺，每种产出 1.00 建材；夯土 / 木构 / 烧砖无需外购工具。</div>
-   <div class="btn">🪵 建设建材工坊</div>
+   <svg id="g" viewBox="0 0 500 504" width="100%" style="display:block;margin-top:2px"></svg>
+   <div class="lgd"><span class="lbl">数字 = 本地市场 需求 / 供给</span><span><i style="background:#2fb7d6"></i>充足</span><span><i style="background:#e0b34a"></i>紧张</span><span><i style="background:#d9674f"></i>短缺</span></div>
+   <div class="btn">🌲 建设建材工坊</div>
   </div>
  </div>
 
@@ -167,19 +192,75 @@ code{color:#8fd3e8}
  <tr><td>营地级数 / 上限</td><td>工地建筑等级 vs 上限（原进度条）</td></tr>
  <tr><td>劳工就业</td><td>就业率；<code>TV_WONDER_LABOR_SHORTAGE_CONSTRUCTION_PROGRESS</code></td></tr>
  <tr><td>月进度（营地）</td><td>有效级 × 1000</td></tr>
- <tr><td>月维护条</td><td>金色段 = 按基准价算的维护费；红斜纹段 = 市价高出基准的部分；整条 = 本地市场实价下的月维护。悬停显示每种物资的用量、市价、基准价</td></tr>
- <tr><td>价格标签</td><td>各物资市价相对基准的涨幅；≤ +10% 不显示，+10%~+30% 琥珀，&gt; +30% 红。价格不高于基准时红段与标签整体隐藏</td></tr>
+ <tr><td>月维护总额</td><td>Σ（月耗量 × 工地所在市场当前价）</td></tr>
+ <tr><td>工具 / 建材卡片</td><td>名称 + 月耗量；大号数字 = 当前市价；徽章 = 相对基准涨幅；右侧小字 = 基准价。卡片底色与徽章按涨幅分级：≤ +10% 中性，+10%~+30% 琥珀，&gt; +30% 红；低于基准为绿 ▼</td></tr>
  <tr><td>后勤乘数</td><td>50% + 后勤读数 (50–150%)</td></tr>
  <tr><td>建材产能条</td><td>有效工坊 / 工地所需产能（原进度条）</td></tr>
  <tr><td>工具 / 建材供需</td><td>本地市场供需比，缺货时拉低效率</td></tr>
- <tr><td>当前工艺</td><td>工坊 8 种生产方式，高亮正在使用者</td></tr>
+ <tr><td>工艺图（节点连线）</td><td>8 个工坊生产方式的真实配方：每种工艺一行、原料到产出一条连续链路、互不交叉；原料节点显示所需用量与本地市场供应状态（供需比 ≥1 充足，0.7–1 紧张，&lt;0.7 短缺）；工艺状态 = 其最缺原料的状态；不显示价格与利润</td></tr>
  <tr><td>建材供应 %</td><td><code>TV_WONDER_MATERIAL_INPUT_SHORTAGE_CONSTRUCTION_PROGRESS</code></td></tr>
  </table>
  <h2>交互</h2>
  <p>读数、各条进度、结算链路每项悬停出公式拆解；瓶颈格以琥珀色描边，满配转绿；工地 / 工坊按钮在达到上限时变灰并提示“已达组织上限”；未勘测整张锁定。</p>
- <p>月维护表的市价按偏离基准着色：≤ +10% 白，+10%~+30% 琥珀，&gt; +30% 红。悬停单行可看该物资的供需与价格走势，引导玩家去贸易或调整工坊工艺。</p>
+ <p>价格卡片悬停可看该物资的供需与价格走势，引导玩家去贸易或调整工坊工艺。</p>
  <h2>待你确认的取舍</h2>
  <p>“工艺 chips”和“瓶颈诊断建议句”是新增信息量最大的两块，若 GUI 动态列表成本高，可先砍掉 chips，保留其余。</p>
  </div>
 </div>
+<script>
+(function(){
+const C={ok:'#2fb7d6',mid:'#e0b34a',hi:'#d9674f',good:'#7ec97e',gold:'#c9a24a',dim:'#9a97a8'};
+const svg=document.getElementById('g');let h='';
+/* icon, name, market supply/demand ratio (demo values) */
+const G={clay:['🧱','黏土',100,120],sand:['⏳','沙',80,84],fiber:['🌾','纤维作物',200,110],lumber:['🌲','木材',250,180],
+ coal:['⚫','煤',40,60],stone:['🪨','石材',100,95],marble:['🏛','大理石',50,20],masonry:['🧱','砖石',120,132],
+ tools:['🔨','工具',150,120],iron:['⛓','铁',30,39],steel:['🗡','钢',25,15],paper:['📜','纸',60,60]};
+const ratio=g=>g[3]/g[2];
+const M=[
+ ['板筑夯土','🏺',[['clay',4],['sand',2],['lumber',.9],['fiber',.3]]],
+ ['木骨榫接','🏠',[['lumber',2.5],['clay',1],['fiber',.3]]],
+ ['柴窑烧砖','🔥',[['clay',4],['sand',1.2],['lumber',1.4]]],
+ ['煤窑烧砖','🏭',[['clay',4],['sand',1.1],['coal',1]]],
+ ['石作精凿','⛏',[['stone',2.5],['lumber',.6],['tools',.3],['sand',.2]]],
+ ['大理石研磨','💎',[['marble',.5],['sand',.5],['lumber',.6],['tools',.2]]],
+ ['图样预制构件','📐',[['masonry',1.8],['lumber',.8],['iron',.1],['tools',.2],['paper',.1]]],
+ ['钢刃定尺加工','⚔',[['masonry',1.5],['lumber',.6],['steel',.18],['tools',.1],['paper',.15]]]];
+const lv=r=>r>=1?'ok':r>=.7?'mid':'hi';
+const word={ok:'充足',mid:'紧张',hi:'短缺'};
+const mword={ok:'畅通',mid:'受限',hi:'缺料'};
+/* method status = its scarcest input */
+const worst=M.map(m=>m[2].reduce((a,[k])=>ratio(G[k])<ratio(G[a])?k:a,m[2][0][0]));
+const mlv=worst.map(k=>lv(ratio(G[k])));
+function N(x,y,w,hh,c,body,sw,fill){return `<g transform="translate(${x},${y})"><rect class="nd" x="0" y="0" width="${w}" height="${hh}" rx="2" stroke="${c}" ${sw?`stroke-width="${sw}"`:''} ${fill?`style="fill:${fill}"`:''}/>${body}</g>`;}
+const CW=58,CG=8,CH=34,PITCH=42,CEND=330,MX=350,MW=104,TRUNK=478;
+const rowsH=M.length*PITCH+6;
+const T=rowsH+8;
+h+=`<line x1="${TRUNK}" y1="${3+CH/2}" x2="${TRUNK}" y2="${T}" stroke="${C.mid}" stroke-width="5" opacity=".6"/>`;
+M.forEach((m,j)=>{
+ const y0=3+j*PITCH,cy=y0+CH/2,n=m[2].length,L=mlv[j],ok=L==='ok';
+ const xs=CEND-(n*CW+(n-1)*CG);
+ h+=`<rect x="0" y="${y0-3}" width="464" height="${CH+6}" rx="3" fill="#14152b" stroke="#2c2e50"/>`;
+ h+=`<line x1="${xs}" y1="${cy}" x2="${TRUNK}" y2="${cy}" stroke="#6f6a8a" stroke-width="3"/>`;
+ m[2].forEach(([k,q],i)=>{
+  const g=G[k],x=xs+i*(CW+CG),l=lv(ratio(g)),c=C[l];
+  h+=N(x,y0,CW,CH,c,`<text class="nm" x="3" y="14" style="font-size:9px">${g[0]}${g[1]}</text><text class="pr" x="3" y="29" style="font-size:11.5px;fill:${c}">${g[2]}/${g[3]}</text>`,0,'#0f1026');
+  if(i<n-1) h+=`<text x="${x+CW+CG/2}" y="${cy+4}" text-anchor="middle" style="font-size:11px;fill:#e8e2d0;font-weight:bold">+</text>`;
+ });
+ h+=N(MX,y0,MW,CH,'#3a3c63',`<text class="nm" x="8" y="22" style="font-size:12.5px">${m[1]} ${m[0]}</text>`,1.5,'#0f1026');
+
+});
+const BX=336,BW=164;
+h+=N(BX,T,BW,64,C.hi,`<text class="nm" x="8" y="18">📦 建材（本地市场）</text><text class="pr" x="8" y="46" style="fill:#fff;font-size:20px">140<tspan class="sm" dx="3" style="font-size:16px;fill:#e8e2d0"> / 96</tspan></text><rect x="112" y="33" width="44" height="18" fill="${C.hi}"/><text class="bd" x="118" y="46" style="font-size:11px">缺 44</text>`);
+const CY=T+92;
+h+=`<line x1="${TRUNK-30}" y1="${T+64}" x2="${TRUNK-30}" y2="${CY}" stroke="${C.mid}" stroke-width="9" opacity=".55"/><text class="sm" x="${TRUNK-24}" y="${T+82}">140/月</text>`;
+h+=N(BX,CY,BW,64,C.mid,`<text class="nm" x="8" y="18">⛺ 劳工营</text><text class="pr" x="8" y="44" style="fill:#fff">7<tspan class="sm" dx="2">级</tspan></text><text class="sm" x="52" y="42">后勤 ×98%</text><text class="sm" x="52" y="55" style="fill:#e0b34a">建材不足 −16%</text>`);
+const IX=176,IW=118;
+h+=`<line x1="${IX+IW}" y1="${T+22}" x2="${BX}" y2="${T+22}" stroke="${C.dim}" stroke-width="5" stroke-dasharray="6 5" opacity=".75"/>`;
+h+=`<g transform="translate(${IX},${T})"><rect width="${IW}" height="44" rx="2" fill="#0f1026" stroke="#9a97a8" stroke-width="1.5" stroke-dasharray="5 4"/><text class="nm" x="8" y="18" style="font-size:12px">🚢 进口</text><text class="sm" x="8" y="34">补缺口 +44/月</text></g>`;
+h+=`<line x1="${IX+IW}" y1="${CY+22}" x2="${BX}" y2="${CY+22}" stroke="${C.mid}" stroke-width="3" opacity=".7"/><text class="sm" x="${IX+IW+6}" y="${CY+15}">70/月</text>`;
+h+=N(IX,CY,IW,44,C.mid,`<text class="nm" x="8" y="18" style="font-size:12px">🔨 工具</text><text class="pr" x="8" y="38" style="font-size:13px;fill:${C.mid}">150/120</text>`,0,'#0f1026');
+svg.setAttribute('viewBox',`0 0 500 ${CY+70}`);
+svg.innerHTML=h;
+})();
+</script>
 </body></html>

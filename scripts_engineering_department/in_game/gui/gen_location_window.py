@@ -386,6 +386,19 @@ def render_ritual_tooltip(slot: int, style: int) -> str:
     active = slot_ritual_active_expr(slot, style)
     effects = '\n'.join(native_effect_rows(f'tv_location_wonder_ritual_modifiers_{slot}_{style}_{scope.lower()}',
         slot_ritual_modifiers_expr(slot, style, scope)) for scope in ('COUNTRY', 'LOCAL'))
+    # Native effect rows/footer also cover multi-line and conditional one-shot
+    # rewards. Use their data model to hide an empty completion heading.
+    effects += f'''\nTooltipStringPairList = {{
+        name = "tv_location_wonder_ritual_completion_{slot}_{style}"
+        margin = {{ 0 0 }}
+        blockoverride "bg_listbase" {{}}
+        blockoverride "block_title" {{
+            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
+            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
+        }}
+        blockoverride "stringpair_datamodel_is_empty" {{ visible = no }}
+        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_{style}_', {slot_id_string('tooltip', slot)}))]"
+    }}'''
     icons = '''icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" }'''
     subtitle = (f"[{slot_building_type_expr('tooltip', slot)}.GetNameWithNoTooltip] · "
                 f"[SelectLocalization({active}, 'TV_LOCATION_WONDER_RITUAL_ACTIVE', 'TV_LOCATION_WONDER_RITUAL_HEADER')]")

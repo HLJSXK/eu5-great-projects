@@ -1,0 +1,24 @@
+{
+  "description": "Fictional HTML design samples. Demand precedes supply. Materials supply is derived from camp demand and the input-access sample; this is not an economic simulation.",
+  "design_rules": {"max_level": 20, "progress_per_effective_level": 1000},
+  "prices": {"tools": 4.35, "tv_wonder_materials": 6.2},
+  "market": {
+    "clay": {"demand": 100, "supply": 120},
+    "sand": {"demand": 80, "supply": 84},
+    "fiber_crops": {"demand": 200, "supply": 110},
+    "lumber": {"demand": 250, "supply": 180},
+    "coal": {"demand": 40, "supply": 60},
+    "stone": {"demand": 100, "supply": 95},
+    "marble": {"demand": 50, "supply": 20},
+    "masonry": {"demand": 120, "supply": 132},
+    "tools": {"demand": 150, "supply": 120},
+    "iron": {"demand": 30, "supply": 39},
+    "steel": {"demand": 25, "supply": 15},
+    "paper": {"demand": 60, "supply": 60}
+  },
+  "states": {
+    "active": {"level": 7, "organization": 62, "logistics": 48, "employment": 0.86, "materials_supply": 0.84, "balanced_market": false},
+    "locked": {"level": 0, "organization": 0, "logistics": 0, "employment": 0, "materials_supply": 0, "balanced_market": false},
+    "full": {"level": 20, "organization": 100, "logistics": 100, "employment": 1, "materials_supply": 1, "balanced_market": true}
+  }
+}

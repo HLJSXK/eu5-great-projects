@@ -79,6 +79,47 @@ def test_location_ritual_tooltip_expands_every_granted_modifier_natively(data):
                 assert set(calls) == granted and len(calls) == len(granted)
 
 
+def test_location_completion_previews_cover_actual_one_shots_without_project_state(data):
+    from scripts_engineering_department.wonder_localization_lib import (
+        load_wonder_localization_data, collapse_wonder_localization_data,
+    )
+    wonders, mechanics = data
+    localized = load_wonder_localization_data()
+    collapsed = collapse_wonder_localization_data(localized)
+    effects = source_blocks('common/scripted_effects/tv_wonder_ritual_state_effects.txt')
+    for wonder in wonders:
+        for row in ritual_styles(wonder, mechanics):
+            style = row['style']
+            name = f"tv_wonder_display_{wonder['id']}_ritual_{style}_completion_effect"
+            key = f"TV_WONDER_RITUAL_COMPLETION_{style}_{wonder['id']}"
+            for language in ('english', 'simp_chinese'):
+                expected = (f"[ShowScriptedEffectForScope('{name}', LocationView.GetLocation.MakeScope.Self)]"
+                            if row['one_shot'] else '')
+                assert localized[language][key] == expected
+                assert key not in collapsed[language]
+            if not row['one_shot']:
+                assert name not in effects
+                continue
+            preview = effects[name]
+            settle = effects[f"tv_wonder_{wonder['key']}_ritual_{style}_settle_effect"]
+            nodes = list(walk(preview))
+            assert not any(n.key.startswith('var:') or n.key in (
+                'add_country_modifier', 'add_location_modifier', 'set_variable',
+                'add_to_variable_map', 'trigger_event_silently',
+            ) for n in nodes)
+            for reward in row['one_shot']:
+                spec = core.ONE_SHOT_REWARD_EFFECTS.get(reward['type'], {})
+                command = spec.get('effect', 'add_estate_satisfaction')
+                # Values and native reward command bodies match execution.
+                actual = [n for n in walk(settle) if n.key == command]
+                displayed = [n for n in nodes if n.key == command]
+                assert displayed == actual and displayed
+                if spec.get('scope') == 'location_scalar':
+                    assert any(n.key == command for n in preview)
+                elif spec.get('scope', '').startswith('country'):
+                    assert any(n.key == 'owner' and contains(n.children, command) for n in preview)
+
+
 @pytest.mark.parametrize('damage', ['axis', 'duplicate_direction', 'missing_estate', 'wrong_scope', 'empty_reward', 'old_shape'])
 def test_schema_rejects_invalid_authored_rituals(data, damage):
     _, mechanics = data

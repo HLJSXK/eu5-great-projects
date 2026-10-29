@@ -1,5 +1,32 @@
 # ED 模块离线 GUI 预览
 
+## 组织与物流设计预览
+
+运行 `C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment/org_logistics_mockups.py --strict`，
+生成 `ai_gui_assessment/images/org_logistics/` 下的 `active.png`、`locked.png`、`full.png`，
+以及原生 GUI 源、元素树、诊断和 `index.json`。`--state active|locked|full` 选择单个状态，
+`--scale 1.5` 导出更大图片；也支持 `--fixture`、`--output-root`、`--game-root` 和
+`--renderer-root`。严格模式遇到任意共享渲染诊断返回非零退出码。
+
+构图对照 `docs/design/Org_Logistics_Panel_Design.html`：组织读数与带上限标记的营地条、
+三格就业/有效等级/月进度、两张维护价格卡、后勤乘数条、八行原料→工艺节点、
+建材市场/进口建议/工具→劳工营、四格月进度结算。满配和未勘测状态独立输出。
+标题、面板、按钮、进度条、字体和物资图标使用游戏/模组资源；原料状态按供给/需求
+分为充足（≥1）、紧张（≥0.7）和短缺，工艺取最缺原料的状态。原料节点的 GUI tooltip
+保留每单位工艺投入量。只有连接线用 Python 预烘焙为透明纹理，再由共享渲染器合成。
+组织、物流、结算的详情裁图由 `render_tree(detail_elements=...)` 根据真实布局输出。
+
+八种工艺及营地维护用量读取当前生产方式，物资/工艺名称与基准价读取游戏/模组数据库。
+`fixtures/org_logistics.json` 显式保存虚构市场、价格、就业率和设计稿的 20 级上限/每级
+1,000 进度假设。这些是设计预览规则，不替代生产脚本。数值统一计算：7×86%=6.02，
+本月 6,020×98%×84%≈4,956；建材需求 140、供应 117.6、缺口 22.4；月维护 1,172.5。
+修正了 HTML 样例中 6.0/6,000、140/96 与 84% 不相符的问题，但不改动设计稿。
+不声称补一座工坊就能填平缺口，诊断只给出补齐供应后的进度增量。
+
+预览保留中文草稿标签，未改写生产 GUI。建设按钮有原生外观和锁定/上限禁用状态，
+尚未绑定游戏动作；不执行点击、悬停命中、脚本或市场结算。素材及无缺失诊断不等于
+实机像素一致。生成结果和连接线均位于忽略的 images 目录，不提交游戏二进制资源。
+
 ## 地点窗口与伟大工程弹出面板
 
 `location.py` 读取当前 `src/in_game/gui/location_window.gui` 的实际窗口，以及伟大工程按钮

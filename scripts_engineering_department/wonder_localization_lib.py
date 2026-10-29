@@ -433,6 +433,10 @@ def expand_wonder_localization_data(localization: dict[str, dict[str, str]]) -> 
                 language_values[row["name_key"]] = language_values[f"TV_WONDER_RITUAL_NAME_{n}_{wonder['id']}"]
                 language_values[row["desc_key"]] = language_values[f"TV_WONDER_RITUAL_DESC_{n}_{wonder['id']}"]
                 # Each scope feeds its own native expanded modifier table.
+                language_values[f"TV_WONDER_RITUAL_COMPLETION_{n}_{wonder['id']}"] = (
+                    f"[ShowScriptedEffectForScope('tv_wonder_display_{wonder['id']}_ritual_{n}_completion_effect', LocationView.GetLocation.MakeScope.Self)]"
+                    if row['one_shot'] else ""
+                )
                 modifiers = [("COUNTRY", row["modifier"]), ("LOCAL", row["location_modifier"])]
                 for scope, modifier in modifiers:
                     language_values[f"TV_WONDER_RITUAL_{scope}_MODIFIERS_{n}_{wonder['id']}"] = (
@@ -494,6 +498,7 @@ def collapse_wonder_localization_data(localization: dict[str, dict[str, str]]) -
         for language in LANGUAGES:
             collapsed[language].pop(f"TV_WONDER_RITUAL_ESTATE_PREFS_{wonder['id']}", None)
             for style in (1, 2, 3):
+                collapsed[language].pop(f"TV_WONDER_RITUAL_COMPLETION_{style}_{wonder['id']}", None)
                 collapsed[language].pop(f"TV_WONDER_RITUAL_VALUE_{wonder['id']}_{style}", None)
                 for scope in ('COUNTRY', 'LOCAL'):
                     collapsed[language].pop(f"TV_WONDER_RITUAL_{scope}_MODIFIERS_{style}_{wonder['id']}", None)

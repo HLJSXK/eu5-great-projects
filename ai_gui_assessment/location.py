@@ -26,6 +26,7 @@ STATES = {
     'dedicated': [(102, 6, 1), (3, 3, 2), (1, 2, 3)],
     'four_modifiers': [(27, 3, 2), (40, 3, 2), (53, 3, 2)],
     'jerusalem': [(140, 1), (103, 1)],
+    'marseille': [(195, 1)],
 }
 
 
@@ -90,6 +91,18 @@ def scenario_mocks(state, resources, menu=True, *, localized_tables=None):
     # Sample expanded native tables from the actual reward definitions.
     for ident in {entry[0] for entry in STATES[state][:5]}:
         for row in ritual_styles(wonders[ident], mechanics):
+            completion_key = f"TV_WONDER_RITUAL_COMPLETION_{row['style']}_{ident}"
+            expected = (f"[ShowScriptedEffectForScope('tv_wonder_display_{ident}_ritual_{row['style']}_completion_effect', LocationView.GetLocation.MakeScope.Self)]"
+                        if row['one_shot'] else '')
+            if resources.loc.get(completion_key) != expected:
+                raise ValueError(f'Ritual completion route does not match reward: {completion_key}')
+            if localized_tables is not None:
+                # Explicit samples of the current rewards, not engine execution.
+                sample = '(Sample)' if LANGUAGE == 'english' else '【示例】'
+                localized_tables[completion_key] = string_pair_list([
+                    (f"{sample} {resources.loc.get(reward['type']) or reward['type']}", f"{reward['value']:+g}")
+                    for reward in row['one_shot']
+                ])
             for scope, modifier in (('COUNTRY', row['modifier']), ('LOCAL', row['location_modifier'])):
                 rows = []
                 if modifier:
@@ -158,7 +171,7 @@ def render(state, resources, *, width=1600, height=1080, scale=1, menu=True,
         detail_elements=details, tooltip_selector=hover, metadata={'scenario': 'location', 'state': state, 'sample_data': True,
             'menu_open': popup is not None,
             'gui': str(MOD / GUI_PATH), 'wonders': STATES[state],
-            'sample_tables': 'Expanded modifier values from current mod definitions. Site checks are explicit sample results.',
+            'sample_tables': 'Expanded modifier values and one-shot reward samples from current mod definitions. Site checks are explicit sample results.',
             'unsupported': ['No save, script execution, clicks, scrolling, 3D map, portraits or procedural flags.',
                             'Queues and secondary lists are empty sample data; infrastructure tab is selected.']})
 
