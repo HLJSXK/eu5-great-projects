@@ -3865,17 +3865,10 @@ blockoverride "common_header_text" { text = "TV_ENGINEERING_CEREMONY_CARD_TITLE"
 blockoverride "common_bottom_content" {
 # BEGIN GENERATED TV_WONDER_RITUAL_CARD
 vbox = { name = "tv_wonder_ritual_ledger" layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking set_parent_size_to_minimum = yes ignoreinvisible = yes spacing = 6 margin = { 12 10 }
-text_multi = { visible = "[And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_project_mode').GetValue, '(CFixedPoint)3.0')))]" layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
-max_width = 438 autoresize = yes fontsize = 14 text = "TV_WONDER_RITUAL_HEADER" align = nobaseline|left }
-hbox = { visible = "[And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_project_mode').GetValue, '(CFixedPoint)3.0'))]" layoutpolicy_horizontal = expanding spacing = 6
-text_multi = {  layoutpolicy_horizontal = expanding minimumsize = { 282 -1 }
-max_width = 282 autoresize = yes fontsize = 14 text = "TV_WONDER_RERITUAL_BANNER" align = nobaseline|left }
-button_regular = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" size = { 150 34 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
-text = "TV_WONDER_RITUAL_CANCEL_SHORT"
-scripted_action_tooltip = { click_type = left click_mode = single action_name = "tv_wonder_ritual_cancel_reritual" actor = "[InternationalOrganizationsView.GetPlayer]" }
-button_tooltip_override = { title = "tv_wonder_ritual_cancel_reritual" description = "tv_wonder_ritual_cancel_reritual_desc" }
-tooltipwidget = { using = action_tooltip_pop_out }
-} }
+vbox = { name = "tv_wonder_ritual_section_options"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 6
+widget = { size = { 438 24 } background = { using = color_black_texture alpha = 0.3 }
+text_single = { position = { 8 0 } size = { 422 24 } autoresize = no fontsize = 14 text = "TV_WONDER_RITUAL_SECTION_OPTIONS" align = nobaseline|left } }
 vbox = { name = "tv_wonder_ritual_style_1" visible = "[Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)1.0'))]"
 layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 4
 widget = { name = "tv_wonder_ritual_choice_1" size = { 438 42 }
@@ -4515,19 +4508,23 @@ blockoverride "text" { text = "TV_WONDER_RITUAL_SUPPORT_REASON_RANDOM" }
 }
 }
 }
-widget = { visible = "[And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), Not(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_project_mode').GetValue, '(CFixedPoint)3.0')))]" size = { 438 58 }
-button_regular = {  size = { 438 58 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
+widget = { name = "tv_wonder_ritual_choice_plain" visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" size = { 438 42 }
+button_regular = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" size = { 438 42 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
 text = ""
 scripted_action_tooltip = { click_type = left click_mode = single action_name = "tv_wonder_ritual_preview_plain" actor = "[InternationalOrganizationsView.GetPlayer]" }
 button_tooltip_override = { title = "tv_wonder_ritual_preview_plain" description = "tv_wonder_ritual_preview_plain_desc" }
 tooltipwidget = { using = action_tooltip_pop_out }
 }
-widget = { size = { 438 58 } alwaystransparent = yes background = { using = color_black_texture alpha = 0.3 } }
-widget = { visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0'))]" size = { 438 58 } alwaystransparent = yes background = { using = color_yellow_texture alpha = 0.12 } }
-widget = { visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0'))]" size = { 3 58 } alwaystransparent = yes background = { using = color_yellow_texture } }
-text_single = { position = { 12 4 } size = { 390 24 } text = "TV_WONDER_RITUAL_PLAIN_STATE" alwaystransparent = yes align = nobaseline|left }
-text_single = { position = { 12 30 } size = { 410 20 } fontsize = 13 text = "TV_WONDER_RITUAL_PLAIN_CONSEQUENCE" alwaystransparent = yes align = nobaseline|left }
-text_single = { visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0'))]" position = { 408 4 } size = { 24 24 } raw_text = "@trigger_yes!" alwaystransparent = yes } }
+widget = { visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0'))]" size = { 438 42 } alwaystransparent = yes background = { using = color_yellow_texture alpha = 0.12 } }
+widget = { visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0'))]" size = { 3 42 } alwaystransparent = yes background = { using = color_yellow_texture } }
+icon = { position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/flat_icons/building_default.dds" alwaystransparent = yes }
+text_single = { position = { 52 9 } size = { 374 24 } autoresize = no fontsize = 17 text = "TV_WONDER_RITUAL_PLAIN_STATE" align = nobaseline|left alwaystransparent = yes }
+}
+text_multi = { visible = "[And(And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, Not(And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0')))), And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)), Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), GetVariableSystem.Exists('tv_wonder_ritual_details_open'))))]"
+layoutpolicy_horizontal = expanding minimumsize = { 438 -1 } max_width = 438
+autoresize = yes align = nobaseline|left default_format = "#flavor"
+raw_text = "[Localize(Concatenate(Concatenate('TV_WONDER_RITUAL_DESC_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))), Concatenate('_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue)))))]" }
+}
 vbox = { visible = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet]" layoutpolicy_horizontal = expanding spacing = 4
 text_multi = {  layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
 max_width = 438 autoresize = yes fontsize = 15 text = "TV_WONDER_RITUAL_PROGRESS" align = nobaseline|left }
@@ -4539,134 +4536,8 @@ max_width = 438 autoresize = yes fontsize = 13 text = "TV_WONDER_RITUAL_ESTATES_
 button_regular = { size = { 438 28 } text = "TV_WONDER_RITUAL_TOGGLE_DETAILS" tooltip = "TV_WONDER_RITUAL_TOGGLE_DETAILS"
 onclick = "[GetVariableSystem.Toggle('tv_wonder_ritual_details_open')]" }
 }
-vbox = { visible = "[And(And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, Not(And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0')))), And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)), Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), GetVariableSystem.Exists('tv_wonder_ritual_details_open'))))]" layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 6
-text_multi = {  layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
-max_width = 438 autoresize = yes fontsize = 14 raw_text = "#F [Localize(Concatenate(Concatenate('TV_WONDER_RITUAL_DESC_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue))), Concatenate('_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue)))))]#!" align = nobaseline|left }
-widget = { size = { 438 24 } background = { using = color_black_texture alpha = 0.3 }
-text_single = { position = { 8 0 } size = { 422 24 } autoresize = no fontsize = 14 text = "TV_WONDER_RITUAL_SECTION_EFFECTS" align = nobaseline|left } }
-text_multi = {  layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
-max_width = 438 autoresize = yes fontsize = 14 raw_text = "[ShowScriptedEffectForScope('tv_wonder_ritual_apply_choice_effect',InternationalOrganizationsView.GetPlayer.MakeScope.Self)]" align = nobaseline|left }
-widget = { size = { 438 24 } background = { using = color_black_texture alpha = 0.3 }
-text_single = { position = { 8 0 } size = { 422 24 } autoresize = no fontsize = 14 text = "TV_WONDER_RITUAL_SECTION_VALUES" align = nobaseline|left } }
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)1.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "centralization_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "decentralization_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)2.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "traditionalist_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/traditionalist_vs_innovative_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "innovative_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)3.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "spiritualist_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/spiritualist_vs_humanist_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "humanist_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)4.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "aristocracy_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/aristocracy_vs_plutocracy_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "plutocracy_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)5.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "serfdom_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/serfdom_vs_free_subjects_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "free_subjects_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)6.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "mercantilism_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mercantilism_vs_free_trade_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "free_trade_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)7.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "belligerent_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "conciliatory_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)8.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "quality_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/quality_vs_quantity_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "quantity_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)9.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "offensive_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/offensive_vs_defensive_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "defensive_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)10.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/land_vs_naval_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "land_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/land_vs_naval_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "naval_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)11.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "capital_economy_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/capital_economy_vs_traditional_economy_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "traditional_economy_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)12.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "individualism_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/individualism_vs_communalism_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "communalism_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)13.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "outward_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/outward_vs_inward_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "inward_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)14.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "sinicized_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/sinicized_vs_unsinicized_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "unsinicized_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)15.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "absolutism_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "liberalism_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)16.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "mysticism_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/mysticism_vs_jurisprudence_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "jurisprudence_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_selected').GetValue, '(CFixedPoint)17.0')]" size = { 438 40 }
-icon = { position = { 0 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_left.dds" }
-text_single = { position = { 40 2 } size = { 176 36 } autoresize = no text = "latinization_focus" fontsize = 14 align = nobaseline|left }
-icon = { position = { 402 2 } size = { 36 36 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_right.dds" }
-text_single = { position = { 222 2 } size = { 176 36 } autoresize = no text = "hellenization_focus" fontsize = 14 align = nobaseline|right }
-}
-widget = { size = { 438 24 }
-progressbar = { position = { 0 8 } size = { 216 8 } min = 0 max = 1 invertprogress = yes
-progresstexture = "gfx/interface/progressbars/progress_bar_blue_alt_left.dds"
-noprogresstexture = "gfx/interface/progressbars/slider_default_bg.dds"
-value = "[Abs_float(Min_float(FixedPointToFloat(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_position_selected').GetValue), '(float)0'))]" }
-progressbar = { position = { 222 8 } size = { 216 8 } min = 0 max = 1
-progresstexture = "gfx/interface/progressbars/progress_bar_blue_alt.dds"
-noprogresstexture = "gfx/interface/progressbars/slider_default_bg.dds"
-value = "[Max_float(FixedPointToFloat(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_position_selected').GetValue), '(float)0')]" }
-widget = { position = { 218 4 } size = { 2 16 } background = { using = color_white_texture alpha = 0.7 } }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_selected').GetValue, '(CFixedPoint)-1.0')]" size = { 216 24 } autoresize = no raw_text = "#Y ←#!" align = nobaseline|right }
-text_single = { visible = "[EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_selected').GetValue, '(CFixedPoint)1.0')]" position = { 222 0 } size = { 216 24 } autoresize = no raw_text = "#Y →#!" align = nobaseline|left }
-}
-}
-text_multi = { visible = "[And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0')))]" layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
-max_width = 438 autoresize = yes fontsize = 14 text = "TV_WONDER_RITUAL_PLAIN_DETAIL" align = nobaseline|left }
-vbox = { visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" layoutpolicy_horizontal = expanding ignoreinvisible = yes spacing = 6
+vbox = { name = "tv_wonder_ritual_section_requirements" visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 6
 widget = { size = { 438 24 } background = { using = color_black_texture alpha = 0.3 }
 text_single = { position = { 8 0 } size = { 422 24 } autoresize = no fontsize = 14 text = "TV_WONDER_RITUAL_SECTION_TERMS" align = nobaseline|left } }
 text_multi = { visible = "[And(Not(And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0'))), Not(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_cmm_skip_ceremony').IsSet))]" layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
@@ -4677,6 +4548,21 @@ text_multi = { visible = "[And(Not(And(InternationalOrganizationsView.GetPlayer.
 max_width = 438 autoresize = yes fontsize = 14 text = "TV_WONDER_RITUAL_SKIP_TERMS" align = nobaseline|left }
 text_multi = { visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0'))]" layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
 max_width = 438 autoresize = yes fontsize = 14 text = "TV_WONDER_RITUAL_PLAIN_TERMS" align = nobaseline|left }
+}
+vbox = { name = "tv_wonder_ritual_section_effects" visible = "[Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), And(And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, Not(And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0')))), And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)), Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), GetVariableSystem.Exists('tv_wonder_ritual_details_open')))))]"
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 6
+widget = { size = { 438 24 } background = { using = color_black_texture alpha = 0.3 }
+text_single = { position = { 8 0 } size = { 422 24 } autoresize = no fontsize = 14 text = "TV_WONDER_RITUAL_SECTION_EFFECTS" align = nobaseline|left } }
+vbox = { visible = "[And(And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, Not(And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0')))), And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)), Or(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), GetVariableSystem.Exists('tv_wonder_ritual_details_open'))))]" layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 6
+text_multi = {  layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
+max_width = 438 autoresize = yes fontsize = 14 raw_text = "[ShowScriptedEffectForScope('tv_wonder_ritual_apply_choice_effect',InternationalOrganizationsView.GetPlayer.MakeScope.Self)]" align = nobaseline|left }
+}
+text_multi = { visible = "[And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0')))]" layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
+max_width = 438 autoresize = yes fontsize = 14 text = "TV_WONDER_RITUAL_PLAIN_DETAIL" align = nobaseline|left }
+text_multi = { visible = "[And(Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet))), Not(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet))]" layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
+max_width = 438 autoresize = yes fontsize = 14 text = "TV_WONDER_RITUAL_SELECT_FOR_EFFECTS" align = nobaseline|left }
+}
+vbox = { name = "tv_wonder_ritual_actions" visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]" layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 6
 button_regular = { visible = "[Not(And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_choice').GetValue, '(CFixedPoint)0.0')))]" size = { 438 38 } enabled = "[PdxGuiWidget.IsUberButtonEnabled]"
 text = "TV_WONDER_RITUAL_CONFIRM"
 scripted_action_tooltip = { click_type = left click_mode = single action_name = "tv_wonder_ritual_confirm" actor = "[InternationalOrganizationsView.GetPlayer]" }

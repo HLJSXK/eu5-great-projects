@@ -13,8 +13,9 @@ ritual styles; unique wonders inherit mechanics and own only bilingual flavor te
    and style, and revoked only after the last corresponding instance disappears.
 3. Confirming charges the size-based scaled gold price and settles existing estates
    (+0.10 / -0.05); plain inauguration gives every participating estate -0.05.
-   Completion grants modifiers, one-shot rewards and a signed 20-point societal
-   change. Every expansion offers all three styles or plain inauguration again,
+   Completion grants modifiers and one-shot rewards. Societal movement comes only
+   from the selected modifier's 0.1 monthly pull; do not emit an immediate
+   `change_societal_value` in settlement or previews. Every expansion offers all three styles or plain inauguration again,
    with the normal costs, duration and ritual rewards. The old dedication remains
    until finalization; its hidden cleanup removes unselected local modifiers and
    syncs country benefits without revoking benefits still held by other instances.
@@ -30,7 +31,12 @@ ritual styles; unique wonders inherit mechanics and own only bilingual flavor te
    founded wonders are plain. Expiry checks the current memory token, so a queued
    timer from a previous dedication cannot revoke a renewed one.
 7. Mode 3 is rededication. It requires stage 0 plus active conception; it grants
-   ritual effects and 10 prestige, then starts conception from zero (reason 4).
+   only the selected ritual's rewards, then starts conception from zero (reason 4).
+   There is no separate prestige payment or construction completion reward.
+   It also offers the same plain choice as construction: immediate completion,
+   no ritual cost or bonus, and -0.05 satisfaction for each participating estate.
+   Plain rededication uses the shared plain settlement and rededication finish
+   cleanup; do not send an existing building through construction finalization.
    Cancellation/abandonment has no further penalties and refunds no confirmed costs.
 8. Axis availability uses `has_societal_value = societal_value_type:<axis>`;
    the numeric slider read is `societal_value:<axis>`. Do not confuse the type

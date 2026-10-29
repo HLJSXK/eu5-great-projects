@@ -59,8 +59,8 @@
         direction: liberalism
       reward:
         one_shot:
-        - type: legitimacy
-          value: 15
+        - type: government_power
+          value: 30
   mobile_fortress:
     estate_preferences:
       nobles_estate: 1
@@ -91,7 +91,7 @@
       reward:
         one_shot:
         - type: all_estate_satisfaction
-          value: 0.2
+          value: 0.3
   ancient_city_ruins:
     estate_preferences:
       clergy_estate: 3
@@ -122,7 +122,7 @@
       reward:
         one_shot:
         - type: research_progress
-          value: 15
+          value: 20
   summer_palace:
     estate_preferences:
       clergy_estate: random
@@ -153,7 +153,7 @@
       reward:
         one_shot:
         - type: site_prosperity
-          value: 0.5
+          value: 1
   sacred_mountain:
     estate_preferences:
       nobles_estate: 1
@@ -276,8 +276,8 @@
         direction: inward
       reward:
         one_shot:
-        - type: legitimacy
-          value: 15
+        - type: government_power
+          value: 30
   great_lighthouse:
     estate_preferences:
       nobles_estate: 1
@@ -339,7 +339,7 @@
       reward:
         one_shot:
         - type: site_prosperity
-          value: 0.5
+          value: 1
   mining_city:
     estate_preferences:
       nobles_estate: 1
@@ -401,7 +401,7 @@
       reward:
         one_shot:
         - type: research_progress
-          value: 15
+          value: 20
   palace_of_nations:
     estate_preferences:
       clergy_estate: 1
@@ -463,7 +463,7 @@
       reward:
         one_shot:
         - type: research_progress
-          value: 15
+          value: 20
   sky_dome_grand_temple:
     estate_preferences:
       nobles_estate: 1
@@ -494,7 +494,7 @@
       reward:
         one_shot:
         - type: all_estate_satisfaction
-          value: 0.2
+          value: 0.3
   giant_tower_temple:
     estate_preferences:
       nobles_estate: 1
@@ -556,7 +556,7 @@
       reward:
         one_shot:
         - type: site_prosperity
-          value: 0.5
+          value: 1
   national_shipyard:
     estate_preferences:
       nobles_estate: 2
@@ -618,7 +618,7 @@
       reward:
         one_shot:
         - type: army_tradition
-          value: 10
+          value: 20
   great_wall:
     estate_preferences:
       nobles_estate: 1
@@ -649,7 +649,7 @@
       reward:
         one_shot:
         - type: army_tradition
-          value: 10
+          value: 20
   giant_armory:
     estate_preferences:
       nobles_estate: 1
@@ -711,7 +711,7 @@
       reward:
         one_shot:
         - type: research_progress
-          value: 15
+          value: 20
   large_canal_system:
     estate_preferences:
       nobles_estate: 2
@@ -742,7 +742,7 @@
       reward:
         one_shot:
         - type: all_estate_satisfaction
-          value: 0.2
+          value: 0.3
   mountain_terrace_network:
     estate_preferences:
       nobles_estate: random
@@ -773,7 +773,7 @@
       reward:
         one_shot:
         - type: site_prosperity
-          value: 0.5
+          value: 1
   giant_dam_project:
     estate_preferences:
       nobles_estate: 1
@@ -804,7 +804,7 @@
       reward:
         one_shot:
         - type: site_prosperity
-          value: 0.5
+          value: 1
   royal_granary_system:
     estate_preferences:
       nobles_estate: 2
@@ -867,7 +867,7 @@
       reward:
         one_shot:
         - type: site_prosperity
-          value: 0.5
+          value: 1
   canal_hub_city:
     estate_preferences:
       nobles_estate: 2
@@ -898,7 +898,7 @@
       reward:
         one_shot:
         - type: all_estate_satisfaction
-          value: 0.2
+          value: 0.3
   frontier_colonization_belt:
     estate_preferences:
       nobles_estate: 1
@@ -929,7 +929,7 @@
       reward:
         one_shot:
         - type: site_prosperity
-          value: 0.5
+          value: 1
   coastal_beacon_network:
     estate_preferences:
       nobles_estate: 3
@@ -1086,7 +1086,7 @@
       reward:
         one_shot:
         - type: research_progress
-          value: 15
+          value: 20
   grand_theater_festival_district:
     estate_preferences:
       nobles_estate: 1
@@ -1117,7 +1117,7 @@
       reward:
         one_shot:
         - type: prestige
-          value: 100
+          value: 50
   world_embassy_quarter:
     estate_preferences:
       clergy_estate: 3
@@ -1179,7 +1179,7 @@
       reward:
         one_shot:
         - type: government_power
-          value: 20
+          value: 30
   world_market:
     estate_preferences:
       nobles_estate: 3
@@ -1272,7 +1272,7 @@
       reward:
         one_shot:
         - type: inflation
-          value: -0.1
+          value: -0.5
   maritime_trade_station_network:
     estate_preferences:
       nobles_estate: 2
@@ -1396,10 +1396,8 @@
         direction: centralization
       reward:
         one_shot:
-        - type: gold
-          value: 300
         - type: site_prosperity
-          value: 0.25
+          value: 1
   megalithic_circle:
     estate_preferences:
       nobles_estate: 1
@@ -1429,8 +1427,8 @@
         direction: spiritualist
       reward:
         one_shot:
-        - type: legitimacy
-          value: 20
+        - type: government_power
+          value: 30
   grand_cathedral:
     estate_preferences:
       nobles_estate: 1
@@ -1523,7 +1521,7 @@
       reward:
         one_shot:
         - type: all_estate_satisfaction
-          value: 0.2
+          value: 0.3
   great_sculpture_group:
     estate_preferences:
       nobles_estate: 1
@@ -1616,7 +1614,7 @@
       reward:
         one_shot:
         - type: research_progress
-          value: 15
+          value: 20
   national_bank:
     estate_preferences:
       nobles_estate: 1
@@ -1648,7 +1646,7 @@
       reward:
         one_shot:
         - type: inflation
-          value: -1
+          value: -0.5
   pirate_port:
     estate_preferences:
       nobles_estate: 1
@@ -1741,4 +1739,4 @@
       reward:
         one_shot:
         - type: government_power
-          value: 20
+          value: 30

@@ -286,6 +286,48 @@ def extract_assignment_block_containing(script: str, assignment: str, marker: st
     raise AssertionError(f"Containing {assignment} block for {marker} is not closed.")
 
 
+def validate_world_market_effect_contract(mechanics: dict) -> None:
+    """Keep market attraction out of repeatable project levels and preserve exact replacements."""
+    port = mechanics["buildings"]["great_port"]["final_local"]
+    canal = mechanics["buildings"]["canal_hub_city"]["final_local"]
+    market_design = mechanics["buildings"]["world_market"]
+    market_country = mechanics["base_modifiers"]["world_market"]
+    require(port.get("harbor_suitability") == 0.2 and "local_trade_center_power" not in port,
+            "Great Port must use harbor_suitability = 0.2 without repeatable market attraction.")
+    require(canal.get("local_build_new_buildings_efficiency") == 0.1
+            and "local_trade_center_power" not in canal,
+            "Canal Hub City must replace repeatable market attraction with building efficiency.")
+    require(market_design["final_local"] == {}
+            and market_design["include_local_cultural_baseline"] is False,
+            "World Market must have no authored or shared local baseline effect.")
+    require(market_country.get("selling_efficiency") == 0.0125
+            and "global_trade_center_power" not in market_country,
+            "World Market must use selling_efficiency = 0.0125, not global market attraction.")
+
+    buildings = (REPO_ROOT / "src/in_game/common/building_types/tv_engineering_department_wonder_mechanics_buildings.txt").read_text(encoding="utf-8-sig")
+    market_block = extract_trigger_block(buildings, "tv_wonder_luxury_goods_market")
+    market_modifier = extract_trigger_block(market_block, "modifier")
+    for key in ("local_cultural_tradition", "local_cultural_influence", "local_trade_center_power", "local_migration_attraction"):
+        require(not re.search(rf"(?m)^\s*{re.escape(key)}\s*=", market_modifier),
+                f"World Market actual building must not retain local modifier: {key}")
+    require(re.search(r"(?m)^\s*selling_efficiency\s*=\s*0\.0125\s*$", market_modifier),
+            "World Market actual building must preserve the exact 0.0125 selling-efficiency value.")
+
+    zimbabwe = extract_trigger_block(buildings, "tv_wonder_unique_great_zimbabwe_inaugurated")
+    zimbabwe_modifier = extract_trigger_block(zimbabwe, "modifier")
+    require(not re.search(r"(?m)^\s*local_cultural_tradition\s*=|^\s*local_cultural_influence\s*=", zimbabwe_modifier),
+            "Unique Great Zimbabwe must inherit World Market's no-location-effect rule.")
+    require(re.search(r"(?m)^\s*selling_efficiency\s*=\s*0\.025\s*$", zimbabwe_modifier),
+            "Unique Great Zimbabwe must inherit World Market selling efficiency at the unique x2 multiplier.")
+
+    modifiers = (REPO_ROOT / "src/in_game/common/static_modifiers/tv_engineering_department_wonder_mechanics_modifiers.txt").read_text(encoding="utf-8-sig")
+    require("selling_efficiency = 0.0125" in extract_trigger_block(modifiers, "tv_wonder_display_34_level_1"),
+            "Generated level-1 static modifier must retain four-decimal precision.")
+    auto = (REPO_ROOT / "src/in_game/common/auto_modifiers/tv_engineering_department_wonder_mechanics_auto_modifiers.txt").read_text(encoding="utf-8-sig")
+    require("selling_efficiency = 0.0125" in extract_trigger_block(auto, "tv_wonder_auto_world_market"),
+            "Generated auto modifier must retain four-decimal precision.")
+
+
 def validate_generated_trigger_scope_layers(wonders: list[dict]) -> None:
     trigger_script = load_trigger_generator().generate()
     require(
@@ -567,6 +609,7 @@ def validate_asia_wonder_expansion_coverage(
 def main() -> None:
     from audit_wonder_rituals import audit
     wonders, mechanics = load_all_wonder_mechanics()
+    validate_world_market_effect_contract(mechanics)
     validate_worksite_maintenance_input_contract()
     validate_wonder_size_base_country_modifier_rules(wonders, mechanics)
     validate_generated_trigger_scope_layers(wonders)

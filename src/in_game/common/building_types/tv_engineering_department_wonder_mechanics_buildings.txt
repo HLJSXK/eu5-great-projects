@@ -196,8 +196,7 @@ tv_wonder_golden_trade_port = {
 	modifier = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
-		harbor_suitability = 0.1
-		local_trade_center_power = 0.05
+		harbor_suitability = 0.2
 	}
 
 	possible_production_methods = {
@@ -1378,7 +1377,7 @@ tv_wonder_irrigation_canal_system = {
 		local_cultural_influence = 0.5
 		local_monthly_development_modifier = 0.1
 		local_distance_from_capital_speed_propagation = 0.2
-		global_monthly_prosperity = 0.001
+		global_monthly_prosperity = 0.0005
 	}
 
 	possible_production_methods = {
@@ -1530,7 +1529,7 @@ tv_wonder_estuary_flood_dam = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
 		local_monthly_food_modifier = 0.2
-		local_population_growth = 0
+		local_population_growth = 0.00025
 	}
 
 	possible_production_methods = {
@@ -1750,7 +1749,7 @@ tv_wonder_grain_transport_hub = {
 	modifier = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
-		local_trade_center_power = 0.05
+		local_build_new_buildings_efficiency = 0.1
 		local_monthly_prosperity = 0.001
 	}
 
@@ -2408,7 +2407,7 @@ tv_wonder_religious_law_steles = {
 	modifier = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
-		monthly_rebel_growth = -0.001
+		monthly_rebel_growth = -0.0005
 	}
 
 	possible_production_methods = {
@@ -2481,11 +2480,7 @@ tv_wonder_luxury_goods_market = {
 	construction_demand = basic_construction_needs
 
 	modifier = {
-		local_cultural_tradition = 0.5
-		local_cultural_influence = 0.5
-		local_trade_center_power = 0.05
-		local_migration_attraction = 1
-		global_trade_center_power = 0.05
+		selling_efficiency = 0.0125
 		burghers_estate_target_satisfaction = 0.025
 	}
 
@@ -5224,8 +5219,7 @@ tv_wonder_unique_malacca_port_inaugurated = {
 	modifier = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
-		harbor_suitability = 0.2
-		local_trade_center_power = 0.1
+		harbor_suitability = 0.4
 	}
 
 	possible_production_methods = {
@@ -5528,7 +5522,7 @@ tv_wonder_unique_amsterdam_canal_ring_inaugurated = {
 	modifier = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
-		local_trade_center_power = 0.1
+		local_build_new_buildings_efficiency = 0.2
 		local_monthly_prosperity = 0.002
 	}
 
@@ -5911,11 +5905,7 @@ tv_wonder_unique_great_zimbabwe_inaugurated = {
 	construction_demand = basic_construction_needs
 
 	modifier = {
-		local_cultural_tradition = 0.5
-		local_cultural_influence = 0.5
-		local_trade_center_power = 0.1
-		local_migration_attraction = 2
-		global_trade_center_power = 0.1
+		selling_efficiency = 0.025
 		burghers_estate_target_satisfaction = 0.05
 	}
 
@@ -6608,7 +6598,7 @@ tv_wonder_unique_dutch_polders_inaugurated = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
 		local_monthly_food_modifier = 0.4
-		local_population_growth = 0.001
+		local_population_growth = 0.0005
 	}
 
 	possible_production_methods = {
@@ -8471,7 +8461,7 @@ tv_wonder_unique_dujiangyan_inaugurated = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
 		local_monthly_food_modifier = 0.4
-		local_population_growth = 0.001
+		local_population_growth = 0.0005
 	}
 
 	possible_production_methods = {
@@ -9875,8 +9865,7 @@ tv_wonder_unique_calicut_port_city_inaugurated = {
 	modifier = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
-		harbor_suitability = 0.2
-		local_trade_center_power = 0.1
+		harbor_suitability = 0.4
 	}
 
 	possible_production_methods = {
@@ -10178,8 +10167,7 @@ tv_wonder_unique_gdansk_port_inaugurated = {
 	modifier = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
-		harbor_suitability = 0.2
-		local_trade_center_power = 0.1
+		harbor_suitability = 0.4
 	}
 
 	possible_production_methods = {
@@ -10920,11 +10908,7 @@ tv_wonder_unique_tashkent_old_bazaar_inaugurated = {
 	construction_demand = basic_construction_needs
 
 	modifier = {
-		local_cultural_tradition = 0.5
-		local_cultural_influence = 0.5
-		local_trade_center_power = 0.1
-		local_migration_attraction = 2
-		global_trade_center_power = 0.1
+		selling_efficiency = 0.025
 		burghers_estate_target_satisfaction = 0.05
 	}
 
@@ -11143,8 +11127,7 @@ tv_wonder_unique_bordeaux_port_inaugurated = {
 	modifier = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
-		harbor_suitability = 0.2
-		local_trade_center_power = 0.1
+		harbor_suitability = 0.4
 	}
 
 	possible_production_methods = {
@@ -11216,8 +11199,7 @@ tv_wonder_unique_marseille_old_port_inaugurated = {
 	modifier = {
 		local_cultural_tradition = 0.5
 		local_cultural_influence = 0.5
-		harbor_suitability = 0.2
-		local_trade_center_power = 0.1
+		harbor_suitability = 0.4
 	}
 
 	possible_production_methods = {
@@ -11953,11 +11935,7 @@ tv_wonder_unique_sanaa_old_city_inaugurated = {
 	construction_demand = basic_construction_needs
 
 	modifier = {
-		local_cultural_tradition = 0.5
-		local_cultural_influence = 0.5
-		local_trade_center_power = 0.1
-		local_migration_attraction = 2
-		global_trade_center_power = 0.1
+		selling_efficiency = 0.025
 		burghers_estate_target_satisfaction = 0.05
 	}
 

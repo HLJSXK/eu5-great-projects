@@ -33,7 +33,7 @@ def fmt_value(value: object) -> str:
     if isinstance(value, bool):
         return "yes" if value else "no"
     if isinstance(value, float):
-        return f"{value:.3f}".rstrip("0").rstrip(".")
+        return f"{value:.5f}".rstrip("0").rstrip(".")
     return str(value)
 
 

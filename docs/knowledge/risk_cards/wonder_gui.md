@@ -83,8 +83,24 @@ GUI widgets.
 
 ## Validation
 
+Before confirmation, the ritual ledger has exactly three sibling sections in
+order: ritual options (including their supporting estates and selected ritual's
+flavor below the plain choice), requirements (duration and native cost preview), and expected effects (native
+completion-effect preview, including native societal-value effects). The confirmation action
+is a separate footer below all three sections. Do not restore a fourth values
+heading or put the confirmation button inside the requirements section. Retain
+the shared plain-inauguration alternative for construction and rededication,
+and the in-progress details toggle. Start the ledger directly with the options
+section; there is no introductory banner or dedicated rededication cancel button.
+The flavor paragraph uses native `default_format = "#flavor"` and the default
+text size, without a custom font-size override or inline format wrapper.
+Do not add a custom societal-value axis, progress bar, side labels or direction
+arrows below the native effect preview; value movement is rendered by the effect itself.
+
 The ritual ledger uses 42-unit choice cards showing only the icon and ritual
-name. Each card has its own horizontal `flowcontainer` with `wrap_count = 7`
+name. Plain shares the same card builder, font, padding, background and selection
+highlight; it has no subtitle or separate checkmark. Each ritual style card has
+its own horizontal `flowcontainer` with `wrap_count = 7`
 for 36-unit supporting-estate widgets (32-unit estate icon plus a green check
 badge), filtered by that style's cached preference. Keep the art transparent to
 mouse input so the whole widget remains one hover target. Its native
@@ -97,7 +113,7 @@ Do not restore `dynamicgridbox` with `spacing`: the user's 2026-10-29 21:30:39
 runtime log rejected that property at panel line 4174, and the cards overlapped
 the terms and confirmation button. Fix `wonder_ritual_gui.py`, regenerate the
 mechanics fragment, then run its merge script. Preview regressions cover empty,
-sparse and seven-supporter rows, grouping before selection, and the fixed-width societal direction arrow;
+sparse and seven-supporter rows, grouping before selection, and native-only effect output;
 offline previews do not establish native acceptance after reload.
 
 ```powershell

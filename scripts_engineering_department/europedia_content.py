@@ -33,7 +33,7 @@ the Great Engineer's Administrative skill x 0.2 a month (tv_engineering_departme
 survey gain is Military x 0.1, support runs 0-200 with 100 needed to close the debate, the survey
 tiers break at 20/40/60/80/100, organization caps the worksite at competence/5 (max 20) and
 logistics scales progress to 50-150%, ritual costs are 2/3/5 scaled gold with a 24 month
-duration, +-20 societal shock, 0.1/0.05 estate satisfaction and a 100 year memory, and a repair
+duration, 0.1 monthly societal pull, 0.1/0.05 estate satisfaction and a 100 year memory, and a repair
 round offers one reprieve.
 """
 
@@ -1064,11 +1064,11 @@ CARDS: list[dict] = [
                     },
                     {
                         "icons": [("icon", ICON_POWER)],
-                        "title": _t("A Societal Shock", "价值观冲击"),
+                        "title": _t("A Monthly Societal Pull", "月度价值观倾向"),
                         "text": _t(
-                            "Completion moves one societal value by #high 20#! in the chosen direction, "
-                            "and keeps a slow monthly pull towards it thereafter.",
-                            "完成时沿所选方向一次性推动某项社会价值观 #high 20#!，此后每月继续缓慢牵引。",
+                            "After completion, the dedication adds #high 0.1#! monthly pull "
+                            "towards the chosen societal direction.",
+                            "完成仪式后，沿所选社会价值观方向提供 #high 0.1#! 月度推力。",
                         ),
                     },
                     {
@@ -1192,15 +1192,12 @@ CARDS: list[dict] = [
                     {
                         "title": _t("Rededication", "重新仪式"),
                         "text": _t(
-                            "The style's effects and #high 10 prestige#!, and nothing else. No "
-                            "completion rewards, no new building: it buys the character, not the "
-                            "monument.",
-                            "只有该风格的效果与 #high 10 威望#!，别无他物。没有落成奖励，也不新建建筑：它买的是"
-                            "性格，不是纪念碑。",
+                            "Only the chosen ritual's rewards. Choosing plain grants no additional rewards.",
+                            "仅获得所选仪式的奖励。选择朴素不获得额外奖励。",
                         ),
                         "items": [
                             {"icon": ICON_CEREMONY, "link": "[tv_wonder_ceremony|e]"},
-                            {"icon": ICON_PRESTIGE, "link": ""},
+                            {"icon": ICON_EFFECT, "link": ""},
                         ],
                         "arrows": True,
                     },

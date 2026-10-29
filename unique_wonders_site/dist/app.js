@@ -521,7 +521,7 @@ function renderEffectSection(effect) {
   const pills = [];
   if (meta.style) pills.push(`${language ? '风格' : 'Style'} ${meta.style}`);
   if (meta.duration_months) pills.push(`${meta.duration_months} ${language ? '个月' : 'months'}`);
-  if (meta.direction) pills.push(`${language ? '价值观' : 'Societal value'}: ${localized(meta.direction)} (${formatValue(meta.shock)})`);
+  if (meta.direction) pills.push(`${language ? '月度价值观倾向' : 'Monthly societal pull'}: ${localized(meta.direction)} (${formatValue(meta.monthly)})`);
   const preferences = Array.isArray(meta.estate_preferences) ? meta.estate_preferences : [];
   const metaHtml = (pills.length ? `<div class="effect-meta">${pills.map(value => `<span class="meta-pill">${escapeHtml(value)}</span>`).join('')}</div>` : '')
     + (preferences.length ? `<p>${language ? '阶层偏好（国家实际拥有时参与）' : 'Estate preferences (when present in the country)'}</p><div class="effect-meta">${preferences.map(row => `<span class="meta-pill">${escapeHtml(localized(row.estate))} → ${escapeHtml(localized(row.preference))}</span>`).join('')}</div>` : '')

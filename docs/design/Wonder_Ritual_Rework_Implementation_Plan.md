@@ -22,12 +22,12 @@
 |---|---|---|
 | R1 | 独特奇观继承通用奇观的三种仪式奖励，效果相同，文本不同 | §4.2 继承规则，§4.4 独特文本 |
 | R2 | 三选一；奖励仍分国家 modifier、地点 modifier、即时奖励三类，但三类与三种仪式不再一一绑定；本轮奖励列表不变，生成器要允许以后自由组合 | §4.1 schema，§5 归一化 |
-| R3 | 可选朴素；每种风格自带价值观倾向；完成时一次性移动 + 永久倾向；取消定时强化倾向；buff modifier 与价值观 modifier 合并 | §6.1 合并 modifier，§10 价值观 |
+| R3 | 可选朴素；每种风格自带价值观倾向；完成后只提供月度倾向；取消定时强化倾向；buff modifier 与价值观 modifier 合并 | §6.1 合并 modifier，§10 价值观 |
 | R4 | 仪式完成状态脱离建筑，有独立生命周期，始终与仪式 modifier 同步；失去奇观即失去；掠夺不继承；显示为永久，内部 100 年计时，到期事件后淡忘；失去后进入朴素；朴素可随时重新仪式化 | §3 状态模型，§6 生命周期，§8 |
 | R5 | 仪式阶段不再每月消耗国内支持度；建设结束事件说明反对派已闭嘴 | §11 |
 | R6 | 奇观建筑不再按仪式分三个变体，只保留一种，只有一种 modifier | §4.3，§7.1 |
 | R7 | 朴素等同于未完成仪式，不算续建；空壳 = 建成但未朴素，算续建；空壳只给文化传统；朴素与完整共用一个建筑，朴素只少仪式奖励；开局历史奇观为朴素 | §3，§7.6 |
-| R8 | 工程部处于构思状态且国内有朴素奇观时，可用决议重新仪式化：事件选奇观 → 锁定项目 → 直接进入仪式阶段；专用落成事件只给 buff 和 10 威望 | §8 |
+| R8 | 工程部处于构思状态且国内有朴素奇观时，可用决议重新仪式化：事件选奇观 → 锁定项目 → 直接进入仪式阶段；专用落成事件只给 所选仪式奖励 | §8 |
 | R9 | 阶层意愿：阶层总是支持建造自己地点建筑的风格；其余按历史逻辑硬编码；没有明显偏好时在仪式阶段开始时随机；支持者忠诚上升，反对者下降，没有中立 | §9 |
 
 **本轮不做：** 逐工程手写诠释内容；顺势／逆势成本；阶段事件；征服者改奉；纪念期；全国推力上限。
@@ -102,7 +102,7 @@ IO 变量 `tv_wonder_domestic_support`（0–200）。`international_organizatio
 
 1. 国家拥有 modifier `tv_wonder_<key>_ritual_<n>_modifier`，当且仅当它名下至少有一个地点的 `tv_wonder_ritual_style_by_id[id] = n`。
 2. 地点拥有 `tv_wonder_<key>_ritual_<n>_location_modifier`，当且仅当该地点 `tv_wonder_ritual_style_by_id[id] = n`。
-3. 一次性结算只在两个时刻各发生一次：阶层满意度在“举行仪式”（确认）时结算；价值观冲击和即时奖励在“完成仪式”时结算。扩建、读档、易主或重算都不会再次触发。
+3. 一次性结算只在两个时刻各发生一次：阶层满意度在“举行仪式”（确认）时结算；即时奖励在“完成仪式”时结算。价值观只通过仪式 modifier 的月度倾向移动，不再提供完成时的即时冲击。读档、易主或重算不会再次触发一次性结算。
 4. 地点变量 `tv_wonder_ritual_style_by_id` 只由两个生成的效果写入：授予（grant）和撤销（revoke）。其他代码一律调用这两个效果，不直接写 map。
 
 ### 3.3 项目模式
@@ -217,11 +217,9 @@ ritual_rules:
   duration_months: 24                                         # D09：统一 24 个月
   cost: { catalog: country_reward, type: scaled_gold, value: { small: 2, medium: 3, large: 5 } }  # D09
   societal_value:
-    shock: 20        # change_societal_value 一次性；通用与独特相同，不随等级变化（D11 已定）
     monthly: 0.1     # 合并 modifier 中的 monthly_towards_<dir>（D11 已定）
   memory_years: 100
   estate_satisfaction: { support: 0.10, oppose: -0.05 }   # 举行仪式时结算（D17 时机已定，数值待定）
-  reritual_prestige: 10
 ```
 
 生成器、编辑器预览和图鉴都只从这里读取数值。
@@ -248,7 +246,7 @@ def ritual_styles(wonder, mechanics) -> list[dict]:
     #   "country_modifier": {...},            # 奖励 + monthly_towards_<dir>
     #   "location_modifier_values": {...},    # 可能为空
     #   "one_shot": [...],
-    #   "societal_value": {"axis", "direction", "sign", "shock", "monthly"},
+    #   "societal_value": {"axis", "direction", "sign", "monthly"},
     #   "estate_preferences": {estate: n | "random"},   # 已加入地点奖励所属阶层
     #   "name_key", "desc_key", "final_desc_key",
     # }
@@ -315,7 +313,6 @@ tv_wonder_<key>_ritual_sync_country_effect = {
 
 # 国家作用域；只在仪式完成那一刻调用一次
 tv_wonder_<key>_ritual_<n>_settle_effect = {
-    change_societal_value = { type = <axis> value = <±shock> }
     # 阶层满意度不在这里：它在举行仪式（确认）时结算，见 §7.2、§9.3
     <one_shot 奖励行，沿用 cost_reward_units 目录的渲染器>
 }
@@ -344,7 +341,7 @@ tv_wonder_<key>_ritual_<n>_settle_effect = {
 | 降级（仍 ≥1） | 同上 | 不改变状态 |
 | 100 年到期 | 新事件 `.3000+id` | 见 §6.4 |
 | 正常落成 | `.5000+id` 选项 | 结果为风格 n 时：建造或升级成品 → grant → settle |
-| 重新仪式化落成 | 新事件 `.4000+id` | grant → settle → +10 威望 |
+| 重新仪式化落成 | 新事件 `.4000+id` | grant → settle |
 | 开局 | `tv_wonder_initialize_existing_unique_wonders_effect` | 只把建筑键改为单一成品；不写仪式状态（朴素） |
 | 外部升降级 | `gen_tv_wonder_level_change_effects.py` | 删除 `tv_wonder_raise_generic_level_effect` 的 `style` 参数（原版接管目前并不调用它，只有定义和 `test_wonder_mechanics_rules.py` 引用；同步修改 `Wonder_Level_Change_Interface.md`）；`vanilla_takeover/render.py` 的 `final_dispatch()` 改用 `final_building()`。建出来的一律是朴素；降到 0 时走上面的拆毁路径 |
 
@@ -474,7 +471,7 @@ tv_wonder_reritualize_decision = {
 ### 8.4 专用落成 `.4000+id`
 
 - `tv_wonder_ritual_complete_effect` 在模式 3 时不调用 `tv_wonder_finalize_effect`，而是触发 `.4000+id`。
-- 选项：执行 `tv_wonder_ritual_apply_choice_effect`（模式 3 下即 grant → settle → `add_prestige = 10`，与仪式卡预览相同）。没有落成奖励包，不建造或升级建筑，没有广播，也不注册优先候选。
+- 选项：执行 `tv_wonder_ritual_apply_choice_effect`（模式 3 下即 grant → settle，与仪式卡预览相同）。没有落成奖励包，不建造或升级建筑，没有广播，也不注册优先候选。
 - 隐藏收尾：`tv_wonder_clear_project_state_core_effect` → `tv_wonder_start_concept_effect = { reason = 4 }`（新的 reason，用于提示“重新仪式化已完成”）。构思从零开始（D28）。
 - 即时奖励是否属于这里所说的“buff”，见 D25。
 
@@ -507,12 +504,12 @@ EU5 中阶层的数值叫**满意度**（satisfaction，`add_estate_satisfaction
 
 ## 10. 价值观（R3）
 
-- **一次性移动**：settle 中执行 `change_societal_value = { type = <axis> value = <±20> }`，左端取负，右端取正。通用与独特相同，不随等级变化（D11）。
+- **仅月度移动**：2026-10-29 移除仪式完成时的一次性移动；settle 与效果预览均不再生成 `change_societal_value`。通用与独特奇观遵循同一规则。
 - **永久倾向数值**：`monthly_towards_<direction> = 0.1`，通用与独特相同（D11）。它并入全国净月度推力；单独看，它让该方向的推进上限增加 10 点（100 × 0.1）。
 - **永久倾向**：合并 modifier 中的 `monthly_towards_<direction>`。它随仪式状态同步：失去奇观、淡忘、易主时都会消失。
 - **取消**：十年纪念期，以及 `wonder_base_modifiers.yaml` 中全部 56 条 `monthly_towards_*`。删除后，基础国家表为空的机制（27 个基础模板只含倾向，删除后为空，影响 91 个工程类型：27 个通用 + 64 个独特，其中包括全部 24 个 small）在界面上显示“无基础国家效果”，不要为了填空塞别的东西进去。
-- **轴的可用性**：允许全部 17 条轴，不做特殊处理（D12）。没有 `has_societal_value` 禁用判断，也没有“至少两种风格可选”的校验。时代轴尚未出现时，该风格的一次性移动和月度倾向对国家暂时无效，玩家看到的就是一个“不带价值观”的风格；进入相应时代后，modifier 中的月度倾向自然生效。仪式 100 年后淡忘，可以重选。AI 对齐度（§12）对尚未出现的轴取 0。
-- **AI 与 tooltip**：`change_societal_value` 和 modifier 的 tooltip 由引擎生成，界面不手写数值。
+- **轴的可用性**：允许全部 17 条轴，不做特殊处理（D12）。没有 `has_societal_value` 禁用判断，也没有“至少两种风格可选”的校验。时代轴尚未出现时，该风格的月度倾向对国家暂时无效，玩家看到的就是一个“不带价值观”的风格；进入相应时代后，modifier 中的月度倾向自然生效。仪式 100 年后淡忘，可以重选。AI 对齐度（§12）对尚未出现的轴取 0。
+- **AI 与 tooltip**：modifier 的 tooltip 由引擎生成，界面不手写数值。
 
 ## 11. 国内支持度（R5）
 
@@ -544,7 +541,7 @@ EU5 中阶层的数值叫**满意度**（satisfaction，`add_estate_satisfaction
 |---|---|
 | 风格名称 / 说明 | 数字路由概念 `tv_wonder_display_<id>_ritual_<n>`（现有机制，键改为按风格） |
 | 价值观方向与图标 | 生成的显示变量 `tv_wonder_ritual_display_axis_<n>`（轴编号）和 `_dir_<n>`（±1），图标按编号路由到 `gfx/interface/icons/societal_values/<axis>_<left|right>.dds` |
-| 奖励预览 | 原生效果渲染 `ShowScriptedEffectForScope('tv_wonder_ritual_apply_choice_effect', ...)`（按风格时为 `tv_wonder_ritual_apply_style_<n>_effect`），由 `text_multi.raw_text` 接收。被渲染的就是仪式完成时实际执行的效果（grant + settle，模式 3 另加 10 威望）。不手写效果文本，不写只用于 tooltip 的包装效果；grant 中的 map 写入和计时器放进 `hidden_effect`。效果区以外不重复写效果数值 |
+| 奖励预览 | 原生效果渲染 `ShowScriptedEffectForScope('tv_wonder_ritual_apply_choice_effect', ...)`（按风格时为 `tv_wonder_ritual_apply_style_<n>_effect`），由 `text_multi.raw_text` 接收。被渲染的就是仪式完成时实际执行的效果（grant + settle，模式 3 没有额外奖励）。不手写效果文本，不写只用于 tooltip 的包装效果；grant 中的 map 写入和计时器放进 `hidden_effect`。效果区以外不重复写效果数值 |
 | 阶层支持 / 反对 | `tv_wonder_estate_pref_<estate>` 与当前风格比较 |
 | 费用、时长 | `price:` 与 `tv_wonder_ritual_duration_months` |
 | 进度 | `tv_wonder_ritual_months_completed`、`tv_wonder_ritual_progress_pct` |
@@ -631,7 +628,7 @@ EU5 中阶层的数值叫**满意度**（satisfaction，`add_estate_satisfaction
 | WP2 | 单一成品；删除附属建筑；合并 modifier 与地点 modifier 的生成 | WP1 | 191 个成品；573 个合并 modifier；191 个地点 modifier；建筑属性差异表经评审 |
 | WP3 | 仪式状态生命周期：grant、revoke、sync、settle、100 年计时、淡忘事件、易主、拆毁、开局、外部接口 | WP2 | §17 状态场景全部通过；不变量 1、2 在所有路径上成立 |
 | WP4 | 仪式阶段流程：进入、预览、确认、朴素、月度进度、落成、扩建分支、空壳续建、支持度、`.202` | WP3 | 新建 / 扩建 / 续建三条路径都能走到落成；仪式阶段支持度不变 |
-| WP5 | 重新仪式化：决议、`.2001`、锁定、`.4000+id`、取消 | WP4 | 只在构思状态可用；只奖励 buff 和 10 威望；落成后回到构思 |
+| WP5 | 重新仪式化：决议、`.2001`、锁定、`.4000+id`、取消 | WP4 | 只在构思状态可用；只奖励 所选仪式奖励；落成后回到构思 |
 | WP6 | 阶层意愿：推导、随机、结算、显示变量 | WP4 | 每个阶层恰好支持一个风格；朴素无结算 |
 | WP7 | 内容：56 × 3 方向、56 套阶层偏好、135 × 2 独特风格名称与说明、朴素与淡忘文本、双语 | WP1 规则稳定 | 校验通过；人工评审签字 |
 | WP8 | AI | WP4、WP5 | §12 的五条规则；不会卡死 |
@@ -667,15 +664,15 @@ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts\validate.py --changed --fix
 
 | 组 | 场景与预期 |
 |---|---|
-| 新建 | 通用 / 独特各一座：建成 → `.202` 新文本 → 支持度在仪式阶段不变 → 选风格 → 举行仪式：扣费 + 阶层满意度立即变化 → 24 个月 → 落成：成品 + 合并 modifier（显示永久）+ 地点 modifier + 价值观移动 20 + 即时奖励；效果区不出现阶层满意度 |
+| 新建 | 通用 / 独特各一座：建成 → `.202` 新文本 → 支持度在仪式阶段不变 → 选风格 → 举行仪式：扣费 + 阶层满意度立即变化 → 24 个月 → 落成：成品 + 合并 modifier（显示永久，含月度价值观倾向）+ 地点 modifier + 即时奖励；效果区不出现阶层满意度或即时价值观移动 |
 | 朴素 | 选朴素：所有参与阶层立即反对；立即落成，有落成奖励包，没有其他仪式相关的东西；地点窗口显示“朴素” |
 | 空壳 | 仪式阶段放弃：空壳留在原地，只给文化传统，作为续建候选出现；续建时锁定后可以立刻宣布建成 |
-| 扩建 | 完整状态的成品扩建：直接落成，modifier 不变，没有第二次价值观移动；朴素成品扩建：出现选择 |
+| 扩建 | 每轮均重新选择仪式或朴素落成；仪式完成后更新 modifier 并结算即时奖励，价值观只按月度倾向移动 |
 | 多实例 | 同种 small 两座都是风格 1：只有一个 modifier；失去一座仍保留，两座都失去才移除；两座不同风格时两个 modifier 各自独立 |
 | 易主 | 被征服、劫掠、和平割让、释放附庸：旧主 modifier 按不变量 1 处理，地点 modifier 移除，新主为朴素；收复后仍为朴素 |
 | 拆毁 | 降一级：状态保留；降到 0：状态与 modifier 清除 |
 | 淡忘 | 用调试手段把计时缩短：到期后状态、modifier 清除，出现通知；期间清除并重新授予过的，旧计时器不起作用 |
-| 重新仪式化 | 非构思状态不可用；没有朴素奇观时不可用；选中后直接进入仪式阶段；没有朴素按钮；落成只给 buff 和 10 威望，然后回到构思；构思进度保留 |
+| 重新仪式化 | 非构思状态不可用；没有朴素奇观时不可用；选中后直接进入仪式阶段；与建设共用朴素选项，朴素不获得额外奖励；落成只给 所选仪式奖励，然后回到构思；构思进度保留 |
 | 外部接口 | 原版事件建出的奇观为朴素，不显示“仪式完成” |
 | 开局 | 65 座独特奇观为朴素，地点窗口显示正确 |
 | AI | 选风格符合对齐度规则；付不起时 24 个月后选朴素；重新仪式化不会卡死 |
@@ -689,7 +686,7 @@ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts\validate.py --changed --fix
 | M01 | `add_to_variable_map` 带 `days` 时限的到期语义；地点 map 以整数字面量为键 | 控制台小样：写入后读档，按天推进 |
 | M02 | `location_event` 延迟 36501 天能否跨读档保留；事件 root 是否为该地点 | 小样用短延迟模拟，读档后观察是否触发 |
 | M03 | 一年是否固定为 365 天；`days = 36500` 是否恰好等于 100 年 | 读原版定义；设短期小样对比 `years = 1` 与 `days = 365` |
-| M04 | `change_societal_value` 冲击后回落到月度上限的速度；`monthly_towards_*` 在静态国家 modifier 中是否计入净推力、上限是否为 100 × 净推力 | 对照实验 |
+| M04 | `monthly_towards_*` 在静态国家 modifier 中是否计入净推力、上限是否为 100 × 净推力 | 对照实验 |
 | M05 | `.2001` 的 191 个候选选项与“稍后”能否完整滚动显示，是否截断或漏掉候选 | 实机检查至少 12 个有效候选及 191 个候选的最大集；按下方标准逐项核对。未执行，不能以静态合规或无报错代替 |
 | M06 | `add_country_modifier mode = replace years = -1` 在 tooltip 中是否显示为“永久” | 截图 |
 | M07 | `on_location_changed_owner` 中 revoke 与旧主清理的先后顺序，以及 `scope:loser` 的可用性 | 日志 |
@@ -709,5 +706,5 @@ C:\Users\Hades\anaconda3\envs\eu5\python.exe scripts\validate.py --changed --fix
 - **内容量**：168 个方向、56 套阶层偏好。独特风格文本已写好（D03），仍需逐条评审。用户明确不想要 AI 堆砌的文本，评审时以具体、可考、不空泛为标准。
 - **生命周期遍历**：通用奇观的 sync 需要遍历拥有地点，大国征服时可能在同一天执行多次。只在生命周期点执行，并且一次只处理一个 wonder id 的 3 个分支，开销可控；WP11 需要记录月结耗时。
 - **重新仪式化刷取**：如果即时奖励算作 buff（D25），玩家可以通过“送出再拿回”反复刷即时奖励。24 个月工期和费用是天然限制，但仍需评审。
-- **价值观数值**：D11 定为一次性 20、每月 0.1。月度推力是全国所有来源的净和，仅靠月度推力能到达的最远位置是净月度推力的 100 倍（`SOCIETAL_VALUE_INERTIA_SCALE = 100`）。所以一座完成仪式的奇观把该方向的上限抬高 10 点，不会随年份无限累积；20 点冲击可以暂时越过这个上限，之后会回到月度推力决定的位置。需要注意的是同向叠加：几座奇观选同一方向时上限按 10 点逐座增加，再加上法律和特权的推力，可能明显改变国家的价值观平衡（M04 实测）。
+- **价值观数值**：2026-10-29 调整为仅每月 0.1，移除完成时的一次性 20 点移动。月度推力是全国所有来源的净和，仅靠月度推力能到达的最远位置是净月度推力的 100 倍（`SOCIETAL_VALUE_INERTIA_SCALE = 100`）。所以一座完成仪式的奇观把该方向的上限抬高 10 点，不会随年份无限累积。需要注意的是同向叠加：几座奇观选同一方向时上限按 10 点逐座增加，再加上法律和特权的推力，可能明显改变国家的价值观平衡（M04 实测）。
 - **兼容子模组**：面板 GUI 大改后，已登记的兼容合并器需要重新运行。

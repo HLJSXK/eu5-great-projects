@@ -184,8 +184,7 @@ tv_wonder_display_3_local_level_1 = {
 	game_data = { category = location }
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
-	harbor_suitability = 0.1
-	local_trade_center_power = 0.05
+	harbor_suitability = 0.2
 }
 
 tv_wonder_display_3_level_2 = {
@@ -195,8 +194,7 @@ tv_wonder_display_3_local_level_2 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
-	harbor_suitability = 0.2
-	local_trade_center_power = 0.1
+	harbor_suitability = 0.4
 }
 
 tv_wonder_display_3_level_3 = {
@@ -206,8 +204,7 @@ tv_wonder_display_3_local_level_3 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
-	harbor_suitability = 0.3
-	local_trade_center_power = 0.15
+	harbor_suitability = 0.6
 }
 
 tv_wonder_display_3_level_4 = {
@@ -217,8 +214,7 @@ tv_wonder_display_3_local_level_4 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
-	harbor_suitability = 0.4
-	local_trade_center_power = 0.2
+	harbor_suitability = 0.8
 }
 
 tv_wonder_display_3_level_5 = {
@@ -228,8 +224,7 @@ tv_wonder_display_3_local_level_5 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
-	harbor_suitability = 0.5
-	local_trade_center_power = 0.25
+	harbor_suitability = 1
 }
 
 tv_wonder_display_3_level_6 = {
@@ -239,8 +234,7 @@ tv_wonder_display_3_local_level_6 = {
 	game_data = { category = location }
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
-	harbor_suitability = 0.6
-	local_trade_center_power = 0.3
+	harbor_suitability = 1.2
 }
 
 tv_wonder_great_port_ritual_1_modifier = {
@@ -1582,7 +1576,7 @@ tv_wonder_library_of_nation_ritual_3_modifier = {
 }
 
 tv_wonder_display_19_level_1 = {
-	global_monthly_prosperity = 0.001
+	global_monthly_prosperity = 0.0005
 }
 
 tv_wonder_display_19_local_level_1 = {
@@ -1606,7 +1600,7 @@ tv_wonder_display_19_local_level_2 = {
 }
 
 tv_wonder_display_19_level_3 = {
-	global_monthly_prosperity = 0.002
+	global_monthly_prosperity = 0.0015
 }
 
 tv_wonder_display_19_local_level_3 = {
@@ -1630,7 +1624,7 @@ tv_wonder_display_19_local_level_4 = {
 }
 
 tv_wonder_display_19_level_5 = {
-	global_monthly_prosperity = 0.003
+	global_monthly_prosperity = 0.0025
 }
 
 tv_wonder_display_19_local_level_5 = {
@@ -1769,7 +1763,7 @@ tv_wonder_display_21_local_level_1 = {
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
 	local_monthly_food_modifier = 0.2
-	local_population_growth = 0
+	local_population_growth = 0.00025
 }
 
 tv_wonder_display_21_level_2 = {
@@ -1780,7 +1774,7 @@ tv_wonder_display_21_local_level_2 = {
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
 	local_monthly_food_modifier = 0.4
-	local_population_growth = 0
+	local_population_growth = 0.0005
 }
 
 tv_wonder_display_21_level_3 = {
@@ -1791,7 +1785,7 @@ tv_wonder_display_21_local_level_3 = {
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
 	local_monthly_food_modifier = 0.6
-	local_population_growth = 0
+	local_population_growth = 0.00075
 }
 
 tv_wonder_display_21_level_4 = {
@@ -1802,7 +1796,7 @@ tv_wonder_display_21_local_level_4 = {
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
 	local_monthly_food_modifier = 0.8
-	local_population_growth = 0
+	local_population_growth = 0.001
 }
 
 tv_wonder_display_21_level_5 = {
@@ -1813,7 +1807,7 @@ tv_wonder_display_21_local_level_5 = {
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
 	local_monthly_food_modifier = 1
-	local_population_growth = 0
+	local_population_growth = 0.00125
 }
 
 tv_wonder_display_21_level_6 = {
@@ -1824,7 +1818,7 @@ tv_wonder_display_21_local_level_6 = {
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
 	local_monthly_food_modifier = 1.2
-	local_population_growth = 0
+	local_population_growth = 0.0015
 }
 
 tv_wonder_giant_dam_project_ritual_1_modifier = {
@@ -2030,7 +2024,7 @@ tv_wonder_display_24_local_level_1 = {
 	game_data = { category = location }
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
-	local_trade_center_power = 0.05
+	local_build_new_buildings_efficiency = 0.1
 	local_monthly_prosperity = 0.001
 }
 
@@ -2041,7 +2035,7 @@ tv_wonder_display_24_local_level_2 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
-	local_trade_center_power = 0.1
+	local_build_new_buildings_efficiency = 0.2
 	local_monthly_prosperity = 0.002
 }
 
@@ -2052,7 +2046,7 @@ tv_wonder_display_24_local_level_3 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
-	local_trade_center_power = 0.15
+	local_build_new_buildings_efficiency = 0.3
 	local_monthly_prosperity = 0.003
 }
 
@@ -2063,7 +2057,7 @@ tv_wonder_display_24_local_level_4 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
-	local_trade_center_power = 0.2
+	local_build_new_buildings_efficiency = 0.4
 	local_monthly_prosperity = 0.004
 }
 
@@ -2074,7 +2068,7 @@ tv_wonder_display_24_local_level_5 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
-	local_trade_center_power = 0.25
+	local_build_new_buildings_efficiency = 0.5
 	local_monthly_prosperity = 0.005
 }
 
@@ -2085,7 +2079,7 @@ tv_wonder_display_24_local_level_6 = {
 	game_data = { category = location }
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
-	local_trade_center_power = 0.3
+	local_build_new_buildings_efficiency = 0.6
 	local_monthly_prosperity = 0.006
 }
 
@@ -2815,7 +2809,7 @@ tv_wonder_world_embassy_quarter_ritual_3_modifier = {
 }
 
 tv_wonder_display_33_level_1 = {
-	monthly_rebel_growth = -0.001
+	monthly_rebel_growth = -0.0005
 }
 
 tv_wonder_display_33_local_level_1 = {
@@ -2835,7 +2829,7 @@ tv_wonder_display_33_local_level_2 = {
 }
 
 tv_wonder_display_33_level_3 = {
-	monthly_rebel_growth = -0.002
+	monthly_rebel_growth = -0.0015
 }
 
 tv_wonder_display_33_local_level_3 = {
@@ -2855,7 +2849,7 @@ tv_wonder_display_33_local_level_4 = {
 }
 
 tv_wonder_display_33_level_5 = {
-	monthly_rebel_growth = -0.003
+	monthly_rebel_growth = -0.0025
 }
 
 tv_wonder_display_33_local_level_5 = {
@@ -2896,81 +2890,57 @@ tv_wonder_law_code_stele_project_ritual_3_modifier = {
 }
 
 tv_wonder_display_34_level_1 = {
-	global_trade_center_power = 0.05
+	selling_efficiency = 0.0125
 	burghers_estate_target_satisfaction = 0.025
 }
 
 tv_wonder_display_34_local_level_1 = {
 	game_data = { category = location }
-	local_cultural_tradition = 0.5
-	local_cultural_influence = 0.5
-	local_trade_center_power = 0.05
-	local_migration_attraction = 1
 }
 
 tv_wonder_display_34_level_2 = {
-	global_trade_center_power = 0.1
+	selling_efficiency = 0.025
 	burghers_estate_target_satisfaction = 0.05
 }
 
 tv_wonder_display_34_local_level_2 = {
 	game_data = { category = location }
-	local_cultural_tradition = 1
-	local_cultural_influence = 1
-	local_trade_center_power = 0.1
-	local_migration_attraction = 2
 }
 
 tv_wonder_display_34_level_3 = {
-	global_trade_center_power = 0.15
+	selling_efficiency = 0.0375
 	burghers_estate_target_satisfaction = 0.075
 }
 
 tv_wonder_display_34_local_level_3 = {
 	game_data = { category = location }
-	local_cultural_tradition = 1.5
-	local_cultural_influence = 1.5
-	local_trade_center_power = 0.15
-	local_migration_attraction = 3
 }
 
 tv_wonder_display_34_level_4 = {
-	global_trade_center_power = 0.2
+	selling_efficiency = 0.05
 	burghers_estate_target_satisfaction = 0.1
 }
 
 tv_wonder_display_34_local_level_4 = {
 	game_data = { category = location }
-	local_cultural_tradition = 2
-	local_cultural_influence = 2
-	local_trade_center_power = 0.2
-	local_migration_attraction = 4
 }
 
 tv_wonder_display_34_level_5 = {
-	global_trade_center_power = 0.25
+	selling_efficiency = 0.0625
 	burghers_estate_target_satisfaction = 0.125
 }
 
 tv_wonder_display_34_local_level_5 = {
 	game_data = { category = location }
-	local_cultural_tradition = 2.5
-	local_cultural_influence = 2.5
-	local_trade_center_power = 0.25
-	local_migration_attraction = 5
 }
 
 tv_wonder_display_34_level_6 = {
-	global_trade_center_power = 0.3
+	selling_efficiency = 0.075
 	burghers_estate_target_satisfaction = 0.15
 }
 
 tv_wonder_display_34_local_level_6 = {
 	game_data = { category = location }
-	local_cultural_tradition = 3
-	local_cultural_influence = 3
-	local_trade_center_power = 0.3
-	local_migration_attraction = 6
 }
 
 tv_wonder_world_market_ritual_1_modifier = {
@@ -6141,8 +6111,7 @@ tv_wonder_display_115_local_level_1 = {
 	game_data = { category = location }
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
-	harbor_suitability = 0.2
-	local_trade_center_power = 0.1
+	harbor_suitability = 0.4
 }
 
 tv_wonder_display_115_level_2 = {
@@ -6152,8 +6121,7 @@ tv_wonder_display_115_local_level_2 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
-	harbor_suitability = 0.4
-	local_trade_center_power = 0.2
+	harbor_suitability = 0.8
 }
 
 tv_wonder_display_115_level_3 = {
@@ -6163,8 +6131,7 @@ tv_wonder_display_115_local_level_3 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
-	harbor_suitability = 0.6
-	local_trade_center_power = 0.3
+	harbor_suitability = 1.2
 }
 
 tv_wonder_display_115_level_4 = {
@@ -6174,8 +6141,7 @@ tv_wonder_display_115_local_level_4 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
-	harbor_suitability = 0.8
-	local_trade_center_power = 0.4
+	harbor_suitability = 1.6
 }
 
 tv_wonder_display_115_level_5 = {
@@ -6185,8 +6151,7 @@ tv_wonder_display_115_local_level_5 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
-	harbor_suitability = 1
-	local_trade_center_power = 0.5
+	harbor_suitability = 2
 }
 
 tv_wonder_display_115_level_6 = {
@@ -6196,8 +6161,7 @@ tv_wonder_display_115_local_level_6 = {
 	game_data = { category = location }
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
-	harbor_suitability = 1.2
-	local_trade_center_power = 0.6
+	harbor_suitability = 2.4
 }
 
 tv_wonder_unique_malacca_port_ritual_1_modifier = {
@@ -6495,7 +6459,7 @@ tv_wonder_display_119_local_level_1 = {
 	game_data = { category = location }
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
-	local_trade_center_power = 0.1
+	local_build_new_buildings_efficiency = 0.2
 	local_monthly_prosperity = 0.002
 }
 
@@ -6506,7 +6470,7 @@ tv_wonder_display_119_local_level_2 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
-	local_trade_center_power = 0.2
+	local_build_new_buildings_efficiency = 0.4
 	local_monthly_prosperity = 0.004
 }
 
@@ -6517,7 +6481,7 @@ tv_wonder_display_119_local_level_3 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
-	local_trade_center_power = 0.3
+	local_build_new_buildings_efficiency = 0.6
 	local_monthly_prosperity = 0.006
 }
 
@@ -6528,7 +6492,7 @@ tv_wonder_display_119_local_level_4 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
-	local_trade_center_power = 0.4
+	local_build_new_buildings_efficiency = 0.8
 	local_monthly_prosperity = 0.008
 }
 
@@ -6539,7 +6503,7 @@ tv_wonder_display_119_local_level_5 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
-	local_trade_center_power = 0.5
+	local_build_new_buildings_efficiency = 1
 	local_monthly_prosperity = 0.01
 }
 
@@ -6550,7 +6514,7 @@ tv_wonder_display_119_local_level_6 = {
 	game_data = { category = location }
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
-	local_trade_center_power = 0.6
+	local_build_new_buildings_efficiency = 1.2
 	local_monthly_prosperity = 0.012
 }
 
@@ -6919,81 +6883,57 @@ tv_wonder_unique_cahokia_mounds_ritual_3_modifier = {
 }
 
 tv_wonder_display_124_level_1 = {
-	global_trade_center_power = 0.1
+	selling_efficiency = 0.025
 	burghers_estate_target_satisfaction = 0.05
 }
 
 tv_wonder_display_124_local_level_1 = {
 	game_data = { category = location }
-	local_cultural_tradition = 0.5
-	local_cultural_influence = 0.5
-	local_trade_center_power = 0.1
-	local_migration_attraction = 2
 }
 
 tv_wonder_display_124_level_2 = {
-	global_trade_center_power = 0.2
+	selling_efficiency = 0.05
 	burghers_estate_target_satisfaction = 0.1
 }
 
 tv_wonder_display_124_local_level_2 = {
 	game_data = { category = location }
-	local_cultural_tradition = 1
-	local_cultural_influence = 1
-	local_trade_center_power = 0.2
-	local_migration_attraction = 4
 }
 
 tv_wonder_display_124_level_3 = {
-	global_trade_center_power = 0.3
+	selling_efficiency = 0.075
 	burghers_estate_target_satisfaction = 0.15
 }
 
 tv_wonder_display_124_local_level_3 = {
 	game_data = { category = location }
-	local_cultural_tradition = 1.5
-	local_cultural_influence = 1.5
-	local_trade_center_power = 0.3
-	local_migration_attraction = 6
 }
 
 tv_wonder_display_124_level_4 = {
-	global_trade_center_power = 0.4
+	selling_efficiency = 0.1
 	burghers_estate_target_satisfaction = 0.2
 }
 
 tv_wonder_display_124_local_level_4 = {
 	game_data = { category = location }
-	local_cultural_tradition = 2
-	local_cultural_influence = 2
-	local_trade_center_power = 0.4
-	local_migration_attraction = 8
 }
 
 tv_wonder_display_124_level_5 = {
-	global_trade_center_power = 0.5
+	selling_efficiency = 0.125
 	burghers_estate_target_satisfaction = 0.25
 }
 
 tv_wonder_display_124_local_level_5 = {
 	game_data = { category = location }
-	local_cultural_tradition = 2.5
-	local_cultural_influence = 2.5
-	local_trade_center_power = 0.5
-	local_migration_attraction = 10
 }
 
 tv_wonder_display_124_level_6 = {
-	global_trade_center_power = 0.6
+	selling_efficiency = 0.15
 	burghers_estate_target_satisfaction = 0.3
 }
 
 tv_wonder_display_124_local_level_6 = {
 	game_data = { category = location }
-	local_cultural_tradition = 3
-	local_cultural_influence = 3
-	local_trade_center_power = 0.6
-	local_migration_attraction = 12
 }
 
 tv_wonder_unique_great_zimbabwe_ritual_1_modifier = {
@@ -7728,7 +7668,7 @@ tv_wonder_display_133_local_level_1 = {
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
 	local_monthly_food_modifier = 0.4
-	local_population_growth = 0.001
+	local_population_growth = 0.0005
 }
 
 tv_wonder_display_133_level_2 = {
@@ -7739,7 +7679,7 @@ tv_wonder_display_133_local_level_2 = {
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
 	local_monthly_food_modifier = 0.8
-	local_population_growth = 0.002
+	local_population_growth = 0.001
 }
 
 tv_wonder_display_133_level_3 = {
@@ -7750,7 +7690,7 @@ tv_wonder_display_133_local_level_3 = {
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
 	local_monthly_food_modifier = 1.2
-	local_population_growth = 0.003
+	local_population_growth = 0.0015
 }
 
 tv_wonder_display_133_level_4 = {
@@ -7761,7 +7701,7 @@ tv_wonder_display_133_local_level_4 = {
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
 	local_monthly_food_modifier = 1.6
-	local_population_growth = 0.004
+	local_population_growth = 0.002
 }
 
 tv_wonder_display_133_level_5 = {
@@ -7772,7 +7712,7 @@ tv_wonder_display_133_local_level_5 = {
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
 	local_monthly_food_modifier = 2
-	local_population_growth = 0.005
+	local_population_growth = 0.0025
 }
 
 tv_wonder_display_133_level_6 = {
@@ -7783,7 +7723,7 @@ tv_wonder_display_133_local_level_6 = {
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
 	local_monthly_food_modifier = 2.4
-	local_population_growth = 0.006
+	local_population_growth = 0.003
 }
 
 tv_wonder_unique_dutch_polders_ritual_1_modifier = {
@@ -9922,7 +9862,7 @@ tv_wonder_display_158_local_level_1 = {
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
 	local_monthly_food_modifier = 0.4
-	local_population_growth = 0.001
+	local_population_growth = 0.0005
 }
 
 tv_wonder_display_158_level_2 = {
@@ -9933,7 +9873,7 @@ tv_wonder_display_158_local_level_2 = {
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
 	local_monthly_food_modifier = 0.8
-	local_population_growth = 0.002
+	local_population_growth = 0.001
 }
 
 tv_wonder_display_158_level_3 = {
@@ -9944,7 +9884,7 @@ tv_wonder_display_158_local_level_3 = {
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
 	local_monthly_food_modifier = 1.2
-	local_population_growth = 0.003
+	local_population_growth = 0.0015
 }
 
 tv_wonder_display_158_level_4 = {
@@ -9955,7 +9895,7 @@ tv_wonder_display_158_local_level_4 = {
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
 	local_monthly_food_modifier = 1.6
-	local_population_growth = 0.004
+	local_population_growth = 0.002
 }
 
 tv_wonder_display_158_level_5 = {
@@ -9966,7 +9906,7 @@ tv_wonder_display_158_local_level_5 = {
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
 	local_monthly_food_modifier = 2
-	local_population_growth = 0.005
+	local_population_growth = 0.0025
 }
 
 tv_wonder_display_158_level_6 = {
@@ -9977,7 +9917,7 @@ tv_wonder_display_158_local_level_6 = {
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
 	local_monthly_food_modifier = 2.4
-	local_population_growth = 0.006
+	local_population_growth = 0.003
 }
 
 tv_wonder_unique_dujiangyan_ritual_1_modifier = {
@@ -11575,8 +11515,7 @@ tv_wonder_display_177_local_level_1 = {
 	game_data = { category = location }
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
-	harbor_suitability = 0.2
-	local_trade_center_power = 0.1
+	harbor_suitability = 0.4
 }
 
 tv_wonder_display_177_level_2 = {
@@ -11586,8 +11525,7 @@ tv_wonder_display_177_local_level_2 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
-	harbor_suitability = 0.4
-	local_trade_center_power = 0.2
+	harbor_suitability = 0.8
 }
 
 tv_wonder_display_177_level_3 = {
@@ -11597,8 +11535,7 @@ tv_wonder_display_177_local_level_3 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
-	harbor_suitability = 0.6
-	local_trade_center_power = 0.3
+	harbor_suitability = 1.2
 }
 
 tv_wonder_display_177_level_4 = {
@@ -11608,8 +11545,7 @@ tv_wonder_display_177_local_level_4 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
-	harbor_suitability = 0.8
-	local_trade_center_power = 0.4
+	harbor_suitability = 1.6
 }
 
 tv_wonder_display_177_level_5 = {
@@ -11619,8 +11555,7 @@ tv_wonder_display_177_local_level_5 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
-	harbor_suitability = 1
-	local_trade_center_power = 0.5
+	harbor_suitability = 2
 }
 
 tv_wonder_display_177_level_6 = {
@@ -11630,8 +11565,7 @@ tv_wonder_display_177_local_level_6 = {
 	game_data = { category = location }
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
-	harbor_suitability = 1.2
-	local_trade_center_power = 0.6
+	harbor_suitability = 2.4
 }
 
 tv_wonder_unique_calicut_port_city_ritual_1_modifier = {
@@ -11918,8 +11852,7 @@ tv_wonder_display_181_local_level_1 = {
 	game_data = { category = location }
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
-	harbor_suitability = 0.2
-	local_trade_center_power = 0.1
+	harbor_suitability = 0.4
 }
 
 tv_wonder_display_181_level_2 = {
@@ -11929,8 +11862,7 @@ tv_wonder_display_181_local_level_2 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
-	harbor_suitability = 0.4
-	local_trade_center_power = 0.2
+	harbor_suitability = 0.8
 }
 
 tv_wonder_display_181_level_3 = {
@@ -11940,8 +11872,7 @@ tv_wonder_display_181_local_level_3 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
-	harbor_suitability = 0.6
-	local_trade_center_power = 0.3
+	harbor_suitability = 1.2
 }
 
 tv_wonder_display_181_level_4 = {
@@ -11951,8 +11882,7 @@ tv_wonder_display_181_local_level_4 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
-	harbor_suitability = 0.8
-	local_trade_center_power = 0.4
+	harbor_suitability = 1.6
 }
 
 tv_wonder_display_181_level_5 = {
@@ -11962,8 +11892,7 @@ tv_wonder_display_181_local_level_5 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
-	harbor_suitability = 1
-	local_trade_center_power = 0.5
+	harbor_suitability = 2
 }
 
 tv_wonder_display_181_level_6 = {
@@ -11973,8 +11902,7 @@ tv_wonder_display_181_local_level_6 = {
 	game_data = { category = location }
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
-	harbor_suitability = 1.2
-	local_trade_center_power = 0.6
+	harbor_suitability = 2.4
 }
 
 tv_wonder_unique_gdansk_port_ritual_1_modifier = {
@@ -12807,81 +12735,57 @@ tv_wonder_unique_ferghana_palace_ritual_3_modifier = {
 }
 
 tv_wonder_display_191_level_1 = {
-	global_trade_center_power = 0.1
+	selling_efficiency = 0.025
 	burghers_estate_target_satisfaction = 0.05
 }
 
 tv_wonder_display_191_local_level_1 = {
 	game_data = { category = location }
-	local_cultural_tradition = 0.5
-	local_cultural_influence = 0.5
-	local_trade_center_power = 0.1
-	local_migration_attraction = 2
 }
 
 tv_wonder_display_191_level_2 = {
-	global_trade_center_power = 0.2
+	selling_efficiency = 0.05
 	burghers_estate_target_satisfaction = 0.1
 }
 
 tv_wonder_display_191_local_level_2 = {
 	game_data = { category = location }
-	local_cultural_tradition = 1
-	local_cultural_influence = 1
-	local_trade_center_power = 0.2
-	local_migration_attraction = 4
 }
 
 tv_wonder_display_191_level_3 = {
-	global_trade_center_power = 0.3
+	selling_efficiency = 0.075
 	burghers_estate_target_satisfaction = 0.15
 }
 
 tv_wonder_display_191_local_level_3 = {
 	game_data = { category = location }
-	local_cultural_tradition = 1.5
-	local_cultural_influence = 1.5
-	local_trade_center_power = 0.3
-	local_migration_attraction = 6
 }
 
 tv_wonder_display_191_level_4 = {
-	global_trade_center_power = 0.4
+	selling_efficiency = 0.1
 	burghers_estate_target_satisfaction = 0.2
 }
 
 tv_wonder_display_191_local_level_4 = {
 	game_data = { category = location }
-	local_cultural_tradition = 2
-	local_cultural_influence = 2
-	local_trade_center_power = 0.4
-	local_migration_attraction = 8
 }
 
 tv_wonder_display_191_level_5 = {
-	global_trade_center_power = 0.5
+	selling_efficiency = 0.125
 	burghers_estate_target_satisfaction = 0.25
 }
 
 tv_wonder_display_191_local_level_5 = {
 	game_data = { category = location }
-	local_cultural_tradition = 2.5
-	local_cultural_influence = 2.5
-	local_trade_center_power = 0.5
-	local_migration_attraction = 10
 }
 
 tv_wonder_display_191_level_6 = {
-	global_trade_center_power = 0.6
+	selling_efficiency = 0.15
 	burghers_estate_target_satisfaction = 0.3
 }
 
 tv_wonder_display_191_local_level_6 = {
 	game_data = { category = location }
-	local_cultural_tradition = 3
-	local_cultural_influence = 3
-	local_trade_center_power = 0.6
-	local_migration_attraction = 12
 }
 
 tv_wonder_unique_tashkent_old_bazaar_ritual_1_modifier = {
@@ -13086,8 +12990,7 @@ tv_wonder_display_194_local_level_1 = {
 	game_data = { category = location }
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
-	harbor_suitability = 0.2
-	local_trade_center_power = 0.1
+	harbor_suitability = 0.4
 }
 
 tv_wonder_display_194_level_2 = {
@@ -13097,8 +13000,7 @@ tv_wonder_display_194_local_level_2 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
-	harbor_suitability = 0.4
-	local_trade_center_power = 0.2
+	harbor_suitability = 0.8
 }
 
 tv_wonder_display_194_level_3 = {
@@ -13108,8 +13010,7 @@ tv_wonder_display_194_local_level_3 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
-	harbor_suitability = 0.6
-	local_trade_center_power = 0.3
+	harbor_suitability = 1.2
 }
 
 tv_wonder_display_194_level_4 = {
@@ -13119,8 +13020,7 @@ tv_wonder_display_194_local_level_4 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
-	harbor_suitability = 0.8
-	local_trade_center_power = 0.4
+	harbor_suitability = 1.6
 }
 
 tv_wonder_display_194_level_5 = {
@@ -13130,8 +13030,7 @@ tv_wonder_display_194_local_level_5 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
-	harbor_suitability = 1
-	local_trade_center_power = 0.5
+	harbor_suitability = 2
 }
 
 tv_wonder_display_194_level_6 = {
@@ -13141,8 +13040,7 @@ tv_wonder_display_194_local_level_6 = {
 	game_data = { category = location }
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
-	harbor_suitability = 1.2
-	local_trade_center_power = 0.6
+	harbor_suitability = 2.4
 }
 
 tv_wonder_unique_bordeaux_port_ritual_1_modifier = {
@@ -13173,8 +13071,7 @@ tv_wonder_display_195_local_level_1 = {
 	game_data = { category = location }
 	local_cultural_tradition = 0.5
 	local_cultural_influence = 0.5
-	harbor_suitability = 0.2
-	local_trade_center_power = 0.1
+	harbor_suitability = 0.4
 }
 
 tv_wonder_display_195_level_2 = {
@@ -13184,8 +13081,7 @@ tv_wonder_display_195_local_level_2 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1
 	local_cultural_influence = 1
-	harbor_suitability = 0.4
-	local_trade_center_power = 0.2
+	harbor_suitability = 0.8
 }
 
 tv_wonder_display_195_level_3 = {
@@ -13195,8 +13091,7 @@ tv_wonder_display_195_local_level_3 = {
 	game_data = { category = location }
 	local_cultural_tradition = 1.5
 	local_cultural_influence = 1.5
-	harbor_suitability = 0.6
-	local_trade_center_power = 0.3
+	harbor_suitability = 1.2
 }
 
 tv_wonder_display_195_level_4 = {
@@ -13206,8 +13101,7 @@ tv_wonder_display_195_local_level_4 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2
 	local_cultural_influence = 2
-	harbor_suitability = 0.8
-	local_trade_center_power = 0.4
+	harbor_suitability = 1.6
 }
 
 tv_wonder_display_195_level_5 = {
@@ -13217,8 +13111,7 @@ tv_wonder_display_195_local_level_5 = {
 	game_data = { category = location }
 	local_cultural_tradition = 2.5
 	local_cultural_influence = 2.5
-	harbor_suitability = 1
-	local_trade_center_power = 0.5
+	harbor_suitability = 2
 }
 
 tv_wonder_display_195_level_6 = {
@@ -13228,8 +13121,7 @@ tv_wonder_display_195_local_level_6 = {
 	game_data = { category = location }
 	local_cultural_tradition = 3
 	local_cultural_influence = 3
-	harbor_suitability = 1.2
-	local_trade_center_power = 0.6
+	harbor_suitability = 2.4
 }
 
 tv_wonder_unique_marseille_old_port_ritual_1_modifier = {
@@ -14037,81 +13929,57 @@ tv_wonder_unique_baku_ateshgah_ritual_3_modifier = {
 }
 
 tv_wonder_display_206_level_1 = {
-	global_trade_center_power = 0.1
+	selling_efficiency = 0.025
 	burghers_estate_target_satisfaction = 0.05
 }
 
 tv_wonder_display_206_local_level_1 = {
 	game_data = { category = location }
-	local_cultural_tradition = 0.5
-	local_cultural_influence = 0.5
-	local_trade_center_power = 0.1
-	local_migration_attraction = 2
 }
 
 tv_wonder_display_206_level_2 = {
-	global_trade_center_power = 0.2
+	selling_efficiency = 0.05
 	burghers_estate_target_satisfaction = 0.1
 }
 
 tv_wonder_display_206_local_level_2 = {
 	game_data = { category = location }
-	local_cultural_tradition = 1
-	local_cultural_influence = 1
-	local_trade_center_power = 0.2
-	local_migration_attraction = 4
 }
 
 tv_wonder_display_206_level_3 = {
-	global_trade_center_power = 0.3
+	selling_efficiency = 0.075
 	burghers_estate_target_satisfaction = 0.15
 }
 
 tv_wonder_display_206_local_level_3 = {
 	game_data = { category = location }
-	local_cultural_tradition = 1.5
-	local_cultural_influence = 1.5
-	local_trade_center_power = 0.3
-	local_migration_attraction = 6
 }
 
 tv_wonder_display_206_level_4 = {
-	global_trade_center_power = 0.4
+	selling_efficiency = 0.1
 	burghers_estate_target_satisfaction = 0.2
 }
 
 tv_wonder_display_206_local_level_4 = {
 	game_data = { category = location }
-	local_cultural_tradition = 2
-	local_cultural_influence = 2
-	local_trade_center_power = 0.4
-	local_migration_attraction = 8
 }
 
 tv_wonder_display_206_level_5 = {
-	global_trade_center_power = 0.5
+	selling_efficiency = 0.125
 	burghers_estate_target_satisfaction = 0.25
 }
 
 tv_wonder_display_206_local_level_5 = {
 	game_data = { category = location }
-	local_cultural_tradition = 2.5
-	local_cultural_influence = 2.5
-	local_trade_center_power = 0.5
-	local_migration_attraction = 10
 }
 
 tv_wonder_display_206_level_6 = {
-	global_trade_center_power = 0.6
+	selling_efficiency = 0.15
 	burghers_estate_target_satisfaction = 0.3
 }
 
 tv_wonder_display_206_local_level_6 = {
 	game_data = { category = location }
-	local_cultural_tradition = 3
-	local_cultural_influence = 3
-	local_trade_center_power = 0.6
-	local_migration_attraction = 12
 }
 
 tv_wonder_unique_sanaa_old_city_ritual_1_modifier = {

@@ -239,8 +239,6 @@ def ritual_effect_sample(state: ScenarioState, loc) -> str:
     direction = loc.get(f"{sv['direction']}_focus") or sv["direction"]
     lines.append(f"Societal change towards {direction}: {sv['shock']:+g}" if english
                  else f"价值观向{direction}移动：{sv['shock']:+g}")
-    if player.get("tv_wonder_project_mode") == 3:
-        lines.append(f"{loc.get('prestige')}: {mechanics['ritual_rules']['reritual_prestige']:+g}")
     return "\n".join(lines)
 
 
@@ -392,7 +390,7 @@ def build(db, expander, width: int = 570, height: int = 1800, state: ScenarioSta
                         **state.action_availability}
         ritual_open = state.player_variables.get("tv_wonder_stage") == 4 and not state.player_variables.get("tv_wonder_ritual_in_progress") and not state.player_variables.get("tv_wonder_ritual_completed")
         for n in (1, 2, 3): availability.setdefault(f"tv_wonder_ritual_preview_{n}", ritual_open)
-        availability.setdefault('tv_wonder_ritual_preview_plain', ritual_open and state.player_variables.get('tv_wonder_project_mode') != 3)
+        availability.setdefault('tv_wonder_ritual_preview_plain', ritual_open)
         availability.setdefault('tv_wonder_ritual_confirm', ritual_open and state.player_variables.get('tv_wonder_ritual_choice') in (1, 2, 3))
         availability.setdefault("tv_wonder_finish_construction", state.player_variables.get("tv_wonder_stage") == 3)
         set_action_availability(element, availability)
@@ -430,7 +428,7 @@ def render(state: ScenarioState, *, width: int = 570, height: int = 1800,
             yield from walk(child)
     card = next((node for node in walk(element)
                  if node.typename == "tv_engineering_department_card_common"
-                 and any(child.props.get("text") == "TV_WONDER_RITUAL_HEADER" for child in walk(node))), None)
+                 and any(child.props.get("name") == "tv_wonder_ritual_ledger" for child in walk(node))), None)
     return render_tree(element, expander, resources, (extra_mocks or []) + mocks(state, resources.loc),
         width=width, height=height, scale=scale,
         output=output or OUTPUT / f"engineering_{state.name}.png",

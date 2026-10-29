@@ -124,7 +124,7 @@ tv_wonder_auto_large_canal_system = {
 	scales_with = {
 		value = "variable_map(tv_wonder_auto_level_by_wonder_id|19)"
 	}
-	global_monthly_prosperity = 0.001
+	global_monthly_prosperity = 0.0005
 }
 
 tv_wonder_auto_royal_granary_system = {
@@ -198,7 +198,7 @@ tv_wonder_auto_law_code_stele_project = {
 	scales_with = {
 		value = "variable_map(tv_wonder_auto_level_by_wonder_id|33)"
 	}
-	monthly_rebel_growth = -0.001
+	monthly_rebel_growth = -0.0005
 }
 
 tv_wonder_auto_world_market = {
@@ -210,7 +210,7 @@ tv_wonder_auto_world_market = {
 	scales_with = {
 		value = "variable_map(tv_wonder_auto_level_by_wonder_id|34)"
 	}
-	global_trade_center_power = 0.05
+	selling_efficiency = 0.0125
 	burghers_estate_target_satisfaction = 0.025
 }
 
@@ -580,7 +580,7 @@ tv_wonder_auto_unique_great_zimbabwe = {
 	scales_with = {
 		value = "variable_map(tv_wonder_auto_level_by_wonder_id|124)"
 	}
-	global_trade_center_power = 0.1
+	selling_efficiency = 0.025
 	burghers_estate_target_satisfaction = 0.05
 }
 
@@ -936,7 +936,7 @@ tv_wonder_auto_unique_tashkent_old_bazaar = {
 	scales_with = {
 		value = "variable_map(tv_wonder_auto_level_by_wonder_id|191)"
 	}
-	global_trade_center_power = 0.1
+	selling_efficiency = 0.025
 	burghers_estate_target_satisfaction = 0.05
 }
 
@@ -1022,7 +1022,7 @@ tv_wonder_auto_unique_sanaa_old_city = {
 	scales_with = {
 		value = "variable_map(tv_wonder_auto_level_by_wonder_id|206)"
 	}
-	global_trade_center_power = 0.1
+	selling_efficiency = 0.025
 	burghers_estate_target_satisfaction = 0.05
 }
 

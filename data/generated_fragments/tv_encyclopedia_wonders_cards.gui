@@ -1662,7 +1662,7 @@ vbox = {
 							}
 							tv_eu_item_arrow = {}
 							tv_eu_item = {
-								blockoverride "item_icon" { texture = "gfx/interface/icons/flat_icons/prestige.dds" }
+								blockoverride "item_icon" { texture = "gfx/interface/icons/flat_icons/action.dds" }
 								blockoverride "item_link" { raw_text = "" }
 							}
 						}

@@ -53,8 +53,7 @@
         rural_settlement: false
   great_port:
     final_local:
-      harbor_suitability: 0.1
-      local_trade_center_power: 0.05
+      harbor_suitability: 0.2
     final_maintenance:
       tv_wonder_golden_trade_port: tv_wonder_port_monument_maintenance
     final_attributes: {}
@@ -195,7 +194,7 @@
     final_attributes: {}
   canal_hub_city:
     final_local:
-      local_trade_center_power: 0.05
+      local_build_new_buildings_efficiency: 0.1
       local_monthly_prosperity: 0.001
     final_maintenance: {}
     final_attributes: {}
@@ -247,9 +246,8 @@
     final_maintenance: {}
     final_attributes: {}
   world_market:
-    final_local:
-      local_trade_center_power: 0.05
-      local_migration_attraction: 1
+    final_local: {}
+    include_local_cultural_baseline: false
     final_maintenance: {}
     final_attributes: {}
   royal_mint_system:

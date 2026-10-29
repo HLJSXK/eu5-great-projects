@@ -32,7 +32,7 @@ def fmt_value(value: object) -> str:
     if isinstance(value, bool):
         return "yes" if value else "no"
     if isinstance(value, float):
-        return f"{value:.3f}".rstrip("0").rstrip(".")
+        return f"{value:.5f}".rstrip("0").rstrip(".")
     return str(value)
 
 
@@ -51,7 +51,11 @@ def generate() -> str:
     wonders, mechanics = load_all_wonder_mechanics()
     lines = render_header(SCRIPT_REL)
     for wonder in wonders:
-        local, raw_local = split_modifiers(merge_modifiers(authored_final_building_local_modifiers(wonder, mechanics)))
+        building_design = mechanics["buildings"][wonder["mechanic_key"]]
+        local, raw_local = split_modifiers(merge_modifiers(
+            authored_final_building_local_modifiers(wonder, mechanics),
+            include_local_cultural_baseline=building_design["include_local_cultural_baseline"],
+        ))
         # Match the serialized per-level building values before applying levels;
         # otherwise rounding a small source value can make the preview disagree.
         local = {key: float(building_modifier_value(value))

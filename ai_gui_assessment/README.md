@@ -53,7 +53,7 @@ C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\engineering.py --
 | `custom` | `construction`、`construction-complete` | 四部分建设单元、当前单元进度、仪式风格选择 |
 | `custom` | `ceremony-ready`、`ritual-progress`、`finalized` | 三风格选择、当前数据的效果示例、价值观轴、阶层偏好、24 月进度、奖励已发放状态 |
 | `custom` | `unique-ready`、`unique-progress` | 独特奇观的统一仪式选择与进度 |
-| `custom` | `reritual-ready`、`reritual-progress` | 重新仪式化，取消入口与无朴素按钮 |
+| `custom` | `reritual-ready`、`reritual-progress` | 重新仪式化，与建设共用三风格及朴素选项 |
 
 每个状态选中对应页签；`--tab` 可覆盖。仪式效果区保留实际完成效果的原生接收方式；离线返回值根据 `ritual_styles()` 的当前数据生成，并明确标注为示例，涵盖国家/地点奖励、即时奖励、价值观移动及重新仪式化的额外威望。数值格式取自 modifier 索引，名称读取所选游戏与 Mod 的本地化，不执行效果脚本。仪式时长、独特奇观身份与地点、阶层固定/随机/地点奖励偏好来源也取自当前数据；不存在的阶层变量为 null，自动隐藏。
 
@@ -83,7 +83,7 @@ C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\engineering.py --
 C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\engineering.py --state ceremony-ready --fixture ai_gui_assessment/fixtures/ceremony_style_3.json --strict --output ceremony_style_3.png
 ```
 
-三个仪式选项采用单行卡片，只显示图标与仪式名；每张卡片下方按偏好排列带绿色勾标的支持阶层图标，最多七个，不再显示底部阶层卡片。进行中只保留已锁定风格，建设与仪式详情分别可展开。阶层悬停采用原生提示框，标题说明该阶层当前支持此风格，下一行按缓存显示原因。可加 `--hover clergy_estate` 预览指定阶层的实际 tooltip 定义；离线不执行鼠标命中检测。费用区在游戏中直接渲染实际 `tv_wonder_ritual_pay_effect`，离线只注明原生费用样例，不模拟国库与价格修正。朴素选项与进行中展开详情可复现为：
+仪式确认前依次显示三个小节：仪式选项、仪式需求、预期效果；确认按钮单独放在三个小节下方。所选仪式的风味文本放在第一节的朴素选项下方，四个选项共用单行图标与名称布局。需求包含费用和时长，预期效果中的价值观变化仅由原生 effect 渲染，不再绘制额外的价值观轴、进度条或方向箭头。三个仪式选项采用单行卡片，只显示图标与仪式名；每张卡片下方按偏好排列带绿色勾标的支持阶层图标，最多七个，不再显示底部阶层卡片。普通建设和重新仪式化共用朴素选项；仪式区直接从选项小节开始，不再显示顶部说明与取消按钮。进行中只保留已锁定风格，建设与仪式详情分别可展开。阶层悬停采用原生提示框，标题说明该阶层当前支持此风格，下一行按缓存显示原因。可加 `--hover clergy_estate` 预览指定阶层的实际 tooltip 定义；离线不执行鼠标命中检测。费用区在游戏中直接渲染实际 `tv_wonder_ritual_pay_effect`，离线只注明原生费用样例，不模拟国库与价格修正。朴素选项与进行中展开详情可复现为：
 
 ```powershell
 C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment\engineering.py --state ceremony-ready --fixture ai_gui_assessment/fixtures/ceremony_plain.json --strict --output ceremony_plain.png

@@ -622,7 +622,7 @@ def append_ritual_plan_sections(effects: list[dict[str, object]], *, wonder: dic
         rows = rows_from_rewards(values) if carrier == "one_shot" else rows_from_mapping(values, modifier_index=modifier_index)
         meta = {"style": style}
         if carrier == "country":
-            meta.update(direction=direction, shock=sv["sign"] * sv["shock"], estate_preferences=preferences,
+            meta.update(direction=direction, monthly=sv["monthly"], estate_preferences=preferences,
                         duration_months=mechanics["ritual_rules"]["duration_months"])
         section = effect_section_with_title(f"style_{style}_{carrier}", title, rows, scope=scope,
             meta=meta)

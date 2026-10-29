@@ -886,11 +886,15 @@ def _validate_buildings_section(raw: object, *, mechanic_keys: set[str]) -> dict
         _expect_keys(
             entry,
             required={"final_local"},
-            optional={"final_maintenance", "final_attributes"},
+            optional={"final_maintenance", "final_attributes", "include_local_cultural_baseline"},
             context=entry_context,
         )
         normalized_entry = {
             "final_local": _validate_modifier_mapping(entry["final_local"], f"{entry_context}.final_local"),
+            "include_local_cultural_baseline": _require_bool(
+                entry.get("include_local_cultural_baseline", True),
+                f"{entry_context}.include_local_cultural_baseline",
+            ),
         }
         if "final_maintenance" in entry:
             normalized_entry["final_maintenance"] = _validate_string_mapping(
@@ -965,13 +969,13 @@ def load_mechanics_source_data() -> dict:
     rules = load_yaml(REPO_ROOT / "data/wonder_ritual_rules.yaml")
     _expect_keys(rules, required={"ritual_rules"}, optional=set(), context="wonder_ritual_rules")
     rule = rules["ritual_rules"]
-    _expect_keys(rule, required={"duration_months", "cost", "societal_value", "memory_years", "estate_satisfaction", "reritual_prestige"}, optional=set(), context="ritual_rules")
+    _expect_keys(rule, required={"duration_months", "cost", "societal_value", "memory_years", "estate_satisfaction"}, optional=set(), context="ritual_rules")
     for key in ("duration_months", "memory_years"):
         _require_int(rule[key], f"ritual_rules.{key}", minimum=1)
-    for group, keys in (("cost", {"catalog", "type", "value"}), ("societal_value", {"shock", "monthly"}), ("estate_satisfaction", {"support", "oppose"})):
+    for group, keys in (("cost", {"catalog", "type", "value"}), ("societal_value", {"monthly"}), ("estate_satisfaction", {"support", "oppose"})):
         _expect_keys(_require_mapping(rule[group], f"ritual_rules.{group}"), required=keys, optional=set(), context=f"ritual_rules.{group}")
     import math
-    for amount in (rule["societal_value"]["shock"], rule["societal_value"]["monthly"], rule["estate_satisfaction"]["support"], rule["estate_satisfaction"]["oppose"], rule["reritual_prestige"]):
+    for amount in (rule["societal_value"]["monthly"], rule["estate_satisfaction"]["support"], rule["estate_satisfaction"]["oppose"]):
         if isinstance(amount, bool) or not isinstance(amount, (int, float)) or not math.isfinite(amount):
             raise ValueError("ritual_rules magnitudes must be finite numbers")
     if rule["cost"]["catalog"] != "country_reward" or rule["cost"]["type"] != "scaled_gold":

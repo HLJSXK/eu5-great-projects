@@ -42,7 +42,7 @@ def fmt_value(value: object) -> str:
     if isinstance(value, bool):
         return "yes" if value else "no"
     if isinstance(value, float):
-        return f"{value:.3f}".rstrip("0").rstrip(".")
+        return f"{value:.5f}".rstrip("0").rstrip(".")
     return str(value)
 
 
@@ -52,11 +52,13 @@ def fmt_yes_no(value: object) -> str:
     return str(value)
 
 
-def merge_modifiers(*maps: dict | None) -> dict:
-    merged: dict[str, object] = {
-        "local_cultural_tradition": 0.5,
-        "local_cultural_influence": 0.5,
-    }
+def merge_modifiers(*maps: dict | None, include_local_cultural_baseline: bool = True) -> dict:
+    merged: dict[str, object] = {}
+    if include_local_cultural_baseline:
+        merged.update({
+            "local_cultural_tradition": 0.5,
+            "local_cultural_influence": 0.5,
+        })
     return merge_numeric_modifier_mappings(merged, *maps)
 
 
@@ -288,6 +290,7 @@ def generate() -> str:
             modifiers = merge_modifiers(
                 authored_local_modifiers,
                 base_country_modifiers,
+                include_local_cultural_baseline=building_design["include_local_cultural_baseline"],
             )
             maintenance = final_building_maintenance(wonder, building_design, building)
             attributes = building_design.get("final_attributes", {}).get(building, {})

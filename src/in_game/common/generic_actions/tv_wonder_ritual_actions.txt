@@ -36,7 +36,7 @@ tv_wonder_ritual_preview_3 = {
 tv_wonder_ritual_preview_plain = {
 	type = owncountry
 	potential = { scope:actor = { has_variable = tv_engineering_department_member } }
-	allow = { scope:actor = { tv_wonder_ritual_can_preview_trigger = yes NOT = { var:tv_wonder_project_mode ?= 3 } } }
+	allow = { scope:actor = { tv_wonder_ritual_can_preview_trigger = yes } }
 	effect = { scope:actor = { hidden_effect = { tv_wonder_ritual_preview_effect = { style = 0 } } } }
 	ai_tick = monthly
 	ai_tick_frequency = 99999
@@ -56,7 +56,7 @@ tv_wonder_ritual_confirm = {
 tv_wonder_ritual_choose_plain = {
 	type = owncountry
 	potential = { scope:actor = { has_variable = tv_engineering_department_member } }
-	allow = { scope:actor = { tv_wonder_ritual_can_preview_trigger = yes NOT = { var:tv_wonder_project_mode ?= 3 } } }
+	allow = { scope:actor = { tv_wonder_ritual_can_preview_trigger = yes } }
 	effect = { scope:actor = { tv_wonder_ritual_choose_plain_effect = yes } }
 	ai_tick = monthly
 	ai_tick_frequency = 99999

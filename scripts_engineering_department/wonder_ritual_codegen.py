@@ -85,9 +85,7 @@ owner = {{ add_country_modifier = {{ modifier = {mod} years = -1 mode = replace 
             if loc:
                 body += f'\nadd_location_modifier = {{ modifier = {loc} years = -1 mode = replace }}'
             out.append(block(f'{prefix}_{n}_grant_effect', body))
-            sv = r['societal_value']
-            settle = f"change_societal_value = {{ type = {sv['axis']} value = {sv['sign'] * sv['shock']} }}\n"
-            settle += '\n'.join(reward_lines(r['one_shot'], 0))
+            settle = '\n'.join(reward_lines(r['one_shot'], 0))
             out.append(block(f'{prefix}_{n}_settle_effect', settle))
             preview = f'owner ?= {{ add_country_modifier = {{ modifier = {mod} years = -1 mode = replace }} }}'
             if loc:
@@ -97,7 +95,6 @@ owner = {{ add_country_modifier = {{ modifier = {mod} years = -1 mode = replace 
             # native reward commands using the viewer's capital as the example
             # location, without writing project or dedication state.
             catalogue = f'add_country_modifier = {{ modifier = {mod} years = -1 mode = replace }}\n'
-            catalogue += f'change_societal_value = {{ type = {sv["axis"]} value = {sv["sign"] * sv["shock"]} }}\n'
             local = f'add_location_modifier = {{ modifier = {loc} years = -1 mode = replace }}\n' if loc else ''
             local += '\n'.join(location_reward_lines(r['one_shot'], 0))
             if local.strip(): catalogue += 'capital ?= {\n' + local + '\n}'
@@ -134,7 +131,6 @@ else_if = { limit = { var:tv_wonder_finalization_outcome ?= 3 } tv_wonder_ritual
 else_if = { limit = { var:tv_wonder_stage ?= 4 var:tv_wonder_ritual_choice ?= 1 } tv_wonder_ritual_apply_style_1_effect = yes }
 else_if = { limit = { var:tv_wonder_stage ?= 4 var:tv_wonder_ritual_choice ?= 2 } tv_wonder_ritual_apply_style_2_effect = yes }
 else_if = { limit = { var:tv_wonder_stage ?= 4 var:tv_wonder_ritual_choice ?= 3 } tv_wonder_ritual_apply_style_3_effect = yes }
-if = { limit = { var:tv_wonder_project_mode ?= 3 } add_prestige = ''' + str(rules['reritual_prestige']) + ''' }
 hidden_effect = { set_variable = { name = tv_wonder_ritual_reward_claimed value = 1 } }
 }'''))
     # Cached axis position and reward badges are refreshed outside GUI render paths.
@@ -223,12 +219,13 @@ if = { limit = { has_variable = tv_wonder_cmm_skip_ceremony } tv_wonder_ritual_c
 }'''))
     pay = '\n'.join(f'if = {{ limit = {{ var:tv_wonder_locked_size ?= {n} }} pay_price = price:tv_wonder_ritual_{size}_price }}' for n, size in enumerate(('small','medium','large'),1))
     out.append(block('tv_wonder_ritual_pay_effect', pay))
-    out.append(block('tv_wonder_ritual_choose_plain_effect', '''if = { limit = { tv_wonder_ritual_can_preview_trigger = yes NOT = { var:tv_wonder_project_mode ?= 3 } }
+    out.append(block('tv_wonder_ritual_choose_plain_effect', '''if = { limit = { tv_wonder_ritual_can_preview_trigger = yes }
 tv_wonder_ritual_settle_estates_plain_effect = yes
 hidden_effect = {
 set_variable = { name = tv_wonder_finalization_outcome value = 0 }
 remove_variable = tv_wonder_ritual_choice
-tv_wonder_finalize_effect = yes
+if = { limit = { var:tv_wonder_project_mode ?= 3 } tv_wonder_reritual_finish_effect = yes }
+else = { tv_wonder_finalize_effect = yes }
 }
 }'''))
     out.append(block('tv_wonder_ritual_cancel_reritual_effect', '''if = { limit = { var:tv_wonder_project_mode ?= 3 var:tv_wonder_stage ?= 4 }
@@ -287,9 +284,9 @@ custom_tooltip = { text = TV_WONDER_RERITUAL_CONCEPTION_TT has_variable = tv_won
 
 def actions():
     rows = [(f'tv_wonder_ritual_preview_{n}', 'tv_wonder_ritual_can_preview_trigger = yes', f'hidden_effect = {{ tv_wonder_ritual_preview_effect = {{ style = {n} }} }}') for n in (1,2,3)]
-    rows += [('tv_wonder_ritual_preview_plain', 'tv_wonder_ritual_can_preview_trigger = yes NOT = { var:tv_wonder_project_mode ?= 3 }', 'hidden_effect = { tv_wonder_ritual_preview_effect = { style = 0 } }'),
+    rows += [('tv_wonder_ritual_preview_plain', 'tv_wonder_ritual_can_preview_trigger = yes', 'hidden_effect = { tv_wonder_ritual_preview_effect = { style = 0 } }'),
              ('tv_wonder_ritual_confirm','tv_wonder_ritual_can_confirm_trigger = yes','tv_wonder_ritual_confirm_effect = yes'),
-             ('tv_wonder_ritual_choose_plain','tv_wonder_ritual_can_preview_trigger = yes NOT = { var:tv_wonder_project_mode ?= 3 }','tv_wonder_ritual_choose_plain_effect = yes'),
+             ('tv_wonder_ritual_choose_plain','tv_wonder_ritual_can_preview_trigger = yes','tv_wonder_ritual_choose_plain_effect = yes'),
              ('tv_wonder_ritual_cancel_reritual','var:tv_wonder_project_mode ?= 3 tv_wonder_ritual_can_preview_trigger = yes','hidden_effect = { tv_wonder_ritual_cancel_reritual_effect = yes }')]
     out = ''.join(block(name, f'''type = owncountry
 potential = {{ scope:actor = {{ has_variable = tv_engineering_department_member }} }}
@@ -378,7 +375,7 @@ remove_variable = tv_wonder_reritual_found''')
     out += block('tv_wonder_location_reritual_lock_effect',
                  'if = { limit = { has_variable = tv_engineering_department_member var:tv_wonder_stage ?= 0 has_variable = tv_wonder_concept_in_progress has_variable = tv_wonder_location_reritual_pending_id }\n'
                  + '\n'.join(direct) + '\n}\nremove_variable = tv_wonder_location_reritual_pending_id\nremove_variable = tv_wonder_reritual_pending_site\nremove_variable = tv_wonder_reritual_found')
-    out += block('tv_wonder_reritual_finish_effect', '''if = { limit = { var:tv_wonder_project_mode ?= 3 has_variable = tv_wonder_ritual_reward_claimed }
+    out += block('tv_wonder_reritual_finish_effect', '''if = { limit = { var:tv_wonder_project_mode ?= 3 OR = { has_variable = tv_wonder_ritual_reward_claimed var:tv_wonder_finalization_outcome ?= 0 } }
 var:tv_wonder_site ?= { tv_wonder_mechanics_refresh_location_display_state_effect = yes }
 tv_wonder_clear_project_state_core_effect = yes
 tv_wonder_start_concept_effect = { reason = 4 }

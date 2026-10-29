@@ -2361,7 +2361,6 @@ tv_wonder_ritual_apply_choice_effect = {
 	else_if = { limit = { var:tv_wonder_stage ?= 4 var:tv_wonder_ritual_choice ?= 1 } tv_wonder_ritual_apply_style_1_effect = yes }
 	else_if = { limit = { var:tv_wonder_stage ?= 4 var:tv_wonder_ritual_choice ?= 2 } tv_wonder_ritual_apply_style_2_effect = yes }
 	else_if = { limit = { var:tv_wonder_stage ?= 4 var:tv_wonder_ritual_choice ?= 3 } tv_wonder_ritual_apply_style_3_effect = yes }
-	if = { limit = { var:tv_wonder_project_mode ?= 3 } add_prestige = 10 }
 	hidden_effect = { set_variable = { name = tv_wonder_ritual_reward_claimed value = 1 } }
 	}
 }
@@ -8189,12 +8188,13 @@ tv_wonder_ritual_pay_effect = {
 }
 
 tv_wonder_ritual_choose_plain_effect = {
-	if = { limit = { tv_wonder_ritual_can_preview_trigger = yes NOT = { var:tv_wonder_project_mode ?= 3 } }
+	if = { limit = { tv_wonder_ritual_can_preview_trigger = yes }
 	tv_wonder_ritual_settle_estates_plain_effect = yes
 	hidden_effect = {
 	set_variable = { name = tv_wonder_finalization_outcome value = 0 }
 	remove_variable = tv_wonder_ritual_choice
-	tv_wonder_finalize_effect = yes
+	if = { limit = { var:tv_wonder_project_mode ?= 3 } tv_wonder_reritual_finish_effect = yes }
+	else = { tv_wonder_finalize_effect = yes }
 	}
 	}
 }
@@ -27245,7 +27245,7 @@ tv_wonder_location_reritual_lock_effect = {
 }
 
 tv_wonder_reritual_finish_effect = {
-	if = { limit = { var:tv_wonder_project_mode ?= 3 has_variable = tv_wonder_ritual_reward_claimed }
+	if = { limit = { var:tv_wonder_project_mode ?= 3 OR = { has_variable = tv_wonder_ritual_reward_claimed var:tv_wonder_finalization_outcome ?= 0 } }
 	var:tv_wonder_site ?= { tv_wonder_mechanics_refresh_location_display_state_effect = yes }
 	tv_wonder_clear_project_state_core_effect = yes
 	tv_wonder_start_concept_effect = { reason = 4 }

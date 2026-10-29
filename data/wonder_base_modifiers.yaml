@@ -67,7 +67,7 @@
   law_code_stele_project:
     monthly_rebel_growth: -0.0005
   world_market:
-    global_trade_center_power: 0.05
+    selling_efficiency: 0.0125
     burghers_estate_target_satisfaction: 0.025
   royal_mint_system:
     minting_income_factor: 0.1

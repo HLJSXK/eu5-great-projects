@@ -104,7 +104,7 @@ class EngineeringPreviewTests(unittest.TestCase):
         for name, expected, absent in (
             ("survey", "TV_ENGINEERING_SURVEY_CARD_TITLE", "TV_ENGINEERING_CONCEPT_CARD_TITLE"),
             ("construction", "TV_ENGINEERING_CEREMONY_LOCKED_TEXT", "TV_ENGINEERING_CEREMONY_CHOOSE_STYLE_PROMPT"),
-            ("construction-complete", "TV_WONDER_RITUAL_HEADER", "TV_ENGINEERING_CEREMONY_LOCKED_TEXT"),
+            ("construction-complete", "TV_WONDER_RITUAL_SECTION_OPTIONS", "TV_ENGINEERING_CEREMONY_LOCKED_TEXT"),
         ):
             with self.subTest(state=name):
                 root, engine, _, _ = self.page(name)
@@ -142,14 +142,64 @@ class EngineeringPreviewTests(unittest.TestCase):
             actions = {n.props.get("scripted_action_tooltip", {}).get("action_name") for n in nodes}
             if name.endswith('-ready'):
                 self.assertIn("tv_wonder_ritual_preview_1", actions)
+                self.assertIn("tv_wonder_ritual_preview_plain", actions)
             else:
                 self.assertFalse(any(action and action.startswith('tv_wonder_ritual_preview_') for action in actions))
                 choices = [n for n in nodes if str(n.props.get('name', '')).startswith('tv_wonder_ritual_choice_')]
                 self.assertEqual(len(choices), 1)
-            if name == "reritual-ready":
-                self.assertIn("tv_wonder_ritual_cancel_reritual", actions)
-                self.assertNotIn("tv_wonder_ritual_choose_plain", actions)
+            self.assertNotIn("tv_wonder_ritual_cancel_reritual", actions)
             self.assertFalse(log, log)
+
+    def test_ritual_sections_keep_requirements_before_effects_and_actions_below(self):
+        for state_name, overrides in (
+            ('ceremony-ready', {}), ('unique-ready', {}), ('reritual-ready', {}),
+            ('ceremony-ready', {'tv_wonder_ritual_choice': None}),
+            ('ceremony-ready', {'tv_wonder_ritual_choice': 0}),
+            ('reritual-ready', {'tv_wonder_ritual_choice': 0}),
+            ('ceremony-ready', {'tv_wonder_cmm_skip_ceremony': 1}),
+        ):
+            with self.subTest(state=state_name, overrides=overrides):
+                state = engineering.scenario_state(state_name)
+                state = replace(state, player_variables={**state.player_variables, **overrides})
+                root, engine, _, log = self.page(state_name, state=state)
+                nodes = list(self.visible_nodes(root, engine))
+                ledger = next(n for n in nodes if n.props.get('name') == 'tv_wonder_ritual_ledger')
+                self.assertEqual(ledger.children[0].props.get('name'), 'tv_wonder_ritual_section_options')
+                sections = [n for n in ledger.children if str(n.props.get('name', '')).startswith('tv_wonder_ritual_section_')]
+                self.assertEqual([n.props['name'] for n in sections], [
+                    'tv_wonder_ritual_section_options', 'tv_wonder_ritual_section_requirements',
+                    'tv_wonder_ritual_section_effects'])
+                options, requirements, effects = sections
+                options_nodes = list(self.visible_nodes(options, engine))
+                choices = [n for n in options_nodes if str(n.props.get('name', '')).startswith('tv_wonder_ritual_choice_')]
+                self.assertEqual(len(choices), 4)
+                self.assertEqual({(n.x, n.w, n.h) for n in choices}, {(choices[0].x, 438, 42)})
+                plain = next(n for n in choices if n.props['name'] == 'tv_wonder_ritual_choice_plain')
+                labels = [n for n in self.visible_nodes(plain, engine)
+                          if n.kind == 'textbox' and (n.props.get('text') or n.props.get('raw_text'))]
+                self.assertEqual([n.props.get('text') for n in labels], ['TV_WONDER_RITUAL_PLAIN_STATE'])
+                flavor = [n for n in options_nodes if 'TV_WONDER_RITUAL_DESC_' in str(n.props.get('raw_text', ''))]
+                if state.player_variables.get('tv_wonder_ritual_choice') in (1, 2, 3):
+                    self.assertEqual(len(flavor), 1)
+                    self.assertLessEqual(plain.y + plain.h, flavor[0].y)
+                    self.assertLessEqual(flavor[0].y + flavor[0].h, requirements.y)
+                else:
+                    self.assertFalse(flavor)
+                for section, following in zip(sections, sections[1:]):
+                    self.assertGreater(section.h, 24)
+                    self.assertLessEqual(section.y + section.h, following.y)
+                requirement_nodes = list(self.visible_nodes(requirements, engine))
+                effect_nodes = list(self.visible_nodes(effects, engine))
+                self.assertFalse(any('TV_WONDER_RITUAL_DESC_' in str(n.props.get('raw_text', '')) for n in effect_nodes))
+                self.assertFalse(any(n.kind in ('progressbar', 'icon') for n in effect_nodes))
+                self.assertFalse(any('apply_choice_effect' in str(n.props.get('raw_text', '')) for n in requirement_nodes))
+                self.assertFalse(any('pay_effect' in str(n.props.get('raw_text', '')) for n in effect_nodes))
+                self.assertNotIn('TV_WONDER_RITUAL_SECTION_VALUES', {n.props.get('text') for n in nodes})
+                footer = next(n for n in ledger.children if n.props.get('name') == 'tv_wonder_ritual_actions')
+                self.assertLessEqual(effects.y + effects.h, footer.y)
+                buttons = [n for n in self.visible_nodes(footer, engine) if n.props.get('scripted_action_tooltip')]
+                self.assertEqual(len(buttons), 1)
+                self.assertFalse(log, log)
 
     def test_plain_choice_has_one_confirmation_and_no_ritual_effects(self):
         state = engineering.scenario_state('ceremony-ready')
@@ -161,7 +211,21 @@ class EngineeringPreviewTests(unittest.TestCase):
         self.assertIn('tv_wonder_ritual_choose_plain', actions)
         self.assertNotIn('tv_wonder_ritual_confirm', actions)
         self.assertFalse(any('ShowScriptedEffectForScope' in str(n.props.get('raw_text', '')) for n in nodes))
-        self.assertIn('TV_WONDER_RITUAL_PLAIN_CONSEQUENCE', {n.props.get('text') for n in nodes})
+        self.assertNotIn('TV_WONDER_RITUAL_PLAIN_CONSEQUENCE', {n.props.get('text') for n in nodes})
+        self.assertFalse(log, log)
+
+        reritual = engineering.scenario_state('reritual-ready')
+        reritual = replace(reritual, player_variables={**reritual.player_variables, 'tv_wonder_ritual_choice': 0})
+        root, engine, _, log = self.page(reritual.name, state=reritual)
+        nodes = list(self.visible_nodes(root, engine))
+        self.assertFalse(any('ShowScriptedEffectForScope' in str(n.props.get('raw_text', '')) for n in nodes))
+        keys = {n.props.get('text') for n in nodes}
+        self.assertTrue({'TV_WONDER_RITUAL_PLAIN_TERMS', 'TV_WONDER_RITUAL_PLAIN_DETAIL'} <= keys)
+        for action in ('tv_wonder_ritual_preview_plain', 'tv_wonder_ritual_choose_plain'):
+            widget = next(n for n in nodes if n.props.get('scripted_action_tooltip', {}).get('action_name') == action)
+            pushed = engine.push(widget)
+            try: self.assertTrue(engine.ev.truthy(widget.props['enabled']))
+            finally: engine.pop(pushed)
         self.assertFalse(log, log)
         inherited = engineering.scenario_state('finalized')
         inherited = replace(inherited, player_variables={**inherited.player_variables,
@@ -230,8 +294,7 @@ class EngineeringPreviewTests(unittest.TestCase):
                     self.assertLessEqual(badge.y + badge.h, icon.y + icon.h)
                 self.assertFalse(any(n.typename == 'tv_wonder_ritual_estate_card' for n in nodes))
                 arrows = [n for n in nodes if n.props.get('raw_text') in ('#Y ←#!', '#Y →#!')]
-                self.assertEqual(len(arrows), 1)
-                self.assertEqual(arrows[0].w, 216)
+                self.assertFalse(arrows)
                 self.assertFalse(log, log)
 
     def test_supporter_tooltips_resolve_each_estate_and_its_cached_reason(self):
@@ -293,7 +356,7 @@ class EngineeringPreviewTests(unittest.TestCase):
         self.assertIn("杜卡特: +10000", third)
         self.assertIn("自由贸易", third)
         reritual = engineering.ritual_effect_sample(engineering.scenario_state("reritual-ready"), self.loc)
-        self.assertIn("威望: +10", reritual)
+        self.assertEqual(reritual, first)
         completed = engineering.ritual_effect_sample(engineering.scenario_state("finalized"), self.loc)
         self.assertIn("已发放", completed)
         self.assertNotIn("+20%", completed)

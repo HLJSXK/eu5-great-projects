@@ -8,10 +8,8 @@
       medium: 3
       large: 5
   societal_value:
-    shock: 20
     monthly: 0.1
   memory_years: 100
   estate_satisfaction:
     support: 0.1
     oppose: -0.05
-  reritual_prestige: 10

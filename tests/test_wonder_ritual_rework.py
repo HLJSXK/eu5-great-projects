@@ -33,6 +33,25 @@ def test_all_wonders_inherit_all_three_reward_carriers(data):
                     assert a[key] == b[key]
 
 
+def test_rituals_only_move_societal_values_monthly(data):
+    wonders, mechanics = data
+    assert mechanics['ritual_rules']['societal_value'] == {'monthly': 0.1}
+    effects = source_blocks('common/scripted_effects/tv_wonder_ritual_state_effects.txt')
+    assert not any(contains(body, 'change_societal_value') for body in effects.values())
+    modifiers = source_blocks('common/static_modifiers/tv_engineering_department_wonder_mechanics_modifiers.txt')
+    for wonder in wonders:
+        for row in ritual_styles(wonder, mechanics):
+            sv = row['societal_value']
+            assert 'shock' not in sv
+            monthly = f"monthly_towards_{sv['direction']}"
+            assert row['country_modifier'][monthly] == 0.1
+            assert contains(modifiers[row['modifier']], monthly, '0.1')
+            # Both the actual grant and the encyclopedia preview retain this modifier.
+            for name in (f"tv_wonder_{wonder['key']}_ritual_{row['style']}_grant_effect",
+                         f"tv_wonder_display_{wonder['id']}_ritual_{row['style']}_catalogue_effect"):
+                assert contains(effects[name], 'modifier', row['modifier'])
+
+
 def test_location_ritual_tooltip_expands_every_granted_modifier_natively(data):
     from scripts_engineering_department.wonder_localization_lib import (
         load_wonder_localization_data, collapse_wonder_localization_data,
@@ -95,7 +114,7 @@ def test_estate_sponsor_and_data_corrections(data):
         assert rows[0]['estate_preferences'][core.location_reward_estate(w)] == 2
     assert mechanics['generic_rituals']['great_assembly_hall']['rituals'][1]['reward']['location_modifier']['local_max_literacy'] == 10
     assert mechanics['generic_rituals']['great_sculpture_group']['rituals'][1]['reward']['location_modifier']['local_monthly_prosperity'] == 0.004
-    assert mechanics['generic_rituals']['giant_dam_project']['rituals'][2]['reward']['one_shot'][0]['value'] == 0.5
+    assert mechanics['generic_rituals']['giant_dam_project']['rituals'][2]['reward']['one_shot'][0]['value'] == 1
 
 
 def test_each_construction_round_requires_a_fresh_ritual_choice():
@@ -201,6 +220,60 @@ def test_ritual_cmf_alert_uses_choice_availability_and_removes_inactive_alert():
     assert remove.key == 'else_if'
     assert contains(child(child(remove.children, 'limit').children, 'cmf_is_alert_active').children, 'alert', alert)
     assert contains(child(remove.children, 'cmf_remove_alert').children, 'alert', alert)
+
+
+@pytest.mark.parametrize('mode', [1, 2, 3])
+@pytest.mark.parametrize('ready', [False, True])
+def test_plain_choice_shares_settlement_and_finishes_the_right_project(mode, ready):
+    effects = source_blocks('common/scripted_effects/tv_wonder_ritual_phase_effects.txt')
+    actions = source_blocks('common/generic_actions/tv_wonder_ritual_actions.txt')
+    variables = {'tv_wonder_project_mode': mode, 'tv_wonder_ritual_choice': 0}
+    calls = []
+
+    def check(nodes):
+        values = []
+        for node in nodes:
+            if node.key == 'tv_wonder_ritual_can_preview_trigger': values.append(ready)
+            elif node.key == 'has_variable': values.append(node.value in variables)
+            elif node.key.startswith('var:'): values.append(variables.get(node.key[4:]) == int(node.value))
+            elif node.key == 'OR': values.append(any(check((item,)) for item in node.children))
+            elif node.key == 'NOT': values.append(not check(node.children))
+            else: raise AssertionError(f'Unexpected condition {node.key}')
+        return all(values)
+
+    def execute(nodes):
+        matched = False
+        for node in nodes:
+            if node.key == 'if':
+                matched = check(child(node.children, 'limit').children)
+                if matched: execute(tuple(item for item in node.children if item.key != 'limit'))
+            elif node.key == 'else':
+                if not matched: execute(node.children)
+            elif node.key in ('hidden_effect', 'var:tv_wonder_site'):
+                execute(node.children)
+            elif node.key == 'set_variable':
+                variables[child(node.children, 'name').value] = int(child(node.children, 'value').value)
+            elif node.key == 'remove_variable': variables.pop(node.value, None)
+            elif node.key == 'tv_wonder_reritual_finish_effect': execute(effects[node.key])
+            else:
+                calls.append(node.key)
+                if node.key == 'tv_wonder_clear_project_state_core_effect': variables.clear()
+                elif node.key == 'tv_wonder_start_concept_effect': variables['tv_wonder_stage'] = 0
+
+    for action in ('tv_wonder_ritual_preview_plain', 'tv_wonder_ritual_choose_plain'):
+        allow = child(child(actions[action], 'allow').children, 'scope:actor').children
+        assert check(allow) is ready
+    execute(effects['tv_wonder_ritual_choose_plain_effect'])
+    if not ready:
+        assert calls == []
+    elif mode == 3:
+        assert calls == ['tv_wonder_ritual_settle_estates_plain_effect',
+                         'tv_wonder_mechanics_refresh_location_display_state_effect',
+                         'tv_wonder_clear_project_state_core_effect', 'tv_wonder_start_concept_effect']
+        assert variables == {'tv_wonder_stage': 0}
+    else:
+        assert calls == ['tv_wonder_ritual_settle_estates_plain_effect', 'tv_wonder_finalize_effect']
+        assert variables['tv_wonder_finalization_outcome'] == 0
 
 
 def test_plain_preview_only_selects_and_has_all_five_message_fields():
@@ -386,7 +459,8 @@ def test_reritual_only_uses_buff_preview_and_returns_to_new_conception():
     assert contains(finish, 'tv_wonder_start_concept_effect')
     assert not contains(finish, 'tv_wonder_register_current_project_priority_candidate_from_variables_effect')
     completion = effects['tv_wonder_ritual_apply_choice_effect']
-    assert contains(completion, 'add_prestige', '10')
+    assert not contains(completion, 'add_prestige')
+    assert not contains(completion, 'var:tv_wonder_project_mode')
     assert not contains(completion, 'tv_wonder_apply_finalization_visible_rewards_effect')
     assert not contains(completion, 'construct_building')
     actions = source_blocks('common/generic_actions/tv_engineering_department_actions.txt')
@@ -434,7 +508,8 @@ def test_atlas_exposes_localized_directions_and_preferences_for_each_style(data)
     assert len(country) == 3
     for row in country:
         assert row['meta']['direction']['en'] and row['meta']['direction']['zh']
-        assert abs(row['meta']['shock']) == 20
+        assert 'shock' not in row['meta']
+        assert row['meta']['monthly'] == 0.1
         assert len(row['meta']['estate_preferences']) == 7
         assert all(pref['estate']['zh'] and pref['preference']['zh'] for pref in row['meta']['estate_preferences'])
 

@@ -26,7 +26,7 @@ def audit():
             counts['age_direction' if mechanics['societal_axes'][sv['axis']]['age'] else 'other_direction'] += not wonder['is_unique']
             counts['conditional_direction'] += not wonder['is_unique'] and mechanics['societal_axes'][sv['axis']]['conditional']
             assert row['country_modifier'][f"monthly_towards_{sv['direction']}"] == 0.1
-            assert sv['shock'] == 20
+            assert 'shock' not in sv
             if wonder['is_unique']:
                 inherited = ritual_styles(by_key[wonder['mechanic_key']], mechanics)[row['style'] - 1]
                 for field in ('country_modifier', 'location_modifier_values', 'one_shot', 'societal_value', 'estate_preferences'):
