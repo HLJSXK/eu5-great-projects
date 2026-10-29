@@ -1,0 +1,187 @@
+{
+  "source_commit": "fb54c8f8acd004bf38b2ef3d36a846500e3ffa5e^",
+  "text_normalization": "UTF-8 without BOM, LF; complete named block",
+  "blocks": [
+    {
+      "path": "src/in_game/common/goods/tv_wonder_goods.txt",
+      "key": "tv_wonder_materials",
+      "sha256": "f9f1b09203632db14b896f90af510fc731dfbd2a9a9fd90c37c5cdc6057f0c99"
+    },
+    {
+      "path": "src/in_game/common/building_types/tv_engineering_department_buildings.txt",
+      "key": "tv_wonder_material_dispatch_point",
+      "sha256": "f574555e7d3278dd277f146c009e325b3707b638a69f9c6de2e8a714d10a2522"
+    },
+    {
+      "path": "src/in_game/common/production_methods/tv_engineering_department_production_methods.txt",
+      "key": "tv_wonder_labor_camp_maintenance",
+      "sha256": "7da6807b5a5835a807567cc949c821c2bfd3e13880d035acfc9365291e5f0304"
+    },
+    {
+      "path": "src/in_game/common/production_methods/tv_engineering_department_production_methods.txt",
+      "key": "tv_wonder_material_dispatch_point_production",
+      "sha256": "e21726889c0124bf3a57837a1225a12ce7fe5e483fb885a71d932b0d87be0481"
+    },
+    {
+      "path": "src/in_game/common/production_methods/tv_engineering_department_production_methods.txt",
+      "key": "tv_wonder_material_dispatch_point_production_no_marble",
+      "sha256": "223ab097ea5347635c7cdb32ea3a3056beff8a2560e17f77fab63881280f1682"
+    },
+    {
+      "path": "src/in_game/common/prices/tv_engineering_department_prices.txt",
+      "key": "tv_wonder_labor_camp_price",
+      "sha256": "d5966bc09ab4edc07fcb0d3ae8892c5d2a4db35019884582dde29fb63298892f"
+    },
+    {
+      "path": "src/in_game/common/prices/tv_engineering_department_prices.txt",
+      "key": "tv_wonder_material_dispatch_point_price",
+      "sha256": "facc246fb89af7751ea3a32feee4031898bbf08968b350abd556ff9eb2003a72"
+    },
+    {
+      "path": "src/in_game/common/goods_demand/tv_engineering_department_construction_costs.txt",
+      "key": "tv_wonder_material_dispatch_point_construction",
+      "sha256": "94b988e7bbf4d8d82af88f499e752acbb0b189d8fa0a822ca58de2a195614a0b"
+    },
+    {
+      "path": "src/in_game/common/scripted_effects/tv_engineering_department_effects.txt",
+      "key": "tv_wonder_update_logistics_metrics_effect",
+      "sha256": "52cd9dc57438ebd01afcf9a8d169012366b552050de78b72e233cd89ed066c7a"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "tv_wonder_material_dispatch_point_price_cost_modifier",
+      "sha256": "55a5b8321b0053695b14679ca2d1439b594edcb6ba198626ed0c24b97f961274"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "can_extract_tv_wonder_materials",
+      "sha256": "a428ed8e3c4acf3859caf452510454ed23a4d90a4efcf2a8725d0d5ca9e6f713"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "ban_exports_of_tv_wonder_materials",
+      "sha256": "ffd9cff60d81b14359a8623f6a478c1774a6f09c2ee559eed8e79e3254b34305"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "ban_imports_of_tv_wonder_materials",
+      "sha256": "646edd112d8c5e14408908e4ef77fe31dbf9192c4280b639a7826c6acbd3bf77"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "local_tv_wonder_materials_output_modifier",
+      "sha256": "fd933ed0ffce9c968107fb1417b6344428f8824a6f153fe39b65e64a38b5a545"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "local_tv_wonder_materials_establishment_speed",
+      "sha256": "cfa4802f866c3fdcee00f89bf5449eed752317040ca9c2604302839ff4b4b881"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "global_tv_wonder_materials_output_modifier",
+      "sha256": "eb82b66c1eadc3add0037ef9c902b1aad4b848836f9d21be7eb44026fd92f884"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "global_tv_wonder_materials_establishment_speed",
+      "sha256": "b1e5f92b35958426d6c97aceaf2127a44f446fb5aaab8bdd29e2256f809f7a3f"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "global_tv_wonder_materials_pop_demand",
+      "sha256": "3d5b6c39b4a159e7c4d8ed1f957c46c64f984f67e0b5045ab365306dd3d82872"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "tv_wonder_materials_impacts_inflation",
+      "sha256": "710e6b058f0bdd373a28ce12fa3bae69f0fefd30928805e6a19402505eafb7c6"
+    },
+    {
+      "path": "src/main_menu/common/modifier_type_definitions/tv_engineering_department_modifier_types.txt",
+      "key": "tv_wonder_materials_used_for_minting",
+      "sha256": "932429ff6f3147deabd183efac3f6021b08b78d249828619645531559088a3e0"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "tv_wonder_material_dispatch_point_price_cost_modifier",
+      "sha256": "321586121c97579a6ae09de5be68b986472ce10bf1e763c584313e2b362ecaec"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "can_extract_tv_wonder_materials",
+      "sha256": "d2445fc01c51685a0ce65b2adf2cb0392662c8962a2f75e20b3497837919faf9"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "ban_exports_of_tv_wonder_materials",
+      "sha256": "aa0d7018616bf1e0d4b8edd1b94de1b9009af94643ce4894eee1c55f1e464a4a"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "ban_imports_of_tv_wonder_materials",
+      "sha256": "4523090d1af5661f937aaa30c6a2ffd59165bc1cb7656fcbb63d2828f64b87aa"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "local_tv_wonder_materials_output_modifier",
+      "sha256": "5185453d31d8ec8e0c7a651a87b89095a6054a6db6cce6ba1fec697a8a1dca87"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "local_tv_wonder_materials_establishment_speed",
+      "sha256": "e159aa5030a6a9632761f6b15bef54b0e2b4f0afcf08dbe5d6181a84aae2f3ff"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "global_tv_wonder_materials_output_modifier",
+      "sha256": "9d51ff48b20a9f2d300fd67921c95cd78dad06f743b2953c102f4ec7533df45e"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "global_tv_wonder_materials_establishment_speed",
+      "sha256": "69b12d242638c9f99bdad7c3cd7b9cc37b03322d1cce3b5e6fbba0c328e37997"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "global_tv_wonder_materials_pop_demand",
+      "sha256": "41c76fc69e0f3189d6636ba70d60dc438b0b91ee2dec818420ae7a8a1beae6c1"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "tv_wonder_materials_impacts_inflation",
+      "sha256": "618a8033409592d9bd19236536bbbbc72262365c8008d8350a1342fb337aec98"
+    },
+    {
+      "path": "src/main_menu/common/modifier_icons/tv_engineering_department_modifier_icons.txt",
+      "key": "tv_wonder_materials_used_for_minting",
+      "sha256": "675073024102ca530b9b3cf195343d9401bd5fe2d143726f1d8a9488968dcd4e"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/generated_icons/icon_goods_tv_wonder_materials_trade_good_icon.png",
+      "sha256": "85a19c67faa1bd0c34fd3d831ba80d48c838e060ce240a3f0def42f0f80029e3"
+    },
+    {
+      "path": "assets/generated_icons/icon_goods_tv_wonder_materials_trade_good_illustration.png",
+      "sha256": "91919622cd674f2c437cabfdfbab40530bae2fc877266c411ce963e5cd85b2e6"
+    },
+    {
+      "path": "assets/generated_icons/tv_wonder_material_dispatch_point_building_icon.png",
+      "sha256": "723bd4fa85e60c516e45a7326feb8a150d77fc609b6cea482aad790fec0980cb"
+    },
+    {
+      "path": "src/main_menu/gfx/interface/icons/buildings/tv_wonder_material_dispatch_point.dds",
+      "sha256": "17f511f63a3d9f365b808350001e48b428074b3d3635e9b6fa0ef404725d38ee"
+    },
+    {
+      "path": "src/main_menu/gfx/interface/icons/trade_goods/icon_goods_tv_wonder_materials.dds",
+      "sha256": "3e38e1b479a5e4e2478aa35c9463ed0e178cf31a79bf7f4caaf273559d364006"
+    },
+    {
+      "path": "src/main_menu/gfx/interface/icons/trade_goods/illustrations/icon_goods_tv_wonder_materials.dds",
+      "sha256": "1d928c189b4c697f94c3f9822eb555c4373b053c54b0cdd97c1239efa5ddff40"
+    }
+  ]
+}

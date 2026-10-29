@@ -1583,8 +1583,8 @@
       },
       "value_kind": "number",
       "zh": {
-        "description": "This determines how many [ambitions|e] a [country|e] can pursue at any one time.",
-        "name": "Ambition Slots"
+        "description": "这决定了一个[country|e]同一时间能够追求多少个[ambitions|e]。",
+        "name": "野心名额"
       }
     },
     "amount_looted_modifier": {
@@ -2535,8 +2535,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "影响对[estates|e]采取绝境行动的[costs|e]。",
+        "name": "请求紧急拨款 的成本"
       }
     },
     "ask_clergy_for_legitimacy_cost_modifier": {
@@ -2549,8 +2549,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "影响对[estates|e]采取绝境行动的[costs|e]。",
+        "name": "请求神职者支持 的成本"
       }
     },
     "ask_commoners_for_stability_cost_modifier": {
@@ -2563,8 +2563,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "这会影响使用[estates|e]的绝境行动的[costs|e]。",
+        "name": "向平民求助 的成本"
       }
     },
     "ask_for_extra_levies_cost_modifier": {
@@ -2577,8 +2577,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "影响对[estates|e]采取绝境行动的[cost|e]。",
+        "name": "要求扩大征召 的成本"
       }
     },
     "ask_nobility_for_diplomats_cost_modifier": {
@@ -2591,8 +2591,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "影响对[estates|e]采取绝境行动的[costs|e]。",
+        "name": "请求贵族使节 的成本"
       }
     },
     "ask_tribes_for_manpower_cost_modifier": {
@@ -2605,8 +2605,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "这会影响使用[estates|e]的绝境行动的[costs|e]。",
+        "name": "号召部落武装 的成本"
       }
     },
     "assault_ability": {
@@ -3715,6 +3715,20 @@
         "name": "禁止工具出口"
       }
     },
+    "ban_exports_of_tv_wonder_materials": {
+      "category": "country",
+      "color": "good",
+      "decimals": 2,
+      "en": {
+        "description": "This blocks the [export|e] of [ShowGoodsName('tv_wonder_materials')] from all [markets|e] that a [country|e] owns.",
+        "name": "Ban Exports of Great Project Building Materials"
+      },
+      "value_kind": "boolean",
+      "zh": {
+        "description": "这会阻止该[country|e]拥有的所有[markets|e]出口[ShowGoodsName('tv_wonder_materials')]。",
+        "name": "禁止建材出口"
+      }
+    },
     "ban_exports_of_weaponry": {
       "category": "country",
       "color": "good",
@@ -4763,6 +4777,20 @@
       "zh": {
         "description": "这会禁止一个[country|e]拥有的所有[markets|e]的[ShowGoodsName('tools')][import|e]。",
         "name": "禁止工具进口"
+      }
+    },
+    "ban_imports_of_tv_wonder_materials": {
+      "category": "country",
+      "color": "good",
+      "decimals": 2,
+      "en": {
+        "description": "This blocks the [import|e] of [ShowGoodsName('tv_wonder_materials')] to all [markets|e] that a [country|e] owns.",
+        "name": "Ban Imports of Great Project Building Materials"
+      },
+      "value_kind": "boolean",
+      "zh": {
+        "description": "这会阻止该[country|e]拥有的所有[markets|e]进口[ShowGoodsName('tv_wonder_materials')]。",
+        "name": "禁止建材进口"
       }
     },
     "ban_imports_of_weaponry": {
@@ -7579,6 +7607,20 @@
         "name": "启用工具原产"
       }
     },
+    "can_extract_tv_wonder_materials": {
+      "category": "country",
+      "color": "good",
+      "decimals": 2,
+      "en": {
+        "description": "This allows the extraction of [ShowGoodsName('tv_wonder_materials')] by allowing an [rgo|e] in a [location|e].",
+        "name": "Can Extract Great Project Building Materials"
+      },
+      "value_kind": "boolean",
+      "zh": {
+        "description": "这允许通过在[location|e]中提供[rgo|e]来提取[ShowGoodsName('tv_wonder_materials')]。",
+        "name": "可提取建材"
+      }
+    },
     "can_extract_weaponry": {
       "category": "country",
       "color": "good",
@@ -7785,8 +7827,8 @@
       },
       "value_kind": "boolean",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "这使我们可以从宗教骑士团的领地中征召十字军征兵。",
+        "name": "可征召十字军征兵"
       }
     },
     "can_reassign_cleric": {
@@ -7813,8 +7855,8 @@
       },
       "value_kind": "boolean",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "这使我们可以招募 [ShowUnitDefinitionName('a_order_knights')]、[ShowUnitDefinitionName('a_crusader_knights')]、[ShowUnitDefinitionName('a_order_knights_2')] 和 [ShowUnitDefinitionName('a_late_crusader_knights')]。",
+        "name": "可招募十字军团"
       }
     },
     "can_recruit_explorer": {
@@ -9507,8 +9549,8 @@
       },
       "value_kind": "number",
       "zh": {
-        "description": "This determines how many [ambitions|e] of another [country|e] a country can contest at any one time.",
-        "name": "Contesting Ambition Slots"
+        "description": "这决定了一个国家在任意时刻可以争夺另一个[country|e]的多少项[ambitions|e]。",
+        "name": "争夺雄心名额"
       }
     },
     "control_importance_modifier": {
@@ -12405,8 +12447,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "影响对[estates|e]采取绝境行动的[costs|e]。",
+        "name": "征收特别税 的成本"
       }
     },
     "fate_of_phoenix_actions_price_cost_modifier": {
@@ -14925,8 +14967,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "影响该 [country|e] 内所有 [locations|e] 中可容纳的 [buildings|e] 总等级数。",
+        "name": "建筑等级加成%"
       }
     },
     "global_fruit_establishment_speed": {
@@ -16605,8 +16647,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "影响 [country|e] 中所有 [locations|e] 的 [development|e] 每月变化量。",
+        "name": "每月发展度增长"
       }
     },
     "global_monthly_food_modifier": {
@@ -19015,6 +19057,48 @@
       "zh": {
         "description": "影响该[country|e][rural_locations|e]可以容纳的[ShowPopTypeName('tribesmen')]数量。",
         "name": "每1000人口的乡村部落民岗位容量"
+      }
+    },
+    "global_tv_wonder_materials_establishment_speed": {
+      "category": "country",
+      "color": "good",
+      "decimals": 2,
+      "en": {
+        "description": "This modifies the establishment speed of [ShowGoodsName('tv_wonder_materials')] in the entire [country|e].",
+        "name": "Great Project Building Materials Establishment Speed"
+      },
+      "value_kind": "percent",
+      "zh": {
+        "description": "这影响整个[country|e]的[ShowGoodsName('tv_wonder_materials')]建设速度。",
+        "name": "建材建设速度"
+      }
+    },
+    "global_tv_wonder_materials_output_modifier": {
+      "category": "country",
+      "color": "good",
+      "decimals": 2,
+      "en": {
+        "description": "This modifies the [output|e] of [ShowGoodsName('tv_wonder_materials')] in the entire [country|e].",
+        "name": "Great Project Building Materials Output"
+      },
+      "value_kind": "percent",
+      "zh": {
+        "description": "这修正整个[country|e]的[ShowGoodsName('tv_wonder_materials')][output|e]。",
+        "name": "建材产出"
+      }
+    },
+    "global_tv_wonder_materials_pop_demand": {
+      "category": "country",
+      "color": "good",
+      "decimals": 2,
+      "en": {
+        "description": "This modifies the [pop_needs|e] of the [ShowGoodsName('tv_wonder_materials')] [produced_good|e].",
+        "name": "Global [ShowGoodsNameWithNoTooltip('tv_wonder_materials')] Demand"
+      },
+      "value_kind": "percent",
+      "zh": {
+        "description": "这影响了[ShowGoodsName('tv_wonder_materials')][produced_good|e]的[pop_needs|e]。",
+        "name": "全局[ShowGoodsNameWithNoTooltip('tv_wonder_materials')]需求"
       }
     },
     "global_upper_class_capacity_modifier": {
@@ -25873,8 +25957,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "调整 [location|e] 作为 [proximity|e] 来源的强度，这决定了 [proximity] 能延伸到周围 [locations] 多远的范围。\n\n若 [location] 本身并非 [proximity] 来源，则此项没有效果。",
+        "name": "本地邻近度来源百分比"
       }
     },
     "local_raw_material_output": {
@@ -26939,6 +27023,34 @@
       "zh": {
         "description": "影响该[location|e]所有[ShowPopTypeName('tribesmen')]的[population_growth|e]。",
         "name": "部落民增长"
+      }
+    },
+    "local_tv_wonder_materials_establishment_speed": {
+      "category": "location",
+      "color": "good",
+      "decimals": 2,
+      "en": {
+        "description": "This modifies the establishment speed of [ShowGoodsName('tv_wonder_materials')] in this [location|e].",
+        "name": "Local Great Project Building Materials Establishment Speed"
+      },
+      "value_kind": "percent",
+      "zh": {
+        "description": "这影响该[location|e]的[ShowGoodsName('tv_wonder_materials')]建设速度。",
+        "name": "建材本地建设速度"
+      }
+    },
+    "local_tv_wonder_materials_output_modifier": {
+      "category": "location",
+      "color": "good",
+      "decimals": 2,
+      "en": {
+        "description": "This modifies the [output|e] of [ShowGoodsName('tv_wonder_materials')] in this [location|e].",
+        "name": "Local Great Project Building Materials Output"
+      },
+      "value_kind": "percent",
+      "zh": {
+        "description": "这修正该[location|e]的[ShowGoodsName('tv_wonder_materials')][output|e]。",
+        "name": "本地建材产出"
       }
     },
     "local_typhus_growth_modifier": {
@@ -33279,8 +33391,8 @@
       },
       "value_kind": "percent",
       "zh": {
-        "description": "",
-        "name": ""
+        "description": "影响让每个[estate|e]重新抽取新[parliament_agenda|e]所需的[costs|e]。",
+        "name": "重新设定议会议程的成本"
       }
     },
     "research_speed": {
@@ -36403,6 +36515,48 @@
       "zh": {
         "description": "修正工地的金币建设花费。",
         "name": "工地花费"
+      }
+    },
+    "tv_wonder_material_dispatch_point_price_cost_modifier": {
+      "category": "country",
+      "color": "bad",
+      "decimals": 2,
+      "en": {
+        "description": "Modifies the gold construction cost of Great Project Material Workshops.",
+        "name": "Great Project Material Workshop Cost"
+      },
+      "value_kind": "percent",
+      "zh": {
+        "description": "修正建材工坊的金币建设花费。",
+        "name": "建材工坊花费"
+      }
+    },
+    "tv_wonder_materials_impacts_inflation": {
+      "category": "country",
+      "color": "good",
+      "decimals": 2,
+      "en": {
+        "description": "This determines how the production of [ShowGoodsName('tv_wonder_materials')] impacts [inflation|e] in the [country|e].",
+        "name": "Great Project Building Materials Impacts Inflation"
+      },
+      "value_kind": "percent",
+      "zh": {
+        "description": "这决定了[ShowGoodsName('tv_wonder_materials')]的生产如何影响[country|e]的[inflation|e]。",
+        "name": "建材对通货膨胀的影响"
+      }
+    },
+    "tv_wonder_materials_used_for_minting": {
+      "category": "country",
+      "color": "good",
+      "decimals": 2,
+      "en": {
+        "description": "This determines if [ShowGoodsName('tv_wonder_materials')] is used for coins in the [country|e].",
+        "name": "Great Project Building Materials Used for Coins"
+      },
+      "value_kind": "boolean",
+      "zh": {
+        "description": "这决定了[ShowGoodsName('tv_wonder_materials')]是否被用作[country|e]的货币。",
+        "name": "建材用作货币"
       }
     },
     "tv_wonder_ritual_large_price_cost_modifier": {

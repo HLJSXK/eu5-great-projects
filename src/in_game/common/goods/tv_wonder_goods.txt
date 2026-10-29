@@ -1,0 +1,14 @@
+﻿# Towards Victory - Wonder construction goods
+
+tv_wonder_materials = {
+	category = produced
+	color = goods_tv_wonder_materials
+	default_market_price = 5
+	transport_cost = 2
+
+	wealth_impact_threshold = {
+		all = 1.0
+	}
+
+	ai_rgo_expansion_priority = 0.25
+}

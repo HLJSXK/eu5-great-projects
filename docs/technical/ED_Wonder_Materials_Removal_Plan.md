@@ -1,7 +1,7 @@
 # 工程部：移除"建材"与"建材工坊"实施计划
 
 - 模块：Engineering Department（`src/`、`scripts_engineering_department/`）
-- 状态：已实施；待进游戏确认过滤器行为和实际月度维护费
+- 状态：已于 2026-10-29 撤销；仅保留为历史记录。当前实现恢复删除提交 `fb54c8f8` 的父版本，见 [恢复记录](ED_Wonder_Materials_Restoration.md)。
 - 编写日期：2026-10-18
 - 目标：彻底移除商品 `tv_wonder_materials`（建材）和建筑 `tv_wonder_material_dispatch_point`（建材工坊），工地 `tv_wonder_labor_camp` 改为直接用原版商品维护。
 

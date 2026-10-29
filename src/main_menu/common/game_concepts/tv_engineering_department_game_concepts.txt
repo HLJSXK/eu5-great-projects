@@ -18,6 +18,10 @@ tv_wonder_debate = {
 	texture = "gfx/interface/icons/location_icons/new/prosperity.dds"
 }
 
+tv_wonder_materials = {
+	texture = "gfx/interface/icons/location_icons/new/prosperity.dds"
+}
+
 tv_wonder_ceremony = {
 	texture = "gfx/interface/icons/location_icons/new/prosperity.dds"
 }

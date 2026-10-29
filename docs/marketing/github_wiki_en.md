@@ -73,7 +73,7 @@ Before construction can begin, you need domestic backing. Nobles, burghers, and 
 The Great Engineer surveys the chosen site and scores three factors — **Scale**, **Logistics**, and **Organization** (0–100% each). These are derived from the site's hidden affinity, some randomness, and the Engineer's personal skill. They permanently fix the wonder's maximum level, total build cost, and build time — there is no re-roll.
 
 ### 4. Construction
-You build worksites and use ordinary construction goods, then advance four parts of the wonder in parallel: **foundation, body, function, and decoration**.
+You build worksites supplied with tools and wonder materials. Material workshops process ordinary construction goods into wonder materials, which can also be imported through trade. Construction advances four parts of the wonder in parallel: **foundation, body, function, and decoration**.
 
 ### 5. Ceremony
 Before the wonder is finished, you choose how it's consecrated:

@@ -28,6 +28,18 @@ def generate() -> str:
         lines.append(f" {line}")
     lines.extend(
         [
+            ' TV_ADD_WONDER_MATERIALS_STOCKPILE:0 "Gains $VALUE|+$ [tv_wonder_materials|E]"',
+            ' TV_FIRST_ADD_WONDER_MATERIALS_STOCKPILE:0 "We gain $VALUE|+$ [tv_wonder_materials|E]"',
+            ' TV_THIRD_ADD_WONDER_MATERIALS_STOCKPILE:0 "Gains $VALUE|+$ [tv_wonder_materials|E]"',
+            ' TV_PAST_ADD_WONDER_MATERIALS_STOCKPILE:0 "Gained $VALUE|+$ [tv_wonder_materials|E]"',
+            ' TV_FIRST_PAST_ADD_WONDER_MATERIALS_STOCKPILE:0 "We gained $VALUE|+$ [tv_wonder_materials|E]"',
+            ' TV_THIRD_PAST_ADD_WONDER_MATERIALS_STOCKPILE:0 "Gained $VALUE|+$ [tv_wonder_materials|E]"',
+            ' TV_SUBTRACT_WONDER_MATERIALS_STOCKPILE:0 "Loses $VALUE|-$ [tv_wonder_materials|E]"',
+            ' TV_FIRST_SUBTRACT_WONDER_MATERIALS_STOCKPILE:0 "We lose $VALUE|-$ [tv_wonder_materials|E]"',
+            ' TV_THIRD_SUBTRACT_WONDER_MATERIALS_STOCKPILE:0 "Loses $VALUE|-$ [tv_wonder_materials|E]"',
+            ' TV_PAST_SUBTRACT_WONDER_MATERIALS_STOCKPILE:0 "Lost $VALUE|-$ [tv_wonder_materials|E]"',
+            ' TV_FIRST_PAST_SUBTRACT_WONDER_MATERIALS_STOCKPILE:0 "We lost $VALUE|-$ [tv_wonder_materials|E]"',
+            ' TV_THIRD_PAST_SUBTRACT_WONDER_MATERIALS_STOCKPILE:0 "Lost $VALUE|-$ [tv_wonder_materials|E]"',
             ' TV_ADD_WONDER_CONSTRUCTION_PROGRESS:0 "Gains $VALUE|+$ [tv_wonder_construction|E] progress on the active wonder part"',
             ' TV_FIRST_ADD_WONDER_CONSTRUCTION_PROGRESS:0 "We gain $VALUE|+$ [tv_wonder_construction|E] progress on the active wonder part"',
             ' TV_THIRD_ADD_WONDER_CONSTRUCTION_PROGRESS:0 "Gains $VALUE|+$ [tv_wonder_construction|E] progress on the active wonder part"',

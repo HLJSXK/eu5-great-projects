@@ -662,6 +662,32 @@
           "natural_prompt": "Create a square Steam Workshop cover illustration for the standalone Engineering Department sub-mod of Towards Victory, in the epic historical key-art style of a AAA grand strategy game box cover, not a flat clean icon. Show a monumental wonder rising from a grand construction site at golden-hour dusk: scaffolding, a crane or hoist, pale marble blocks, and restrained bronze and gold accents, wrapped in atmospheric haze, dust, and dramatic warm light so it feels like a real moment of history being built. Use the two uploaded references only for guidance: take the construction-site motifs from the building icon reference, and take the painterly atmosphere, dramatic lighting, and epic mood from the tree-background reference. Compose off-center on a rule-of-thirds grid, with the wonder and its scaffolding positioned toward the lower third or one side of the frame. Leave the center of the composition calm, uncluttered, and free of important detail (open sky, drifting haze, or a soft receding backdrop) because a game title will later be overlaid there.",
           "negative_prompt": "text, letters, numbers, logo, watermark, UI frame, flat clean vector icon, simple centered icon composition, subject or main detail placed in the exact center, symmetrical center-locked framing, realistic photo, crowd of tiny unreadable details, finished/completed monument with no construction elements, blank empty background, flat lighting, low contrast"
         }
+      },
+      "building_icon": {
+        "asset_name": "tv_wonder_material_dispatch_point",
+        "path": "src/main_menu/gfx/interface/icons/buildings/{name}.dds",
+        "width": 128,
+        "height": 128,
+        "resize": "cover",
+        "dds_format": "DXT5",
+        "mipmaps": true,
+        "mipmap_min_dimension": 2,
+        "circle_crop": true,
+        "circle_crop_feather_px": 8,
+        "max_file_size_bytes": 100000,
+        "image_size": "1024x1024",
+        "prompt_requirements": "This is a compact building icon for the Wonder Material Workshop (建材工坊), the sibling structure of the Wonder Worksite that processes raw goods into wonder building materials. Treat the uploaded Construction Center and Wonder Worksite references as the style authority: same simple painterly brushwork, compact crop, low object count, and readable 128px silhouette. Depict the workshop using exactly 2-3 simple shapes: one small workshop shed or lean-to, one stack of cut stone/timber material blocks, and one small workbench or anvil. The result should feel premium through restrained marble and bronze accents while staying as simple as the reference. Do not add extra props, workers, crowds, complex scaffolding, full scenery, a finished monument, a palace, or a narrative construction scene.",
+        "style_reference_paths": [
+          "assets/generated_icons/_style_refs/construction_center.dds",
+          "src/main_menu/gfx/interface/icons/buildings/tv_wonder_labor_camp.dds"
+        ],
+        "local_template": {
+          "enabled": false
+        },
+        "image": {
+          "natural_prompt": "A simple Europa Universalis V building icon in the uploaded vanilla Construction Center style, matching the companion Wonder Worksite icon's painterly language, compact crop, and low element count. Show a wonder material workshop with only three clear elements: a small workshop shed or lean-to, one stack of cut stone or timber material blocks, and one small workbench or anvil with restrained bronze accents. Sparse, centered, readable at 128px, premium but not ornate, no text.",
+          "negative_prompt": "busy construction scene, many objects, extra props, many tools, crowds, workers, multiple buildings, complex scaffolding, ornate palace, completed monument, giant statue, landscape background, detailed narrative scene, realistic photo, text, letters, logo, UI frame"
+        }
       }
     }
   },

@@ -511,8 +511,8 @@ This is an index only. Use `scripts/ai_context.py` for task-relevant summaries o
 | GUI Icons | 381 | `data/index/icons.txt` |
 | Scripted Triggers | 3638 | `data/index/scripted_triggers.txt` |
 | Scripted Effects | 5534 | `data/index/scripted_effects.txt` |
-| Static Modifiers | 2665 | `data/index/static_modifiers.txt` |
-| English Loc Keys | 15609 | `data/index/loc_keys_en.txt` |
+| Static Modifiers | 2676 | `data/index/static_modifiers.txt` |
+| English Loc Keys | 15653 | `data/index/loc_keys_en.txt` |
 
 ## Codegen Script Map
 

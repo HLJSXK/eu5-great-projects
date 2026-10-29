@@ -47,6 +47,14 @@ GUI widgets.
    vanilla `ambitions_lateralview.gui`. Override the item text to `multiline = no`.
    Do not restore the compact location summaries; that layout was superseded.
 
+8. Keep `fittype` off the location-gallery medallion `icon` widgets.
+   The user's 2026-10-29 runtime log reports `Property 'fittype' not handled`
+   on all 30 `tv_location_wonder_medallion_<slot>_<level>` instances, identifying
+   the engine widget as `ubericon`. These square textures use an explicit
+   48-by-48 size; the artwork's separate `background` keeps its own fit setting.
+   Fix `gen_location_window.py` and regenerate the main, M&T and SoL panels.
+   Offline rendering alone did not detect this unsupported runtime property.
+
 ## Validation
 
 ```powershell

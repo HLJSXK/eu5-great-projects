@@ -490,13 +490,13 @@ def render_menu_slot(indent: str, *, slot: int) -> list[str]:
             {render_level_tooltip(slot)}''']
     # Static texture handles are required by the engine. This remains one hover
     # target; exactly one of the six transparent medallion sprites is visible.
+    # icon/ubericon uses its explicit square size; it does not support fittype.
     for level in range(1, 7):
         lines.append(f'''icon = {{
             name = "tv_location_wonder_medallion_{slot}_{level}"
             visible = "[EqualTo_CFixedPoint({slot_level_var('tooltip', slot)}.GetValue, '(CFixedPoint){level}.0')]"
             size = {{ {LEVEL_MEDALLION_SIZE} {LEVEL_MEDALLION_SIZE} }} alwaystransparent = yes
             texture = "gfx/interface/icons/location_icons/tv_wonder_level_{level}.dds"
-            fittype = fill
         }}''')
     lines.append('}')
     ritual_height = (TOOLTIP_IMAGE_HEIGHT - RITUAL_HEADER_HEIGHT - 3 * CARD_SPACING) / 3

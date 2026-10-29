@@ -2995,7 +2995,7 @@ widget = {
 
 				blockoverride "common_bottom_content" {
 					widget = {
-						size = { 470 150 }
+						size = { 470 270 }
 
 						vbox = {
 							layoutpolicy_horizontal = expanding
@@ -3067,7 +3067,80 @@ widget = {
 									click_type = left
 									click_mode = single
 									title = "TV_ENGINEERING_BUILD_WORKSITE_BUTTON"
-									on_action = "[OpenLateralViewWithFilter('production', 'tv_wonder_labor_camp_only')]"
+									on_action = "[OpenLateralViewWithFilter('production', 'uses_tv_wonder_materials')]"
+								}
+
+								tooltipwidget = {
+									BasicFunctionalTooltip = {}
+								}
+							}
+
+							widget = {
+								size = { 462 45 }
+								vbox = {
+									layoutpolicy_horizontal = expanding
+									using = bg_paper_card_situations
+
+									widget = {
+										layoutpolicy_horizontal = expanding
+										size = { -1 45 }
+										using = bg_card_header_situation
+
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											spacing = 4
+											expand = {}
+											text_single = {
+												text = "TV_ENGINEERING_LOGISTICS_SECTION_TITLE"
+											}
+											expand = {}
+										}
+									}
+								}
+							}
+
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								size = { 462 32 }
+								spacing = 8
+								icon = {
+									size = { 30 30 }
+									texture = "gfx/interface/icons/trade_goods/icon_goods_tv_wonder_materials.dds"
+									texture_density = 2
+								}
+								widget = {
+									size = { 330 32 }
+									progressbar = {
+										size = { 330 16 }
+										parentanchor = vcenter
+										widgetanchor = vcenter
+										using = progress_bar_blue_alt
+										min = 0
+										max = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_material_workshop_need_display').GetValue]"
+										value = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_effective_material_workshop_levels').GetValue]"
+										tooltip = "TV_ENGINEERING_MATERIAL_WORKSHOP_PROGRESS_TT"
+									}
+								}
+								text_single = {
+									size = { 86 22 }
+									margin_top = 4
+									raw_text = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_effective_material_workshop_levels').GetValue|0]/[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_material_workshop_need').GetValue|0]"
+									align = nobaseline|right
+								}
+							}
+
+							button_regular = {
+								down = "[GetVariableSystem.Exists('ui_library_down_state')]"
+								size = { 462 30 }
+								fontsize = 14
+								text = "TV_ENGINEERING_BUILD_MATERIAL_WORKSHOP_BUTTON"
+								using = bg_button_flavor_1
+
+								action_tooltip = {
+									click_type = left
+									click_mode = single
+									title = "TV_ENGINEERING_BUILD_MATERIAL_WORKSHOP_BUTTON"
+									on_action = "[OpenLateralViewWithFilter('production', 'tv_wonder_materials')]"
 								}
 
 								tooltipwidget = {

@@ -5542,6 +5542,9 @@
     "character_named_script_value_less_than": {
       "en": {
         "not": "[CHARACTER.GetName] is as old or older than $VALUE|0$"
+      },
+      "zh": {
+        "not": "[CHARACTER.GetName]与$VALUE|0$同龄或更年长"
       }
     },
     "character_nickname": {
@@ -7476,6 +7479,12 @@
         "not_third": "[CULTURE.GetName] is NOT a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]",
         "text": "IS a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]",
         "third": "[CULTURE.GetName] is a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]"
+      },
+      "zh": {
+        "not": "不是 [discriminated_culture|e] 在 [TARGET_COUNTRY.GetName]",
+        "not_third": "[CULTURE.GetName] 在 [TARGET_COUNTRY.GetName] 不是 [discriminated_culture|e]",
+        "text": "在[TARGET_COUNTRY.GetName]是[discriminated_culture|e]",
+        "third": "[CULTURE.GetName]在[TARGET_COUNTRY.GetName]是[discriminated_culture|e]"
       }
     },
     "culture_equal": {
@@ -10674,6 +10683,12 @@
         "not": "Capital does NOT lie along an established route to Mecca",
         "not_first": "Our capital does NOT lie along an established route to Mecca",
         "text": "Capital lies along an established route to Mecca"
+      },
+      "zh": {
+        "first": "我们的首都位于通往麦加的既定路线上",
+        "not": "首都不在通往麦加的既定路线上",
+        "not_first": "我们的首都不在通往麦加的既定路线上",
+        "text": "首都位于通往麦加的既定路线上"
       }
     },
     "hajj_caravan_routes_via_arabia": {
@@ -10682,6 +10697,12 @@
         "not": "Capital does NOT lie in Arabia",
         "not_first": "Our capital does NOT lie in Arabia",
         "text": "Capital lies in Arabia"
+      },
+      "zh": {
+        "first": "我们的首都位于阿拉伯",
+        "not": "首都不在阿拉伯",
+        "not_first": "我们的首都不在阿拉伯境内",
+        "text": "首都位于阿拉伯"
       }
     },
     "hajj_caravan_routes_via_bab_el_mandeb": {
@@ -10690,6 +10711,12 @@
         "not": "Capital does NOT lie along the Bab-el-Mandeb route to Mecca",
         "not_first": "Our capital does NOT lie along the Bab-el-Mandeb route to Mecca",
         "text": "Capital lies along the Bab-el-Mandeb route to Mecca"
+      },
+      "zh": {
+        "first": "我们的首都位于通往麦加的曼德海峡路线上",
+        "not": "首都不在通往麦加的曼德海峡路线上",
+        "not_first": "我们的首都不在通往麦加的曼德海峡路线上",
+        "text": "首都位于通往麦加的曼德海峡路线上"
       }
     },
     "hajj_caravan_routes_via_baghdad": {
@@ -10698,6 +10725,12 @@
         "not": "Capital does NOT lie along the Baghdad route to Mecca",
         "not_first": "Our capital does NOT lie along the Baghdad route to Mecca",
         "text": "Capital lies along the Baghdad route to Mecca"
+      },
+      "zh": {
+        "first": "我国首都位于通往麦加的巴格达商路沿线",
+        "not": "首都不位于通往麦加的巴格达商路沿线",
+        "not_first": "我们的首都不在通往麦加的巴格达路线上",
+        "text": "首都位于通往麦加的巴格达商路沿线"
       }
     },
     "hajj_caravan_routes_via_cairo": {
@@ -10706,6 +10739,12 @@
         "not": "Capital does NOT lie along the Cairo route to Mecca",
         "not_first": "Our capital does NOT lie along the Cairo route to Mecca",
         "text": "Capital lies along the Cairo route to Mecca"
+      },
+      "zh": {
+        "first": "我们的首都位于通往麦加的开罗路线上",
+        "not": "首都不在通往麦加的开罗路线上",
+        "not_first": "我们的首都不在通往麦加的开罗路线上",
+        "text": "首都位于通往麦加的开罗路线上"
       }
     },
     "hajj_caravan_routes_via_damascus": {
@@ -10714,6 +10753,12 @@
         "not": "Capital does NOT lie along the Damascus route to Mecca",
         "not_first": "Our capital does NOT lie along the Damascus route to Mecca",
         "text": "Capital lies along the Damascus route to Mecca"
+      },
+      "zh": {
+        "first": "我国首都位于通往麦加的大马士革商路沿线",
+        "not": "首都不位于通往麦加的大马士革商路沿线",
+        "not_first": "我国首都不位于通往麦加的大马士革商路沿线",
+        "text": "首都位于通往麦加的大马士革商路沿线"
       }
     },
     "hajj_caravan_routes_via_jeddah": {
@@ -10722,6 +10767,12 @@
         "not": "Capital does NOT lie along the Jeddah route to Mecca",
         "not_first": "Our capital does NOT lie along the Jeddah route to Mecca",
         "text": "Capital lies along the Jeddah route to Mecca"
+      },
+      "zh": {
+        "first": "我们的首都位于通往麦加的吉达路线上",
+        "not": "首都不在通往麦加的吉达路线上",
+        "not_first": "我们的首都不在通往麦加的吉达路线上",
+        "text": "首都位于通往麦加的吉达路线上"
       }
     },
     "has_abstained_vote": {
@@ -12716,6 +12767,14 @@
         "not_third": "$WHO$ does NOT have any [estate|e] pushing a [parliament_agenda|e]",
         "text": "Has at least one [estate|e] pushing a [parliament_agenda|e]",
         "third": "$WHO$ has at least one [estate|e] pushing a [parliament_agenda|e]"
+      },
+      "zh": {
+        "first": "我们至少有一个 [estate|e] 在推动 [parliament_agenda|e]",
+        "not": "没有任何 [estate|e] 在推动 [parliament_agenda|e]",
+        "not_first": "我们没有任何 [estate|e] 在推动 [parliament_agenda|e]",
+        "not_third": "$WHO$没有任何[estate|e]提出[parliament_agenda|e]",
+        "text": "至少有一个 [estate|e] 在推动 [parliament_agenda|e]",
+        "third": "$WHO$至少有一个[estate|e]在推动[parliament_agenda|e]"
       }
     },
     "has_participated_in_parliament": {
@@ -17074,6 +17133,12 @@
         "not_third": "[LOCATION.GetName] is NOT in an area with an active Industry Promotion",
         "text": "Is in an area with an active Industry Promotion",
         "third": "[LOCATION.GetName] is in an area with an active Industry Promotion"
+      },
+      "zh": {
+        "not": "不位于有活跃产业推广的地区",
+        "not_third": "[LOCATION.GetName] 不位于有活跃产业推广的地区",
+        "text": "位于有活跃产业推广的地区",
+        "third": "[LOCATION.GetName] 位于有活跃产业推广的地区"
       }
     },
     "is_in_same_international_organization": {
@@ -18424,6 +18489,14 @@
         "not_third": "[COUNTRY.GetName] does NOT have automated the $SYSTEM|Y$",
         "text": "Has automated the $SYSTEM|Y$",
         "third": "[COUNTRY.GetName] has automated the $SYSTEM|Y$"
+      },
+      "zh": {
+        "first": "我们已自动化 $SYSTEM|Y$",
+        "not": "尚未自动化 $SYSTEM|Y$",
+        "not_first": "我们尚未自动化 $SYSTEM|Y$",
+        "not_third": "[COUNTRY.GetName] 尚未自动化 $SYSTEM|Y$",
+        "text": "已自动化 $SYSTEM|Y$",
+        "third": "[COUNTRY.GetName] 已自动化 $SYSTEM|Y$"
       }
     },
     "is_target_in_global_variable_list": {
@@ -18576,6 +18649,12 @@
         "not_third": "[ROOT.GetNameWithNoTooltip] is NOT a possible goal for this [colonial_charter|e]",
         "text": "Is a possible goal for this [colonial_charter|e]",
         "third": "[ROOT.GetNameWithNoTooltip] is a possible goal for this [colonial_charter|e]"
+      },
+      "zh": {
+        "not": "不是该 [colonial_charter|e] 的可能目标",
+        "not_third": "[ROOT.GetNameWithNoTooltip] 不是该 [colonial_charter|e] 的可能目标",
+        "text": "是该[colonial_charter|e]的可能目标",
+        "third": "[ROOT.GetNameWithNoTooltip]是该[colonial_charter|e]的可能目标"
       }
     },
     "is_valid_subject_for_goal": {
@@ -19638,6 +19717,10 @@
       "en": {
         "not": "[LOCATION.GetName] is controlled by [TARGET_COUNTRY.GetName]",
         "text": "[LOCATION.GetName] is NOT controlled by [TARGET_COUNTRY.GetName]"
+      },
+      "zh": {
+        "not": "[LOCATION.GetName]受控于[TARGET_COUNTRY.GetName]",
+        "text": "[LOCATION.GetName]不受控于[TARGET_COUNTRY.GetName]"
       }
     },
     "location_counter": {
@@ -20397,6 +20480,9 @@
     "location_valid_for_calling": {
       "en": {
         "not": "[LOCATION.GetName] is NOT a suitable seat for the [TARGET_CALLING.GetName] [calling|e]"
+      },
+      "zh": {
+        "not": "[LOCATION.GetName] 不适合作为 [TARGET_CALLING.GetName] [calling|e] 的驻地"
       }
     },
     "location_valid_for_goods": {
@@ -20416,6 +20502,9 @@
     "location_valid_for_religious_order_type": {
       "en": {
         "not": "[LOCATION.GetName] does NOT meet the founding requirements of a [TARGET_RELIGIOUS_ORDER_TYPE.GetName]"
+      },
+      "zh": {
+        "not": "[LOCATION.GetName] 不符合 [TARGET_RELIGIOUS_ORDER_TYPE.GetName] 的建立条件"
       }
     },
     "location_var_equal": {
@@ -22048,6 +22137,10 @@
       "en": {
         "not": "[culture|e] is NOT a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]",
         "text": "[culture|e] is a [discriminated_culture|e] in [TARGET_COUNTRY.GetName]"
+      },
+      "zh": {
+        "not": "[culture|e] 在 [TARGET_COUNTRY.GetName] 不是 [discriminated_culture|e]",
+        "text": "[culture|e] 在 [TARGET_COUNTRY.GetName] 是 [discriminated_culture|e]"
       }
     },
     "none_culture_equal": {

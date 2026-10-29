@@ -8953,13 +8953,15 @@
     TV_WONDER_RERITUAL_LOCK_TT: Lock this wonder and enter the ritual phase. Conception will restart afterwards.
     TV_WONDER_RERITUAL_STALE: This wonder is no longer eligible. Conception continues.
     TV_WONDER_RERITUAL_HAS_PLAIN_TT: Own a plain wonder. Availability is refreshed monthly.
+    TV_WONDER_RERITUAL_NO_ACTIVE_PROJECT_TT: No wonder project is currently underway.
+    TV_WONDER_RERITUAL_CONCEPTION_TT: The Great Engineer is conceiving a new project.
     TV_WONDER_RERITUAL_COMPLETE_TITLE: The Dedication Is Renewed
     TV_WONDER_RERITUAL_COMPLETE_DESC: The chosen rite has given the wonder a new place in the life of the country.
     TV_WONDER_RITUAL_FORGOTTEN_TITLE: A Dedication Fades
     TV_WONDER_RITUAL_FORGOTTEN_DESC: The [Localize(Concatenate(Concatenate('game_concept_tv_wonder_display_', ToString_int32(FixedPointToInt(SCOPE.GetValue('tv_wonder_forgotten_id')))), Concatenate('_ritual_', ToString_int32(FixedPointToInt(SCOPE.GetValue('tv_wonder_forgotten_style'))))))] of [Localize(Concatenate('game_concept_tv_wonder_display_', ToString_int32(FixedPointToInt(SCOPE.GetValue('tv_wonder_forgotten_id')))))] has faded from living memory. The wonder is plain again and may be rededicated.
     TV_WONDER_EXPANSION_COMPLETE_DESC: The expansion is complete. The existing dedication endures.
-    tv_wonder_reritualize_decision: Rededicate a Wonder
-    tv_wonder_reritualize_decision_desc: Set aside new designs and renew the dedication of a plain wonder.
+    tv_wonder_reritualize_decision.title: Rededicate a Wonder
+    tv_wonder_reritualize_decision.desc: Set aside new designs and renew the dedication of a plain wonder.
     tv_wonder_reritualize_decision.a: Choose a wonder.
     TV_WONDER_RITUAL_PLAIN_STATE: Plain
     TV_WONDER_RITUAL_SHELL_STATE: Shell
@@ -17942,13 +17944,15 @@
     TV_WONDER_RERITUAL_LOCK_TT: 锁定这座奇观并进入仪式阶段，完成后构思从头开始。
     TV_WONDER_RERITUAL_STALE: 这座奇观已不再符合条件，构思继续。
     TV_WONDER_RERITUAL_HAS_PLAIN_TT: 拥有一座朴素奇观。可用性每月刷新。
+    TV_WONDER_RERITUAL_NO_ACTIVE_PROJECT_TT: 当前没有正在推进的奇观工程。
+    TV_WONDER_RERITUAL_CONCEPTION_TT: 大工程师正在构思新工程。
     TV_WONDER_RERITUAL_COMPLETE_TITLE: 奉献重归于此
     TV_WONDER_RERITUAL_COMPLETE_DESC: 所选仪式赋予奇观新的意义，使它重新融入国家的生活。
     TV_WONDER_RITUAL_FORGOTTEN_TITLE: 奉献已被淡忘
     TV_WONDER_RITUAL_FORGOTTEN_DESC: '[Localize(Concatenate(''game_concept_tv_wonder_display_'', ToString_int32(FixedPointToInt(SCOPE.GetValue(''tv_wonder_forgotten_id'')))))]的[Localize(Concatenate(Concatenate(''game_concept_tv_wonder_display_'', ToString_int32(FixedPointToInt(SCOPE.GetValue(''tv_wonder_forgotten_id'')))), Concatenate(''_ritual_'', ToString_int32(FixedPointToInt(SCOPE.GetValue(''tv_wonder_forgotten_style''))))))]已从人们的记忆中淡去。奇观回到了朴素状态，可以重新举行仪式。'
     TV_WONDER_EXPANSION_COMPLETE_DESC: 扩建已经完成，原有仪式继续生效。
-    tv_wonder_reritualize_decision: 重新奉献奇观
-    tv_wonder_reritualize_decision_desc: 暂缓新工程的构思，为一座朴素奇观重新举行奉献仪式。
+    tv_wonder_reritualize_decision.title: 重新奉献奇观
+    tv_wonder_reritualize_decision.desc: 暂缓新工程的构思，为一座朴素奇观重新举行奉献仪式。
     tv_wonder_reritualize_decision.a: 选择奇观。
     TV_WONDER_RITUAL_PLAIN_STATE: 朴素
     TV_WONDER_RITUAL_SHELL_STATE: 空壳

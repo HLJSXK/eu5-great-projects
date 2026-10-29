@@ -209,42 +209,36 @@ types tv_location_wonder_menu_types {
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)1.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_1_2"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)2.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_2.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_1_3"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)3.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_3.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_1_4"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)4.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_4.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_1_5"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)5.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_5.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_1_6"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)6.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_6.dds"
-			            fittype = fill
 			        }
 			}
 			}
@@ -521,42 +515,36 @@ types tv_location_wonder_menu_types {
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)1.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_2_2"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)2.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_2.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_2_3"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)3.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_3.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_2_4"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)4.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_4.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_2_5"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)5.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_5.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_2_6"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)6.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_6.dds"
-			            fittype = fill
 			        }
 			}
 			}
@@ -833,42 +821,36 @@ types tv_location_wonder_menu_types {
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)1.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_3_2"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)2.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_2.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_3_3"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)3.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_3.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_3_4"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)4.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_4.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_3_5"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)5.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_5.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_3_6"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)6.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_6.dds"
-			            fittype = fill
 			        }
 			}
 			}
@@ -1145,42 +1127,36 @@ types tv_location_wonder_menu_types {
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)1.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_4_2"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)2.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_2.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_4_3"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)3.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_3.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_4_4"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)4.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_4.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_4_5"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)5.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_5.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_4_6"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)6.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_6.dds"
-			            fittype = fill
 			        }
 			}
 			}
@@ -1457,42 +1433,36 @@ types tv_location_wonder_menu_types {
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)1.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_5_2"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)2.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_2.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_5_3"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)3.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_3.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_5_4"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)4.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_4.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_5_5"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)5.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_5.dds"
-			            fittype = fill
 			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_5_6"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)6.0')]"
 			            size = { 48 48 } alwaystransparent = yes
 			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_6.dds"
-			            fittype = fill
 			        }
 			}
 			}

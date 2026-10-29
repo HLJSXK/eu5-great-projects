@@ -2,9 +2,9 @@
 	decision_category = other_decisions
 	potential = { has_variable = tv_engineering_department_member }
 	allow = {
-	var:tv_wonder_stage ?= 0
-	has_variable = tv_wonder_concept_in_progress
-	custom_tooltip = { text = TV_WONDER_RERITUAL_HAS_PLAIN_TT has_variable = tv_wonder_has_plain_wonder }
+		custom_tooltip = { text = TV_WONDER_RERITUAL_NO_ACTIVE_PROJECT_TT var:tv_wonder_stage ?= 0 }
+		custom_tooltip = { text = TV_WONDER_RERITUAL_CONCEPTION_TT has_variable = tv_wonder_concept_in_progress }
+		custom_tooltip = { text = TV_WONDER_RERITUAL_HAS_PLAIN_TT has_variable = tv_wonder_has_plain_wonder }
 	}
 	ai_will_do = { value = 0 }
 	option = { name = tv_wonder_reritualize_decision.a effect = { trigger_event_non_silently = tv_engineering_department.2001 } }

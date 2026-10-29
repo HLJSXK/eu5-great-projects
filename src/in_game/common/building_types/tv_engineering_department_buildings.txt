@@ -47,3 +47,33 @@ tv_wonder_labor_camp = {
 		tv_wonder_labor_camp_maintenance
 	}
 }
+
+tv_wonder_material_dispatch_point = {
+	is_foreign = no
+	pop_type = laborers
+	max_levels = guild_max_level
+	employment_size = 1
+
+	category = infrastructure_category
+	price = tv_wonder_material_dispatch_point_price
+
+	town = yes
+	city = yes
+	megalopolis = yes
+	rural_settlement = yes
+
+	important_for_AI = yes
+	automation_build_allowed = yes
+
+	allow = {
+		owner = scope:actor
+	}
+
+	build_time = village_build_time
+	construction_demand = tv_wonder_material_dispatch_point_construction
+
+	possible_production_methods = {
+		tv_wonder_material_dispatch_point_production
+		tv_wonder_material_dispatch_point_production_no_marble
+	}
+}

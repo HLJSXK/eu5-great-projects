@@ -27,7 +27,7 @@
  game_concept_tv_wonder_ceremony_desc:0 "工程完工后的奉献仪式。通用与独特奇观均可选择三种风格之一，或以朴素方式落成。仪式与成品建筑分别记录；所选风格提供相应奖励和价值观倾向，失去奇观或仪式被淡忘后消失。"
 
  game_concept_tv_wonder_construction: "伟大工程"
- game_concept_tv_wonder_construction_desc: "由[tv_engineering_department|e]管理的伟大工程机制。[tv_great_engineer|e]的[tv_wonder_concept|e]提出可行的[tv_wonder_small|e]、[tv_wonder_medium|e]或[tv_wonder_large|e]方案后，国家化解国内[tv_wonder_debate|e]，完成[tv_wonder_survey|e]并组织劳工。建设随后通过四个[tv_wonder_construction_part|e]推进。每级$tv_wonder_labor_camp$从所在市场消耗工具、木材和砖石，劳工推动工程进度。"
+ game_concept_tv_wonder_construction_desc: "由[tv_engineering_department|e]管理的伟大工程机制。[tv_great_engineer|e]的[tv_wonder_concept|e]提出可行的[tv_wonder_small|e]、[tv_wonder_medium|e]或[tv_wonder_large|e]方案，国家完成国内论证后，完成[tv_wonder_survey|e]、组织劳工、收集[tv_wonder_materials|e]，并推进四个[tv_wonder_construction_part|e]，将工程提升到最终等级。"
 
  game_concept_tv_wonder_expansion: "扩建"
  game_concept_tv_wonder_expansion_desc:0 "在原址提高已落成奇观的等级。完整奇观保留原有仪式并跳过仪式阶段，不重复发放仪式奖励；朴素奇观扩建后可选择仪式或继续朴素落成。勘测能力与基础奖励的规则不变。"
@@ -60,6 +60,8 @@
  game_concept_tv_wonder_organization_competence_desc: "[tv_wonder_survey|e]读数，衡量劳役名册、工头、工坊与施工阶段能否听命于同一张计划，而不是被互相竞争的号令拉扯。它以0%到100%线性决定0到20级工地最大等级。"
 
  game_concept_tv_wonder_logistics_competence: "物流适性"
- game_concept_tv_wonder_logistics_competence_desc: "[tv_wonder_survey|e]对道路、车队、港口、桥梁和交接点进行评估，决定物资能否在需要时抵达工地。"
+ game_concept_tv_wonder_logistics_competence_desc: "[tv_wonder_survey|e]读数，衡量道路、车队、港口、桥梁与交接点能否让[tv_wonder_materials|e]在匠人需要时抵达工地。"
 
  # ── 百科页签 UI ─────────────────────────────────────────────────────────────────────────
+ game_concept_tv_wonder_materials: "建材"
+ game_concept_tv_wonder_materials_desc: "一种用于维护$tv_wonder_labor_camp$的市场商品，仅在[tv_wonder_construction|e]进行期间需要。每座$tv_wonder_material_dispatch_point$把基础建筑商品加工成[tv_wonder_materials|e]，其供给与价格由普通市场处理。"

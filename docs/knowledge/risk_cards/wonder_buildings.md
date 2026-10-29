@@ -48,6 +48,14 @@ prices, modifier types, auto modifiers, and wonder-building generators.
    top-level `set_local_variable` must have a later top-level
    `remove_local_variable`.
 
+10. Keep alternative material recipes on the profitable material workshop.
+    User runtime evidence (2026-10-29): government buildings do not automatically
+    switch maintenance methods, and AI remains on the first method. The worksite
+    therefore has one maintenance recipe (tools + wonder materials); the workshop
+    owns the marble/stone alternatives. The restored baseline is the parent of
+    TV commit `fb54c8f8`; see `docs/technical/ED_Wonder_Materials_Restoration.md`.
+    Do not replace this chain with alternative government maintenance recipes.
+
 ## Validation
 
 ```powershell

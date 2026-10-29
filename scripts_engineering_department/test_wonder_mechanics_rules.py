@@ -72,43 +72,46 @@ def require(condition: bool, message: str) -> None:
 
 
 def validate_worksite_maintenance_input_contract() -> None:
-    production_methods = ENGINEERING_DEPARTMENT_PRODUCTION_METHODS.read_text(encoding="utf-8-sig")
-    maintenance = extract_trigger_block(production_methods, "tv_wonder_labor_camp_maintenance")
-    maintenance_goods = set(
-        re.findall(r"^\s*([a-z0-9_]+)\s*=\s*[0-9.]+\s*$", maintenance, re.MULTILINE)
-    )
-    effects = ENGINEERING_DEPARTMENT_EFFECTS.read_text(encoding="utf-8-sig")
-    logistics = extract_trigger_block(effects, "tv_wonder_update_logistics_metrics_effect")
-    sampled_goods = set(re.findall(r"goods:([a-z0-9_]+)", logistics))
-    require(
-        maintenance_goods == {"tools", "lumber", "masonry"},
-        "Worksite maintenance must consume exactly tools, lumber, and masonry.",
-    )
-    require(
-        sampled_goods == maintenance_goods,
-        "Worksite shortage calculations must sample exactly the maintenance input goods.",
-    )
-    for good in maintenance_goods:
+    """Keep the restored production chain identical to the pre-removal revision."""
+    import hashlib
+
+    manifest = json.loads((REPO_ROOT / "tests/fixtures/wonder_materials_history.json").read_text(encoding="utf-8"))
+    for entry in manifest["blocks"]:
+        text = (REPO_ROOT / entry["path"]).read_text(encoding="utf-8-sig")
+        match = re.search(r"(?ms)^" + re.escape(entry["key"]) + r" = \{.*?^}", text)
+        require(match is not None, f"Missing restored definition: {entry['key']}")
         require(
-            f'goods_supply_in_market(goods:{good})' in logistics
-            and f'goods_demand_in_market(goods:{good})' in logistics,
-            f"Worksite shortage calculations must use both supply and demand for {good}.",
+            hashlib.sha256(match[0].encode()).hexdigest() == entry["sha256"],
+            f"Restored definition differs from {manifest['source_commit']}: {entry['key']}",
         )
-    stale_identifiers = (
-        "tv_wonder_materials",
-        "tv_wonder_material_dispatch_point",
-        "material_workshop",
-        "material_input",
-        "WONDER_MATERIALS_STOCKPILE",
-    )
-    stale_hits = [
-        f"{path}:{line_number}"
-        for path in ENGINEERING_DEPARTMENT_ROOT.rglob("*")
-        if path.is_file() and path.suffix.lower() in {".txt", ".gui", ".yml", ".yaml"}
-        for line_number, line in enumerate(path.read_text(encoding="utf-8-sig").splitlines(), 1)
-        if any(identifier in line for identifier in stale_identifiers)
-    ]
-    require(not stale_hits, "Engineering Department source still contains removed material/workshop identifiers: " + ", ".join(stale_hits))
+    for entry in manifest["assets"]:
+        path = REPO_ROOT / entry["path"]
+        require(path.is_file(), f"Missing restored asset: {entry['path']}")
+        require(hashlib.sha256(path.read_bytes()).hexdigest() == entry["sha256"],
+                f"Restored asset differs from history: {entry['path']}")
+
+    buildings = (ENGINEERING_DEPARTMENT_ROOT / "in_game/common/building_types/tv_engineering_department_buildings.txt").read_text(encoding="utf-8-sig")
+    worksite = extract_trigger_block(buildings, "tv_wonder_labor_camp")
+    methods = re.findall(r"^\s*(tv_wonder_labor_camp_[a-z0-9_]+)\s*$",
+                         extract_trigger_block(worksite, "possible_production_methods"), re.MULTILINE)
+    require(methods == ["tv_wonder_labor_camp_maintenance"],
+            "Government worksites must have one maintenance method; alternatives belong to the profitable workshop.")
+    effects = ENGINEERING_DEPARTMENT_EFFECTS.read_text(encoding="utf-8-sig")
+    for effect in ("tv_wonder_clear_current_survey_effect", "tv_wonder_clear_project_state_core_effect"):
+        body = extract_trigger_block(effects, effect)
+        for variable in ("tv_wonder_effective_material_workshop_levels", "tv_wonder_material_workshop_need",
+                         "tv_wonder_material_workshop_need_display", "tv_wonder_material_input_shortage_construction_progress"):
+            require(f"remove_variable = {variable}" in body, f"{effect} must clear {variable}")
+    gui = (ENGINEERING_DEPARTMENT_ROOT / "in_game/gui/panels/organization/tv_engineering_department.gui").read_text(encoding="utf-8-sig")
+    for filter_key in ("uses_tv_wonder_materials", "tv_wonder_materials"):
+        require(f"OpenLateralViewWithFilter('production', '{filter_key}')" in gui,
+                f"Missing production entry point: {filter_key}")
+    for language in ("english", "simp_chinese"):
+        loc = (ENGINEERING_DEPARTMENT_ROOT / f"main_menu/localization/{language}/tv_engineering_department_l_{language}.yml").read_text(encoding="utf-8-sig")
+        for key in ("tv_wonder_materials", "tv_wonder_material_dispatch_point", "tv_wonder_material_dispatch_point_price",
+                    "tv_wonder_material_dispatch_point_production", "tv_wonder_material_dispatch_point_production_no_marble",
+                    "TV_ENGINEERING_MATERIAL_WORKSHOP_PROGRESS_TT", "TV_WONDER_MATERIAL_INPUT_SHORTAGE_CONSTRUCTION_PROGRESS"):
+            require(re.search(rf"^ {key}:", loc, re.MULTILINE), f"Missing {language} localization: {key}")
 
 
 def load_trigger_generator():

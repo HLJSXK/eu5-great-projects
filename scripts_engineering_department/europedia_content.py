@@ -874,19 +874,21 @@ CARDS: list[dict] = [
                     "Progress each month comes from four things at once, and any one of them can be "
                     "the bottleneck:\n\n"
                     "$BULLET$ #T The labor camp:#! each effective level adds a fixed amount of monthly "
-                    "progress. Its level cap comes from Organization, and it costs #high tools, lumber "
-                    "and masonry#! every month just to keep standing.\n"
+                    "progress. Its level cap comes from Organization, and it consumes #high tools and "
+                    "wonder materials#! every month.\n"
                     "$BULLET$ #T Employment:#! a camp with unfilled jobs produces nothing. You need "
                     "laborers in that location, not just the building.\n"
                     "$BULLET$ #T Inputs:#! the camp buys its materials on the local market. A poor "
-                    "market means an empty-handed camp.\n"
+                    "market means an empty-handed camp. Material workshops turn ordinary construction "
+                    "goods into wonder materials, with marble and stone recipes; trade can also supply them.\n"
                     "$BULLET$ #T Logistics:#! the survey reading, applied as a 50% to 150% multiplier "
                     "on whatever the above produces.",
                     "每月进度同时来自四样东西，任何一样都可能成为瓶颈：\n\n"
                     "$BULLET$ #T 劳工营：#! 每个有效等级每月提供固定进度。等级上限来自组织能力，而它每月光是"
-                    "维持就要消耗 #high 工具、木材与石料#!。\n"
+                    "维持就要消耗 #high 工具与奇观建材#!。\n"
                     "$BULLET$ #T 就业：#! 岗位空缺的营地什么也产出不了。那个地点要有劳工，而不只是有一栋建筑。\n"
-                    "$BULLET$ #T 投入品：#! 营地在本地市场采购材料。市场贫弱，营地就空着手。\n"
+                    "$BULLET$ #T 投入品：#! 营地在本地市场采购材料。建材工坊以大理石或石料配方将普通建造商品"
+                    "加工成奇观建材，也可以通过贸易进口。市场贫弱，营地就空着手。\n"
                     "$BULLET$ #T 后勤：#! 勘测读数，以 50% 到 150% 的乘数作用在以上所有产出上。",
                 ),
             },

@@ -31,7 +31,7 @@
  game_concept_tv_wonder_ceremony_desc:0 "The dedication of a completed Great Project. Generic and unique wonders offer three styles or a plain inauguration. Dedication is recorded independently from the final building; its rewards and societal tendency end when the wonder is lost or its dedication fades."
 
  game_concept_tv_wonder_construction: "훌륭한 프로젝트"
- game_concept_tv_wonder_construction_desc: "[tv_engineering_department|e]가 관리하는 대사업 체계입니다. [tv_great_engineer|e]가 [tv_wonder_concept|e]를 완성해 [tv_wonder_small|e], [tv_wonder_medium|e] 또는 [tv_wonder_large|e] 계획을 제안합니다. 국내 [tv_wonder_debate|e]와 [tv_wonder_survey|e]를 마치면 네 [tv_wonder_construction_part|e]가 진행됩니다. 각 $tv_wonder_labor_camp$는 현지 시장의 도구·목재·석재를 소비합니다."
+ game_concept_tv_wonder_construction_desc: "[tv_engineering_department|e]를 통해 관리되는 훌륭한 프로젝트 메커니즘입니다. [tv_great_engineer|e]의 [tv_wonder_concept|e]가 실행 가능한 [tv_wonder_small|e], [tv_wonder_medium|e] 또는 [tv_wonder_large|e] 프로젝트를 산출하고 국가가 국내 논쟁을 해결하면 [tv_wonder_survey|e]를 완료하고 인력을 조직하고 [tv_wonder_materials|e]를 모으고 4개의 [tv_wonder_construction_part|e]를 진행합니다. 프로젝트를 최종 단계로 끌어올리기 위해."
 
  game_concept_tv_wonder_expansion: "확장"
  game_concept_tv_wonder_expansion_desc:0 "Raise an inaugurated wonder at the same site. A dedicated wonder retains its dedication and skips the ritual phase without repeating ritual rewards. A plain wonder may choose a dedication or remain plain after expansion. Preserved survey competence and base construction rewards follow the usual rules."
@@ -64,6 +64,10 @@
  game_concept_tv_wonder_organization_competence_desc: "많은 경쟁 주문 대신 하나의 계획에 응답하기 위해 인력 명단, 감독, 작업장 및 건설 단계를 얼마나 깔끔하게 만들 수 있는지에 대한 [tv_wonder_survey|e] 판독입니다. Great Project Worksite의 최대 레벨을 0에서 20까지 선형적으로 설정합니다."
 
  game_concept_tv_wonder_logistics_competence: "물류역량"
- game_concept_tv_wonder_logistics_competence_desc: "도로, 수레, 항구, 다리와 인계 지점을 평가해 필요한 때 물자가 현장에 도달하는지 정합니다."
+ game_concept_tv_wonder_logistics_competence_desc: "석공이 필요할 때 [tv_wonder_survey|e]가 현장에 도달하는지 여부를 결정하는 도로, 카트, 항구, 교량 및 인도 지점에 대한 [tv_wonder_materials|e] 판독값입니다."
 
  # ── Europedia Tab UI ─────────────────────────────────────────────────────────────────────────
+ game_concept_tv_wonder_materials: "건축자재"
+ game_concept_tv_wonder_materials_desc: "A produced market good used to maintain $tv_wonder_labor_camp$ during an active [tv_wonder_construction|e]. Each $tv_wonder_material_dispatch_point$ converts basic construction goods into [tv_wonder_materials|e], so supply and price are handled through the normal market."
+ game_concept_tv_wonder_materials_europedia_desc: "원더 자재는 미리 비축되어 있지 않습니다. 각 $tv_wonder_material_dispatch_point$는 이미 시장에 유통되고 있는 일반 건설 자재의 수요에 따라 이를 정제하고, 실제로 현장에서 작동하는 $tv_wonder_labor_camp$ 건물은 건축하는 동안 해당 자재를 소비합니다. 체인의 양쪽 끝이 정상 시장에 있기 때문에 위대한 프로젝트는 동일한 기본 상품을 놓고 국가 경제의 나머지 부분과 경쟁하며, 부족은 심각한 중단보다는 느린 건설로 나타납니다."
+ game_concept_tv_wonder_construction_europedia_desc: "위대한 프로젝트(A Great Project)는 아이디어에서 기념물까지 경이로움을 전달하는 전국적인 스레드입니다. [tv_great_engineer|e]는 먼저 [tv_wonder_concept|e]를 완료하여 실행 가능한 [tv_wonder_small|e], [tv_wonder_medium|e] 또는 [tv_wonder_large|e] 사업을 제안합니다. 그런 다음 해당 국가는 국내 [tv_wonder_debate|e]를 해결합니다. [tv_wonder_survey|e]는 선택한 사이트가 이를 견딜 수 있음을 확인합니다. 그런 다음에만 [tv_wonder_construction_part|e] 4개가 [tv_wonder_materials|e]에서 함께 상승하고 전체 프로젝트가 최종 수준에 도달하고 [tv_wonder_ceremony|e]로 마무리될 때까지 노동력을 조직하면서 건설이 제대로 시작됩니다. 완료된 [tv_wonder_generic|e] 프로젝트는 나중에 이전 단계를 반복하지 않고 [tv_wonder_expansion|e]를 통해 추가로 수행될 수 있습니다."

@@ -37,6 +37,8 @@ tv_wonder_ritual_choice tv_wonder_clergy_demand tv_wonder_cmm_skip_ceremony
 tv_wonder_concept_in_progress tv_wonder_construction_complete
 tv_wonder_construction_progress_pct tv_wonder_decoration_units
 tv_wonder_effective_worksite_levels tv_wonder_finalized tv_wonder_foundation_units
+tv_wonder_effective_material_workshop_levels tv_wonder_material_workshop_need
+tv_wonder_material_workshop_need_display
 tv_wonder_function_units  tv_wonder_level tv_wonder_locked
 tv_wonder_locked_concept_display_id tv_wonder_locked_display_id
 tv_wonder_locked_image_display_id tv_wonder_locked_is_unique
@@ -120,6 +122,8 @@ def scenario_state(name: str = "debate") -> ScenarioState:
                       tv_wonder_organization_competence=65, tv_wonder_logistics_competence=55,
                       tv_wonder_scale_tier=3, tv_wonder_organization_site_level_cap=3,
                       tv_wonder_organization_site_level_cap_display=3,
+                      tv_wonder_effective_material_workshop_levels=0,
+                      tv_wonder_material_workshop_need=0, tv_wonder_material_workshop_need_display=1,
                       tv_wonder_logistics_progress_percent=55, tv_wonder_survey_site=1,
                       tv_wonder_suitability_current_revealed=1)
         for index in range(1, 6):
@@ -135,6 +139,8 @@ def scenario_state(name: str = "debate") -> ScenarioState:
                       tv_wonder_function_units=0, tv_wonder_decoration_units=0,
                       tv_wonder_active_part=2, tv_wonder_construction_progress_pct=42,
                       tv_wonder_effective_worksite_levels=3, tv_wonder_monthly_construction_progress=12,
+                      tv_wonder_effective_material_workshop_levels=24,
+                      tv_wonder_material_workshop_need=30, tv_wonder_material_workshop_need_display=30,
                       tv_wonder_remaining_years=0, tv_wonder_remaining_months_mod=5)
         objects["tv_wonder_site.GetLocation"] = location_context("rijeka", "里耶卡")
     if tab == "custom" and name != "construction":
