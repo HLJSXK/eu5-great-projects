@@ -13,4 +13,4 @@
  tv_wonder_ownership.900.d_preserved:0 "[SCOPE.sCountry('winner').GetName]选择保全[SCOPE.sLocation('tv_wonder_ownership_site').GetName]的[SCOPE.sBuildingType('tv_wonder_ownership_building_type').GetName]，未动其一砖一瓦。此地虽已不归我国，这座工程依旧完好如初。"
  tv_wonder_ownership.900.d_plundered:0 "[SCOPE.sCountry('winner').GetName]洗劫了[SCOPE.sLocation('tv_wonder_ownership_site').GetName]的[SCOPE.sBuildingType('tv_wonder_ownership_building_type').GetName]，珍宝尽数运入其国库，工程也因此降低一级。若它此前仅剩一级，如今已化为废墟。"
  tv_wonder_ownership.900.d_stale:0 "[SCOPE.sLocation('tv_wonder_ownership_site').GetName]的[SCOPE.sBuildingType('tv_wonder_ownership_building_type').GetName]已不再归我国所有，但关于它的任何处置都未生效：此地或许没有落入新主之手，或许在新主作出决定前再度易手，又或许工程本身已经变动。"
- tv_wonder_ownership.900.a:0 "记下这笔损失。"
+ tv_wonder_ownership.900.a:0 "我们必须夺回它！"

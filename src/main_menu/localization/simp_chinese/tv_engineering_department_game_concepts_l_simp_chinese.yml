@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
  # ── 通用触发提示 ──────────────────────────────────
  TV_ENGINEERING_DEPARTMENT_HAS_VARIABLE_NOT_SET_TT: "所需状态未激活。"
- TV_CHARACTER_NOT_ALREADY_TV_IO_CHIEF_TT: "该角色尚未担任任何胜利之路IO的首席。"
+ TV_CHARACTER_NOT_ALREADY_TV_IO_CHIEF_TT: "该角色尚未担任任何胜利之路国际组织的首席。"
  TV_HAS_ENGINEERING_DEPARTMENT_MEMBER_TT: "该国家是[tv_engineering_department|E]成员。"
  TV_HAS_GREAT_ENGINEER_CHAR_TT: "已任命[tv_great_engineer|E]。"
  TV_IO_HEADER_APPOINT_CHIEF_PROMPT: "任命一位首席"
@@ -11,7 +11,7 @@
  game_concept_tv_engineering_department_desc: "战役初始化时会为每个国家自动成立的非唯一国际组织。它负责[tv_great_engineer|e]职位，并管理[tv_wonder_construction|e]的每个阶段：[tv_wonder_concept|e]、[tv_wonder_survey|e]、组织、物流，以及最终的[tv_wonder_ceremony|e]。"
 
  game_concept_tv_great_engineer: "大工程师"
- game_concept_tv_great_engineer_desc: "领导[tv_engineering_department|e]的任命角色。[tv_great_engineer|e]以国家变量保存，可在[tv_engineering_department|e]面板中任命、更换或撤职。"
+ game_concept_tv_great_engineer_desc: "领导[tv_engineering_department|e]的角色，可在[tv_engineering_department|e]面板中任命、更换或撤职。"
 
  game_concept_tv_wonder_concept: "构想"
  game_concept_tv_wonder_concept_desc: "开启新[tv_wonder_construction|e]的提案阶段。[tv_great_engineer|e]的行政能力每月推进构想进度；完成后，[tv_great_engineer|e]会提出一项可行的[tv_wonder_small|e]、[tv_wonder_medium|e]或[tv_wonder_large|e]方案，供国家推进。"

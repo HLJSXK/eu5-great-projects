@@ -9469,7 +9469,7 @@
     tv_wonder_ownership.900.d_preserved: '[SCOPE.sCountry(''winner'').GetName]选择保全[SCOPE.sLocation(''tv_wonder_ownership_site'').GetName]的[SCOPE.sBuildingType(''tv_wonder_ownership_building_type'').GetName]，未动其一砖一瓦。此地虽已不归我国，这座工程依旧完好如初。'
     tv_wonder_ownership.900.d_plundered: '[SCOPE.sCountry(''winner'').GetName]洗劫了[SCOPE.sLocation(''tv_wonder_ownership_site'').GetName]的[SCOPE.sBuildingType(''tv_wonder_ownership_building_type'').GetName]，珍宝尽数运入其国库，工程也因此降低一级。若它此前仅剩一级，如今已化为废墟。'
     tv_wonder_ownership.900.d_stale: '[SCOPE.sLocation(''tv_wonder_ownership_site'').GetName]的[SCOPE.sBuildingType(''tv_wonder_ownership_building_type'').GetName]已不再归我国所有，但关于它的任何处置都未生效：此地或许没有落入新主之手，或许在新主作出决定前再度易手，又或许工程本身已经变动。'
-    tv_wonder_ownership.900.a: 记下这笔损失。
+    tv_wonder_ownership.900.a: "我们必须夺回它！"
     game_concept_tv_wonder_colonial_trade_company_desc: 由特许交易大厅、设防商馆与账簿厅组成的滨海庞大建筑群，一枚王室印玺便能把遥远的海岸线换算成一列列利润数字。公司代理人在同一屋檐下称量胡椒、蔗糖与白银，武装仓库则守卫着货物，抵御他国旗帜下的对手。王国由此学会以合约与船货，一步步统治海上贸易本身。
     TV_ENGINEERING_PROPOSAL_COLONIAL_TRADE_COMPANY_TEXT: '[tv_great_engineer|E]提出[tv_wonder_colonial_trade_company|E]。'
     TV_ENGINEERING_PROPOSAL_RESUME_COLONIAL_TRADE_COMPANY_TEXT: '[tv_great_engineer|E]建议完成造了一半的[tv_wonder_colonial_trade_company|E]，并利用当地已经保留下来的工程部分。'
@@ -12751,9 +12751,9 @@
     tv_engineering_department.500.d_star_fortress_1: 棱堡试验结束，角度与射界已经被证明。[tv_wonder_ceremony|E]让防御成为可检验的几何。
     tv_engineering_department.500.d_star_fortress_2: 围城演习在尘土与欢呼中结束。[tv_wonder_ceremony|E]让要塞城在真正战争前先练习危险。
     tv_engineering_department.500.d_star_fortress_3: 军械城区在星型要塞城内开门。[tv_wonder_ceremony|E]把要塞从城墙变成持续防御的系统。
-    tv_engineering_department.500.d_great_wall_1: 各边防守军在同一天于各自防段集结，从那天起，边境不再允许无凭越境。
+    tv_engineering_department.500.d_great_wall_1: "边疆集结完成了长城与边民、士兵之间的公开契约。[tv_wonder_ceremony|E]留下的是一条线，也是一场聚集。"
     tv_engineering_department.500.d_great_wall_2: 沿墙的烽火台从一端到另一端依次点燃，证明警讯如今一夜之间就能传遍整条边境。
-    tv_engineering_department.500.d_great_wall_3: 派驻长城的士兵对着城砖宣誓死守防段，他们的名字被刻在各堡城门楼上。
+    tv_engineering_department.500.d_great_wall_3: "长城誓言沿边疆宣读。[tv_wonder_ceremony|E]将石头变成义务。"
     tv_engineering_department.500.d_armory_1: 武备集结让巨型军械库充满准备就绪的声音。[tv_wonder_ceremony|E]让国家看见自己的钢铁汇聚何处。
     tv_engineering_department.500.d_armory_2: 铸造契约已经完成。[tv_wonder_ceremony|E]让生产成为国家仪式，而不只是工坊习惯。
     tv_engineering_department.500.d_armory_3: 大师甲匠厅在军械库内开门。[tv_wonder_ceremony|E]教会军队尊重信心背后的制造者。
@@ -12791,7 +12791,7 @@
     STATIC_MODIFIER_NAME_tv_wonder_city_great_tower_ritual_burden_modifier: 瞭望塔维护
     tv_wonder_civic_watchtower: '$tv_wonder_city_great_tower$'
     tv_wonder_civic_watchtower_desc: '$game_concept_tv_wonder_city_great_tower_desc$'
-    tv_engineering_department.500.d_city_great_tower_1: 城市守夜队以塔为岗，敲警钟的权力从领主城堡转到了市议会手中。
+    tv_engineering_department.500.d_city_great_tower_1: "城市守望者聚集于最高平台之下，钟声、巡逻与议会信使学会以同一种声音说话。[tv_wonder_ceremony|E]将城市高度转化为公共权威。"
     tv_wonder_bell_campanile: 城市巨塔 - 钟楼高塔
     tv_wonder_bell_campanile_desc: 城市巨塔的钟楼高塔分支。
     tv_engineering_department.500.d_city_great_tower_2: 塔钟召集市民到塔下广场集会，每位户主都可以就城中事务发言。
@@ -12821,13 +12821,13 @@
     STATIC_MODIFIER_NAME_tv_wonder_great_sculpture_group_ritual_burden_modifier: 雕塑庭之费
     tv_wonder_royal_sculpture_yard: '$tv_wonder_great_sculpture_group$'
     tv_wonder_royal_sculpture_yard_desc: '$game_concept_tv_wonder_great_sculpture_group_desc$'
-    tv_engineering_department.500.d_great_sculpture_group_1: 统治者和王族的巨像在雕塑庭揭幕，外国使节在觐见前被带来观看。
+    tv_engineering_department.500.d_great_sculpture_group_1: "王家雕塑师用模型、石尘与被凿入长久形体的统治者填满庭院。[tv_wonder_ceremony|E]教会记忆直立起来。"
     tv_wonder_pilgrim_statue_garden: 大雕塑群 - 朝圣雕像园
     tv_wonder_pilgrim_statue_garden_desc: 大雕塑群的朝圣雕像园分支。
-    tv_engineering_department.500.d_great_sculpture_group_2: 圣徒和神圣人物的雕像排列在园中小径两旁，朝圣者在每尊像前驻足祈祷，最后到达尽头的神龛。
+    tv_engineering_department.500.d_great_sculpture_group_2: "香客穿行雕像之间，仿佛走入一篇关于美德、赞助与名望的石刻论证。[tv_wonder_ceremony|E]让艺术拥有日常队列。"
     tv_wonder_civic_hero_gallery: 大雕塑群 - 市民英雄长廊
     tv_wonder_civic_hero_gallery_desc: 大雕塑群的市民英雄长廊分支。
-    tv_engineering_department.500.d_great_sculpture_group_3: 全国学者、艺术家和政治家的雕像陈列在公共长廊，受人尊崇的是他们的成就而非出身。
+    tv_engineering_department.500.d_great_sculpture_group_3: "英雄长廊以姓名、面容与功绩开门，供公众反复经过。[tv_wonder_ceremony|E]把敬仰变成市民习惯。"
     tv_engineering_department.600.d_great_sculpture_group: 旅人报告称，[SCOPE.sCountry('tv_wonder_builder_country').GetName]已在[SCOPE.sLocation('tv_wonder_completed_site').GetName]完成一座[tv_wonder_great_sculpture_group|E]。雕像、工坊与公共长廊如今让记忆拥有了可以被绕行观看的身体。
     game_concept_tv_wonder_coastal_defense_cannon_desc: 由重炮、港链、弹药库、海墙与海军署铸炮厂组成的设防海岸火炮体系。此类[tv_wonder_construction|e]需要港口，并将海上咽喉转化为防御力量。
     TV_ENGINEERING_PROPOSAL_COASTAL_DEFENSE_CANNON_TEXT: '[tv_great_engineer|E]提出[tv_wonder_coastal_defense_cannon|E]。'
@@ -12851,13 +12851,13 @@
     STATIC_MODIFIER_NAME_tv_wonder_coastal_defense_cannon_ritual_burden_modifier: 炮台火药之耗
     tv_wonder_strait_battery_cannon: '$tv_wonder_coastal_defense_cannon$'
     tv_wonder_strait_battery_cannon_desc: '$game_concept_tv_wonder_coastal_defense_cannon_desc$'
-    tv_engineering_department.500.d_coastal_defense_cannon_1: 大炮瞄准海峡，外国船只奉命降帆、缴纳通行费后方可通过。
+    tv_engineering_department.500.d_coastal_defense_cannon_1: "海峡炮台向狭窄水面发出第一轮礼炮，任何对手都足以丈量其威胁。[tv_wonder_ceremony|E]把海岸变成由火炮提出的论证。"
     tv_wonder_harbor_chain_cannon: 海防大炮 - 港链炮台
     tv_wonder_harbor_chain_cannon_desc: 海防大炮的港链炮台分支。
-    tv_engineering_department.500.d_coastal_defense_cannon_2: 巨链第一次横拉过港口，两侧炮台鸣炮致意，宣示港口对敌人封闭。
+    tv_engineering_department.500.d_coastal_defense_cannon_2: "港链在火炮与潮水之间升起，把入港转化为许可。[tv_wonder_ceremony|E]教会船只：一座港口也能合上自己的口。"
     tv_wonder_admiralty_gun_foundry: 海防大炮 - 海军署炮厂
     tv_wonder_admiralty_gun_foundry_desc: 海防大炮的海军署炮厂分支。
-    tv_engineering_department.500.d_coastal_defense_cannon_3: 海军署接管炮厂，下令全国所有舰炮都在此按统一式样和口径铸造。
+    tv_engineering_department.500.d_coastal_defense_cannon_3: "海军署炮厂证明防御早在火炮装架之前就已经开始。[tv_wonder_ceremony|E]把炉火、操练与海墙绑成同一个海防制度。"
     tv_engineering_department.600.d_coastal_defense_cannon: 消息传开：[SCOPE.sCountry('tv_wonder_builder_country').GetName]已在[SCOPE.sLocation('tv_wonder_completed_site').GetName]布设一座[tv_wonder_coastal_defense_cannon|E]。海岸如今以港链、弹药库与重炮说话，足以让过往舰队重新计算风险。
     game_concept_tv_wonder_naval_school_desc: 由海图室、领航大厅、信号塔、训练码头与指挥讲堂组成的海岸海军学院。此类[tv_wonder_construction|e]需要港口，并将港口知识转化为海军航程、士气与指挥能力。
     TV_ENGINEERING_PROPOSAL_NAVAL_SCHOOL_TEXT: '[tv_great_engineer|E]提出[tv_wonder_naval_school|E]。'
@@ -12881,13 +12881,13 @@
     STATIC_MODIFIER_NAME_tv_wonder_naval_school_ritual_burden_modifier: 航法学校束脩
     tv_wonder_admiralty_navigation_school: '$tv_wonder_naval_school$'
     tv_wonder_admiralty_navigation_school_desc: '$game_concept_tv_wonder_naval_school_desc$'
-    tv_engineering_department.500.d_naval_school_1: 学员入学学习航海、炮术和船艺，首届学员登上海军署自己的训练船出海。
+    tv_engineering_department.500.d_naval_school_1: "第一堂航法课以罗盘、潮汐表和来之不易的传闻压住海图开场。[tv_wonder_ceremony|E]教会舰队带着更远的地平线离港。"
     tv_wonder_pilotage_chart_house: 海军学校 - 领航海图馆
     tv_wonder_pilotage_chart_house_desc: 海军学校的领航海图馆分支。
     tv_engineering_department.500.d_naval_school_2: 领航员带来航海日志和测深记录，汇编成新印制的海图，取代旧领航世家秘而不宣的经验。
     tv_wonder_oceanic_command_academy: 海军学校 - 远洋指挥学院
     tv_wonder_oceanic_command_academy_desc: 海军学校的远洋指挥学院分支。
-    tv_engineering_department.500.d_naval_school_3: 军官接受远航异域海洋的指挥训练，第一项任务是测绘一段未经探测的海岸。
+    tv_engineering_department.500.d_naval_school_3: "学院召集船长、领航员与造船师，围在一张不再止步于海岸的地图前。[tv_wonder_ceremony|E]把远洋指挥变成一种受训职业。"
     tv_engineering_department.600.d_naval_school: 消息称，[SCOPE.sCountry('tv_wonder_builder_country').GetName]已在[SCOPE.sLocation('tv_wonder_completed_site').GetName]创立一座[tv_wonder_naval_school|E]。海图、领航员、码头与指挥大厅如今使海洋不再只是谜题，而是一套课程。
     game_concept_tv_wonder_unique_belem_tower_desc: 塔霍河汇入大西洋之处，浅色的曼努埃尔风格石塔巍然矗立，雕花垛口与绳索纹饰仿佛用石头写就的送别辞，目送每一艘驶向未知海岸的卡拉维尔帆船。里斯本将这座守望塔立于已知世界的尽头，让归航的船长在望见陆地之前先望见故乡，也让王室的远洋雄心，比河流本身更早迎接每一艘归船。
     TV_ENGINEERING_PROPOSAL_UNIQUE_BELEM_TOWER_TEXT: 大工程师指向贝伦：一座河口塔楼能在船只越过浅滩之前，先让远洋野心变得可见。
@@ -13311,13 +13311,13 @@
     STATIC_MODIFIER_NAME_tv_wonder_summer_palace_ritual_burden_modifier: 离宫供帐
     tv_wonder_royal_retreat_palace: '$tv_wonder_summer_palace$'
     tv_wonder_royal_retreat_palace_desc: '$game_concept_tv_wonder_summer_palace_desc$'
-    tv_engineering_department.500.d_summer_palace_1: 宫廷移驻离宫度过整个季节，御前会议也在此召开，各地总督须赶来离宫领受命令。
+    tv_engineering_department.500.d_summer_palace_1: "季节宫廷远离首都的硬噪声，在园林、长廊与有序休憩中让王权显得从容。[tv_wonder_ceremony|E]将离宫变成公共权威。"
     tv_wonder_garden_court_palace: 夏宫 - 园林宫廷
     tv_wonder_garden_court_palace_desc: 夏宫的园林宫廷分支。
     tv_engineering_department.500.d_summer_palace_2: 诗人、哲学家和画家受邀住进园中亭阁，统治者在湖畔加入他们的交谈。
     tv_wonder_diplomatic_pavilion_palace: 夏宫 - 外交凉亭宴
     tv_wonder_diplomatic_pavilion_palace_desc: 夏宫的外交凉亭宴分支。
-    tv_engineering_department.500.d_summer_palace_3: 敌对各国的使节在湖畔凉亭同坐一席，宴会以祝愿和平的敬酒收场，而非谈判条款。
+    tv_engineering_department.500.d_summer_palace_3: "使节在水景、乐声与精确礼节之间入席，艰硬谈判也被包进季节性的优雅。[tv_wonder_ceremony|E]给外交一处舞台，让威望先于第一杯酒抵达。"
     tv_engineering_department.600.d_summer_palace: 消息称，[SCOPE.sCountry('tv_wonder_builder_country').GetName]已在[SCOPE.sLocation('tv_wonder_completed_site').GetName]完成一座[tv_wonder_summer_palace|E]。园林、长廊、凉亭与宫廷队列如今教会远方统治者：休憩也能成为严整的权力形式。
     game_concept_tv_wonder_unique_louvre_palace_desc: 塞纳河畔矗立起一座恢弘王宫，庭院、拱廊与雕饰立面将使节、艺术家与卫兵聚于同一片屋檐之下。长廊与王家寓所把君主的日常变成一处恒常展示权力与品味的舞台，巴黎的这一处地址，从此成为全欧洲都要留意的地方。
     TV_ENGINEERING_PROPOSAL_UNIQUE_LOUVRE_PALACE_TEXT: 大工程师提出卢浮宫：巴黎的王家空间可以把宫廷展示转化为欧洲的注意力。
@@ -13873,13 +13873,13 @@
     STATIC_MODIFIER_NAME_tv_wonder_pirate_port_ritual_blessing_modifier: 私掠庇护长存
     tv_wonder_privateer_haven: '$tv_wonder_pirate_port$'
     tv_wonder_privateer_haven_desc: '$game_concept_tv_wonder_pirate_port_desc$'
-    tv_engineering_department.500.d_pirate_port_1: 船长们在港务处领取私掠许可证，从外国船只夺得的每份战利品都要分一成给王室。
+    tv_engineering_department.500.d_pirate_port_1: "船长们在封存文书、战利品账簿与港炮下集结，记下哪些船值得欢迎。[tv_wonder_ceremony|E]把私掠从码头传闻变成国家政策。"
     tv_wonder_harbor_redoubt: 海盗港 - 港湾堡垒
     tv_wonder_harbor_redoubt_desc: 海盗港的港湾堡垒分支。
     tv_engineering_department.500.d_pirate_port_2: 船长们自费给港湾筑垒，由自己的议会治理，每年只向王室缴纳贡金。
     tv_wonder_corsair_admiralty: 海盗港 - 海盗舰队司令部
     tv_wonder_corsair_admiralty_desc: 海盗港的海盗舰队司令部分支。
-    tv_engineering_department.500.d_pirate_port_3: 海盗船长们被编成一支舰队，由一位司令统领，随即出海劫掠敌国船只。
+    tv_engineering_department.500.d_pirate_port_3: "战利品船长、造船师、领航员与赎金书记终于共同听命于一张司令部桌案。[tv_wonder_ceremony|E]把海盗实践变成海军指挥学。"
     tv_engineering_department.600.d_pirate_port: 消息称，[SCOPE.sCountry('tv_wonder_builder_country').GetName]已在[SCOPE.sLocation('tv_wonder_completed_site').GetName]完成[tv_wonder_pirate_port|E]。加固码头、战利品法庭、私掠泊位与港炮如今让周围海域不再像开阔水面，而更像一处有争议的财产。
     game_concept_tv_wonder_unique_fez_old_city_desc: 菲斯古城的城墙内，狭窄街巷层层叠叠爬上河谷两岸的山坡，经学院的雕花门楼、宣礼塔的马赛克瓷砖与鞣皮作坊的酸涩气味挤在同一圈城门之内。学者们在雪松木雕天花板下辩经论道，转过几条街就是染工们在藏红花与靛蓝染缸里揉制皮革的场院，来自马格里布各地的商队依旧把货物卸进它顶棚遮蔽的集市。修复这座古城，便是宣告一个王朝的荣光既写在灰泥花饰与庭院瓷砖之中，也不逊于任何一场战功。
     TV_ENGINEERING_PROPOSAL_UNIQUE_FEZ_OLD_CITY_TEXT: 大工程师提议非斯古城，让学术、手工业与修复过的麦地那城墙把城市记忆变成权威。
