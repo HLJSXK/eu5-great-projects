@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/洞窟修道院_ai_cartoon.png",
-  "source_sha256": "9d37d52599c1c67930221e7256541ccb4c419aaa011d04bfbfc5934532affae9",
-  "reference": "assets/historical/洞窟修道院.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Kyiv_Pechersk_Lavra_-_View_from_the_Dnieper_River.jpg",
-    "license": "CC BY 4.0",
-    "artist": "Ввласенко",
-    "date": "2010-07-30 10:44:30",
-    "note": "基辅洞窟修道院自第聂伯河一侧，现状照片。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/洞窟修道院_ai_cartoon_3x2.png",
+  "source_sha256": "d5489ecc8f68756b2c61202968a3e056bf9d08f2c83aa5e8f25754f2e0bbe593",
+  "reference": "assets/generated_wonders/tv_wonder_unique_cave_monastery.png",
+  "reference_sha256": "9d37d52599c1c67930221e7256541ccb4c419aaa011d04bfbfc5934532affae9",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_cave_monastery.png",
+  "prompt_sha256": "7e2d3a250d0f03ab6436157e4a98de734ab663b82c6e1ff4c6c1c8c04881a3b0",
+  "original_reference": "assets/historical/洞窟修道院.jpg"
 }

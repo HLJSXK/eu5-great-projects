@@ -8931,7 +8931,7 @@
     tv_wonder_ritual_choose_plain_desc: Complete immediately with full base effects and no ritual bonuses. Every participating estate opposes this choice.
     tv_wonder_ritual_cancel_reritual: Cancel rededication
     TV_LOCATION_WONDER_RERITUAL: Rededicate this wonder
-    TV_LOCATION_WONDER_RERITUAL_DESC: Return this wonder to its plain state and immediately begin rededication, preserving its level and removing its old ritual benefits. Choose a new ritual in the Engineering Department. Cancelling leaves the wonder plain.
+    TV_LOCATION_WONDER_RERITUAL_DESC: Return this wonder to its [tv_wonder_plain|e] state and immediately begin rededication, preserving its level and removing its old ritual benefits.
     TV_LOCATION_WONDER_RERITUAL_TARGET_TT: This is a completed wonder in a location you own.
     tv_wonder_ritual_cancel_reritual_desc: Cancel rededication and begin conception again. Cancellation before confirmation costs nothing.
     MODIFIER_TYPE_NAME_tv_wonder_ritual_small_price_cost_modifier: Ritual cost
@@ -17878,7 +17878,7 @@
     tv_wonder_ritual_choose_plain_desc: 立即完成，保留工程基础效果，不授予仪式加成。所有参与阶层都会反对。
     tv_wonder_ritual_cancel_reritual: 取消重新仪式化
     TV_LOCATION_WONDER_RERITUAL: 为此工程重新举行仪式
-    TV_LOCATION_WONDER_RERITUAL_DESC: 将此工程退至朴素并立即进入仪式阶段，保留建筑等级，移除原有仪式效果。请在工程署选择新仪式；取消后此工程仍为朴素状态。
+    TV_LOCATION_WONDER_RERITUAL_DESC: 将此工程退至[tv_wonder_plain|e]并立即进入仪式阶段，保留建筑等级，移除原有仪式效果。
     TV_LOCATION_WONDER_RERITUAL_TARGET_TT: 此工程已完工，且所在地点由我国拥有。
     tv_wonder_ritual_cancel_reritual_desc: 取消重新仪式化并从头开始构思。确认前取消不花费任何资源。
     MODIFIER_TYPE_NAME_tv_wonder_ritual_small_price_cost_modifier: 仪式费用

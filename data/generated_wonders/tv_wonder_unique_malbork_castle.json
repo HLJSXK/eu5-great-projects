@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/马尔堡城堡_ai_cartoon.png",
-  "source_sha256": "128bf2c799e7f776be02f814fdf11942c014e553701c42e8e01615d6f3cb2cd7",
-  "reference": "assets/historical/马尔堡城堡.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Panorama_of_Malbork_Castle,_part_4.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "DerHexer; derivate work: Carschten",
-    "date": "2010-07-14",
-    "note": "马尔堡条顿骑士团城堡与诺加特河。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/马尔堡城堡_ai_cartoon_3x2.png",
+  "source_sha256": "ecf385a5ba61b8e94e0426d1b9fb413b434d489d86f6dab338f76a08355e28b5",
+  "reference": "assets/generated_wonders/tv_wonder_unique_malbork_castle.png",
+  "reference_sha256": "128bf2c799e7f776be02f814fdf11942c014e553701c42e8e01615d6f3cb2cd7",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_malbork_castle.png",
+  "prompt_sha256": "0e0ad56c621228db94d73520fd640ce78a93951b6ba18aec8ec7f79933049c74",
+  "original_reference": "assets/historical/马尔堡城堡.jpg"
 }

@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/景德镇官窑_ai_cartoon.png",
-  "source_sha256": "057874b46da49da4a3539b111c8af3f24a0f6f233176e43f133d1617f8687b62",
-  "reference": "assets/historical/景德镇官窑.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Changjiang,_Jingdezhen,_Jiangxi,_China_-_panoramio_(31).jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "ping lin",
-    "date": "Taken on 29 March 2014",
-    "note": "题材近似：景德镇古窑民俗博览区的传统窑房（镇窑），并非明代御窑遗构；去灯笼与牌匾。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/景德镇官窑_ai_cartoon_3x2.png",
+  "source_sha256": "3eb7a9c1812e3cd3ea510bcba8ab90e2cfae9e5989153851d209a68ff6b9b8f5",
+  "reference": "assets/generated_wonders/tv_wonder_unique_jingdezhen_imperial_kilns.png",
+  "reference_sha256": "057874b46da49da4a3539b111c8af3f24a0f6f233176e43f133d1617f8687b62",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_jingdezhen_imperial_kilns.png",
+  "prompt_sha256": "c62e534fd78c4f90e6ee4fe8bff906c64794cdf69911d54d160b0b418c3189bf",
+  "original_reference": "assets/historical/景德镇官窑.jpg"
 }

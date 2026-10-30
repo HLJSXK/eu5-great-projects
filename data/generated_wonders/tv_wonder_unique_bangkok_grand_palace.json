@@ -1,0 +1,16 @@
+{
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/曼谷大皇宫_ai_cartoon_3x2.png",
+  "source_sha256": "8418bf55d577bcdba57fd8183ca59875eef5bc6e76b448dc61fdaf106d7d0a98",
+  "reference": "assets/generated_wonders/tv_wonder_unique_bangkok_grand_palace.png",
+  "reference_sha256": "89147b325cd3b49e782f8982ed74340e1e07a3942c6167b6b5af323ced0e3837",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_bangkok_grand_palace.png",
+  "prompt_sha256": "9705d15aa9747b1f3870aee7117f536108a263db5d7da9fa0b840ac6b2458522",
+  "original_reference": "assets/historical/曼谷大皇宫.jpg"
+}

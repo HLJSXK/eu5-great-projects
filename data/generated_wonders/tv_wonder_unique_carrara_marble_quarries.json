@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/卡拉拉大理石矿_ai_cartoon.png",
-  "source_sha256": "74899ea56e909442859dc67d1859b2f270db78996b7bc80fde80135620e0dea5",
-  "reference": "assets/historical/卡拉拉大理石矿.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Marble_Quarry_near_Carrera.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Ingo Mehling",
-    "date": "2021-09-08 16:21:43",
-    "note": "卡拉拉大理石采石场；去公路与现代机械。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/卡拉拉大理石矿_ai_cartoon_3x2.png",
+  "source_sha256": "f92f3c392b0e919129551c2ed6a6166394a9de16dcb94c82158ef8d8eabcef0b",
+  "reference": "assets/generated_wonders/tv_wonder_unique_carrara_marble_quarries.png",
+  "reference_sha256": "74899ea56e909442859dc67d1859b2f270db78996b7bc80fde80135620e0dea5",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_carrara_marble_quarries.png",
+  "prompt_sha256": "25a9301e0704716843a63f58901a1c50c486e87f83e3eae2ecb01bcfc9bb4654",
+  "original_reference": "assets/historical/卡拉拉大理石矿.jpg"
 }

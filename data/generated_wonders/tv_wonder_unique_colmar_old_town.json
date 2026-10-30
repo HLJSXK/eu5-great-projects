@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/科尔马旧城_ai_cartoon.png",
-  "source_sha256": "61e0140a9a811a70bf82343d38a4f964dff4e34b71acb1a579c9acf2cebaea02",
-  "reference": "assets/historical/科尔马旧城.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Little_Venice_in_Colmar_01.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Krzysztof Golik",
-    "date": "2018-10-08 09:48:48",
-    "note": "科尔马“小威尼斯”运河与木筋房；去花箱和店招。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/科尔马旧城_ai_cartoon_3x2.png",
+  "source_sha256": "173f5a877d36bcabaf6def426a7e475a93f45e74771c1d28967ace962ab0e2da",
+  "reference": "assets/generated_wonders/tv_wonder_unique_colmar_old_town.png",
+  "reference_sha256": "61e0140a9a811a70bf82343d38a4f964dff4e34b71acb1a579c9acf2cebaea02",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_colmar_old_town.png",
+  "prompt_sha256": "baf59e54574c6aed62afcb233d44daed27c955de701eaeb5d8e8fcc1efa1671d",
+  "original_reference": "assets/historical/科尔马旧城.jpg"
 }

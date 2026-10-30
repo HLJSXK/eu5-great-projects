@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/莫高窟_ai_cartoon.png",
-  "source_sha256": "b8e444ff050b36f94ee33331dbe2bcfe183595039a3a9090baac81ccf9e93a3c",
-  "reference": "assets/historical/莫高窟.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Mogao_Caves_(42265422972).jpg",
-    "license": "CC BY 2.0",
-    "artist": "David Stanley from Nanaimo, Canada",
-    "date": "2017-09-26 10:41",
-    "note": "莫高窟崖面与窟前木构窟檐；以木栈道替代现代护栏。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/莫高窟_ai_cartoon_3x2.png",
+  "source_sha256": "c551971a619a9958aa7ee8a7e228796be919337f79277921c3c30fc0cb4e776e",
+  "reference": "assets/generated_wonders/tv_wonder_unique_mogao_caves.png",
+  "reference_sha256": "b8e444ff050b36f94ee33331dbe2bcfe183595039a3a9090baac81ccf9e93a3c",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_mogao_caves.png",
+  "prompt_sha256": "423f2e5ab97e7270ace8ab9086d07467e02c3e133a444e5a8923c435582e38bf",
+  "original_reference": "assets/historical/莫高窟.jpg"
 }

@@ -1,0 +1,26 @@
+{
+  "prototype_only": true,
+  "data_driven_sample": true,
+  "wonder": "unique_topkapi_palace",
+  "game_root": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Europa Universalis V\\game",
+  "size": [
+    1530,
+    1190
+  ],
+  "scale": 1,
+  "unknown_expressions": [],
+  "unresolved_contexts": [],
+  "unsupported_textcontexts": [],
+  "missing_textures": [],
+  "missing_text": [],
+  "missing_localizations": [],
+  "output": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\unique.png",
+  "tree": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\unique_tree.txt",
+  "details": {
+    "levels": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\unique_levels.png",
+    "ritual_1": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\unique_ritual_1.png",
+    "ritual_2": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\unique_ritual_2.png",
+    "ritual_3": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\unique_ritual_3.png"
+  },
+  "tooltip": null
+}

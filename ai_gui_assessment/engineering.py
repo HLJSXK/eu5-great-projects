@@ -344,6 +344,14 @@ def mocks(state: ScenarioState, loc=None) -> list:
         result.append((_exact(f"InternationalOrganizationsView.GetInternationalOrganization.GetVariableSpec('{variable}')"), context))
         result.append((_exact(f"InternationalOrganizationsView.GetInternationalOrganization.GetVariableText('{variable}')"), f"{value}/100"))
     if loc is not None:
+        # Exact native-link display samples used by the production worksite panel.
+        for helper, keys in (("ShowBuildingTypeName", ("tv_wonder_labor_camp",)),
+                             ("ShowGoodsName", ("tools", "tv_wonder_materials"))):
+            for key in keys:
+                name = loc.get(key)
+                if name is None:
+                    raise ValueError(f"Missing native-link localization: {key}")
+                result.append((_exact(f"{helper}('{key}')"), f"#game_link {name}#!"))
         for estate in ("nobles", "burghers", "clergy"):
             demand = state.player_variables[f"tv_wonder_{estate}_demand"]
             if demand is not None:
@@ -433,6 +441,15 @@ def render(state: ScenarioState, *, width: int = 570, height: int = 1800,
         panel = next((node for node in walk(element) if node.typename == f"tv_org_logistics_{kind}"), None)
         if panel is not None:
             details[f"org_logistics_{kind}"] = panel
+    summary = next((node for node in walk(element) if node.props.get("name") == "ol_organization_summary"), None)
+    if summary is not None:
+        details["worksite_summary"] = summary
+    calculation = next((node for node in walk(element) if node.props.get("name") == "worksite_calculation"), None)
+    if calculation is not None:
+        details["worksite_calculation"] = calculation
+    flow = next((node for node in walk(element) if node.props.get("name") == "ol_logistics_flow"), None)
+    if flow is not None:
+        details["logistics_flow"] = flow
     return render_tree(element, expander, resources, (extra_mocks or []) + mocks(state, resources.loc),
         width=width, height=height, scale=scale,
         output=output or OUTPUT / f"engineering_{state.name}.png",

@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/圣瓦西里大教堂_ai_cartoon.png",
-  "source_sha256": "f21b0ee1866d53253a6504e0c8cc1d3bba7aa54afb236a409aa0c63228a6ce2f",
-  "reference": "assets/historical/圣瓦西里大教堂.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Moscow_-_2025_-_Daytime_view_of_St._Basil%27s_Cathedral_from_Vasilyevsky_Spusk.jpg",
-    "license": "CC BY 4.0",
-    "artist": "Юрий Д.К.",
-    "date": "Taken on 15 September 2025, 12:31:51",
-    "note": "红场圣瓦西里大教堂。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/圣瓦西里大教堂_ai_cartoon_3x2.png",
+  "source_sha256": "5921939df37aff81431b14f383ddca3509e2ac07e63c511a599c2717ab149532",
+  "reference": "assets/generated_wonders/tv_wonder_unique_st_basils_cathedral.png",
+  "reference_sha256": "f21b0ee1866d53253a6504e0c8cc1d3bba7aa54afb236a409aa0c63228a6ce2f",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_st_basils_cathedral.png",
+  "prompt_sha256": "d130f50675f2259e5611f9ca2470192bd4692908017800d93fdb1a911e0f60e7",
+  "original_reference": "assets/historical/圣瓦西里大教堂.jpg"
 }

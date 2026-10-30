@@ -1,7 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/埃斯科里亚尔修道院_ai_cartoon.png",
-  "source_sha256": "7290d4079161bbf8b734a5c515f48cecb7b9da78bd9fc7f293b0781a641f6759",
-  "reference": "assets/historical/埃斯科里亚尔修道院.jpg",
-  "integration_manifest": "data/historical_wonder_images.json"
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/埃斯科里亚尔修道院_ai_cartoon_3x2.png",
+  "source_sha256": "4c3c6b1caf90227a4a38b9c681f6ed03cafc17ff003cec8279e11b60ff9a6a31",
+  "reference": "assets/generated_wonders/tv_wonder_unique_escorial_monastery.png",
+  "reference_sha256": "7290d4079161bbf8b734a5c515f48cecb7b9da78bd9fc7f293b0781a641f6759",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_escorial_monastery.png",
+  "prompt_sha256": "d45e1de73aee53ee56f83fa55ebf7b4b536fd48bf4ddb580c2cd57a1fb9bd3ea",
+  "original_reference": "assets/historical/埃斯科里亚尔修道院.jpg"
 }

@@ -1,0 +1,16 @@
+{
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/帕特农神庙_ai_cartoon_3x2.png",
+  "source_sha256": "bd858b323d90f8aadf1aeba64802cb71d5f83402902f913fdda46ff77c5460fb",
+  "reference": "assets/generated_wonders/tv_wonder_unique_parthenon.png",
+  "reference_sha256": "0a3d707e840296dd1892a72ecb4ebd3324700312c2a8f08c8334b7e36c263181",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_parthenon.png",
+  "prompt_sha256": "eea3689a97ff01668ddbb4d980188d65f4934af6181a05a83f2fe2cace771703",
+  "original_reference": "assets/historical/帕特农神庙.jpg"
+}

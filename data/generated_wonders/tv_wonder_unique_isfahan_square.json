@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/伊斯法罕王家广场_ai_cartoon.png",
-  "source_sha256": "3cd53c34a19b6cfd53f75e2fb2bc50278b5d909ec9c12f43b49680314d91ca45",
-  "reference": "assets/historical/伊斯法罕王家广场.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Naqsh-e_Jahan_Square_by_Pascal_Coste_1_edited.jpg",
-    "license": "Public domain",
-    "artist": "Pascal Coste",
-    "date": "between 1839 and 1841",
-    "note": "帕斯卡尔·科斯特 19 世纪伊斯法罕王家广场版画。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/伊斯法罕王家广场_ai_cartoon_3x2.png",
+  "source_sha256": "5dd73a1e545d71e43272812ab8be43ea55f2729dcc72354d06bd186df3489eca",
+  "reference": "assets/generated_wonders/tv_wonder_unique_isfahan_square.png",
+  "reference_sha256": "3cd53c34a19b6cfd53f75e2fb2bc50278b5d909ec9c12f43b49680314d91ca45",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_isfahan_square.png",
+  "prompt_sha256": "cafac3248faa1f24b48911796f3772e8e3fc8423a374da8e6696e7722893559d",
+  "original_reference": "assets/historical/伊斯法罕王家广场.jpg"
 }

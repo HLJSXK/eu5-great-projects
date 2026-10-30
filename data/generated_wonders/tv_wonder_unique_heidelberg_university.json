@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/海德堡大学_ai_cartoon.png",
-  "source_sha256": "878439104262084ae6b68ab5d914ab64e0763e76a8e4318521c34e4f857196d5",
-  "reference": "assets/historical/海德堡大学.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Heidelberg,_Alte_Universit%C3%A4t_v_S,_5.jpeg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Renardo la vulpo",
-    "date": "2020-08-10",
-    "note": "海德堡大学老楼（18 世纪重建）。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/海德堡大学_ai_cartoon_3x2.png",
+  "source_sha256": "c635fab8c2da55d88d8ff4384e627b17b855c92126ac10f3f47c5e17b409ab24",
+  "reference": "assets/generated_wonders/tv_wonder_unique_heidelberg_university.png",
+  "reference_sha256": "878439104262084ae6b68ab5d914ab64e0763e76a8e4318521c34e4f857196d5",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_heidelberg_university.png",
+  "prompt_sha256": "db46b6f14da10c80abb501f19dab8a502e174ef6335d525348f2d2e22653cc1f",
+  "original_reference": "assets/historical/海德堡大学.jpg"
 }

@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/京杭大运河_ai_cartoon.png",
-  "source_sha256": "a0e0cfca80c9f0b6baa2cf314eac4b61608874f4fab4eece8fe13b542de5768c",
-  "reference": "assets/historical/京杭大运河.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:William_Alexander_-_Barges_of_the_Embassy_Being_Raised_from_One_Canal_to_Another_on_Their_Way_from_Han-Tcheou-Foo_to_Tchu-San,_16_November_1793_-_B1986.29.317_-_Yale_Center_for_British_Art.jpg",
-    "license": "CC0",
-    "artist": "William Alexander",
-    "date": "1793",
-    "note": "威廉·亚历山大 1793 年水彩：马戛尔尼使团官船经斜坡道从一段运河拖升至另一段。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/京杭大运河_ai_cartoon_3x2.png",
+  "source_sha256": "901fac140912e322880d9dfe6407158d086bb8f09a90d22d051608df541676e9",
+  "reference": "assets/generated_wonders/tv_wonder_unique_grand_canal.png",
+  "reference_sha256": "a0e0cfca80c9f0b6baa2cf314eac4b61608874f4fab4eece8fe13b542de5768c",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_grand_canal.png",
+  "prompt_sha256": "d3089822cc864f057565ebd65e6fc074b67d61a89584a10c932a40249be6a8da",
+  "original_reference": "assets/historical/京杭大运河.jpg"
 }

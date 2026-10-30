@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/瓦拉纳西河坛群_ai_cartoon.png",
-  "source_sha256": "17f03dfaf5eb4d3ea240b9864f5a65157e041d2a7ddb90d35269ac292a07626b",
-  "reference": "assets/historical/瓦拉纳西河坛群.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Varanasi_Munshi_Ghat3.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "Marcin Białek",
-    "date": "2010-12-26",
-    "note": "瓦拉纳西蒙希河坛。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/瓦拉纳西河坛群_ai_cartoon_3x2.png",
+  "source_sha256": "3e57f9a2fda4ea5c29c7f843913f9432d32ac74439f6a23632cb3500835d1906",
+  "reference": "assets/generated_wonders/tv_wonder_unique_varanasi_ghats.png",
+  "reference_sha256": "17f03dfaf5eb4d3ea240b9864f5a65157e041d2a7ddb90d35269ac292a07626b",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_varanasi_ghats.png",
+  "prompt_sha256": "ee7700146018ba78e111e82922a6f1b6c101984287ba02de1e900766a7067593",
+  "original_reference": "assets/historical/瓦拉纳西河坛群.jpg"
 }

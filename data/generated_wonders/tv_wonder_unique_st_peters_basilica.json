@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/圣亚彼得大教堂_ai_cartoon.png",
-  "source_sha256": "2dea49548dcc2a8686ded6e2c73cf0d17740159a27ea8f9a1aed07c477a50aff",
-  "reference": "assets/historical/圣亚彼得大教堂.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:St._Peter%27s,_the_Basilica_and_the_Piazza_LACMA_AC1999.68.1.jpg",
-    "license": "Public domain",
-    "artist": "Francesco Panini (Italy, 1745-1812)",
-    "date": "Unknown date",
-    "note": "弗朗切斯科·帕尼尼 18 世纪《圣彼得大教堂与广场》；去边框和文字。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/圣亚彼得大教堂_ai_cartoon_3x2.png",
+  "source_sha256": "ece6df5e5efa29ea6e851df849dda9835237f210da0eb7d743dc4c312bc8f002",
+  "reference": "assets/generated_wonders/tv_wonder_unique_st_peters_basilica.png",
+  "reference_sha256": "2dea49548dcc2a8686ded6e2c73cf0d17740159a27ea8f9a1aed07c477a50aff",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_st_peters_basilica.png",
+  "prompt_sha256": "3be2369e3fde0ca0f27dad20e383d3ed2fb1084a3398fde37bfa985fe1cdbb19",
+  "original_reference": "assets/historical/圣亚彼得大教堂.jpg"
 }

@@ -1,7 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/北京皇家粮仓_ai_cartoon.png",
-  "source_sha256": "90b9e9211597517bdf987c930ba8e34b0dbfd61b665935612376a37df3e4e12a",
-  "reference": "assets/historical/北京皇家粮仓.jpg",
-  "integration_manifest": "data/historical_wonder_images.json"
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/北京皇家粮仓_ai_cartoon_3x2.png",
+  "source_sha256": "0cc0baa67f60d298a893d420fe7a6e0a801453b5a3f150d2c14fbd62b9da2cf9",
+  "reference": "assets/generated_wonders/tv_wonder_unique_beijing_imperial_granaries.png",
+  "reference_sha256": "90b9e9211597517bdf987c930ba8e34b0dbfd61b665935612376a37df3e4e12a",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_beijing_imperial_granaries.png",
+  "prompt_sha256": "c61ba3b5778cf953976208e7e1f43fdbba30f339ff1950ffc9cf64eb251ede27",
+  "original_reference": "assets/historical/北京皇家粮仓.jpg"
 }

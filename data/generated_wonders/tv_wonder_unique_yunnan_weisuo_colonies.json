@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/云南卫所屯田带_ai_cartoon.png",
-  "source_sha256": "f8f2dba62ff565be43c0af67c828d9fe738141b2f525b8863370fb3a59140146",
-  "reference": "assets/historical/云南卫所屯田带.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Jianshui_-_Chaoyang_Gate_-_P1370488.JPG",
-    "license": "CC BY-SA 3.0",
-    "artist": "User:Vmenkov",
-    "date": "2016-12-20 18:25:14",
-    "note": "题材近似：建水朝阳楼（明代临安卫城城门），代表卫所城镇，未表现屯田景观。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/云南卫所屯田带_ai_cartoon_3x2.png",
+  "source_sha256": "3dde3fa31fe88279ed8241c69bb5f9fe5e371cf67233c91d826a7e269aa42640",
+  "reference": "assets/generated_wonders/tv_wonder_unique_yunnan_weisuo_colonies.png",
+  "reference_sha256": "f8f2dba62ff565be43c0af67c828d9fe738141b2f525b8863370fb3a59140146",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_yunnan_weisuo_colonies.png",
+  "prompt_sha256": "572a5d2f5e75a023dab35e5d5cd348a737db202a69c11f7535b1503d5e6bf753",
+  "original_reference": "assets/historical/云南卫所屯田带.jpg"
 }

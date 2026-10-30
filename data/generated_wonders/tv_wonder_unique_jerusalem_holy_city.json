@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/耶路撒冷圣城_ai_cartoon.png",
-  "source_sha256": "b36ca6c5efed640f6c2022b729d981dbe15373a86ba5fb238fe5705dfe945714",
-  "reference": "assets/historical/耶路撒冷圣城.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Panoramic_View_of_the_old_city_from_Mount_of_Olives.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "Gbecker248",
-    "date": "2013-09-29 17:20:49",
-    "note": "从橄榄山望耶路撒冷老城全景；去现代建筑和道路。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/耶路撒冷圣城_ai_cartoon_3x2.png",
+  "source_sha256": "58f768b378e7646e598a825104ceddfc46d6fb5feee2cdfc631c5f4670349c18",
+  "reference": "assets/generated_wonders/tv_wonder_unique_jerusalem_holy_city.png",
+  "reference_sha256": "b36ca6c5efed640f6c2022b729d981dbe15373a86ba5fb238fe5705dfe945714",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_jerusalem_holy_city.png",
+  "prompt_sha256": "02fbe8141c3990d6095464b454085a8952b58e453448297c85c546342c8c406c",
+  "original_reference": "assets/historical/耶路撒冷圣城.jpg"
 }

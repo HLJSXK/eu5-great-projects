@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/伊比利亚宗教裁判所_ai_cartoon.png",
-  "source_sha256": "d753fca90aadd0cd3c1c73ff604a908c53c914a1f8a632454411f436d6eef177",
-  "reference": "assets/historical/伊比利亚宗教裁判所.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Francisco_rizi-auto_de_fe.jpg",
-    "license": "Public domain",
-    "artist": "Francisco Rizi",
-    "date": "1683",
-    "note": "题材近似：弗朗西斯科·里齐 1683 年绘 1680 年马德里马约尔广场信仰审判仪式，不是托莱多建筑群。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/伊比利亚宗教裁判所_ai_cartoon_3x2.png",
+  "source_sha256": "02b539df6b01ab369eed1ab49166a90b997e6def6857274a395c2fed90dddaf1",
+  "reference": "assets/generated_wonders/tv_wonder_unique_iberian_inquisition.png",
+  "reference_sha256": "d753fca90aadd0cd3c1c73ff604a908c53c914a1f8a632454411f436d6eef177",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_iberian_inquisition.png",
+  "prompt_sha256": "b3d4800a720cbf0d7b2eed350db461039cc8b569af9abd3eca84b60b29616b6e",
+  "original_reference": "assets/historical/伊比利亚宗教裁判所.jpg"
 }

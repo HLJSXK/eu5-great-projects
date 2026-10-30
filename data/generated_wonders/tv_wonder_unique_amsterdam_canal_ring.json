@@ -1,7 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/阿姆斯特丹运河圈_ai_cartoon.png",
-  "source_sha256": "ddb044314c330b776031c08e60619692821d62e944c19ba6e0c1ed4e1d0f4374",
-  "reference": "assets/historical/阿姆斯特丹运河圈.webp",
-  "integration_manifest": "data/historical_wonder_images.json"
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/阿姆斯特丹运河圈_ai_cartoon_3x2.png",
+  "source_sha256": "09b4350728b9193f76762d9b883b0c17273c26f0d463104c7be568f6938de75f",
+  "reference": "assets/generated_wonders/tv_wonder_unique_amsterdam_canal_ring.png",
+  "reference_sha256": "ddb044314c330b776031c08e60619692821d62e944c19ba6e0c1ed4e1d0f4374",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_amsterdam_canal_ring.png",
+  "prompt_sha256": "a3b252fadde8ebb0f7f5e2c5aaf553fc9152b85530b95d354047b9d5205965b0",
+  "original_reference": "assets/historical/阿姆斯特丹运河圈.webp"
 }

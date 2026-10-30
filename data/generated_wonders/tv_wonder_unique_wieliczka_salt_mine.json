@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/维利奇卡盐矿_ai_cartoon.png",
-  "source_sha256": "90351a4beeefdb4f7be63494433f7b74522c72b0f553ed190157aa2577176fc6",
-  "reference": "assets/historical/维利奇卡盐矿.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Poland-01583_-_St._Kinga%27s_Chapel_(31547044100).jpg",
-    "license": "CC BY-SA 2.0",
-    "artist": "Dennis G. Jarvis",
-    "date": "2016-09-24 04:17",
-    "note": "维利奇卡盐矿圣金加礼拜堂。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/维利奇卡盐矿_ai_cartoon_3x2.png",
+  "source_sha256": "7206407218ee45fce6a5fbd2b0341fe323193f8b0045bb28c2ed302d1586dc51",
+  "reference": "assets/generated_wonders/tv_wonder_unique_wieliczka_salt_mine.png",
+  "reference_sha256": "90351a4beeefdb4f7be63494433f7b74522c72b0f553ed190157aa2577176fc6",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_wieliczka_salt_mine.png",
+  "prompt_sha256": "30bb2ffdb3529ed3f857a989a6e14e7783ce498ca37f45a48a29b101490f3d2b",
+  "original_reference": "assets/historical/维利奇卡盐矿.jpg"
 }

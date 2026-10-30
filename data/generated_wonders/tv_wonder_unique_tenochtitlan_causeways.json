@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/特诺奇蒂特兰堤道_ai_cartoon.png",
-  "source_sha256": "0acca6fc08b7fafc5fe78df60bfb84363b5e0c121f13cc5e147d27981db4753d",
-  "reference": "assets/historical/特诺奇蒂特兰堤道.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Painting_of_Tenochtitlan-Tlatelolco_on_Lake_Texcoco_(9755215791).jpg",
-    "license": "Public domain",
-    "artist": "Gary Todd from Xinzheng, China",
-    "date": "2012-07-04 05:11",
-    "note": "特诺奇蒂特兰-特拉特洛尔科复原画（博物馆展品照片）。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/特诺奇蒂特兰堤道_ai_cartoon_3x2.png",
+  "source_sha256": "cd4b693d50d90fd7268ccaa055a9ac74eb187340c2c33c81c04369a202aa446a",
+  "reference": "assets/generated_wonders/tv_wonder_unique_tenochtitlan_causeways.png",
+  "reference_sha256": "0acca6fc08b7fafc5fe78df60bfb84363b5e0c121f13cc5e147d27981db4753d",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_tenochtitlan_causeways.png",
+  "prompt_sha256": "1df0bf8619a274913f089637fbc246af8c188c8d63a8fc6c0f5288d2e71099a6",
+  "original_reference": "assets/historical/特诺奇蒂特兰堤道.jpg"
 }

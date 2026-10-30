@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/维尔纽斯大学_ai_cartoon.png",
-  "source_sha256": "9cf377fdd1430e4f0ae0804772aa3d5c792c817a5c35ce68e72bb5b10b6c0b47",
-  "reference": "assets/historical/维尔纽斯大学.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Vilnius_University_Great_Courtyard_2,_Vilnius,_Lithuania_-_Diliff.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "Diliff",
-    "date": "2014-09-10",
-    "note": "维尔纽斯大学大庭院与圣约翰教堂。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/维尔纽斯大学_ai_cartoon_3x2.png",
+  "source_sha256": "670cea914b9888be1afe6087b6870b69fe9cbd0e2ea2cbf2156d7414fc90b1f2",
+  "reference": "assets/generated_wonders/tv_wonder_unique_vilnius_university.png",
+  "reference_sha256": "9cf377fdd1430e4f0ae0804772aa3d5c792c817a5c35ce68e72bb5b10b6c0b47",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_vilnius_university.png",
+  "prompt_sha256": "ed3e52b75b5f2cccb066b80275be1000b06a8e4602f03131d2d6ba0a75284b0e",
+  "original_reference": "assets/historical/维尔纽斯大学.jpg"
 }

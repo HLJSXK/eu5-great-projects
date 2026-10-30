@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/长白山祭坛_ai_cartoon.png",
-  "source_sha256": "d09b2d64310f73d8401c1f750f310cac67b758f9b6bc780f77e967219962c5d2",
-  "reference": "assets/historical/长白山祭坛.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Changbaishan_Tianchi_from_western_rim.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Dcpeets",
-    "date": "2016-08-27 09:36:37",
-    "note": "祭坛本体无可靠图像；此为天池火山口地貌。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/长白山祭坛_ai_cartoon_3x2.png",
+  "source_sha256": "c621109ae3b273910d04bbabdd4d4132390f6415e8ea4c051b0b86d30d3f2e4a",
+  "reference": "assets/generated_wonders/tv_wonder_unique_changbai_mountain_altar.png",
+  "reference_sha256": "d09b2d64310f73d8401c1f750f310cac67b758f9b6bc780f77e967219962c5d2",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_changbai_mountain_altar.png",
+  "prompt_sha256": "4b28469e1d4057bc4a2962dca112c7c9668cbbc516bfebf629d99b71c66099c1",
+  "original_reference": "assets/historical/长白山祭坛.jpg"
 }

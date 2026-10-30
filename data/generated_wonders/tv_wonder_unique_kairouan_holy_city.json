@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/凯鲁万圣城_ai_cartoon.png",
-  "source_sha256": "53d3a5927ecce1652b0129df3ed03b023e22e1e27fb5f849e5a86c1d39c5c2f1",
-  "reference": "assets/historical/凯鲁万圣城.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Courtyard_of_the_Great_Mosque_of_Kairouan_-_cour_de_la_Grande_Mosqu%C3%A9e_de_Kairouan.jpg",
-    "license": "CC BY-SA 2.0",
-    "artist": "Ed Kirby",
-    "date": "2010-12-22 11:49:05",
-    "note": "凯鲁万大清真寺庭院与宣礼塔。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/凯鲁万圣城_ai_cartoon_3x2.png",
+  "source_sha256": "6ebaebdd3980962d316cdcf8881336fa5fb45517e6b7ff76f844369077aafa8d",
+  "reference": "assets/generated_wonders/tv_wonder_unique_kairouan_holy_city.png",
+  "reference_sha256": "53d3a5927ecce1652b0129df3ed03b023e22e1e27fb5f849e5a86c1d39c5c2f1",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_kairouan_holy_city.png",
+  "prompt_sha256": "fb00fc01ca2c630387abfa3ac7c57d5f8ede44061b9ec399cb5fb95571f79c6e",
+  "original_reference": "assets/historical/凯鲁万圣城.jpg"
 }

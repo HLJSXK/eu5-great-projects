@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/布尔萨皇家铸币所_ai_cartoon.png",
-  "source_sha256": "7eabb37b81fe0877c451dc5afe005ddcb217dc4b6db178b2690fbfa95c567ad2",
-  "reference": "assets/historical/布尔萨皇家铸币所.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Koza_Han,_Bursa1.jpg",
-    "license": "CC BY-SA 2.0",
-    "artist": "Jocelyn Erskine-Kellie",
-    "date": "Taken on 30 April 2024, 10:34:26",
-    "note": "铸币所建筑未存世；此为布尔萨科扎汗（丝绸商馆）庭院，作奥斯曼早期布尔萨建筑与院落参照。另可参考奥尔汗一世银币（布尔萨铸造的首批奥斯曼银币，PD）：https://commons.wikimedia.org/wiki/File:Orhan_Gazi_Ak%C3%A7e.jpg"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/布尔萨皇家铸币所_ai_cartoon_3x2.png",
+  "source_sha256": "053769b421d67ac66ea2503fedefb90e145bf187b9b9144c1496c320731cdd0f",
+  "reference": "assets/generated_wonders/tv_wonder_unique_bursa_imperial_mint.png",
+  "reference_sha256": "7eabb37b81fe0877c451dc5afe005ddcb217dc4b6db178b2690fbfa95c567ad2",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_bursa_imperial_mint.png",
+  "prompt_sha256": "abd97577b81e18819a606472fd51774514f7aed38eaf965da26a0b58c2654ccc",
+  "original_reference": "assets/historical/布尔萨皇家铸币所.jpg"
 }

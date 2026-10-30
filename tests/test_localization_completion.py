@@ -1,3 +1,5 @@
+import pytest
+
 from scripts_engineering_department.main_menu.localization import (
     translate_engineering_department_localization_google as translate,
 )
@@ -41,9 +43,10 @@ def test_fill_creates_missing_language_file_with_bom_and_correct_header(tmp_path
     assert ' added:0 "Added"\n' in output.read_text(encoding="utf-8-sig")
 
 
-def test_fill_cli_defaults_to_all_nine_languages_without_a_translation_client(monkeypatch):
+@pytest.mark.parametrize("arguments", [[], ["--fill-missing"]])
+def test_fill_cli_defaults_to_all_nine_languages_without_a_translation_client(monkeypatch, arguments):
     calls = []
-    monkeypatch.setattr(translate.sys, "argv", ["translate", "--fill-missing"])
+    monkeypatch.setattr(translate.sys, "argv", ["translate", *arguments])
     monkeypatch.setattr(translate, "collect_source_files", lambda filters: [])
     monkeypatch.setattr(translate, "fill_missing_keys", lambda language, sources: calls.append(language) or 0)
     monkeypatch.setattr(translate, "load_cache", lambda path: (_ for _ in ()).throw(AssertionError("offline")))

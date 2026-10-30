@@ -1,0 +1,395 @@
+[
+  {
+    "id": 111,
+    "wonder": "unique_topkapi_palace",
+    "location_reference": {
+      "id": "constantinople",
+      "name": "君士坦丁堡"
+    },
+    "level_effects": [
+      {
+        "scope": "全国",
+        "modifier": "global_distance_from_capital_speed_propagation",
+        "values": [
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001
+        ]
+      },
+      {
+        "scope": "当地",
+        "modifier": "local_distance_from_capital_speed_propagation",
+        "values": [
+          0.4,
+          0.8,
+          1.2000000000000002,
+          1.6,
+          2.0,
+          2.4000000000000004
+        ]
+      }
+    ],
+    "rituals": [
+      {
+        "style": 1,
+        "ritual_id": 11101,
+        "modifier": "tv_wonder_unique_topkapi_palace_ritual_1_modifier",
+        "location_modifier": null,
+        "country_modifier": {
+          "subject_loyalty": 10,
+          "monthly_towards_centralization": 0.1
+        },
+        "location_modifier_values": {},
+        "one_shot": [],
+        "societal_value": {
+          "axis": "centralization_vs_decentralization",
+          "direction": "centralization",
+          "sign": -1,
+          "monthly": 0.1
+        },
+        "estate_preferences": {
+          "clergy_estate": 1,
+          "burghers_estate": "random",
+          "peasants_estate": 3,
+          "dhimmi_estate": 3,
+          "tribes_estate": "random",
+          "cossacks_estate": 2,
+          "nobles_estate": 2
+        },
+        "name_key": "game_concept_tv_wonder_display_111_ritual_1",
+        "desc_key": "game_concept_tv_wonder_display_111_ritual_1_desc",
+        "final_desc_key": "tv_engineering_department.500.d_unique_topkapi_palace_1"
+      },
+      {
+        "style": 2,
+        "ritual_id": 11102,
+        "modifier": "tv_wonder_unique_topkapi_palace_ritual_2_modifier",
+        "location_modifier": "tv_wonder_unique_topkapi_palace_ritual_2_location_modifier",
+        "country_modifier": {
+          "monthly_towards_absolutism": 0.1
+        },
+        "location_modifier_values": {
+          "local_trade_center_power": 0.2
+        },
+        "one_shot": [],
+        "societal_value": {
+          "axis": "absolutism_vs_liberalism",
+          "direction": "absolutism",
+          "sign": -1,
+          "monthly": 0.1
+        },
+        "estate_preferences": {
+          "clergy_estate": 1,
+          "burghers_estate": "random",
+          "peasants_estate": 3,
+          "dhimmi_estate": 3,
+          "tribes_estate": "random",
+          "cossacks_estate": 2,
+          "nobles_estate": 2
+        },
+        "name_key": "game_concept_tv_wonder_display_111_ritual_2",
+        "desc_key": "game_concept_tv_wonder_display_111_ritual_2_desc",
+        "final_desc_key": "tv_engineering_department.500.d_unique_topkapi_palace_2"
+      },
+      {
+        "style": 3,
+        "ritual_id": 11103,
+        "modifier": "tv_wonder_unique_topkapi_palace_ritual_3_modifier",
+        "location_modifier": null,
+        "country_modifier": {
+          "monthly_towards_conciliatory": 0.1
+        },
+        "location_modifier_values": {},
+        "one_shot": [
+          {
+            "type": "ruler_dip",
+            "value": 20
+          }
+        ],
+        "societal_value": {
+          "axis": "belligerent_vs_conciliatory",
+          "direction": "conciliatory",
+          "sign": 1,
+          "monthly": 0.1
+        },
+        "estate_preferences": {
+          "clergy_estate": 1,
+          "burghers_estate": "random",
+          "peasants_estate": 3,
+          "dhimmi_estate": 3,
+          "tribes_estate": "random",
+          "cossacks_estate": 2,
+          "nobles_estate": 2
+        },
+        "name_key": "game_concept_tv_wonder_display_111_ritual_3",
+        "desc_key": "game_concept_tv_wonder_display_111_ritual_3_desc",
+        "final_desc_key": "tv_engineering_department.500.d_unique_topkapi_palace_3"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "wonder": "unique_pharos_lighthouse",
+    "location_reference": {
+      "id": "alexandria",
+      "name": "亚历山大"
+    },
+    "level_effects": [
+      {
+        "scope": "全国",
+        "modifier": "trade_range",
+        "values": [
+          400,
+          800,
+          1200,
+          1600,
+          2000,
+          2400
+        ]
+      },
+      {
+        "scope": "全国",
+        "modifier": "naval_range",
+        "values": [
+          400,
+          800,
+          1200,
+          1600,
+          2000,
+          2400
+        ]
+      },
+      {
+        "scope": "全国",
+        "modifier": "colonial_range",
+        "values": [
+          400,
+          800,
+          1200,
+          1600,
+          2000,
+          2400
+        ]
+      }
+    ],
+    "rituals": [
+      {
+        "style": 1,
+        "ritual_id": 10101,
+        "modifier": "tv_wonder_unique_pharos_lighthouse_ritual_1_modifier",
+        "location_modifier": null,
+        "country_modifier": {
+          "diplomatic_range": 400,
+          "monthly_towards_outward": 0.1
+        },
+        "location_modifier_values": {},
+        "one_shot": [],
+        "societal_value": {
+          "axis": "outward_vs_inward",
+          "direction": "outward",
+          "sign": -1,
+          "monthly": 0.1
+        },
+        "estate_preferences": {
+          "nobles_estate": 1,
+          "clergy_estate": "random",
+          "peasants_estate": 3,
+          "dhimmi_estate": 2,
+          "tribes_estate": "random",
+          "cossacks_estate": "random",
+          "burghers_estate": 2
+        },
+        "name_key": "game_concept_tv_wonder_display_101_ritual_1",
+        "desc_key": "game_concept_tv_wonder_display_101_ritual_1_desc",
+        "final_desc_key": "tv_engineering_department.500.d_unique_pharos_lighthouse_1"
+      },
+      {
+        "style": 2,
+        "ritual_id": 10102,
+        "modifier": "tv_wonder_unique_pharos_lighthouse_ritual_2_modifier",
+        "location_modifier": "tv_wonder_unique_pharos_lighthouse_ritual_2_location_modifier",
+        "country_modifier": {
+          "monthly_towards_naval": 0.1
+        },
+        "location_modifier_values": {
+          "local_maritime_presence": 0.4
+        },
+        "one_shot": [],
+        "societal_value": {
+          "axis": "land_vs_naval",
+          "direction": "naval",
+          "sign": 1,
+          "monthly": 0.1
+        },
+        "estate_preferences": {
+          "nobles_estate": 1,
+          "clergy_estate": "random",
+          "peasants_estate": 3,
+          "dhimmi_estate": 2,
+          "tribes_estate": "random",
+          "cossacks_estate": "random",
+          "burghers_estate": 2
+        },
+        "name_key": "game_concept_tv_wonder_display_101_ritual_2",
+        "desc_key": "game_concept_tv_wonder_display_101_ritual_2_desc",
+        "final_desc_key": "tv_engineering_department.500.d_unique_pharos_lighthouse_2"
+      },
+      {
+        "style": 3,
+        "ritual_id": 10103,
+        "modifier": "tv_wonder_unique_pharos_lighthouse_ritual_3_modifier",
+        "location_modifier": null,
+        "country_modifier": {
+          "monthly_towards_defensive": 0.1
+        },
+        "location_modifier_values": {},
+        "one_shot": [
+          {
+            "type": "prestige",
+            "value": 50
+          }
+        ],
+        "societal_value": {
+          "axis": "offensive_vs_defensive",
+          "direction": "defensive",
+          "sign": 1,
+          "monthly": 0.1
+        },
+        "estate_preferences": {
+          "nobles_estate": 1,
+          "clergy_estate": "random",
+          "peasants_estate": 3,
+          "dhimmi_estate": 2,
+          "tribes_estate": "random",
+          "cossacks_estate": "random",
+          "burghers_estate": 2
+        },
+        "name_key": "game_concept_tv_wonder_display_101_ritual_3",
+        "desc_key": "game_concept_tv_wonder_display_101_ritual_3_desc",
+        "final_desc_key": "tv_engineering_department.500.d_unique_pharos_lighthouse_3"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "wonder": "unique_hagia_sophia",
+    "location_reference": {
+      "id": "constantinople",
+      "name": "君士坦丁堡"
+    },
+    "level_effects": [
+      {
+        "scope": "全国",
+        "modifier": "global_pop_conversion_speed",
+        "values": [
+          0.004,
+          0.008,
+          0.012,
+          0.016,
+          0.02,
+          0.024
+        ]
+      }
+    ],
+    "rituals": [
+      {
+        "style": 1,
+        "ritual_id": 10201,
+        "modifier": "tv_wonder_unique_hagia_sophia_ritual_1_modifier",
+        "location_modifier": null,
+        "country_modifier": {
+          "global_pop_assimilation_speed_modifier": 0.2,
+          "monthly_towards_spiritualist": 0.1
+        },
+        "location_modifier_values": {},
+        "one_shot": [],
+        "societal_value": {
+          "axis": "spiritualist_vs_humanist",
+          "direction": "spiritualist",
+          "sign": -1,
+          "monthly": 0.1
+        },
+        "estate_preferences": {
+          "nobles_estate": 1,
+          "burghers_estate": "random",
+          "peasants_estate": 2,
+          "dhimmi_estate": 2,
+          "tribes_estate": "random",
+          "cossacks_estate": "random",
+          "clergy_estate": 2
+        },
+        "name_key": "game_concept_tv_wonder_display_102_ritual_1",
+        "desc_key": "game_concept_tv_wonder_display_102_ritual_1_desc",
+        "final_desc_key": "tv_engineering_department.500.d_unique_hagia_sophia_1"
+      },
+      {
+        "style": 2,
+        "ritual_id": 10202,
+        "modifier": "tv_wonder_unique_hagia_sophia_ritual_2_modifier",
+        "location_modifier": "tv_wonder_unique_hagia_sophia_ritual_2_location_modifier",
+        "country_modifier": {
+          "monthly_towards_communalism": 0.1
+        },
+        "location_modifier_values": {
+          "local_unrest": -0.2
+        },
+        "one_shot": [],
+        "societal_value": {
+          "axis": "individualism_vs_communalism",
+          "direction": "communalism",
+          "sign": 1,
+          "monthly": 0.1
+        },
+        "estate_preferences": {
+          "nobles_estate": 1,
+          "burghers_estate": "random",
+          "peasants_estate": 2,
+          "dhimmi_estate": 2,
+          "tribes_estate": "random",
+          "cossacks_estate": "random",
+          "clergy_estate": 2
+        },
+        "name_key": "game_concept_tv_wonder_display_102_ritual_2",
+        "desc_key": "game_concept_tv_wonder_display_102_ritual_2_desc",
+        "final_desc_key": "tv_engineering_department.500.d_unique_hagia_sophia_2"
+      },
+      {
+        "style": 3,
+        "ritual_id": 10203,
+        "modifier": "tv_wonder_unique_hagia_sophia_ritual_3_modifier",
+        "location_modifier": null,
+        "country_modifier": {
+          "monthly_towards_liberalism": 0.1
+        },
+        "location_modifier_values": {},
+        "one_shot": [
+          {
+            "type": "all_estate_satisfaction",
+            "value": 0.3
+          }
+        ],
+        "societal_value": {
+          "axis": "absolutism_vs_liberalism",
+          "direction": "liberalism",
+          "sign": 1,
+          "monthly": 0.1
+        },
+        "estate_preferences": {
+          "nobles_estate": 1,
+          "burghers_estate": "random",
+          "peasants_estate": 2,
+          "dhimmi_estate": 2,
+          "tribes_estate": "random",
+          "cossacks_estate": "random",
+          "clergy_estate": 2
+        },
+        "name_key": "game_concept_tv_wonder_display_102_ritual_3",
+        "desc_key": "game_concept_tv_wonder_display_102_ritual_3_desc",
+        "final_desc_key": "tv_engineering_department.500.d_unique_hagia_sophia_3"
+      }
+    ]
+  }
+]

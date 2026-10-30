@@ -212,7 +212,7 @@ def historical_api_plan(module: Any, options: dict[str, Any]) -> ToolPlan:
             return module.run_tasks(config, tasks, dry_run=True, check_cancelled=context.check_cancelled)
         staged_tasks = [(source, context.stage_path(output)) for source, output in tasks]
         return module.run_tasks(
-            config, staged_tasks, dry_run=options["dry_run"], check_cancelled=context.check_cancelled,
+            config, staged_tasks, dry_run=options["dry_run"], check_cancelled=context.check_cancelled, wait=context.wait,
         )
 
     return ToolPlan(

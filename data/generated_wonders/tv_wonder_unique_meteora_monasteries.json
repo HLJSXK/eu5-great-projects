@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/梅黛奥拉修道院_ai_cartoon.png",
-  "source_sha256": "db93ffdc0846276e738a5328fb8783293c1531723c5a3b6ec11920f5bf20ab79",
-  "reference": "assets/historical/梅黛奥拉修道院.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Megalo_Meteoro_monastery1.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "DimitrisP67",
-    "date": "2017-10-11 11:41:00",
-    "note": "梅黛奥拉大梅黛奥隆修道院。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/梅黛奥拉修道院_ai_cartoon_3x2.png",
+  "source_sha256": "db3ddf62e40ac2aac89af61f02b2ee329e27b6d8b5fbef0d817937ca433ea3b5",
+  "reference": "assets/generated_wonders/tv_wonder_unique_meteora_monasteries.png",
+  "reference_sha256": "db93ffdc0846276e738a5328fb8783293c1531723c5a3b6ec11920f5bf20ab79",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_meteora_monasteries.png",
+  "prompt_sha256": "05beabaaace1d736906530cad91efb31f59a761500f0162f602659141dc69ea9",
+  "original_reference": "assets/historical/梅黛奥拉修道院.jpg"
 }

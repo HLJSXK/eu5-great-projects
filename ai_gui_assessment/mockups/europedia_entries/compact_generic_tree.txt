@@ -1,0 +1,209 @@
+widget<widget> 1530x1080@0,0
+  button_regular<button> 292x32@20,12
+    textbox<textbox> 292x32@20,12 txt=GP_ENTRY_DRAFT_153
+  button_regular<button> 292x32@320,12
+    textbox<textbox> 292x32@320,12 txt=GP_ENTRY_DRAFT_154
+  button_regular<button> 292x32@620,12
+    textbox<textbox> 292x32@620,12 txt=GP_ENTRY_DRAFT_155
+  button_regular<button> 292x32@920,12
+    textbox<textbox> 292x32@920,12 txt=GP_ENTRY_DRAFT_156
+  button_regular<button> 292x32@1220,12
+    textbox<textbox> 292x32@1220,12 txt=GP_ENTRY_DRAFT_157
+  text_single<textbox> 600x24@40,52 txt=GP_ENTRY_DRAFT_158
+  text_single<textbox> 800x24@690,52 txt=GP_ENTRY_DRAFT_159
+  widget<widget> 1450x300@40,82
+    widget<widget> 1450x32@40,82
+    icon<icon> 24x24@52,86
+    text_single<textbox> 880x28@86,84 txt=GP_ENTRY_DRAFT_160
+    text_single<textbox> 464x24@1010,86 txt=GP_ENTRY_DRAFT_161
+    widget<widget> 240x160@56,124
+    widget<widget> 1152x106@322,122
+      text_single<textbox> 310x24@330,122 txt=GP_ENTRY_DRAFT_162
+      text_single<textbox> 137x24@652,122 txt=GP_ENTRY_DRAFT_163
+      text_single<textbox> 137x24@789,122 txt=GP_ENTRY_DRAFT_164
+      text_single<textbox> 137x24@926,122 txt=GP_ENTRY_DRAFT_165
+      text_single<textbox> 137x24@1063,122 txt=GP_ENTRY_DRAFT_166
+      text_single<textbox> 137x24@1200,122 txt=GP_ENTRY_DRAFT_167
+      text_single<textbox> 137x24@1337,122 txt=GP_ENTRY_DRAFT_168
+      icon<icon> 1152x1@322,149
+      text_single<textbox> 44x24@330,151 txt=GP_ENTRY_DRAFT_169
+      text_single<textbox> 268x24@380,151 txt=GP_ENTRY_DRAFT_170
+      text_single<textbox> 137x24@652,151 txt=GP_ENTRY_DRAFT_171
+      text_single<textbox> 137x24@789,151 txt=GP_ENTRY_DRAFT_172
+      text_single<textbox> 137x24@926,151 txt=GP_ENTRY_DRAFT_173
+      text_single<textbox> 137x24@1063,151 txt=GP_ENTRY_DRAFT_174
+      text_single<textbox> 137x24@1200,151 txt=GP_ENTRY_DRAFT_175
+      text_single<textbox> 137x24@1337,151 txt=GP_ENTRY_DRAFT_176
+      icon<icon> 1152x1@322,175
+      text_single<textbox> 44x24@330,177 txt=GP_ENTRY_DRAFT_177
+      text_single<textbox> 268x24@380,177 txt=GP_ENTRY_DRAFT_178
+      text_single<textbox> 137x24@652,177 txt=GP_ENTRY_DRAFT_179
+      text_single<textbox> 137x24@789,177 txt=GP_ENTRY_DRAFT_180
+      text_single<textbox> 137x24@926,177 txt=GP_ENTRY_DRAFT_181
+      text_single<textbox> 137x24@1063,177 txt=GP_ENTRY_DRAFT_182
+      text_single<textbox> 137x24@1200,177 txt=GP_ENTRY_DRAFT_183
+      text_single<textbox> 137x24@1337,177 txt=GP_ENTRY_DRAFT_184
+    widget<widget> 372x110@322,260
+      icon<icon> 26x26@332,268
+      text_single<textbox> 318x26@366,268 txt=GP_ENTRY_DRAFT_185
+      icon<icon> 352x1@332,296
+      text_single<textbox> 34x22@332,300 txt=GP_ENTRY_DRAFT_186
+      text_single<textbox> 244x22@370,300 txt=GP_ENTRY_DRAFT_187
+      text_single<textbox> 70x22@614,300 txt=GP_ENTRY_DRAFT_188
+      text_single<textbox> 34x22@332,322 txt=GP_ENTRY_DRAFT_189
+      text_single<textbox> 244x22@370,322 txt=GP_ENTRY_DRAFT_190
+      text_single<textbox> 70x22@614,322 txt=GP_ENTRY_DRAFT_191
+    widget<widget> 372x110@712,260
+      icon<icon> 26x26@722,268
+      text_single<textbox> 318x26@756,268 txt=GP_ENTRY_DRAFT_192
+      icon<icon> 352x1@722,296
+      text_single<textbox> 34x22@722,300 txt=GP_ENTRY_DRAFT_193
+      text_single<textbox> 244x22@760,300 txt=GP_ENTRY_DRAFT_194
+      text_single<textbox> 70x22@1004,300 txt=GP_ENTRY_DRAFT_195
+      text_single<textbox> 34x22@722,322 txt=GP_ENTRY_DRAFT_196
+      text_single<textbox> 244x22@760,322 txt=GP_ENTRY_DRAFT_197
+      text_single<textbox> 70x22@1004,322 txt=GP_ENTRY_DRAFT_198
+    widget<widget> 372x110@1102,260
+      icon<icon> 26x26@1112,268
+      text_single<textbox> 318x26@1146,268 txt=GP_ENTRY_DRAFT_199
+      icon<icon> 352x1@1112,296
+      text_single<textbox> 34x22@1112,300 txt=GP_ENTRY_DRAFT_200
+      text_single<textbox> 244x22@1150,300 txt=GP_ENTRY_DRAFT_201
+      text_single<textbox> 70x22@1394,300 txt=GP_ENTRY_DRAFT_202
+      text_single<textbox> 34x22@1112,322 txt=GP_ENTRY_DRAFT_203
+      text_single<textbox> 244x22@1150,322 txt=GP_ENTRY_DRAFT_204
+      text_single<textbox> 70x22@1394,322 txt=GP_ENTRY_DRAFT_205
+  widget<widget> 1450x300@40,394
+    widget<widget> 1450x32@40,394
+    icon<icon> 24x24@52,398
+    text_single<textbox> 880x28@86,396 txt=GP_ENTRY_DRAFT_206
+    text_single<textbox> 464x24@1010,398 txt=GP_ENTRY_DRAFT_207
+    widget<widget> 240x160@56,436
+    widget<widget> 1152x106@322,434
+      text_single<textbox> 310x24@330,434 txt=GP_ENTRY_DRAFT_208
+      text_single<textbox> 137x24@652,434 txt=GP_ENTRY_DRAFT_209
+      text_single<textbox> 137x24@789,434 txt=GP_ENTRY_DRAFT_210
+      text_single<textbox> 137x24@926,434 txt=GP_ENTRY_DRAFT_211
+      text_single<textbox> 137x24@1063,434 txt=GP_ENTRY_DRAFT_212
+      text_single<textbox> 137x24@1200,434 txt=GP_ENTRY_DRAFT_213
+      text_single<textbox> 137x24@1337,434 txt=GP_ENTRY_DRAFT_214
+      icon<icon> 1152x1@322,461
+      text_single<textbox> 44x24@330,463 txt=GP_ENTRY_DRAFT_215
+      text_single<textbox> 268x24@380,463 txt=GP_ENTRY_DRAFT_216
+      text_single<textbox> 137x24@652,463 txt=GP_ENTRY_DRAFT_217
+      text_single<textbox> 137x24@789,463 txt=GP_ENTRY_DRAFT_218
+      text_single<textbox> 137x24@926,463 txt=GP_ENTRY_DRAFT_219
+      text_single<textbox> 137x24@1063,463 txt=GP_ENTRY_DRAFT_220
+      text_single<textbox> 137x24@1200,463 txt=GP_ENTRY_DRAFT_221
+      text_single<textbox> 137x24@1337,463 txt=GP_ENTRY_DRAFT_222
+      icon<icon> 1152x1@322,487
+      text_single<textbox> 44x24@330,489 txt=GP_ENTRY_DRAFT_223
+      text_single<textbox> 268x24@380,489 txt=GP_ENTRY_DRAFT_224
+      text_single<textbox> 137x24@652,489 txt=GP_ENTRY_DRAFT_225
+      text_single<textbox> 137x24@789,489 txt=GP_ENTRY_DRAFT_226
+      text_single<textbox> 137x24@926,489 txt=GP_ENTRY_DRAFT_227
+      text_single<textbox> 137x24@1063,489 txt=GP_ENTRY_DRAFT_228
+      text_single<textbox> 137x24@1200,489 txt=GP_ENTRY_DRAFT_229
+      text_single<textbox> 137x24@1337,489 txt=GP_ENTRY_DRAFT_230
+      icon<icon> 1152x1@322,513
+      text_single<textbox> 44x24@330,515 txt=GP_ENTRY_DRAFT_231
+      text_single<textbox> 268x24@380,515 txt=GP_ENTRY_DRAFT_232
+      text_single<textbox> 137x24@652,515 txt=GP_ENTRY_DRAFT_233
+      text_single<textbox> 137x24@789,515 txt=GP_ENTRY_DRAFT_234
+      text_single<textbox> 137x24@926,515 txt=GP_ENTRY_DRAFT_235
+      text_single<textbox> 137x24@1063,515 txt=GP_ENTRY_DRAFT_236
+      text_single<textbox> 137x24@1200,515 txt=GP_ENTRY_DRAFT_237
+      text_single<textbox> 137x24@1337,515 txt=GP_ENTRY_DRAFT_238
+    widget<widget> 372x110@322,572
+      icon<icon> 26x26@332,580
+      text_single<textbox> 318x26@366,580 txt=GP_ENTRY_DRAFT_239
+      icon<icon> 352x1@332,608
+      text_single<textbox> 34x22@332,612 txt=GP_ENTRY_DRAFT_240
+      text_single<textbox> 244x22@370,612 txt=GP_ENTRY_DRAFT_241
+      text_single<textbox> 70x22@614,612 txt=GP_ENTRY_DRAFT_242
+      text_single<textbox> 34x22@332,634 txt=GP_ENTRY_DRAFT_243
+      text_single<textbox> 244x22@370,634 txt=GP_ENTRY_DRAFT_244
+      text_single<textbox> 70x22@614,634 txt=GP_ENTRY_DRAFT_245
+    widget<widget> 372x110@712,572
+      icon<icon> 26x26@722,580
+      text_single<textbox> 318x26@756,580 txt=GP_ENTRY_DRAFT_246
+      icon<icon> 352x1@722,608
+      text_single<textbox> 34x22@722,612 txt=GP_ENTRY_DRAFT_247
+      text_single<textbox> 244x22@760,612 txt=GP_ENTRY_DRAFT_248
+      text_single<textbox> 70x22@1004,612 txt=GP_ENTRY_DRAFT_249
+      text_single<textbox> 34x22@722,634 txt=GP_ENTRY_DRAFT_250
+      text_single<textbox> 244x22@760,634 txt=GP_ENTRY_DRAFT_251
+      text_single<textbox> 70x22@1004,634 txt=GP_ENTRY_DRAFT_252
+    widget<widget> 372x110@1102,572
+      icon<icon> 26x26@1112,580
+      text_single<textbox> 318x26@1146,580 txt=GP_ENTRY_DRAFT_253
+      icon<icon> 352x1@1112,608
+      text_single<textbox> 34x22@1112,612 txt=GP_ENTRY_DRAFT_254
+      text_single<textbox> 244x22@1150,612 txt=GP_ENTRY_DRAFT_255
+      text_single<textbox> 70x22@1394,612 txt=GP_ENTRY_DRAFT_256
+      text_single<textbox> 34x22@1112,634 txt=GP_ENTRY_DRAFT_257
+      text_single<textbox> 244x22@1150,634 txt=GP_ENTRY_DRAFT_258
+      text_single<textbox> 70x22@1394,634 txt=GP_ENTRY_DRAFT_259
+  widget<widget> 1450x300@40,706
+    widget<widget> 1450x32@40,706
+    icon<icon> 24x24@52,710
+    text_single<textbox> 880x28@86,708 txt=GP_ENTRY_DRAFT_260
+    text_single<textbox> 464x24@1010,710 txt=GP_ENTRY_DRAFT_261
+    widget<widget> 240x160@56,748
+    widget<widget> 1152x106@322,746
+      text_single<textbox> 310x24@330,746 txt=GP_ENTRY_DRAFT_262
+      text_single<textbox> 137x24@652,746 txt=GP_ENTRY_DRAFT_263
+      text_single<textbox> 137x24@789,746 txt=GP_ENTRY_DRAFT_264
+      text_single<textbox> 137x24@926,746 txt=GP_ENTRY_DRAFT_265
+      text_single<textbox> 137x24@1063,746 txt=GP_ENTRY_DRAFT_266
+      text_single<textbox> 137x24@1200,746 txt=GP_ENTRY_DRAFT_267
+      text_single<textbox> 137x24@1337,746 txt=GP_ENTRY_DRAFT_268
+      icon<icon> 1152x1@322,773
+      text_single<textbox> 44x24@330,775 txt=GP_ENTRY_DRAFT_269
+      text_single<textbox> 268x24@380,775 txt=GP_ENTRY_DRAFT_270
+      text_single<textbox> 137x24@652,775 txt=GP_ENTRY_DRAFT_271
+      text_single<textbox> 137x24@789,775 txt=GP_ENTRY_DRAFT_272
+      text_single<textbox> 137x24@926,775 txt=GP_ENTRY_DRAFT_273
+      text_single<textbox> 137x24@1063,775 txt=GP_ENTRY_DRAFT_274
+      text_single<textbox> 137x24@1200,775 txt=GP_ENTRY_DRAFT_275
+      text_single<textbox> 137x24@1337,775 txt=GP_ENTRY_DRAFT_276
+      icon<icon> 1152x1@322,799
+      text_single<textbox> 44x24@330,801 txt=GP_ENTRY_DRAFT_277
+      text_single<textbox> 268x24@380,801 txt=GP_ENTRY_DRAFT_278
+      text_single<textbox> 137x24@652,801 txt=GP_ENTRY_DRAFT_279
+      text_single<textbox> 137x24@789,801 txt=GP_ENTRY_DRAFT_280
+      text_single<textbox> 137x24@926,801 txt=GP_ENTRY_DRAFT_281
+      text_single<textbox> 137x24@1063,801 txt=GP_ENTRY_DRAFT_282
+      text_single<textbox> 137x24@1200,801 txt=GP_ENTRY_DRAFT_283
+      text_single<textbox> 137x24@1337,801 txt=GP_ENTRY_DRAFT_284
+    widget<widget> 372x110@322,884
+      icon<icon> 26x26@332,892
+      text_single<textbox> 318x26@366,892 txt=GP_ENTRY_DRAFT_285
+      icon<icon> 352x1@332,920
+      text_single<textbox> 34x22@332,924 txt=GP_ENTRY_DRAFT_286
+      text_single<textbox> 244x22@370,924 txt=GP_ENTRY_DRAFT_287
+      text_single<textbox> 70x22@614,924 txt=GP_ENTRY_DRAFT_288
+      text_single<textbox> 34x22@332,946 txt=GP_ENTRY_DRAFT_289
+      text_single<textbox> 244x22@370,946 txt=GP_ENTRY_DRAFT_290
+      text_single<textbox> 70x22@614,946 txt=GP_ENTRY_DRAFT_291
+    widget<widget> 372x110@712,884
+      icon<icon> 26x26@722,892
+      text_single<textbox> 318x26@756,892 txt=GP_ENTRY_DRAFT_292
+      icon<icon> 352x1@722,920
+      text_single<textbox> 34x22@722,924 txt=GP_ENTRY_DRAFT_293
+      text_single<textbox> 244x22@760,924 txt=GP_ENTRY_DRAFT_294
+      text_single<textbox> 70x22@1004,924 txt=GP_ENTRY_DRAFT_295
+      text_single<textbox> 34x22@722,946 txt=GP_ENTRY_DRAFT_296
+      text_single<textbox> 244x22@760,946 txt=GP_ENTRY_DRAFT_297
+      text_single<textbox> 70x22@1004,946 txt=GP_ENTRY_DRAFT_298
+    widget<widget> 372x110@1102,884
+      icon<icon> 26x26@1112,892
+      text_single<textbox> 318x26@1146,892 txt=GP_ENTRY_DRAFT_299
+      icon<icon> 352x1@1112,920
+      text_single<textbox> 34x22@1112,924 txt=GP_ENTRY_DRAFT_300
+      text_single<textbox> 244x22@1150,924 txt=GP_ENTRY_DRAFT_301
+      text_single<textbox> 70x22@1394,924 txt=GP_ENTRY_DRAFT_302
+      text_single<textbox> 34x22@1112,946 txt=GP_ENTRY_DRAFT_303
+      text_single<textbox> 244x22@1150,946 txt=GP_ENTRY_DRAFT_304
+      text_single<textbox> 70x22@1394,946 txt=GP_ENTRY_DRAFT_305
+  text_single<textbox> 1450x24@40,1040 txt=GP_ENTRY_DRAFT_306

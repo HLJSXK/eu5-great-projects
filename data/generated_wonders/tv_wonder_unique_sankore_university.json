@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/桑科雷大学_ai_cartoon.png",
-  "source_sha256": "46d64adc1781df19ed88eff639e0289f0f6ea743033cb92a92aaab198e874fe2",
-  "reference": "assets/historical/桑科雷大学.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:2007_Sankore_Mosque_Timbuktu_01.jpg",
-    "license": "Public domain",
-    "artist": "Anne and David",
-    "date": "2007-09-02",
-    "note": "廷巴克图桑科雷清真寺（桑科雷大学所在）。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/桑科雷大学_ai_cartoon_3x2.png",
+  "source_sha256": "37fdb274a194fe2afaaa0ae508f299d53542d3334f66365de26c389047eac77d",
+  "reference": "assets/generated_wonders/tv_wonder_unique_sankore_university.png",
+  "reference_sha256": "46d64adc1781df19ed88eff639e0289f0f6ea743033cb92a92aaab198e874fe2",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_sankore_university.png",
+  "prompt_sha256": "6a674610ed260a4c577cb99d7739a0f81e24ff75bbd45a1412ab7b45b07e5380",
+  "original_reference": "assets/historical/桑科雷大学.jpg"
 }

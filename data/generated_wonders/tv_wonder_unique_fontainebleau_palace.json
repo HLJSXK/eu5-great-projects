@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/枫丹白露宫_ai_cartoon.png",
-  "source_sha256": "5a1466cac1591daedb8b18d73af3290784750937df6a1f1e4a92c9214629b205",
-  "reference": "assets/historical/枫丹白露宫.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Palais_de_Fontainebleau._La_Cour_des_Adieux_LCCN2017659790.tif",
-    "license": "Public domain",
-    "artist": "Photoglob Co., publisher",
-    "date": "1890",
-    "note": "19 世纪末彩色照相（photochrom），白马庭院与马蹄形阶梯；需去边框。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/枫丹白露宫_ai_cartoon_3x2.png",
+  "source_sha256": "5fff70b4bf7905c0686186963a5cd80f155adfb416c500ac136233e74583c7e0",
+  "reference": "assets/generated_wonders/tv_wonder_unique_fontainebleau_palace.png",
+  "reference_sha256": "5a1466cac1591daedb8b18d73af3290784750937df6a1f1e4a92c9214629b205",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_fontainebleau_palace.png",
+  "prompt_sha256": "7958efcba036c5cc5fc44f99e8de7725bf894940468ab766789222f7beb02748",
+  "original_reference": "assets/historical/枫丹白露宫.jpg"
 }

@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/麦加禁寺扩建_ai_cartoon.png",
-  "source_sha256": "f638386111a0d4c2f1b22f24e6cb480b7d927d21d3ee8bbcc27ff1fac0747e26",
-  "reference": "assets/historical/麦加禁寺扩建.png",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Edited_Khalili_Collection_Hajj_and_Arts_of_Pilgrimage_arc.pp_0211.02-Photo_of_Mecca_by_Muhammad_Sadiq_Bey_ca.1880-ccbysa3.0.png",
-    "license": "CC BY-SA 3.0",
-    "artist": "Original Photograph by Muhammad Sadiq Bey; uploaded original media file by Khalili Collections",
-    "date": "1297",
-    "note": "穆罕默德·萨迪克贝约 1880 年所摄麦加禁寺全景；去纸托与阿拉伯文、法文说明。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/麦加禁寺扩建_ai_cartoon_3x2.png",
+  "source_sha256": "dca2d0790c5e12b5145b3c3c6f1543a75a975e7c462673d6585ea183a634982b",
+  "reference": "assets/generated_wonders/tv_wonder_unique_mecca_haram_expansion.png",
+  "reference_sha256": "f638386111a0d4c2f1b22f24e6cb480b7d927d21d3ee8bbcc27ff1fac0747e26",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_mecca_haram_expansion.png",
+  "prompt_sha256": "b41c388773fc7f69b3d70b18229b0b8168ee69d9bd00d7e697930ef75a9e9428",
+  "original_reference": "assets/historical/麦加禁寺扩建.png"
 }

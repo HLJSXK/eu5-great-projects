@@ -1,7 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/博洛尼亚大学_ai_cartoon.png",
-  "source_sha256": "70b69f7a3a533c1eba9efb050450f97903a339e87e721bd08a6099915fc9099a",
-  "reference": "assets/historical/博洛尼亚大学.jpg",
-  "integration_manifest": "data/historical_wonder_images.json"
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/博洛尼亚大学_ai_cartoon_3x2.png",
+  "source_sha256": "d61582e6dfa8218dcd4d4d92adb34f15b491fddba0ab5debcd9593b1b5343167",
+  "reference": "assets/generated_wonders/tv_wonder_unique_university_of_bologna.png",
+  "reference_sha256": "70b69f7a3a533c1eba9efb050450f97903a339e87e721bd08a6099915fc9099a",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_university_of_bologna.png",
+  "prompt_sha256": "c2056ec6d47d1564176174a53346f799eb1d937a3850464f5f2a4927a37beff4",
+  "original_reference": "assets/historical/博洛尼亚大学.jpg"
 }

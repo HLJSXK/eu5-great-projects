@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/卡利卡特港市_ai_cartoon.png",
-  "source_sha256": "f4f19731b4fd6991817df3a1fdacea176452382cf2cac176aa753e0c7530f0e2",
-  "reference": "assets/historical/卡利卡特港市.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Calicut_1572.jpg",
-    "license": "Public domain",
-    "artist": "BRAUN AND HOGENBERG,",
-    "date": "1572",
-    "note": "Braun & Hogenberg 1572 年《卡利卡特》铜版画；去标题框和边框。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/卡利卡特港市_ai_cartoon_3x2.png",
+  "source_sha256": "43d12e2072a0b13950998f96c5cfffb32f9167c9d6f4c038bc253c8dad854a58",
+  "reference": "assets/generated_wonders/tv_wonder_unique_calicut_port_city.png",
+  "reference_sha256": "f4f19731b4fd6991817df3a1fdacea176452382cf2cac176aa753e0c7530f0e2",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_calicut_port_city.png",
+  "prompt_sha256": "126258775af9c59f500165ede15a4c4abe9f47298f3a8cc34d1a33c221fb3fa4",
+  "original_reference": "assets/historical/卡利卡特港市.jpg"
 }

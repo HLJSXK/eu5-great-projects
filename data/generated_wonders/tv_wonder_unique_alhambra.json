@@ -1,7 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/阿尔罕布拉宫_ai_cartoon.png",
-  "source_sha256": "9e643af98f8040e73316c09d07f8901cd75887e63add6ce186f7b214e4878c76",
-  "reference": "assets/historical/阿尔罕布拉宫.webp",
-  "integration_manifest": "data/historical_wonder_images.json"
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/阿尔罕布拉宫_ai_cartoon_3x2.png",
+  "source_sha256": "fd2104d32a538848e0f85cb103980f1be78535ed83424d5a3f4d49df0f9182b3",
+  "reference": "assets/generated_wonders/tv_wonder_unique_alhambra.png",
+  "reference_sha256": "9e643af98f8040e73316c09d07f8901cd75887e63add6ce186f7b214e4878c76",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_alhambra.png",
+  "prompt_sha256": "8f81979530ece26ff35a8af2c89c7d0eaeab8c77257022253b5088cddade8d09",
+  "original_reference": "assets/historical/阿尔罕布拉宫.webp"
 }

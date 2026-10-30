@@ -43,3 +43,44 @@ def test_text_still_compares_exact_bytes(tmp_path):
     assert outputs_match(current, generated)
     generated.write_bytes(b'\xef\xbb\xbftext\r\n')
     assert not outputs_match(current, generated)
+
+
+def test_build_registered_localization_producer_runs_offline(tmp_path, monkeypatch):
+    """Exercise generate.py's real registry dispatch with the translator's CLI."""
+    from pathlib import Path
+    from types import SimpleNamespace
+    from scripts import generate
+    from great_projects_editor_web.services import generation, wonder_generation
+    from scripts_engineering_department.main_menu.localization import (
+        translate_engineering_department_localization_google as translate,
+    )
+
+    source = tmp_path / 'english' / 'example_l_english.yml'
+    source.parent.mkdir()
+    source.write_text('l_english:\n new_key:0 "English fallback"\n', encoding='utf-8-sig')
+    french = tmp_path / 'french' / 'example_l_french.yml'
+    french.parent.mkdir()
+    preserved = 'l_french:\n existing:0 "Texte traduit"\n'
+    french.write_text(preserved, encoding='utf-8-sig')
+    monkeypatch.setattr(translate, 'SOURCE_DIR', source.parent)
+    monkeypatch.setattr(translate, 'OUTPUT_ROOT', tmp_path)
+    monkeypatch.setattr(translate, 'load_cache', lambda path: pytest.fail('Online translation started'))
+    monkeypatch.setattr(wonder_generation, 'wonder_generation_plan', lambda *a, **kw: SimpleNamespace(steps=[]))
+    monkeypatch.setattr(generation, 'run_generation', lambda *a, **kw: None)
+    dispatched = []
+
+    def run(command, **kwargs):
+        if Path(command[1]).name == Path(translate.SCRIPT_REL).name:
+            dispatched.append(command)
+            monkeypatch.setattr(translate.sys, 'argv', command[1:])
+            assert translate.main() == 0
+        return SimpleNamespace(returncode=0)
+
+    monkeypatch.setattr(generate.subprocess, 'run', run)
+    assert generate.generate() == 0
+    assert len(dispatched) == 1
+    assert len(dispatched[0]) == 2  # The build passes no translation flags.
+    assert french.read_text(encoding='utf-8-sig').startswith(preserved)
+    for language in translate.LANGUAGE_TO_GOOGLE:
+        output = tmp_path / language / f'example_l_{language}.yml'
+        assert ' new_key:0 "English fallback"\n' in output.read_text(encoding='utf-8-sig')

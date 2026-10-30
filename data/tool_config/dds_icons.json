@@ -83,6 +83,12 @@
         "output": "比萨斜塔_ai_cartoon.png"
       },
       {
+        "source": "assets/generated_wonders/tv_wonder_unique_leaning_tower_of_pisa.png",
+        "output": "比萨斜塔_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
         "source": "assets/historical/波尔多港.jpg",
         "output": "波尔多港_ai_cartoon.png"
       },
@@ -597,6 +603,738 @@
       {
         "source": "assets/historical/郑王庙.jpg",
         "output": "郑王庙_ai_cartoon.png"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_aachen_cathedral.png",
+        "output": "亚琛大教堂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_alhambra.png",
+        "output": "阿尔罕布拉宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_amber_room.png",
+        "output": "琥珀宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_amsterdam_canal_ring.png",
+        "output": "阿姆斯特丹运河圈_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_angkor_hydraulic_system.png",
+        "output": "吴哥水利工程_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_angkor_wat.png",
+        "output": "吴哥窟_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_augsburg_bank.png",
+        "output": "奥格斯堡银行_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_ayutthaya_foreign_quarters.png",
+        "output": "阿育陀耶外国使馆区_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_bangkok_grand_palace.png",
+        "output": "曼谷大皇宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_bank_of_saint_george.png",
+        "output": "圣乔治银行_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_behistun_inscription.png",
+        "output": "贝希斯敦铭文_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_beijing_imperial_granaries.png",
+        "output": "北京皇家粮仓_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_belem_tower.png",
+        "output": "贝伦塔_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_belgrade_fortress.png",
+        "output": "贝尔格莱德要塞_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_bordeaux_port.png",
+        "output": "波尔多港_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_brest_naval_port.png",
+        "output": "布列斯特海军港_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_brest_synagogue_quarter.png",
+        "output": "布列斯特犹太会堂区_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_brihadishvara_temple.png",
+        "output": "布里哈迪希瓦拉神庙_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_british_navy_dockyards.png",
+        "output": "皇家海军船坞_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_bursa_imperial_mint.png",
+        "output": "布尔萨皇家铸币所_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_calicut_port_city.png",
+        "output": "卡利卡特港市_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_camino_de_santiago.png",
+        "output": "圣地亚哥朝圣路_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_canton_thirteen_factories.png",
+        "output": "广州十三行_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_carrara_marble_quarries.png",
+        "output": "卡拉拉大理石矿_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_cave_monastery.png",
+        "output": "洞窟修道院_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_changbai_mountain_altar.png",
+        "output": "长白山祭坛_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_colmar_old_town.png",
+        "output": "科尔马旧城_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_cologne_cathedral.png",
+        "output": "科隆大教堂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_dardanelles_fortress.png",
+        "output": "达达尼尔海峡要塞_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_dome_of_the_rock.png",
+        "output": "岩石圆顶圣殿_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_dresden_art_gallery.png",
+        "output": "德累斯顿艺术馆_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_dujiangyan.png",
+        "output": "都江堰_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_east_india_company.png",
+        "output": "东印度公司_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_echmiadzin_cathedral.png",
+        "output": "埃奇米阿津主教座堂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_electoral_conference_hall.png",
+        "output": "选帝会议殿_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_enderun_palace_school.png",
+        "output": "恩德伦宫廷学校_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_escorial_monastery.png",
+        "output": "埃斯科里亚尔修道院_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_fatehpur_sikri.png",
+        "output": "法塔赫布尔西格里_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_ferghana_palace.png",
+        "output": "费尔干纳王宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_fez_old_city.png",
+        "output": "非斯古城_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_fontainebleau_palace.png",
+        "output": "枫丹白露宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_forbidden_city.png",
+        "output": "紫禁城_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_grand_canal.png",
+        "output": "京杭大运河_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_great_mosque_of_djenne.png",
+        "output": "杰内大清真寺_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_great_zimbabwe.png",
+        "output": "大津巴布韦石城_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_gyeongbokgung.png",
+        "output": "景福宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_hagia_sophia.png",
+        "output": "圣索菲亚大教堂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_hagia_sophia_mosque.png",
+        "output": "圣索菲亚大清真寺_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_hanseatic_kontor.png",
+        "output": "汉萨商会_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_hanseatic_town_hall.png",
+        "output": "汉萨城市厅_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_heidelberg_university.png",
+        "output": "海德堡大学_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_himeji_castle.png",
+        "output": "姬路城_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_house_of_wisdom.png",
+        "output": "智慧宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_iberian_inquisition.png",
+        "output": "伊比利亚宗教裁判所_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_inca_royal_road.png",
+        "output": "印加皇家道路网_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_isfahan_square.png",
+        "output": "伊斯法罕王家广场_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_jerusalem_holy_city.png",
+        "output": "耶路撒冷圣城_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_jiangnan_examination_hall.png",
+        "output": "江南贡院_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_jingdezhen_imperial_kilns.png",
+        "output": "景德镇官窑_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_kairouan_holy_city.png",
+        "output": "凯鲁万圣城_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_khiva_old_city.png",
+        "output": "希瓦古城_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_konark_sun_temple.png",
+        "output": "科纳克太阳神庙_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_kremlin.png",
+        "output": "莫斯科克里姆林宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_longjiang_shipyard.png",
+        "output": "明龙江船厂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_louvre_palace.png",
+        "output": "卢浮宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_machu_picchu.png",
+        "output": "马丘比丘_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_malacca_port.png",
+        "output": "马六甲港_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_malbork_castle.png",
+        "output": "马尔堡城堡_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_maragheh_observatory.png",
+        "output": "马拉盖天文台_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_marseille_old_port.png",
+        "output": "马赛旧港_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_mecca_haram_expansion.png",
+        "output": "麦加禁寺扩建_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_meteora_monasteries.png",
+        "output": "梅黛奥拉修道院_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_milan_arsenal.png",
+        "output": "米兰兵工厂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_milan_cathedral.png",
+        "output": "米兰大教堂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_ming_great_wall.png",
+        "output": "长城九边_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_mogao_caves.png",
+        "output": "莫高窟_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_mont_saint_michel.png",
+        "output": "圣米歇尔山_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_munich_royal_brewery.png",
+        "output": "慕尼黑皇家啤酒厂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_narikala_fortress.png",
+        "output": "纳里卡拉要塞_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_notre_dame_de_paris.png",
+        "output": "巴黎圣母院_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_nuremberg_imperial_castle.png",
+        "output": "纽伦堡帝国城堡_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_ottoman_hajj_road.png",
+        "output": "奥斯曼朝觐道路_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_parthenon.png",
+        "output": "帕特农神庙_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_peacock_throne.png",
+        "output": "孔雀王座_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_persian_qanat.png",
+        "output": "坎儿井_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_pharos_lighthouse.png",
+        "output": "法罗斯灯塔_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_porcelain_tower_of_nanjing.png",
+        "output": "大报恩寺琉璃塔_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_red_fort_delhi.png",
+        "output": "德里红堡_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_registan_square.png",
+        "output": "雷吉斯坦广场_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_sagres_navigation_school.png",
+        "output": "萨格里什航海学校_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_sanaa_old_city.png",
+        "output": "萨那古城_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_sankore_university.png",
+        "output": "桑科雷大学_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_santa_maria_del_fiore.png",
+        "output": "圣母百花大教堂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_schoenbrunn_palace.png",
+        "output": "美泉宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_spanish_silver_fleet.png",
+        "output": "西班牙白银舰队_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_st_basils_cathedral.png",
+        "output": "圣瓦西里大教堂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_st_peters_basilica.png",
+        "output": "圣亚彼得大教堂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_stonehenge.png",
+        "output": "巨石阵_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_suez_ancient_canal.png",
+        "output": "苏伊士古运河尝试_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_suzhou_classical_gardens.png",
+        "output": "苏州古典园林_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_taj_mahal.png",
+        "output": "泰姬陵_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_tashkent_old_bazaar.png",
+        "output": "塔什干老城集市_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_tenochtitlan_causeways.png",
+        "output": "特诺奇蒂特兰堤道_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_thang_long_temple_of_literature.png",
+        "output": "升龙文庙国子监_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_toledo_armory.png",
+        "output": "托莱多兵工厂_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_topkapi_palace.png",
+        "output": "托普卡帕宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_tower_of_london.png",
+        "output": "伦敦塔_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_trinity_lavra.png",
+        "output": "三一修道院_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_university_of_bologna.png",
+        "output": "博洛尼亚大学_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_varanasi_ghats.png",
+        "output": "瓦拉纳西河坛群_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_venetian_arsenal.png",
+        "output": "威尼斯军港_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_versailles_palace.png",
+        "output": "凡尔赛宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_vilnius_university.png",
+        "output": "维尔纽斯大学_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_walls_of_benin.png",
+        "output": "贝宁城墙_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_wawel_castle.png",
+        "output": "瓦维尔城堡_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_wieliczka_salt_mine.png",
+        "output": "维利奇卡盐矿_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_winter_palace.png",
+        "output": "冬宫_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_xian_bell_and_drum_towers.png",
+        "output": "西安钟鼓楼_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_yunnan_weisuo_colonies.png",
+        "output": "云南卫所屯田带_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_zamosc_ideal_city.png",
+        "output": "扎莫希奇理想城市_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_zaporizhian_sich.png",
+        "output": "扎波罗热塞契_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
+      },
+      {
+        "source": "assets/generated_wonders/tv_wonder_unique_zhoushan_beacon_network.png",
+        "output": "舟山烽火台网_ai_cartoon_3x2.png",
+        "size": "1536x1024",
+        "batch": "landscape_3x2"
       }
     ]
   },

@@ -25,6 +25,7 @@ GLORP_VANILLA_TYPES_FILE = (
 OUT_FILE = REPO_ROOT / "src" / "in_game" / "gui" / "location_window.gui"
 CM_GUI_SOURCE = REPO_ROOT / ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt"
 CM_GUI_OUTPUT = REPO_ROOT / "src/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt"
+SITE_CONDITIONS_GUI_OUTPUT = REPO_ROOT / "src/in_game/common/scripted_guis/tv_wonder_location_site_conditions.txt"
 SCRIPT_REL = "scripts_engineering_department/in_game/gui/gen_location_window.py"
 DATA_REL = (
     "data/unique_wonders.yaml + "
@@ -220,6 +221,13 @@ def slot_base_site_rules_trigger_key_expr(slot_type: str, slot: int) -> str:
     )
 
 
+def slot_site_rules_met_expr(slot: int) -> str:
+    # Use the established ScriptedGui predicate API with an explicit location
+    # root. The bridge only calls the requirements trigger; it never writes state.
+    key = f"Concatenate('{DISPLAY_CONCEPT_PREFIX}', Concatenate({slot_id_string('tooltip', slot)}, '_site_conditions'))"
+    return f"GetScriptedGui({key}).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End)"
+
+
 def render_tooltip_image_overlay(indent: str, *, slot: int) -> list[str]:
     level_var = slot_level_var("tooltip", slot)
     return [
@@ -371,7 +379,7 @@ def render_level_tooltip(slot: int) -> str:
     icons = '\n'.join(f'''icon = {{ using = tooltip_title_icon_size
         visible = "[EqualTo_CFixedPoint({slot_level_var('tooltip', slot)}.GetValue, '(CFixedPoint){level}.0')]"
         texture = "gfx/interface/icons/location_icons/tv_wonder_level_{level}.dds"
-    }}''' for level in range(1, 7))
+    }}''' for level in range(7))
     building = slot_building_type_expr('tooltip', slot)
     subtitle = f"[Localize('TV_LOCATION_WONDER_LEVEL_SHORT')] [{slot_level_var('tooltip', slot)}.GetValue|0]"
     section = f'TooltipListBase = {{ name = "tv_wonder_effects_section" {effects} }}'
@@ -385,23 +393,27 @@ def slot_ritual_active_expr(slot: int, style: int) -> str:
     return f"EqualTo_CFixedPoint({slot_ritual_style_var('tooltip', slot)}.GetValue, '(CFixedPoint){style}.0')"
 
 
+def slot_ritual_completion_expr(slot: int, style: int) -> str:
+    return f"Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_{style}_', {slot_id_string('tooltip', slot)}))"
+
+
 def render_ritual_tooltip(slot: int, style: int) -> str:
     active = slot_ritual_active_expr(slot, style)
     effects = '\n'.join(native_effect_rows(f'tv_location_wonder_ritual_modifiers_{slot}_{style}_{scope.lower()}',
         slot_ritual_modifiers_expr(slot, style, scope),
         title_key=f'TV_LOCATION_WONDER_RITUAL_{scope}_GAINS') for scope in ('COUNTRY', 'LOCAL'))
-    # Native effect rows/footer also cover multi-line and conditional one-shot
-    # rewards. Use their data model to hide an empty completion heading.
-    effects += f'''\nTooltipStringPairList = {{
+    # Scripted-effect descriptions are native effect/condition lines, not
+    # modifier name/value pairs. Match action_tooltip_inner_content in vanilla
+    # cooltip_types.gui, including its empty-list gate and native row styling.
+    effects += f'''\nTooltipConditionList = {{
         name = "tv_location_wonder_ritual_completion_{slot}_{style}"
+        datacontext = "[StringToConditionListOnlyPassedAndNeutral({slot_ritual_completion_expr(slot, style)})]"
+        visible = "[ConditionList.HasItems]"
         margin = {{ 0 0 }}
         blockoverride "bg_listbase" {{}}
         blockoverride "block_title" {{
-            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
             text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
         }}
-        blockoverride "stringpair_datamodel_is_empty" {{ visible = no }}
-        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_{style}_', {slot_id_string('tooltip', slot)}))]"
     }}'''
     icons = '''icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_ceremony')]" }'''
     subtitle = (f"[{slot_building_type_expr('tooltip', slot)}.GetNameWithNoTooltip] · "
@@ -428,15 +440,39 @@ def render_menu_slot(indent: str, *, slot: int) -> list[str]:
     # The building name keeps its native link; decorative parts pass hover to the art.
     overlay = "\n".join(render_tooltip_image_overlay("", slot=slot))
     lines += [overlay, f'''widget = {{
+            name = "tv_location_wonder_site_conditions_{slot}"
+            parentanchor = bottom|left widgetanchor = bottom|left position = {{ 8 -6 }}
+            size = {{ {LEVEL_MEDALLION_SIZE} {LEVEL_MEDALLION_SIZE} }} alwaystransparent = no
+            {render_art_tooltip(slot)}
+            widget = {{
+                parentanchor = center widgetanchor = center size = {{ 35.2 35.2 }}
+                alwaystransparent = yes using = bg_circle_piechart
+                icon = {{
+                    name = "tv_location_wonder_site_conditions_yes_{slot}"
+                    parentanchor = center widgetanchor = center size = {{ 25.6 25.6 }}
+                    alwaystransparent = yes
+                    visible = "[{slot_site_rules_met_expr(slot)}]"
+                    texture = "gfx/interface/icons/text_icons/trigger_yes.dds"
+                }}
+                icon = {{
+                    name = "tv_location_wonder_site_conditions_no_{slot}"
+                    parentanchor = center widgetanchor = center size = {{ 25.6 25.6 }}
+                    alwaystransparent = yes
+                    visible = "[Not({slot_site_rules_met_expr(slot)})]"
+                    texture = "gfx/interface/icons/text_icons/trigger_no.dds"
+                }}
+            }}
+        }}
+        widget = {{
             name = "tv_location_wonder_level_{slot}"
-            visible = "[GreaterThan_CFixedPoint({slot_level_var('tooltip', slot)}.GetValue, '(CFixedPoint)0.0')]"
+            visible = "[{slot_has_id_expr('tooltip', slot)}]"
             parentanchor = bottom|right widgetanchor = bottom|right position = {{ -8 -6 }}
             size = {{ {LEVEL_MEDALLION_SIZE} {LEVEL_MEDALLION_SIZE} }} alwaystransparent = no
             {render_level_tooltip(slot)}''']
     # Static texture handles are required by the engine. This remains one hover
-    # target; exactly one of the six transparent medallion sprites is visible.
+    # target; exactly one of the seven transparent medallion sprites is visible.
     # icon/ubericon uses its explicit square size; it does not support fittype.
-    for level in range(1, 7):
+    for level in range(7):
         lines.append(f'''icon = {{
             name = "tv_location_wonder_medallion_{slot}_{level}"
             visible = "[EqualTo_CFixedPoint({slot_level_var('tooltip', slot)}.GetValue, '(CFixedPoint){level}.0')]"
@@ -636,6 +672,24 @@ def generate() -> str:
     return "\n".join(line.rstrip() for line in "\n".join(lines).splitlines()).rstrip() + "\n"
 
 
+def generate_site_condition_guis() -> str:
+    from wonder_mechanics.io import load_all_wonder_mechanics
+
+    wonders, _ = load_all_wonder_mechanics()
+    lines = render_header(SCRIPT_REL)
+    lines.append("# Read-only predicates, evaluated by the visible location gallery.")
+    for wonder in wonders:
+        lines.extend([
+            f"tv_wonder_display_{wonder['id']}_site_conditions = {{",
+            "\tscope = location",
+            f"\tis_shown = {{ tv_wonder_display_{wonder['id']}_base_site_rules_trigger = yes }}",
+            "\teffect = { }",
+            "}",
+            "",
+        ])
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def main() -> None:
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUT_FILE.write_text(generate(), encoding="utf-8-sig", newline="\n")
@@ -644,6 +698,8 @@ def main() -> None:
     cm_header = render_header(SCRIPT_REL, CM_GUI_SOURCE.relative_to(REPO_ROOT).as_posix())
     CM_GUI_OUTPUT.write_text("\n".join(cm_header) + "\n" + CM_GUI_SOURCE.read_text(encoding="utf-8-sig"), encoding="utf-8-sig", newline="\n")
     print(f"Wrote {CM_GUI_OUTPUT.relative_to(REPO_ROOT)}")
+    SITE_CONDITIONS_GUI_OUTPUT.write_text(generate_site_condition_guis(), encoding="utf-8-sig", newline="\n")
+    print(f"Wrote {SITE_CONDITIONS_GUI_OUTPUT.relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

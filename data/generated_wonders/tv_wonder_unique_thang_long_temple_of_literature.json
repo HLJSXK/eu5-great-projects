@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/升龙文庙国子监_ai_cartoon.png",
-  "source_sha256": "6369db78a6ee6b9c48fa159352f7fab7e9d03e9a1dfd7613e58651ff930ed122",
-  "reference": "assets/historical/升龙文庙国子监.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Khu%C3%AA_v%C4%83n_c%C3%A1c.jpg",
-    "license": "Public domain",
-    "artist": "Phuongcacanh at Vietnamese Wikipedia",
-    "date": "10 November 2009 (original upload date)",
-    "note": "河内文庙奎文阁与天光井。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/升龙文庙国子监_ai_cartoon_3x2.png",
+  "source_sha256": "1ff67721b8235564e4e53bee997ae60fa505f33dcd7a20c413825019088d6056",
+  "reference": "assets/generated_wonders/tv_wonder_unique_thang_long_temple_of_literature.png",
+  "reference_sha256": "6369db78a6ee6b9c48fa159352f7fab7e9d03e9a1dfd7613e58651ff930ed122",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_thang_long_temple_of_literature.png",
+  "prompt_sha256": "1b86dcdb6f7d661e5e8ab7806a5accee9d3ce4f900ec97f2e4fffb907e5347a5",
+  "original_reference": "assets/historical/升龙文庙国子监.jpg"
 }

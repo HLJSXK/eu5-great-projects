@@ -107,13 +107,59 @@ types tv_location_wonder_menu_types {
 				}
 			}
 			widget = {
+			            name = "tv_location_wonder_site_conditions_1"
+			            parentanchor = bottom|left widgetanchor = bottom|left position = { 6 -4.5 }
+			            size = { 48 48 } alwaystransparent = no
+			            tooltipwidget = {
+			        ContextualTooltipType = {
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[tv_wonder_construction|e]" }
+			            blockoverride "tooltip_content" {
+			                TooltipRequirementsList = {
+			        name = "tv_wonder_conditions_section"
+			        blockoverride "block_title" { text = "TV_LOCATION_WONDER_CONDITIONS" }
+			        blockoverride "requirementslist_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
+			    }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
+			            }
+			        }
+			    }
+			            widget = {
+			                parentanchor = center widgetanchor = center size = { 26.4 26.4 }
+			                alwaystransparent = yes using = bg_circle_piechart
+			                icon = {
+			                    name = "tv_location_wonder_site_conditions_yes_1"
+			                    parentanchor = center widgetanchor = center size = { 19.2 19.2 }
+			                    alwaystransparent = yes
+			                    visible = "[GetScriptedGui(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), '_site_conditions'))).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End)]"
+			                    texture = "gfx/interface/icons/text_icons/trigger_yes.dds"
+			                }
+			                icon = {
+			                    name = "tv_location_wonder_site_conditions_no_1"
+			                    parentanchor = center widgetanchor = center size = { 19.2 19.2 }
+			                    alwaystransparent = yes
+			                    visible = "[Not(GetScriptedGui(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)), '_site_conditions'))).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End))]"
+			                    texture = "gfx/interface/icons/text_icons/trigger_no.dds"
+			                }
+			            }
+			        }
+			        widget = {
 			            name = "tv_location_wonder_level_1"
-			            visible = "[GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)0.0')]"
+			            visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').IsSet]"
 			            parentanchor = bottom|right widgetanchor = bottom|right position = { -6 -4.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
 			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)0.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_0.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
 			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)1.0')]"
 			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
 			    }
@@ -171,6 +217,12 @@ types tv_location_wonder_menu_types {
 			            }
 			        }
 			    }
+			icon = {
+			            name = "tv_location_wonder_medallion_1_0"
+			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)0.0')]"
+			            size = { 48 48 } alwaystransparent = yes
+			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_0.dds"
+			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_1_1"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_level').GetValue, '(CFixedPoint)1.0')]"
@@ -278,16 +330,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_1_1"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -335,16 +386,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_1_2"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -392,16 +442,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_1_3"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -481,13 +530,59 @@ types tv_location_wonder_menu_types {
 				}
 			}
 			widget = {
+			            name = "tv_location_wonder_site_conditions_2"
+			            parentanchor = bottom|left widgetanchor = bottom|left position = { 6 -4.5 }
+			            size = { 48 48 } alwaystransparent = no
+			            tooltipwidget = {
+			        ContextualTooltipType = {
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[tv_wonder_construction|e]" }
+			            blockoverride "tooltip_content" {
+			                TooltipRequirementsList = {
+			        name = "tv_wonder_conditions_section"
+			        blockoverride "block_title" { text = "TV_LOCATION_WONDER_CONDITIONS" }
+			        blockoverride "requirementslist_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
+			    }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
+			            }
+			        }
+			    }
+			            widget = {
+			                parentanchor = center widgetanchor = center size = { 26.4 26.4 }
+			                alwaystransparent = yes using = bg_circle_piechart
+			                icon = {
+			                    name = "tv_location_wonder_site_conditions_yes_2"
+			                    parentanchor = center widgetanchor = center size = { 19.2 19.2 }
+			                    alwaystransparent = yes
+			                    visible = "[GetScriptedGui(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), '_site_conditions'))).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End)]"
+			                    texture = "gfx/interface/icons/text_icons/trigger_yes.dds"
+			                }
+			                icon = {
+			                    name = "tv_location_wonder_site_conditions_no_2"
+			                    parentanchor = center widgetanchor = center size = { 19.2 19.2 }
+			                    alwaystransparent = yes
+			                    visible = "[Not(GetScriptedGui(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)), '_site_conditions'))).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End))]"
+			                    texture = "gfx/interface/icons/text_icons/trigger_no.dds"
+			                }
+			            }
+			        }
+			        widget = {
 			            name = "tv_location_wonder_level_2"
-			            visible = "[GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)0.0')]"
+			            visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').IsSet]"
 			            parentanchor = bottom|right widgetanchor = bottom|right position = { -6 -4.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
 			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)0.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_0.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
 			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)1.0')]"
 			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
 			    }
@@ -545,6 +640,12 @@ types tv_location_wonder_menu_types {
 			            }
 			        }
 			    }
+			icon = {
+			            name = "tv_location_wonder_medallion_2_0"
+			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)0.0')]"
+			            size = { 48 48 } alwaystransparent = yes
+			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_0.dds"
+			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_2_1"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_level').GetValue, '(CFixedPoint)1.0')]"
@@ -652,16 +753,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_2_1"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -709,16 +809,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_2_2"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -766,16 +865,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_2_3"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -855,13 +953,59 @@ types tv_location_wonder_menu_types {
 				}
 			}
 			widget = {
+			            name = "tv_location_wonder_site_conditions_3"
+			            parentanchor = bottom|left widgetanchor = bottom|left position = { 6 -4.5 }
+			            size = { 48 48 } alwaystransparent = no
+			            tooltipwidget = {
+			        ContextualTooltipType = {
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[tv_wonder_construction|e]" }
+			            blockoverride "tooltip_content" {
+			                TooltipRequirementsList = {
+			        name = "tv_wonder_conditions_section"
+			        blockoverride "block_title" { text = "TV_LOCATION_WONDER_CONDITIONS" }
+			        blockoverride "requirementslist_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
+			    }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
+			            }
+			        }
+			    }
+			            widget = {
+			                parentanchor = center widgetanchor = center size = { 26.4 26.4 }
+			                alwaystransparent = yes using = bg_circle_piechart
+			                icon = {
+			                    name = "tv_location_wonder_site_conditions_yes_3"
+			                    parentanchor = center widgetanchor = center size = { 19.2 19.2 }
+			                    alwaystransparent = yes
+			                    visible = "[GetScriptedGui(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), '_site_conditions'))).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End)]"
+			                    texture = "gfx/interface/icons/text_icons/trigger_yes.dds"
+			                }
+			                icon = {
+			                    name = "tv_location_wonder_site_conditions_no_3"
+			                    parentanchor = center widgetanchor = center size = { 19.2 19.2 }
+			                    alwaystransparent = yes
+			                    visible = "[Not(GetScriptedGui(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)), '_site_conditions'))).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End))]"
+			                    texture = "gfx/interface/icons/text_icons/trigger_no.dds"
+			                }
+			            }
+			        }
+			        widget = {
 			            name = "tv_location_wonder_level_3"
-			            visible = "[GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)0.0')]"
+			            visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').IsSet]"
 			            parentanchor = bottom|right widgetanchor = bottom|right position = { -6 -4.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
 			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)0.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_0.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
 			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)1.0')]"
 			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
 			    }
@@ -919,6 +1063,12 @@ types tv_location_wonder_menu_types {
 			            }
 			        }
 			    }
+			icon = {
+			            name = "tv_location_wonder_medallion_3_0"
+			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)0.0')]"
+			            size = { 48 48 } alwaystransparent = yes
+			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_0.dds"
+			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_3_1"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_level').GetValue, '(CFixedPoint)1.0')]"
@@ -1026,16 +1176,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_3_1"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -1083,16 +1232,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_3_2"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -1140,16 +1288,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_3_3"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -1229,13 +1376,59 @@ types tv_location_wonder_menu_types {
 				}
 			}
 			widget = {
+			            name = "tv_location_wonder_site_conditions_4"
+			            parentanchor = bottom|left widgetanchor = bottom|left position = { 6 -4.5 }
+			            size = { 48 48 } alwaystransparent = no
+			            tooltipwidget = {
+			        ContextualTooltipType = {
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[tv_wonder_construction|e]" }
+			            blockoverride "tooltip_content" {
+			                TooltipRequirementsList = {
+			        name = "tv_wonder_conditions_section"
+			        blockoverride "block_title" { text = "TV_LOCATION_WONDER_CONDITIONS" }
+			        blockoverride "requirementslist_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
+			    }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
+			            }
+			        }
+			    }
+			            widget = {
+			                parentanchor = center widgetanchor = center size = { 26.4 26.4 }
+			                alwaystransparent = yes using = bg_circle_piechart
+			                icon = {
+			                    name = "tv_location_wonder_site_conditions_yes_4"
+			                    parentanchor = center widgetanchor = center size = { 19.2 19.2 }
+			                    alwaystransparent = yes
+			                    visible = "[GetScriptedGui(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), '_site_conditions'))).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End)]"
+			                    texture = "gfx/interface/icons/text_icons/trigger_yes.dds"
+			                }
+			                icon = {
+			                    name = "tv_location_wonder_site_conditions_no_4"
+			                    parentanchor = center widgetanchor = center size = { 19.2 19.2 }
+			                    alwaystransparent = yes
+			                    visible = "[Not(GetScriptedGui(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)), '_site_conditions'))).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End))]"
+			                    texture = "gfx/interface/icons/text_icons/trigger_no.dds"
+			                }
+			            }
+			        }
+			        widget = {
 			            name = "tv_location_wonder_level_4"
-			            visible = "[GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)0.0')]"
+			            visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').IsSet]"
 			            parentanchor = bottom|right widgetanchor = bottom|right position = { -6 -4.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
 			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)0.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_0.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
 			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)1.0')]"
 			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
 			    }
@@ -1293,6 +1486,12 @@ types tv_location_wonder_menu_types {
 			            }
 			        }
 			    }
+			icon = {
+			            name = "tv_location_wonder_medallion_4_0"
+			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)0.0')]"
+			            size = { 48 48 } alwaystransparent = yes
+			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_0.dds"
+			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_4_1"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_level').GetValue, '(CFixedPoint)1.0')]"
@@ -1400,16 +1599,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_4_1"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -1457,16 +1655,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_4_2"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -1514,16 +1711,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_4_3"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -1603,13 +1799,59 @@ types tv_location_wonder_menu_types {
 				}
 			}
 			widget = {
+			            name = "tv_location_wonder_site_conditions_5"
+			            parentanchor = bottom|left widgetanchor = bottom|left position = { 6 -4.5 }
+			            size = { 48 48 } alwaystransparent = no
+			            tooltipwidget = {
+			        ContextualTooltipType = {
+			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size texture = "[GetConceptTexture('tv_wonder_construction')]" } }
+			            blockoverride "title_text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetNameWithNoTooltip]" }
+			            blockoverride "concept_link" { text = "[tv_wonder_construction|e]" }
+			            blockoverride "tooltip_content" {
+			                TooltipRequirementsList = {
+			        name = "tv_wonder_conditions_section"
+			        blockoverride "block_title" { text = "TV_LOCATION_WONDER_CONDITIONS" }
+			        blockoverride "requirementslist_datamodel_is_empty" { visible = no }
+			        textcontext = "[ShowTriggerConditionsForScope(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), '_base_site_rules_trigger')),LocationView.GetLocation.MakeScope.Self)]"
+			    }
+			                TooltipFlavorTextBlock = {
+			                    name = "tv_wonder_history_section"
+			                    blockoverride "text" { text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetFlavorText]" }
+			                }
+			            }
+			        }
+			    }
+			            widget = {
+			                parentanchor = center widgetanchor = center size = { 26.4 26.4 }
+			                alwaystransparent = yes using = bg_circle_piechart
+			                icon = {
+			                    name = "tv_location_wonder_site_conditions_yes_5"
+			                    parentanchor = center widgetanchor = center size = { 19.2 19.2 }
+			                    alwaystransparent = yes
+			                    visible = "[GetScriptedGui(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), '_site_conditions'))).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End)]"
+			                    texture = "gfx/interface/icons/text_icons/trigger_yes.dds"
+			                }
+			                icon = {
+			                    name = "tv_location_wonder_site_conditions_no_5"
+			                    parentanchor = center widgetanchor = center size = { 19.2 19.2 }
+			                    alwaystransparent = yes
+			                    visible = "[Not(GetScriptedGui(Concatenate('tv_wonder_display_', Concatenate(ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)), '_site_conditions'))).IsShown(GuiScope.SetRoot(LocationView.GetLocation.MakeScope).End))]"
+			                    texture = "gfx/interface/icons/text_icons/trigger_no.dds"
+			                }
+			            }
+			        }
+			        widget = {
 			            name = "tv_location_wonder_level_5"
-			            visible = "[GreaterThan_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)0.0')]"
+			            visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').IsSet]"
 			            parentanchor = bottom|right widgetanchor = bottom|right position = { -6 -4.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
 			            blockoverride "title_icon" { icon = { using = tooltip_title_icon_size
+			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)0.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_0.dds"
+			    }
+			icon = { using = tooltip_title_icon_size
 			        visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)1.0')]"
 			        texture = "gfx/interface/icons/location_icons/tv_wonder_level_1.dds"
 			    }
@@ -1667,6 +1909,12 @@ types tv_location_wonder_menu_types {
 			            }
 			        }
 			    }
+			icon = {
+			            name = "tv_location_wonder_medallion_5_0"
+			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)0.0')]"
+			            size = { 48 48 } alwaystransparent = yes
+			            texture = "gfx/interface/icons/location_icons/tv_wonder_level_0.dds"
+			        }
 			icon = {
 			            name = "tv_location_wonder_medallion_5_1"
 			            visible = "[EqualTo_CFixedPoint(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_level').GetValue, '(CFixedPoint)1.0')]"
@@ -1774,16 +2022,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_5_1"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_1_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -1831,16 +2078,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_5_2"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_2_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"
@@ -1888,16 +2134,15 @@ types tv_location_wonder_menu_types {
 			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
 			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_LOCAL_MODIFIERS_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    }
-			TooltipStringPairList = {
+			TooltipConditionList = {
 			        name = "tv_location_wonder_ritual_completion_5_3"
+			        datacontext = "[StringToConditionListOnlyPassedAndNeutral(Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)))))]"
+			        visible = "[ConditionList.HasItems]"
 			        margin = { 0 0 }
 			        blockoverride "bg_listbase" {}
 			        blockoverride "block_title" {
-			            visible = "[Or(DataModelHasItems(StringPairList.GetRows), DataModelHasItems(StringPairList.GetFooter))]"
 			            text = "TV_LOCATION_WONDER_RITUAL_COMPLETION"
 			        }
-			        blockoverride "stringpair_datamodel_is_empty" { visible = no }
-			        textcontext = "[Localize(Concatenate('TV_WONDER_RITUAL_COMPLETION_3_', ToString_int32(FixedPointToInt(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue))))]"
 			    } }
 			                TooltipFlavorTextBlock = {
 			                    name = "tv_wonder_history_section"

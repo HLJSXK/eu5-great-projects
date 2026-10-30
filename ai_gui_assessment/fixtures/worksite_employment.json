@@ -1,0 +1,15 @@
+{
+  "player_variables": {
+    "tv_ol_levels": 2,
+    "tv_ol_employed": 1.282,
+    "tv_ol_workers": 4,
+    "tv_ol_employment": 0.3205,
+    "tv_wonder_worksite_scale_monthly_construction_progress": 2000,
+    "tv_wonder_effective_worksite_levels": 0.641,
+    "tv_ol_camp_progress": 641,
+    "tv_ol_maintenance": 369.74,
+    "tv_wonder_organization_competence": 85,
+    "tv_wonder_organization_site_level_cap": 17,
+    "tv_wonder_organization_site_level_cap_display": 17
+  }
+}

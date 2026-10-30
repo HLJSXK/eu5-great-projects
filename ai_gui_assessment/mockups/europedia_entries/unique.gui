@@ -1,0 +1,127 @@
+﻿widget = { name = "entry_design" size = { 1530 1190 }
+background = { using = color_intense_bg_blue_texture }
+button_regular = { position = { 20 12 } size = { 292 32 } text = "GP_ENTRY_DRAFT_1" down = no }
+button_regular = { position = { 320 12 } size = { 292 32 } text = "GP_ENTRY_DRAFT_2" down = no }
+button_regular = { position = { 620 12 } size = { 292 32 } text = "GP_ENTRY_DRAFT_3" down = no }
+button_regular = { position = { 920 12 } size = { 292 32 } text = "GP_ENTRY_DRAFT_4" down = yes }
+button_regular = { position = { 1220 12 } size = { 292 32 } text = "GP_ENTRY_DRAFT_5" down = no }
+text_single = { position = { 40 56 } size = { 600 28 } autoresize = no fontsize = 15 align = left|nobaseline  text = "GP_ENTRY_DRAFT_6" }
+tv_eu_card = { position = { 40 92 }
+			blockoverride "card_header" {
+				icon = {
+					layoutpolicy_horizontal = expanding
+					using = button_main_tab_texture
+					frame = 4
+
+					modify_texture = {
+						using = color_intense_bg_blue_texture
+						blend_mode = multiply
+					}
+
+					modify_texture = {
+						using = overlay_leather_texture
+						blend_mode = overlay
+						alpha = 0.2
+					}
+
+					hbox = {
+						margin = { 40 0 }
+						margin_top = 8
+
+						icon = {
+							size = { 45 45 }
+							texture = "gfx/interface/icons/flat_icons/tabicons/europedia_flat_icon.dds"
+						}
+
+						text_single = {
+							using = layoutpolicy_expanding
+							using = Font_Type_Headers
+							fontsize = 22
+							autoresize = yes
+							default_format = "#yellow_titles"
+							text = "GP_ENTRY_DRAFT_7"
+						}
+					}
+				}
+			}
+blockoverride "card_body" { widget = { name = "entry_body" size = { 1370 940 } margin = { 40 0 }
+widget = { name = "original_art" position = { 0 16 } size = { 540 359 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_topkapi_palace.dds" } }
+text_single = { position = { 576 18 } size = { 794 28 } autoresize = no fontsize = 15 align = left|nobaseline  text = "GP_ENTRY_DRAFT_8" }
+icon = { position = { 576 68 } size = { 30 30 } texture = "gfx/interface/icons/flat_icons/tabicons/mapmodes.dds" alwaystransparent = yes }
+text_single = { position = { 618 68 } size = { 400 32 } autoresize = no fontsize = 19 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_9" }
+icon = { position = { 576 108 } size = { 794 1 } using = color_gold_texture alpha = 0.5 }
+text_single = { position = { 582 126 } size = { 770 30 } autoresize = no fontsize = 17 align = left|nobaseline  text = "GP_ENTRY_DRAFT_10" }
+text_single = { position = { 582 162 } size = { 770 30 } autoresize = no fontsize = 17 align = left|nobaseline  text = "GP_ENTRY_DRAFT_11" }
+text_single = { position = { 582 198 } size = { 770 30 } autoresize = no fontsize = 17 align = left|nobaseline  text = "GP_ENTRY_DRAFT_12" }
+text_single = { position = { 576 262 } size = { 794 28 } autoresize = no fontsize = 15 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_13" }
+text_multi = { position = { 576 300 } min_width = 760 max_width = 760 autoresize = yes fontsize = 16 align = left|nobaseline  text = "GP_ENTRY_DRAFT_14" }
+icon = { position = { 0 398 } size = { 32 32 } texture = "gfx/interface/icons/flat_icons/tabicons/advances.dds" alwaystransparent = yes }
+text_single = { position = { 44 398 } size = { 220 32 } autoresize = no fontsize = 19 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_15" }
+icon = { position = { 262 414 } size = { 1108 1 } using = color_gold_texture alpha = 0.55 }
+text_single = { position = { 1050 438 } size = { 320 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "GP_ENTRY_DRAFT_16" }
+widget = { name = "levels" position = { 0 468 } size = { 1370 150 } using = bg_paper_card
+text_single = { position = { 18 7 } size = { 400 30 } autoresize = no fontsize = 16 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_17" }
+text_single = { position = { 434 7 } size = { 156 30 } autoresize = no fontsize = 16 align = center|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_18" }
+text_single = { position = { 590 7 } size = { 156 30 } autoresize = no fontsize = 16 align = center|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_19" }
+text_single = { position = { 746 7 } size = { 156 30 } autoresize = no fontsize = 16 align = center|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_20" }
+text_single = { position = { 902 7 } size = { 156 30 } autoresize = no fontsize = 16 align = center|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_21" }
+text_single = { position = { 1058 7 } size = { 156 30 } autoresize = no fontsize = 16 align = center|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_22" }
+text_single = { position = { 1214 7 } size = { 156 30 } autoresize = no fontsize = 16 align = center|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_23" }
+icon = { position = { 14 42 } size = { 1342 1 } using = color_gold_texture alpha = 0.18 }
+text_single = { position = { 18 49 } size = { 82 34 } autoresize = no fontsize = 14 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_24" }
+text_single = { position = { 108 49 } size = { 310 34 } autoresize = no fontsize = 16 align = left|nobaseline  text = "GP_ENTRY_DRAFT_25" }
+text_single = { position = { 434 49 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_26" }
+text_single = { position = { 590 49 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_27" }
+text_single = { position = { 746 49 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_28" }
+text_single = { position = { 902 49 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_29" }
+text_single = { position = { 1058 49 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_30" }
+text_single = { position = { 1214 49 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_31" }
+icon = { position = { 14 92 } size = { 1342 1 } using = color_gold_texture alpha = 0.18 }
+text_single = { position = { 18 99 } size = { 82 34 } autoresize = no fontsize = 14 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_32" }
+text_single = { position = { 108 99 } size = { 310 34 } autoresize = no fontsize = 16 align = left|nobaseline  text = "GP_ENTRY_DRAFT_33" }
+text_single = { position = { 434 99 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_34" }
+text_single = { position = { 590 99 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_35" }
+text_single = { position = { 746 99 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_36" }
+text_single = { position = { 902 99 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_37" }
+text_single = { position = { 1058 99 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_38" }
+text_single = { position = { 1214 99 } size = { 156 34 } autoresize = no fontsize = 17 align = center|nobaseline  text = "GP_ENTRY_DRAFT_39" }
+}
+icon = { position = { 0 642 } size = { 32 32 } texture = "gfx/interface/icons/flat_icons/hre_parliament.dds" alwaystransparent = yes }
+text_single = { position = { 44 642 } size = { 220 32 } autoresize = no fontsize = 19 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_40" }
+icon = { position = { 262 658 } size = { 1108 1 } using = color_gold_texture alpha = 0.55 }
+text_single = { position = { 1000 684 } size = { 370 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "GP_ENTRY_DRAFT_41" }
+widget = { name = "ritual_1" position = { 0 716 } size = { 446 212 } using = bg_paper_card
+icon = { position = { 16 14 } size = { 42 42 } texture = "gfx/interface/icons/societal_values/centralization_vs_decentralization_left.dds" alwaystransparent = yes }
+text_single = { position = { 72 20 } size = { 358 32 } autoresize = no fontsize = 18 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_42" }
+icon = { position = { 16 68 } size = { 414 1 } using = color_gold_texture alpha = 0.35 }
+text_single = { position = { 18 78 } size = { 410 22 } autoresize = no fontsize = 13 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_43" }
+text_single = { position = { 18 101 } size = { 318 26 } autoresize = no fontsize = 15 align = left|nobaseline  text = "GP_ENTRY_DRAFT_44" }
+text_single = { position = { 338 101 } size = { 90 26 } autoresize = no fontsize = 16 align = right|nobaseline  text = "GP_ENTRY_DRAFT_45" }
+text_single = { position = { 18 128 } size = { 318 26 } autoresize = no fontsize = 15 align = left|nobaseline  text = "GP_ENTRY_DRAFT_46" }
+text_single = { position = { 338 128 } size = { 90 26 } autoresize = no fontsize = 16 align = right|nobaseline  text = "GP_ENTRY_DRAFT_47" }
+}
+widget = { name = "ritual_2" position = { 462 716 } size = { 446 212 } using = bg_paper_card
+icon = { position = { 16 14 } size = { 42 42 } texture = "gfx/interface/icons/societal_values/absolutism_vs_liberalism_left.dds" alwaystransparent = yes }
+text_single = { position = { 72 20 } size = { 358 32 } autoresize = no fontsize = 18 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_48" }
+icon = { position = { 16 68 } size = { 414 1 } using = color_gold_texture alpha = 0.35 }
+text_single = { position = { 18 78 } size = { 410 22 } autoresize = no fontsize = 13 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_49" }
+text_single = { position = { 18 101 } size = { 318 26 } autoresize = no fontsize = 15 align = left|nobaseline  text = "GP_ENTRY_DRAFT_50" }
+text_single = { position = { 338 101 } size = { 90 26 } autoresize = no fontsize = 16 align = right|nobaseline  text = "GP_ENTRY_DRAFT_51" }
+text_single = { position = { 18 128 } size = { 410 22 } autoresize = no fontsize = 13 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_52" }
+text_single = { position = { 18 151 } size = { 318 26 } autoresize = no fontsize = 15 align = left|nobaseline  text = "GP_ENTRY_DRAFT_53" }
+text_single = { position = { 338 151 } size = { 90 26 } autoresize = no fontsize = 16 align = right|nobaseline  text = "GP_ENTRY_DRAFT_54" }
+}
+widget = { name = "ritual_3" position = { 924 716 } size = { 446 212 } using = bg_paper_card
+icon = { position = { 16 14 } size = { 42 42 } texture = "gfx/interface/icons/societal_values/belligerent_vs_conciliatory_right.dds" alwaystransparent = yes }
+text_single = { position = { 72 20 } size = { 358 32 } autoresize = no fontsize = 18 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_55" }
+icon = { position = { 16 68 } size = { 414 1 } using = color_gold_texture alpha = 0.35 }
+text_single = { position = { 18 78 } size = { 410 22 } autoresize = no fontsize = 13 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_56" }
+text_single = { position = { 18 101 } size = { 318 26 } autoresize = no fontsize = 15 align = left|nobaseline  text = "GP_ENTRY_DRAFT_57" }
+text_single = { position = { 338 101 } size = { 90 26 } autoresize = no fontsize = 16 align = right|nobaseline  text = "GP_ENTRY_DRAFT_58" }
+text_single = { position = { 18 128 } size = { 410 22 } autoresize = no fontsize = 13 align = left|nobaseline using = Font_Type_Headers default_format = "#yellow_titles" text = "GP_ENTRY_DRAFT_59" }
+text_single = { position = { 18 151 } size = { 318 26 } autoresize = no fontsize = 15 align = left|nobaseline  text = "GP_ENTRY_DRAFT_60" }
+text_single = { position = { 338 151 } size = { 90 26 } autoresize = no fontsize = 16 align = right|nobaseline  text = "GP_ENTRY_DRAFT_61" }
+}
+} } }
+text_single = { position = { 40 1148 } size = { 1450 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "GP_ENTRY_DRAFT_62" }
+}

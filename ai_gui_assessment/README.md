@@ -15,7 +15,7 @@ C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment/org_logistics.py 
 `*_org_logistics_active.png` / `*_org_logistics_locked.png`、元素树和诊断。支持
 `--state active|locked|full`；使用较高画布检查完整滚动内容，不模拟滚动输入。
 
-`gen_wonder_org_logistics.py` 负责正式 GUI 类型、显示缓存脚本、连接线 DDS 和本地化。
+`gen_wonder_org_logistics.py` 负责正式 GUI 类型、显示缓存脚本和本地化。
 中文、英文为完整文本，其余语言暂用英文。维护配方与八种工艺来自当前生产方式，
 基准价来自共享游戏镜像和本 Mod。生成物全部登记在 `data/generated_files.yaml`。
 工程部主面板实例化这些类型，两个建设按钮沿用原生产界面过滤入口，无新增通用动作。
@@ -35,8 +35,21 @@ GUI 从 `GetPossibleProductionMethods → GetMethods` 读取真实工艺及其�
 检查原版工艺悬停；预览按当前配方提供显式的类型化数据模型样例。
 
 工程部总览没有选定某一座工坊，因此不显示单座建筑的选中状态、实际投入倍率或利润，
-也不在这里切换某座建筑的工艺；建设工坊入口仍打开原版生产界面。下半部市场/工地结果、
-三格营地指标、两张价格卡及四格结算保持原有布局，供需与价格状态使用原版小色标。
+也不在这里切换某座建筑的工艺；建设工坊入口仍打开原版生产界面。
+工地摘要使用当前/最大等级进度条，右上显示组织适性概念链接、原版箭头和最大等级；
+上方以三张原版市场卡显示“基础进度 × 雇佣人数/岗位数 = 工地进度”；雇佣数据从脚本千人单位换算为人数。
+第四张总维护费使用原版财务卡框，单独与计算链区分。工具/建材各一行原生物资链接、当地单价及需求/供给原始数值，
+短缺标红、供应充足标绿。等级、雇佣和维护费用明细放在数值悬停中。
+`*_worksite_summary.png` 从正式 GUI 的实际布局裁出，不使用设计原型替代。
+`*_worksite_calculation.png` 单独导出四项计算行；`org_logistics.py --state active --fixture ai_gui_assessment/fixtures/worksite_employment.json --strict`
+复现截图中 2000 × 1282/4000 = 641 的雇佣样例。
+下方物流与四格结算随摘要收紧上移；建设工地按钮同时指定工程所在地市场和建筑筛选。
+物流结果横排为“建材＋工具 → 工地”，下接建设建材工坊按钮；不再显示底部颜色图例。
+三张独立卡片统一使用原版市场的暗棕细双线边框（`bg_market_card` + `bg_market_card_frame`），
+内边距 12，卡片高度 64；工地标题为原生建筑引用加等级数量，第二行显示工具与建材共同决定的供应率。
+三张卡均为两行，建材不再单列缺口；供需状态以数值颜色呈现，不添加底部色线。
+原有折线贴图已移除，箭头使用原版图标；进口缺口保留在建材卡的悬停中。
+`*_logistics_flow.png` 按正式布局裁出这部分。
 
 显示缓存由现有 `tv_wonder_update_construction_progress_display_effect` 在施工指标之后
 刷新，项目清理与重新勘测同时移除。计算先在临时变量中完成，再一次写入国家显示变量；

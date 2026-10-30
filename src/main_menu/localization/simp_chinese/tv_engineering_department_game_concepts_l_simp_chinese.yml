@@ -26,6 +26,9 @@
  game_concept_tv_wonder_ceremony: "仪式"
  game_concept_tv_wonder_ceremony_desc:0 "工程完工后的奉献仪式。通用与独特奇观均可选择三种风格之一，或以朴素方式落成。仪式与成品建筑分别记录；所选风格提供相应奖励和价值观倾向，失去奇观或仪式被淡忘后消失。"
 
+ game_concept_tv_wonder_plain: "朴素"
+ game_concept_tv_wonder_plain_desc: "[tv_wonder_construction|e]跳过[tv_wonder_ceremony|e]阶段后所处的状态，不提供[tv_wonder_ceremony|e]加成。"
+
  game_concept_tv_wonder_construction: "伟大工程"
  game_concept_tv_wonder_construction_desc: "由[tv_engineering_department|e]管理的伟大工程机制。[tv_great_engineer|e]的[tv_wonder_concept|e]提出可行的[tv_wonder_small|e]、[tv_wonder_medium|e]或[tv_wonder_large|e]方案，国家完成国内论证后，完成[tv_wonder_survey|e]、组织劳工、收集[tv_wonder_materials|e]，并推进四个[tv_wonder_construction_part|e]，将工程提升到最终等级。"
 

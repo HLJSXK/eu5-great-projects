@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/杰内大清真寺_ai_cartoon.png",
-  "source_sha256": "237ec0432e9f540df55b10e4a5263441db1d8712681316ae3f36eef3c1d8ec8a",
-  "reference": "assets/historical/杰内大清真寺.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:MaliDjenn%C3%A9Mosqu%C3%A9e.JPG",
-    "license": "CC BY-SA 3.0",
-    "artist": "BluesyPete",
-    "date": "2007-11-26 13:24:38",
-    "note": "杰内大清真寺东立面。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/杰内大清真寺_ai_cartoon_3x2.png",
+  "source_sha256": "dd9f36e4b8b3505b66c3375e199ed34d41b6fe2a0d2f59242e46b00c8c15b97d",
+  "reference": "assets/generated_wonders/tv_wonder_unique_great_mosque_of_djenne.png",
+  "reference_sha256": "237ec0432e9f540df55b10e4a5263441db1d8712681316ae3f36eef3c1d8ec8a",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_great_mosque_of_djenne.png",
+  "prompt_sha256": "a4356a14ee0bbb36d8e2192c35cf02b125e97a11cf21b3d67a0618399e59b363",
+  "original_reference": "assets/historical/杰内大清真寺.jpg"
 }

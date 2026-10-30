@@ -1,0 +1,16 @@
+{
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/琥珀宫_ai_cartoon_3x2.png",
+  "source_sha256": "a2e2ad9d4d8d2c4abf40edccf2229b58929edef953692d9f30e533dc82e7a761",
+  "reference": "assets/generated_wonders/tv_wonder_unique_amber_room.png",
+  "reference_sha256": "35f704869efd1afcd6baeda03f41188a94cc231f7e2805f6fde077f357b1810f",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_amber_room.png",
+  "prompt_sha256": "526bf1c7d913fee15fb4e25e512de1ec1554ee677aa7e9e6155721fdb4a95d10",
+  "original_reference": "assets/historical/琥珀宫.jpg"
+}

@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/姬路城_ai_cartoon.png",
-  "source_sha256": "7935a3e1eae035278b9386493570977f47b0dd71ab45782c1f0fabf7411c74b1",
-  "reference": "assets/historical/姬路城.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Himeji_Castle_0804_1.jpg",
-    "license": "Public domain",
-    "artist": "Gorgo",
-    "date": "7 August 2004",
-    "note": "姬路城天守群。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/姬路城_ai_cartoon_3x2.png",
+  "source_sha256": "c05f0f4c24d281aa18f34b72d8ff635f85bdd34137e55984fa4e3364139f1551",
+  "reference": "assets/generated_wonders/tv_wonder_unique_himeji_castle.png",
+  "reference_sha256": "7935a3e1eae035278b9386493570977f47b0dd71ab45782c1f0fabf7411c74b1",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_himeji_castle.png",
+  "prompt_sha256": "67979a9d33ac367e905f9f8df0c09f6a92ba480871a258857c81b964878a0e85",
+  "original_reference": "assets/historical/姬路城.jpg"
 }

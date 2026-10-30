@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/圣索菲亚大教堂_ai_cartoon.png",
-  "source_sha256": "f1bef5f6d87153a7888fe18697d176277e8b9368b49d595f31d077bba5fbd150",
-  "reference": "assets/historical/圣索菲亚大教堂.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_1852.jpg",
-    "license": "Public domain",
-    "artist": "Print made by: Louis Haghe\n\nAfter: Gaspard Fossati",
-    "date": "1852",
-    "note": "1852 年石版画中的圣索菲亚（奥斯曼时期外观，含宣礼塔）。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/圣索菲亚大教堂_ai_cartoon_3x2.png",
+  "source_sha256": "72244db4bd9554aa1d78d5253061ebb867d3ae267226ca6e0a51365e1322fe2c",
+  "reference": "assets/generated_wonders/tv_wonder_unique_hagia_sophia.png",
+  "reference_sha256": "f1bef5f6d87153a7888fe18697d176277e8b9368b49d595f31d077bba5fbd150",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_hagia_sophia.png",
+  "prompt_sha256": "624f00d205ef69076b816bde029265eb9ab8d5a49c8b8763d44b2a278ab20f6f",
+  "original_reference": "assets/historical/圣索菲亚大教堂.jpg"
 }

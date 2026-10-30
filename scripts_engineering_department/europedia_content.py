@@ -13,6 +13,7 @@ A card is a dict:
 
         {"kind": "text",    "title": (en, zh), "icon": texture, "body": (en, zh)}
         {"kind": "flow",    "title": ..., "icon": ..., "steps": [step, ...], "sign": (en, zh) | None}
+        {"kind": "cycle",   "title": ..., "icon": ..., "steps": [five clockwise steps]}
         {"kind": "scale",   "title": ..., "icon": ..., "steps": [{"medallion": widget_fn, "label": (en, zh)}],
                             "body": (en, zh) | None}
         {"kind": "panels",  "title": ..., "icon": ..., "panels": [panel, panel], "sign": (en, zh)}
@@ -122,7 +123,7 @@ CARDS: list[dict] = [
     # ------------------------------------------------------------------ overview ----
     {
         "id": "overview",
-        "filter": "mechanics",
+        "filter": "overview",
         "icon": ICON_BOOK,
         "title": _t("Great Projects", "大工程"),
         "lead": _t(
@@ -137,7 +138,7 @@ CARDS: list[dict] = [
         ),
         "sections": [
             {
-                "kind": "flow",
+                "kind": "cycle",
                 "title": _t("The Whole Project at a Glance", "全流程一览"),
                 "icon": ICON_IDEA,
                 "steps": [

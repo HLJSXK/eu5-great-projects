@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/雷吉斯坦广场_ai_cartoon.png",
-  "source_sha256": "3b2ab85754ea4d08596ddd639b74b90dd515b4631344068d2fab95ef64f0a556",
-  "reference": "assets/historical/雷吉斯坦广场.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Registan_01.jpg",
-    "license": "CC0",
-    "artist": "Bernard Gagnon",
-    "date": "2023-09-29",
-    "note": "撒马尔罕雷吉斯坦广场三座经学院。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/雷吉斯坦广场_ai_cartoon_3x2.png",
+  "source_sha256": "a5d9e1033fecc8027560a910f095bf0f3b10b403126725d9fd938adf5264233c",
+  "reference": "assets/generated_wonders/tv_wonder_unique_registan_square.png",
+  "reference_sha256": "3b2ab85754ea4d08596ddd639b74b90dd515b4631344068d2fab95ef64f0a556",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_registan_square.png",
+  "prompt_sha256": "c76a81bc388990ec9a0b49ae0bd8387dca0f5292bb3c59e3ea165b92a0282443",
+  "original_reference": "assets/historical/雷吉斯坦广场.jpg"
 }

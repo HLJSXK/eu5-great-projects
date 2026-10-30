@@ -8844,7 +8844,7 @@
  tv_wonder_ritual_choose_plain_desc:0 "Complete immediately with full base effects and no ritual bonuses. Every participating estate opposes this choice."
  tv_wonder_ritual_cancel_reritual:0 "Cancel rededication"
  TV_LOCATION_WONDER_RERITUAL:0 "Rededicate this wonder"
- TV_LOCATION_WONDER_RERITUAL_DESC:0 "Return this wonder to its plain state and immediately begin rededication, preserving its level and removing its old ritual benefits. Choose a new ritual in the Engineering Department. Cancelling leaves the wonder plain."
+ TV_LOCATION_WONDER_RERITUAL_DESC:0 "Return this wonder to its [tv_wonder_plain|e] state and immediately begin rededication, preserving its level and removing its old ritual benefits."
  tv_wonder_ritual_cancel_reritual_desc:0 "Cancel rededication and begin conception again. Cancellation before confirmation costs nothing."
  MODIFIER_TYPE_NAME_tv_wonder_ritual_small_price_cost_modifier:0 "Ritual cost"
  MODIFIER_TYPE_DESC_tv_wonder_ritual_small_price_cost_modifier:0 "Modifies the cost of holding a ritual."

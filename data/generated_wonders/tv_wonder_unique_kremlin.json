@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/莫斯科克里姆林宫_ai_cartoon.png",
-  "source_sha256": "972f56e0f2760ae161d5beca90d05e2e3bee11b8adca72342fd2497104ca0c94",
-  "reference": "assets/historical/莫斯科克里姆林宫.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Moscow_Kremlin_under_Dmitry_Donskoj.jpg",
-    "license": "Public domain",
-    "artist": "Apollinary Vasnetsov",
-    "date": "1922",
-    "note": "阿波利纳里·瓦斯涅佐夫 1922 年《德米特里·顿斯科伊时代的白石克里姆林》；保持白石时期样貌。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/莫斯科克里姆林宫_ai_cartoon_3x2.png",
+  "source_sha256": "80963b9c5229e2d97ba5bb59ff4b26c20c36eea6e91b83e6823a22e6d1048050",
+  "reference": "assets/generated_wonders/tv_wonder_unique_kremlin.png",
+  "reference_sha256": "972f56e0f2760ae161d5beca90d05e2e3bee11b8adca72342fd2497104ca0c94",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_kremlin.png",
+  "prompt_sha256": "072ea77569a3e8da8ed7fa4f4a369a74b7b70524b29363f0d2690bde373f9af7",
+  "original_reference": "assets/historical/莫斯科克里姆林宫.jpg"
 }

@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/苏伊士古运河尝试_ai_cartoon.png",
-  "source_sha256": "7218c6a5aadcb6f2935e315277032a679a356e024ca5736aa06e33c5e5e1394e",
-  "reference": "assets/historical/苏伊士古运河尝试.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Le_Tour_du_monde-08-p020.jpg",
-    "license": "Public domain",
-    "artist": "Dominique Adolphe Grenet de Joigny",
-    "date": "1863-07-01",
-    "note": "Grenet de Joigny 1863 年《环游世界》杂志铜版画：尼科古运河遗迹（Necho Canal）。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/苏伊士古运河尝试_ai_cartoon_3x2.png",
+  "source_sha256": "540f5cae3d00e58479846233d78a1b4e58c8b17de03b255132b9ec247554bf75",
+  "reference": "assets/generated_wonders/tv_wonder_unique_suez_ancient_canal.png",
+  "reference_sha256": "7218c6a5aadcb6f2935e315277032a679a356e024ca5736aa06e33c5e5e1394e",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_suez_ancient_canal.png",
+  "prompt_sha256": "ef8e0a16be2ab2365df391d9e5bca020a6edc855625450c8ff03bac2dbd4b437",
+  "original_reference": "assets/historical/苏伊士古运河尝试.jpg"
 }

@@ -28,6 +28,7 @@ if str(REPO_ROOT / "scripts_engineering_department") not in sys.path:
     sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
 
 from europedia_content import CARDS  # noqa: E402
+from gen_europedia_cycle import CYCLE_SIZE, CYCLE_CENTER, STEP_SIZE, TEXTURE, step_positions  # noqa: E402
 from wonder_mechanics.modifiers import (  # noqa: E402
     authored_final_building_local_modifiers,
     wonder_base_country_modifiers,
@@ -236,10 +237,45 @@ def render_content_card(card: dict) -> tuple[list[str], dict[str, tuple[str, str
             loc[body_key] = section["body"]
             body_text(lines, body_key)
 
+        elif kind == "cycle":
+            # Reserve the complete circle in the card's content-driven vbox.
+            # Native widgets and baked connectors share the same geometry.
+            positions = step_positions(len(section["steps"]))
+            lines.append(f'{T*3}widget = {{')
+            lines.append(f'{T*4}name = "tv_eu_{cid}_cycle"')
+            lines.append(f'{T*4}size = {{ {CYCLE_SIZE[0]} {CYCLE_SIZE[1]} }}')
+            lines.append(f'{T*4}margin = {{ 40 0 }}')
+            lines.append(f'{T*4}icon = {{ size = {{ {CYCLE_SIZE[0]} {CYCLE_SIZE[1]} }} texture = {_q(TEXTURE)} alwaystransparent = yes }}')
+            lines.append(f'{T*4}text_single = {{')
+            lines.append(f'{T*5}position = {{ {CYCLE_CENTER[0] - 120} {CYCLE_CENTER[1] - 20} }}')
+            lines.append(f'{T*5}size = {{ 240 40 }}')
+            lines.append(f'{T*5}autoresize = no')
+            lines.append(f'{T*5}align = center')
+            lines.append(f'{T*5}using = Font_Type_Headers')
+            lines.append(f'{T*5}fontsize = 26')
+            lines.append(f'{T*5}default_format = "#yellow_titles"')
+            lines.append(f'{T*5}text = {_q(title_key)}')
+            lines.append(f'{T*4}}}')
+            for step_index, (step, (x, y)) in enumerate(zip(section["steps"], positions), start=1):
+                step_title = key(cid, f"s{index}", f"p{step_index}", "title")
+                step_text = key(cid, f"s{index}", f"p{step_index}", "text")
+                loc[step_title] = step["title"]
+                loc[step_text] = step["text"]
+                lines.append(f'{T*4}tv_eu_cycle_step = {{')
+                lines.append(f'{T*5}name = "tv_eu_{cid}_cycle_step_{step_index}"')
+                lines.append(f'{T*5}position = {{ {x} {y} }}')
+                lines.append(f'{T*5}size = {{ {STEP_SIZE[0]} {STEP_SIZE[1]} }}')
+                lines.append(f'{T*5}blockoverride "step_icon" {{ texture = {_q(step["icon"])} }}')
+                lines.append(f'{T*5}blockoverride "step_link" {{ raw_text = {_q(step.get("link") or "")} }}')
+                lines.append(f'{T*5}blockoverride "step_title" {{ text = {_q(step_title)} }}')
+                lines.append(f'{T*5}blockoverride "step_text" {{ text = {_q(step_text)} }}')
+                lines.append(f'{T*4}}}')
+            lines.append(f'{T*3}}}')
+
         elif kind == "flow":
             # Match tv_eu_card's 1450 width, the row's 40px side margins,
-            # 30px arrows and two 8px gaps per arrow. The overview has five
-            # steps; the style's default 305px step only fits four.
+            # 30px arrows and two 8px gaps per arrow. Narrow longer linear
+            # flows because the style's default 305px step only fits four.
             step_count = len(section["steps"])
             step_width = min(305, (1450 - 2 * 40 - (step_count - 1) * (30 + 2 * 8)) // step_count)
             text_width = step_width - 2 * 14

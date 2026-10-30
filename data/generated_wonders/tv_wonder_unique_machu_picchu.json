@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/马丘比丘_ai_cartoon.png",
-  "source_sha256": "deed9dc4e0b4a4aa6bd485ae14a150f1d862e8b142f363ef9f67d4f17534d0f0",
-  "reference": "assets/historical/马丘比丘.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Machu_Picchu,_Per%C3%BA,_2015-07-30,_DD_47.JPG",
-    "license": "CC BY-SA 4.0",
-    "artist": "Diego Delso",
-    "date": "2015-07-30 16:01:04",
-    "note": "马丘比丘城址与华纳比丘峰。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/马丘比丘_ai_cartoon_3x2.png",
+  "source_sha256": "a0388423e7e16630fce443cd7651d00db9ef98ef8e3fa9b938bfa0141e577e90",
+  "reference": "assets/generated_wonders/tv_wonder_unique_machu_picchu.png",
+  "reference_sha256": "deed9dc4e0b4a4aa6bd485ae14a150f1d862e8b142f363ef9f67d4f17534d0f0",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_machu_picchu.png",
+  "prompt_sha256": "c58feaeabd7ed2bd441b02f9c8f09fe55faba423288c45199e42793112cea58f",
+  "original_reference": "assets/historical/马丘比丘.jpg"
 }

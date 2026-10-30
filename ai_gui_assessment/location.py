@@ -96,13 +96,6 @@ def scenario_mocks(state, resources, menu=True, *, localized_tables=None):
                         if row['one_shot'] else '')
             if resources.loc.get(completion_key) != expected:
                 raise ValueError(f'Ritual completion route does not match reward: {completion_key}')
-            if localized_tables is not None:
-                # Explicit samples of the current rewards, not engine execution.
-                sample = '(Sample)' if LANGUAGE == 'english' else '【示例】'
-                localized_tables[completion_key] = string_pair_list([
-                    (f"{sample} {resources.loc.get(reward['type']) or reward['type']}", f"{reward['value']:+g}")
-                    for reward in row['one_shot']
-                ])
             for scope, modifier in (('COUNTRY', row['modifier']), ('LOCAL', row['location_modifier'])):
                 rows = []
                 if modifier:
@@ -116,6 +109,22 @@ def scenario_mocks(state, resources, menu=True, *, localized_tables=None):
                 if localized_tables is not None:
                     localized_tables[key] = string_pair_list(rows)
     for index, (ident, current_level, *_) in enumerate(STATES[state][:5], 1):
+        for row in ritual_styles(wonders[ident], mechanics):
+            # Native action-effect parser output is a ConditionList. Do not
+            # replace effect localization with a fabricated StringPairList:
+            # that concealed the missing one-shot rewards in the real game.
+            sample = '(Sample)' if LANGUAGE == 'english' else '【示例】'
+            lines = [{
+                '__type__': 'ConditionLine',
+                'GetText': f"{sample} {resources.loc.get(reward['type']) or reward['type']} {reward['value']:+g}",
+                'GetIndent': 0, 'HasPassed': False, 'HasFailed': False,
+                'IsNeutral': True, 'IsWarning': False,
+            } for reward in row['one_shot']]
+            expression = f"StringToConditionListOnlyPassedAndNeutral({source.slot_ritual_completion_expr(index, row['style'])})"
+            context = {'__type__': 'ConditionList', 'GetLines': lines,
+                       'HasItems': bool(lines), 'HasCollapsedText': False,
+                       'GetTitle.IsStringViewNotEmptyOrNull': False, 'GetTitle.GetStringView': ''}
+            result.append((re.escape(expression.replace('LocationView.GetLocation.', 'Location.').replace(' ', '')), context))
         for local, getter in ((False, source.slot_modifier_key_expr), (True, source.slot_local_modifier_key_expr)):
             key = f'tv_wonder_display_{ident}_{"local_" if local else ""}level_{max(current_level, 1)}'
             if key not in modifiers:
@@ -123,9 +132,14 @@ def scenario_mocks(state, resources, menu=True, *, localized_tables=None):
             rows = [tuple(line.rsplit(': ', 1)) for line in modifier_sample_lines(modifiers[key], metadata, resources.loc)]
             expression = f'ShowModifierEffect({getter("tooltip", index)})'.replace(' ', '')
             result.append((re.escape(expression.replace('LocationView.GetLocation.', 'Location.')), string_pair_list(rows)))
+        # Explicit alternating samples exercise both badge states; no native
+        # trigger evaluation or gameplay eligibility is claimed by this preview.
+        site_rules_met = index % 2 == 1
+        expression = source.slot_site_rules_met_expr(index).replace(' ', '')
+        result.append((re.escape(expression.replace('LocationView.GetLocation.', 'Location.')), site_rules_met))
         expression = f"ShowTriggerConditionsForScope({source.slot_base_site_rules_trigger_key_expr('tooltip', index)},{source.LOCATION_SCOPE})".replace(' ', '')
         result.append((re.escape(expression.replace('LocationView.GetLocation.', 'Location.')), requirements_list([
-            ('(Sample) Site requirements satisfied' if LANGUAGE == 'english' else '【示例】满足建造地点条件', True)])))
+            ('(Sample) Site requirements satisfied' if LANGUAGE == 'english' else '【示例】满足建造地点条件', site_rules_met)])))
     result.append((r'GetRequirementLineAux\([^)]*\)', {'__type__': 'RequirementLineAux',
                   "GetAuxParentArrowSize('(float)3','(float)0','(float)10')": ('vec', 3, 10)}))
     return result

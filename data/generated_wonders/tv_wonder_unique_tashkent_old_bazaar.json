@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/塔什干老城集市_ai_cartoon.png",
-  "source_sha256": "c33e401cfd73b8de70ca4dd6f814074790f3169a72c27e23ca00d8586b48088d",
-  "reference": "assets/historical/塔什干老城集市.png",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Syr_Darya_Oblast._Aulie-Ata._Bazaar_Square_WDL10902.png",
-    "license": "Public domain",
-    "artist": "Kun, Aleksandr L., 1840-1888",
-    "date": "between 1865 and 1872",
-    "note": "题材近似：《突厥斯坦图集》中奥利耶-阿塔（今塔拉兹）集市照片，非塔什干。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/塔什干老城集市_ai_cartoon_3x2.png",
+  "source_sha256": "4ec59a2354e3f25cb175749ae406fb737dbc831cd9f9e6c5b988cb15dd781db2",
+  "reference": "assets/generated_wonders/tv_wonder_unique_tashkent_old_bazaar.png",
+  "reference_sha256": "c33e401cfd73b8de70ca4dd6f814074790f3169a72c27e23ca00d8586b48088d",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_tashkent_old_bazaar.png",
+  "prompt_sha256": "ee99a752a4670e2cd4bba8fa225a32a397b55798e9d04da035f7aa837bf025b7",
+  "original_reference": "assets/historical/塔什干老城集市.png"
 }

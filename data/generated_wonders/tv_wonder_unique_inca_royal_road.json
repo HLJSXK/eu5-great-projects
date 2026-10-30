@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/印加皇家道路网_ai_cartoon.png",
-  "source_sha256": "0884efab71b6f61d3c34b6bc21cc3afcec7e00c3db3d6ec6aae467a77e66ae30",
-  "reference": "assets/historical/印加皇家道路网.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Qhapaq_%C3%B1an_Grande_route_inca.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "Laurent granier",
-    "date": "",
-    "note": "印加古道（Qhapaq Ñan）山谷段；源图为竖幅，提示词要求横向延展。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/印加皇家道路网_ai_cartoon_3x2.png",
+  "source_sha256": "1e7f1ab6332ad585cd7e0a1ce89ba671ab978f4eace613506199098e1e8342ed",
+  "reference": "assets/generated_wonders/tv_wonder_unique_inca_royal_road.png",
+  "reference_sha256": "0884efab71b6f61d3c34b6bc21cc3afcec7e00c3db3d6ec6aae467a77e66ae30",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_inca_royal_road.png",
+  "prompt_sha256": "8761910e2351beb4da26a66e9986e92df3cdae71d0e12d21713ad98cba456d52",
+  "original_reference": "assets/historical/印加皇家道路网.jpg"
 }

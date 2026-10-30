@@ -69,3 +69,5 @@
  # ── Europedia Tab UI ─────────────────────────────────────────────────────────────────────────
  game_concept_tv_wonder_materials: "$tv_wonder_materials$"
  game_concept_tv_wonder_materials_desc: "Произведенный рыночный товар, используемый для поддержания $tv_wonder_labor_camp$ во время активного [tv_wonder_construction|e]. Каждый $tv_wonder_material_dispatch_point$ преобразует основные строительные товары в [tv_wonder_materials|e], поэтому предложение и цена регулируются через обычный рынок."
+ game_concept_tv_wonder_plain: "Plain"
+ game_concept_tv_wonder_plain_desc: "The state of a [tv_wonder_construction|e] after skipping the [tv_wonder_ceremony|e] phase. Provides no [tv_wonder_ceremony|e] bonuses."

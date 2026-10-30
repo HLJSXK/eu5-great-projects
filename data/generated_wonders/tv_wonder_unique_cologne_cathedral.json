@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/科隆大教堂_ai_cartoon.png",
-  "source_sha256": "10fb964647e63ce7cac25fa4927c434bf7249dfbc88ad0156a89b3a10edcdbfa",
-  "reference": "assets/historical/科隆大教堂.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Koeln_Dom_%2B_St._Johann_Evangelist_1824.jpg",
-    "license": "Public domain",
-    "artist": "James Redaway",
-    "date": "1824",
-    "note": "James Redaway 1824 年铜版画：未完工的科隆大教堂，南塔残段上有中世纪木吊车。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/科隆大教堂_ai_cartoon_3x2.png",
+  "source_sha256": "49f37a47d1c800a6ea7d061dc0aef004b69c2e13bb4d4f57b3197e09ff7cc8fc",
+  "reference": "assets/generated_wonders/tv_wonder_unique_cologne_cathedral.png",
+  "reference_sha256": "10fb964647e63ce7cac25fa4927c434bf7249dfbc88ad0156a89b3a10edcdbfa",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_cologne_cathedral.png",
+  "prompt_sha256": "9ab3ec4590d5d275a60b421cf2c4a34a5fda9540565ea960e6e963f692186e61",
+  "original_reference": "assets/historical/科隆大教堂.jpg"
 }

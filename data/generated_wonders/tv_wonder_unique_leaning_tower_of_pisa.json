@@ -1,7 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/比萨斜塔_ai_cartoon.png",
-  "source_sha256": "daa8804616a1fb3c5965eb7e88105847ee35f16daaac6eec616574e730d3d9df",
-  "reference": "assets/historical/比萨斜塔.jpg",
-  "integration_manifest": "data/historical_wonder_images.json"
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/比萨斜塔_ai_cartoon_3x2.png",
+  "source_sha256": "b186dcc5df39d8ebee7cf7b51e12c4b85d2401bf9cb6b82bf3a6ce1df4001792",
+  "reference": "assets/generated_wonders/tv_wonder_unique_leaning_tower_of_pisa.png",
+  "reference_sha256": "daa8804616a1fb3c5965eb7e88105847ee35f16daaac6eec616574e730d3d9df",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_leaning_tower_of_pisa.png",
+  "prompt_sha256": "76d8eb20d4a4222d72e434447e57bcf7bbd1d6e9d2b552859fdf581faa3fc26f",
+  "original_reference": "assets/historical/比萨斜塔.jpg"
 }

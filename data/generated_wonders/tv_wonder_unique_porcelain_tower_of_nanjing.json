@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/大报恩寺琉璃塔_ai_cartoon.png",
-  "source_sha256": "071fbd0ec21290ab9d7728bb5b4139bdb9bc031f5fbfd1266d506e73bdd95936",
-  "reference": "assets/historical/大报恩寺琉璃塔.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Nieuhof-Ambassade-vers-la-Chine-1665_0790.tif",
-    "license": "Public domain",
-    "artist": "Jacob van Meurs",
-    "date": "1665",
-    "note": "纽霍夫 1665 年《荷使初访中国记》铜版画，原塔已毁，此为最常用的同时代图像。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/大报恩寺琉璃塔_ai_cartoon_3x2.png",
+  "source_sha256": "53f8a843f313f5a4a7f257a08e84c52434d939a194b22c7cb88f8fac982a32c0",
+  "reference": "assets/generated_wonders/tv_wonder_unique_porcelain_tower_of_nanjing.png",
+  "reference_sha256": "071fbd0ec21290ab9d7728bb5b4139bdb9bc031f5fbfd1266d506e73bdd95936",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_porcelain_tower_of_nanjing.png",
+  "prompt_sha256": "acde74c9fc5d4389a3ec4d981d7ccf9f20b54fe87ec5f097ac55bf556802876e",
+  "original_reference": "assets/historical/大报恩寺琉璃塔.jpg"
 }

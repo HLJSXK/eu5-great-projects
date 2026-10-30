@@ -26,6 +26,9 @@
  game_concept_tv_wonder_ceremony: "Ceremony"
  game_concept_tv_wonder_ceremony_desc:0 "The dedication of a completed Great Project. Generic and unique wonders offer three styles or a plain inauguration. Dedication is recorded independently from the final building; its rewards and societal tendency end when the wonder is lost or its dedication fades."
 
+ game_concept_tv_wonder_plain: "Plain"
+ game_concept_tv_wonder_plain_desc: "The state of a [tv_wonder_construction|e] after skipping the [tv_wonder_ceremony|e] phase. Provides no [tv_wonder_ceremony|e] bonuses."
+
  game_concept_tv_wonder_construction: "Great Project"
  game_concept_tv_wonder_construction_desc: "A Great Project mechanism managed through the [tv_engineering_department|e]. Once the [tv_great_engineer|e]'s [tv_wonder_concept|e] yields a feasible [tv_wonder_small|e], [tv_wonder_medium|e], or [tv_wonder_large|e] project and the country resolves domestic debate, it completes a [tv_wonder_survey|e], organizes labor, gathers [tv_wonder_materials|e], and advances four [tv_wonder_construction_part|e]s to raise the project to its final level."
 

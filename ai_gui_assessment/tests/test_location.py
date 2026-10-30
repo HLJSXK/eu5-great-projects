@@ -70,7 +70,8 @@ class LocationPreviewTests(unittest.TestCase):
     def test_art_and_current_level_hover_render_separately(self):
         from eu5_gui_renderer.preview import has_diagnostics
         with tempfile.TemporaryDirectory() as folder:
-            for owner in ['tv_location_wonder_art_1', 'tv_location_wonder_level_1']:
+            for owner in ['tv_location_wonder_art_1', 'tv_location_wonder_level_1',
+                          'tv_location_wonder_site_conditions_1']:
                 with self.subTest(owner=owner):
                     report = location.render('single', self.resources, hover=owner,
                                              output=Path(folder) / f'{owner}.png')
@@ -80,6 +81,34 @@ class LocationPreviewTests(unittest.TestCase):
                     if '_level_' in owner:
                         self.assertNotIn('ShowScriptedEffectForScope', tree)
                         self.assertNotIn('ShowTriggerConditionsForScope', tree)
+
+    def test_site_badge_mirrors_level_and_tracks_live_trigger_result(self):
+        from eu5_gui_renderer.data import Evaluator
+        from eu5_gui_renderer.gui import Expander
+        from scripts_engineering_department.in_game.gui import gen_location_window as source
+        _, _, menu = location.build(self.resources, Expander(self.resources.db), 560, 1080, menu=True)
+        def visit(node):
+            yield node
+            for child in node.children:
+                yield from visit(child)
+        nodes = {node.props.get('name'): node for node in visit(menu)}
+        mocks = location.scenario_mocks('multiple', self.resources)
+        for slot in range(1, 6):
+            badge = nodes[f'tv_location_wonder_site_conditions_{slot}']
+            level = nodes[f'tv_location_wonder_level_{slot}']
+            self.assertEqual(badge.props['size'], level.props['size'])
+            self.assertEqual(badge.props['parentanchor'], 'bottom|left')
+            self.assertEqual(float(badge.props['position'][0]), -float(level.props['position'][0]))
+            self.assertEqual(badge.props['position'][1], level.props['position'][1])
+            icons = [nodes[f'tv_location_wonder_site_conditions_{state}_{slot}'] for state in ('yes', 'no')]
+            predicate = source.slot_site_rules_met_expr(slot).replace('LocationView.GetLocation.', 'Location.').replace(' ', '')
+            # Keep every location variable unchanged; only the live result changes.
+            for satisfied, expected in ((True, 'yes'), (False, 'no')):
+                evaluator = Evaluator([(re.escape(predicate), satisfied)] + mocks, self.resources.loc, [])
+                visible = [icon for icon in icons if evaluator.eval_str(
+                    icon.props['visible'].replace('LocationView.GetLocation.', 'Location.'))]
+                self.assertEqual(len(visible), 1)
+                self.assertEqual(visible[0].props['texture'], f'gfx/interface/icons/text_icons/trigger_{expected}.dds')
 
     def test_current_badge_effects_follow_all_levels_and_unbuilt_states(self):
         from eu5_gui_renderer.data import Evaluator
@@ -103,19 +132,15 @@ class LocationPreviewTests(unittest.TestCase):
                         for child in node.children:
                             yield from visit(child)
                     badge = next(node for node in visit(menu) if node.props.get('name') == 'tv_location_wonder_level_1')
-                    self.assertEqual(evaluator.eval_str(badge.props['visible'].replace('LocationView.GetLocation.', 'Location.')), level > 0)
+                    self.assertTrue(evaluator.eval_str(badge.props['visible'].replace('LocationView.GetLocation.', 'Location.')))
                     sprites = [node for node in badge.children if node.kind == 'icon' and
                                evaluator.eval_str(node.props['visible'].replace('LocationView.GetLocation.', 'Location.'))]
-                    self.assertEqual(len(sprites), int(level > 0))
-                    if level:
-                        self.assertEqual(sprites[0].props['texture'], f'gfx/interface/icons/location_icons/tv_wonder_level_{level}.dds')
-                    report = location.render('current', self.resources, hover='tv_location_wonder_level_1' if level else None,
+                    self.assertEqual(len(sprites), 1)
+                    self.assertEqual(sprites[0].props['texture'], f'gfx/interface/icons/location_icons/tv_wonder_level_{level}.dds')
+                    report = location.render('current', self.resources, hover='tv_location_wonder_level_1',
                                              output=Path(folder) / f'{ident}_{level}_{style}.png')
                     self.assertFalse(has_diagnostics(report), report)
-                    if level:
-                        self.assertLessEqual(report['tooltip']['bounds'][2], 450)
-                    else:
-                        self.assertIsNone(report['tooltip'])
+                    self.assertLessEqual(report['tooltip']['bounds'][2], 450)
 
     def test_ritual_highlight_requires_implemented_style_and_plain_has_none(self):
         from eu5_gui_renderer.data import Evaluator
@@ -160,6 +185,15 @@ class LocationPreviewTests(unittest.TestCase):
             self.assertEqual(len(tables), 2)
             self.assertTrue(all(node.typename == 'TooltipStringPairList' for node in tables))
             self.assertTrue(all('ritual_style' not in node.props.get('visible', '') for node in tables))
+            completion = [node for node in visit(popup) if str(node.props.get('name', '')).startswith('tv_location_wonder_ritual_completion_')]
+            self.assertEqual(len(completion), 1)
+            self.assertEqual(completion[0].typename, 'TooltipConditionList')
+            self.assertIn('StringToConditionListOnlyPassedAndNeutral(', completion[0].props['datacontext'])
+            self.assertEqual(completion[0].props['visible'], '[ConditionList.HasItems]')
+            rewards = [node.typename for node in visit(popup)
+                       if str(node.props.get('name', '')).startswith((
+                           'tv_location_wonder_ritual_modifiers_', 'tv_location_wonder_ritual_completion_'))]
+            self.assertEqual(rewards, ['TooltipStringPairList', 'TooltipStringPairList', 'TooltipConditionList'])
         with tempfile.TemporaryDirectory() as folder:
             for state in ('jerusalem', 'dedicated', 'marseille'):
                 for style in (1, 2, 3):
@@ -207,7 +241,7 @@ class LocationPreviewTests(unittest.TestCase):
             self.assertEqual([node.typename for node in sections], ['TooltipListBase', 'TooltipFlavorTextBlock'])
             # Both reward scopes occupy the same full-width vertical section.
             row_parents = [parent for parent in visit(sections[0]) for node in parent.children
-                           if node.typename == 'TooltipStringPairList']
+                           if node.typename in ('TooltipStringPairList', 'TooltipConditionList')]
             self.assertEqual(len(row_parents), 3 if '_ritual_' in owner.props['name'] else 2)
             self.assertTrue(all(parent.kind == 'vbox' for parent in row_parents))
 

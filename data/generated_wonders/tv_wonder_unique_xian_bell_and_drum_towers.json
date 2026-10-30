@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/西安钟鼓楼_ai_cartoon.png",
-  "source_sha256": "8ce3be512621d8474b794b9eb186183864dc2ecca7d60eff76ae46070cb1bbf4",
-  "reference": "assets/historical/西安钟鼓楼.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Xian_Shaanxi_China_Bell-Tower-01.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "CEphoto, Uwe Aranas",
-    "date": "2012-03-27",
-    "note": "西安钟楼；去现代楼宇和吊车，不另造鼓楼。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/西安钟鼓楼_ai_cartoon_3x2.png",
+  "source_sha256": "aa5f95fdd3ed007a7f672639626a9d5ec9605f76f5979f292e663597d62b633c",
+  "reference": "assets/generated_wonders/tv_wonder_unique_xian_bell_and_drum_towers.png",
+  "reference_sha256": "8ce3be512621d8474b794b9eb186183864dc2ecca7d60eff76ae46070cb1bbf4",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_xian_bell_and_drum_towers.png",
+  "prompt_sha256": "88e9dd2f83b844a35caef0dea1a07af448ed44d5d0125477e64660b4c9d01fbf",
+  "original_reference": "assets/historical/西安钟鼓楼.jpg"
 }

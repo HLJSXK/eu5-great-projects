@@ -75,6 +75,76 @@ class OrgLogisticsModTests(unittest.TestCase):
         bar = next(n for n in nodes if n.kind=="progressbar" and "organization_site_level_cap_display" in str(n.props.get("max")))
         self.assertEqual(engine.resolve(bar.props["max"]), 100)
 
+    def test_compact_summary_keeps_goods_and_build_button_inside_its_bounds(self):
+        nodes, engine = self.page(org_logistics.scenario("active", self.resources.loc))
+        named = {n.props.get("name"): n for n in nodes if n.props.get("name")}
+        summary = named["ol_organization_summary"]
+        self.assertLessEqual(summary.h, 320)
+        self.assertNotIn("stat_0", named)
+        self.assertNotIn("ol_org_header", named)
+        rows = [named["resource_tools"], named["resource_tv_wonder_materials"]]
+        self.assertLessEqual(rows[0].y+rows[0].h, rows[1].y)
+        self.assertLessEqual(rows[1].y+rows[1].h, named["build_camp"].y)
+        self.assertLessEqual(named["build_camp"].y+named["build_camp"].h, summary.y+summary.h)
+        self.assertLessEqual(summary.y+summary.h, named["ol_log_header"].y)
+        for row in rows:
+            self.assertGreaterEqual(row.x, summary.x)
+            self.assertLessEqual(row.x+row.w, summary.x+summary.w)
+        action = str(named["build_camp"].props["action_tooltip"])
+        self.assertIn("ShowProductionViewWithMarketAndFilter", action)
+        self.assertIn("GetVariable('tv_wonder_site').GetLocation.GetMarket.Self", action)
+
+    def test_summary_reads_real_cache_values_and_shows_demand_before_supply(self):
+        base = org_logistics.scenario("active", self.resources.loc)
+        for supplied, color in ((120, "#R"), (160, "#G")):
+            with self.subTest(supply=supplied):
+                state = replace(base, player_variables={**base.player_variables,
+                    "tv_ol_camp_progress": 1234, "tv_ol_maintenance": 987.65,
+                    "tv_ol_tools_price": 6.35, "tv_ol_tools_demand": 150,
+                    "tv_ol_tools_supply": supplied, "tv_ol_levels": 7,
+                    "tv_ol_input_efficiency": 0.42, "tv_wonder_logistics_progress_percent": 135})
+                nodes, engine = self.page(state)
+                named = {n.props.get("name"): n for n in nodes if n.props.get("name")}
+                self.assertIn("1234", engine.text_of(named["camp_progress_value"]).replace(",", ""))
+                self.assertIn("987.65", engine.text_of(named["maintenance_value"]))
+                self.assertIn("6.35", engine.text_of(named["price_tools"]))
+                self.assertIn("×7", engine.text_of(named["camp_flow_name"]))
+                self.assertIn("42%", engine.text_of(named["camp_supply_value"]))
+                self.assertNotIn("135", engine.text_of(named["camp_supply_value"]))
+                rendered = engine.text_of(named["demand_supply_tools"])
+                self.assertIn(f"150.0 / {supplied}.0", rendered)
+                self.assertIn(color, rendered)
+                for name, reference in (
+                    ("worksite_building_reference", "ShowBuildingTypeName('tv_wonder_labor_camp')"),
+                    ("goods_reference_tools", "ShowGoodsName('tools')"),
+                    ("goods_reference_tv_wonder_materials", "ShowGoodsName('tv_wonder_materials')"),
+                ):
+                    self.assertIn(reference, named[name].props["raw_text"])
+                    self.assertTrue(engine.text_of(named[name]))
+                self.assertFalse(engine.missing_text)
+                self.assertFalse(engine.missing_localizations)
+
+    def test_employment_equation_displays_people_and_keeps_four_cards_separate(self):
+        base = org_logistics.scenario("active", self.resources.loc)
+        state = engineering.load_fixture(base, ROOT/"ai_gui_assessment/fixtures/worksite_employment.json")
+        nodes, engine = self.page(state)
+        named = {n.props.get("name"): n for n in nodes if n.props.get("name")}
+        self.assertIn("2000", engine.text_of(named["base_progress_value"]).replace(",", ""))
+        self.assertIn("1282 / 4000", engine.text_of(named["employment_value"]).replace(",", ""))
+        self.assertIn("641", engine.text_of(named["camp_progress_value"]))
+        self.assertIn("369.74", engine.text_of(named["maintenance_value"]))
+        row = named["worksite_calculation"]
+        cards = [named[key] for key in ("base_progress_card", "employment_card", "camp_progress_card", "maintenance_card")]
+        for card in cards:
+            self.assertEqual(card.y, row.y)
+            self.assertEqual(card.h, 64)
+            self.assertGreaterEqual(card.x, row.x)
+            self.assertLessEqual(card.x+card.w, row.x+row.w)
+        self.assertTrue(all(left.x+left.w < right.x for left, right in zip(cards, cards[1:])))
+        self.assertLessEqual(row.y+row.h, named["resource_tools"].y)
+        self.assertFalse(engine.missing_text)
+        self.assertFalse(engine.missing_localizations)
+
 
 if __name__ == "__main__":
     unittest.main()

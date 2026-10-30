@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/汉萨商会_ai_cartoon.png",
-  "source_sha256": "8b14f448264be99554fa7856941105b185a63dacec2af9d0bf7b8edbb1fcd671",
-  "reference": "assets/historical/汉萨商会.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Bryggen,_Old_Wharf_of_Bergen_-_2013.08_-_panoramio.jpg",
-    "license": "CC BY 3.0",
-    "artist": "rheins",
-    "date": "Taken on 28 August 2013",
-    "note": "题材近似：卑尔根布吕根汉萨商站（汉萨四大商站之一），不是汉堡。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/汉萨商会_ai_cartoon_3x2.png",
+  "source_sha256": "4b305ece0dab0527df6c9ea440c0152d0c974447e343032643784967f58e5207",
+  "reference": "assets/generated_wonders/tv_wonder_unique_hanseatic_kontor.png",
+  "reference_sha256": "8b14f448264be99554fa7856941105b185a63dacec2af9d0bf7b8edbb1fcd671",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_hanseatic_kontor.png",
+  "prompt_sha256": "6c1589fffb655d7ad3ebcd470ad932f7483b57989939d3b7e566bfbe92deed2e",
+  "original_reference": "assets/historical/汉萨商会.jpg"
 }

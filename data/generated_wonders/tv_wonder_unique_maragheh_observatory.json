@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/马拉盖天文台_ai_cartoon.png",
-  "source_sha256": "f339395959cf4b3fdfe741bc975034d6739c418e6d7f58d3eb683d86fd0a79a6",
-  "reference": "assets/historical/马拉盖天文台.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Taqi_al_din.jpg",
-    "license": "Public domain",
-    "artist": "Ala ad-Din Mansur-Shirazi",
-    "date": "between circa 1574 and circa 1595",
-    "note": "题材近似：奥斯曼细密画，塔基丁伊斯坦布尔天文台（1577），不是马拉盖；去文字框。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/马拉盖天文台_ai_cartoon_3x2.png",
+  "source_sha256": "aa6c6a2ff86be38be1acac98b331bcaf2736fbb80c673eec10eb80ae02005209",
+  "reference": "assets/generated_wonders/tv_wonder_unique_maragheh_observatory.png",
+  "reference_sha256": "f339395959cf4b3fdfe741bc975034d6739c418e6d7f58d3eb683d86fd0a79a6",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_maragheh_observatory.png",
+  "prompt_sha256": "30bbb5002dcdcbd5b201b899ceeb0f6e5383255569565631f3ac6739b2c1ff22",
+  "original_reference": "assets/historical/马拉盖天文台.jpg"
 }

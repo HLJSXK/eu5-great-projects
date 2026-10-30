@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/冬宫_ai_cartoon.png",
-  "source_sha256": "f83f5198e354e43a3a1ef36e39a6409b690b0ebe2a9e82fc7dacafe45743fb9a",
-  "reference": "assets/historical/冬宫.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Saint_Petersburg_Hermitage_from_Neva_01.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Ad Meskens",
-    "date": "Taken on 17 July 2018, 19:07:36",
-    "note": "涅瓦河望冬宫，现状照片，河面有现代游船需清理。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/冬宫_ai_cartoon_3x2.png",
+  "source_sha256": "d54950454ad5c686bc3716f7fdac245df68dee9c2c54488b68cee01e409e13a0",
+  "reference": "assets/generated_wonders/tv_wonder_unique_winter_palace.png",
+  "reference_sha256": "f83f5198e354e43a3a1ef36e39a6409b690b0ebe2a9e82fc7dacafe45743fb9a",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_winter_palace.png",
+  "prompt_sha256": "688016cd230aaa94f6815d10baf85a141b8caf89ae7adfb8e21567deee8558ab",
+  "original_reference": "assets/historical/冬宫.jpg"
 }

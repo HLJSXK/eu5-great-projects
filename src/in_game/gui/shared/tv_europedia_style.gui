@@ -129,6 +129,39 @@ types tv_europedia_style
 		expand = {}
 	}
 
+	# Fixed-position overview card. Text and links remain native GUI widgets.
+	type tv_eu_cycle_step = widget {
+		using = bg_paper_card
+		icon = {
+			position = { 14 14 }
+			size = { 52 52 }
+			block "step_icon" { texture = "gfx/interface/icons/flat_icons/effect.dds" }
+		}
+		text_single = {
+			position = { 80 14 }
+			size = { 170 26 }
+			autoresize = no
+			using = Font_Type_Headers
+			fontsize = 18
+			default_format = "#yellow_titles"
+			block "step_title" { text = "" }
+		}
+		tv_eu_link = {
+			position = { 80 44 }
+			min_width = 170
+			max_width = 170
+			align = left|nobaseline
+			block "step_link" { raw_text = "" }
+		}
+		text_multi = {
+			position = { 14 82 }
+			min_width = 236
+			max_width = 236
+			autoresize = yes
+			block "step_text" { text = "" }
+		}
+	}
+
 	# The arrow between two flow steps, and between two items.
 	type tv_eu_arrow = icon {
 		size = { 30 30 }

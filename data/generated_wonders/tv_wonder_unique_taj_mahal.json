@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/泰姬陵_ai_cartoon.png",
-  "source_sha256": "349ad3f8089b405a90a236db240da20a57ab04842c76b6a0fdc4a391a703e25b",
-  "reference": "assets/historical/泰姬陵.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India_edit2.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Yann; edited by King of Hearts",
-    "date": "2010",
-    "note": "泰姬陵中轴视角。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/泰姬陵_ai_cartoon_3x2.png",
+  "source_sha256": "25fe44fc41da5a550d67a86b849739c38aa2c2d87bd6c39427aa5b17ed52328f",
+  "reference": "assets/generated_wonders/tv_wonder_unique_taj_mahal.png",
+  "reference_sha256": "349ad3f8089b405a90a236db240da20a57ab04842c76b6a0fdc4a391a703e25b",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_taj_mahal.png",
+  "prompt_sha256": "2da93f3a1fd2eef662c2c31aca0a82adf214ae4c12b40c8e958796c9253faedf",
+  "original_reference": "assets/historical/泰姬陵.jpg"
 }

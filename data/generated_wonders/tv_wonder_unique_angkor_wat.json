@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/吴哥窟_ai_cartoon.png",
-  "source_sha256": "27744754d684de9b4f4575541bec4eea8e89a27027b280ce8f40b086619ad3e6",
-  "reference": "assets/historical/吴哥窟.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:20171128_Angkor_Wat_5671_DxO.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Jakub Hałun",
-    "date": "2017-11-28 15:36:52",
-    "note": "吴哥窟与倒影池。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/吴哥窟_ai_cartoon_3x2.png",
+  "source_sha256": "51df2c1455b392209fd4a7de14174965fea731e6ae915b6e48de0331526d5416",
+  "reference": "assets/generated_wonders/tv_wonder_unique_angkor_wat.png",
+  "reference_sha256": "27744754d684de9b4f4575541bec4eea8e89a27027b280ce8f40b086619ad3e6",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_angkor_wat.png",
+  "prompt_sha256": "15c6cb8bae9e35c87de90a1c7dcf926e8579285440993d46fcd13278c042f13a",
+  "original_reference": "assets/historical/吴哥窟.jpg"
 }

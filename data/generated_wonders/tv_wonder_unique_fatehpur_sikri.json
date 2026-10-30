@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/法塔赫布尔西格里_ai_cartoon.png",
-  "source_sha256": "a43e4ec792ab86da209fa7ebb2ec18c780a74c033c06faef994be2d44f691b55",
-  "reference": "assets/historical/法塔赫布尔西格里.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Diwan-i-Khas,_Fatehpur-Sikri.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Clément Bardot",
-    "date": "2016-02-21 11:01:18",
-    "note": "枢密殿（Diwan-i-Khas），现状照片。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/法塔赫布尔西格里_ai_cartoon_3x2.png",
+  "source_sha256": "24a99a11e44b38b411a3c12bd41bcd2155fdd43d42ad83dbf3c133645acb4ad3",
+  "reference": "assets/generated_wonders/tv_wonder_unique_fatehpur_sikri.png",
+  "reference_sha256": "a43e4ec792ab86da209fa7ebb2ec18c780a74c033c06faef994be2d44f691b55",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_fatehpur_sikri.png",
+  "prompt_sha256": "a94443f7fd250a73e82c5e19d42ecdecdc36caf16716c860c0ba26b8ec1c8aee",
+  "original_reference": "assets/historical/法塔赫布尔西格里.jpg"
 }

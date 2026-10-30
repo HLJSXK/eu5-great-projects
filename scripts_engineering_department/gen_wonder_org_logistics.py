@@ -1,4 +1,4 @@
-"""Own the organization/logistics GUI, display cache, localizations and connectors.
+"""Own the organization/logistics GUI, display cache and localizations.
 
 The cache is refreshed by the existing construction display lifecycle. It reads
 the selected site's market and preserves the existing settlement algorithm.
@@ -7,11 +7,8 @@ goods_*_in_market; event_targets.log market_price; vanilla gold-fleet events.
 """
 from pathlib import Path
 import re
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "scripts"))
-from dds_image_lib import RgbaImage, write_dds
 
 PM = ROOT / "src/in_game/common/production_methods/tv_engineering_department_production_methods.txt"
 PREFIX = "tv_ol_"
@@ -20,7 +17,13 @@ LOC = {}
 # Vanilla market/status palette; state is a small marker, not a tinted card rim.
 STATUS_TEXTURES = {0: "color_red_texture", 1: "color_yellow_texture",
                    2: "color_light_green_texture", 3: "color_light_green_texture"}
-H = 1300
+ORGANIZATION_HEIGHT = 316
+LOGISTICS_Y = ORGANIZATION_HEIGHT + 10
+FLOW_CARD_HEIGHT = 64
+FLOW_HEIGHT = FLOW_CARD_HEIGHT + 44
+LOGISTICS_HEIGHT = 432 + FLOW_HEIGHT + 8
+SETTLEMENT_Y = LOGISTICS_Y + LOGISTICS_HEIGHT + 8
+H = SETTLEMENT_Y + 232
 
 
 def inputs():
@@ -133,12 +136,12 @@ def loc(key, zh, en):
     return key
 
 
-def txt(x, y, w, key, size=13, align="left", h=22):
-    return f'text_single = {{ position = {{ {x} {y} }} size = {{ {w} {h} }} autoresize = no fontsize = {size} fontsize_min = 8 align = {align}|nobaseline text = "{key}" }}'
+def txt(x, y, w, key, size=13, align="left", h=22, *, extra=""):
+    return f'text_single = {{ {extra} position = {{ {x} {y} }} size = {{ {w} {h} }} autoresize = no fontsize = {size} fontsize_min = 8 align = {align}|nobaseline text = "{key}" }}'
 
 
-def raw(x, y, w, val, size=13, align="left", h=22):
-    return txt(x, y, w, val, size, align, h).replace('text = "', 'raw_text = "')
+def raw(x, y, w, val, size=13, align="left", h=22, *, extra=""):
+    return txt(x, y, w, val, size, align, h, extra=extra).replace('text = "', 'raw_text = "')
 
 
 def eq(name, n):
@@ -149,6 +152,8 @@ def frame(style="inset"):
     # Match vanilla card_common and market goods rows (shared/cards.gui,
     # panels/market/market_goods.gui), without overriding their texture palette.
     return {
+        "flow_card": 'using = bg_market_card using = bg_market_card_frame',
+        "cost_card": 'using = bg_market_card using = bg_loans_card_frame',
         "inset": 'using = bg_text_mask_container_dark_blue',
         "node": 'using = bg_scroll_card',
         "section": 'using = bg_paper_card using = bg_cabinet_card_frame',
@@ -172,17 +177,19 @@ def box(name, x, y, w, h, body, *, status=None, accent=None, extra="", style="in
     return f'widget = {{ name = {name} position = {{ {x} {y} }} size = {{ {w} {h} }} {extra} {frame(style)} {body} {markers} }}'
 
 
-def button(name, y, key, filter_key, enabled="yes"):
-    return f'''button_regular = {{ name = {name} position = {{ 10 {y} }} size = {{ 480 32 }}
+def button(name, y, key, filter_key, enabled="yes", *, market=None, x=10):
+    action = (f"ShowProductionViewWithMarketAndFilter({market}, '{filter_key}', '(bool)yes')"
+              if market is not None else f"OpenLateralViewWithFilter('production', '{filter_key}')")
+    return f'''button_regular = {{ name = {name} position = {{ {x} {y} }} size = {{ 480 32 }}
 enabled = {enabled} text = "{key}"
-action_tooltip = {{ click_type = left click_mode = single title = "{key}" on_action = "[OpenLateralViewWithFilter('production', '{filter_key}')]" }}
+action_tooltip = {{ click_type = left click_mode = single title = "{key}" on_action = "[{action}]" }}
 tooltipwidget = {{ BasicFunctionalTooltip = {{}} }} }}'''
 
 
-def bar(name, x, y, w, current, maximum, caption):
-    return f'''widget = {{ name = {name} position = {{ {x} {y} }} size = {{ {w} 18 }}
-progressbar_framed = {{ size = {{ {w} 16 }} using = progressbar_bar_small min = 0 max = "[{maximum}]" value = "[{current}]" }}
-{raw(0, -2, w, caption, 10, "center")} }}'''
+def bar(name, x, y, w, current, maximum, caption, *, height=16, fontsize=10):
+    return f'''widget = {{ name = {name} position = {{ {x} {y} }} size = {{ {w} {height+2} }}
+progressbar_framed = {{ size = {{ {w} {height} }} using = progressbar_bar_small min = 0 max = "[{maximum}]" value = "[{current}]" }}
+{raw(0, -2, w, caption, fontsize, "center", height+4)} }}'''
 
 
 def header(name, y, key, tag):
@@ -308,53 +315,114 @@ vbox = {{
 }}'''
 
 
-def gui():
-    maintenance, recipes, prices = inputs()
+def organization():
+    """Compact worksite summary; values come from the real site's display cache."""
+    maintenance, _, _ = inputs()
     body = step_header()
-    # Fixed background leaves keep the authored layout and scroll extent intact.
-    for name, y, h in (("organization", 50, 344), ("logistics", 404, 656), ("settlement", 1068, 232)):
-        body += box(f"{name}_paper", 0, y, 500, h, "", style="section", extra="alwaystransparent = yes")
-    body += header("ol_org_header", 50, "TV_ENGINEERING_ORGANIZATION_SECTION_TITLE", loc("ORG_READ", f'组织 {ov("organization_competence")}', f'Organization {ov("organization_competence")}'))
-    body += box("camp_icon", 10, 90, 46, 46, 'icon = { position = { 3 3 } size = { 40 40 } texture = "gfx/interface/icons/buildings/tv_wonder_labor_camp.dds" }')
-    body += txt(68, 88, 410, loc("CAMP_LEVEL", f'{value("levels")} / {ov("organization_site_level_cap")} 级劳工营', f'Labor camp  {value("levels")} / {ov("organization_site_level_cap")}'), 15, h=32)
-    body += bar("camp_bar", 68, 125, 412, v("levels"), original("organization_site_level_cap_display"), f'{value("levels")} / {ov("organization_site_level_cap")}')
-    stats = [("EMPLOYMENT", "劳工就业", "Employment", value("employment", "0%")), ("EFFECTIVE", "有效等级", "Effective levels", ov("effective_worksite_levels", "2")), ("CAMP_PROGRESS", "月进度（营地）", "Camp progress", value("camp_progress"))]
-    for i, (key, zh, en, val) in enumerate(stats):
-        tip = loc("STAT_HELP", f'劳工就业按实际雇用人数计算。施工有效等级为 {ov("effective_worksite_levels", "2")}，营地基础进度为 {value("camp_progress")}。', f'Employment uses actual workers. Construction effective levels are {ov("effective_worksite_levels", "2")}; camp progress is {value("camp_progress")}.')
-        body += box(f"stat_{i}", 10+i*163, 158, 154, 68, txt(8, 2, 138, loc(key, zh, en), 13) + raw(8, 28, 138, val, 15, h=30), extra=f'alwaystransparent = no tooltip = "{tip}"')
-    body += txt(10, 234, 480, loc("MAINTENANCE", f'名义月维护  #Y {value("maintenance", "1")}#! @gold!', f'Nominal maintenance  #Y {value("maintenance", "1")}#! @gold!'), 15, h=28)
-    for i, (good, quantity) in enumerate(maintenance.items()):
-        cell = raw(6, 14, 34, f'@{good}!', 22, "center", 38)
-        cell += txt(44, 0, 185, loc(f"{good}_QUANTITY", f'${good}$ × {value(good+"_quantity", "1")}/月', f'${good}$ × {value(good+"_quantity", "1")}/mo'), 11)
-        cell += raw(44, 23, 185, f'{value(good+"_price", "2")} @gold!', 15, h=28)
-        cell += txt(44, 50, 185, loc(f"{good}_BASE", f'{value(good+"_premium", "=0%")}  基准 {prices[good]:.2f}', f'{value(good+"_premium", "=0%")}  Base {prices[good]:.2f}'), 10)
-        premium = v(good+"_premium")
-        # Price and supply states have different thresholds.
-        accent = ''.join(status_marker(236, 78, color, condition, vertical=True) for condition, color in [
-            (f"GreaterThan_CFixedPoint({premium}, '(CFixedPoint)0.3')", 0),
-            (f"And(GreaterThan_CFixedPoint({premium}, '(CFixedPoint)0.1'), LessThanOrEqualTo_CFixedPoint({premium}, '(CFixedPoint)0.3'))", 1),
-            (f"LessThan_CFixedPoint({premium}, '(CFixedPoint)0')", 3)])
-        tip = loc(f"{good}_PRICE_HELP", f'${good}$\n市场需求 {value(good+"_demand", "2")} / 供给 {value(good+"_supply", "2")}\n市场价格 {value(good+"_price", "2")}，相对基准 {value(good+"_premium", "=0%")}。\n名义月耗量按营地等级计算；实际建筑支出见生产界面。', f'${good}$\nMarket demand {value(good+"_demand", "2")} / supply {value(good+"_supply", "2")}\nMarket price {value(good+"_price", "2")}; {value(good+"_premium", "=0%")} versus base.\nNominal inputs use camp levels. See Production for actual building expenses.')
-        body += box(f"price_{good}", 10+i*244, 267, 236, 78, cell + accent, extra=f'alwaystransparent = no tooltip = "{tip}"')
+    body += box("organization_paper", 0, 50, 500, ORGANIZATION_HEIGHT-50, "", style="section", extra="alwaystransparent = yes")
+    body += 'icon = { name = camp_icon position = { 14 66 } size = { 40 40 } texture = "gfx/interface/icons/buildings/tv_wonder_labor_camp.dds" }'
+    body += raw(66, 59, 130, "[ShowBuildingTypeName('tv_wonder_labor_camp')]", 15,
+                extra="name = worksite_building_reference alwaystransparent = no")
+    organization_read = loc("ORG_READ",
+        f'[tv_wonder_organization_competence|E] {ov("organization_competence")} @button_simple! 最大等级 {ov("organization_site_level_cap")}',
+        f'[tv_wonder_organization_competence|E] {ov("organization_competence")} @button_simple! Max level {ov("organization_site_level_cap")}')
+    body += txt(196, 60, 286, organization_read, 12, "right",
+                extra="name = organization_concept_reference alwaystransparent = no")
+    body += bar("camp_bar", 66, 87, 416, v("levels"), original("organization_site_level_cap_display"),
+                f'{value("levels")} / {ov("organization_site_level_cap")}', height=20, fontsize=12)
+    progress_tip = loc("STAT_HELP",
+        f'工地等级 {value("levels")}\n劳工雇佣率 {value("employment", "0%")}\n有效等级 {ov("effective_worksite_levels", "2")}',
+        f'Worksite levels {value("levels")}\nEmployment {value("employment", "0%")}\nEffective levels {ov("effective_worksite_levels", "2")}')
+    cost_tip = loc("MAINTENANCE_HELP",
+        '\n'.join(f"[ShowGoodsName('{good}')] {value(good+'_quantity', '1')}/月 × {value(good+'_price', '2')} @gold!" for good in maintenance),
+        '\n'.join(f"[ShowGoodsName('{good}')] {value(good+'_quantity', '1')}/mo × {value(good+'_price', '2')} @gold!" for good in maintenance))
+    def metric(name, x, width, label, value_key, value_name, *, icon, tooltip=None, style="flow_card"):
+        extra = f'name = {value_name}'
+        if tooltip:
+            extra += f' alwaystransparent = no tooltip = "{tooltip}"'
+        content = raw(8, 6, width-16, f"@{icon}! [Localize('{label}')]", 12)
+        content += txt(10, 30, width-20, value_key, 16, h=26, extra=extra)
+        return box(name, x, 0, width, 64, content, style=style)
+    calculation = metric("base_progress_card", 0, 90,
+        loc("BASE_PROGRESS", "基础进度", "Base progress"),
+        loc("BASE_PROGRESS_VALUE", f'{ov("worksite_scale_monthly_construction_progress")} /月',
+            f'{ov("worksite_scale_monthly_construction_progress")} /mo'), "base_progress_value", icon="building_levels")
+    calculation += raw(90, 20, 18, "×", 18, "center", 24, extra="name = employment_multiply")
+    # Script population amounts use thousands; the displayed fraction is people.
+    employed = f"[Multiply_CFixedPoint({v('employed')}, '(CFixedPoint)1000')|0]"
+    workers = f"[Multiply_CFixedPoint({v('workers')}, '(CFixedPoint)1000')|0]"
+    calculation += metric("employment_card", 108, 118,
+        loc("EMPLOYMENT", "雇佣", "Employment"),
+        loc("EMPLOYMENT_VALUE", f'{employed} / {workers}', f'{employed} / {workers}'),
+        "employment_value", icon="laborers", tooltip=progress_tip)
+    calculation += raw(226, 20, 18, "=", 18, "center", 24, extra="name = employment_equals")
+    calculation += metric("camp_progress_card", 244, 90,
+        loc("CAMP_PROGRESS", "工地进度", "Progress"),
+        loc("CAMP_PROGRESS_VALUE", f'{value("camp_progress")} /月', f'{value("camp_progress")} /mo'),
+        "camp_progress_value", icon="construction", tooltip=progress_tip)
+    calculation += metric("maintenance_card", 348, 132,
+        loc("MAINTENANCE", "总维护费", "Total maintenance"),
+        loc("MAINTENANCE_VALUE", f'{value("maintenance", "2")} @gold! /月', f'{value("maintenance", "2")} @gold! /mo'),
+        "maintenance_value", icon="gold", tooltip=cost_tip, style="cost_card")
+    body += f'widget = {{ name = worksite_calculation position = {{ 10 121 }} size = {{ 480 64 }} {calculation} }}'
+    body += txt(18, 189, 170, loc("INPUT_GOODS", "投入品", "Inputs"), 11, h=20)
+    body += txt(212, 189, 122, loc("LOCAL_PRICE", "当地单价", "Local price"), 11, "right", 20)
+    body += txt(350, 189, 132, loc("DEMAND_SUPPLY", "需求 / 供给", "Demand / supply"), 11, "right", 20)
+    for i, good in enumerate(maintenance):
+        cell = raw(5, 0, 34, f'@{good}!', 19, "center", 32)
+        cell += raw(44, 4, 158, f"[ShowGoodsName('{good}')]", 14,
+                    extra=f"name = goods_reference_{good} alwaystransparent = no")
+        cell += raw(200, 4, 122, f'{value(good+"_price", "2")} @gold!', 15, "right",
+                    extra=f"name = price_{good}")
+        demand_supply = f'{value(good+"_demand", "1")} / {value(good+"_supply", "1")}'
+        short = loc(f"{good}_DEMAND_SUPPLY_SHORT", f'#R {demand_supply}#!', f'#R {demand_supply}#!')
+        supplied = loc(f"{good}_DEMAND_SUPPLY_OK", f'#G {demand_supply}#!', f'#G {demand_supply}#!')
+        condition = f"GreaterThan_CFixedPoint({v(good+'_demand')}, {v(good+'_supply')})"
+        cell += txt(338, 4, 132, f"[SelectLocalization({condition}, '{short}', '{supplied}')]", 13, "right",
+                    extra=f"name = demand_supply_{good}")
+        body += box(f"resource_{good}", 12, 211+i*34, 476, 32, cell)
     can_build = f'"[And(LessThan_CFixedPoint({v("levels")}, {original("organization_site_level_cap")}), Not({PLAYER}.GetVariable(\'tv_wonder_construction_complete\').IsSet))]"'
-    body += button("build_camp", 354, "TV_ENGINEERING_BUILD_WORKSITE_BUTTON", "uses_tv_wonder_materials", can_build)
-    body += header("ol_log_header", 404, "TV_ENGINEERING_LOGISTICS_SECTION_TITLE", loc("LOG_READ", f'后勤 {ov("logistics_competence")}', f'Logistics {ov("logistics_competence")}'))
-    graph = 'background = { texture = "gfx/interface/tv_org_logistics_connectors.dds" }'
-    graph += production_methods()
-    top = 392
-    cell = txt(8, 0, 140, loc("MATERIALS_MARKET", "@tv_wonder_materials! 建材市场", "@tv_wonder_materials! Materials market"), 11)
-    cell += raw(8, 22, 140, f'{value("tv_wonder_materials_demand", "1")}/{value("tv_wonder_materials_supply", "1")}', 19, h=30)
-    cell += txt(8, 51, 140, loc("GAP", f'缺口 {value("materials_gap", "1")}', f'Shortfall {value("materials_gap", "1")}'), 10, h=18)
-    graph += box("materials_market", 324, top, 156, 72, cell, status="tv_wonder_materials_status")
-    positive_gap = f"GreaterThan_CFixedPoint({v('materials_gap')}, '(CFixedPoint)0')"
-    graph = f'background = {{ visible = "[{positive_gap}]" texture = "gfx/interface/tv_org_logistics_import.dds" }}' + graph
-    graph += box("import_hint", 164, top, 116, 48, txt(8, 0, 100, loc("IMPORT", "@trade! 进口补缺", "@trade! Import shortfall"), 11) + raw(8, 23, 100, value("materials_gap", "1"), 14), extra=f'visible = "[{positive_gap}]"')
-    graph += box("camp_flow", 324, top+92, 156, 60, txt(8, 0, 140, "tv_wonder_labor_camp", 12) + raw(8, 25, 140, f'{value("levels")}    ×{ov("logistics_progress_percent")}% ', 18))
-    graph += box("tools_market", 164, top+92, 116, 48, txt(8, 0, 100, loc("TOOLS", "@tools! 工具", "@tools! Tools"), 11) + raw(8, 23, 100, f'{value("tools_demand")}/{value("tools_supply")}', 13), status="tools_status")
-    body += f'widget = {{ name = ol_supply_graph position = {{ 10 444 }} size = {{ 480 544 }} {graph} }}'
-    body += txt(10, 992, 480, loc("LEGEND", "需求 / 供给      绿 充足    黄 紧张    红 短缺", "Demand / supply    Green sufficient   Amber tight   Red shortage"), 11, "center")
-    body += button("build_workshop", 1020, "TV_ENGINEERING_BUILD_MATERIAL_WORKSHOP_BUTTON", "tv_wonder_materials")
-    body += header("ol_summary_header", 1068, loc("SETTLEMENT", "每月进度结算", "Monthly progress"), loc("CHAIN", "营地 × 后勤 × 物资效率", "Camp × logistics × input efficiency"))
+    site_market = f"{PLAYER}.GetVariable('tv_wonder_site').GetLocation.GetMarket.Self"
+    body += button("build_camp", 282, "TV_ENGINEERING_BUILD_WORKSITE_BUTTON", "uses_tv_wonder_materials", can_build,
+                   market=site_market)
+    return f'widget = {{ name = ol_organization_summary size = {{ 500 {ORGANIZATION_HEIGHT} }} {body} }}'
+
+
+def gui():
+    body = organization()
+    # Keep following sections adjacent to the compact summary.
+    for name, y, h in (("logistics", LOGISTICS_Y, LOGISTICS_HEIGHT), ("settlement", SETTLEMENT_Y, 232)):
+        body += box(f"{name}_paper", 0, y, 500, h, "", style="section", extra="alwaystransparent = yes")
+    body += header("ol_log_header", LOGISTICS_Y, "TV_ENGINEERING_LOGISTICS_SECTION_TITLE", loc("LOG_READ", f'后勤 {ov("logistics_competence")}', f'Logistics {ov("logistics_competence")}'))
+    body += f'widget = {{ name = ol_supply_graph position = {{ 10 {LOGISTICS_Y+40} }} size = {{ 480 384 }} {production_methods()} }}'
+    # Materials + tools -> worksite. Keep all three inputs/results on one baseline.
+    # Use the native market cards' independent frames, with room inside each edge.
+    flow = ""
+    def balance(good):
+        values = f'{value(good+"_demand", "1")} / {value(good+"_supply", "1")}'
+        return ''.join(raw(12, 30, 116, f'#{color} {values}#!', 16, h=26,
+                           extra=f'visible = "[{eq(good+"_status", status)}]"')
+                       for status, color in ((0, "R"), (1, "Y"), (2, "G")))
+    cell = raw(12, 6, 116, "@tv_wonder_materials! [ShowGoodsName('tv_wonder_materials')]", 12,
+               extra="alwaystransparent = no")
+    cell += balance("tv_wonder_materials")
+    import_tip = loc("IMPORT_HELP", f'进口补缺 {value("materials_gap", "1")}', f'Import shortfall {value("materials_gap", "1")}')
+    flow += box("materials_market", 0, 0, 140, FLOW_CARD_HEIGHT, cell, style="flow_card",
+               extra=f'alwaystransparent = no tooltip = "{import_tip}"')
+    flow += raw(140, (FLOW_CARD_HEIGHT-30)//2, 26, "+", 22, "center", 30, extra="name = supply_plus")
+    cell = raw(12, 6, 116, "@tools! [ShowGoodsName('tools')]", 12, extra="alwaystransparent = no")
+    cell += balance("tools")
+    flow += box("tools_market", 166, 0, 140, FLOW_CARD_HEIGHT, cell, style="flow_card")
+    flow += raw(306, (FLOW_CARD_HEIGHT-30)//2, 34, "@button_simple!", 20, "center", 30, extra="name = supply_arrow")
+    cell = 'icon = { name = camp_flow_icon position = { 12 6 } size = { 20 20 } texture = "gfx/interface/icons/buildings/tv_wonder_labor_camp.dds" alwaystransparent = yes }'
+    cell += raw(36, 6, 92, f"[ShowBuildingTypeName('tv_wonder_labor_camp')] ×{value('levels')}", 12,
+                extra="name = camp_flow_name alwaystransparent = no")
+    cell += txt(12, 30, 116, loc("CAMP_SUPPLY", f'供应 {value("input_efficiency", "0%")}', f'Supply {value("input_efficiency", "0%")}'), 16, h=26,
+                extra="name = camp_supply_value")
+    flow += box("camp_flow", 340, 0, 140, FLOW_CARD_HEIGHT, cell, style="flow_card")
+    flow += button("build_workshop", FLOW_CARD_HEIGHT+12, "TV_ENGINEERING_BUILD_MATERIAL_WORKSHOP_BUTTON", "tv_wonder_materials", x=0)
+    body += f'widget = {{ name = ol_logistics_flow position = {{ 10 {LOGISTICS_Y+432} }} size = {{ 480 {FLOW_HEIGHT} }} {flow} }}'
+    body += header("ol_summary_header", SETTLEMENT_Y, loc("SETTLEMENT", "每月进度结算", "Monthly progress"), loc("CHAIN", "营地 × 后勤 × 物资效率", "Camp × logistics × input efficiency"))
     factors = [("CAMP_PROGRESS", value("camp_progress")), ("LOG_READ", ov("logistics_progress_percent")+"%"), ("INPUT", value("input_efficiency", "0%")), ("RESULT", ov("monthly_construction_progress"))]
     loc("INPUT", "物资效率", "Input efficiency")
     loc("RESULT", "本月进度", "Monthly progress")
@@ -363,18 +431,19 @@ def gui():
             label = "LOG_FACTOR"
             loc(label, "后勤", "Logistics")
         tip = loc("SETTLEMENT_HELP", f'营地进度 {value("camp_progress")} × 物资效率 {value("input_efficiency", "2%")} × 后勤 {ov("logistics_progress_percent")}% = {ov("monthly_construction_progress", "2")}。\n物资效率包括工具与建材，并保留原有结算取整。', f'Camp progress {value("camp_progress")} × input efficiency {value("input_efficiency", "2%")} × logistics {ov("logistics_progress_percent")}% = {ov("monthly_construction_progress", "2")}.\nInput efficiency includes tools and materials, preserving settlement rounding.')
-        body += box(f"factor_{i}", 10+i*124, 1110, 108, 74, txt(4, 4, 100, "TV_OL_"+label, 13, "center") + raw(4, 31, 100, val, 18, "center", 30), accent=1 if i==2 else None, extra=f'alwaystransparent = no tooltip = "{tip}"')
+        body += box(f"factor_{i}", 10+i*124, SETTLEMENT_Y+42, 108, 74, txt(4, 4, 100, "TV_OL_"+label, 13, "center") + raw(4, 31, 100, val, 18, "center", 30), accent=1 if i==2 else None, extra=f'alwaystransparent = no tooltip = "{tip}"')
         if i < 3:
-            body += raw(118+i*124, 1134, 16, "=" if i==2 else "×", 13, "center")
+            body += raw(118+i*124, SETTLEMENT_Y+66, 16, "=" if i==2 else "×", 13, "center")
     notice = loc("SHORTAGE", f'物资不足。补齐工具与建材后每月可增加 {value("recoverable")} 进度。', f'Input shortage. Restoring tools and materials adds {value("recoverable")} progress/month.')
     good_notice = loc("SUPPLIED", "施工物资供应充足。", "Construction inputs are sufficiently supplied.")
-    body += box("diagnosis", 10, 1194, 480, 42,
+    body += box("diagnosis", 10, SETTLEMENT_Y+126, 480, 42,
                 f'text_multi = {{ size = {{ 462 38 }} position = {{ 9 2 }} max_width = 462 autoresize = no fontsize = 12 text = "[SelectLocalization(GreaterThan_CFixedPoint({v("recoverable")}, \'(CFixedPoint)0\'), \'{notice}\', \'{good_notice}\')]" }}', accent=1)
-    body += txt(10, 1244, 480, loc("CAPACITY", f'有效工坊 {ov("effective_material_workshop_levels")} / 所需 {ov("material_workshop_need")} 级', f'Effective workshops {ov("effective_material_workshop_levels")} / required {ov("material_workshop_need")}'), 12, "center")
-    body += bar("workshop_capacity", 10, 1273, 480, original("effective_material_workshop_levels"), original("material_workshop_need_display"), "")
+    body += txt(10, SETTLEMENT_Y+176, 480, loc("CAPACITY", f'有效工坊 {ov("effective_material_workshop_levels")} / 所需 {ov("material_workshop_need")} 级', f'Effective workshops {ov("effective_material_workshop_levels")} / required {ov("material_workshop_need")}'), 12, "center")
+    body += bar("workshop_capacity", 10, SETTLEMENT_Y+205, 480, original("effective_material_workshop_levels"), original("material_workshop_need_display"), "")
     locked = box("locked_paper", 0, 0, 500, 198, "", style="section", extra="alwaystransparent = yes")
     locked += step_header()
-    locked += txt(20, 62, 460, loc("LOCKED_LEVEL", "— / — 级劳工营", "— / — labor camp levels"), 15, h=34)
+    locked += txt(20, 62, 460, loc("LOCKED_LEVEL", "[ShowBuildingTypeName('tv_wonder_labor_camp')] — / —", "[ShowBuildingTypeName('tv_wonder_labor_camp')] — / —"), 15, h=34,
+                  extra="alwaystransparent = no")
     locked += txt(20, 110, 460, "TV_ENGINEERING_ORG_LOG_LOCKED_TEXT", 13)
     locked += button("build_camp_locked", 152, "TV_ENGINEERING_BUILD_WORKSITE_BUTTON", "uses_tv_wonder_materials", "no")
     return pretty(f'types TVOrgLogistics {{ type tv_org_logistics_active = widget {{ size = {{ 500 {H} }} {body} }} type tv_org_logistics_locked = widget {{ size = {{ 500 198 }} {locked} }} }}')
@@ -397,25 +466,6 @@ def pretty(source):
             current.append(token)
     if current: lines.append("\t"*depth + " ".join(current))
     return "\n".join(lines)+"\n"
-
-
-def connector_image(import_only=False):
-    from PIL import Image, ImageDraw
-    image = Image.new("RGBA", (960, 1088))
-    draw = ImageDraw.Draw(image)
-    def line(points, dashed=False):
-        if dashed:
-            x, y = points[0]; end = points[-1][0]
-            for start in range(int(x), int(end), 10):
-                line([(start,y),(min(start+5,end),y)])
-        else:
-            draw.line([(x*2,y*2) for x,y in points], fill="#b39a65", width=4)
-    if import_only:
-        line([(280,414),(324,414)], True)
-        return image
-    line([(440,464),(440,484)])
-    line([(280,506),(324,506)])
-    return image
 
 
 def outputs():
@@ -441,9 +491,6 @@ def main():
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(content, encoding="utf-8-sig", newline="\n")
         print("Wrote", rel)
-    for name, import_only in (("connectors", False), ("import", True)):
-        image = connector_image(import_only)
-        write_dds(RgbaImage(image.width, image.height, image.tobytes()), ROOT / f"src/main_menu/gfx/interface/tv_org_logistics_{name}.dds", overwrite=True, mipmaps=True)
 
 
 if __name__ == "__main__":

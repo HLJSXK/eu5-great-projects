@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/圣地亚哥朝圣路_ai_cartoon.png",
-  "source_sha256": "d9343104b165144440578747efc33eb31f4fbeb946557fa8608976e4fa99a107",
-  "reference": "assets/historical/圣地亚哥朝圣路.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:24286_Puente_de_%C3%93rbigo,_Le%C3%B3n,_Spain_-_panoramio.jpg",
-    "license": "CC BY 3.0",
-    "artist": "Santi Garcia",
-    "date": "Taken on 7 December 2008",
-    "note": "题材近似：朝圣之路法国线上的奥尔维戈医院桥，不是圣地亚哥城本身。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/圣地亚哥朝圣路_ai_cartoon_3x2.png",
+  "source_sha256": "46f8ade6272c3b51441f55dacde1af2df9fad9c3d88a3d4c2b8a72a21c2d4640",
+  "reference": "assets/generated_wonders/tv_wonder_unique_camino_de_santiago.png",
+  "reference_sha256": "d9343104b165144440578747efc33eb31f4fbeb946557fa8608976e4fa99a107",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_camino_de_santiago.png",
+  "prompt_sha256": "1eb484addcbaee963fede6a9c2171fed01a1f631e0b62edd7ad043fb69e95b3b",
+  "original_reference": "assets/historical/圣地亚哥朝圣路.jpg"
 }

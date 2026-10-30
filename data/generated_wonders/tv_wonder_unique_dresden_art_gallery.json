@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/德累斯顿艺术馆_ai_cartoon.png",
-  "source_sha256": "d6528051a873d6087c97cbd7c19193603f41e311a89a33bcb2fe18ff06192ec4",
-  "reference": "assets/historical/德累斯顿艺术馆.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Canaletto_-_View_of_the_Neumarkt_in_Dresden_from_the_J%C3%BCdenhofe_-_Google_Art_Project.jpg",
-    "license": "Public domain",
-    "artist": "Bernardo Bellotto",
-    "date": "1749",
-    "note": "贝洛托 1749 年《新市场》：左侧马厩楼（约翰内乌姆）1747–1855 年为王家画廊所在。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/德累斯顿艺术馆_ai_cartoon_3x2.png",
+  "source_sha256": "b24aa095eec9010726bf43ff31ed119640dc1e9ec921837365a5f4a0c78ea88e",
+  "reference": "assets/generated_wonders/tv_wonder_unique_dresden_art_gallery.png",
+  "reference_sha256": "d6528051a873d6087c97cbd7c19193603f41e311a89a33bcb2fe18ff06192ec4",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_dresden_art_gallery.png",
+  "prompt_sha256": "e475b5949c7582d8da89c999414ec689120c8477f121cf5f33644e23d23982c3",
+  "original_reference": "assets/historical/德累斯顿艺术馆.jpg"
 }

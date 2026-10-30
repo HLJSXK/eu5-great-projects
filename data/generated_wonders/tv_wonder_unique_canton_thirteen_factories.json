@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/广州十三行_ai_cartoon.png",
-  "source_sha256": "39d0b1a987f5b0d37ba22856129704d72e3a68ff1ecccf37968c29a87a20c2a8",
-  "reference": "assets/historical/广州十三行.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:The_Hongs_of_Canton_1780.jpg",
-    "license": "Public domain",
-    "artist": "Unknown authorUnknown author",
-    "date": "2018-08-20 12:32:04",
-    "note": "约 1780 年中国外销画《广州十三行》。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/广州十三行_ai_cartoon_3x2.png",
+  "source_sha256": "a38dc7034edc0ac11fe0d504cd98bcb7d0dd7f560539130ec034368c71bd954c",
+  "reference": "assets/generated_wonders/tv_wonder_unique_canton_thirteen_factories.png",
+  "reference_sha256": "39d0b1a987f5b0d37ba22856129704d72e3a68ff1ecccf37968c29a87a20c2a8",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_canton_thirteen_factories.png",
+  "prompt_sha256": "d498b0ffc47b1b3e9d6f4cdaa4db0f6f808cd4ec8f4a145974ab0630335b7b29",
+  "original_reference": "assets/historical/广州十三行.jpg"
 }

@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/瓦维尔城堡_ai_cartoon.png",
-  "source_sha256": "dde96863b6735327928bd619155137636dc67ae87719e56e35f952979325dbab",
-  "reference": "assets/historical/瓦维尔城堡.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:20110930_Krakow_Wawel_0412.jpg",
-    "license": "CC BY-SA 3.0",
-    "artist": "Jakub Hałun",
-    "date": "2011-09-30",
-    "note": "隔维斯瓦河望瓦维尔山王宫与大教堂。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/瓦维尔城堡_ai_cartoon_3x2.png",
+  "source_sha256": "6939bc16cbc2f12403e840f99afb500127bb81982563a6707dcf19b8271bec93",
+  "reference": "assets/generated_wonders/tv_wonder_unique_wawel_castle.png",
+  "reference_sha256": "dde96863b6735327928bd619155137636dc67ae87719e56e35f952979325dbab",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_wawel_castle.png",
+  "prompt_sha256": "f04b60572ca71bc0dfdbbba30754f6f437a02f66cea871f2ffd769053ddcea67",
+  "original_reference": "assets/historical/瓦维尔城堡.jpg"
 }

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Draw the six wonder level medallions.
+"""Draw the seven wonder level medallions (0 through VI).
 
-One circular copper-gold medallion carries a centred Roman numeral. The borders
+One circular copper-gold medallion carries a centred numeral (0, then Roman I-VI). The borders
 escalate one element at a time, so a glance at the fixed slot in the lower right
 of a wonder card tells the level without reading the numeral:
 
-    I    a single bronze ring, dark field
+    0/I  a single bronze ring, dark field
     II   + inner hairline (a ring inside the ring)
     III  + bead band outside the ring
     IV   + separate outer ring, with a gap
@@ -60,7 +60,7 @@ FONT_CANDIDATES = (
     "/System/Library/Fonts/Palatino.ttc",
 )
 
-NUMERALS = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI"}
+NUMERALS = {0: "0", 1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI"}
 
 GOLD = {
     "shadow": (30, 21, 12),
@@ -74,6 +74,7 @@ GOLD = {
 
 # Cumulative: level N draws everything level N-1 draws, then one more element.
 LADDER = {
+    0: dict(rim=5.0, inner=False, beads=0, studs=False, spikes=0, outer=False, wash=0.60),
     1: dict(rim=5.0, inner=False, beads=0, studs=False, spikes=0, outer=False, wash=0.60),
     2: dict(rim=5.4, inner=True, beads=0, studs=False, spikes=0, outer=False, wash=0.66),
     3: dict(rim=5.8, inner=True, beads=26, studs=False, spikes=0, outer=False, wash=0.72),
@@ -129,7 +130,7 @@ def rim_colour(level: int, t: float) -> tuple[int, int, int]:
         (0.5, ((0.0, GOLD["brass"]), (0.55, GOLD["mid"]), (1.0, GOLD["deep"]))),
         (1.0, ((0.0, GOLD["pale"]), (0.5, GOLD["bright"]), (1.0, GOLD["brass"]))),
     )
-    u = (level - 1) / 5
+    u = max(0.0, (level - 1) / 5)
     for i in range(len(ramp) - 1):
         if ramp[i][0] <= u <= ramp[i + 1][0]:
             f = (u - ramp[i][0]) / (ramp[i + 1][0] - ramp[i][0])
@@ -315,7 +316,7 @@ def draw_medallion(level: int, font_path: str) -> Image.Image:
 
 def contact_sheet(images: list[Image.Image]) -> Image.Image:
     """One review image: 128px art, 44px and 33px in-game sizes, both backdrops."""
-    sheet = Image.new("RGBA", (6 * 150 + 30, 300), (36, 29, 19, 255))
+    sheet = Image.new("RGBA", (len(images) * 150 + 30, 300), (36, 29, 19, 255))
     for i, im in enumerate(images):
         x = i * 150 + 20
         sheet.alpha_composite(im, (x, 16))
@@ -344,13 +345,13 @@ def main(argv=None) -> int:
     args = parser.parse_args(argv)
 
     font_path = resolve_font()
-    images = [draw_medallion(level, font_path) for level in range(1, 7)]
+    images = [draw_medallion(level, font_path) for level in range(7)]
 
     PNG_DIR.mkdir(parents=True, exist_ok=True)
     DDS_DIR.mkdir(parents=True, exist_ok=True)
 
     stale: list[str] = []
-    for level, image in enumerate(images, 1):
+    for level, image in enumerate(images):
         name = NAME.format(level=level)
         preview = PNG_DIR / f"{name}.png"
         target = DDS_DIR / f"{name}.dds"

@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/萨格里什航海学校_ai_cartoon.png",
-  "source_sha256": "7e7ddf8170fbbcd8ee5dd00e816594c245bdd64d87739a00df4b7c263c6ffe3c",
-  "reference": "assets/historical/萨格里什航海学校.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Fortaleza_de_Sagres,_Algarve,_Portugal.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Monika Hoerath",
-    "date": "2019-09-05",
-    "note": "萨格里什要塞风玫瑰石阵（照片褪色，提示词要求恢复色彩）。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/萨格里什航海学校_ai_cartoon_3x2.png",
+  "source_sha256": "43d8764461c24068b78c347bcacefd5382749fcff6a1a486f4e8ef3268446af5",
+  "reference": "assets/generated_wonders/tv_wonder_unique_sagres_navigation_school.png",
+  "reference_sha256": "7e7ddf8170fbbcd8ee5dd00e816594c245bdd64d87739a00df4b7c263c6ffe3c",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_sagres_navigation_school.png",
+  "prompt_sha256": "037648fed35edd1e6678e9d5a74c3d2cd24fccf6f0617e082bc5aaf6c47d795d",
+  "original_reference": "assets/historical/萨格里什航海学校.jpg"
 }

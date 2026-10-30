@@ -1,7 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/贝伦塔_ai_cartoon.png",
-  "source_sha256": "4e2c75ea10d9a071aeb830e06b0e372f6a35dd44006b27ee1b5883bdf0b89fec",
-  "reference": "assets/historical/贝伦塔.jpg",
-  "integration_manifest": "data/historical_wonder_images.json"
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/贝伦塔_ai_cartoon_3x2.png",
+  "source_sha256": "6fd9b621ccd64fb130ddb33eb09573e092c8dbfeb23e030b947c24d0f72adea0",
+  "reference": "assets/generated_wonders/tv_wonder_unique_belem_tower.png",
+  "reference_sha256": "4e2c75ea10d9a071aeb830e06b0e372f6a35dd44006b27ee1b5883bdf0b89fec",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_belem_tower.png",
+  "prompt_sha256": "f91df48689de342d94ce217a8e81974112a13a9ce51debd7b848533a4aef774d",
+  "original_reference": "assets/historical/贝伦塔.jpg"
 }

@@ -8696,7 +8696,7 @@
  tv_wonder_ritual_choose_plain_desc:0 "立即完成，保留工程基础效果，不授予仪式加成。所有参与阶层都会反对。"
  tv_wonder_ritual_cancel_reritual:0 "取消重新仪式化"
  TV_LOCATION_WONDER_RERITUAL:0 "为此工程重新举行仪式"
- TV_LOCATION_WONDER_RERITUAL_DESC:0 "将此工程退至朴素并立即进入仪式阶段，保留建筑等级，移除原有仪式效果。请在工程署选择新仪式；取消后此工程仍为朴素状态。"
+ TV_LOCATION_WONDER_RERITUAL_DESC:0 "将此工程退至[tv_wonder_plain|e]并立即进入仪式阶段，保留建筑等级，移除原有仪式效果。"
  tv_wonder_ritual_cancel_reritual_desc:0 "取消重新仪式化并从头开始构思。确认前取消不花费任何资源。"
  MODIFIER_TYPE_NAME_tv_wonder_ritual_small_price_cost_modifier:0 "仪式费用"
  MODIFIER_TYPE_DESC_tv_wonder_ritual_small_price_cost_modifier:0 "修正举行仪式所需的费用。"

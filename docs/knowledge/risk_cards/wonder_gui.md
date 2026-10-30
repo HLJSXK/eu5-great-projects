@@ -37,10 +37,16 @@ GUI widgets.
    One-shot rewards appear below these rows under the native "On completion:"
    heading in the same effects frame. Generate location-scoped completion effects
    from the shared reward renderer, and route them through `ShowScriptedEffectForScope`;
-   they must not depend on an active project's `tv_wonder_site`. Hide the heading
-   using the native table's rows/footer predicates when the ritual has no one-shot
-   reward. The Marseille free-port preview covers this case; offline samples do
-   not establish the engine's actual effect text or hover behavior.
+   they must not depend on an active project's `tv_wonder_site`. Use the vanilla
+   action-effect consumer `TooltipConditionList` with
+   `StringToConditionListOnlyPassedAndNeutral(...)`, gated by `ConditionList.HasItems`.
+   Keep it third, after the country/local `TooltipStringPairList` tables. The
+   user's 2026-10-30 Dome of the Rock screenshot showed no one-shot reward when
+   it was fed to a modifier-pair table. The old offline fixture incorrectly
+   fabricated a `StringPairList`, concealing that mismatch. Sample a typed
+   `ConditionList` for effects and keep the real effect localization intact.
+   The Marseille free-port preview covers absent rewards; offline samples do
+   not establish the engine's actual effect text or hover behavior after this fix.
 
 6. Prefer GUI display variables refreshed from lifecycle points.
    Do not call expensive rebuilds from hover, tooltip, or render-only paths.

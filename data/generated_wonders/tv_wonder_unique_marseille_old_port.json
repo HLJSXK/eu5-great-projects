@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/马赛旧港_ai_cartoon.png",
-  "source_sha256": "48d8344239c50627e54f6aff27d521e6deb41ee02aac711bfcd6a6125e2fa7f4",
-  "reference": "assets/historical/马赛旧港.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Claude-Joseph_Verne_-_L%27entr%C3%A9e_du_port_de_Marseille_(1754).jpg",
-    "license": "Public domain",
-    "artist": "Joseph Vernet",
-    "date": "1754",
-    "note": "约瑟夫·韦尔内 18 世纪《马赛港》油画。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/马赛旧港_ai_cartoon_3x2.png",
+  "source_sha256": "d919a644801cd6358a7106f6daa7c12d9c01c7b4fc5b6b1afec0b92f7bbdc617",
+  "reference": "assets/generated_wonders/tv_wonder_unique_marseille_old_port.png",
+  "reference_sha256": "48d8344239c50627e54f6aff27d521e6deb41ee02aac711bfcd6a6125e2fa7f4",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_marseille_old_port.png",
+  "prompt_sha256": "27c9c8d9b993505c6d7eac615426d87576e6735f7c8f1936b54167c036006946",
+  "original_reference": "assets/historical/马赛旧港.jpg"
 }

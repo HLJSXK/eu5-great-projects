@@ -1,0 +1,127 @@
+{
+  "wonder": "triumphal_axis",
+  "site_rule": "OR = {\n\tlocation_rank ?= location_rank:city\n\tlocation_rank ?= location_rank:megalopolis\n}",
+  "level_effects": [
+    {
+      "scope": "全国",
+      "modifier": "monthly_political_influence",
+      "values": [
+        0.05,
+        0.1,
+        0.15000000000000002,
+        0.2,
+        0.25,
+        0.30000000000000004
+      ]
+    },
+    {
+      "scope": "所在地",
+      "modifier": "local_crown_estate_power",
+      "values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ]
+    }
+  ],
+  "rituals": [
+    {
+      "style": 1,
+      "ritual_id": 201,
+      "modifier": "tv_wonder_triumphal_axis_ritual_1_modifier",
+      "location_modifier": null,
+      "country_modifier": {
+        "subject_income_modifier": 0.2,
+        "monthly_towards_absolutism": 0.1
+      },
+      "location_modifier_values": {},
+      "one_shot": [],
+      "societal_value": {
+        "axis": "absolutism_vs_liberalism",
+        "direction": "absolutism",
+        "sign": -1,
+        "monthly": 0.1
+      },
+      "estate_preferences": {
+        "clergy_estate": "random",
+        "burghers_estate": 3,
+        "peasants_estate": 3,
+        "dhimmi_estate": "random",
+        "tribes_estate": "random",
+        "cossacks_estate": 2,
+        "nobles_estate": 2
+      },
+      "name_key": "game_concept_tv_wonder_display_2_ritual_1",
+      "desc_key": "game_concept_tv_wonder_display_2_ritual_1_desc",
+      "final_desc_key": "tv_engineering_department.500.d_triumphal_axis_1"
+    },
+    {
+      "style": 2,
+      "ritual_id": 202,
+      "modifier": "tv_wonder_triumphal_axis_ritual_2_modifier",
+      "location_modifier": "tv_wonder_triumphal_axis_ritual_2_location_modifier",
+      "country_modifier": {
+        "monthly_towards_offensive": 0.1
+      },
+      "location_modifier_values": {
+        "local_unrest": -0.4
+      },
+      "one_shot": [],
+      "societal_value": {
+        "axis": "offensive_vs_defensive",
+        "direction": "offensive",
+        "sign": -1,
+        "monthly": 0.1
+      },
+      "estate_preferences": {
+        "clergy_estate": "random",
+        "burghers_estate": 3,
+        "peasants_estate": 3,
+        "dhimmi_estate": "random",
+        "tribes_estate": "random",
+        "cossacks_estate": 2,
+        "nobles_estate": 2
+      },
+      "name_key": "game_concept_tv_wonder_display_2_ritual_2",
+      "desc_key": "game_concept_tv_wonder_display_2_ritual_2_desc",
+      "final_desc_key": "tv_engineering_department.500.d_triumphal_axis_2"
+    },
+    {
+      "style": 3,
+      "ritual_id": 203,
+      "modifier": "tv_wonder_triumphal_axis_ritual_3_modifier",
+      "location_modifier": null,
+      "country_modifier": {
+        "monthly_towards_liberalism": 0.1
+      },
+      "location_modifier_values": {},
+      "one_shot": [
+        {
+          "type": "ruler_mil",
+          "value": 20
+        }
+      ],
+      "societal_value": {
+        "axis": "absolutism_vs_liberalism",
+        "direction": "liberalism",
+        "sign": 1,
+        "monthly": 0.1
+      },
+      "estate_preferences": {
+        "clergy_estate": "random",
+        "burghers_estate": 3,
+        "peasants_estate": 3,
+        "dhimmi_estate": "random",
+        "tribes_estate": "random",
+        "cossacks_estate": 2,
+        "nobles_estate": 2
+      },
+      "name_key": "game_concept_tv_wonder_display_2_ritual_3",
+      "desc_key": "game_concept_tv_wonder_display_2_ritual_3_desc",
+      "final_desc_key": "tv_engineering_department.500.d_triumphal_axis_3"
+    }
+  ]
+}

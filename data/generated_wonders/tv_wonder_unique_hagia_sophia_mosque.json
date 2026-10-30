@@ -1,16 +1,17 @@
 {
-  "asset_kind": "identity_variant_builtin_imagegen_edit",
-  "source": "assets/generated_wonders/tv_wonder_unique_hagia_sophia_mosque.png",
-  "source_sha256": "e9c6da16887f3fdf3279ef9d5ddf567d990fb337e4a73c4ac3a6a6addc47ba91",
-  "reference": "assets/generated_wonders/tv_wonder_unique_hagia_sophia.png",
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/圣索菲亚大清真寺_ai_cartoon_3x2.png",
+  "source_sha256": "85132020d44b31480b78619c4144480c46774fbbce5a12cc1ff660b92ba45301",
+  "reference": "assets/generated_wonders/tv_wonder_unique_hagia_sophia_mosque.png",
+  "reference_sha256": "e9c6da16887f3fdf3279ef9d5ddf567d990fb337e4a73c4ac3a6a6addc47ba91",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_hagia_sophia_mosque.png",
+  "prompt_sha256": "cc81899393476eb8b52bfd409f65f95b52b9ccc30cc1311c50b3f139f07d37af",
   "wonder_id": 102,
-  "identity": "mosque",
-  "prompt": "Preserve the recognizable Hagia Sophia architecture, warm painterly brushwork, blue sky, golden light, street-level viewpoint and landscape framing. Depict the building as an Ottoman imperial mosque with minarets and crescent finials, a small dignified procession of Ottoman worshippers approaching the entrance and a fountain courtyard, period appropriate clothing, no modern objects, writing or watermark. Keep the great dome the main focus.",
-  "tool": "image_gen.imagegen",
-  "generation_prompt": "Use case: historical-scene. Asset type: EU5 great-project illustration, Hagia Sophia Grand Mosque identity variant. Input image is the edit target and style reference. Preserve the recognizable Hagia Sophia architecture, warm painterly brushwork, blue sky, golden light, street-level viewpoint and landscape framing. Depict the building as an Ottoman imperial mosque with its minarets and crescent finials, a small dignified procession of Ottoman worshippers approaching the entrance and a fountain courtyard, period appropriate clothing, no modern objects, no writing or watermark. Keep the great dome the main focus; make the mosque identity legible without text. Output a landscape illustration.",
-  "outputs": [
-    "assets/generated_wonders/tv_wonder_unique_hagia_sophia_mosque.png",
-    "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hagia_sophia_mosque.dds",
-    "src/main_menu/gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hagia_sophia_mosque_cropped.dds"
-  ]
+  "identity": "mosque"
 }

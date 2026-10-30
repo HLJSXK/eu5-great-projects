@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/托普卡帕宫_ai_cartoon.png",
-  "source_sha256": "28368f71dc0efacb0ee8836ccd397522cb357dac79f8324bc504643e1746a15f",
-  "reference": "assets/historical/托普卡帕宫.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Topkap%C4%B1_Palace_from_the_Bosphorus_in_2024_6702.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Dosseman",
-    "date": "2024-06-12 10:27:41",
-    "note": "从博斯普鲁斯海峡望托普卡帕宫。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/托普卡帕宫_ai_cartoon_3x2.png",
+  "source_sha256": "2d79db5635ca69779a78c7bd8e01b993c9123e994566f03739304c6f266cc03d",
+  "reference": "assets/generated_wonders/tv_wonder_unique_topkapi_palace.png",
+  "reference_sha256": "28368f71dc0efacb0ee8836ccd397522cb357dac79f8324bc504643e1746a15f",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_topkapi_palace.png",
+  "prompt_sha256": "3d2f1fc0bb1f16d27506911c21648552239d27ebcd1009e65de16095b3f9cd4d",
+  "original_reference": "assets/historical/托普卡帕宫.jpg"
 }

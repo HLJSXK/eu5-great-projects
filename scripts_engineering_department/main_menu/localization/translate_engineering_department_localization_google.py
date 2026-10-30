@@ -1051,8 +1051,8 @@ def parse_languages(raw_languages: list[str]) -> list[str]:
 def main() -> int:
     parser = argparse.ArgumentParser(
         description=(
-            "Translate Engineering Department English localization files into "
-            "EU5 locale directories with token-safe Google Translate output."
+            "Complete Engineering Department localization offline by default. "
+            "Use --provider explicitly to translate through an online service."
         )
     )
     parser.add_argument(
@@ -1061,9 +1061,8 @@ def main() -> int:
         action="append",
         default=[],
         help=(
-            "Target language id(s), comma-separated or repeated. Defaults to the "
-            "remaining EU5 languages not already present as English/French/Chinese; "
-            "--fill-missing includes French too."
+            "Target language id(s), comma-separated or repeated. Offline completion "
+            "defaults to all nine non-source languages; online translation skips French."
         ),
     )
     parser.add_argument(
@@ -1080,10 +1079,10 @@ def main() -> int:
     parser.add_argument(
         "--provider",
         choices=("google", "google_mobile", "mymemory"),
-        default="mymemory",
+        default=None,
         help=(
-            "Translation backend. MyMemory remains the conservative default; "
-            "google_mobile uses the Google Translate mobile page when the JSON API throttles."
+            "Opt in to online translation with this backend. Without --provider, "
+            "only missing English fallback keys are appended and existing translations are preserved."
         ),
     )
     parser.add_argument("--force", action="store_true", help="Retranslate cached values")
@@ -1094,7 +1093,7 @@ def main() -> int:
     )
     offline_mode.add_argument(
         "--fill-missing", action="store_true",
-        help="Append missing English fallback keys; preserve all existing rows and use no network.",
+        help="Append missing English fallback keys offline (the default without --provider).",
     )
     parser.add_argument("--timeout", type=float, default=None)
     parser.add_argument("--retries", type=int, default=None)
@@ -1103,11 +1102,12 @@ def main() -> int:
     parser.add_argument("--max-batch-chars", type=int, default=None)
     args = parser.parse_args()
 
+    fill_missing = args.fill_missing or (args.provider is None and not args.prune_only)
     languages = parse_languages(args.language)
-    if args.fill_missing and not args.language:
+    if fill_missing and not args.language:
         languages = list(LANGUAGE_TO_GOOGLE)
     source_files = collect_source_files(parse_source_file_filters(args.source_file))
-    if args.fill_missing:
+    if fill_missing:
         for language in languages:
             added = fill_missing_keys(language, source_files)
             print(f"[{language}] added {added} English fallback keys")

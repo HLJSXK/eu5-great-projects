@@ -90,6 +90,7 @@ def scenario(name, loc=None):
     values["tv_ol_materials_gap"] = m["gap"]
     values.update(tv_wonder_organization_competence=m["organization"], tv_wonder_organization_site_level_cap=m["cap"],
                   tv_wonder_organization_site_level_cap_display=max(1,m["cap"]),
+                  tv_wonder_worksite_scale_monthly_construction_progress=m["base_progress"],
                   tv_wonder_logistics_competence=m["logistics"], tv_wonder_logistics_progress_percent=m["multiplier"]*100,
                   tv_wonder_effective_worksite_levels=m["effective"], tv_wonder_monthly_construction_progress=adjusted*m["multiplier"],
                   tv_wonder_effective_material_workshop_levels=math.floor(m["market"]["tv_wonder_materials"]["supply"]),
@@ -106,6 +107,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--state", choices=("all", "active", "locked", "full"), default="all")
     parser.add_argument("--language", default="simp_chinese")
+    parser.add_argument("--fixture", type=Path, help="Overlay explicit sample values on the selected scenario")
     parser.add_argument("--strict", action="store_true")
     hover = parser.add_mutually_exclusive_group()
     hover.add_argument("--hover-method", type=int, choices=range(1, 9), help="Preview one native production-method tooltip")
@@ -132,7 +134,11 @@ def main():
                 seen.append(node)
                 return len(seen) == args.hover_method
             suffix = f"_method_{args.hover_method}"
-        report = engineering.render(scenario(name, resources.loc), resources=resources, height=3200,
+        state = scenario(name, resources.loc)
+        if args.fixture:
+            state = engineering.load_fixture(state, args.fixture)
+            suffix += "_" + args.fixture.stem
+        report = engineering.render(state, resources=resources, height=3200,
                                     output=out/f"{name}{suffix}.png", hover=selector, extra_mocks=extra_mocks)
         failed |= has_diagnostics(report)
         reports.append(report)

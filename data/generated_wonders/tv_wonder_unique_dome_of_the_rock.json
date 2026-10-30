@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/岩石圆顶圣殿_ai_cartoon.png",
-  "source_sha256": "0a0451ff7b1b2eaad8955b5f435482bfd8dfdcaf39ecb8d9d37cbdcd773619ac",
-  "reference": "assets/historical/岩石圆顶圣殿.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Jerusalem-2013(2)-Temple_Mount-Dome_of_the_Rock_(SE_exposure).jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Godot13",
-    "date": "2013-11-14 08:20:35",
-    "note": "耶路撒冷圆顶清真寺。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/岩石圆顶圣殿_ai_cartoon_3x2.png",
+  "source_sha256": "201300a0b7474d7e13920c14fc602bc344d3a12378345172a12063a7e7a39dd6",
+  "reference": "assets/generated_wonders/tv_wonder_unique_dome_of_the_rock.png",
+  "reference_sha256": "0a0451ff7b1b2eaad8955b5f435482bfd8dfdcaf39ecb8d9d37cbdcd773619ac",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_dome_of_the_rock.png",
+  "prompt_sha256": "9506b16e210b076a27b1d3734c92ae4db1ed70ec04af191c2ed0b1ef63e6ed81",
+  "original_reference": "assets/historical/岩石圆顶圣殿.jpg"
 }

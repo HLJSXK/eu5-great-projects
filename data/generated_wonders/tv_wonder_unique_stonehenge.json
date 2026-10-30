@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/巨石阵_ai_cartoon.png",
-  "source_sha256": "f032aa10eb50ee0f48f1662626bf784f88635331a828cbad37f6e8c5f5377547",
-  "reference": "assets/historical/巨石阵.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Stonehenge,_Condado_de_Wiltshire,_Inglaterra,_2014-08-12,_DD_18.JPG",
-    "license": "CC BY-SA 4.0",
-    "artist": "Diego Delso",
-    "date": "2014-08-12 15:42:39",
-    "note": "巨石阵石圈。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/巨石阵_ai_cartoon_3x2.png",
+  "source_sha256": "5db2133c7c91abce386f914bef0faad18140ba9f9f590bf9c03169d65ab3cca5",
+  "reference": "assets/generated_wonders/tv_wonder_unique_stonehenge.png",
+  "reference_sha256": "f032aa10eb50ee0f48f1662626bf784f88635331a828cbad37f6e8c5f5377547",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_stonehenge.png",
+  "prompt_sha256": "475a86991d6c35ef8f45f0640e6b469c5ee706dd649959bca60170e9b0e3ead6",
+  "original_reference": "assets/historical/巨石阵.jpg"
 }

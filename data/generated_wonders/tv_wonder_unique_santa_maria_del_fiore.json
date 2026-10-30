@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/圣母百花大教堂_ai_cartoon.png",
-  "source_sha256": "797c3269efb02424c8962a1f4d46f3c9d97f1795c58d335d4dfd860aeb82b37a",
-  "reference": "assets/historical/圣母百花大教堂.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Florence_Duomo_from_Michelangelo_hill.jpg",
-    "license": "CC BY-SA 4.0",
-    "artist": "Petar Milošević",
-    "date": "2014-10-25 18:50:37",
-    "note": "从米开朗琪罗广场眺望圣母百花大教堂；夜景改为黄昏以保证可读性。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/圣母百花大教堂_ai_cartoon_3x2.png",
+  "source_sha256": "125acd4ef018d2013b0d821fc7c2bf860d7ce530996b98cedec5f3f37fa26b6c",
+  "reference": "assets/generated_wonders/tv_wonder_unique_santa_maria_del_fiore.png",
+  "reference_sha256": "797c3269efb02424c8962a1f4d46f3c9d97f1795c58d335d4dfd860aeb82b37a",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_santa_maria_del_fiore.png",
+  "prompt_sha256": "a745ae3721943198d15c55172bf5c848629be2ce21d9e5d92e7ad0ecdc8c9aa8",
+  "original_reference": "assets/historical/圣母百花大教堂.jpg"
 }

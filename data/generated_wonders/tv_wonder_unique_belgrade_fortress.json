@@ -1,7 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/贝尔格莱德要塞_ai_cartoon.png",
-  "source_sha256": "5bea09cd77a6f345970af700eb0303949adf28a3253d1dd7fc46660f4d6305d5",
-  "reference": "assets/historical/贝尔格莱德要塞.jpg",
-  "integration_manifest": "data/historical_wonder_images.json"
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/贝尔格莱德要塞_ai_cartoon_3x2.png",
+  "source_sha256": "511a8bc1cef417f8ee833ca76c1593d73628ff62298faad8b58158e5f554019f",
+  "reference": "assets/generated_wonders/tv_wonder_unique_belgrade_fortress.png",
+  "reference_sha256": "5bea09cd77a6f345970af700eb0303949adf28a3253d1dd7fc46660f4d6305d5",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_belgrade_fortress.png",
+  "prompt_sha256": "3ca395c1414472ff73ab2923b8ae0a659390bbfa99a42c29333b53f5951da7b8",
+  "original_reference": "assets/historical/贝尔格莱德要塞.jpg"
 }

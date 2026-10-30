@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/米兰兵工厂_ai_cartoon.png",
-  "source_sha256": "b056c41b487475a1e15a6cfd42a8bf585286ee5e56bf8d982d4c853f42aacbe7",
-  "reference": "assets/historical/米兰兵工厂.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Main_Courtyard_-_Castello_Sforzesco_-_Milan_2014_(4).JPG",
-    "license": "CC BY-SA 3.0",
-    "artist": "José Luiz",
-    "date": "2014-02-22 11:06:44",
-    "note": "题材近似：米兰斯福尔扎城堡，代表米兰公爵军械生产中心，不是兵工厂实景。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/米兰兵工厂_ai_cartoon_3x2.png",
+  "source_sha256": "8e61ca7b54d85b2bbe397f8b0fb5d5aa2dd9d51e6d8153d7a313a627952649ad",
+  "reference": "assets/generated_wonders/tv_wonder_unique_milan_arsenal.png",
+  "reference_sha256": "b056c41b487475a1e15a6cfd42a8bf585286ee5e56bf8d982d4c853f42aacbe7",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_milan_arsenal.png",
+  "prompt_sha256": "197a96195aa40cc82f4ee673d2b62d1ef170bec6b27cf3f068d00e97917040ba",
+  "original_reference": "assets/historical/米兰兵工厂.jpg"
 }

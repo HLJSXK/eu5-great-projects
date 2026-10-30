@@ -108,7 +108,8 @@ def load_model(state, fixture=FIXTURE):
             values["supply"] = max(values["demand"], values["supply"])
     level, employment = sample["level"], sample["employment"]
     cap = min(data["design_rules"]["max_level"], sample["organization"] // 5)
-    camp = level * employment * data["design_rules"]["progress_per_effective_level"]
+    base_progress = level * data["design_rules"]["progress_per_effective_level"]
+    camp = base_progress * employment
     multiplier = .5 + sample["logistics"] / 100
     quantities = {good: amount * level for good, amount in maintenance.items()}
     demand = quantities["tv_wonder_materials"]
@@ -120,7 +121,7 @@ def load_model(state, fixture=FIXTURE):
                                key={"hi": 0, "mid": 1, "ok": 2}.__getitem__)
     return {**sample, "state": state, "cap": cap, "market": market, "recipes": recipes,
             "maintenance": quantities, "base_prices": prices, "prices": data["prices"],
-            "effective": level * employment, "camp_progress": camp, "multiplier": multiplier,
+            "effective": level * employment, "base_progress": base_progress, "camp_progress": camp, "multiplier": multiplier,
             "progress": camp * multiplier * sample["materials_supply"], "gap": demand-supply,
             "maintenance_total": sum(q * data["prices"][g] for g, q in quantities.items())}
 

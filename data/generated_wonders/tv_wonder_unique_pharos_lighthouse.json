@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/法罗斯灯塔_ai_cartoon.png",
-  "source_sha256": "8afede693f38bf2774881e55bfa6406b967234b15f26c618c005566b4fdda20d",
-  "reference": "assets/historical/法罗斯灯塔.png",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Lighthouse_-_Thiersch.png",
-    "license": "Public domain",
-    "artist": "Prof. Hermann Thiersch (1874–1939)",
-    "date": "1909",
-    "note": "Hermann Thiersch 1909 年学术复原线图，原塔已毁。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/法罗斯灯塔_ai_cartoon_3x2.png",
+  "source_sha256": "bf1279eebaa5493955e7fc846823e50ee4515dd2eaa4b643ed8d8eee78cfdeec",
+  "reference": "assets/generated_wonders/tv_wonder_unique_pharos_lighthouse.png",
+  "reference_sha256": "8afede693f38bf2774881e55bfa6406b967234b15f26c618c005566b4fdda20d",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_pharos_lighthouse.png",
+  "prompt_sha256": "4e05c714bd72164f4724365e36071e7d29597650defc5bb9d417f1d3e7b7b05c",
+  "original_reference": "assets/historical/法罗斯灯塔.png"
 }

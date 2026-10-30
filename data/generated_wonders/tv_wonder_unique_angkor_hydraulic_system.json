@@ -1,14 +1,16 @@
 {
-  "asset_kind": "historical_ai_cartoon_import",
-  "source": "assets/historical/processed/吴哥水利工程_ai_cartoon.png",
-  "source_sha256": "fc6ddbd705e8d02c4d9b145718a45bf2e1fc0f4a6dcd50812622ff0e8b114b58",
-  "reference": "assets/historical/吴哥水利工程.jpg",
-  "integration_manifest": "data/historical_wonder_images.json",
-  "reference_credit": {
-    "page": "https://commons.wikimedia.org/wiki/File:Srah_Srang,_Angkor,_Camboya,_2013-08-16,_DD_08.JPG",
-    "license": "CC BY-SA 3.0",
-    "artist": "Diego Delso",
-    "date": "2013-08-16 14:11:30",
-    "note": "吴哥皇家浴池（Srah Srang）及其登岸平台，代表吴哥水利体系。"
-  }
+  "asset_kind": "historical_3x2_reframe_import",
+  "source": "assets/historical/processed/吴哥水利工程_ai_cartoon_3x2.png",
+  "source_sha256": "36b38590847adb0b2bba9b6ca792e2a31f1254b1180f08d5d71cc80019978c88",
+  "reference": "assets/generated_wonders/tv_wonder_unique_angkor_hydraulic_system.png",
+  "reference_sha256": "fc6ddbd705e8d02c4d9b145718a45bf2e1fc0f4a6dcd50812622ff0e8b114b58",
+  "reference_archive": "assets/archives/historical_landscape_3x2_previous_20261030.zip",
+  "integration_manifest": "data/historical_landscape_3x2_images.json",
+  "generation_script": "scripts/generate_historical_images.py",
+  "batch": "landscape_3x2",
+  "model": "gpt-image-2.5-sunburst",
+  "size": "1536x1024",
+  "prompt_key": "assets/generated_wonders/tv_wonder_unique_angkor_hydraulic_system.png",
+  "prompt_sha256": "f400bc36f12c823ef76365227471cd606aa4b3e8681f9e0729c9c6cfae594fc4",
+  "original_reference": "assets/historical/吴哥水利工程.jpg"
 }

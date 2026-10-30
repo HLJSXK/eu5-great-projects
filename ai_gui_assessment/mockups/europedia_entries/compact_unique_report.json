@@ -1,0 +1,25 @@
+{
+  "prototype_only": true,
+  "static_content": true,
+  "sample_count": 3,
+  "game_root": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Europa Universalis V\\game",
+  "size": [
+    1530,
+    1080
+  ],
+  "scale": 1,
+  "unknown_expressions": [],
+  "unresolved_contexts": [],
+  "unsupported_textcontexts": [],
+  "missing_textures": [],
+  "missing_text": [],
+  "missing_localizations": [],
+  "output": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\compact_unique.png",
+  "tree": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\compact_unique_tree.txt",
+  "details": {
+    "entry_111": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\compact_unique_entry_111.png",
+    "entry_101": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\compact_unique_entry_101.png",
+    "entry_102": "C:\\Users\\Hades\\Documents\\code\\eu5-great-projects\\ai_gui_assessment\\mockups\\europedia_entries\\compact_unique_entry_102.png"
+  },
+  "tooltip": null
+}
