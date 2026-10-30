@@ -10,3 +10,7 @@
  tv_wonder_ownership.900.t:0 "[tv_wonder_construction|E]: 사라진 세계의 불가사의"
  tv_wonder_ownership.900.d:0 "[SCOPE.sLocation('tv_wonder_ownership_site').GetName]가 손실되면서 완성된 [tv_wonder_construction|E]는 더 이상 우리 영역을 지원하지 않습니다. 해당 불가사의에만 연결된 영구 국가 기념 혜택이 우리 원장에서 철회되었습니다.\n\n#weak 영토가 손실되면 불가사의의 고정 혜택도 사라집니다. 나중에 다시 가져오려면 엔지니어링 부서에서 해당 상태를 확인하세요.#!"
  tv_wonder_ownership.900.a:0 "손실을 기록합니다."
+ tv_wonder_ownership.800.b:0 "Strip it bare."
+ tv_wonder_ownership.900.d_preserved:0 "[SCOPE.sCountry('winner').GetName] has chosen to spare [SCOPE.sBuildingType('tv_wonder_ownership_building_type').GetName] in [SCOPE.sLocation('tv_wonder_ownership_site').GetName]. The site is ours no longer, but the monument stands as it always has."
+ tv_wonder_ownership.900.d_plundered:0 "[SCOPE.sCountry('winner').GetName] has plundered [SCOPE.sBuildingType('tv_wonder_ownership_building_type').GetName] in [SCOPE.sLocation('tv_wonder_ownership_site').GetName]. Its treasures now fill their coffers, and the wonder has lost a level. If it was down to its last level, nothing of it remains."
+ tv_wonder_ownership.900.d_stale:0 "[SCOPE.sBuildingType('tv_wonder_ownership_building_type').GetName] in [SCOPE.sLocation('tv_wonder_ownership_site').GetName] has passed out of our hands, yet no decision on its fate has taken effect. Either the site found no new master, or it changed hands again, or the wonder itself changed, before any such decision could be carried out."
