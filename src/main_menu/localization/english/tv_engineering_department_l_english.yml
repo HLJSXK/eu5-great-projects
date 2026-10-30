@@ -951,8 +951,10 @@
  tv_wonder_select_priority_candidate_desc: "Review this unfinished or expandable wonder project before accepting it."
 
  # External wonder level-change interface (tv_wonder_level_change_effects.txt, event 207)
- TV_WONDER_LEVEL_FOUNDED: "[BUILDING_TYPE.GetName] is founded in [LOCATION.GetName] at level #G 1#!"
- TV_WONDER_LEVEL_DESTROYED: "[BUILDING_TYPE.GetName] in [LOCATION.GetName] loses its last level and is #R destroyed#!"
+ TV_WONDER_LEVEL_FOUNDED: "A level 1 [BUILDING_TYPE.GetName] [tv_wonder_construction|e] is established in [LOCATION.GetName]"
+ TV_WONDER_LEVEL_RAISED: "The [BUILDING_TYPE.GetName] [tv_wonder_construction|e] in [LOCATION.GetName] #G increases in scale by one level#!"
+ TV_WONDER_LEVEL_LOWERED: "The [BUILDING_TYPE.GetName] [tv_wonder_construction|e] in [LOCATION.GetName] #R decreases in scale by one level#!"
+ TV_WONDER_LEVEL_DESTROYED: "The [BUILDING_TYPE.GetName] [tv_wonder_construction|e] in [LOCATION.GetName] is destroyed"
  TV_WONDER_LEVEL_RAISED_PROJECT: "The [tv_engineering_department|E] project in [LOCATION.GetName] immediately completes every [tv_wonder_construction_part|e] of level #G $VALUE|0$#!, then waits in the [tv_wonder_ceremony|e] stage. The ceremony is #high not#! completed automatically."
  TV_WONDER_LEVEL_RAISE_CAPPED_TT: "This Great Project has already reached the highest level its site allows. Nothing happens."
  TV_WONDER_LEVEL_RAISE_PROJECT_CAPPED_TT: "The [tv_engineering_department|E] project here has already reached the highest level its site allows. Nothing happens."

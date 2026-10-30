@@ -93,6 +93,26 @@ tv_wonder_level_founded_text = {
 	third_past = TV_WONDER_LEVEL_FOUNDED
 }
 
+tv_wonder_level_raised_text = {
+	none = TV_WONDER_LEVEL_RAISED
+	global = TV_WONDER_LEVEL_RAISED
+	first = TV_WONDER_LEVEL_RAISED
+	third = TV_WONDER_LEVEL_RAISED
+	global_past = TV_WONDER_LEVEL_RAISED
+	first_past = TV_WONDER_LEVEL_RAISED
+	third_past = TV_WONDER_LEVEL_RAISED
+}
+
+tv_wonder_level_lowered_text = {
+	none = TV_WONDER_LEVEL_LOWERED
+	global = TV_WONDER_LEVEL_LOWERED
+	first = TV_WONDER_LEVEL_LOWERED
+	third = TV_WONDER_LEVEL_LOWERED
+	global_past = TV_WONDER_LEVEL_LOWERED
+	first_past = TV_WONDER_LEVEL_LOWERED
+	third_past = TV_WONDER_LEVEL_LOWERED
+}
+
 tv_wonder_level_destroyed_text = {
 	global = TV_WONDER_LEVEL_DESTROYED
 	first = TV_WONDER_LEVEL_DESTROYED

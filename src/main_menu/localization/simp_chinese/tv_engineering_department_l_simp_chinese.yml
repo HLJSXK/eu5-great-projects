@@ -951,8 +951,10 @@
  tv_wonder_select_priority_candidate_desc: "查看这项未完成或可扩建的奇观工程，再决定是否接受。"
 
  # External wonder level-change interface (tv_wonder_level_change_effects.txt, event 207)
- TV_WONDER_LEVEL_FOUNDED: "在[LOCATION.GetName]建立[BUILDING_TYPE.GetName]，等级为#G 1#!"
- TV_WONDER_LEVEL_DESTROYED: "[LOCATION.GetName]的[BUILDING_TYPE.GetName]失去最后一级，#R 彻底损毁#!"
+ TV_WONDER_LEVEL_FOUNDED: "在[LOCATION.GetName]建立一座规模为1的[BUILDING_TYPE.GetName][tv_wonder_construction|e]"
+ TV_WONDER_LEVEL_RAISED: "[LOCATION.GetName]的[BUILDING_TYPE.GetName][tv_wonder_construction|e]规模#G 提升一级#!"
+ TV_WONDER_LEVEL_LOWERED: "[LOCATION.GetName]的[BUILDING_TYPE.GetName][tv_wonder_construction|e]规模#R 降低一级#!"
+ TV_WONDER_LEVEL_DESTROYED: "[LOCATION.GetName]的[BUILDING_TYPE.GetName][tv_wonder_construction|e]被摧毁"
  TV_WONDER_LEVEL_RAISED_PROJECT: "[LOCATION.GetName]的[tv_engineering_department|E]项目立即完成第#G $VALUE|0$#!级的全部[tv_wonder_construction_part|e]，随后停留在[tv_wonder_ceremony|e]阶段。仪式#high 不会#!自动完成。"
  TV_WONDER_LEVEL_RAISE_CAPPED_TT: "这座伟大工程已达到其地点适性允许的最高等级。无事发生。"
  TV_WONDER_LEVEL_RAISE_PROJECT_CAPPED_TT: "这里的[tv_engineering_department|E]项目已达到地点适性允许的最高等级。无事发生。"

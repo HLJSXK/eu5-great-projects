@@ -33,7 +33,7 @@ tv_wonder_lower_unique_level_effect = {
 # ===== Shared helpers (internal; called by the per-wonder dispatchers) =====
 
 # Location scope. $building$ = building_type:X, $wonder_id$ = N, $sync_event_id$ = 94XX.
-# Auto-generated 'Gains 1 [BUILDING_TYPE.GetName]' tooltip conveys the change;
+# A custom description presents this as a Great Project scale increase;
 # the cap-failure branch shows a custom_tooltip instead.
 tv_wonder_raise_final_building_level_effect = {
 	if = {
@@ -44,8 +44,12 @@ tv_wonder_raise_final_building_level_effect = {
 		limit = { location_building_level = { building_type = $building$ value >= 5 } }
 		if = {
 			limit = { tv_wonder_location_scale_allows_level_trigger = { wonder_id = $wonder_id$ level = 6 } }
-			change_building_level_in_location = { building = $building$ value = 1 owner = owner }
-			hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+			custom_description = {
+				text = tv_wonder_level_raised_text
+				value = $building$
+				change_building_level_in_location = { building = $building$ value = 1 owner = owner }
+				hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+			}
 		}
 		else = { custom_tooltip = { text = TV_WONDER_LEVEL_RAISE_CAPPED_TT } }
 	}
@@ -53,8 +57,12 @@ tv_wonder_raise_final_building_level_effect = {
 		limit = { location_building_level = { building_type = $building$ value >= 4 } }
 		if = {
 			limit = { tv_wonder_location_scale_allows_level_trigger = { wonder_id = $wonder_id$ level = 5 } }
-			change_building_level_in_location = { building = $building$ value = 1 owner = owner }
-			hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+			custom_description = {
+				text = tv_wonder_level_raised_text
+				value = $building$
+				change_building_level_in_location = { building = $building$ value = 1 owner = owner }
+				hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+			}
 		}
 		else = { custom_tooltip = { text = TV_WONDER_LEVEL_RAISE_CAPPED_TT } }
 	}
@@ -62,8 +70,12 @@ tv_wonder_raise_final_building_level_effect = {
 		limit = { location_building_level = { building_type = $building$ value >= 3 } }
 		if = {
 			limit = { tv_wonder_location_scale_allows_level_trigger = { wonder_id = $wonder_id$ level = 4 } }
-			change_building_level_in_location = { building = $building$ value = 1 owner = owner }
-			hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+			custom_description = {
+				text = tv_wonder_level_raised_text
+				value = $building$
+				change_building_level_in_location = { building = $building$ value = 1 owner = owner }
+				hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+			}
 		}
 		else = { custom_tooltip = { text = TV_WONDER_LEVEL_RAISE_CAPPED_TT } }
 	}
@@ -71,8 +83,12 @@ tv_wonder_raise_final_building_level_effect = {
 		limit = { location_building_level = { building_type = $building$ value >= 2 } }
 		if = {
 			limit = { tv_wonder_location_scale_allows_level_trigger = { wonder_id = $wonder_id$ level = 3 } }
-			change_building_level_in_location = { building = $building$ value = 1 owner = owner }
-			hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+			custom_description = {
+				text = tv_wonder_level_raised_text
+				value = $building$
+				change_building_level_in_location = { building = $building$ value = 1 owner = owner }
+				hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+			}
 		}
 		else = { custom_tooltip = { text = TV_WONDER_LEVEL_RAISE_CAPPED_TT } }
 	}
@@ -80,21 +96,28 @@ tv_wonder_raise_final_building_level_effect = {
 		limit = { location_building_level = { building_type = $building$ value >= 1 } }
 		if = {
 			limit = { tv_wonder_location_scale_allows_level_trigger = { wonder_id = $wonder_id$ level = 2 } }
-			change_building_level_in_location = { building = $building$ value = 1 owner = owner }
-			hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+			custom_description = {
+				text = tv_wonder_level_raised_text
+				value = $building$
+				change_building_level_in_location = { building = $building$ value = 1 owner = owner }
+				hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+			}
 		}
 		else = { custom_tooltip = { text = TV_WONDER_LEVEL_RAISE_CAPPED_TT } }
 	}
 }
 
 # Location scope. $building$ = building_type:X, $sync_event_id$ = 94XX.
-# Levels 2-6 use the auto-generated 'Loses 1 [BUILDING_TYPE.GetName]' tooltip;
-# level 1 → 0 uses a custom_description so the player sees 'destroyed'.
+# Custom descriptions distinguish a scale decrease from destruction at level 1.
 tv_wonder_lower_final_building_level_effect = {
 	if = {
 		limit = { location_building_level = { building_type = $building$ value >= 2 } }
-		change_building_level_in_location = { building = $building$ value = -1 }
-		hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+		custom_description = {
+			text = tv_wonder_level_lowered_text
+			value = $building$
+			change_building_level_in_location = { building = $building$ value = -1 }
+			hidden_effect = { trigger_event_silently = { id = tv_engineering_department.$sync_event_id$ days = 1 } }
+		}
 	}
 	else_if = {
 		limit = { location_building_level = { building_type = $building$ value >= 1 } }

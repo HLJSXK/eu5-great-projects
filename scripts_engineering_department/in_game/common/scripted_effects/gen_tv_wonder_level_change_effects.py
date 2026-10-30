@@ -72,6 +72,8 @@ LOWER_HELPER = "tv_wonder_lower_final_building_level_effect"
 FOUND_HELPER = "tv_wonder_found_final_building_level_effect"
 
 FOUNDED_TEXT = "tv_wonder_level_founded_text"
+RAISED_TEXT = "tv_wonder_level_raised_text"
+LOWERED_TEXT = "tv_wonder_level_lowered_text"
 DESTROYED_TEXT = "tv_wonder_level_destroyed_text"
 PROJECT_RAISED_TEXT = "tv_wonder_level_raised_project_text"
 RAISE_CAPPED_TT = "TV_WONDER_LEVEL_RAISE_CAPPED_TT"
@@ -82,7 +84,7 @@ LOWER_ABSENT_TT = "TV_WONDER_LEVEL_LOWER_ABSENT_TT"
 
 def effect_localization_keys() -> list[str]:
     """Every custom_description text this generator emits (registered by hand in effect_localization)."""
-    return [FOUNDED_TEXT, DESTROYED_TEXT, PROJECT_RAISED_TEXT]
+    return [FOUNDED_TEXT, RAISED_TEXT, LOWERED_TEXT, DESTROYED_TEXT, PROJECT_RAISED_TEXT]
 
 
 def custom_tooltip_keys() -> list[str]:
@@ -112,7 +114,7 @@ def sync_event_id(wonder: dict) -> int:
 def append_raise_helper(lines: list[str]) -> None:
     """Raise an existing final building by one level, respecting the cap and scale tier."""
     lines.append(f"# Location scope. $building$ = building_type:X, $wonder_id$ = N, $sync_event_id$ = 94XX.")
-    lines.append(f"# Auto-generated 'Gains 1 [BUILDING_TYPE.GetName]' tooltip conveys the change;")
+    lines.append("# A custom description presents this as a Great Project scale increase;")
     lines.append(f"# the cap-failure branch shows a custom_tooltip instead.")
     lines.append(f"{RAISE_HELPER} = {{")
     for current in range(MAX_LEVEL, 0, -1):
@@ -130,11 +132,17 @@ def append_raise_helper(lines: list[str]) -> None:
                 f"{T}{T}{T}limit = {{ {SCALE_ALLOWS_TRIGGER} = {{ wonder_id = $wonder_id$ level = {target} }} }}"
             )
             lines.append(
-                f"{T}{T}{T}change_building_level_in_location = {{ building = $building$ value = 1 owner = owner }}"
+                f"{T}{T}{T}custom_description = {{"
+            )
+            lines.append(f"{T}{T}{T}{T}text = {RAISED_TEXT}")
+            lines.append(f"{T}{T}{T}{T}value = $building$")
+            lines.append(
+                f"{T}{T}{T}{T}change_building_level_in_location = {{ building = $building$ value = 1 owner = owner }}"
             )
             lines.append(
-                f"{T}{T}{T}hidden_effect = {{ trigger_event_silently = {{ id = tv_engineering_department.$sync_event_id$ days = 1 }} }}"
+                f"{T}{T}{T}{T}hidden_effect = {{ trigger_event_silently = {{ id = tv_engineering_department.$sync_event_id$ days = 1 }} }}"
             )
+            lines.append(f"{T}{T}{T}}}")
             lines.append(f"{T}{T}}}")
             lines.append(f"{T}{T}else = {{ custom_tooltip = {{ text = {RAISE_CAPPED_TT} }} }}")
             lines.append(f"{T}}}")
@@ -145,15 +153,18 @@ def append_raise_helper(lines: list[str]) -> None:
 def append_lower_helper(lines: list[str]) -> None:
     """Lower a final building by one level. Level 1 → 0 destroys the wonder."""
     lines.append(f"# Location scope. $building$ = building_type:X, $sync_event_id$ = 94XX.")
-    lines.append(f"# Levels 2-6 use the auto-generated 'Loses 1 [BUILDING_TYPE.GetName]' tooltip;")
-    lines.append(f"# level 1 → 0 uses a custom_description so the player sees 'destroyed'.")
+    lines.append("# Custom descriptions distinguish a scale decrease from destruction at level 1.")
     lines.append(f"{LOWER_HELPER} = {{")
     lines.append(f"{T}if = {{")
     lines.append(f"{T}{T}limit = {{ {level_at_least('$building$', 2)} }}")
-    lines.append(f"{T}{T}change_building_level_in_location = {{ building = $building$ value = -1 }}")
+    lines.append(f"{T}{T}custom_description = {{")
+    lines.append(f"{T}{T}{T}text = {LOWERED_TEXT}")
+    lines.append(f"{T}{T}{T}value = $building$")
+    lines.append(f"{T}{T}{T}change_building_level_in_location = {{ building = $building$ value = -1 }}")
     lines.append(
-        f"{T}{T}hidden_effect = {{ trigger_event_silently = {{ id = tv_engineering_department.$sync_event_id$ days = 1 }} }}"
+        f"{T}{T}{T}hidden_effect = {{ trigger_event_silently = {{ id = tv_engineering_department.$sync_event_id$ days = 1 }} }}"
     )
+    lines.append(f"{T}{T}}}")
     lines.append(f"{T}}}")
     lines.append(f"{T}else_if = {{")
     lines.append(f"{T}{T}limit = {{ {level_at_least('$building$', 1)} }}")
