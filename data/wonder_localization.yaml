@@ -1,5 +1,9 @@
 ﻿wonder_localization:
   english:
+    TV_LOCATION_WONDER_SIZE: "Size"
+    TV_LOCATION_WONDER_SIZE_SMALL: "This is a [tv_wonder_small|e]."
+    TV_LOCATION_WONDER_SIZE_MEDIUM: "This is a [tv_wonder_medium|e]."
+    TV_LOCATION_WONDER_SIZE_LARGE: "This is a [tv_wonder_large|e]."
     TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE: "[Estate.GetLongNameWithNoTooltip] currently #G support#! this ritual style."
     TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION: "This estate benefits from this ritual's local rewards."
     TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL: "This ritual style matches the estate's established preference."
@@ -9096,6 +9100,10 @@
     TV_WONDER_RITUAL_NAME_3_240: Assembly of Porcelain Masters
     TV_WONDER_RITUAL_DESC_3_240: Masons and ceramic decorators show the gathered townspeople how imported porcelain shards become lotus petals and guardian figures, and train apprentices to repair the tower's intricate surfaces.
   simp_chinese:
+    TV_LOCATION_WONDER_SIZE: "规模"
+    TV_LOCATION_WONDER_SIZE_SMALL: "这是一个[tv_wonder_small|e]"
+    TV_LOCATION_WONDER_SIZE_MEDIUM: "这是一个[tv_wonder_medium|e]"
+    TV_LOCATION_WONDER_SIZE_LARGE: "这是一个[tv_wonder_large|e]"
     TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE: "[Estate.GetLongNameWithNoTooltip]当前#G 支持#!该仪式风格。"
     TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION: "该仪式的地点奖励惠及这一阶层。"
     TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL: "该仪式风格符合这一阶层一贯的偏好。"

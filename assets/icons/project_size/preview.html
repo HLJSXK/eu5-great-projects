@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>工程规模 · 图标预览</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #181b20; color: #e7d5ac; font-family: "Microsoft YaHei", sans-serif; }
+    main { max-width: 960px; margin: auto; padding: 32px 40px; }
+    header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 24px; gap: 16px; }
+    h1 { margin: 0; font-family: "Noto Serif CJK SC", "SimSun", serif; font-size: 26px; font-weight: 600; letter-spacing: 4px; }
+    header p { margin: 0; color: #a99a7b; font-size: 12px; letter-spacing: 1px; }
+    .hero { display: grid; grid-template-columns: repeat(3, 1fr); background: #241e15; border: 1px solid #6f5834; border-radius: 3px; padding: 28px 0; color: #f0dfb7; }
+    .hero a { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit; padding: 8px 20px; }
+    .hero a + a { border-left: 1px solid #4c402b; }
+    .hero img { width: 104px; height: 104px; margin-bottom: 18px; }
+    h2 { margin: 0 0 7px; font-family: "Noto Serif CJK SC", "SimSun", serif; font-size: 20px; font-weight: 600; letter-spacing: 4px; }
+    .hero p { margin: 0; font-size: 12px; color: #bdad8d; }
+    .swatch { font: 11px Consolas, monospace; margin-top: 15px; letter-spacing: 1px; }
+    .section-label { margin: 24px 0 12px; font-size: 12px; letter-spacing: 1px; color: #b6a383; }
+    .samples { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .panel { border: 1px solid #9e8b61; border-radius: 3px; padding: 18px 24px; background: #d7c8a5; color: #4e412b; }
+    .panel.dark { background: #1e2633; border-color: #61583e; color: #d6c9a7; }
+    .panel-title { display: flex; justify-content: space-between; margin-bottom: 16px; font-size: 12px; opacity: .7; }
+    .row { display: grid; grid-template-columns: 54px repeat(3, 1fr); align-items: center; min-height: 44px; }
+    .row span { font: 11px Consolas, monospace; opacity: .7; }
+    .row img { justify-self: center; }
+    footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; color: #a99a7b; font-size: 12px; }
+    @media (max-width: 620px) {
+      main { padding: 24px 16px; }
+      header { display: block; }
+      header p { margin-top: 8px; }
+      .hero a { padding: 4px 8px; }
+      .hero img { width: 64px; height: 64px; }
+      .hero p { font-size: 11px; }
+      .samples { grid-template-columns: 1fr; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>工程规模</h1>
+      <p>黄铜镶边 · 珐琅底色 · 石雕建筑</p>
+    </header>
+    <section class="hero" aria-label="三种工程规模图标">
+      <a href="project-small.svg" download>
+        <img src="project-small.svg" alt="小型工程：绿色圆章与单拱石门">
+        <h2>小型</h2><p>圆章 · 单拱石门</p><span class="swatch" style="color:#8DA77D">苔绿</span>
+      </a>
+      <a href="project-medium.svg" download>
+        <img src="project-medium.svg" alt="中型工程：黄色盾牌与双拱石桥">
+        <h2>中型</h2><p>盾牌 · 双拱石桥</p><span class="swatch" style="color:#D3B45E">赭黄</span>
+      </a>
+      <a href="project-large.svg" download>
+        <img src="project-large.svg" alt="大型工程：红色八角徽牌与三柱殿堂">
+        <h2>大型</h2><p>八角徽牌 · 三柱殿堂</p><span class="swatch" style="color:#CE8876">朱红</span>
+      </a>
+    </section>
+    <p class="section-label">实际尺寸 / 深浅背景</p>
+    <section class="samples" aria-label="小尺寸与背景对照">
+      <div class="panel">
+        <div class="panel-title"><span>浅色背景</span><span>小 / 中 / 大</span></div>
+        <div class="row"><span>16 px</span><img src="project-small.svg" alt="小型" width="16" height="16"><img src="project-medium.svg" alt="中型" width="16" height="16"><img src="project-large.svg" alt="大型" width="16" height="16"></div>
+        <div class="row"><span>24 px</span><img src="project-small.svg" alt="小型" width="24" height="24"><img src="project-medium.svg" alt="中型" width="24" height="24"><img src="project-large.svg" alt="大型" width="24" height="24"></div>
+        <div class="row"><span>32 px</span><img src="project-small.svg" alt="小型" width="32" height="32"><img src="project-medium.svg" alt="中型" width="32" height="32"><img src="project-large.svg" alt="大型" width="32" height="32"></div>
+      </div>
+      <div class="panel dark">
+        <div class="panel-title"><span>深色背景</span><span>小 / 中 / 大</span></div>
+        <div class="row"><span>16 px</span><img src="project-small.svg" alt="小型" width="16" height="16"><img src="project-medium.svg" alt="中型" width="16" height="16"><img src="project-large.svg" alt="大型" width="16" height="16"></div>
+        <div class="row"><span>24 px</span><img src="project-small.svg" alt="小型" width="24" height="24"><img src="project-medium.svg" alt="中型" width="24" height="24"><img src="project-large.svg" alt="大型" width="24" height="24"></div>
+        <div class="row"><span>32 px</span><img src="project-small.svg" alt="小型" width="32" height="32"><img src="project-medium.svg" alt="中型" width="32" height="32"><img src="project-large.svg" alt="大型" width="32" height="32"></div>
+      </div>
+    </section>
+    <footer><span>以底色、徽牌轮廓与建筑体量区分规模</span><span>透明底 · 64 × 64 viewBox · 点击上方图标下载</span></footer>
+  </main>
+</body>
+</html>

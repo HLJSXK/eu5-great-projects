@@ -27,6 +27,7 @@ STATES = {
     'four_modifiers': [(27, 3, 2), (40, 3, 2), (53, 3, 2)],
     'jerusalem': [(140, 1), (103, 1)],
     'marseille': [(195, 1)],
+    'sizes': [(3, 1), (144, 0), (2, 2)],
 }
 
 
@@ -58,6 +59,7 @@ def scenario_mocks(state, resources, menu=True, *, localized_tables=None):
     from scripts_engineering_department.in_game.gui import gen_location_window as source
     from scripts_engineering_department.wonder_mechanics.io import load_all_wonder_mechanics
     from scripts_engineering_department.wonder_mechanics.rituals import ritual_styles
+    from scripts_engineering_department.wonder_mechanics.naming import WONDER_SIZE_IDS
     payload = json.loads((WORKSPACE / 'ai_gui_assessment/fixtures/location.json').read_text(encoding='utf-8'))
     result = [(re.escape(key.replace('LocationView.GetLocation.', 'Location.')), value)
               for key, value in payload['bindings'].items()]
@@ -75,6 +77,8 @@ def scenario_mocks(state, resources, menu=True, *, localized_tables=None):
     all_wonders, mechanics = load_all_wonder_mechanics()
     wonders = {w['id']: w for w in all_wonders}
     for slot, (ident, *_) in enumerate(STATES[state][:5], 1):
+        expression = source.slot_size_value_expr(slot).replace('LocationView.GetLocation.', 'Location.').replace(' ', '')
+        result.append((re.escape(expression), WONDER_SIZE_IDS[wonders[ident]['size']]))
         key = wonders[ident]['final_building']
         expression = source.slot_building_type_expr('tooltip', slot).replace('LocationView.GetLocation.', 'Location.').replace(' ', '')
         result.extend(object_mocks(expression, {'__type__': 'BuildingType',

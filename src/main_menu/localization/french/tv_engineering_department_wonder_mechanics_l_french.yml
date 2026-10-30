@@ -17660,3 +17660,7 @@
  tv_engineering_department.500.d_unique_hagia_sophia_3_identity_mosque:0 "Judges, scholars, and the elders of the city's quarters meet in the mosque courtyard to settle endowment accounts, water rights, and market dues before entering the prayer hall together."
  tv_engineering_department.500.d_unique_hagia_sophia_plain_identity_default:0 "Hagia Sophia is complete. The work serves the country in its plain form, without a dedication rite."
  tv_engineering_department.500.d_unique_hagia_sophia_plain_identity_mosque:0 "The great dome of Constantinople now shelters Friday prayer. Its ancient marble and vaults endure, while the call to prayer and a pious endowment give the building a new place in the city's life."
+ TV_LOCATION_WONDER_SIZE:0 "Size"
+ TV_LOCATION_WONDER_SIZE_SMALL:0 "This is a [tv_wonder_small|e]."
+ TV_LOCATION_WONDER_SIZE_MEDIUM:0 "This is a [tv_wonder_medium|e]."
+ TV_LOCATION_WONDER_SIZE_LARGE:0 "This is a [tv_wonder_large|e]."

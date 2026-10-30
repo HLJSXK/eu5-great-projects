@@ -4,6 +4,10 @@
  #   Regen:   conda run --no-capture-output -n eu5 python scripts_engineering_department/main_menu/localization/simp_chinese/gen_tv_engineering_department_wonder_mechanics_l_simp_chinese.py
  # Do not edit directly - modify the data file and re-run the generator.
  
+ TV_LOCATION_WONDER_SIZE:0 "规模"
+ TV_LOCATION_WONDER_SIZE_SMALL:0 "这是一个[tv_wonder_small|e]"
+ TV_LOCATION_WONDER_SIZE_MEDIUM:0 "这是一个[tv_wonder_medium|e]"
+ TV_LOCATION_WONDER_SIZE_LARGE:0 "这是一个[tv_wonder_large|e]"
  TV_WONDER_RITUAL_ESTATE_SUPPORTS_STYLE:0 "[Estate.GetLongNameWithNoTooltip]当前#G 支持#!该仪式风格。"
  TV_WONDER_RITUAL_SUPPORT_REASON_LOCATION:0 "该仪式的地点奖励惠及这一阶层。"
  TV_WONDER_RITUAL_SUPPORT_REASON_HISTORICAL:0 "该仪式风格符合这一阶层一贯的偏好。"

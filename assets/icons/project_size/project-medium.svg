@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-label="中型工程：黄色盾牌与双拱石桥">
+  <title>中型工程</title>
+  <defs>
+    <linearGradient id="pm-bronze" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F0D79A"/><stop offset=".3" stop-color="#AE8543"/>
+      <stop offset=".55" stop-color="#68481F"/><stop offset=".8" stop-color="#C2A164"/><stop offset="1" stop-color="#60421E"/>
+    </linearGradient>
+    <radialGradient id="pm-enamel" cx=".35" cy=".2" r=".9">
+      <stop stop-color="#C0A24A"/><stop offset=".6" stop-color="#94752A"/><stop offset="1" stop-color="#59431D"/>
+    </radialGradient>
+    <linearGradient id="pm-stone" x2=".3" y2="1">
+      <stop stop-color="#FFF0C5"/><stop offset=".55" stop-color="#DCC390"/><stop offset="1" stop-color="#AD8B54"/>
+    </linearGradient>
+  </defs>
+  <path d="M8 8H56V32C56 45 45 54 32 60C19 54 8 45 8 32Z" fill="#110F0B" opacity=".6"/>
+  <path d="M8 7H56V31C56 44 45 53 32 59C19 53 8 44 8 31Z" fill="url(#pm-bronze)" stroke="#302315" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M12 11H52V31C52 42 42 50 32 55C22 50 12 42 12 31Z" fill="url(#pm-enamel)" stroke="#382B18" stroke-width="1.5"/>
+  <path d="M14 13H50V31C50 41 41 48 32 53C23 48 14 41 14 31Z" fill="none" stroke="#ECD491" stroke-opacity=".5" stroke-width=".75"/>
+  <path d="M15 29V14H30" fill="none" stroke="#FFF1C8" stroke-opacity=".3" stroke-linecap="round"/>
+  <g fill="url(#pm-stone)" stroke="#49351D" stroke-width="1" stroke-linejoin="round">
+    <path d="M17 42V27H47V42H42V35A4 4 0 0 0 34 35V42H30V35A4 4 0 0 0 22 35V42Z"/>
+    <path d="M16 24H48V28H16Z"/>
+    <path d="M16 42H48V45H16Z"/>
+  </g>
+  <path d="M17 25H47M18 43H46M30 29H34M18 34H21M43 34H46" fill="none" stroke="#FFF1C8" stroke-opacity=".5" stroke-width=".8"/>
+  <path d="M32 15 34 17 32 19 30 17Z" fill="#F3DA98"/>
+</svg>

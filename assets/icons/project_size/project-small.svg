@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-label="小型工程：绿色圆章与单拱石门">
+  <title>小型工程</title>
+  <defs>
+    <linearGradient id="ps-bronze" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F0D79A"/><stop offset=".3" stop-color="#AE8543"/>
+      <stop offset=".55" stop-color="#68481F"/><stop offset=".8" stop-color="#C2A164"/><stop offset="1" stop-color="#60421E"/>
+    </linearGradient>
+    <radialGradient id="ps-enamel" cx=".35" cy=".2" r=".9">
+      <stop stop-color="#557B4D"/><stop offset=".6" stop-color="#315C3C"/><stop offset="1" stop-color="#1D382C"/>
+    </radialGradient>
+    <linearGradient id="ps-stone" x2=".3" y2="1">
+      <stop stop-color="#FFF0C5"/><stop offset=".55" stop-color="#DCC390"/><stop offset="1" stop-color="#AD8B54"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="33" r="27" fill="#110F0B" opacity=".6"/>
+  <circle cx="32" cy="32" r="27" fill="url(#ps-bronze)" stroke="#302315" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="23.5" fill="url(#ps-enamel)" stroke="#382B18" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#B5A477" stroke-opacity=".5" stroke-width=".75"/>
+  <path d="M12 26A21 21 0 0 1 26 12" fill="none" stroke="#E7D29B" stroke-opacity=".45" stroke-linecap="round"/>
+  <g fill="url(#ps-stone)" stroke="#443421" stroke-width="1" stroke-linejoin="round">
+    <path d="M22 43V27H42V43H36V35A4 4 0 0 0 28 35V43Z"/>
+    <path d="M20 24H44V28H20Z"/>
+    <path d="M20 43H44V46H20Z"/>
+  </g>
+  <path d="M22 29H27M37 29H42M22 36H27M37 36H42M21 44H43" fill="none" stroke="#FFF1C8" stroke-opacity=".5" stroke-width=".8"/>
+  <path d="M32 14 34 16 32 18 30 16Z" fill="#D5B879"/>
+</svg>

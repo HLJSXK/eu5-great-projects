@@ -9,6 +9,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
 
 from wonder_mechanics.render import render_header
+from wonder_mechanics.naming import WONDER_SIZE_IDS
 from wonder_identity import image_expression
 
 GLORP_LOCATION_WINDOW_FILE = REPO_ROOT / ".eu5-base" / "reference_mods_variants" / "eu5-towards-victory" / "3812518640" / "in_game" / "gui" / "location_window.gui"
@@ -94,7 +95,8 @@ PANEL_TEXT_MARGIN_Y = 3
 TOOLTIP_IMAGE_WIDTH = 300
 TOOLTIP_IMAGE_HEIGHT = 200
 TOOLTIP_IMAGE_OVERLAY_HEIGHT = 32
-TOOLTIP_IMAGE_NAME_WIDTH = 205
+SIZE_BADGE_SIZE = 26
+TOOLTIP_IMAGE_NAME_WIDTH = 205 - SIZE_BADGE_SIZE - 4
 # 48 displayed pixels at UI_SCALE, matching the medallion asset design range.
 LEVEL_MEDALLION_SIZE = 64
 
@@ -184,6 +186,51 @@ def slot_name_expr(slot_type: str, slot: int) -> str:
     return f"{slot_building_type_expr(slot_type, slot)}.GetName"
 
 
+def slot_size_value_expr(slot: int) -> str:
+    return (
+        "GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', "
+        f"MakeScopeValue({slot_id_var('tooltip', slot)}.GetValue)).GetValue"
+    )
+
+
+def slot_size_visible_expr(slot: int, size: str) -> str:
+    return f"EqualTo_CFixedPoint({slot_size_value_expr(slot)}, '(CFixedPoint){WONDER_SIZE_IDS[size]}.0')"
+
+
+def render_size_icons(slot: int, *, title: bool = False) -> str:
+    bounds = 'using = tooltip_title_icon_size' if title else f'size = {{ {SIZE_BADGE_SIZE} {SIZE_BADGE_SIZE} }}'
+    return '\n'.join(f'''icon = {{
+        name = "tv_location_wonder_size_{'title' if title else 'icon'}_{slot}_{size}"
+        {bounds} alwaystransparent = yes
+        visible = "[{slot_size_visible_expr(slot, size)}]"
+        texture = "gfx/interface/icons/location_icons/tv_project_size_{size}.dds"
+    }}''' for size in WONDER_SIZE_IDS)
+
+
+def render_size_badge(slot: int) -> str:
+    # Keep the existing concept link inside the single sentence. A second
+    # header subtitle would repeat the size and add an unwanted text line.
+    descriptions = '\n'.join(f'''TooltipTextBlock = {{
+        name = "tv_location_wonder_size_description_{slot}_{size}"
+        visible = "[{slot_size_visible_expr(slot, size)}]"
+        blockoverride "text" {{ text = "TV_LOCATION_WONDER_SIZE_{size.upper()}" }}
+    }}''' for size in WONDER_SIZE_IDS)
+    return f'''widget = {{
+        name = "tv_location_wonder_size_{slot}"
+        size = {{ {SIZE_BADGE_SIZE} {SIZE_BADGE_SIZE} }}
+        alwaystransparent = no
+        {render_size_icons(slot)}
+        tooltipwidget = {{
+            ContextualTooltipType = {{
+                blockoverride "title_icon" {{ {render_size_icons(slot, title=True)} }}
+                blockoverride "title_text" {{ text = "TV_LOCATION_WONDER_SIZE" }}
+                blockoverride "concept_link" {{ visible = no }}
+                blockoverride "tooltip_content" {{ {descriptions} }}
+            }}
+        }}
+    }}'''
+
+
 def slot_image_expr(slot_type: str, slot: int) -> str:
     return image_expression(None, f"{slot_id_var(slot_type, slot)}.GetValue", f"Concatenate('{IMAGE_CONCEPT_PREFIX}', {slot_id_string(slot_type, slot)})", cropped=True)
 
@@ -242,7 +289,9 @@ def render_tooltip_image_overlay(indent: str, *, slot: int) -> list[str]:
         f"{indent}{T}{T}layoutpolicy_vertical = fixed",
         f"{indent}{T}{T}margin = {{ {PANEL_TEXT_MARGIN_X} {PANEL_TEXT_MARGIN_Y} }}",
         f"{indent}{T}{T}spacing = 4",
+        render_size_badge(slot),
         f"{indent}{T}{T}text_single = {{",
+        f'{indent}{T}{T}{T}name = "tv_location_wonder_name_{slot}"',
         f"{indent}{T}{T}{T}alwaystransparent = no",
         f'{indent}{T}{T}{T}text = "[{slot_name_expr("tooltip", slot)}]"',
         f"{indent}{T}{T}{T}layoutpolicy_horizontal = fixed",
@@ -441,7 +490,7 @@ def render_menu_slot(indent: str, *, slot: int) -> list[str]:
     overlay = "\n".join(render_tooltip_image_overlay("", slot=slot))
     lines += [overlay, f'''widget = {{
             name = "tv_location_wonder_site_conditions_{slot}"
-            parentanchor = bottom|left widgetanchor = bottom|left position = {{ 8 -6 }}
+            parentanchor = bottom|left widgetanchor = bottom|left position = {{ -2 2 }}
             size = {{ {LEVEL_MEDALLION_SIZE} {LEVEL_MEDALLION_SIZE} }} alwaystransparent = no
             {render_art_tooltip(slot)}
             widget = {{
@@ -466,7 +515,7 @@ def render_menu_slot(indent: str, *, slot: int) -> list[str]:
         widget = {{
             name = "tv_location_wonder_level_{slot}"
             visible = "[{slot_has_id_expr('tooltip', slot)}]"
-            parentanchor = bottom|right widgetanchor = bottom|right position = {{ -8 -6 }}
+            parentanchor = bottom|right widgetanchor = bottom|right position = {{ 2 2 }}
             size = {{ {LEVEL_MEDALLION_SIZE} {LEVEL_MEDALLION_SIZE} }} alwaystransparent = no
             {render_level_tooltip(slot)}''']
     # Static texture handles are required by the engine. This remains one hover

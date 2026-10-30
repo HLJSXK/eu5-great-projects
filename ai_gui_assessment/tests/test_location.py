@@ -82,6 +82,66 @@ class LocationPreviewTests(unittest.TestCase):
                         self.assertNotIn('ShowScriptedEffectForScope', tree)
                         self.assertNotIn('ShowTriggerConditionsForScope', tree)
 
+    def test_size_badges_fit_before_names_and_show_one_native_linked_sentence(self):
+        from eu5_gui_renderer.data import Evaluator
+        from eu5_gui_renderer.gui import Expander
+        from eu5_gui_renderer.preview import render_tree, has_diagnostics
+        from scripts_engineering_department.wonder_mechanics.io import load_all_wonder_mechanics
+
+        def visit(node):
+            yield node
+            for child in node.children:
+                yield from visit(child)
+
+        wonders, _ = load_all_wonder_mechanics()
+        sizes = {wonder['id']: wonder['size'] for wonder in wonders}
+        self.assertEqual({sizes[row[0]] for row in location.STATES['sizes']}, {'small', 'medium', 'large'})
+        expander = Expander(self.resources.db)
+        root, _, menu = location.build(self.resources, expander, 560, 1080, menu=True)
+        mocks = location.scenario_mocks('sizes', self.resources)
+        evaluator = Evaluator(mocks, self.resources.loc, [])
+        nodes = {node.props.get('name'): node for node in visit(menu)}
+
+        def visible(node):
+            return evaluator.eval_str(node.props['visible'].replace('LocationView.GetLocation.', 'Location.'))
+
+        with tempfile.TemporaryDirectory() as folder:
+            report = render_tree(root, expander, self.resources, mocks, width=1420, height=1080,
+                                 output=Path(folder) / 'sizes.png')
+            self.assertFalse(has_diagnostics(report), report)
+            for slot, (ident, *_) in enumerate(location.STATES['sizes'], 1):
+                size = sizes[ident]
+                badge = nodes[f'tv_location_wonder_size_{slot}']
+                name = nodes[f'tv_location_wonder_name_{slot}']
+                art = nodes[f'tv_location_wonder_art_{slot}']
+                self.assertEqual(badge.props['alwaystransparent'], 'no')
+                self.assertGreater(badge.w, 0)
+                self.assertEqual(badge.w, badge.h)
+                self.assertGreaterEqual(name.x, badge.x + badge.w)
+                self.assertGreaterEqual(badge.x, art.x)
+                self.assertLessEqual(badge.y + badge.h, art.y + 24)
+                self.assertLessEqual(name.x + name.w, art.x + art.w)
+                icons = [node for node in badge.children if node.kind == 'icon' and visible(node)]
+                self.assertEqual(len(icons), 1)
+                self.assertEqual(icons[0].props['texture'], f'gfx/interface/icons/location_icons/tv_project_size_{size}.dds')
+                popup = expander.build_lazy(badge.tooltipwidget)
+                contents = list(visit(popup))
+                self.assertEqual(sum(node.typename == 'ContextualTooltipHeader' for node in contents), 1)
+                self.assertFalse(any(node.typename == 'TooltipFlavorTextBlock' for node in contents))
+                descriptions = [node for node in contents if str(node.props.get('name', '')).startswith(
+                    'tv_location_wonder_size_description_') and visible(node)]
+                self.assertEqual(len(descriptions), 1)
+                key = f'TV_LOCATION_WONDER_SIZE_{size.upper()}'
+                body = self.resources.loc.get(key)
+                self.assertIn(f'[tv_wonder_{size}|e]', body)
+                self.assertNotIn('\\n', body)
+                self.assertEqual(self.resources.loc.get('TV_LOCATION_WONDER_SIZE'), '规模')
+                hover = location.render('sizes', self.resources, hover=badge.props['name'],
+                                        output=Path(folder) / f'{size}.png')
+                self.assertFalse(has_diagnostics(hover), hover)
+                self.assertFalse(hover['tooltip']['clipped'])
+                self.assertLessEqual(hover['tooltip']['bounds'][2], 450)
+
     def test_site_badge_mirrors_level_and_tracks_live_trigger_result(self):
         from eu5_gui_renderer.data import Evaluator
         from eu5_gui_renderer.gui import Expander

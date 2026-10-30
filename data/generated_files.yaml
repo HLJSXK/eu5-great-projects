@@ -1,6 +1,24 @@
 ﻿generated:
 - script: scripts_engineering_department/gen_europedia_cycle.py
   output: assets/generated_icons/tv_europedia_cycle.png
+- script: scripts_engineering_department/gen_project_size_icons.py
+  data: assets/icons/project_size/project-small.svg
+  output: assets/generated_icons/tv_project_size_small.png
+- script: scripts_engineering_department/gen_project_size_icons.py
+  data: assets/icons/project_size/project-small.svg
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_project_size_small.dds
+- script: scripts_engineering_department/gen_project_size_icons.py
+  data: assets/icons/project_size/project-medium.svg
+  output: assets/generated_icons/tv_project_size_medium.png
+- script: scripts_engineering_department/gen_project_size_icons.py
+  data: assets/icons/project_size/project-medium.svg
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_project_size_medium.dds
+- script: scripts_engineering_department/gen_project_size_icons.py
+  data: assets/icons/project_size/project-large.svg
+  output: assets/generated_icons/tv_project_size_large.png
+- script: scripts_engineering_department/gen_project_size_icons.py
+  data: assets/icons/project_size/project-large.svg
+  output: src/main_menu/gfx/interface/icons/location_icons/tv_project_size_large.dds
 - script: scripts_engineering_department/gen_europedia_cycle.py
   output: src/main_menu/gfx/interface/illustrations/tv_europedia_cycle.dds
 - script: scripts_engineering_department/gen_market_supply_effects.py

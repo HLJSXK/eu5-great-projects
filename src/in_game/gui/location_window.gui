@@ -113,12 +113,75 @@ types tv_location_wonder_menu_types {
 					layoutpolicy_vertical = fixed
 					margin = { 3.75 2.25 }
 					spacing = 3
+			widget = {
+			        name = "tv_location_wonder_size_1"
+			        size = { 19.5 19.5 }
+			        alwaystransparent = no
+			        icon = {
+			        name = "tv_location_wonder_size_icon_1_small"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_small.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_icon_1_medium"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_medium.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_icon_1_large"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_large.dds"
+			    }
+			        tooltipwidget = {
+			            ContextualTooltipType = {
+			                blockoverride "title_icon" { icon = {
+			        name = "tv_location_wonder_size_title_1_small"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_small.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_title_1_medium"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_medium.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_title_1_large"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_large.dds"
+			    } }
+			                blockoverride "title_text" { text = "TV_LOCATION_WONDER_SIZE" }
+			                blockoverride "concept_link" { visible = no }
+			                blockoverride "tooltip_content" { TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_1_small"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_SMALL" }
+			    }
+			TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_1_medium"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_MEDIUM" }
+			    }
+			TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_1_large"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_LARGE" }
+			    } }
+			            }
+			        }
+			    }
 					text_single = {
+						name = "tv_location_wonder_name_1"
 						alwaystransparent = no
 						text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').GetValue)).GetBuildingType.GetName]"
 						layoutpolicy_horizontal = fixed
-						size = { 153.75 18 }
-						max_width = 153.75
+						size = { 131.25 18 }
+						max_width = 131.25
 						align = left|nobaseline
 						autoresize = no
 						fontsize = 13
@@ -140,7 +203,7 @@ types tv_location_wonder_menu_types {
 			}
 			widget = {
 			            name = "tv_location_wonder_site_conditions_1"
-			            parentanchor = bottom|left widgetanchor = bottom|left position = { 6 -4.5 }
+			            parentanchor = bottom|left widgetanchor = bottom|left position = { -1.5 1.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
@@ -183,7 +246,7 @@ types tv_location_wonder_menu_types {
 			        widget = {
 			            name = "tv_location_wonder_level_1"
 			            visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_1_id').IsSet]"
-			            parentanchor = bottom|right widgetanchor = bottom|right position = { -6 -4.5 }
+			            parentanchor = bottom|right widgetanchor = bottom|right position = { 1.5 1.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
@@ -536,12 +599,75 @@ types tv_location_wonder_menu_types {
 					layoutpolicy_vertical = fixed
 					margin = { 3.75 2.25 }
 					spacing = 3
+			widget = {
+			        name = "tv_location_wonder_size_2"
+			        size = { 19.5 19.5 }
+			        alwaystransparent = no
+			        icon = {
+			        name = "tv_location_wonder_size_icon_2_small"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_small.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_icon_2_medium"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_medium.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_icon_2_large"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_large.dds"
+			    }
+			        tooltipwidget = {
+			            ContextualTooltipType = {
+			                blockoverride "title_icon" { icon = {
+			        name = "tv_location_wonder_size_title_2_small"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_small.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_title_2_medium"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_medium.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_title_2_large"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_large.dds"
+			    } }
+			                blockoverride "title_text" { text = "TV_LOCATION_WONDER_SIZE" }
+			                blockoverride "concept_link" { visible = no }
+			                blockoverride "tooltip_content" { TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_2_small"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_SMALL" }
+			    }
+			TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_2_medium"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_MEDIUM" }
+			    }
+			TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_2_large"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_LARGE" }
+			    } }
+			            }
+			        }
+			    }
 					text_single = {
+						name = "tv_location_wonder_name_2"
 						alwaystransparent = no
 						text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').GetValue)).GetBuildingType.GetName]"
 						layoutpolicy_horizontal = fixed
-						size = { 153.75 18 }
-						max_width = 153.75
+						size = { 131.25 18 }
+						max_width = 131.25
 						align = left|nobaseline
 						autoresize = no
 						fontsize = 13
@@ -563,7 +689,7 @@ types tv_location_wonder_menu_types {
 			}
 			widget = {
 			            name = "tv_location_wonder_site_conditions_2"
-			            parentanchor = bottom|left widgetanchor = bottom|left position = { 6 -4.5 }
+			            parentanchor = bottom|left widgetanchor = bottom|left position = { -1.5 1.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
@@ -606,7 +732,7 @@ types tv_location_wonder_menu_types {
 			        widget = {
 			            name = "tv_location_wonder_level_2"
 			            visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_2_id').IsSet]"
-			            parentanchor = bottom|right widgetanchor = bottom|right position = { -6 -4.5 }
+			            parentanchor = bottom|right widgetanchor = bottom|right position = { 1.5 1.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
@@ -959,12 +1085,75 @@ types tv_location_wonder_menu_types {
 					layoutpolicy_vertical = fixed
 					margin = { 3.75 2.25 }
 					spacing = 3
+			widget = {
+			        name = "tv_location_wonder_size_3"
+			        size = { 19.5 19.5 }
+			        alwaystransparent = no
+			        icon = {
+			        name = "tv_location_wonder_size_icon_3_small"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_small.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_icon_3_medium"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_medium.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_icon_3_large"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_large.dds"
+			    }
+			        tooltipwidget = {
+			            ContextualTooltipType = {
+			                blockoverride "title_icon" { icon = {
+			        name = "tv_location_wonder_size_title_3_small"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_small.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_title_3_medium"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_medium.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_title_3_large"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_large.dds"
+			    } }
+			                blockoverride "title_text" { text = "TV_LOCATION_WONDER_SIZE" }
+			                blockoverride "concept_link" { visible = no }
+			                blockoverride "tooltip_content" { TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_3_small"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_SMALL" }
+			    }
+			TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_3_medium"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_MEDIUM" }
+			    }
+			TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_3_large"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_LARGE" }
+			    } }
+			            }
+			        }
+			    }
 					text_single = {
+						name = "tv_location_wonder_name_3"
 						alwaystransparent = no
 						text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').GetValue)).GetBuildingType.GetName]"
 						layoutpolicy_horizontal = fixed
-						size = { 153.75 18 }
-						max_width = 153.75
+						size = { 131.25 18 }
+						max_width = 131.25
 						align = left|nobaseline
 						autoresize = no
 						fontsize = 13
@@ -986,7 +1175,7 @@ types tv_location_wonder_menu_types {
 			}
 			widget = {
 			            name = "tv_location_wonder_site_conditions_3"
-			            parentanchor = bottom|left widgetanchor = bottom|left position = { 6 -4.5 }
+			            parentanchor = bottom|left widgetanchor = bottom|left position = { -1.5 1.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
@@ -1029,7 +1218,7 @@ types tv_location_wonder_menu_types {
 			        widget = {
 			            name = "tv_location_wonder_level_3"
 			            visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_3_id').IsSet]"
-			            parentanchor = bottom|right widgetanchor = bottom|right position = { -6 -4.5 }
+			            parentanchor = bottom|right widgetanchor = bottom|right position = { 1.5 1.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
@@ -1382,12 +1571,75 @@ types tv_location_wonder_menu_types {
 					layoutpolicy_vertical = fixed
 					margin = { 3.75 2.25 }
 					spacing = 3
+			widget = {
+			        name = "tv_location_wonder_size_4"
+			        size = { 19.5 19.5 }
+			        alwaystransparent = no
+			        icon = {
+			        name = "tv_location_wonder_size_icon_4_small"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_small.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_icon_4_medium"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_medium.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_icon_4_large"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_large.dds"
+			    }
+			        tooltipwidget = {
+			            ContextualTooltipType = {
+			                blockoverride "title_icon" { icon = {
+			        name = "tv_location_wonder_size_title_4_small"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_small.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_title_4_medium"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_medium.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_title_4_large"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_large.dds"
+			    } }
+			                blockoverride "title_text" { text = "TV_LOCATION_WONDER_SIZE" }
+			                blockoverride "concept_link" { visible = no }
+			                blockoverride "tooltip_content" { TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_4_small"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_SMALL" }
+			    }
+			TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_4_medium"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_MEDIUM" }
+			    }
+			TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_4_large"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_LARGE" }
+			    } }
+			            }
+			        }
+			    }
 					text_single = {
+						name = "tv_location_wonder_name_4"
 						alwaystransparent = no
 						text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').GetValue)).GetBuildingType.GetName]"
 						layoutpolicy_horizontal = fixed
-						size = { 153.75 18 }
-						max_width = 153.75
+						size = { 131.25 18 }
+						max_width = 131.25
 						align = left|nobaseline
 						autoresize = no
 						fontsize = 13
@@ -1409,7 +1661,7 @@ types tv_location_wonder_menu_types {
 			}
 			widget = {
 			            name = "tv_location_wonder_site_conditions_4"
-			            parentanchor = bottom|left widgetanchor = bottom|left position = { 6 -4.5 }
+			            parentanchor = bottom|left widgetanchor = bottom|left position = { -1.5 1.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
@@ -1452,7 +1704,7 @@ types tv_location_wonder_menu_types {
 			        widget = {
 			            name = "tv_location_wonder_level_4"
 			            visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_4_id').IsSet]"
-			            parentanchor = bottom|right widgetanchor = bottom|right position = { -6 -4.5 }
+			            parentanchor = bottom|right widgetanchor = bottom|right position = { 1.5 1.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
@@ -1805,12 +2057,75 @@ types tv_location_wonder_menu_types {
 					layoutpolicy_vertical = fixed
 					margin = { 3.75 2.25 }
 					spacing = 3
+			widget = {
+			        name = "tv_location_wonder_size_5"
+			        size = { 19.5 19.5 }
+			        alwaystransparent = no
+			        icon = {
+			        name = "tv_location_wonder_size_icon_5_small"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_small.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_icon_5_medium"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_medium.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_icon_5_large"
+			        size = { 19.5 19.5 } alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_large.dds"
+			    }
+			        tooltipwidget = {
+			            ContextualTooltipType = {
+			                blockoverride "title_icon" { icon = {
+			        name = "tv_location_wonder_size_title_5_small"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_small.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_title_5_medium"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_medium.dds"
+			    }
+			icon = {
+			        name = "tv_location_wonder_size_title_5_large"
+			        using = tooltip_title_icon_size alwaystransparent = yes
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        texture = "gfx/interface/icons/location_icons/tv_project_size_large.dds"
+			    } }
+			                blockoverride "title_text" { text = "TV_LOCATION_WONDER_SIZE" }
+			                blockoverride "concept_link" { visible = no }
+			                blockoverride "tooltip_content" { TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_5_small"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetValue, '(CFixedPoint)1.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_SMALL" }
+			    }
+			TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_5_medium"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetValue, '(CFixedPoint)2.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_MEDIUM" }
+			    }
+			TooltipTextBlock = {
+			        name = "tv_location_wonder_size_description_5_large"
+			        visible = "[EqualTo_CFixedPoint(GetVariableFromGlobalVariableMap('tv_wonder_id_to_size', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetValue, '(CFixedPoint)3.0')]"
+			        blockoverride "text" { text = "TV_LOCATION_WONDER_SIZE_LARGE" }
+			    } }
+			            }
+			        }
+			    }
 					text_single = {
+						name = "tv_location_wonder_name_5"
 						alwaystransparent = no
 						text = "[GetVariableFromGlobalVariableMap('tv_wonder_id_to_final_building_type', MakeScopeValue(LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').GetValue)).GetBuildingType.GetName]"
 						layoutpolicy_horizontal = fixed
-						size = { 153.75 18 }
-						max_width = 153.75
+						size = { 131.25 18 }
+						max_width = 131.25
 						align = left|nobaseline
 						autoresize = no
 						fontsize = 13
@@ -1832,7 +2147,7 @@ types tv_location_wonder_menu_types {
 			}
 			widget = {
 			            name = "tv_location_wonder_site_conditions_5"
-			            parentanchor = bottom|left widgetanchor = bottom|left position = { 6 -4.5 }
+			            parentanchor = bottom|left widgetanchor = bottom|left position = { -1.5 1.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
@@ -1875,7 +2190,7 @@ types tv_location_wonder_menu_types {
 			        widget = {
 			            name = "tv_location_wonder_level_5"
 			            visible = "[LocationView.GetLocation.MakeScope.GetVariable('tv_wonder_tooltip_slot_5_id').IsSet]"
-			            parentanchor = bottom|right widgetanchor = bottom|right position = { -6 -4.5 }
+			            parentanchor = bottom|right widgetanchor = bottom|right position = { 1.5 1.5 }
 			            size = { 48 48 } alwaystransparent = no
 			            tooltipwidget = {
 			        ContextualTooltipType = {
