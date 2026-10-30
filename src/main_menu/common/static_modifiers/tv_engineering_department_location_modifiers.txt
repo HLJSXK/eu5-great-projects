@@ -3,7 +3,7 @@
 
 
 tv_wonder_construction_migration_attraction_location_modifier = {
-	local_migration_attraction = 2
+	local_migration_attraction = 1
 	game_data = {
 		category = location
 	}
