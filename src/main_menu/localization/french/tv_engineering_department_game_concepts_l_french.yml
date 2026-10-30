@@ -1,7 +1,7 @@
-﻿l_french:
+﻿﻿l_french:
  # ── Generic trigger tooltips ───────────────────────────────────────────────
  TV_ENGINEERING_DEPARTMENT_HAS_VARIABLE_NOT_SET_TT: "L'état requis n'est pas actif."
- TV_CHARACTER_NOT_ALREADY_TV_IO_CHIEF_TT: "Ce personnage n'est pas déjà chef des IO TV."
+ TV_CHARACTER_NOT_ALREADY_TV_IO_CHIEF_TT: "Ce personnage ne dirige encore aucune organisation internationale de Vers la Victoire."
  TV_HAS_ENGINEERING_DEPARTMENT_MEMBER_TT: "Ce pays est membre du [tv_engineering_department|E]."
  TV_HAS_GREAT_ENGINEER_CHAR_TT: "Un [tv_great_engineer|E] a été nommé."
  TV_IO_HEADER_APPOINT_CHIEF_PROMPT: "Nommer un chef"
@@ -11,7 +11,7 @@
  game_concept_tv_engineering_department_desc: "Une organisation internationale non unique établie automatiquement pour chaque pays lors de l'initialisation de la campagne. Il détient le bureau [tv_great_engineer|e] et gère chaque étape d'un [tv_wonder_construction|e]: [tv_wonder_concept|e], site [tv_wonder_survey|e], organisation, logistique et [tv_wonder_ceremony|e] final."
 
  game_concept_tv_great_engineer: "Grand ingénieur"
- game_concept_tv_great_engineer_desc: "Le personnage nommé qui dirige le [tv_engineering_department|e]. Le [tv_great_engineer|e] est stocké en tant que variable de pays et peut être nommé, remplacé ou licencié du panneau [tv_engineering_department|e]."
+ game_concept_tv_great_engineer_desc: "Le personnage qui dirige le [tv_engineering_department|e] ; nommez-le, remplacez-le ou révoquez-le depuis le panneau du [tv_engineering_department|e]."
 
  game_concept_tv_wonder_concept: "Conception"
  game_concept_tv_wonder_concept_desc: "L'étape de proposition qui ouvre un nouveau [tv_wonder_construction|e]. Chaque mois, la compétence administrative du [tv_great_engineer|e] progresse dans la conception; une fois terminé, le [tv_great_engineer|e] propose un projet [tv_wonder_small|e], [tv_wonder_medium|e] ou [tv_wonder_large|e] réalisable que le pays pourra poursuivre."

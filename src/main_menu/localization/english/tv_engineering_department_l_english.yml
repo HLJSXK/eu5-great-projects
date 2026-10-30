@@ -1,4 +1,4 @@
-﻿l_english:
+﻿﻿l_english:
  # Engineering Department IO
  tv_engineering_department: "Engineering Department"
  tv_engineering_department_desc: "A national engineering institution established automatically for every country. It appoints a [tv_great_engineer|e] and manages the [tv_wonder_construction|e] mechanism."
@@ -987,7 +987,7 @@
  tv_wonder_material_dispatch_point: "Materials Workshop"
  tv_wonder_material_dispatch_point_desc: "A workshop that turns regional resources into [tv_wonder_materials|e]. Eight methods each produce 1.00 materials: earth, timber and kiln methods need no purchased tools, while stone finishing and standardized components use developed industries to reduce waste. Choose according to local market prices and supply."
  tv_wonder_material_dispatch_point_price: "$tv_wonder_material_dispatch_point$"
- tv_wonder_material_dispatch_point_construction: "Workshop Construction"
+ tv_wonder_material_dispatch_point_construction: "Building-Material Workshop Construction"
  tv_wonder_material_dispatch_point_production_rammed_earth: "Rammed Earth Formwork"
  tv_wonder_material_dispatch_point_production_timber_frame: "Timber Joinery"
  tv_wonder_material_dispatch_point_production_wood_kiln: "Wood-Fired Brickmaking"
@@ -996,7 +996,7 @@
  tv_wonder_material_dispatch_point_production: "Abrasive Marble Finishing"
  tv_wonder_material_dispatch_point_production_patterned_components: "Patterned Building Components"
  tv_wonder_material_dispatch_point_production_steel_cutting: "Steel-Edged Precision Cutting"
- MODIFIER_TYPE_NAME_tv_wonder_material_dispatch_point_price_cost_modifier: "Workshop Cost"
+ MODIFIER_TYPE_NAME_tv_wonder_material_dispatch_point_price_cost_modifier: "Building-Material Workshop Cost"
  MODIFIER_TYPE_DESC_tv_wonder_material_dispatch_point_price_cost_modifier: "Modifies the gold cost to build this workshop."
  MODIFIER_TYPE_NAME_can_extract_tv_wonder_materials: "Can Extract $tv_wonder_materials$"
  MODIFIER_TYPE_DESC_can_extract_tv_wonder_materials: "This allows the extraction of [ShowGoodsName('tv_wonder_materials')] by allowing an [rgo|e] in a [location|e]."

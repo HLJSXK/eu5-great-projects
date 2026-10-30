@@ -1,4 +1,4 @@
-﻿l_french:
+﻿﻿l_french:
  # Engineering Department IO
  tv_engineering_department: "Département d'ingénierie"
  tv_engineering_department_desc: "Une institution nationale d'ingénierie créée automatiquement pour chaque pays. Il désigne un [tv_great_engineer|e] et gère le mécanisme [tv_wonder_construction|e]."
@@ -859,10 +859,10 @@
  tv_wonder_material_dispatch_point: "Atelier de matériaux"
  tv_wonder_material_dispatch_point_desc: "Un atelier qui transforme les biens de base en [tv_wonder_materials|e] pour la construction monumentale."
  tv_wonder_material_dispatch_point_price: "$tv_wonder_material_dispatch_point$"
- tv_wonder_material_dispatch_point_construction: "Construction d'atelier"
+ tv_wonder_material_dispatch_point_construction: "Construction de l'atelier de matériaux"
  tv_wonder_material_dispatch_point_production: "Mélange au marbre"
  tv_wonder_material_dispatch_point_production_no_marble: "Mélange à la pierre"
- MODIFIER_TYPE_NAME_tv_wonder_material_dispatch_point_price_cost_modifier: "Coût de l'atelier"
+ MODIFIER_TYPE_NAME_tv_wonder_material_dispatch_point_price_cost_modifier: "Coût de l'atelier de matériaux"
  MODIFIER_TYPE_DESC_tv_wonder_material_dispatch_point_price_cost_modifier: "Modifie le coût en or de construction de cet atelier."
  MODIFIER_TYPE_NAME_can_extract_tv_wonder_materials: "Peut extraire $tv_wonder_materials$"
  MODIFIER_TYPE_DESC_can_extract_tv_wonder_materials: "Cela permet l'extraction de [ShowGoodsName('tv_wonder_materials')] en autorisant un [rgo|e] dans un [location|e]."

@@ -1,7 +1,7 @@
-﻿l_english:
+﻿﻿l_english:
  # ── Generic trigger tooltips ───────────────────────────────────────────────
  TV_ENGINEERING_DEPARTMENT_HAS_VARIABLE_NOT_SET_TT: "Required state is not active."
- TV_CHARACTER_NOT_ALREADY_TV_IO_CHIEF_TT: "This character is not already serving as a TV IO chief."
+ TV_CHARACTER_NOT_ALREADY_TV_IO_CHIEF_TT: "This character does not yet head any Towards Victory international organization."
  TV_HAS_ENGINEERING_DEPARTMENT_MEMBER_TT: "This country is a member of the [tv_engineering_department|E]."
  TV_HAS_GREAT_ENGINEER_CHAR_TT: "A [tv_great_engineer|E] has been appointed."
  TV_IO_HEADER_APPOINT_CHIEF_PROMPT: "Appoint a Chief"
@@ -11,7 +11,7 @@
  game_concept_tv_engineering_department_desc: "A non-unique international organization established automatically for every country during campaign initialization. It holds the [tv_great_engineer|e] office and manages every stage of a [tv_wonder_construction|e]: [tv_wonder_concept|e], site [tv_wonder_survey|e], organization, logistics, and final [tv_wonder_ceremony|e]."
 
  game_concept_tv_great_engineer: "Great Engineer"
- game_concept_tv_great_engineer_desc: "The appointed character who leads the [tv_engineering_department|e]. The [tv_great_engineer|e] is stored as a country variable and can be appointed, replaced, or dismissed from the [tv_engineering_department|e] panel."
+ game_concept_tv_great_engineer_desc: "The character who leads the [tv_engineering_department|e]; appoint, replace or dismiss them from the [tv_engineering_department|e] panel."
 
  game_concept_tv_wonder_concept: "Conception"
  game_concept_tv_wonder_concept_desc: "The proposal stage that opens a new [tv_wonder_construction|e]. Each month the [tv_great_engineer|e]'s Administrative skill advances Conception progress; once it completes, the [tv_great_engineer|e] puts forward a feasible [tv_wonder_small|e], [tv_wonder_medium|e], or [tv_wonder_large|e] project for the country to pursue."
