@@ -204,7 +204,9 @@ class Catalogue:
         if wonder['is_unique']:
             location = self.source(wonder['location'])
             lines.append(f'button = {{ name = "location_reference_{wid}" position = {{ 16 224 }} size = {{ 240 48 }}')
-            lines.append(f'onclick = "[SelectLocation(GetLocationByKey(\'{wonder["location"]}\'))]"')
+            # GetLocationByKey is a Global promote, not a value-returning
+            # function. End the chain with Location.Self for the callback arg.
+            lines.append(f'onclick = "[SelectLocation(GetLocationByKey(\'{wonder["location"]}\').Self)]"')
             tip=self.register(prefix+'_LOCATION',location)
             lines.append(f'tooltip = "{tip}"')
             lines.append(icon('gfx/interface/icons/map_subdivisons/location.dds',8,8,32))

@@ -27,9 +27,18 @@ old long, repetitive catalogue or its live effect/trigger tables.
 - The user reports load-time hangs from live rendering calls. Hardcoding removes those
   calls; static checks do not establish native load performance or prove the old root cause.
 - Do not display construction conditions. Unique entries alone have a location icon and
-  fixed caption under the image. `SelectLocation(GetLocationByKey('<fixed id>'))` runs
+  fixed caption under the image. `SelectLocation(GetLocationByKey('<fixed id>').Self)` runs
   only on click. Generic entries do not create a location row. Offline preview cannot
   establish native click/hit-test behavior.
+  The user's 2026-10-30 19:58:28 log rejects the former bare
+  `SelectLocation(GetLocationByKey(...))` argument during GUI loading.
+  `GetLocationByKey` is only a Global promote (official API line 733), whereas
+  `Location.Self` is a value Function (line 93782). Vanilla's
+  `SelectLocation(Siege.GetLocation)` works with a separate Function overload of
+  that getter; it does not establish bare-promote argument support. Preserve the
+  static caption and click-only lookup, and end the argument chain with `.Self`.
+  `tests/test_europedia_catalogue.py` checks the API distinction and every generated
+  consumer; native callback acceptance still requires a fresh game load.
 - Identity variants use the authored default identity's static text and art. Do not read
   `hagia_sophia_now_mosque` while loading this reference catalogue.
 - The accepted shape is 1450 wide and normally 300 high: full original art within 240×160,

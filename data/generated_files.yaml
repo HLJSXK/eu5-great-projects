@@ -202,6 +202,9 @@
     + .eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/glorpUI_shared_types.gui + .eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui
   output: src/in_game/gui/location_window.gui
 - script: scripts_engineering_department/in_game/gui/gen_location_window.py
+  data: data/unique_wonders.yaml
+  output: src/in_game/gui/tv_location_wonder_widgets.gui
+- script: scripts_engineering_department/in_game/gui/gen_location_window.py
   data: .eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt
   output: src/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt
 - script: scripts_engineering_department/in_game/gui/gen_location_window.py

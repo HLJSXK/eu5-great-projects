@@ -1,7 +1,6 @@
 """Native site-condition bridge coverage and the runtime text-fetch regression."""
 from pathlib import Path
 
-import pytest
 import yaml
 
 from scripts_engineering_department.in_game.gui import gen_location_window as source
@@ -40,9 +39,8 @@ def test_site_predicate_output_belongs_to_the_gallery_generator():
     assert entries[0]['script'] == source.SCRIPT_REL
 
 
-@pytest.mark.parametrize('mod', ['src', 'submods/tv_meiou_and_taxes_compat', 'submods/tv_standard_of_living_compat'])
-def test_all_gallery_slots_use_native_predicates_and_static_icon_textures(mod):
-    gui = (ROOT / mod / 'in_game/gui/location_window.gui').read_text(encoding='utf-8-sig')
+def test_all_gallery_slots_use_native_predicates_and_static_icon_textures():
+    gui = source.WIDGETS_FILE.read_text(encoding='utf-8-sig')
     assert 'EvaluateTrigger(' not in gui
     for slot in range(1, 6):
         predicate = source.slot_site_rules_met_expr(slot)

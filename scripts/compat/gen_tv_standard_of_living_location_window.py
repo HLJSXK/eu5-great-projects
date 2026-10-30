@@ -32,8 +32,18 @@ def inject_tv_overlay(base_gui: str) -> str:
 
 def generate() -> str:
     base_gui = migrate_panel("sol_location_window_1_4.patch", BASE_FILE)
+    # Replace the published snapshot's inline SOL button with SOL's public type.
+    marker = 'name = "stat_sol_living_standard"'
+    if base_gui.count(marker) != 1:
+        raise RuntimeError("Expected one inline SOL living-standard button")
+    start = base_gui.rfind('navigational_button_alt = {', 0, base_gui.index(marker))
+    if start == -1:
+        raise RuntimeError("Could not find inline SOL button container")
+    button = tv_location_window.extract_top_level_block(base_gui[start:], 'navigational_button_alt = {')
+    if 'using = StandardofLiving_tooltip' not in button:
+        raise RuntimeError("Inline SOL button has an unexpected tooltip")
+    base_gui = base_gui[:start] + 'sol_location_living_standard_button = {}' + base_gui[start + len(button):]
     lines = render_header(SCRIPT_REL, DATA_REL)
-    lines.append(tv_location_window.render_wonder_menu_types())
     lines.append(inject_tv_overlay(base_gui))
     return "\n".join(line.rstrip() for line in "\n".join(lines).splitlines()).rstrip() + "\n"
 

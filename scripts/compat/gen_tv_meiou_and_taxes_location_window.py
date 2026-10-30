@@ -33,8 +33,7 @@ def inject_tv_overlay(base_gui: str) -> str:
 def generate() -> str:
     base_gui = migrate_panel("mnt_location_window_1_4.patch", BASE_FILE)
     lines = render_header(SCRIPT_REL, DATA_REL)
-    lines.append(tv_location_window.render_wonder_menu_types())
-    lines.append(inject_tv_overlay(base_gui))
+    lines.append(inject_tv_overlay(tv_location_window.inject_sol_button(base_gui)))
     return "\n".join(line.rstrip() for line in "\n".join(lines).splitlines()).rstrip() + "\n"
 
 

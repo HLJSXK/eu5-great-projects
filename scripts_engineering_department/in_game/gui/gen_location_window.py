@@ -24,6 +24,7 @@ GLORP_VANILLA_TYPES_FILE = (
     / "cmfg_location_window_vanilla_types.gui"
 )
 OUT_FILE = REPO_ROOT / "src" / "in_game" / "gui" / "location_window.gui"
+WIDGETS_FILE = REPO_ROOT / "src/in_game/gui/tv_location_wonder_widgets.gui"
 CM_GUI_SOURCE = REPO_ROOT / ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt"
 CM_GUI_OUTPUT = REPO_ROOT / "src/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt"
 SITE_CONDITIONS_GUI_OUTPUT = REPO_ROOT / "src/in_game/common/scripted_guis/tv_wonder_location_site_conditions.txt"
@@ -632,12 +633,12 @@ def render_wonder_menu_types() -> str:
     return scale_gui_layout("\n".join(lines))
 
 
-def render_scene_overlay() -> str:
-    indent = T * 4
+def render_wonder_button_type() -> str:
+    indent = T
     opened = f"LocationView.Vars.Exists('{MENU_OPEN_VAR}')"
     label = f"SelectLocalization({opened}, 'TV_LOCATION_WONDER_CLOSE_DETAILS', 'TV_LOCATION_WONDER_OPEN_DETAILS')"
     return scale_gui_layout("\n".join([
-        f"{indent}header_button_left = {{",
+        f"{indent}type tv_location_wonders_button = header_button_left {{",
         f'{indent}{T}name = "tv_location_wonders_button"',
         f'{indent}{T}datacontext = "[LocationView.GetLocation]"',
         f'{indent}{T}visible = "[{slot_has_id_expr("tooltip", 1)}]"',
@@ -667,6 +668,54 @@ def render_scene_overlay() -> str:
     ]))
 
 
+def render_wonder_panel_type() -> str:
+    return "\n".join([
+        f"{T}type tv_location_wonders_panel = tv_location_wonders_menu {{",
+        f'{T}{T}name = "tv_location_wonders_panel"',
+        f"{T}{T}parentanchor = top|right",
+        f"{T}{T}widgetanchor = top|left",
+        f"{T}{T}position = {{ 0 {MENU_TOP} }}",
+        f"{T}{T}allow_outside = yes",
+        f'{T}{T}visible = "[And(LocationView.Vars.Exists(\'{MENU_OPEN_VAR}\'), {slot_has_id_expr("tooltip", 1)})]"',
+        f"{T}}}",
+    ])
+
+
+def generate_widgets() -> str:
+    lines = render_header(SCRIPT_REL, "data/unique_wonders.yaml")
+    lines.extend([
+        "# Public location-window integration: see docs/guides/Location_GUI_Integration.md.",
+        "# Templates belong at file scope, outside the types groups.",
+        "template tv_location_wonders_close_on_queue {",
+        f'{T}on_action = "[LocationView.Vars.Clear(\'{MENU_OPEN_VAR}\')]"',
+        "}",
+        render_wonder_menu_types(),
+        "types tv_location_wonder_widgets {",
+        render_wonder_button_type(),
+        render_wonder_panel_type(),
+        "}",
+    ])
+    return "\n".join(line.rstrip() for line in "\n".join(lines).splitlines()).rstrip() + "\n"
+
+
+def render_scene_overlay() -> str:
+    return f"{T * 4}tv_location_wonders_button = {{}}"
+
+
+def inject_sol_button(gui: str) -> str:
+    # SOL owns this optional type, its assets and tooltip. Do not copy its body
+    # or make the generator depend on another project's checkout.
+    anchor = re.compile(
+        r'(?m)^\s*expand = \{\}\s*\n\s*subheader_unified_icon = \{\s*\n'
+        r'\s*visible = "\[HasPopBreakdownIntelOn\(Location\.Self\)\]"'
+    )
+    matches = list(anchor.finditer(gui))
+    if len(matches) != 1:
+        raise RuntimeError(f"Expected one SOL button insertion point, found {len(matches)}")
+    offset = matches[0].start()
+    return gui[:offset] + f'\n{T * 7}sol_location_living_standard_button = {{}}\n' + gui[offset:]
+
+
 def inject_wonder_panel(gui: str) -> str:
     # Keep the gallery directly under the lateralview: nesting it outside the
     # scene's bounds broke all gallery hovers in game despite allow_outside.
@@ -678,22 +727,13 @@ def inject_wonder_panel(gui: str) -> str:
     marker = '\n\twidgetid = "location_window"'
     if gui.count(marker) != 1:
         raise RuntimeError("Could not find location window root for wonder panel")
-    panel = "\n".join([
-        '', f"{T}tv_location_wonders_menu = {{",
-        f'{T}{T}name = "tv_location_wonders_panel"',
-        f"{T}{T}parentanchor = top|right",
-        f"{T}{T}widgetanchor = top|left",
-        f"{T}{T}position = {{ 0 {MENU_TOP} }}",
-        f"{T}{T}allow_outside = yes",
-        f'{T}{T}visible = "[And(LocationView.Vars.Exists(\'{MENU_OPEN_VAR}\'), {slot_has_id_expr("tooltip", 1)})]"',
-        f"{T}}}", "",
-    ])
+    panel = f"\n{T}tv_location_wonders_panel = {{}}\n"
     gui = gui.replace(marker, marker + panel, 1)
     # Opening either side panel closes the other, matching the wonder button.
     gui, count = re.subn(
         r'(?m)^(\s*)on_action = "(\[LocationView\.OpenConstructionQueue\([^\n]+)"',
         lambda match: (
-            f'{match[1]}on_action = "[LocationView.Vars.Clear(\'{MENU_OPEN_VAR}\')]"\n'
+            f'{match[1]}using = tv_location_wonders_close_on_queue\n'
             f'{match[1]}on_action = "{match[2]}"'
         ), gui,
     )
@@ -715,9 +755,8 @@ def generate() -> str:
     glorp_location_window = GLORP_LOCATION_WINDOW_FILE.read_text(encoding="utf-8-sig")
     lines = render_header(SCRIPT_REL, DATA_REL)
     lines.append(render_glorp_shared_types())
-    lines.append(render_wonder_menu_types())
     lines.append(glorp_vanilla_types)
-    lines.append(inject_overlay(glorp_location_window))
+    lines.append(inject_overlay(inject_sol_button(glorp_location_window)))
     return "\n".join(line.rstrip() for line in "\n".join(lines).splitlines()).rstrip() + "\n"
 
 
@@ -743,6 +782,8 @@ def main() -> None:
     OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUT_FILE.write_text(generate(), encoding="utf-8-sig", newline="\n")
     print(f"Wrote {OUT_FILE.relative_to(REPO_ROOT)}")
+    WIDGETS_FILE.write_text(generate_widgets(), encoding="utf-8-sig", newline="\n")
+    print(f"Wrote {WIDGETS_FILE.relative_to(REPO_ROOT)}")
     CM_GUI_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     cm_header = render_header(SCRIPT_REL, CM_GUI_SOURCE.relative_to(REPO_ROOT).as_posix())
     CM_GUI_OUTPUT.write_text("\n".join(cm_header) + "\n" + CM_GUI_SOURCE.read_text(encoding="utf-8-sig"), encoding="utf-8-sig", newline="\n")

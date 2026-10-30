@@ -951,12 +951,13 @@ def _check_generated_output_fresh(
     generator: Path,
     module_name: str,
     label: str,
+    render_function: str = "generate",
 ) -> None:
     if not output.exists() or not generator.exists():
         return
     try:
         module = _load_generator_module(module_name, generator)
-        expected = module.generate()
+        expected = getattr(module, render_function)()
         if isinstance(expected, dict):
             expected = expected[output]
         expected = expected.replace("\r\n", "\n")
@@ -987,6 +988,13 @@ def check_location_window_generated_freshness() -> None:
         generator=REPO_ROOT / "scripts_engineering_department" / "in_game" / "gui" / "gen_location_window.py",
         module_name="validate_gen_location_window",
         label="location_window.gui",
+    )
+    _check_generated_output_fresh(
+        output=REPO_ROOT / "src/in_game/gui/tv_location_wonder_widgets.gui",
+        generator=REPO_ROOT / "scripts_engineering_department/in_game/gui/gen_location_window.py",
+        module_name="validate_gen_location_widgets",
+        label="shared location wonder widgets",
+        render_function="generate_widgets",
     )
     _check_generated_output_fresh(
         output=REPO_ROOT / "submods" / "tv_meiou_and_taxes_compat" / "in_game" / "gui" / "location_window.gui",
@@ -1521,6 +1529,7 @@ def run_global_checks(files: list[Path], use_changed: bool, anti_patterns: list[
         rels,
         exact=(
             "src/in_game/gui/location_window.gui",
+            "src/in_game/gui/tv_location_wonder_widgets.gui",
             "submods/tv_meiou_and_taxes_compat/in_game/gui/location_window.gui",
             "scripts_engineering_department/in_game/gui/gen_location_window.py",
             "scripts/compat/gen_tv_meiou_and_taxes_location_window.py",

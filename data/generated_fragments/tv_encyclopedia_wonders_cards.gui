@@ -2241,7 +2241,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_111_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_topkapi_palace.dds" } }
 button = { name = "location_reference_111" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('constantinople'))]"
+onclick = "[SelectLocation(GetLocationByKey('constantinople').Self)]"
 tooltip = "TV_EU_CATALOGUE_111_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_111_LOCATION_LINK" }
@@ -2317,7 +2317,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_101_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_pharos_lighthouse.dds" } }
 button = { name = "location_reference_101" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('alexandria'))]"
+onclick = "[SelectLocation(GetLocationByKey('alexandria').Self)]"
 tooltip = "TV_EU_CATALOGUE_101_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_101_LOCATION_LINK" }
@@ -2395,7 +2395,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_102_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hagia_sophia.dds" } }
 button = { name = "location_reference_102" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('constantinople'))]"
+onclick = "[SelectLocation(GetLocationByKey('constantinople').Self)]"
 tooltip = "TV_EU_CATALOGUE_102_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_102_LOCATION_LINK" }
@@ -2455,7 +2455,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_103_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dome_of_the_rock.dds" } }
 button = { name = "location_reference_103" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('jerusalem'))]"
+onclick = "[SelectLocation(GetLocationByKey('jerusalem').Self)]"
 tooltip = "TV_EU_CATALOGUE_103_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_103_LOCATION_LINK" }
@@ -2515,7 +2515,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_104_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_angkor_wat.dds" } }
 button = { name = "location_reference_104" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('angkor'))]"
+onclick = "[SelectLocation(GetLocationByKey('angkor').Self)]"
 tooltip = "TV_EU_CATALOGUE_104_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_104_LOCATION_LINK" }
@@ -2584,7 +2584,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_105_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_potala_palace.dds" } }
 button = { name = "location_reference_105" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('lhasa'))]"
+onclick = "[SelectLocation(GetLocationByKey('lhasa').Self)]"
 tooltip = "TV_EU_CATALOGUE_105_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_105_LOCATION_LINK" }
@@ -2653,7 +2653,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_106_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_alhambra.dds" } }
 button = { name = "location_reference_106" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('granada'))]"
+onclick = "[SelectLocation(GetLocationByKey('granada').Self)]"
 tooltip = "TV_EU_CATALOGUE_106_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_106_LOCATION_LINK" }
@@ -2722,7 +2722,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_107_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_machu_picchu.dds" } }
 button = { name = "location_reference_107" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('picchu'))]"
+onclick = "[SelectLocation(GetLocationByKey('picchu').Self)]"
 tooltip = "TV_EU_CATALOGUE_107_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_107_LOCATION_LINK" }
@@ -2791,7 +2791,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_108_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_himeji_castle.dds" } }
 button = { name = "location_reference_108" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('shikama'))]"
+onclick = "[SelectLocation(GetLocationByKey('shikama').Self)]"
 tooltip = "TV_EU_CATALOGUE_108_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_108_LOCATION_LINK" }
@@ -2869,7 +2869,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_109_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_taj_mahal.dds" } }
 button = { name = "location_reference_109" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('agra'))]"
+onclick = "[SelectLocation(GetLocationByKey('agra').Self)]"
 tooltip = "TV_EU_CATALOGUE_109_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_109_LOCATION_LINK" }
@@ -2947,7 +2947,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_110_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_forbidden_city.dds" } }
 button = { name = "location_reference_110" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('dadu'))]"
+onclick = "[SelectLocation(GetLocationByKey('dadu').Self)]"
 tooltip = "TV_EU_CATALOGUE_110_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_110_LOCATION_LINK" }
@@ -3016,7 +3016,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_111_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_topkapi_palace.dds" } }
 button = { name = "location_reference_111" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('constantinople'))]"
+onclick = "[SelectLocation(GetLocationByKey('constantinople').Self)]"
 tooltip = "TV_EU_CATALOGUE_111_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_111_LOCATION_LINK" }
@@ -3085,7 +3085,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_112_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_st_peters_basilica.dds" } }
 button = { name = "location_reference_112" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('rome'))]"
+onclick = "[SelectLocation(GetLocationByKey('rome').Self)]"
 tooltip = "TV_EU_CATALOGUE_112_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_112_LOCATION_LINK" }
@@ -3145,7 +3145,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_113_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_lalibela_churches.dds" } }
 button = { name = "location_reference_113" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('lalibela'))]"
+onclick = "[SelectLocation(GetLocationByKey('lalibela').Self)]"
 tooltip = "TV_EU_CATALOGUE_113_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_113_LOCATION_LINK" }
@@ -3214,7 +3214,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_114_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_venetian_arsenal.dds" } }
 button = { name = "location_reference_114" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('venice'))]"
+onclick = "[SelectLocation(GetLocationByKey('venice').Self)]"
 tooltip = "TV_EU_CATALOGUE_114_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_114_LOCATION_LINK" }
@@ -3292,7 +3292,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_115_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_malacca_port.dds" } }
 button = { name = "location_reference_115" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('malacca'))]"
+onclick = "[SelectLocation(GetLocationByKey('malacca').Self)]"
 tooltip = "TV_EU_CATALOGUE_115_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_115_LOCATION_LINK" }
@@ -3352,7 +3352,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_116_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_red_fort_delhi.dds" } }
 button = { name = "location_reference_116" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('delhi'))]"
+onclick = "[SelectLocation(GetLocationByKey('delhi').Self)]"
 tooltip = "TV_EU_CATALOGUE_116_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_116_LOCATION_LINK" }
@@ -3430,7 +3430,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_117_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_versailles_palace.dds" } }
 button = { name = "location_reference_117" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('paris'))]"
+onclick = "[SelectLocation(GetLocationByKey('paris').Self)]"
 tooltip = "TV_EU_CATALOGUE_117_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_117_LOCATION_LINK" }
@@ -3499,7 +3499,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_118_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tenochtitlan_causeways.dds" } }
 button = { name = "location_reference_118" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('tenochtitlan'))]"
+onclick = "[SelectLocation(GetLocationByKey('tenochtitlan').Self)]"
 tooltip = "TV_EU_CATALOGUE_118_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_118_LOCATION_LINK" }
@@ -3568,7 +3568,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_119_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_amsterdam_canal_ring.dds" } }
 button = { name = "location_reference_119" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('amsterdam'))]"
+onclick = "[SelectLocation(GetLocationByKey('amsterdam').Self)]"
 tooltip = "TV_EU_CATALOGUE_119_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_119_LOCATION_LINK" }
@@ -3637,7 +3637,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_120_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mecca_haram_expansion.dds" } }
 button = { name = "location_reference_120" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('mecca'))]"
+onclick = "[SelectLocation(GetLocationByKey('mecca').Self)]"
 tooltip = "TV_EU_CATALOGUE_120_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_120_LOCATION_LINK" }
@@ -3697,7 +3697,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_121_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ming_great_wall.dds" } }
 button = { name = "location_reference_121" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('fuchuan_ningxia'))]"
+onclick = "[SelectLocation(GetLocationByKey('fuchuan_ningxia').Self)]"
 tooltip = "TV_EU_CATALOGUE_121_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_121_LOCATION_LINK" }
@@ -3775,7 +3775,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_122_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bank_of_saint_george.dds" } }
 button = { name = "location_reference_122" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('genoa'))]"
+onclick = "[SelectLocation(GetLocationByKey('genoa').Self)]"
 tooltip = "TV_EU_CATALOGUE_122_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_122_LOCATION_LINK" }
@@ -3838,7 +3838,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_123_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cahokia_mounds.dds" } }
 button = { name = "location_reference_123" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('cahokia'))]"
+onclick = "[SelectLocation(GetLocationByKey('cahokia').Self)]"
 tooltip = "TV_EU_CATALOGUE_123_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_123_LOCATION_LINK" }
@@ -3907,7 +3907,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_124_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_great_zimbabwe.dds" } }
 button = { name = "location_reference_124" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('great_zimbabwe'))]"
+onclick = "[SelectLocation(GetLocationByKey('great_zimbabwe').Self)]"
 tooltip = "TV_EU_CATALOGUE_124_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_124_LOCATION_LINK" }
@@ -3976,7 +3976,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_125_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_isfahan_square.dds" } }
 button = { name = "location_reference_125" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('isfahan'))]"
+onclick = "[SelectLocation(GetLocationByKey('isfahan').Self)]"
 tooltip = "TV_EU_CATALOGUE_125_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_125_LOCATION_LINK" }
@@ -4045,7 +4045,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_126_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_grand_canal.dds" } }
 button = { name = "location_reference_126" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('shanyang_huaian'))]"
+onclick = "[SelectLocation(GetLocationByKey('shanyang_huaian').Self)]"
 tooltip = "TV_EU_CATALOGUE_126_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_126_LOCATION_LINK" }
@@ -4123,7 +4123,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_127_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_inca_royal_road.dds" } }
 button = { name = "location_reference_127" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('picchu'))]"
+onclick = "[SelectLocation(GetLocationByKey('picchu').Self)]"
 tooltip = "TV_EU_CATALOGUE_127_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_127_LOCATION_LINK" }
@@ -4195,7 +4195,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_128_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_roman_aqueducts.dds" } }
 button = { name = "location_reference_128" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('rome'))]"
+onclick = "[SelectLocation(GetLocationByKey('rome').Self)]"
 tooltip = "TV_EU_CATALOGUE_128_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_128_LOCATION_LINK" }
@@ -4255,7 +4255,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_129_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_suez_ancient_canal.dds" } }
 button = { name = "location_reference_129" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('suez'))]"
+onclick = "[SelectLocation(GetLocationByKey('suez').Self)]"
 tooltip = "TV_EU_CATALOGUE_129_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_129_LOCATION_LINK" }
@@ -4333,7 +4333,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_130_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_kremlin.dds" } }
 button = { name = "location_reference_130" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('moscow'))]"
+onclick = "[SelectLocation(GetLocationByKey('moscow').Self)]"
 tooltip = "TV_EU_CATALOGUE_130_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_130_LOCATION_LINK" }
@@ -4411,7 +4411,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_131_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_teotihuacan.dds" } }
 button = { name = "location_reference_131" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('tehotihuacan'))]"
+onclick = "[SelectLocation(GetLocationByKey('tehotihuacan').Self)]"
 tooltip = "TV_EU_CATALOGUE_131_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_131_LOCATION_LINK" }
@@ -4480,7 +4480,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_132_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_angkor_hydraulic_system.dds" } }
 button = { name = "location_reference_132" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('angkor'))]"
+onclick = "[SelectLocation(GetLocationByKey('angkor').Self)]"
 tooltip = "TV_EU_CATALOGUE_132_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_132_LOCATION_LINK" }
@@ -4540,7 +4540,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_133_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dutch_polders.dds" } }
 button = { name = "location_reference_133" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('amsterdam'))]"
+onclick = "[SelectLocation(GetLocationByKey('amsterdam').Self)]"
 tooltip = "TV_EU_CATALOGUE_133_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_133_LOCATION_LINK" }
@@ -4609,7 +4609,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_134_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_machu_picchu_terraces.dds" } }
 button = { name = "location_reference_134" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('picchu'))]"
+onclick = "[SelectLocation(GetLocationByKey('picchu').Self)]"
 tooltip = "TV_EU_CATALOGUE_134_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_134_LOCATION_LINK" }
@@ -4678,7 +4678,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_135_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_british_navy_dockyards.dds" } }
 button = { name = "location_reference_135" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('portsmouth'))]"
+onclick = "[SelectLocation(GetLocationByKey('portsmouth').Self)]"
 tooltip = "TV_EU_CATALOGUE_135_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_135_LOCATION_LINK" }
@@ -4756,7 +4756,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_136_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_spanish_silver_fleet.dds" } }
 button = { name = "location_reference_136" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('sevilla'))]"
+onclick = "[SelectLocation(GetLocationByKey('sevilla').Self)]"
 tooltip = "TV_EU_CATALOGUE_136_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_136_LOCATION_LINK" }
@@ -4834,7 +4834,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_137_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ottoman_hajj_road.dds" } }
 button = { name = "location_reference_137" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('mecca'))]"
+onclick = "[SelectLocation(GetLocationByKey('mecca').Self)]"
 tooltip = "TV_EU_CATALOGUE_137_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_137_LOCATION_LINK" }
@@ -4906,7 +4906,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_138_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_persian_qanat.dds" } }
 button = { name = "location_reference_138" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('qom'))]"
+onclick = "[SelectLocation(GetLocationByKey('qom').Self)]"
 tooltip = "TV_EU_CATALOGUE_138_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_138_LOCATION_LINK" }
@@ -4966,7 +4966,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_139_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_longjiang_shipyard.dds" } }
 button = { name = "location_reference_139" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('jiangyin'))]"
+onclick = "[SelectLocation(GetLocationByKey('jiangyin').Self)]"
 tooltip = "TV_EU_CATALOGUE_139_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_139_LOCATION_LINK" }
@@ -5044,7 +5044,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_140_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jerusalem_holy_city.dds" } }
 button = { name = "location_reference_140" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('jerusalem'))]"
+onclick = "[SelectLocation(GetLocationByKey('jerusalem').Self)]"
 tooltip = "TV_EU_CATALOGUE_140_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_140_LOCATION_LINK" }
@@ -5113,7 +5113,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_141_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_stonehenge.dds" } }
 button = { name = "location_reference_141" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('amesbury'))]"
+onclick = "[SelectLocation(GetLocationByKey('amesbury').Self)]"
 tooltip = "TV_EU_CATALOGUE_141_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_141_LOCATION_LINK" }
@@ -5182,7 +5182,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_142_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tower_of_london.dds" } }
 button = { name = "location_reference_142" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('london'))]"
+onclick = "[SelectLocation(GetLocationByKey('london').Self)]"
 tooltip = "TV_EU_CATALOGUE_142_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_142_LOCATION_LINK" }
@@ -5260,7 +5260,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_143_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_notre_dame_de_paris.dds" } }
 button = { name = "location_reference_143" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('paris'))]"
+onclick = "[SelectLocation(GetLocationByKey('paris').Self)]"
 tooltip = "TV_EU_CATALOGUE_143_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_143_LOCATION_LINK" }
@@ -5320,7 +5320,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_144_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_st_basils_cathedral.dds" } }
 button = { name = "location_reference_144" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('moscow'))]"
+onclick = "[SelectLocation(GetLocationByKey('moscow').Self)]"
 tooltip = "TV_EU_CATALOGUE_144_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_144_LOCATION_LINK" }
@@ -5380,7 +5380,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_145_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_trinity_lavra.dds" } }
 button = { name = "location_reference_145" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('pushkino'))]"
+onclick = "[SelectLocation(GetLocationByKey('pushkino').Self)]"
 tooltip = "TV_EU_CATALOGUE_145_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_145_LOCATION_LINK" }
@@ -5458,7 +5458,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_146_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_winter_palace.dds" } }
 button = { name = "location_reference_146" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('neva'))]"
+onclick = "[SelectLocation(GetLocationByKey('neva').Self)]"
 tooltip = "TV_EU_CATALOGUE_146_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_146_LOCATION_LINK" }
@@ -5527,7 +5527,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_147_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_gyeongbokgung.dds" } }
 button = { name = "location_reference_147" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('namgyeong'))]"
+onclick = "[SelectLocation(GetLocationByKey('namgyeong').Self)]"
 tooltip = "TV_EU_CATALOGUE_147_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_147_LOCATION_LINK" }
@@ -5596,7 +5596,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_148_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_changbai_mountain_altar.dds" } }
 button = { name = "location_reference_148" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('girin_ula'))]"
+onclick = "[SelectLocation(GetLocationByKey('girin_ula').Self)]"
 tooltip = "TV_EU_CATALOGUE_148_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_148_LOCATION_LINK" }
@@ -5665,7 +5665,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_149_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_belgrade_fortress.dds" } }
 button = { name = "location_reference_149" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('belgrad'))]"
+onclick = "[SelectLocation(GetLocationByKey('belgrad').Self)]"
 tooltip = "TV_EU_CATALOGUE_149_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_149_LOCATION_LINK" }
@@ -5743,7 +5743,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_150_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_meteora_monasteries.dds" } }
 button = { name = "location_reference_150" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('trikala'))]"
+onclick = "[SelectLocation(GetLocationByKey('trikala').Self)]"
 tooltip = "TV_EU_CATALOGUE_150_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_150_LOCATION_LINK" }
@@ -5821,7 +5821,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_151_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_belem_tower.dds" } }
 button = { name = "location_reference_151" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('lisbon'))]"
+onclick = "[SelectLocation(GetLocationByKey('lisbon').Self)]"
 tooltip = "TV_EU_CATALOGUE_151_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_151_LOCATION_LINK" }
@@ -5899,7 +5899,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_152_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_iberian_inquisition.dds" } }
 button = { name = "location_reference_152" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('toledo'))]"
+onclick = "[SelectLocation(GetLocationByKey('toledo').Self)]"
 tooltip = "TV_EU_CATALOGUE_152_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_152_LOCATION_LINK" }
@@ -5977,7 +5977,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_153_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_santa_maria_del_fiore.dds" } }
 button = { name = "location_reference_153" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('florence'))]"
+onclick = "[SelectLocation(GetLocationByKey('florence').Self)]"
 tooltip = "TV_EU_CATALOGUE_153_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_153_LOCATION_LINK" }
@@ -6037,7 +6037,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_154_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_leaning_tower_of_pisa.dds" } }
 button = { name = "location_reference_154" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('pisa'))]"
+onclick = "[SelectLocation(GetLocationByKey('pisa').Self)]"
 tooltip = "TV_EU_CATALOGUE_154_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_154_LOCATION_LINK" }
@@ -6115,7 +6115,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_155_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_milan_cathedral.dds" } }
 button = { name = "location_reference_155" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('milano'))]"
+onclick = "[SelectLocation(GetLocationByKey('milano').Self)]"
 tooltip = "TV_EU_CATALOGUE_155_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_155_LOCATION_LINK" }
@@ -6175,7 +6175,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_156_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_vatican_archives.dds" } }
 button = { name = "location_reference_156" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('rome'))]"
+onclick = "[SelectLocation(GetLocationByKey('rome').Self)]"
 tooltip = "TV_EU_CATALOGUE_156_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_156_LOCATION_LINK" }
@@ -6235,7 +6235,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_157_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_temple_of_heaven.dds" } }
 button = { name = "location_reference_157" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('dadu'))]"
+onclick = "[SelectLocation(GetLocationByKey('dadu').Self)]"
 tooltip = "TV_EU_CATALOGUE_157_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_157_LOCATION_LINK" }
@@ -6295,7 +6295,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_158_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dujiangyan.dds" } }
 button = { name = "location_reference_158" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('chengdu'))]"
+onclick = "[SelectLocation(GetLocationByKey('chengdu').Self)]"
 tooltip = "TV_EU_CATALOGUE_158_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_158_LOCATION_LINK" }
@@ -6364,7 +6364,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_159_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_porcelain_tower_of_nanjing.dds" } }
 button = { name = "location_reference_159" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('shangyuan'))]"
+onclick = "[SelectLocation(GetLocationByKey('shangyuan').Self)]"
 tooltip = "TV_EU_CATALOGUE_159_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_159_LOCATION_LINK" }
@@ -6433,7 +6433,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_160_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jingdezhen_imperial_kilns.dds" } }
 button = { name = "location_reference_160" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('fuliang'))]"
+onclick = "[SelectLocation(GetLocationByKey('fuliang').Self)]"
 tooltip = "TV_EU_CATALOGUE_160_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_160_LOCATION_LINK" }
@@ -6493,7 +6493,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_161_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mogao_caves.dds" } }
 button = { name = "location_reference_161" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('shazhou'))]"
+onclick = "[SelectLocation(GetLocationByKey('shazhou').Self)]"
 tooltip = "TV_EU_CATALOGUE_161_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_161_LOCATION_LINK" }
@@ -6562,7 +6562,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_162_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_canton_thirteen_factories.dds" } }
 button = { name = "location_reference_162" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('guangzhou'))]"
+onclick = "[SelectLocation(GetLocationByKey('guangzhou').Self)]"
 tooltip = "TV_EU_CATALOGUE_162_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_162_LOCATION_LINK" }
@@ -6631,7 +6631,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_163_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dardanelles_fortress.dds" } }
 button = { name = "location_reference_163" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('gallipoli'))]"
+onclick = "[SelectLocation(GetLocationByKey('gallipoli').Self)]"
 tooltip = "TV_EU_CATALOGUE_163_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_163_LOCATION_LINK" }
@@ -6700,7 +6700,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_164_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_escorial_monastery.dds" } }
 button = { name = "location_reference_164" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('el_escorial'))]"
+onclick = "[SelectLocation(GetLocationByKey('el_escorial').Self)]"
 tooltip = "TV_EU_CATALOGUE_164_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_164_LOCATION_LINK" }
@@ -6778,7 +6778,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_165_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_toledo_armory.dds" } }
 button = { name = "location_reference_165" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('toledo'))]"
+onclick = "[SelectLocation(GetLocationByKey('toledo').Self)]"
 tooltip = "TV_EU_CATALOGUE_165_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_165_LOCATION_LINK" }
@@ -6856,7 +6856,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_166_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_camino_de_santiago.dds" } }
 button = { name = "location_reference_166" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('santiago_compostela'))]"
+onclick = "[SelectLocation(GetLocationByKey('santiago_compostela').Self)]"
 tooltip = "TV_EU_CATALOGUE_166_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_166_LOCATION_LINK" }
@@ -6928,7 +6928,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_167_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sagres_navigation_school.dds" } }
 button = { name = "location_reference_167" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('lagos'))]"
+onclick = "[SelectLocation(GetLocationByKey('lagos').Self)]"
 tooltip = "TV_EU_CATALOGUE_167_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_167_LOCATION_LINK" }
@@ -6988,7 +6988,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_168_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_milan_arsenal.dds" } }
 button = { name = "location_reference_168" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('milano'))]"
+onclick = "[SelectLocation(GetLocationByKey('milano').Self)]"
 tooltip = "TV_EU_CATALOGUE_168_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_168_LOCATION_LINK" }
@@ -7066,7 +7066,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_169_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_university_of_bologna.dds" } }
 button = { name = "location_reference_169" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('bologna'))]"
+onclick = "[SelectLocation(GetLocationByKey('bologna').Self)]"
 tooltip = "TV_EU_CATALOGUE_169_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_169_LOCATION_LINK" }
@@ -7135,7 +7135,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_170_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_carrara_marble_quarries.dds" } }
 button = { name = "location_reference_170" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('prato'))]"
+onclick = "[SelectLocation(GetLocationByKey('prato').Self)]"
 tooltip = "TV_EU_CATALOGUE_170_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_170_LOCATION_LINK" }
@@ -7195,7 +7195,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_171_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_east_india_company.dds" } }
 button = { name = "location_reference_171" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('bombay'))]"
+onclick = "[SelectLocation(GetLocationByKey('bombay').Self)]"
 tooltip = "TV_EU_CATALOGUE_171_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_171_LOCATION_LINK" }
@@ -7282,7 +7282,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_172_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_peacock_throne.dds" } }
 button = { name = "location_reference_172" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('delhi'))]"
+onclick = "[SelectLocation(GetLocationByKey('delhi').Self)]"
 tooltip = "TV_EU_CATALOGUE_172_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_172_LOCATION_LINK" }
@@ -7351,7 +7351,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_173_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_varanasi_ghats.dds" } }
 button = { name = "location_reference_173" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('varanasi'))]"
+onclick = "[SelectLocation(GetLocationByKey('varanasi').Self)]"
 tooltip = "TV_EU_CATALOGUE_173_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_173_LOCATION_LINK" }
@@ -7411,7 +7411,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_174_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brihadishvara_temple.dds" } }
 button = { name = "location_reference_174" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('thanjavur'))]"
+onclick = "[SelectLocation(GetLocationByKey('thanjavur').Self)]"
 tooltip = "TV_EU_CATALOGUE_174_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_174_LOCATION_LINK" }
@@ -7480,7 +7480,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_175_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_konark_sun_temple.dds" } }
 button = { name = "location_reference_175" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('puri'))]"
+onclick = "[SelectLocation(GetLocationByKey('puri').Self)]"
 tooltip = "TV_EU_CATALOGUE_175_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_175_LOCATION_LINK" }
@@ -7540,7 +7540,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_176_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fatehpur_sikri.dds" } }
 button = { name = "location_reference_176" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('agra'))]"
+onclick = "[SelectLocation(GetLocationByKey('agra').Self)]"
 tooltip = "TV_EU_CATALOGUE_176_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_176_LOCATION_LINK" }
@@ -7609,7 +7609,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_177_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_calicut_port_city.dds" } }
 button = { name = "location_reference_177" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('kozhikode'))]"
+onclick = "[SelectLocation(GetLocationByKey('kozhikode').Self)]"
 tooltip = "TV_EU_CATALOGUE_177_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_177_LOCATION_LINK" }
@@ -7669,7 +7669,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_178_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wieliczka_salt_mine.dds" } }
 button = { name = "location_reference_178" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('wieliczka'))]"
+onclick = "[SelectLocation(GetLocationByKey('wieliczka').Self)]"
 tooltip = "TV_EU_CATALOGUE_178_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_178_LOCATION_LINK" }
@@ -7729,7 +7729,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_179_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wawel_castle.dds" } }
 button = { name = "location_reference_179" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('krakow'))]"
+onclick = "[SelectLocation(GetLocationByKey('krakow').Self)]"
 tooltip = "TV_EU_CATALOGUE_179_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_179_LOCATION_LINK" }
@@ -7807,7 +7807,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_180_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zamosc_ideal_city.dds" } }
 button = { name = "location_reference_180" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('krasnystaw'))]"
+onclick = "[SelectLocation(GetLocationByKey('krasnystaw').Self)]"
 tooltip = "TV_EU_CATALOGUE_180_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_180_LOCATION_LINK" }
@@ -7870,7 +7870,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_181_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_gdansk_port.dds" } }
 button = { name = "location_reference_181" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('gdansk'))]"
+onclick = "[SelectLocation(GetLocationByKey('gdansk').Self)]"
 tooltip = "TV_EU_CATALOGUE_181_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_181_LOCATION_LINK" }
@@ -7930,7 +7930,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_182_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_malbork_castle.dds" } }
 button = { name = "location_reference_182" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('malbork'))]"
+onclick = "[SelectLocation(GetLocationByKey('malbork').Self)]"
 tooltip = "TV_EU_CATALOGUE_182_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_182_LOCATION_LINK" }
@@ -8011,7 +8011,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_183_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brest_synagogue_quarter.dds" } }
 button = { name = "location_reference_183" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('brest_litowsk'))]"
+onclick = "[SelectLocation(GetLocationByKey('brest_litowsk').Self)]"
 tooltip = "TV_EU_CATALOGUE_183_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_183_LOCATION_LINK" }
@@ -8080,7 +8080,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_184_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_vilnius_university.dds" } }
 button = { name = "location_reference_184" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('vilnius'))]"
+onclick = "[SelectLocation(GetLocationByKey('vilnius').Self)]"
 tooltip = "TV_EU_CATALOGUE_184_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_184_LOCATION_LINK" }
@@ -8149,7 +8149,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_185_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cave_monastery.dds" } }
 button = { name = "location_reference_185" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('kyiv'))]"
+onclick = "[SelectLocation(GetLocationByKey('kyiv').Self)]"
 tooltip = "TV_EU_CATALOGUE_185_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_185_LOCATION_LINK" }
@@ -8227,7 +8227,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_186_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zaporizhian_sich.dds" } }
 button = { name = "location_reference_186" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('kremenchuk'))]"
+onclick = "[SelectLocation(GetLocationByKey('kremenchuk').Self)]"
 tooltip = "TV_EU_CATALOGUE_186_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_186_LOCATION_LINK" }
@@ -8305,7 +8305,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_187_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_registan_square.dds" } }
 button = { name = "location_reference_187" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('samarkand'))]"
+onclick = "[SelectLocation(GetLocationByKey('samarkand').Self)]"
 tooltip = "TV_EU_CATALOGUE_187_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_187_LOCATION_LINK" }
@@ -8383,7 +8383,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_188_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_khiva_old_city.dds" } }
 button = { name = "location_reference_188" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('khiva'))]"
+onclick = "[SelectLocation(GetLocationByKey('khiva').Self)]"
 tooltip = "TV_EU_CATALOGUE_188_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_188_LOCATION_LINK" }
@@ -8452,7 +8452,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_189_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bukhara_kalyan_minaret.dds" } }
 button = { name = "location_reference_189" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('bukhara'))]"
+onclick = "[SelectLocation(GetLocationByKey('bukhara').Self)]"
 tooltip = "TV_EU_CATALOGUE_189_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_189_LOCATION_LINK" }
@@ -8521,7 +8521,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_190_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ferghana_palace.dds" } }
 button = { name = "location_reference_190" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('kokand'))]"
+onclick = "[SelectLocation(GetLocationByKey('kokand').Self)]"
 tooltip = "TV_EU_CATALOGUE_190_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_190_LOCATION_LINK" }
@@ -8590,7 +8590,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_191_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tashkent_old_bazaar.dds" } }
 button = { name = "location_reference_191" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('chach'))]"
+onclick = "[SelectLocation(GetLocationByKey('chach').Self)]"
 tooltip = "TV_EU_CATALOGUE_191_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_191_LOCATION_LINK" }
@@ -8659,7 +8659,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_192_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_louvre_palace.dds" } }
 button = { name = "location_reference_192" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('paris'))]"
+onclick = "[SelectLocation(GetLocationByKey('paris').Self)]"
 tooltip = "TV_EU_CATALOGUE_192_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_192_LOCATION_LINK" }
@@ -8728,7 +8728,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_193_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fontainebleau_palace.dds" } }
 button = { name = "location_reference_193" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('melun'))]"
+onclick = "[SelectLocation(GetLocationByKey('melun').Self)]"
 tooltip = "TV_EU_CATALOGUE_193_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_193_LOCATION_LINK" }
@@ -8797,7 +8797,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_194_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bordeaux_port.dds" } }
 button = { name = "location_reference_194" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('bordeaux'))]"
+onclick = "[SelectLocation(GetLocationByKey('bordeaux').Self)]"
 tooltip = "TV_EU_CATALOGUE_194_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_194_LOCATION_LINK" }
@@ -8857,7 +8857,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_195_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_marseille_old_port.dds" } }
 button = { name = "location_reference_195" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('marseille'))]"
+onclick = "[SelectLocation(GetLocationByKey('marseille').Self)]"
 tooltip = "TV_EU_CATALOGUE_195_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_195_LOCATION_LINK" }
@@ -8917,7 +8917,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_196_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_lyon_silk_workshops.dds" } }
 button = { name = "location_reference_196" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('lyon'))]"
+onclick = "[SelectLocation(GetLocationByKey('lyon').Self)]"
 tooltip = "TV_EU_CATALOGUE_196_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_196_LOCATION_LINK" }
@@ -8977,7 +8977,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_197_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mont_saint_michel.dds" } }
 button = { name = "location_reference_197" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('avranches'))]"
+onclick = "[SelectLocation(GetLocationByKey('avranches').Self)]"
 tooltip = "TV_EU_CATALOGUE_197_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_197_LOCATION_LINK" }
@@ -9046,7 +9046,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_199_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_carcassonne_castle.dds" } }
 button = { name = "location_reference_199" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('carcassonne'))]"
+onclick = "[SelectLocation(GetLocationByKey('carcassonne').Self)]"
 tooltip = "TV_EU_CATALOGUE_199_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_199_LOCATION_LINK" }
@@ -9124,7 +9124,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_200_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brest_naval_port.dds" } }
 button = { name = "location_reference_200" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('brest'))]"
+onclick = "[SelectLocation(GetLocationByKey('brest').Self)]"
 tooltip = "TV_EU_CATALOGUE_200_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_200_LOCATION_LINK" }
@@ -9202,7 +9202,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_201_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_colmar_old_town.dds" } }
 button = { name = "location_reference_201" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('colmar'))]"
+onclick = "[SelectLocation(GetLocationByKey('colmar').Self)]"
 tooltip = "TV_EU_CATALOGUE_201_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_201_LOCATION_LINK" }
@@ -9271,7 +9271,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_202_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_house_of_wisdom.dds" } }
 button = { name = "location_reference_202" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('baghdad'))]"
+onclick = "[SelectLocation(GetLocationByKey('baghdad').Self)]"
 tooltip = "TV_EU_CATALOGUE_202_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_202_LOCATION_LINK" }
@@ -9331,7 +9331,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_203_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_echmiadzin_cathedral.dds" } }
 button = { name = "location_reference_203" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('yerevan'))]"
+onclick = "[SelectLocation(GetLocationByKey('yerevan').Self)]"
 tooltip = "TV_EU_CATALOGUE_203_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_203_LOCATION_LINK" }
@@ -9391,7 +9391,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_204_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_narikala_fortress.dds" } }
 button = { name = "location_reference_204" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('tbilisi'))]"
+onclick = "[SelectLocation(GetLocationByKey('tbilisi').Self)]"
 tooltip = "TV_EU_CATALOGUE_204_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_204_LOCATION_LINK" }
@@ -9469,7 +9469,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_205_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_baku_ateshgah.dds" } }
 button = { name = "location_reference_205" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('baku'))]"
+onclick = "[SelectLocation(GetLocationByKey('baku').Self)]"
 tooltip = "TV_EU_CATALOGUE_205_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_205_LOCATION_LINK" }
@@ -9538,7 +9538,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_206_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sanaa_old_city.dds" } }
 button = { name = "location_reference_206" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('sana_yemen'))]"
+onclick = "[SelectLocation(GetLocationByKey('sana_yemen').Self)]"
 tooltip = "TV_EU_CATALOGUE_206_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_206_LOCATION_LINK" }
@@ -9607,7 +9607,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_207_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_schoenbrunn_palace.dds" } }
 button = { name = "location_reference_207" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('vienna'))]"
+onclick = "[SelectLocation(GetLocationByKey('vienna').Self)]"
 tooltip = "TV_EU_CATALOGUE_207_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_207_LOCATION_LINK" }
@@ -9676,7 +9676,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_208_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_electoral_conference_hall.dds" } }
 button = { name = "location_reference_208" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('frankfurt'))]"
+onclick = "[SelectLocation(GetLocationByKey('frankfurt').Self)]"
 tooltip = "TV_EU_CATALOGUE_208_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_208_LOCATION_LINK" }
@@ -9745,7 +9745,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_209_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_aachen_cathedral.dds" } }
 button = { name = "location_reference_209" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('aachen'))]"
+onclick = "[SelectLocation(GetLocationByKey('aachen').Self)]"
 tooltip = "TV_EU_CATALOGUE_209_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_209_LOCATION_LINK" }
@@ -9805,7 +9805,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_210_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_nuremberg_imperial_castle.dds" } }
 button = { name = "location_reference_210" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('nuremberg'))]"
+onclick = "[SelectLocation(GetLocationByKey('nuremberg').Self)]"
 tooltip = "TV_EU_CATALOGUE_210_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_210_LOCATION_LINK" }
@@ -9883,7 +9883,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_211_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_augsburg_bank.dds" } }
 button = { name = "location_reference_211" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('augsburg'))]"
+onclick = "[SelectLocation(GetLocationByKey('augsburg').Self)]"
 tooltip = "TV_EU_CATALOGUE_211_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_211_LOCATION_LINK" }
@@ -9946,7 +9946,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_212_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cologne_cathedral.dds" } }
 button = { name = "location_reference_212" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('cologne'))]"
+onclick = "[SelectLocation(GetLocationByKey('cologne').Self)]"
 tooltip = "TV_EU_CATALOGUE_212_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_212_LOCATION_LINK" }
@@ -10006,7 +10006,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_213_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hanseatic_kontor.dds" } }
 button = { name = "location_reference_213" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('hamburg'))]"
+onclick = "[SelectLocation(GetLocationByKey('hamburg').Self)]"
 tooltip = "TV_EU_CATALOGUE_213_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_213_LOCATION_LINK" }
@@ -10075,7 +10075,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_214_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hanseatic_town_hall.dds" } }
 button = { name = "location_reference_214" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('lubeck'))]"
+onclick = "[SelectLocation(GetLocationByKey('lubeck').Self)]"
 tooltip = "TV_EU_CATALOGUE_214_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_214_LOCATION_LINK" }
@@ -10144,7 +10144,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_215_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dresden_art_gallery.dds" } }
 button = { name = "location_reference_215" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('dresden'))]"
+onclick = "[SelectLocation(GetLocationByKey('dresden').Self)]"
 tooltip = "TV_EU_CATALOGUE_215_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_215_LOCATION_LINK" }
@@ -10222,7 +10222,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_216_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_munich_royal_brewery.dds" } }
 button = { name = "location_reference_216" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('munich'))]"
+onclick = "[SelectLocation(GetLocationByKey('munich').Self)]"
 tooltip = "TV_EU_CATALOGUE_216_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_216_LOCATION_LINK" }
@@ -10282,7 +10282,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_217_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_heidelberg_university.dds" } }
 button = { name = "location_reference_217" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('heidelberg'))]"
+onclick = "[SelectLocation(GetLocationByKey('heidelberg').Self)]"
 tooltip = "TV_EU_CATALOGUE_217_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_217_LOCATION_LINK" }
@@ -10351,7 +10351,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_218_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fez_old_city.dds" } }
 button = { name = "location_reference_218" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('fez'))]"
+onclick = "[SelectLocation(GetLocationByKey('fez').Self)]"
 tooltip = "TV_EU_CATALOGUE_218_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_218_LOCATION_LINK" }
@@ -10420,7 +10420,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_219_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_kairouan_holy_city.dds" } }
 button = { name = "location_reference_219" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('kairouan'))]"
+onclick = "[SelectLocation(GetLocationByKey('kairouan').Self)]"
 tooltip = "TV_EU_CATALOGUE_219_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_219_LOCATION_LINK" }
@@ -10480,7 +10480,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_220_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_algiers_pirate_port.dds" } }
 button = { name = "location_reference_220" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('algiers'))]"
+onclick = "[SelectLocation(GetLocationByKey('algiers').Self)]"
 tooltip = "TV_EU_CATALOGUE_220_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_220_LOCATION_LINK" }
@@ -10558,7 +10558,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_221_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sankore_university.dds" } }
 button = { name = "location_reference_221" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('timbuktu'))]"
+onclick = "[SelectLocation(GetLocationByKey('timbuktu').Self)]"
 tooltip = "TV_EU_CATALOGUE_221_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_221_LOCATION_LINK" }
@@ -10627,7 +10627,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_222_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_great_mosque_of_djenne.dds" } }
 button = { name = "location_reference_222" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('djenne'))]"
+onclick = "[SelectLocation(GetLocationByKey('djenne').Self)]"
 tooltip = "TV_EU_CATALOGUE_222_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_222_LOCATION_LINK" }
@@ -10696,7 +10696,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_223_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_walls_of_benin.dds" } }
 button = { name = "location_reference_223" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('benin'))]"
+onclick = "[SelectLocation(GetLocationByKey('benin').Self)]"
 tooltip = "TV_EU_CATALOGUE_223_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_223_LOCATION_LINK" }
@@ -10774,7 +10774,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_224_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_suzhou_classical_gardens.dds" } }
 button = { name = "location_reference_224" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('wuxian'))]"
+onclick = "[SelectLocation(GetLocationByKey('wuxian').Self)]"
 tooltip = "TV_EU_CATALOGUE_224_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_224_LOCATION_LINK" }
@@ -10843,7 +10843,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_225_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fin_garden.dds" } }
 button = { name = "location_reference_225" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('kashan'))]"
+onclick = "[SelectLocation(GetLocationByKey('kashan').Self)]"
 tooltip = "TV_EU_CATALOGUE_225_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_225_LOCATION_LINK" }
@@ -10912,7 +10912,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_226_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jiangnan_examination_hall.dds" } }
 button = { name = "location_reference_226" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('shangyuan'))]"
+onclick = "[SelectLocation(GetLocationByKey('shangyuan').Self)]"
 tooltip = "TV_EU_CATALOGUE_226_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_226_LOCATION_LINK" }
@@ -10972,7 +10972,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_227_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_thang_long_temple_of_literature.dds" } }
 button = { name = "location_reference_227" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('thang_long'))]"
+onclick = "[SelectLocation(GetLocationByKey('thang_long').Self)]"
 tooltip = "TV_EU_CATALOGUE_227_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_227_LOCATION_LINK" }
@@ -11032,7 +11032,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_228_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_maragheh_observatory.dds" } }
 button = { name = "location_reference_228" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('maragheh'))]"
+onclick = "[SelectLocation(GetLocationByKey('maragheh').Self)]"
 tooltip = "TV_EU_CATALOGUE_228_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_228_LOCATION_LINK" }
@@ -11101,7 +11101,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_229_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_xian_bell_and_drum_towers.dds" } }
 button = { name = "location_reference_229" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('jingzhao'))]"
+onclick = "[SelectLocation(GetLocationByKey('jingzhao').Self)]"
 tooltip = "TV_EU_CATALOGUE_229_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_229_LOCATION_LINK" }
@@ -11161,7 +11161,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_230_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_behistun_inscription.dds" } }
 button = { name = "location_reference_230" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('bisotun'))]"
+onclick = "[SelectLocation(GetLocationByKey('bisotun').Self)]"
 tooltip = "TV_EU_CATALOGUE_230_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_230_LOCATION_LINK" }
@@ -11221,7 +11221,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_231_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_beijing_imperial_granaries.dds" } }
 button = { name = "location_reference_231" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('dadu'))]"
+onclick = "[SelectLocation(GetLocationByKey('dadu').Self)]"
 tooltip = "TV_EU_CATALOGUE_231_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_231_LOCATION_LINK" }
@@ -11290,7 +11290,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_232_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bursa_imperial_mint.dds" } }
 button = { name = "location_reference_232" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('bursa'))]"
+onclick = "[SelectLocation(GetLocationByKey('bursa').Self)]"
 tooltip = "TV_EU_CATALOGUE_232_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_232_LOCATION_LINK" }
@@ -11350,7 +11350,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_233_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_enderun_palace_school.dds" } }
 button = { name = "location_reference_233" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('constantinople'))]"
+onclick = "[SelectLocation(GetLocationByKey('constantinople').Self)]"
 tooltip = "TV_EU_CATALOGUE_233_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_233_LOCATION_LINK" }
@@ -11413,7 +11413,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_234_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ayutthaya_foreign_quarters.dds" } }
 button = { name = "location_reference_234" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('ayodhya'))]"
+onclick = "[SelectLocation(GetLocationByKey('ayodhya').Self)]"
 tooltip = "TV_EU_CATALOGUE_234_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_234_LOCATION_LINK" }
@@ -11473,7 +11473,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_235_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_yunnan_weisuo_colonies.dds" } }
 button = { name = "location_reference_235" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('songming'))]"
+onclick = "[SelectLocation(GetLocationByKey('songming').Self)]"
 tooltip = "TV_EU_CATALOGUE_235_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_235_LOCATION_LINK" }
@@ -11551,7 +11551,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_236_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zhoushan_beacon_network.dds" } }
 button = { name = "location_reference_236" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('dinghai'))]"
+onclick = "[SelectLocation(GetLocationByKey('dinghai').Self)]"
 tooltip = "TV_EU_CATALOGUE_236_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_236_LOCATION_LINK" }
@@ -11620,7 +11620,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_237_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_amber_room.dds" } }
 button = { name = "location_reference_237" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('lisino'))]"
+onclick = "[SelectLocation(GetLocationByKey('lisino').Self)]"
 tooltip = "TV_EU_CATALOGUE_237_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_237_LOCATION_LINK" }
@@ -11698,7 +11698,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_238_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_parthenon.dds" } }
 button = { name = "location_reference_238" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('athens'))]"
+onclick = "[SelectLocation(GetLocationByKey('athens').Self)]"
 tooltip = "TV_EU_CATALOGUE_238_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_238_LOCATION_LINK" }
@@ -11767,7 +11767,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_239_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bangkok_grand_palace.dds" } }
 button = { name = "location_reference_239" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('ayodhya'))]"
+onclick = "[SelectLocation(GetLocationByKey('ayodhya').Self)]"
 tooltip = "TV_EU_CATALOGUE_239_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_239_LOCATION_LINK" }
@@ -11836,7 +11836,7 @@ text_single = { position = { 46 2 } size = { 880 28 } autoresize = no fontsize =
 text_single = { position = { 970 4 } size = { 464 24 } autoresize = no fontsize = 14 align = right|nobaseline  text = "TV_EU_CATALOGUE_240_META" }
 widget = { position = { 16 42 } size = { 240 160 } background = { texture = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wat_arun.dds" } }
 button = { name = "location_reference_240" position = { 16 224 } size = { 240 48 }
-onclick = "[SelectLocation(GetLocationByKey('ayodhya'))]"
+onclick = "[SelectLocation(GetLocationByKey('ayodhya').Self)]"
 tooltip = "TV_EU_CATALOGUE_240_LOCATION"
 icon = { position = { 8 8 } size = { 32 32 } texture = "gfx/interface/icons/map_subdivisons/location.dds" alwaystransparent = yes }
 text_single = { alwaystransparent = yes position = { 48 8 } size = { 184 32 } autoresize = no fontsize = 16 align = left|nobaseline  text = "TV_EU_CATALOGUE_240_LOCATION_LINK" }

@@ -132,7 +132,7 @@ def test_identity_images_use_registered_texture_handles_and_real_assets():
     concepts = (MOD / 'main_menu/common/game_concepts/tv_engineering_department_wonder_mechanics_concepts.txt').read_text(encoding='utf-8-sig')
     for kind in ('image', 'full_image'):
         assert f'tv_wonder_identity_{kind}_102_mosque = ' in concepts
-    for filename in ('location_window.gui', 'panels/organization/tv_engineering_department.gui'):
+    for filename in ('tv_location_wonder_widgets.gui', 'panels/organization/tv_engineering_department.gui'):
         text = (MOD / 'in_game/gui' / filename).read_text(encoding='utf-8-sig')
         assert "GetConceptTexture(Select_CString(" in text
         assert "GetGlobalVariable('hagia_sophia_now_mosque').IsSet" in text

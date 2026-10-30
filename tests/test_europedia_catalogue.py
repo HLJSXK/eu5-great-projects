@@ -42,12 +42,32 @@ def test_catalogue_only_queries_a_location_on_click(source):
     for wonder in wonders:
         gui='\n'.join(catalogue.entry(wonder,mechanics))
         clicks=re.findall(r'onclick = "([^"\n]+)"',gui)
-        expected=[f"[SelectLocation(GetLocationByKey('{wonder['location']}'))]"] if wonder['is_unique'] else []
+        expected=[f"[SelectLocation(GetLocationByKey('{wonder['location']}').Self)]"] if wonder['is_unique'] else []
         assert clicks==expected
         rest=re.sub(r'onclick = "[^"\n]+"','',gui)
         assert '[' not in rest and 'textcontext' not in rest and 'datacontext' not in rest
         assert 'conditions_' not in gui
     assert all('[' not in value and '$' not in value for pair in catalogue.loc.values() for value in pair)
+
+
+def test_fixed_location_callbacks_use_a_value_accessor_in_all_generated_consumers(source):
+    # The native loader rejects a promote alone as SelectLocation's argument.
+    # Unlike Siege.GetLocation, GetLocationByKey has no Function overload.
+    api = (ROOT / '.eu5-base/reference_official_defines/docs/data_types_uncategorized.txt').read_text(encoding='utf-8-sig')
+    assert 'GetLocationByKey( Arg0 )\nDefinition type: Global promote\nReturn type: Location' in api
+    assert 'GetLocationByKey( Arg0 )\nDefinition type: Global function' not in api
+    assert 'Location.Self\nDefinition type: Function' in api
+    locations = {wonder['location'] for wonder in source[1] if wonder['is_unique']}
+    for relative in (
+        'data/generated_fragments/tv_encyclopedia_wonders_cards.gui',
+        'src/in_game/gui/encyclopedia_lateralview.gui',
+        'submods/tv_prosper_or_perish_compat/in_game/gui/encyclopedia_lateralview.gui',
+    ):
+        gui = (ROOT / relative).read_text(encoding='utf-8-sig')
+        assert not re.search(r'SelectLocation\(GetLocationByKey\([^)]*\)\)', gui), relative
+        callbacks = re.findall(r"SelectLocation\(GetLocationByKey\('([^']+)'\)\.Self\)", gui)
+        assert set(callbacks) == locations, relative
+        assert len(callbacks) == gui.count('SelectLocation('), relative
 
 
 def test_boolean_unlock_and_raw_local_modifier_do_not_stack(source):

@@ -22,6 +22,13 @@ Its sole development dependency is `eu5-modding-base`, connected via `.eu5-base`
 CMF 2.x and Construction Manager remain runtime dependencies. TV consumes GP;
 GP never imports TV's checkout. Keep existing `tv_` runtime identifiers.
 
+Location windows reference SOL's optional `sol_location_living_standard_button`.
+GP exports its wonder button, root-level gallery panel and queue-close template
+through `in_game/gui/tv_location_wonder_widgets.gui`; the main window and both
+location compatibility submods use those shared definitions. Other window owners
+can use the same interface without copying GP's layout or tooltip implementation.
+See `docs/guides/Location_GUI_Integration.md` for insertion sites and load order.
+
 Unreleased internal tooling uses one current architecture, without compatibility
 wrappers or read-path repair. Generated outputs belong to data/generated_files.yaml.
 Generic actions require an AI actions list, message type and all five notification
