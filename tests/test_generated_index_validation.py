@@ -11,6 +11,7 @@ from scripts import gen_index, validate
 @pytest.fixture
 def isolated_validator(tmp_path, monkeypatch):
     monkeypatch.setattr(validate, "REPO_ROOT", tmp_path)
+    monkeypatch.setattr(validate, "MOD_ROOTS", (tmp_path / "src",))
     monkeypatch.setattr(validate, "issues", [])
     monkeypatch.setattr(validate, "warnings", [])
     (tmp_path / "data").mkdir()

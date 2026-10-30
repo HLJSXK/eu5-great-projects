@@ -2,6 +2,12 @@
 # Edit the generator and goods inputs; do not hand-edit.
 
 l_simp_chinese:
+ tv_sell_goods_with_temporary_supply_description_global:0 "以$VALUE|2$[gold_i]向[market|e]出售[SCOPE.GetValue('tv_market_supply_amount')|+=2][SCOPE.sGoods('tv_market_supply_goods').GetName]"
+ tv_sell_goods_with_temporary_supply_description_first:0 "我们以$VALUE|2$[gold_i]向[market|e]出售[SCOPE.GetValue('tv_market_supply_amount')|+=2][SCOPE.sGoods('tv_market_supply_goods').GetName]"
+ tv_sell_goods_with_temporary_supply_description_third:0 "[SCOPE.sCountry('tv_market_supply_country').GetName]以$VALUE|2$[gold_i]向[SCOPE.sMarket('tv_market_supply_market').GetName]出售[SCOPE.GetValue('tv_market_supply_amount')|+=2][SCOPE.sGoods('tv_market_supply_goods').GetName]"
+ tv_sell_goods_with_temporary_supply_description_global_past:0 "以$VALUE|2$[gold_i]向[market|e]出售了[SCOPE.GetValue('tv_market_supply_amount')|+=2][SCOPE.sGoods('tv_market_supply_goods').GetName]"
+ tv_sell_goods_with_temporary_supply_description_first_past:0 "我们以$VALUE|2$[gold_i]向[market|e]出售了[SCOPE.GetValue('tv_market_supply_amount')|+=2][SCOPE.sGoods('tv_market_supply_goods').GetName]"
+ tv_sell_goods_with_temporary_supply_description_third_past:0 "[SCOPE.sCountry('tv_market_supply_country').GetName]以$VALUE|2$[gold_i]向[SCOPE.sMarket('tv_market_supply_market').GetName]出售了[SCOPE.GetValue('tv_market_supply_amount')|+=2][SCOPE.sGoods('tv_market_supply_goods').GetName]"
  tv_market_supply_alum:0 "临时[ShowGoodsName('alum')]供应（需求抵消）"
  tv_market_supply_amber:0 "临时[ShowGoodsName('amber')]供应（需求抵消）"
  tv_market_supply_beer:0 "临时[ShowGoodsName('beer')]供应（需求抵消）"

@@ -1,11 +1,23 @@
 # Localization Risk Card
 
 Load this card before writing or editing any player-facing localization text under
-`src/main_menu/localization/` (both `english/` and `simp_chinese/`), or before adding loc
+`src/main_menu/localization/` (all 11 languages), or before adding loc
 strings inline while generating events, GUI, effects, or other content that produces new
 localization keys.
 
 ## Required Checks
+
+0. **All languages must contain identical key sets within each mod root.**
+   `scripts/localization_policy.py` lists the 11 required languages. Any key that
+   exists in any language must exist in every other language, including keys only
+   present in a non-English source. Compare recursively across files; translations
+   may organize keys in different filenames. A missing directory or file must not
+   hide missing keys, and a file's `l_<language>:` header must match its directory.
+   English and Simplified Chinese are the maintained source texts. The other nine
+   languages normally use machine translation or English text directly; an English
+   fallback is valid, an absent key is not. Preserve BOM and all interpolation tokens.
+   The check runs even with `--changed`, unrelated changes, or no existing changed
+   files. `--fix` does not silently invent translations or waive missing keys.
 
 1. **Use the canonical six-way text-formatting mapping — do not invent or repurpose tags.**
    TV has a fixed semantic mapping from meaning to EU5's `#tag content#!` color/style tags,
@@ -110,7 +122,9 @@ localization keys.
 
 ## Validation
 
-Run `validate.py --changed --fix --ai-report` after any localization change — it lints the
+Run `validate.py --changed --fix --ai-report` after any localization change. Language
+key parity is a hard failure (`LOC_COVERAGE`) and mismatched headers fail with
+`LOC_LANGUAGE`; neither is a baseline warning. The validator also lints the
 adjacent-tag rule, BOM encoding, and `effect_localization`/`trigger_localization` coverage for
 `custom_description` keys (including the positive/negative distinct-id rule from check 5). There
 is no automated lint for tag *semantic* misuse (e.g. using `#G` on a neutral cost value) or for

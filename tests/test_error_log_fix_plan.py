@@ -16,7 +16,7 @@ def test_message_localization_validator_requires_header_and_title(tmp_path, monk
     actions = root/'in_game/common/generic_actions'
     actions.mkdir(parents=True)
     (actions/'probe.txt').write_text('tv_probe = {}\n')
-    for language in ('english', 'simp_chinese'):
+    for language in validate.LOCALIZATION_LANGUAGES:
         folder = root/'main_menu/localization'/language
         folder.mkdir(parents=True)
         text = f'l_{language}:\n' + ''.join(
@@ -28,7 +28,7 @@ def test_message_localization_validator_requires_header_and_title(tmp_path, monk
     monkeypatch.setattr(validate, 'issues', [])
     validate.check_generic_action_message_localization()
     if missing:
-        assert len(validate.issues) == 2
+        assert len(validate.issues) == len(validate.LOCALIZATION_LANGUAGES)
         assert all(f'PERFORM_tv_probe_ACTION_{missing}' in issue for issue in validate.issues)
     else:
         assert not validate.issues

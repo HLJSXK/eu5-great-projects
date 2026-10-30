@@ -23,6 +23,7 @@ class Sale:
         self.country = {"gold": 100, "shipment_size": 12.5, "shipment_months": 6}
         self.market = {"prices": {g: 4.2 for g in generator.goods_ids()}, "demands": []}
         self.scopes = {"target_market": self.market, "target_goods": "goods:medicaments"}
+        self.descriptions = []
         self.source = (ROOT / generator.EFFECT_PATH).read_text(encoding="utf-8-sig")
 
     def value(self, token, current):
@@ -78,6 +79,10 @@ class Sale:
                 self.scopes[child(node.children, "name").value] = self.value(child(node.children, "value").value, current)
             elif node.key == "save_scope_as":
                 self.scopes[node.value] = current
+            elif node.key == "custom_description":
+                self.descriptions.append(self.value(child(node.children, "value").value, current))
+                metadata = {"text", "subject", "object", "value"}
+                self.run(tuple(n for n in node.children if n.key not in metadata), current)
             elif node.key == "add_gold":
                 assert current is self.country, "Gold must go to the calling country"
                 current["gold"] += self.value(node.value, current)
@@ -106,6 +111,7 @@ def test_each_good_pays_once_and_offsets_only_its_own_demand(good):
     sale.scopes["target_goods"] = f"goods:{good}"
     sale.call()
     assert sale.country["gold"] == pytest.approx(152.5)
+    assert sale.descriptions == [pytest.approx(52.5)]
     assert sale.market["demands"] == [{"type": f"demand:tv_market_supply_{good}", "scale": 12.5, "months": 6}]
     demand = child(parse((ROOT / generator.DEMAND_PATH).read_text(encoding="utf-8-sig")), f"tv_market_supply_{good}")
     assert [(n.key, n.value) for n in demand.children if n.key not in {"hidden", "category"}] == [(good, "-1")]
@@ -120,6 +126,7 @@ def test_price_is_read_on_each_call_and_inputs_are_captured_before_gold_changes(
     sale.market["prices"]["medicaments"] = 2
     sale.call(amount="3", time="2")
     assert sale.country["gold"] == pytest.approx(526)
+    assert sale.descriptions == [pytest.approx(420), pytest.approx(6)]
     assert sale.market["demands"][1]["scale"] == 3
     assert sale.market["demands"][1]["months"] == 2
 
@@ -150,3 +157,41 @@ def test_generated_files_owned_fresh_encoded_and_localized():
             keys = re.findall(r"(?m)^ (tv_market_supply_\w+):", expected)
             assert sorted(keys) == [f"tv_market_supply_{good}" for good in generator.goods_ids()]
     assert "tv_wonder_materials" in generator.goods_ids()
+
+
+@pytest.mark.parametrize("language", ["english", "simp_chinese"])
+def test_sale_wording_matches_vanilla_in_all_perspectives(language):
+    native_path = ROOT / f".eu5-base/reference_game_files/game/main_menu/localization/{language}/effects_l_{language}.yml"
+    native = dict(re.findall(r'^\s*(\w+):(?:\d+)?\s*"(.*)"\s*$', native_path.read_text(encoding="utf-8-sig"), re.MULTILINE))
+    deployed_path = ROOT / f"src/main_menu/localization/{language}/tv_market_supply_l_{language}.yml"
+    deployed = dict(re.findall(r'^\s*(\w+):0\s*"(.*)"\s*$', deployed_path.read_text(encoding="utf-8-sig"), re.MULTILINE))
+    # Normalize bindings back to native placeholders, then compare the entire
+    # sentence including tense, perspective, icons, spacing and amount format.
+    bindings = {
+        "$VALUE|2$": "$GOLD$",
+        "[SCOPE.GetValue('tv_market_supply_amount')|+=2]": "$AMOUNT|+=2$",
+        "[SCOPE.sGoods('tv_market_supply_goods').GetName]": "$GOODS$",
+        "[SCOPE.sCountry('tv_market_supply_country').GetName]": "[COUNTRY.GetName]",
+        "[SCOPE.sMarket('tv_market_supply_market').GetName]": "[TARGET_MARKET.GetName]",
+        "[SCOPE.sMarket('tv_market_supply_market').GetShortName]": "[TARGET_MARKET.GetShortName]",
+    }
+    registry = child(parse((ROOT / generator.EFFECT_LOC_PATH).read_text(encoding="utf-8-sig")), generator.DESCRIPTION)
+    for perspective, native_key in generator.SALE_LOCALIZATIONS.items():
+        text = deployed[child(registry.children, perspective).value]
+        assert "$VALUE|2$" in text
+        for binding, placeholder in bindings.items():
+            text = text.replace(binding, placeholder)
+        assert text == native[native_key]
+
+
+def test_one_custom_description_wraps_the_actual_effects():
+    source = parse((ROOT / generator.EFFECT_PATH).read_text(encoding="utf-8-sig"))
+    helper = child(source, "tv_sell_goods_with_temporary_supply_apply_effect")
+    assert [node.key for node in helper.children] == ["save_scope_as", "custom_description"]
+    description = child(helper.children, "custom_description")
+    assert child(description.children, "text").value == generator.DESCRIPTION
+    assert child(description.children, "subject").value == "this"
+    assert child(description.children, "object").value == "scope:tv_market_supply_market"
+    # No native-sale preview that could use a different price or add stockpile goods.
+    assert child(description.children, "value").children == child(description.children, "add_gold").children
+    assert "sell_goods_to_market" not in {node.key for node in description.children}

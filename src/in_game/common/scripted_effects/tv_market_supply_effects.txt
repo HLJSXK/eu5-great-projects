@@ -477,17 +477,27 @@ tv_sell_goods_with_temporary_supply_effect = {
 }
 
 # Internal country-scope helper; only call through the guarded public effect.
-# Keep both native effects visible for the engine's gold and duration previews.
+# Native sale tokens are adapted in localization; the value is the actual payout.
 tv_sell_goods_with_temporary_supply_apply_effect = {
-	add_gold = {
-		value = "scope:tv_market_supply_goods.price_in_market(scope:tv_market_supply_market)"
-		multiply = scope:tv_market_supply_amount
-	}
-	scope:tv_market_supply_market = {
-		add_temporary_demand = {
-			type = demand:$demand$
-			scale = { value = scope:tv_market_supply_amount }
-			months = { value = scope:tv_market_supply_months }
+	save_scope_as = tv_market_supply_country
+	custom_description = {
+		text = tv_sell_goods_with_temporary_supply_description
+		subject = this
+		object = scope:tv_market_supply_market
+		value = {
+			value = "scope:tv_market_supply_goods.price_in_market(scope:tv_market_supply_market)"
+			multiply = scope:tv_market_supply_amount
+		}
+		add_gold = {
+			value = "scope:tv_market_supply_goods.price_in_market(scope:tv_market_supply_market)"
+			multiply = scope:tv_market_supply_amount
+		}
+		scope:tv_market_supply_market = {
+			add_temporary_demand = {
+				type = demand:$demand$
+				scale = { value = scope:tv_market_supply_amount }
+				months = { value = scope:tv_market_supply_months }
+			}
 		}
 	}
 }

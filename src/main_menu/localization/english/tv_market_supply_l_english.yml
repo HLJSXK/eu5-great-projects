@@ -2,6 +2,12 @@
 # Edit the generator and goods inputs; do not hand-edit.
 
 l_english:
+ tv_sell_goods_with_temporary_supply_description_global:0 "Sells [SCOPE.GetValue('tv_market_supply_amount')|+=2] [SCOPE.sGoods('tv_market_supply_goods').GetName] into the [SCOPE.sMarket('tv_market_supply_market').GetShortName] [market|e] for $VALUE|2$[gold_i]"
+ tv_sell_goods_with_temporary_supply_description_first:0 "We sell [SCOPE.GetValue('tv_market_supply_amount')|+=2] [SCOPE.sGoods('tv_market_supply_goods').GetName] into the [SCOPE.sMarket('tv_market_supply_market').GetShortName] [market|e] for $VALUE|2$[gold_i]"
+ tv_sell_goods_with_temporary_supply_description_third:0 "[SCOPE.sCountry('tv_market_supply_country').GetName] sells [SCOPE.GetValue('tv_market_supply_amount')|+=2] [SCOPE.sGoods('tv_market_supply_goods').GetName] into the [SCOPE.sMarket('tv_market_supply_market').GetShortName] [market|e] for $VALUE|2$[gold_i]"
+ tv_sell_goods_with_temporary_supply_description_global_past:0 "Sold [SCOPE.GetValue('tv_market_supply_amount')|+=2] [SCOPE.sGoods('tv_market_supply_goods').GetName] into the [SCOPE.sMarket('tv_market_supply_market').GetShortName] [market|e] for $VALUE|2$[gold_i]"
+ tv_sell_goods_with_temporary_supply_description_first_past:0 "We sold [SCOPE.GetValue('tv_market_supply_amount')|+=2] [SCOPE.sGoods('tv_market_supply_goods').GetName] into the [SCOPE.sMarket('tv_market_supply_market').GetShortName] [market|e] for $VALUE|2$[gold_i]"
+ tv_sell_goods_with_temporary_supply_description_third_past:0 "[SCOPE.sCountry('tv_market_supply_country').GetName] sold [SCOPE.GetValue('tv_market_supply_amount')|+=2] [SCOPE.sGoods('tv_market_supply_goods').GetName] into the [SCOPE.sMarket('tv_market_supply_market').GetShortName] [market|e] for $VALUE|2$[gold_i]"
  tv_market_supply_alum:0 "Temporary [ShowGoodsName('alum')] supply (demand offset)"
  tv_market_supply_amber:0 "Temporary [ShowGoodsName('amber')] supply (demand offset)"
  tv_market_supply_beer:0 "Temporary [ShowGoodsName('beer')] supply (demand offset)"

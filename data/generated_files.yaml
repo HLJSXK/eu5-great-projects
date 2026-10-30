@@ -6,10 +6,12 @@
   data: .eu5-base/reference_game_files/game/in_game/common/goods + src/in_game/common/goods
   output: src/in_game/common/goods_demand/tv_market_supply.txt
 - script: scripts_engineering_department/gen_market_supply_effects.py
-  data: .eu5-base/reference_game_files/game/in_game/common/goods + src/in_game/common/goods
+  output: src/in_game/common/effect_localization/tv_market_supply_effects.txt
+- script: scripts_engineering_department/gen_market_supply_effects.py
+  data: .eu5-base/reference_game_files/game/in_game/common/goods + src/in_game/common/goods + .eu5-base/reference_game_files/game/main_menu/localization/english/effects_l_english.yml
   output: src/main_menu/localization/english/tv_market_supply_l_english.yml
 - script: scripts_engineering_department/gen_market_supply_effects.py
-  data: .eu5-base/reference_game_files/game/in_game/common/goods + src/in_game/common/goods
+  data: .eu5-base/reference_game_files/game/in_game/common/goods + src/in_game/common/goods + .eu5-base/reference_game_files/game/main_menu/localization/simp_chinese/effects_l_simp_chinese.yml
   output: src/main_menu/localization/simp_chinese/tv_market_supply_l_simp_chinese.yml
 - script: scripts_engineering_department/gen_location_wonder_arrows.py
   output: assets/generated_icons/tv_wonder_arrow_right.png

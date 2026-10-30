@@ -14,6 +14,10 @@ knowledge come only from eu5-modding-base. TV runtime consumers keep existing ID
 
 Generic actions must have AI-list actions membership, a root-owned PERFORM message
 type, and all five HEADER/TITLE/SETUP/LOG/MAP keys with BOM and resolving aliases.
+Every localization key must exist in all 11 languages in each mod root; language
+key sets must match in both directions. English and Simplified Chinese are the
+maintained source texts; other languages normally use machine translation or
+English fallback. Missing translations never justify missing keys.
 Run scripts/validate.py --changed --fix --ai-report and relevant tests before handoff.
 Regenerate the knowledge brief with scripts/gen_brief.py after knowledge changes.
 Read docs/archive/repository_split/Repository_Split.md for extraction evidence and audit guidance.

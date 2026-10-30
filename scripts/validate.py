@@ -32,6 +32,8 @@ except ImportError:
     sys.exit(1)
 
 REPO_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(REPO_ROOT))
+from scripts.localization_policy import LOCALIZATION_LANGUAGES
 
 # Only this repository owns these roots.
 MOD_ROOTS = (REPO_ROOT / "src",)
@@ -132,7 +134,7 @@ AUTO_MODIFIER_DIRS = _auto_modifier_dirs()
 PRICE_DIRS = _price_dirs()
 UTF8_BOM = b"\xef\xbb\xbf"
 VALIDATED_SUFFIXES = {".txt", ".gui", ".yml", ".yaml", ".md", ".py"}
-LOCALIZATION_KEY_PATTERN = re.compile(r"^\s+(\w+)\s*:(?:\d+)?")
+LOCALIZATION_KEY_PATTERN = re.compile(r'^[ \t]*([A-Za-z0-9_.-]+)[ \t]*:(?:\d+)?[ \t]*"')
 LOCALIZATION_HEADER_PATTERN = re.compile(r"^l_[A-Za-z_]+:\s*$")
 LOCALIZATION_ENTRY_LINE_PATTERN = re.compile(r"^\s+[A-Za-z0-9_.-]+:(?:\d+)?\s+")
 GAME_CONCEPT_DECL_PATTERN = re.compile(r"^([A-Za-z0-9_]+)\s*=\s*\{$")
@@ -505,26 +507,45 @@ def check_loc_duplicate_keys() -> None:
 
 
 def check_loc_coverage() -> None:
-    """Verify every key in English localization also exists in simp_chinese, per mod root."""
+    """Require the union of all language keys in every language, per mod root.
+
+    Compare recursive language-wide sets, not matching filenames or just English.
+    Missing directories and deleted files therefore cannot hide missing keys.
+    English fallback text is valid; completeness does not grade translation.
+    """
     for root in MOD_ROOTS:
-        en_dir = root / "main_menu" / "localization" / "english"
-        zh_dir = root / "main_menu" / "localization" / "simp_chinese"
-        if not en_dir.exists():
+        loc_root = root / "main_menu" / "localization"
+        if not loc_root.exists():
             continue
-        for en_file in sorted(en_dir.glob("*_l_english.yml")):
-            stem = en_file.stem[: -len("_l_english")]
-            zh_file = zh_dir / f"{stem}_l_simp_chinese.yml"
-            en_keys = {key for key, _ in _iter_yaml_localization_keys(en_file)}
-            if not zh_file.exists():
-                issues.append(f"[LOC] Missing simp_chinese file: {zh_file.relative_to(REPO_ROOT)}")
-                continue
-            zh_keys = {key for key, _ in _iter_yaml_localization_keys(zh_file)}
-            missing = sorted(en_keys - zh_keys)
+        languages = sorted(set(LOCALIZATION_LANGUAGES) | {
+            directory.name for directory in loc_root.iterdir() if directory.is_dir()
+        })
+        keys_by_language = {language: set() for language in languages}
+        sources: dict[str, tuple[Path, int]] = {}
+        for language in languages:
+            for path in sorted((loc_root / language).rglob("*.yml")):
+                lines = path.read_text(encoding="utf-8-sig").splitlines()
+                headers = [line.strip() for line in lines if line.strip().startswith("l_")
+                           and LOCALIZATION_HEADER_PATTERN.fullmatch(line.strip())]
+                if headers != [f"l_{language}:"]:
+                    issues.append(
+                        f"[LOC_LANGUAGE] {path.relative_to(REPO_ROOT)}:1 -- "
+                        f"Expected exactly one l_{language}: header; found {headers}"
+                    )
+                    continue
+                for line_num, line in enumerate(lines, 1):
+                    match = LOCALIZATION_KEY_PATTERN.match(line)
+                    if match:
+                        key = match.group(1)
+                        keys_by_language[language].add(key)
+                        sources.setdefault(key, (path, line_num))
+        for key, (path, line_num) in sorted(sources.items()):
+            missing = [language for language in languages if key not in keys_by_language[language]]
             if missing:
                 issues.append(
-                    f"[LOC] {zh_file.relative_to(REPO_ROOT)}: "
-                    f"{len(missing)} key(s) missing from simp_chinese: "
-                    + ", ".join(missing)
+                    f"[LOC_COVERAGE] {path.relative_to(REPO_ROOT)}:{line_num} -- "
+                    f"Key '{key}' is missing from {', '.join(missing)} in "
+                    f"{loc_root.relative_to(REPO_ROOT)}"
                 )
 
 
@@ -631,15 +652,12 @@ def check_effect_loc_negative_perspectives() -> None:
 
 
 def check_static_modifier_name_loc_coverage() -> None:
-    """Verify every static modifier has English and Simplified Chinese name localization."""
+    """Verify every static modifier has name localization in all required languages."""
     loc_roots = _mod_root_dirs("main_menu", "localization")
     if not loc_roots:
         return
 
-    # Only the two currently supported mod languages are release requirements.
-    # Other language directories (for example the future German translation)
-    # must not turn this validator into a localization-completeness gate.
-    language_names = {"english", "simp_chinese"}
+    language_names = LOCALIZATION_LANGUAGES
 
     loc_keys_by_language: dict[str, set[str]] = {}
     for language_name in language_names:
@@ -681,7 +699,7 @@ def check_static_modifier_name_loc_coverage() -> None:
 
 def _loc_keys_by_language() -> dict[str, set[str]]:
     """Every localization key defined per supported language, across every mod root."""
-    language_names = ("english", "simp_chinese")
+    language_names = LOCALIZATION_LANGUAGES
     keys_by_language: dict[str, set[str]] = {name: set() for name in language_names}
     for loc_root in _mod_root_dirs("main_menu", "localization"):
         for language_name in language_names:
@@ -1114,7 +1132,7 @@ def check_generic_action_message_localization() -> None:
     """Verify every generic action has all required message localization keys."""
     action_re = re.compile(r"(?m)^([a-z][A-Za-z0-9_]*)\s*=\s*\{")
     suffixes = ("HEADER", "TITLE", "SETUP", "LOG", "MAP")
-    languages = ("english", "simp_chinese")
+    languages = LOCALIZATION_LANGUAGES
     for root in MOD_ROOTS:
         action_dir = root / "in_game" / "common" / "generic_actions"
         if not action_dir.exists():
@@ -1399,12 +1417,14 @@ def _mod_prefixes(*subpaths: str) -> tuple[str, ...]:
 def run_global_checks(files: list[Path], use_changed: bool, anti_patterns: list[dict]) -> None:
     rels = {_rel_path(path) for path in files}
 
+    # Always enforce parity, including unrelated changes and deleted locale files.
+    check_loc_coverage()
+
     if not use_changed or _paths_match(rels, prefixes=_mod_prefixes("main_menu/common/game_concepts/")):
         check_game_concept_duplicate_keys()
     if not use_changed or _paths_match(rels, prefixes=_mod_prefixes("main_menu/localization/")):
         check_loc_physical_lines()
         check_loc_duplicate_keys()
-        check_loc_coverage()
     if not use_changed or _paths_match(
         rels,
         exact=("scripts/validate.py",),
@@ -2211,12 +2231,6 @@ def main():
 
     if use_changed:
         files = get_changed_files()
-        if not files:
-            if ai_report:
-                print(json.dumps({"pass": True, "errors": [], "warnings": [], "files_checked": 0}))
-            else:
-                print("[OK] No changed mod files to validate.")
-            sys.exit(0)
     elif targets:
         files = []
         for t in targets:
@@ -2274,6 +2288,10 @@ def main():
                 check_modifier_names(path, content, modifier_whitelist)
 
         run_global_checks(files, use_changed, anti_patterns)
+    else:
+        # get_changed_files omits deleted paths; an empty list is not proof that
+        # localization is complete (including on an otherwise clean checkout).
+        check_loc_coverage()
 
     if ai_report:
         errors = [_parse_issue_structured(i) for i in issues]

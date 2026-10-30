@@ -7,7 +7,7 @@
 - **Version:** Build date (`YYMMDD`)
 - **Target:** EU5 1.4 beta (`1.4.*`)
 - **Status:** In Development
-- **Language:** English + Simplified Chinese
+- **Languages:** Complete keys in all 11 game languages; English + Simplified Chinese are the maintained source texts.
 
 ## Development Policy
 
@@ -20,7 +20,16 @@ GP never imports TV's checkout. Keep existing `tv_` runtime identifiers.
 Unreleased internal tooling uses one current architecture, without compatibility
 wrappers or read-path repair. Generated outputs belong to data/generated_files.yaml.
 Generic actions require an AI actions list, message type and all five notification
-localization fields (HEADER, TITLE, SETUP, LOG, MAP) in both languages.
+localization fields (HEADER, TITLE, SETUP, LOG, MAP) in all 11 languages.
+
+Within each mod root, every localization key present in any language must also
+exist in every other language. Compare the union of all keys, recursively across
+files; a key found only in Chinese or French is just as binding as an English key.
+The required languages are `english`, `simp_chinese`, `french`, `german`, `spanish`,
+`russian`, `polish`, `japanese`, `korean`, `braz_por`, and `turkish`, defined in
+`scripts/localization_policy.py`. Except for English and Simplified Chinese,
+localization normally uses machine translation or the English text directly.
+Translation quality and key completeness are separate: missing keys fail validation.
 
 Europedia has a permanent scope of 15 mechanic cards plus Triumphal Axis and
 Topkapi Palace as two worked examples. The full 195-wonder card catalogue was
