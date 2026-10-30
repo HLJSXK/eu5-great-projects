@@ -2,23 +2,26 @@
 - script: scripts_engineering_department/gen_europedia_cycle.py
   output: assets/generated_icons/tv_europedia_cycle.png
 - script: scripts_engineering_department/gen_project_size_icons.py
-  data: assets/icons/project_size/project-small.svg
+  data: assets/icons/project_size/project-small.svg + assets/icons/project_size/raster_exports.json
   output: assets/generated_icons/tv_project_size_small.png
 - script: scripts_engineering_department/gen_project_size_icons.py
-  data: assets/icons/project_size/project-small.svg
+  data: assets/icons/project_size/project-small.svg + assets/icons/project_size/raster_exports.json + assets/generated_icons/tv_project_size_small.png
   output: src/main_menu/gfx/interface/icons/location_icons/tv_project_size_small.dds
 - script: scripts_engineering_department/gen_project_size_icons.py
-  data: assets/icons/project_size/project-medium.svg
+  data: assets/icons/project_size/project-medium.svg + assets/icons/project_size/raster_exports.json
   output: assets/generated_icons/tv_project_size_medium.png
 - script: scripts_engineering_department/gen_project_size_icons.py
-  data: assets/icons/project_size/project-medium.svg
+  data: assets/icons/project_size/project-medium.svg + assets/icons/project_size/raster_exports.json + assets/generated_icons/tv_project_size_medium.png
   output: src/main_menu/gfx/interface/icons/location_icons/tv_project_size_medium.dds
 - script: scripts_engineering_department/gen_project_size_icons.py
-  data: assets/icons/project_size/project-large.svg
+  data: assets/icons/project_size/project-large.svg + assets/icons/project_size/raster_exports.json
   output: assets/generated_icons/tv_project_size_large.png
 - script: scripts_engineering_department/gen_project_size_icons.py
-  data: assets/icons/project_size/project-large.svg
+  data: assets/icons/project_size/project-large.svg + assets/icons/project_size/raster_exports.json + assets/generated_icons/tv_project_size_large.png
   output: src/main_menu/gfx/interface/icons/location_icons/tv_project_size_large.dds
+- script: scripts_engineering_department/gen_project_size_icons.py
+  data: assets/icons/project_size/project-small.svg + assets/icons/project_size/project-medium.svg + assets/icons/project_size/project-large.svg
+  output: assets/icons/project_size/raster_exports.json
 - script: scripts_engineering_department/gen_europedia_cycle.py
   output: src/main_menu/gfx/interface/illustrations/tv_europedia_cycle.dds
 - script: scripts_engineering_department/gen_market_supply_effects.py

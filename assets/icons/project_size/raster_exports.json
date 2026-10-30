@@ -1,0 +1,15 @@
+{
+  "_generated_by": "scripts_engineering_department/gen_project_size_icons.py",
+  "small": {
+    "svg_sha256": "00375a20e1e0eef4d3e1e7d97588d62daf816a9fed621769720146bd9974b187",
+    "rgba_sha256": "56ebb86f77ed5ccc68aea30d0adabd71b51a476e0b262947409696d3100c73dc"
+  },
+  "medium": {
+    "svg_sha256": "8479f31043eaa63fca0a8825eef2d621c46bc6154f4169052666bd46088495e5",
+    "rgba_sha256": "edc2311c0c981674544774234130079916ed33af8add11748dbf327f710480d6"
+  },
+  "large": {
+    "svg_sha256": "2bd702f7cecea74bae56ed34b5137174fb6b462affb08ec9c2737df7da060355",
+    "rgba_sha256": "c1ca5e798a302fbd07a84cb5ead3795f9e2e6c486eaf1903caa99106015af8f6"
+  }
+}

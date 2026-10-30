@@ -45,6 +45,29 @@ def test_text_still_compares_exact_bytes(tmp_path):
     assert not outputs_match(current, generated)
 
 
+def test_freshness_stages_only_declared_external_inputs(tmp_path, monkeypatch):
+    from scripts import generate
+    root, stage = tmp_path / 'workspace', tmp_path / 'stage'
+    monkeypatch.setattr(generate, 'ROOT', root)
+    paths = ('assets/icons/project.svg', 'assets/icons/raster_exports.json', 'assets/exports/project.png')
+    for relative in (*paths, 'assets/unrelated/huge.png', 'data/already-copied.yaml'):
+        path = root / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(relative.encode())
+    registry = {'generated': [{'data': ' + '.join((*paths, 'data/already-copied.yaml', '.eu5-base/reference.txt'))}]}
+    generate.stage_registered_inputs(stage, registry)
+    assert {path.relative_to(stage).as_posix() for path in stage.rglob('*') if path.is_file()} == set(paths)
+    for relative in paths:
+        assert (stage / relative).read_bytes() == (root / relative).read_bytes()
+
+
+def test_freshness_rejects_missing_declared_art_source(tmp_path, monkeypatch):
+    from scripts import generate
+    monkeypatch.setattr(generate, 'ROOT', tmp_path / 'workspace')
+    with pytest.raises(FileNotFoundError):
+        generate.stage_registered_inputs(tmp_path / 'stage', {'generated': [{'data': 'assets/missing.svg'}]})
+
+
 def test_build_registered_localization_producer_runs_offline(tmp_path, monkeypatch):
     """Exercise generate.py's real registry dispatch with the translator's CLI."""
     from pathlib import Path

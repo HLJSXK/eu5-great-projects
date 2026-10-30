@@ -10,6 +10,25 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+STAGED_DIRECTORIES = ('scripts', 'scripts_engineering_department', 'data', 'src', 'submods', 'great_projects_editor_web')
+
+
+def stage_registered_inputs(stage: Path, registry: dict) -> None:
+    """Copy declared art inputs outside the normal source roots, not all assets."""
+    inputs = {part.strip() for row in registry['generated']
+              for part in row.get('data', '').split('+') if part.strip()}
+    for value in sorted(inputs):
+        relative = Path(value)
+        if relative.is_absolute() or '..' in relative.parts:
+            raise ValueError(f'Registered input must be workspace-relative: {value}')
+        if relative.parts[0] in (*STAGED_DIRECTORIES, '.eu5-base'):
+            continue
+        source, target = ROOT / relative, stage / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if source.is_dir():
+            shutil.copytree(source, target, dirs_exist_ok=True)
+        else:
+            shutil.copy2(source, target)
 
 
 def generate() -> int:
@@ -58,8 +77,9 @@ def check() -> int:
     (ROOT / 'tmp').mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='freshness-', dir=ROOT / 'tmp') as directory:
         stage = Path(directory)
-        for name in ('scripts', 'scripts_engineering_department', 'data', 'src', 'submods', 'great_projects_editor_web'):
+        for name in STAGED_DIRECTORIES:
             shutil.copytree(ROOT / name, stage / name, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+        stage_registered_inputs(stage, registry)
         env = {**os.environ, 'EU5_MODDING_BASE': str(base), 'PYTHONDONTWRITEBYTECODE': '1'}
         subprocess.run([sys.executable, str(stage / 'scripts/bootstrap_base.py')], cwd=stage, env=env, check=True)
         result = subprocess.run([sys.executable, str(stage / 'scripts/generate.py')], cwd=stage, env=env)
