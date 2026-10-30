@@ -590,23 +590,18 @@ def test_atlas_exposes_localized_directions_and_preferences_for_each_style(data)
         assert all(pref['estate']['zh'] and pref['preference']['zh'] for pref in row['meta']['estate_preferences'])
 
 
-def test_encyclopedia_renders_three_native_previews_in_the_body(data):
-    from scripts_engineering_department.in_game.gui.gen_tv_encyclopedia_wonders_cards_gui import append_card
-    from scripts_engineering_department.vanilla_takeover.parse import parse, walk as gui_walk
+def test_encyclopedia_bakes_three_rituals_without_live_previews(data):
+    from scripts_engineering_department.europedia_render import Catalogue
     wonder, mechanics = data[0][0], data[1]
-    lines = []
-    append_card(lines, category='generic', texture='test.dds', title_key='test', body_key='test_desc', wonder=wonder, mechanics=mechanics)
-    previews = []
-    for root in parse('\n'.join(lines)):
-        for node, ancestors in gui_walk(root):
-            raw = node.child('raw_text')
-            if node.key == 'text_multi' and raw and '_catalogue_effect' in raw.value:
-                previews.append(node)
-                assert not any(parent.key in ('text_single', 'icon') for parent in ancestors)
-    assert len(previews) == 3
+    catalogue = Catalogue()
+    text = '\n'.join(catalogue.entry(wonder, mechanics))
+    assert len(re.findall(r'name = "ritual_\d+_[123]"', text)) == 3
+    assert 'ShowScriptedEffectForScope' not in text
+    assert 'ShowModifierEffect' not in text
+    assert all('[' not in value and '$' not in value for pair in catalogue.loc.values() for value in pair)
 
 
-def test_encyclopedia_keeps_only_approved_cards(data):
+def test_encyclopedia_teaching_scope_and_complete_static_catalogue(data):
     from scripts_engineering_department.europedia_content import CARDS
     from scripts_engineering_department.europedia_render import render_all, select_wonder_cards
 
@@ -615,8 +610,7 @@ def test_encyclopedia_keeps_only_approved_cards(data):
     assert [w['key'] for w in examples] == ['triumphal_axis', 'unique_topkapi_palace']
     assert [w['is_unique'] for w in examples] == [False, True]
     assert len(CARDS) == 15
-    textures = {int(w['id']): 'test.dds' for w in examples}
-    rendered = render_all(wonders, mechanics, textures)
+    rendered = render_all(wonders, mechanics)
     surfaces = ['\n'.join(rendered['gui'])]
     for relative in (
         'src/in_game/gui/encyclopedia_lateralview.gui',
@@ -626,17 +620,15 @@ def test_encyclopedia_keeps_only_approved_cards(data):
         surfaces.append(text.split('# BEGIN GENERATED TV_ENCYCLOPEDIA_CARDS', 1)[1]
                        .split('# END GENERATED TV_ENCYCLOPEDIA_CARDS', 1)[0])
     for text in surfaces:
-        assert len(re.findall(r'\btv_eu_card\s*=\s*\{', text)) == 17
+        assert len(re.findall(r'\btv_eu_card\s*=\s*\{', text)) == 15
+        assert len(re.findall(r'\btv_eu_catalogue_entry\s*=\s*\{', text)) == len(wonders)+2
         for card in CARDS:
             assert f'text = "TV_EU_{card["id"].upper()}_TITLE"' in text
-        actual = {w['key'] for w in wonders if f'text = "game_concept_{w["concept"]}"' in text}
-        assert actual == {'triumphal_axis', 'unique_topkapi_palace'}
-        previews = re.findall(r"ShowScriptedEffectForScope\('(tv_wonder_display_\d+_ritual_\d+_catalogue_effect)'", text)
-        assert len(previews) == 6
-        assert set(previews) == {
-            f'tv_wonder_display_{w["id"]}_ritual_{style}_catalogue_effect'
-            for w in examples for style in (1, 2, 3)
-        }
+        assert set(re.findall(r'name = "tv_eu_catalogue_(\d+)"', text)) == {str(w['id']) for w in wonders}
+        assert set(re.findall(r'name = "tv_eu_example_(\d+)"', text)) == {str(w['id']) for w in examples}
+        assert 'ShowModifierEffect' not in text
+        assert 'ShowScriptedEffectForScope' not in text
+        assert 'ShowTriggerConditionsForScope' not in text
 
 
 @pytest.mark.parametrize('damage', ['missing', 'duplicate'])

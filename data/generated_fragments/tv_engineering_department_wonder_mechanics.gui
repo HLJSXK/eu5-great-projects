@@ -839,7 +839,7 @@ icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetP
 text_single = { position = { 52 9 } size = { 374 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_1_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
 }
 flowcontainer = { name = "tv_wonder_ritual_supporters_1"
-layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking size = { 438 -1 } maximumsize = { 438 -1 }
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking maximumsize = { 438 -1 }
 direction = horizontal wrap_count = 7 spacing = 10 margin = { 10 0 } ignoreinvisible = yes
 tv_wonder_ritual_supporter = { name = "nobles_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, '(CFixedPoint)1.0'))]"
 datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('nobles_estate')]"
@@ -1052,7 +1052,7 @@ icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetP
 text_single = { position = { 52 9 } size = { 374 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_2_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
 }
 flowcontainer = { name = "tv_wonder_ritual_supporters_2"
-layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking size = { 438 -1 } maximumsize = { 438 -1 }
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking maximumsize = { 438 -1 }
 direction = horizontal wrap_count = 7 spacing = 10 margin = { 10 0 } ignoreinvisible = yes
 tv_wonder_ritual_supporter = { name = "nobles_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, '(CFixedPoint)2.0'))]"
 datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('nobles_estate')]"
@@ -1265,7 +1265,7 @@ icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetP
 text_single = { position = { 52 9 } size = { 374 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_3_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
 }
 flowcontainer = { name = "tv_wonder_ritual_supporters_3"
-layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking size = { 438 -1 } maximumsize = { 438 -1 }
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking maximumsize = { 438 -1 }
 direction = horizontal wrap_count = 7 spacing = 10 margin = { 10 0 } ignoreinvisible = yes
 tv_wonder_ritual_supporter = { name = "nobles_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, '(CFixedPoint)3.0'))]"
 datacontext = "[InternationalOrganizationsView.GetPlayer.GetGovernment.GetEstateFromKey('nobles_estate')]"

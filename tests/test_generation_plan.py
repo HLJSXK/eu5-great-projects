@@ -274,6 +274,13 @@ def test_real_wonder_regeneration_matches_current_outputs(tmp_path):
                 destination = tmp_path / source.relative_to(root)
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(source, destination)
+    # The static catalogue reads DDS geometry only; preserve real headers while
+    # avoiding a copy/decode of the full painting corpus in this text regression.
+    artwork = Path('src/main_menu/gfx/interface/icons/towards_victory/wonders')
+    (tmp_path/artwork).mkdir(parents=True, exist_ok=True)
+    for source in (root/artwork).glob('*.dds'):
+        with source.open('rb') as image:
+            (tmp_path/artwork/source.name).write_bytes(image.read(128))
     references = {'.eu5-base/reference_game_files/game/main_menu/gui/shared/font_icons.gui'}
     references.update(source for step in original_plan.steps for source in step.spec.inputs
                       if source.startswith('.eu5-base/reference_'))

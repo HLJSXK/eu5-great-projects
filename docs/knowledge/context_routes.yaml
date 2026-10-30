@@ -53,10 +53,25 @@ domain_routes:
   reason: shared hardcoded hooks can conflict or run from unexpected roots
 - id: localization
   expand_mod_roots: true
+  route_generated_consumers: true
   path_prefixes:
   - main_menu/localization/
+  - scripts/localization_
+  - data/localization_grades.json
+  - data/wonder_localization.yaml
+  - great_projects_editor_web/services/localization_editor.py
+  - great_projects_editor_web/static/localization.
+  - scripts_engineering_department/main_menu/localization/
+  - scripts_engineering_department/wonder_localization_lib.py
   card: localization.md
-  summary: BOM, quote, loc key, and semantic color-tag rules
+  required_check:
+    id: localization_grade_registration
+    message: >-
+      本地化等级必须如实逐条登记：原创 > AI生成 > 翻译 > 占位 > 缺失。
+      Agent 仅可对用户手动操作的内容或用户明确要求登记为原创的内容使用“原创”，并记录依据；其余不得使用。
+      修改 owner/input 并生成输出后，用 scripts/localization_grades.py 登记到 data/localization_grades.json，
+      保留未改动条目等级，修改过的文本必须重新登记。运行 scripts/validate.py --changed --fix --ai-report。
+  summary: mandatory provenance grades, original-authorship restrictions, BOM and loc keys
   reason: localization parser failures cascade into UI errors
 - id: wonder_buildings
   expand_mod_roots: true
@@ -108,7 +123,7 @@ filename_routes:
   - europedia
   - tv_europedia
   card: europedia.md
-  summary: permanent 17-card scope, design rationale, tab toggles and card generation
+  summary: static compact catalogue, teaching cards, tab toggles and generation
   reason: Europedia has no data-driven custom-tab registration point
 - id: wonder_ceremony
   substrings:

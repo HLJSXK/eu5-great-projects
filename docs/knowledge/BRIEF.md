@@ -35,13 +35,20 @@ The required languages are `english`, `simp_chinese`, `french`, `german`, `spani
 `scripts/localization_policy.py`. Except for English and Simplified Chinese,
 localization normally uses machine translation or the English text directly.
 Translation quality and key completeness are separate: missing keys fail validation.
+Every entry also has a content-bound provenance grade in `data/localization_grades.json`:
+原创 > AI生成 > 翻译 > 占位 > 缺失. Agents must register the actual source after edits
+or regeneration. 原创 is reserved for user-manual content or an explicit user request,
+with recorded evidence. The initial inventory is AI生成 for EN/ZH and 翻译 for all
+other languages. See `docs/knowledge/risk_cards/localization.md` and
+`scripts/localization_grades.py`; unregistered/stale grades fail `LOC_GRADE` validation.
 
-Europedia has a permanent scope of 15 mechanic cards plus Triumphal Axis and
-Topkapi Palace as two worked examples. The full 195-wonder card catalogue was
-removed for both initialization risk and poor information design: repeated
-explanations and long scrolling obscure the mechanics. Do not restore it as a
-performance fix or automatically add cards for new wonders. See
-`docs/knowledge/risk_cards/europedia.md` for the decision and test evidence.
+Europedia keeps 15 teaching cards and two worked examples, plus the user-approved
+compact catalogue in Unique Projects and Generic Projects (2026-10-30). Catalogue
+entries and the two worked examples bake their text, six-level values and rituals
+offline: no live effect/trigger previews or construction conditions. Unique entries
+have a fixed location reference below their artwork. See
+`docs/knowledge/risk_cards/europedia.md` for the static contract and historical
+load-risk evidence. The overview/cycle remains in Getting Started.
 
 
 ## Quick Rules
@@ -64,12 +71,12 @@ Use `scripts/ai_context.py` for task-scoped details. Default output is concise; 
 | domain_routes | international_organizations | `docs/knowledge/risk_cards/international_organizations.md` | non-unique TV IO scope, leader, law, and monthly-change invariants |
 | domain_routes | events | `docs/knowledge/risk_cards/events.md` | event option hover can pre-evaluate visible and hidden effect chains |
 | domain_routes | on_action | `docs/knowledge/risk_cards/on_action.md` | bridge-registry, root scope, and one-day monthly event delay rules |
-| domain_routes | localization | `docs/knowledge/risk_cards/localization.md` | BOM, quote, loc key, and semantic color-tag rules |
+| domain_routes | localization | `docs/knowledge/risk_cards/localization.md` | mandatory provenance grades, original-authorship restrictions, BOM and loc keys |
 | domain_routes | wonder_buildings | `docs/knowledge/risk_cards/wonder_buildings.md` | wonder building lifecycle, price, modifier, and labor/input rules |
 | domain_routes | wonder_gui | `docs/knowledge/risk_cards/wonder_gui.md` | wonder GUI override, tooltip scope, layout, and icon-routing rules |
 | domain_routes | wonder_service | `docs/knowledge/risk_cards/wonders.md` | Wonder domain model, source and field invariants |
 | filename_routes | wonders | `docs/knowledge/risk_cards/wonders.md` | Engineering Department and wonder-construction top-level invariants |
-| filename_routes | europedia | `docs/knowledge/risk_cards/europedia.md` | permanent 17-card scope, design rationale, tab toggles and card generation |
+| filename_routes | europedia | `docs/knowledge/risk_cards/europedia.md` | static compact catalogue, teaching cards, tab toggles and generation |
 | filename_routes | wonder_ceremony | `docs/knowledge/risk_cards/wonder_ceremony.md` | unified ritual schema, estate settlement, lifecycle and native previews |
 | filename_routes | wonder_unique_rituals | `docs/knowledge/risk_cards/wonder_unique_rituals.md` | unique ritual text and inherited generic mechanics |
 | content_routes | generic_actions |  | generator, data, localization or GUI caller uses generic actions |
@@ -80,7 +87,7 @@ Use `scripts/ai_context.py` for task-scoped details. Default output is concise; 
 
 | Card | Purpose |
 | --- | --- |
-| `docs/knowledge/risk_cards/europedia.md` | Load this card before editing `encyclopedia_lateralview.gui`, adding new browsable Europedia |
+| `docs/knowledge/risk_cards/europedia.md` | Read before changing Europedia layout, catalogue generation or display localization. |
 | `docs/knowledge/risk_cards/events.md` | Load this card before editing `src/in_game/events/` files or scripted effects that are |
 | `docs/knowledge/risk_cards/generic_actions.md` | A generic action is incomplete until these THREE companion registrations exist |
 | `docs/knowledge/risk_cards/gui.md` | Load this card before editing `.gui` files or GUI-bound localization expressions. |
@@ -522,7 +529,7 @@ This is an index only. Use `scripts/ai_context.py` for task-relevant summaries o
 | Scripted Triggers | 3640 | `data/index/scripted_triggers.txt` |
 | Scripted Effects | 5734 | `data/index/scripted_effects.txt` |
 | Static Modifiers | 2676 | `data/index/static_modifiers.txt` |
-| English Loc Keys | 16952 | `data/index/loc_keys_en.txt` |
+| English Loc Keys | 24864 | `data/index/loc_keys_en.txt` |
 
 ## Codegen Script Map
 

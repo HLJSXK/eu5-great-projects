@@ -34,6 +34,7 @@ except ImportError:
 REPO_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 from scripts.localization_policy import LOCALIZATION_LANGUAGES
+from scripts.localization_grades import check_registry
 
 # Only this repository owns these roots.
 MOD_ROOTS = (REPO_ROOT / "src",)
@@ -1414,11 +1415,18 @@ def _mod_prefixes(*subpaths: str) -> tuple[str, ...]:
     return tuple(f"{root_name}/{sub}" for root_name in MOD_ROOT_NAMES for sub in subpaths)
 
 
+def check_loc_grades() -> None:
+    """Provenance is a hard requirement; --fix cannot invent authorship."""
+    for error in check_registry(REPO_ROOT):
+        issues.append(f"[LOC_GRADE] {error}")
+
+
 def run_global_checks(files: list[Path], use_changed: bool, anti_patterns: list[dict]) -> None:
     rels = {_rel_path(path) for path in files}
 
     # Always enforce parity, including unrelated changes and deleted locale files.
     check_loc_coverage()
+    check_loc_grades()
 
     if not use_changed or _paths_match(rels, prefixes=_mod_prefixes("main_menu/common/game_concepts/")):
         check_game_concept_duplicate_keys()
@@ -2292,6 +2300,7 @@ def main():
         # get_changed_files omits deleted paths; an empty list is not proof that
         # localization is complete (including on an otherwise clean checkout).
         check_loc_coverage()
+        check_loc_grades()
 
     if ai_report:
         errors = [_parse_issue_structured(i) for i in issues]

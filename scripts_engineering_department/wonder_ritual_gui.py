@@ -107,9 +107,9 @@ blockoverride "tooltip_content" {{
 
 def supporting_estates(style):
     # At most seven icons fit in one row; hidden estates leave no gaps.
-    # Native flowcontainer supports spacing, unlike dynamicgridbox.
+    # Native flowcontainer supports spacing but rejects size; children set its bounds.
     out = [f'''flowcontainer = {{ name = "tv_wonder_ritual_supporters_{style}"
-layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking size = {{ 438 -1 }} maximumsize = {{ 438 -1 }}
+layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking maximumsize = {{ 438 -1 }}
 direction = horizontal wrap_count = 7 spacing = 10 margin = {{ 10 0 }} ignoreinvisible = yes''']
     for estate in ESTATES:
         pref = variable(f'tv_wonder_estate_pref_{estate}')

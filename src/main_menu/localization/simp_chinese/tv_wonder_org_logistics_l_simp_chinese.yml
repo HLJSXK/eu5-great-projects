@@ -31,4 +31,3 @@ l_simp_chinese:
  TV_OL_SHORTAGE:0 "物资不足。补齐工具与建材后每月可增加 [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_recoverable').GetValue|0] 进度。"
  TV_OL_SUPPLIED:0 "施工物资供应充足。"
  TV_OL_CAPACITY:0 "有效工坊 [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_effective_material_workshop_levels').GetValue|0] / 所需 [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_material_workshop_need').GetValue|0] 级"
- TV_OL_LOCKED_LEVEL:0 "[ShowBuildingTypeName('tv_wonder_labor_camp')] — / —"

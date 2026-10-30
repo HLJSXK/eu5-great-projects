@@ -7,6 +7,50 @@ localization keys.
 
 ## Required Checks
 
+### 条目等级登记（强制）
+
+所有本地化条目按强到弱分为：**原创 > AI生成 > 翻译 > 占位 > 缺失**。
+等级表示文本来源和完成状态，不是按语言自动判定的质量分。
+
+- **原创**：用户手动创作/修改的内容，或用户明确要求登记为原创的内容。
+  **Agent 操作本地化文本时必须如实登记；除上述两种情况外，不得使用“原创”。**
+  用户要求“写一段文案”、认可 AI 文案、运行生成器或在编辑器点击保存，都不等于明确要求登记为原创。
+  登记时必须提供 `user_manual` 或 `user_requested` 依据，并用 `note` 如实说明具体来源/要求；不得虚构依据。
+- **AI生成**：agent/AI 新写或实质改写的文本，包括生成器输出的新文案。
+- **翻译**：从另一语言翻译而来，包括 AI/机器翻译；不能因使用 AI 翻译就升级为“AI生成”。
+- **占位**：临时文案、直接复制英文的回退文本、尚未完成的替代文本。
+- **缺失**：文本尚未提供。登记缺失不能豁免所有语言键集合一致的要求。
+
+按用户 2026-10-30 的明确要求，初始化时现有中英文条目全部登记为 **AI生成**，
+其他语言全部登记为 **翻译**。这只是当前库存的初始认定，不是后续新增/修改的默认规则。
+现有空字符串同样保留用户指定的初始等级；空字符串可能有意用于界面排版，不能仅凭为空重新分类。
+
+`data/localization_grades.json` 是独立、人工维护的逐条等级账本，按文件路径与 key 标识，
+每条记录绑定文本 SHA-256。不要将等级塞入游戏 YAML 的版本数字。移动、删除、重命名、
+生成器重建或源 YAML 改动后，必须在完成输出再登记；相同文本保留原等级，文本变动必须重新判断来源。
+先按 `data/generated_files.yaml` 修改 owner/input 并重新生成，不要直接修改生成物或把账本作为可覆盖的生成输出。
+
+使用直接 EU5 Python 解释器运行（`<file>` 为输出本地化文件，`<key>` 为实际条目）：
+
+```text
+scripts/localization_grades.py register --files <file> --keys <key> --grade AI生成
+scripts/localization_grades.py register --files <file> --keys <key> --grade 翻译
+scripts/localization_grades.py register --files <file> --keys <key> --grade 占位
+scripts/localization_grades.py register --files <file> --keys <key> --grade 原创 --original-basis user_requested --note "用户明确要求及其范围" --replace
+scripts/localization_grades.py prune
+scripts/localization_grades.py check
+scripts/localization_grades.py summary
+```
+
+默认只登记新增或文本变化的条目，保持未改动条目的等级；`--replace` 才会重新评级未变的文本。
+批量不带 `--keys` 时，务必确认所有待登记条目确属同一来源。
+`prune` 仅移除已删除键/文件的旧登记。初始化命令仅允许账本不存在时运行，不能重置已有等级。
+通用本地化编辑器显示等级，并把通过其文本编辑接口保存的改动保守登记为 AI生成；
+若实际为翻译、占位或符合原创条件，用登记工具明确更正。Agent 通过 UI/API 操作同样受本卡约束。
+
+`LOC_GRADE` 是硬错误：未登记、非法等级、文本指纹过期、删除后残留登记和原创缺少依据均失败。
+`validate.py --changed --fix --ai-report` 即使没有代码改动也检查；`--fix` 不得猜测作者或提升等级。
+
 0. **All languages must contain identical key sets within each mod root.**
    `scripts/localization_policy.py` lists the 11 required languages. Any key that
    exists in any language must exist in every other language, including keys only

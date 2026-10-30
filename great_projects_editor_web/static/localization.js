@@ -1,5 +1,5 @@
 // WP-07: localization editor tab. Read-only consumer of the `editor.localization` contract
-// (Editor_Web_Work_Plan.md 6.2, implemented by WP-06); this module never changes that shape.
+// (Editor_Web_Work_Plan.md 6.2, implemented by WP-06), with per-entry provenance.
 //
 // The design is driven by two facts about that resource:
 //   * One physical file is one payload entry, and each pair file repeats the whole group's EN/ZH
@@ -86,6 +86,9 @@ export function groupLocalizationFiles(draft) {
       english: new Map(rows("english").map((row) => [row.key, row.value])),
       simp_chinese: new Map(rows("simp_chinese").map((row) => [row.key, row.value])),
     };
+    group.grades = Object.fromEntries(EDITABLE_LANGUAGES.map((language) => [language,
+      new Map(rows(language).map((row) => [row.key, row.grade ||
+        (row.grade_status === "stale" ? "需重新登记" : "未登记")]))]));
     const order = [...group.values.english.keys()];
     const seen = new Set(order);
     for (const key of group.values.simp_chinese.keys()) if (!seen.has(key)) order.push(key);
@@ -129,6 +132,9 @@ export function entryFor(group, key, edits) {
     english: value("english"),
     simp_chinese: value("simp_chinese"),
     present,
+    grades: Object.fromEntries(EDITABLE_LANGUAGES.map((language) => [language,
+      !present[language] ? "缺失" : typeof edit?.[language] === "string" ? "AI生成"
+        : group.grades?.[language]?.get(key) || "未登记"])),
     missing: missingLanguages.length > 0,
     missingLanguages,
     edited: edit !== undefined,
@@ -488,6 +494,7 @@ export function createLocalizationPanel(root, { pageSize = PAGE_SIZE } = {}) {
     for (const language of EDITABLE_LANGUAGES) {
       node.inputs[language].dataset.missing = String(entry.missingLanguages.includes(language));
       node.cells[language].dataset.missing = String(entry.missingLanguages.includes(language));
+      node.cells[language].querySelector(".localization-grade").textContent = entry.grades[language];
     }
   }
 
@@ -532,6 +539,11 @@ export function createLocalizationPanel(root, { pageSize = PAGE_SIZE } = {}) {
         // Read-only groups still show the value; the note above names the data source to edit instead.
         cell.textContent = entry[language];
       }
+      const grade = document.createElement("small");
+      grade.className = "localization-grade";
+      grade.textContent = entry.grades[language];
+      grade.title = "原创 > AI生成 > 翻译 > 占位 > 缺失。编辑器保存改动登记为AI生成；可用等级登记工具按实际来源调整。原创仅限用户手动内容或用户明确要求。";
+      cell.appendChild(grade);
       row.appendChild(cell);
       cells[language] = cell;
     }

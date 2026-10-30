@@ -327,3 +327,10 @@
   .localization-group { flex: 0 0 12rem; }
   .localization-preview { max-height: none; }
 }
+/* Provenance remains separate from the player-facing text. */
+.localization-grade {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-muted, #718096);
+  font-size: 11px;
+}

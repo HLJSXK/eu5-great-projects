@@ -30,13 +30,20 @@ The required languages are `english`, `simp_chinese`, `french`, `german`, `spani
 `scripts/localization_policy.py`. Except for English and Simplified Chinese,
 localization normally uses machine translation or the English text directly.
 Translation quality and key completeness are separate: missing keys fail validation.
+Every entry also has a content-bound provenance grade in `data/localization_grades.json`:
+原创 > AI生成 > 翻译 > 占位 > 缺失. Agents must register the actual source after edits
+or regeneration. 原创 is reserved for user-manual content or an explicit user request,
+with recorded evidence. The initial inventory is AI生成 for EN/ZH and 翻译 for all
+other languages. See `docs/knowledge/risk_cards/localization.md` and
+`scripts/localization_grades.py`; unregistered/stale grades fail `LOC_GRADE` validation.
 
-Europedia has a permanent scope of 15 mechanic cards plus Triumphal Axis and
-Topkapi Palace as two worked examples. The full 195-wonder card catalogue was
-removed for both initialization risk and poor information design: repeated
-explanations and long scrolling obscure the mechanics. Do not restore it as a
-performance fix or automatically add cards for new wonders. See
-`docs/knowledge/risk_cards/europedia.md` for the decision and test evidence.
+Europedia keeps 15 teaching cards and two worked examples, plus the user-approved
+compact catalogue in Unique Projects and Generic Projects (2026-10-30). Catalogue
+entries and the two worked examples bake their text, six-level values and rituals
+offline: no live effect/trigger previews or construction conditions. Unique entries
+have a fixed location reference below their artwork. See
+`docs/knowledge/risk_cards/europedia.md` for the static contract and historical
+load-risk evidence. The overview/cycle remains in Getting Started.
 
 ## Archived Work
 

@@ -236,19 +236,20 @@ spacing = 6
 }}'''
 
 
-def step_header():
-    # Reuse the same component as conception, debate, survey, construction and
-    # ceremony. Only omit its body; all header visuals/geometry remain inherited.
+def step_card(bottom_content=""):
+    # Keep the full shared card for locked stages, including its body styling.
+    # Active organization uses only the header above its custom summary.
+    sizing = "maximumsize = { 500 -1 }" if bottom_content else '''size = { 500 50 }
+minimumsize = { 500 50 }
+maximumsize = { 500 50 }
+layoutpolicy_vertical = fixed
+blockoverride "card_common_bottom_margin" { margin = { 0 0 } }'''
     return f'''tv_engineering_department_card_common = {{
 name = ol_title
-size = {{ 500 50 }}
-minimumsize = {{ 500 50 }}
-maximumsize = {{ 500 50 }}
-layoutpolicy_vertical = fixed
+{sizing}
 blockoverride "common_header_icon_texture" {{ texture = "gfx/interface/icons/location_icons/new/prosperity.dds" }}
 blockoverride "common_header_text" {{ text = "TV_ENGINEERING_ORG_LOG_CARD_TITLE" }}
-blockoverride "card_common_bottom_margin" {{ margin = {{ 0 0 }} }}
-blockoverride "common_bottom_content" {{}}
+blockoverride "common_bottom_content" {{ {bottom_content} }}
 blockoverride "header_help_tooltip" {{
     name = org_logistics_help
     tooltipwidget = {{
@@ -318,7 +319,7 @@ vbox = {{
 def organization():
     """Compact worksite summary; values come from the real site's display cache."""
     maintenance, _, _ = inputs()
-    body = step_header()
+    body = step_card()
     body += box("organization_paper", 0, 50, 500, ORGANIZATION_HEIGHT-50, "", style="section", extra="alwaystransparent = yes")
     body += 'icon = { name = camp_icon position = { 14 66 } size = { 40 40 } texture = "gfx/interface/icons/buildings/tv_wonder_labor_camp.dds" }'
     body += raw(66, 59, 130, "[ShowBuildingTypeName('tv_wonder_labor_camp')]", 15,
@@ -440,13 +441,17 @@ def gui():
                 f'text_multi = {{ size = {{ 462 38 }} position = {{ 9 2 }} max_width = 462 autoresize = no fontsize = 12 text = "[SelectLocalization(GreaterThan_CFixedPoint({v("recoverable")}, \'(CFixedPoint)0\'), \'{notice}\', \'{good_notice}\')]" }}', accent=1)
     body += txt(10, SETTLEMENT_Y+176, 480, loc("CAPACITY", f'有效工坊 {ov("effective_material_workshop_levels")} / 所需 {ov("material_workshop_need")} 级', f'Effective workshops {ov("effective_material_workshop_levels")} / required {ov("material_workshop_need")}'), 12, "center")
     body += bar("workshop_capacity", 10, SETTLEMENT_Y+205, 480, original("effective_material_workshop_levels"), original("material_workshop_need_display"), "")
-    locked = box("locked_paper", 0, 0, 500, 198, "", style="section", extra="alwaystransparent = yes")
-    locked += step_header()
-    locked += txt(20, 62, 460, loc("LOCKED_LEVEL", "[ShowBuildingTypeName('tv_wonder_labor_camp')] — / —", "[ShowBuildingTypeName('tv_wonder_labor_camp')] — / —"), 15, h=34,
-                  extra="alwaystransparent = no")
-    locked += txt(20, 110, 460, "TV_ENGINEERING_ORG_LOG_LOCKED_TEXT", 13)
-    locked += button("build_camp_locked", 152, "TV_ENGINEERING_BUILD_WORKSITE_BUTTON", "uses_tv_wonder_materials", "no")
-    return pretty(f'types TVOrgLogistics {{ type tv_org_logistics_active = widget {{ size = {{ 500 {H} }} {body} }} type tv_org_logistics_locked = widget {{ size = {{ 500 198 }} {locked} }} }}')
+    locked = step_card('''widget = {
+size = { 470 74 }
+text_multi = {
+    margin = { 4 6 }
+    max_width = 462
+    autoresize = yes
+    text = "TV_ENGINEERING_ORG_LOG_LOCKED_TEXT"
+    align = nobaseline|left
+}
+}''')
+    return pretty(f'types TVOrgLogistics {{ type tv_org_logistics_active = widget {{ size = {{ 500 {H} }} {body} }} type tv_org_logistics_locked = vbox {{ size = {{ 500 -1 }} {locked} }} }}')
 
 
 def pretty(source):

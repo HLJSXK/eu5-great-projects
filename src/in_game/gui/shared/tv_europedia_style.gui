@@ -20,6 +20,30 @@
 
 types tv_europedia_style
 {
+	# Static catalogue entries. Per-entry height accommodates longer translations.
+	type tv_eu_catalogue_entry = widget {
+		size = { 1450 300 }
+		using = bg_paper_card
+		blockoverride "card_color" {
+			using = color_intense_bg_blue_texture
+			blend_mode = multiply
+		}
+		widget = {
+			size = { 1450 32 }
+			background = {
+				using = button_main_tab_texture
+				frame = 4
+				modify_texture = { using = color_intense_bg_blue_texture blend_mode = multiply }
+			}
+		}
+		icon = {
+			position = { 12 4 }
+			size = { 24 24 }
+			texture = "gfx/interface/icons/flat_icons/tabicons/europedia_flat_icon.dds"
+			alwaystransparent = yes
+		}
+	}
+
 	# A whole card: the paper sheet, its header tab and everything under it. Override
 	# "card_color" to change the sheet's tint. Everything below this type is a piece of a card.
 	type tv_eu_card = vbox {

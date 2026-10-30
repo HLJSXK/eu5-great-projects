@@ -11,11 +11,8 @@ Card shapes come from in_game/gui/shared/tv_europedia_style.gui; prose and layou
 from europedia_content.py; wonder cards are built from the wonder data package so their
 effects, dedications and estates are always the shipped ones.
 
-Two rules this module exists to keep:
-
-1. Ritual completion effects are shown with ShowScriptedEffectForScope, never as prose. The
-   engine renders what the effect actually does; a hand-written summary would go stale.
-2. Every number a card shows is read from the shipped data, never typed into it by hand.
+Catalogue effects are baked from current data by europedia_catalogue.py. The user
+approved static content to avoid live effect/trigger evaluation during loading.
 """
 
 from __future__ import annotations
@@ -28,12 +25,9 @@ if str(REPO_ROOT / "scripts_engineering_department") not in sys.path:
     sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
 
 from europedia_content import CARDS  # noqa: E402
+from europedia_catalogue import Catalogue  # noqa: E402
 from gen_europedia_cycle import CYCLE_SIZE, CYCLE_CENTER, STEP_SIZE, TEXTURE, step_positions  # noqa: E402
-from wonder_mechanics.modifiers import (  # noqa: E402
-    authored_final_building_local_modifiers,
-    wonder_base_country_modifiers,
-)
-from wonder_mechanics.rituals import location_reward_estate, ritual_styles  # noqa: E402
+
 
 T = "\t"
 ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI"}
@@ -41,9 +35,8 @@ ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI"}
 FILTER_IDS = ("all", "overview", "mechanics", "unique", "generic")
 PREFIX = "TV_EU"
 
-# Permanent editorial scope: 15 mechanic cards and these two worked examples.
-# Do not turn the complete wonder database into a static catalogue again.
-# See docs/knowledge/risk_cards/europedia.md for the design and runtime evidence.
+# Worked examples remain in Mechanics. Dedicated tabs hold the approved compact,
+# static catalogue (2026-10-30); see the Europedia risk card.
 WONDER_CARD_KEYS = ("triumphal_axis", "unique_topkapi_palace")
 
 # Section icons for generated cards. Every path below is one vanilla GUI already uses.
@@ -390,270 +383,11 @@ def render_content_card(card: dict) -> tuple[list[str], dict[str, tuple[str, str
 # ----------------------------------------------------------------------- wonder cards ----
 
 
-def wonder_loc_keys(concept: str) -> dict[str, str]:
-    return {"name": f"game_concept_{concept}", "lead": f"game_concept_{concept}_desc"}
-
-
-def _effect_row(lines: list[str], label_key: str, modifier: str) -> None:
-    lines.append(f"{T}{T}{T}{T}vbox = {{")
-    lines.append(f"{T}{T}{T}{T}{T}layoutpolicy_horizontal = expanding")
-    lines.append(f"{T}{T}{T}{T}{T}spacing = 2")
-    lines.append(f"{T}{T}{T}{T}{T}text_single = {{")
-    lines.append(f"{T}{T}{T}{T}{T}{T}fontsize = 15")
-    lines.append(f'{T}{T}{T}{T}{T}{T}default_format = "#high"')
-    lines.append(f"{T}{T}{T}{T}{T}{T}autoresize = yes")
-    lines.append(f"{T}{T}{T}{T}{T}{T}text = {_q(label_key)}")
-    lines.append(f"{T}{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}{T}{T}TooltipStringPairList = {{")
-    lines.append(f"{T}{T}{T}{T}{T}{T}layoutpolicy_horizontal = expanding")
-    lines.append(f"{T}{T}{T}{T}{T}{T}textcontext = \"[ShowModifierEffect('{modifier}')]\"")
-    # Preserve the nested title slot and hide it in this non-tooltip panel.
-    lines.append(f'{T}{T}{T}{T}{T}{T}blockoverride "bg_listbase" {{}}')
-    lines.append(f'{T}{T}{T}{T}{T}{T}blockoverride "block_title" {{ block "block_title" {{ visible = no }} }}')
-    lines.append(f"{T}{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}{T}}}")
-
-
-def _site_requirements(lines: list[str], wonder: dict) -> None:
-    """The real siting rule, rendered by the engine against the player's capital.
-
-    The trigger name is baked per card: the rule is a scripted trigger that already exists for
-    this wonder, so asking the engine to print it keeps the card correct when the rule changes.
-    """
-    trigger = f"tv_wonder_display_{int(wonder['id'])}_base_site_rules_trigger"
-    lines.append(f"{T}{T}{T}tv_eu_text = {{ text = {_q(key('wonder', 'site_example'))} }}")
-    lines.append(f"{T}{T}{T}TooltipRequirementsList = {{")
-    lines.append(f"{T}{T}{T}{T}layoutpolicy_horizontal = expanding")
-    lines.append(f"{T}{T}{T}{T}textcontext = \"[ShowTriggerConditionsForScope('{trigger}', Player.GetCapital.MakeScope.Self)]\"")
-    lines.append(f'{T}{T}{T}{T}blockoverride "field_text_format" {{ fontsize = 14 }}')
-    lines.append(f'{T}{T}{T}{T}blockoverride "bg_listbase" {{}}')
-    lines.append(f'{T}{T}{T}{T}blockoverride "block_title" {{')
-    lines.append(f'{T}{T}{T}{T}{T}block "block_title" {{ visible = no }}')
-    lines.append(f"{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}}}")
-
-
-def append_card(
-    lines: list[str],
-    *,
-    category: str,
-    texture: str,
-    title_key: str,
-    body_key: str,
-    wonder: dict | None = None,
-    mechanics: dict | None = None,
-) -> None:
-    """Emit one wonder card.
-
-    Kept signature-compatible with the previous generator so the ritual regression test can
-    call it directly; what changed is the card itself, not the way a wonder is handed in.
-    """
-    card_open(lines, category)
-    card_header(lines, texture, title_key)
-    lines.append("")
-    lines.append(f"{T}{T}{T}tv_eu_lead = {{ text = {_q(body_key)} }}")
-
-    if wonder is None or mechanics is None:  # a title and a paragraph, nothing else
-        card_close(lines)
-        return
-
-    wid = int(wonder["id"])
-    unique = bool(wonder.get("is_unique"))
-
-    # --- at a glance -------------------------------------------------------------------
-    lines.append("")
-    section_heading(lines, ICON_SIZE, key("wonder", "glance"))
-    lines.append(f"{T}{T}{T}hbox = {{")
-    lines.append(f"{T}{T}{T}{T}margin = {{ 40 0 }}")
-    lines.append(f"{T}{T}{T}{T}spacing = 10")
-    lines.append(f"{T}{T}{T}{T}tv_eu_item = {{")
-    lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_icon" {{ texture = {_q(ICON_SIZE)} }}')
-    size_link = "[tv_wonder_{}|e]".format(wonder["size"])
-    lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_link" {{ raw_text = {_q(size_link)} }}')
-    lines.append(f"{T}{T}{T}{T}}}")
-    pop_type = wonder.get("pop_type", "laborers")
-    lines.append(f"{T}{T}{T}{T}tv_eu_item = {{")
-    lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_icon" {{ texture = "gfx/interface/icons/pops/{pop_type}.dds" }}')
-    pop_link = "[ShowPopTypeName('{}')]".format(pop_type)
-    lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_link" {{ raw_text = {_q(pop_link)} }}')
-    lines.append(f"{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}{T}tv_eu_item = {{")
-    lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_icon" {{ texture = {_q(ICON_CATEGORY)} }}')
-    category_link = "[ShowBuildingCategoryName('{}')]".format(wonder["category"])
-    lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_link" {{ raw_text = {_q(category_link)} }}')
-    lines.append(f"{T}{T}{T}{T}}}")
-    if unique and wonder.get("location"):
-        lines.append(f"{T}{T}{T}{T}tv_eu_item = {{")
-        lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_icon" {{ texture = {_q(ICON_SITE)} }}')
-        location_link = "[ShowLocationName('{}')]".format(wonder["location"])
-        lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_link" {{ raw_text = {_q(location_link)} }}')
-        lines.append(f"{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}}}")
-    body_text(lines, key("wonder", "glance_text"))
-
-    # --- what the levels give ----------------------------------------------------------
-    # Some wonders carry only country effects, some only local ones, and a few neither. A row
-    # is emitted only when the modifier behind it has something to show: an empty
-    # ShowModifierEffect would draw an empty list rather than stay hidden.
-    has_country = bool(wonder_base_country_modifiers(wonder, mechanics, 1))
-    has_local = bool(authored_final_building_local_modifiers(wonder, mechanics))
-    if has_country or has_local:
-        lines.append("")
-        section_heading(lines, ICON_EFFECT, key("wonder", "effects"))
-        body_text(lines, key("wonder", "effects_note"))
-        lines.append(f"{T}{T}{T}hbox = {{")
-        lines.append(f"{T}{T}{T}{T}margin = {{ 40 0 }}")
-        lines.append(f"{T}{T}{T}{T}spacing = 30")
-        if has_country:
-            _effect_row(lines, key("wonder", "effects_country_1"), f"tv_wonder_display_{wid}_level_1")
-            _effect_row(lines, key("wonder", "effects_country_6"), f"tv_wonder_display_{wid}_level_6")
-        if has_local:
-            _effect_row(lines, key("wonder", "effects_local_6"), f"tv_wonder_display_{wid}_local_level_6")
-        lines.append(f"{T}{T}{T}}}")
-
-    # --- where it can stand ------------------------------------------------------------
-    lines.append("")
-    section_heading(lines, ICON_SITE, key("wonder", "site"))
-    body_text(lines, key("wonder", "site_unique" if unique else "site_generic"))
-    if not unique:
-        _site_requirements(lines, wonder)
-
-    # --- the three dedications ---------------------------------------------------------
-    rows = ritual_styles(wonder, mechanics)
-    lines.append("")
-    section_heading(lines, ICON_RITUAL, key("wonder", "rituals"))
-    body_text(lines, key("wonder", "rituals_note"))
-    lines.append(f"{T}{T}{T}hbox = {{")
-    lines.append(f"{T}{T}{T}{T}margin = {{ 40 0 }}")
-    lines.append(f"{T}{T}{T}{T}spacing = 10")
-    for row in rows:
-        axis = row["societal_value"]
-        side = "left" if axis["sign"] < 0 else "right"
-        catalogue = f"tv_wonder_display_{wid}_ritual_{row['style']}_catalogue_effect"
-        lines.append("")
-        lines.append(f"{T}{T}{T}{T}tv_eu_choice = {{")
-        lines.append(f'{T}{T}{T}{T}{T}blockoverride "choice_icon" {{')
-        lines.append(f'{T}{T}{T}{T}{T}{T}texture = "gfx/interface/icons/societal_values/{axis["axis"]}_{side}.dds"')
-        lines.append(f"{T}{T}{T}{T}{T}}}")
-        lines.append(f'{T}{T}{T}{T}{T}blockoverride "choice_title" {{ text = {_q(row["name_key"])} }}')
-        lines.append(f'{T}{T}{T}{T}{T}blockoverride "choice_text" {{ text = {_q(row["desc_key"])} }}')
-        lines.append(f'{T}{T}{T}{T}{T}blockoverride "choice_extra" {{')
-        lines.append(f"{T}{T}{T}{T}{T}{T}vbox = {{")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}spacing = 4")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}text_multi = {{")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}{T}max_width = 408")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}{T}min_width = 408")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}{T}autoresize = yes")
-        preview = f"[ShowScriptedEffectForScope('{catalogue}', Player.MakeScope.Self)]"
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}{T}raw_text = {_q(preview)}")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}}}")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}text_multi = {{")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}{T}max_width = 408")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}{T}min_width = 408")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}{T}autoresize = yes")
-        direction_link = "[ShowSocietyDirectionName('{}')]".format(axis["direction"])
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}{T}raw_text = {_q(direction_link)}")
-        lines.append(f"{T}{T}{T}{T}{T}{T}{T}}}")
-        lines.append(f"{T}{T}{T}{T}{T}{T}}}")
-        lines.append(f"{T}{T}{T}{T}{T}}}")
-        lines.append(f"{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}}}")
-    body_text(lines, f"TV_WONDER_RITUAL_ESTATE_PREFS_{wid}")
-
-    # --- who gains ---------------------------------------------------------------------
-    lines.append("")
-    section_heading(lines, ICON_ESTATE, key("wonder", "standing"))
-    body_text(lines, key("wonder", "standing_unique" if unique else "standing_generic"))
-    reward_estate = location_reward_estate(wonder).removesuffix("_estate")
-    lines.append(f"{T}{T}{T}hbox = {{")
-    lines.append(f"{T}{T}{T}{T}margin = {{ 40 0 }}")
-    lines.append(f"{T}{T}{T}{T}spacing = 10")
-    lines.append(f"{T}{T}{T}{T}tv_eu_item = {{")
-    lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_icon" {{ texture = "gfx/interface/icons/estates/{reward_estate}_estate.dds" }}')
-    estate_link = "[ShowEstateTypeName('{}')]".format(reward_estate + "_estate")
-    lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_link" {{ raw_text = {_q(estate_link)} }}')
-    lines.append(f"{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}{T}tv_eu_item = {{")
-    lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_icon" {{ texture = {_q(ICON_EFFECT)} }}')
-    lines.append(f'{T}{T}{T}{T}{T}blockoverride "item_link" {{ raw_text = {_q(key("wonder", "standing_reward"))} }}')
-    lines.append(f"{T}{T}{T}{T}}}")
-    lines.append(f"{T}{T}{T}}}")
-
-    card_close(lines)
-
-
-def append_wonder_card(lines: list[str], wonder: dict, mechanics: dict, texture: str) -> None:
-    keys = wonder_loc_keys(wonder["concept"])
-    append_card(
-        lines,
-        category="mechanics",
-        texture=texture,
-        title_key=keys["name"],
-        body_key=keys["lead"],
-        wonder=wonder,
-        mechanics=mechanics,
-    )
-
-
 # ------------------------------------------------------------------------- shared text ----
 
 
 def shared_localization() -> dict[str, tuple[str, str]]:
     """Text every generated card and the filter row share."""
-    wonder = {
-        "glance": ("At a Glance", "一览"),
-        "glance_text": (
-            "Size fixes the ritual price and how high the monument can be raised; the estate sets "
-            "who works it and who gains most from its dedication.",
-            "规模决定仪式价格与可建高度；阶层决定由谁施工，以及落成后谁获益最多。",
-        ),
-        "effects": ("What Every Level Gives", "每一等级提供什么"),
-        "effects_note": (
-            "The wonder's own effects, exactly as the game applies them, at the first level and at "
-            "the last. Each level adds the same again, so a level VI wonder carries this six times.",
-            "这是奇观本身的效果，与游戏实际生效的一致，分别显示一级与满级。每升一级即再叠加一份，"
-            "因此六级奇观相当于承此六倍。",
-        ),
-        "effects_country_1": ("At level I, country-wide", "一级 · 全国"),
-        "effects_country_6": ("At level VI, country-wide", "六级 · 全国"),
-        "effects_local_6": ("At level VI, at the site", "六级 · 工地"),
-        "site": ("Where It Can Stand", "可以建在哪里"),
-        "site_generic": (
-            "A generic wonder belongs to no place: you choose the site, and the ground decides what "
-            "it is worth. The requirements below are the wonder's own siting rule, checked against "
-            "your capital as an example; the department lists every location that passes.",
-            "通用奇观不专属于任何地方：由你选择工地，而地基决定它的价值。下列要求即这座奇观本身的选址"
-            "规则，以你的首都为例进行判定；部门面板会列出所有符合条件的地点。",
-        ),
-        "site_unique": (
-            "A unique wonder belongs to one place in the world, and only the country holding that "
-            "place can build it. Its site is fixed, so no siting rule applies; the row above names "
-            "the location.",
-            "独特奇观属于世上唯一某地，只有控制该地者才能建造。其选址固定，因此没有选址规则；上一行"
-            "已指明地点。",
-        ),
-        "site_example": ("#T Read against your capital:#!", "#T 以你的首都判定：#!"),
-        "rituals": ("Three Dedications", "三种落成"),
-        "rituals_note": (
-            "Every wonder is dedicated in one of three styles, or merely opened plain. Each style "
-            "below shows the effect the game will actually apply, and the societal value it pulls "
-            "towards. Estate satisfaction is settled when the ritual is confirmed.",
-            "每座奇观或以三种风格之一落成，或朴素启用。下列每一种都显示游戏实际会生效的效果，以及它所"
-            "牵引的社会价值观。阶层好感在确认仪式时结算。",
-        ),
-        "standing": ("Who Gains", "谁得益"),
-        "standing_unique": (
-            "One place, one owner, once. Whoever holds the site builds it, and its dedication is "
-            "remembered for a century unless the site changes hands.",
-            "一地、一主、一座。持有该地者建造它，其落成将被记住一百年，除非该地易主。",
-        ),
-        "standing_generic": (
-            "Freely sited, so it can be raised wherever the ground reads best. Small wonders may be "
-            "raised more than once, which makes them a renewable source of the same reward.",
-            "可自由选址，因此可以建在读数最佳之处。小型奇观可重复建造，是同一套奖励的可再生来源。",
-        ),
-        "standing_reward": ("the ritual reward", "仪式奖励"),
-    }
     filters = {
         "all": ("All", "全部"),
         "overview": ("Getting Started", "入门"),
@@ -662,8 +396,6 @@ def shared_localization() -> dict[str, tuple[str, str]]:
         "generic": ("Generic Projects", "通用工程"),
     }
     out: dict[str, tuple[str, str]] = {}
-    for name, value in wonder.items():
-        out[key("wonder", name)] = value
     for name, value in filters.items():
         out[key("filter", name)] = value
         out[key("filter", name, "tooltip")] = (
@@ -685,8 +417,8 @@ def select_wonder_cards(wonders: list[dict]) -> list[dict]:
     return selected
 
 
-def render_all(wonders: list[dict], mechanics: dict, textures: dict[int, str]) -> dict:
-    """Build the 15 mechanic cards, two examples and their localization."""
+def render_all(wonders: list[dict], mechanics: dict) -> dict:
+    """Build teaching cards and all approved static catalogue entries."""
     gui: list[str] = [
         "vbox = {",
         f"{T}using = layoutpolicy_expanding",
@@ -710,9 +442,14 @@ def render_all(wonders: list[dict], mechanics: dict, textures: dict[int, str]) -
         gui.append("")
         merge(card_loc)
 
+    catalogue = Catalogue()
     for wonder in select_wonder_cards(wonders):
-        append_wonder_card(gui, wonder, mechanics, textures[int(wonder["id"])])
-        gui.append("")
+        gui.append(f'vbox = {{ visible = {_q(visible_by_filter("mechanics"))} margin = {{ 0 10 }}')
+        gui.extend(catalogue.entry(wonder, mechanics, instance='example'))
+        gui.append('}')
+    for category, unique in (('unique', True), ('generic', False)):
+        gui.extend(catalogue.tab(category, [w for w in wonders if bool(w['is_unique']) == unique], mechanics))
+    merge(catalogue.loc)
 
     gui.append("}")
     merge(shared_localization())

@@ -12,6 +12,10 @@ from typing import Any
 import yaml
 
 from scripts_engineering_department.wonder_mechanics.io import REPO_ROOT
+from scripts.localization_grades import (
+    REGISTRY as GRADE_REGISTRY, entry_status, load_registry, make_record, registry_bytes,
+)
+from scripts.localization_policy import LOCALIZATION_GRADES
 
 from .operation_store import OperationStore
 from .platform import (
@@ -98,6 +102,7 @@ class LocalizationEditorService:
         self._documents: dict[str, LocalizationFile] = {}
         self._generated: dict[str, list[str]] = {}
         self._base: tuple[FileSnapshot, ...] = ()
+        self._grades: dict = {"version": 1, "files": {}}
 
     def _discover_paths(self) -> list[Path]:
         result = set()
@@ -116,10 +121,12 @@ class LocalizationEditorService:
         return sorted(result)
 
     def reload_from_disk(self) -> None:
+        grade_raw = (self.repo_root / GRADE_REGISTRY).read_bytes()
+        self._grades = load_registry(self.repo_root, raw=grade_raw)
         registry_raw = (self.repo_root / REGISTRY).read_bytes()
         registry = yaml.safe_load(registry_raw.decode("utf-8-sig"))
         generated = {
-            str(entry["output"]).replace("\\", "/"): [part.strip() for part in str(entry["data"]).split("+")]
+            str(entry["output"]).replace("\\", "/"): [part.strip() for part in str(entry.get("data", entry.get("script", ""))).split("+")]
             for entry in registry["generated"]
         }
         documents = {}
@@ -132,6 +139,7 @@ class LocalizationEditorService:
             documents[relative] = document
             snapshots.append(FileSnapshot(relative, hashlib.sha256(raw).hexdigest(), len(raw)))
         snapshots.append(FileSnapshot(REGISTRY, hashlib.sha256(registry_raw).hexdigest(), len(registry_raw)))
+        snapshots.append(FileSnapshot(GRADE_REGISTRY, hashlib.sha256(grade_raw).hexdigest(), len(grade_raw)))
         self._documents, self._generated, self._base = documents, generated, tuple(snapshots)
 
     def resource_descriptor(self) -> ResourceDescriptor:
@@ -147,6 +155,9 @@ class LocalizationEditorService:
                 "generated_registry": REGISTRY,
                 "generated_policy": "read_only; edit the registered data source instead",
                 "writable_languages": list(LANGUAGES),
+                "grade_registry": GRADE_REGISTRY,
+                "grades": list(LOCALIZATION_GRADES),
+                "edited_text_grade": "AI生成",
             },
         }
 
@@ -176,14 +187,23 @@ class LocalizationEditorService:
 
     def _draft(self, values: dict[str, dict[str, str]]) -> dict[str, Any]:
         roots: dict[str, list[dict[str, Any]]] = {}
+        def row(target: str, key: str, value: str) -> dict:
+            # Match the conservative commit policy; the UI/API cannot prove that
+            # text was manually authored by the user merely because it was saved.
+            document = self._documents.get(target)
+            if document is not None and document.values.get(key) != value:
+                status = {"grade": "AI生成", "grade_rank": 4, "grade_status": "registered"}
+            else:
+                status = entry_status(self._grades, target, key, value)
+            return {"key": key, "value": value, **status}
         for path, document in self._documents.items():
             read_only, reason, source_data = self._read_only(path)
             languages = {
-                language: [{"key": key, "value": value} for key, value in values.get(target, {}).items()]
+                language: [row(target, key, value) for key, value in values.get(target, {}).items()]
                 for language, target in _counterparts(path, document.language).items()
             }
             if document.language not in LANGUAGES:
-                languages[document.language] = [{"key": key, "value": value} for key, value in values[path].items()]
+                languages[document.language] = [row(path, key, value) for key, value in values[path].items()]
             item = {"path": path, "read_only": read_only, "languages": languages}
             if read_only:
                 item["read_only_reason"] = reason
@@ -210,7 +230,7 @@ class LocalizationEditorService:
             return self._payload()
 
     def _assert_base(self, base: dict[str, str] | None) -> None:
-        paths = (*self._discover_paths(), self.repo_root / REGISTRY)
+        paths = (*self._discover_paths(), self.repo_root / REGISTRY, self.repo_root / GRADE_REGISTRY)
         current = snapshot_files(paths, repo_root=self.repo_root)
         assert_resource_base(base, self._base, current)
         if {item.path for item in current} != {item.path for item in self._base}:
@@ -321,6 +341,14 @@ class LocalizationEditorService:
                 content = source_text_bytes(path, body)
                 _parse_file(relative, content)
                 files[path] = content
+            if diff:
+                for entry in diff:
+                    records = self._grades["files"].setdefault(entry["path"], {})
+                    if entry["after_present"]:
+                        records[entry["key"]] = make_record(entry["after"], "AI生成")
+                    else:
+                        records.pop(entry["key"], None)
+                files[self.repo_root / GRADE_REGISTRY] = registry_bytes(self._grades)
             self._assert_base(base)
             with file_transaction(files, reload=self.reload_from_disk):
                 atomic_write_files(files)

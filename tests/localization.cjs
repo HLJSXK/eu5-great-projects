@@ -165,6 +165,20 @@ test('read-only comes from either file of the pair, so the other language cannot
   assert.deepEqual(group.sourceData, ['data/x.yaml']);
 });
 
+test('grades distinguish registered, stale, missing and newly edited text', async () => {
+  const { groupLocalizationFiles, entryFor } = await helpers();
+  const languages = {
+    english: [{ key: 'a', value: 'A', grade: '原创', grade_status: 'registered' },
+      { key: 'b', value: 'B', grade: null, grade_status: 'stale' }],
+    simp_chinese: [{ key: 'a', value: '甲', grade: '翻译', grade_status: 'registered' }],
+  };
+  const [group] = groupLocalizationFiles({ roots: [{ root: 'src', files: [file(EN, languages), file(ZH, languages)] }] });
+  assert.deepEqual(entryFor(group, 'a', {}).grades, { english: '原创', simp_chinese: '翻译' });
+  assert.deepEqual(entryFor(group, 'b', {}).grades, { english: '需重新登记', simp_chinese: '缺失' });
+  assert.deepEqual(entryFor(group, 'a', { [group.key]: { a: { english: 'New' } } }).grades,
+    { english: 'AI生成', simp_chinese: '翻译' });
+});
+
 test('missing translations are counted in both directions and the summary matches the pairs', async () => {
   const { groups, missingKeysFor, localizationSummary } = await helpers();
   const demo = groups.find((group) => group.name === 'tv_demo');

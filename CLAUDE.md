@@ -19,6 +19,11 @@ key sets must match in both directions. English and Simplified Chinese are the
 maintained source texts; other languages normally use machine translation or
 English fallback. Missing translations never justify missing keys.
 Run scripts/validate.py --changed --fix --ai-report and relevant tests before handoff.
+Register every localization entry in data/localization_grades.json with its actual
+grade: 原创 > AI生成 > 翻译 > 占位 > 缺失. Agents may use 原创 only for user-manual
+content or an explicit user request to register it as original; record that evidence.
+Read docs/knowledge/risk_cards/localization.md and use scripts/localization_grades.py
+after regenerating changed text. --fix must never infer provenance.
 Regenerate the knowledge brief with scripts/gen_brief.py after knowledge changes.
 Read docs/archive/repository_split/Repository_Split.md for extraction evidence and audit guidance.
 The archived gameplay/refactor investigations remain archived.

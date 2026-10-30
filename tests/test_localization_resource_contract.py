@@ -1,5 +1,6 @@
 import difflib
 import hashlib
+import json
 import shutil
 from pathlib import Path
 
@@ -35,6 +36,9 @@ def registry(root, entries=()):
     path = root / localization.REGISTRY
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(yaml.safe_dump({"generated": list(entries)}), encoding="utf-8")
+    grades = root / localization.GRADE_REGISTRY
+    if not grades.exists():
+        grades.write_text(json.dumps({"version": 1, "files": {}}), encoding="utf-8")
 
 
 def request_body(service, edits=None):
@@ -93,9 +97,9 @@ def test_load_discovery_ownership_and_root_isolation(service):
         assert files[path]["read_only"] is True
         assert files[path]["source_data"] == ["data/other.yaml", "data/owner.yaml"]
     assert files[foreign]["read_only"] is True
-    assert files[foreign]["languages"]["french"] == [{"key": "a", "value": "A fr"}]
+    assert files[foreign]["languages"]["french"] == [{"key": "a", "value": "A fr", "grade": None, "grade_rank": None, "grade_status": "unregistered"}]
     assert service.validate_edits({})["valid"] is True
-    assert set(payload["change_set"]["files"]) == set(files) | {localization.REGISTRY}
+    assert set(payload["change_set"]["files"]) == set(files) | {localization.REGISTRY, localization.GRADE_REGISTRY}
     for snapshot in payload["change_set"]["base"]:
         raw = (service.repo_root / snapshot["path"]).read_bytes()
         assert snapshot["sha256"] == hashlib.sha256(raw).hexdigest()
@@ -157,7 +161,7 @@ def test_missing_zh_is_previewed_rejected_and_repairable(service, client):
     repair = request_body(service, {EN: {"b": {"simp_chinese": "修复"}}})
     result = client.post(URL + "/commit", json=repair)
     assert result.status_code == 200
-    assert result.json()["written_paths"] == [ZH]
+    assert set(result.json()["written_paths"]) == {ZH, localization.GRADE_REGISTRY}
     assert not result.json()["draft"]["missing_translations"]
 
 
@@ -175,11 +179,11 @@ def test_add_delete_pair_noop_and_persisted_operation(service, client):
     result = response.json()
     assert result["operation_id"] == result["operation"]["id"]
     assert result["operation"]["status"] == "succeeded"
-    assert set(result["written_paths"]) == {EN, ZH}
+    assert set(result["written_paths"]) == {EN, ZH, localization.GRADE_REGISTRY}
     assert client.get("/api/operations/" + result["operation_id"]).json()["status"] == "succeeded"
     refreshed_base = {item["path"]: item["sha256"] for item in result["change_set"]["base"]}
     assert set(refreshed_base) == set(body["base"])
-    assert {path for path in refreshed_base if refreshed_base[path] != body["base"][path]} == {EN, ZH}
+    assert {path for path in refreshed_base if refreshed_base[path] != body["base"][path]} == {EN, ZH, localization.GRADE_REGISTRY}
     assert refreshed_base == request_body(service)["base"]
     body = request_body(service, {ZH: {"new": None, "empty": None}})
     report = service.preview_edits(body["edits"], body["base"])
@@ -238,7 +242,7 @@ def test_commit_preserves_mixed_localization_version_suffixes(service, edited_su
     result = service.commit_edits(body["edits"], body["base"])
     after = path.read_bytes()
     after_lines = after.decode("utf-8-sig").splitlines()
-    assert result["written_paths"] == [EN]
+    assert set(result["written_paths"]) == {EN, localization.GRADE_REGISTRY}
     assert (service.repo_root / ZH).read_bytes() == zh_before
     assert service._documents[EN].suffixes == {"a": edited_suffix, "b": "", "c": "0", "d": "007"}
     assert f' a:{edited_suffix} "Changed"' in after_lines
@@ -358,6 +362,40 @@ def test_ownership_registry_change_conflicts_then_becomes_read_only(service, cli
     assert client.post(URL + "/commit", json=body).status_code == 400
 
 
+def test_original_is_displayed_but_ai_edit_requires_new_registration(service):
+    from scripts.localization_grades import load_registry, make_record, registry_bytes
+    ledger = service.repo_root / localization.GRADE_REGISTRY
+    data = load_registry(service.repo_root)
+    data["files"][EN] = {"a": make_record("A", "原创", original_basis="user_manual", note="User authored A")}
+    ledger.write_bytes(registry_bytes(data))
+    payload = service.load_resource()
+    row = files_by_path(payload)[EN]["languages"]["english"][0]
+    assert (row["grade"], row["grade_rank"], row["grade_status"]) == ("原创", 5, "registered")
+    body = request_body(service, {EN: {"a": {"english": "Rewritten"}}})
+    before = ledger.read_bytes()
+    preview = service.preview_edits(body["edits"], body["base"])
+    assert files_by_path(preview)[EN]["languages"]["english"][0]["grade"] == "AI生成"
+    assert ledger.read_bytes() == before
+    result = service.commit_edits(body["edits"], body["base"])
+    assert files_by_path(result)[EN]["languages"]["english"][0]["grade"] == "AI生成"
+    assert load_registry(service.repo_root)["files"][EN]["a"] == make_record("Rewritten", "AI生成")
+
+
+def test_grade_registry_changes_conflict_and_invalid_original_is_rejected(service):
+    from scripts.localization_grades import load_registry, make_record, registry_bytes
+    ledger = service.repo_root / localization.GRADE_REGISTRY
+    body = request_body(service, {EN: {"a": {"english": "New"}}})
+    data = load_registry(service.repo_root)
+    data["files"][EN] = {"a": make_record("A", "翻译")}
+    ledger.write_bytes(registry_bytes(data))
+    with pytest.raises(platform.ConflictError):
+        service.commit_edits(body["edits"], body["base"])
+    data["files"][EN]["a"]["grade"] = "原创"
+    ledger.write_bytes(registry_bytes(data))
+    with pytest.raises(ValueError, match="原创 lacks user provenance"):
+        service.load_resource()
+
+
 @pytest.mark.parametrize("kind", ["missing", "extra"])
 def test_base_requires_full_resource(service, client, kind):
     body = request_body(service)
@@ -393,6 +431,7 @@ def test_write_failure_recovers_both_files_cache_operation_and_retry(service, cl
 
 def test_post_write_reload_failure_restores_files_and_cache(service, monkeypatch):
     before = contents(service)
+    grades_before = (service.repo_root / localization.GRADE_REGISTRY).read_bytes()
     body = request_body(service, {EN: {"a": {"english": "Changed"}}})
     original_reload = service.reload_from_disk
     calls = []
@@ -409,6 +448,7 @@ def test_post_write_reload_failure_restores_files_and_cache(service, monkeypatch
     assert error.value.operation["status"] == "failed"
     assert len(calls) == 3
     assert contents(service) == before
+    assert (service.repo_root / localization.GRADE_REGISTRY).read_bytes() == grades_before
 
 
 def test_failed_rollback_is_visible_and_other_files_still_recover(service, monkeypatch):
@@ -502,6 +542,7 @@ def test_real_repository_copy_discovery_commit_without_live_writes(tmp_path):
             shutil.copy2(path, target)
     (tmp_path / "data").mkdir()
     shutil.copy2(REAL_ROOT / localization.REGISTRY, tmp_path / localization.REGISTRY)
+    shutil.copy2(REAL_ROOT / localization.GRADE_REGISTRY, tmp_path / localization.GRADE_REGISTRY)
     service = localization.LocalizationEditorService(repo_root=tmp_path)
     loaded = service.load_resource()
     files = files_by_path(loaded)
@@ -518,6 +559,6 @@ def test_real_repository_copy_discovery_commit_without_live_writes(tmp_path):
     assert service.preview_edits(edits, body["base"])["diff"]
     result = service.commit_edits(edits, body["base"])
     assert result["operation"]["status"] == "succeeded"
-    assert len(result["written_paths"]) == 1
+    assert len(result["written_paths"]) == 2
     for relative, digest in expected.items():
         assert hashlib.sha256((REAL_ROOT / relative).read_bytes()).hexdigest() == digest

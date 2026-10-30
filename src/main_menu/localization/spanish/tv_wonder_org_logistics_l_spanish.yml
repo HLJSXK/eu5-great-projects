@@ -31,4 +31,3 @@ l_spanish:
  TV_OL_SHORTAGE:0 "Input shortage. Restoring tools and materials adds [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_recoverable').GetValue|0] progress/month."
  TV_OL_SUPPLIED:0 "Construction inputs are sufficiently supplied."
  TV_OL_CAPACITY:0 "Effective workshops [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_effective_material_workshop_levels').GetValue|0] / required [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_material_workshop_need').GetValue|0]"
- TV_OL_LOCKED_LEVEL:0 "[ShowBuildingTypeName('tv_wonder_labor_camp')] — / —"

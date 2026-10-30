@@ -61,6 +61,15 @@ class OrgLogisticsModTests(unittest.TestCase):
                 self.assertLessEqual(panels[0].x+panels[0].w, 570)
                 self.assertLessEqual(panels[0].y+panels[0].h, 3200)
                 buttons = [n for n in nodes if n.props.get("name", "").startswith("build_camp")]
+                if state == "locked":
+                    self.assertFalse(buttons)
+                    text = [n.props.get("text") for n in nodes
+                            if panels[0].y <= n.y < panels[0].y + panels[0].h
+                            and n.kind == "textbox"]
+                    self.assertEqual(text, ["TV_ENGINEERING_ORG_LOG_CARD_TITLE",
+                                            "TV_ENGINEERING_ORG_LOG_LOCKED_TEXT"])
+                    self.assertEqual(panels[0].h, 144)
+                    continue
                 self.assertEqual(len(buttons), 1)
                 enabled = engine.resolve(buttons[0].props["enabled"])
                 self.assertEqual(enabled not in (False, "no"), state=="active")

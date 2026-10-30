@@ -1,5 +1,18 @@
 # ED 模块离线 GUI 预览
 
+## 欧陆百科正式目录
+
+`europedia.py` 展开正式 `encyclopedia_lateralview.gui`，只为窗口外框和页签状态提供 fixture。
+目录内容使用已生成的静态文本、数值和纹理，不 mock 效果或地点名称。
+
+```powershell
+C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment/europedia.py --tab unique
+C:\Users\Hades\anaconda3\envs\eu5\python.exe ai_gui_assessment/europedia.py --tab generic --language english
+```
+
+输出到 `images/europedia/<language>/`，包括整窗、前三条的实际边界裁图和诊断。
+检查全部当前页签条目的文字边界；不验证实机加载时间、点击定位或真实滚动。
+
 ## 组织与物流正式面板
 
 `org_logistics.py` 展开工程部实际组织面板中的新控件，使用显式样例填充显示缓存。
