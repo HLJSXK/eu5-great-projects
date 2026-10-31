@@ -1265,6 +1265,10 @@ def finalization_world_event_id(wonder: dict) -> int:
     return 6000 + int(wonder["id"])
 
 
+def finalization_world_expansion_event_id(wonder: dict) -> int:
+    return 6500 + int(wonder["id"])
+
+
 def finalization_hidden_event_id() -> int:
     return 6999
 

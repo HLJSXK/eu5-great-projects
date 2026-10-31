@@ -36,7 +36,7 @@
   national_shipyard:
     ship_build_speed: 0.2
   national_bank:
-    tax_income_efficiency: 0.05
+    tax_income_efficiency: 0.025
   star_fortress_city: {}
   great_wall: {}
   giant_armory: {}

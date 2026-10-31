@@ -1,0 +1,16 @@
+{
+  "payload": {
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "Paint historical key art in hand-painted 2D animation style with soft oil-brush character. Use one dominant subject with a modest set of supporting groups: enough context for a lived-in scene, but no exhaustive inventory. Use only the element families selected below.\n\nAllowed scene elements ONLY: One long lakeside summer palace with its connected veranda; one water-reflection plane; one small waterside pavilion; one soft garden-canopy mass; one compact court-visitor group; one small leisure boat; one shallow garden-basin group; one low reception arcade.\n\nComposition: View low from the opposite shore. The palace fills right-center and its broad muted reflection connects to the lower half. Use one quiet shore plane to contain the water. The pavilion sits at the palace shore edge and the canopy behind one end of the veranda. Keep the lake reflection broad and the palace dominant. Visitors stay on the veranda approach and the boat rests beside the waterside pavilion. Keep both gentle scale cues within the existing lake scene. Nest the basin beside the garden canopy and attach the arcade to the veranda. Keep court activity focused around the existing palace approach and the reflection calm.\n\nUse large joined color shapes, broad light-and-shadow planes and a few deliberate brush strokes. The subject takes most of the visual weight; supporting forms are smaller, softer and lower in contrast. Keep recognizable proportions, but simplify repeated structure and omit surface microdetail. No individually drawn leaves, grass blades, bricks, cracks, wood grain, faces or costume ornament. Use warm ochre and terracotta against cool slate-blue shadows, with restrained accents.\n\nPaint one continuous full-bleed scene across the entire requested canvas, edge to edge and corner to corner. Continue the painted setting naturally to every edge, including the top and bottom. No white or black bars, unpainted margins, letterboxing, borders, matting or inset picture. Keep the complete principal subject comfortably inside the canvas without creating an inner frame. Surrounding space remains painted atmosphere and ground with the same visual style; do not fill it with additional object categories or a vast empty foreground.\n\nKeep to the listed element families. Each support stays a compact group; do not expand it into many new object types, occupations, material varieties, animal species or scenery. Small same-type repetition is allowed within a group. Keep secondary forms quiet and the main subject unmistakable. No busy panorama, photographic detail, 3D rendering, collage, readable text, logo, watermark or UI.",
+    "size": "1536x1024",
+    "quality": "high",
+    "output_format": "png",
+    "response_format": "b64_json",
+    "n": 1,
+    "background": "opaque",
+    "moderation": "auto",
+    "user": "towards_victory"
+  },
+  "created": 1793463588,
+  "revised_prompt": ""
+}

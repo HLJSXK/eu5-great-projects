@@ -3926,7 +3926,7 @@ tv_wonder_summer_palace_ritual_3_modifier = {
 }
 
 tv_wonder_display_53_level_1 = {
-	tax_income_efficiency = 0.05
+	tax_income_efficiency = 0.025
 }
 
 tv_wonder_display_53_local_level_1 = {
@@ -3934,7 +3934,7 @@ tv_wonder_display_53_local_level_1 = {
 }
 
 tv_wonder_display_53_level_2 = {
-	tax_income_efficiency = 0.1
+	tax_income_efficiency = 0.05
 }
 
 tv_wonder_display_53_local_level_2 = {
@@ -3942,7 +3942,7 @@ tv_wonder_display_53_local_level_2 = {
 }
 
 tv_wonder_display_53_level_3 = {
-	tax_income_efficiency = 0.15
+	tax_income_efficiency = 0.075
 }
 
 tv_wonder_display_53_local_level_3 = {
@@ -3950,7 +3950,7 @@ tv_wonder_display_53_local_level_3 = {
 }
 
 tv_wonder_display_53_level_4 = {
-	tax_income_efficiency = 0.2
+	tax_income_efficiency = 0.1
 }
 
 tv_wonder_display_53_local_level_4 = {
@@ -3958,7 +3958,7 @@ tv_wonder_display_53_local_level_4 = {
 }
 
 tv_wonder_display_53_level_5 = {
-	tax_income_efficiency = 0.25
+	tax_income_efficiency = 0.125
 }
 
 tv_wonder_display_53_local_level_5 = {
@@ -3966,7 +3966,7 @@ tv_wonder_display_53_local_level_5 = {
 }
 
 tv_wonder_display_53_level_6 = {
-	tax_income_efficiency = 0.3
+	tax_income_efficiency = 0.15
 }
 
 tv_wonder_display_53_local_level_6 = {
@@ -5802,7 +5802,7 @@ tv_wonder_unique_ming_great_wall_ritual_3_modifier = {
 }
 
 tv_wonder_display_122_level_1 = {
-	tax_income_efficiency = 0.1
+	tax_income_efficiency = 0.05
 }
 
 tv_wonder_display_122_local_level_1 = {
@@ -5810,7 +5810,7 @@ tv_wonder_display_122_local_level_1 = {
 }
 
 tv_wonder_display_122_level_2 = {
-	tax_income_efficiency = 0.2
+	tax_income_efficiency = 0.1
 }
 
 tv_wonder_display_122_local_level_2 = {
@@ -5818,7 +5818,7 @@ tv_wonder_display_122_local_level_2 = {
 }
 
 tv_wonder_display_122_level_3 = {
-	tax_income_efficiency = 0.3
+	tax_income_efficiency = 0.15
 }
 
 tv_wonder_display_122_local_level_3 = {
@@ -5826,7 +5826,7 @@ tv_wonder_display_122_local_level_3 = {
 }
 
 tv_wonder_display_122_level_4 = {
-	tax_income_efficiency = 0.4
+	tax_income_efficiency = 0.2
 }
 
 tv_wonder_display_122_local_level_4 = {
@@ -5834,7 +5834,7 @@ tv_wonder_display_122_local_level_4 = {
 }
 
 tv_wonder_display_122_level_5 = {
-	tax_income_efficiency = 0.5
+	tax_income_efficiency = 0.25
 }
 
 tv_wonder_display_122_local_level_5 = {
@@ -5842,7 +5842,7 @@ tv_wonder_display_122_local_level_5 = {
 }
 
 tv_wonder_display_122_level_6 = {
-	tax_income_efficiency = 0.6
+	tax_income_efficiency = 0.3
 }
 
 tv_wonder_display_122_local_level_6 = {
@@ -12420,7 +12420,7 @@ tv_wonder_unique_nuremberg_imperial_castle_ritual_3_modifier = {
 }
 
 tv_wonder_display_211_level_1 = {
-	tax_income_efficiency = 0.1
+	tax_income_efficiency = 0.05
 }
 
 tv_wonder_display_211_local_level_1 = {
@@ -12428,7 +12428,7 @@ tv_wonder_display_211_local_level_1 = {
 }
 
 tv_wonder_display_211_level_2 = {
-	tax_income_efficiency = 0.2
+	tax_income_efficiency = 0.1
 }
 
 tv_wonder_display_211_local_level_2 = {
@@ -12436,7 +12436,7 @@ tv_wonder_display_211_local_level_2 = {
 }
 
 tv_wonder_display_211_level_3 = {
-	tax_income_efficiency = 0.3
+	tax_income_efficiency = 0.15
 }
 
 tv_wonder_display_211_local_level_3 = {
@@ -12444,7 +12444,7 @@ tv_wonder_display_211_local_level_3 = {
 }
 
 tv_wonder_display_211_level_4 = {
-	tax_income_efficiency = 0.4
+	tax_income_efficiency = 0.2
 }
 
 tv_wonder_display_211_local_level_4 = {
@@ -12452,7 +12452,7 @@ tv_wonder_display_211_local_level_4 = {
 }
 
 tv_wonder_display_211_level_5 = {
-	tax_income_efficiency = 0.5
+	tax_income_efficiency = 0.25
 }
 
 tv_wonder_display_211_local_level_5 = {
@@ -12460,7 +12460,7 @@ tv_wonder_display_211_local_level_5 = {
 }
 
 tv_wonder_display_211_level_6 = {
-	tax_income_efficiency = 0.6
+	tax_income_efficiency = 0.3
 }
 
 tv_wonder_display_211_local_level_6 = {

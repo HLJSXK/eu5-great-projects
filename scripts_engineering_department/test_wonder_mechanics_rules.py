@@ -129,9 +129,10 @@ def validate_worksite_maintenance_input_contract() -> None:
     gui = (ENGINEERING_DEPARTMENT_ROOT / "in_game/gui/panels/organization/tv_engineering_department.gui").read_text(encoding="utf-8-sig")
     require("tv_org_logistics_active = {" in gui, "Organization panel must instantiate the production logistics widget")
     gui += (ENGINEERING_DEPARTMENT_ROOT / "in_game/gui/tv_wonder_org_logistics.gui").read_text(encoding="utf-8-sig")
-    for filter_key in ("uses_tv_wonder_materials", "tv_wonder_materials"):
-        require(f"OpenLateralViewWithFilter('production', '{filter_key}')" in gui,
-                f"Missing production entry point: {filter_key}")
+    require("ShowProductionViewWithMarketAndFilter(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_site').GetLocation.GetMarket.Self, 'uses_tv_wonder_materials', '(bool)yes')" in gui,
+            "Missing market-scoped production entry point: uses_tv_wonder_materials")
+    require("OpenLateralViewWithFilter('production', 'tv_wonder_materials')" in gui,
+            "Missing production entry point: tv_wonder_materials")
     for language in ("english", "simp_chinese"):
         loc = (ENGINEERING_DEPARTMENT_ROOT / f"main_menu/localization/{language}/tv_engineering_department_l_{language}.yml").read_text(encoding="utf-8-sig")
         for key in ("tv_wonder_materials", "tv_wonder_material_dispatch_point", "tv_wonder_material_dispatch_point_price",

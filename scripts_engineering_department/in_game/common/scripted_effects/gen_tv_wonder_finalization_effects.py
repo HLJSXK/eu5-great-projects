@@ -24,6 +24,7 @@ from wonder_mechanics.naming import (
     finalization_hidden_effect_name,
     finalization_visible_effect_name,
     finalization_world_event_id,
+    finalization_world_expansion_event_id,
 )
 from wonder_mechanics.render import monthly_country_pulse_event, render_header
 from wonder_ritual_codegen import max_level_cache, plain_cache
@@ -245,9 +246,12 @@ def append_broadcast_effect(lines: list[str], wonder: dict) -> None:
     lines.append(f"{T}{T}{T}exists = scope:tv_wonder_completed_site")
     lines.append(f"{T}{T}{T}NOT = {{ this = scope:tv_wonder_builder_country }}")
     lines.append(f"{T}{T}}}")
-    lines.append(
-        f"{T}{T}trigger_event_non_silently = {{ id = tv_engineering_department.{finalization_world_event_id(wonder)} }}"
-    )
+    lines.append(f"{T}{T}if = {{ limit = {{ scope:tv_wonder_builder_country = {{ var:tv_wonder_project_mode ?= 2 }} }}")
+    lines.append(f"{T}{T}{T}trigger_event_non_silently = {{ id = tv_engineering_department.{finalization_world_expansion_event_id(wonder)} }}")
+    lines.append(f"{T}{T}}}")
+    lines.append(f"{T}{T}else = {{")
+    lines.append(f"{T}{T}{T}trigger_event_non_silently = {{ id = tv_engineering_department.{finalization_world_event_id(wonder)} }}")
+    lines.append(f"{T}{T}}}")
     lines.append(f"{T}}}")
     lines.append("}")
     lines.append("")
@@ -320,7 +324,7 @@ def append_hidden_effect(lines: list[str], wonder: dict, mechanics: dict) -> Non
         "\t\t}",
         "\t}",
         f"\t{destroy_intermediate_effect_name(wonder)} = yes",
-        f"\tif = {{ limit = {{ var:tv_wonder_project_mode ?= 1 }} {broadcast_effect_name(wonder)} = yes }}",
+        f"\tif = {{ limit = {{ OR = {{ var:tv_wonder_project_mode ?= 1 var:tv_wonder_project_mode ?= 2 }} }} {broadcast_effect_name(wonder)} = yes }}",
         "\ttv_wonder_register_current_project_priority_candidate_from_variables_effect = yes",
         "\tvar:tv_wonder_site ?= { tv_wonder_mechanics_refresh_location_display_state_effect = yes }",
         # Finalization only creates/raises this known instance. Supplement both

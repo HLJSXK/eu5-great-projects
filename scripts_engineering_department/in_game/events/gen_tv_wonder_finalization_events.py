@@ -23,6 +23,7 @@ from wonder_mechanics.naming import (
     finalization_hidden_event_trigger_effect_name,
     finalization_visible_effect_name,
     finalization_world_event_id,
+    finalization_world_expansion_event_id,
     wonder_image_name,
 )
 from wonder_mechanics.render import render_header
@@ -135,11 +136,23 @@ def append_event(lines: list[str], wonder: dict, loc_keys: set[str]) -> None:
     lines.append("")
 
 
-def append_world_news_event(lines: list[str], wonder: dict, loc_keys: set[str]) -> None:
-    lines.append(f"tv_engineering_department.{finalization_world_event_id(wonder)} = {{")
+def append_world_news_event(
+    lines: list[str], wonder: dict, loc_keys: set[str], *, expansion: bool = False
+) -> None:
+    event_id = (
+        finalization_world_expansion_event_id(wonder)
+        if expansion
+        else finalization_world_event_id(wonder)
+    )
+    lines.append(f"tv_engineering_department.{event_id} = {{")
     lines.append(f"{T}type = country_event")
     lines.append(f"{T}title = tv_engineering_department.600.t")
-    lines.append(f"{T}desc = {world_desc_key(wonder, loc_keys)}")
+    desc_key = (
+        "TV_WONDER_EXPANSION_COMPLETE_DESC"
+        if expansion
+        else world_desc_key(wonder, loc_keys)
+    )
+    lines.append(f"{T}desc = {desc_key}")
     lines.append(f'{T}image = "{wonder_event_image(wonder)}"')
     lines.append(f"{T}outcome = neutral")
     lines.append("")
@@ -209,6 +222,8 @@ def generate() -> str:
         append_hidden_final_building_level_sync_event(lines, wonder)
     for wonder in wonders:
         append_world_news_event(lines, wonder, loc_keys)
+    for wonder in wonders:
+        append_world_news_event(lines, wonder, loc_keys, expansion=True)
     return "\n".join(lines).rstrip() + "\n"
 
 

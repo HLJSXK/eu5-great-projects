@@ -41,6 +41,7 @@ from ._core import (
     finalization_hidden_event_trigger_effect_name,
     finalization_visible_effect_name,
     finalization_world_event_id,
+    finalization_world_expansion_event_id,
     mechanic_key,
     ownership_gain_event_id,
     ownership_loss_event_id,
