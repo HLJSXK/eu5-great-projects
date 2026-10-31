@@ -1,6 +1,4 @@
 ﻿generated:
-- script: scripts_engineering_department/gen_europedia_cycle.py
-  output: assets/generated_icons/tv_europedia_cycle.png
 - script: scripts_engineering_department/gen_project_size_icons.py
   data: assets/icons/project_size/project-small.svg + assets/icons/project_size/raster_exports.json
   output: assets/generated_icons/tv_project_size_small.png
@@ -22,8 +20,6 @@
 - script: scripts_engineering_department/gen_project_size_icons.py
   data: assets/icons/project_size/project-small.svg + assets/icons/project_size/project-medium.svg + assets/icons/project_size/project-large.svg
   output: assets/icons/project_size/raster_exports.json
-- script: scripts_engineering_department/gen_europedia_cycle.py
-  output: src/main_menu/gfx/interface/illustrations/tv_europedia_cycle.dds
 - script: scripts_engineering_department/gen_market_supply_effects.py
   data: .eu5-base/reference_game_files/game/in_game/common/goods + src/in_game/common/goods
   output: src/in_game/common/scripted_effects/tv_market_supply_effects.txt
@@ -198,21 +194,21 @@
     + data/wonder_site_rules.yaml + data/unique_wonders.yaml + data/wonder_societal_axes.yaml + data/wonder_ritual_rules.yaml
   output: data/generated_fragments/tv_engineering_department_wonder_mechanics.gui
 - script: scripts_engineering_department/in_game/gui/gen_location_window.py
-  data: data/unique_wonders.yaml + .eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/location_window.gui
-    + .eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/glorpUI_shared_types.gui + .eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui
+  data: data/unique_wonders.yaml + .eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui
+    + .eu5-base/reference_mods/3601047146/in_game/gui/glorpUI_shared_types.gui + .eu5-base/reference_mods/3601047146/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui
   output: src/in_game/gui/location_window.gui
 - script: scripts_engineering_department/in_game/gui/gen_location_window.py
   data: data/unique_wonders.yaml
   output: src/in_game/gui/tv_location_wonder_widgets.gui
 - script: scripts_engineering_department/in_game/gui/gen_location_window.py
-  data: .eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt
+  data: .eu5-base/reference_mods/3601047146/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt
   output: src/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt
 - script: scripts_engineering_department/in_game/gui/gen_location_window.py
   data: data/wonders.yaml + data/wonder_final_buildings.yaml + data/wonder_generic_rituals.yaml + data/wonder_base_modifiers.yaml
     + data/wonder_site_rules.yaml + data/unique_wonders.yaml
   output: src/in_game/common/scripted_guis/tv_wonder_location_site_conditions.txt
 - script: scripts_engineering_department/in_game/gui/gen_tv_encyclopedia_wonders_cards_gui.py
-  data: scripts_engineering_department/europedia_content.py + scripts_engineering_department/europedia_render.py + scripts_engineering_department/gen_europedia_cycle.py
+  data: scripts_engineering_department/europedia_content.py + scripts_engineering_department/europedia_render.py
     + scripts_engineering_department/europedia_catalogue.py + data/wonder_localization.yaml + data/index/modifier_localization.json
     + src/main_menu/gfx/interface/icons/towards_victory/wonders
     + data/wonders.yaml + data/wonder_final_buildings.yaml

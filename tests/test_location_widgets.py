@@ -77,7 +77,8 @@ def test_all_window_hosts_reference_one_copy_of_each_widget_and_close_before_que
         assert actions[1].startswith('[LocationView.OpenConstructionQueue(')
         assert len(actions) == 2
         queues += 1
-    assert queues == 6
+    expected_queues = (0 if mod == 'src' else 6)
+    assert queues == expected_queues
     assert not expander.log
 
 

@@ -190,6 +190,12 @@ WONDER_GENERATORS = (
         input_groups=ALL_SOURCE_GROUPS,
     ),
     GeneratorSpec(
+        "scripts_engineering_department/gen_wonder_org_logistics.py",
+        inputs=("src/in_game/common/production_methods/tv_engineering_department_production_methods.txt",
+                "src/in_game/common/goods/tv_wonder_goods.txt",
+                ".eu5-base/reference_game_files/game/in_game/common/goods"),
+    ),
+    GeneratorSpec(
         "scripts_engineering_department/in_game/gui/gen_tv_encyclopedia_wonders_cards_gui.py",
         inputs=WONDER_LOADER_INPUTS + EUROPEDIA_INPUTS,
         input_groups=(*ALL_SOURCE_GROUPS, "localization"),
@@ -240,10 +246,10 @@ WONDER_GENERATORS = (
     GeneratorSpec(
         "scripts_engineering_department/in_game/gui/gen_location_window.py",
         inputs=WONDER_LOADER_INPUTS + (
-            ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/location_window.gui",
-            ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/glorpUI_shared_types.gui",
-            ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui",
-            ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt",
+            ".eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui",
+            ".eu5-base/reference_mods/3601047146/in_game/gui/glorpUI_shared_types.gui",
+            ".eu5-base/reference_mods/3601047146/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui",
+            ".eu5-base/reference_mods/3601047146/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt",
             # Reference files plus the identity routes in the wonder data.
         ),
         input_groups=("unique",),

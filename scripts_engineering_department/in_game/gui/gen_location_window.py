@@ -12,12 +12,11 @@ from wonder_mechanics.render import render_header
 from wonder_mechanics.naming import WONDER_SIZE_IDS
 from wonder_identity import image_expression
 
-GLORP_LOCATION_WINDOW_FILE = REPO_ROOT / ".eu5-base" / "reference_mods_variants" / "eu5-towards-victory" / "3812518640" / "in_game" / "gui" / "location_window.gui"
-GLORP_SHARED_TYPES_FILE = REPO_ROOT / ".eu5-base" / "reference_mods_variants" / "eu5-towards-victory" / "3812518640" / "in_game" / "gui" / "glorpUI_shared_types.gui"
+GLORP_LOCATION_WINDOW_FILE = REPO_ROOT / ".eu5-base" / "reference_mods" / "3601047146" / "in_game" / "gui" / "location_window.gui"
+GLORP_SHARED_TYPES_FILE = REPO_ROOT / ".eu5-base" / "reference_mods" / "3601047146" / "in_game" / "gui" / "glorpUI_shared_types.gui"
 GLORP_VANILLA_TYPES_FILE = (
     REPO_ROOT
-    / ".eu5-base" / "reference_mods_variants" / "eu5-towards-victory"
-    / "3812518640"
+    / ".eu5-base" / "reference_mods" / "3601047146"
     / "in_game"
     / "gui"
     / "vanilla"
@@ -25,15 +24,15 @@ GLORP_VANILLA_TYPES_FILE = (
 )
 OUT_FILE = REPO_ROOT / "src" / "in_game" / "gui" / "location_window.gui"
 WIDGETS_FILE = REPO_ROOT / "src/in_game/gui/tv_location_wonder_widgets.gui"
-CM_GUI_SOURCE = REPO_ROOT / ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt"
+CM_GUI_SOURCE = REPO_ROOT / ".eu5-base/reference_mods/3601047146/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt"
 CM_GUI_OUTPUT = REPO_ROOT / "src/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt"
 SITE_CONDITIONS_GUI_OUTPUT = REPO_ROOT / "src/in_game/common/scripted_guis/tv_wonder_location_site_conditions.txt"
 SCRIPT_REL = "scripts_engineering_department/in_game/gui/gen_location_window.py"
 DATA_REL = (
     "data/unique_wonders.yaml + "
-    ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/location_window.gui + "
-    ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/glorpUI_shared_types.gui + "
-    ".eu5-base/reference_mods_variants/eu5-towards-victory/3812518640/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui"
+    ".eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui + "
+    ".eu5-base/reference_mods/3601047146/in_game/gui/glorpUI_shared_types.gui + "
+    ".eu5-base/reference_mods/3601047146/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui"
 )
 T = "\t"
 UI_SCALE = 0.75
@@ -737,7 +736,7 @@ def inject_wonder_panel(gui: str) -> str:
             f'{match[1]}on_action = "{match[2]}"'
         ), gui,
     )
-    if count == 0:
+    if count == 0 and "LocationView.OpenConstructionQueue(" in gui:
         raise RuntimeError("Could not find native construction queue actions")
     return gui
 
