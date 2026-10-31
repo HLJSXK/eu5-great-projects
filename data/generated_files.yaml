@@ -225,24 +225,24 @@
     + data/wonder_base_modifiers.yaml + data/wonder_final_buildings.yaml + data/wonder_generic_rituals.yaml + data/wonder_ritual_rules.yaml
   output: src/main_menu/localization/simp_chinese/tv_europedia_l_simp_chinese.yml
 - script: scripts/compat/gen_tv_meiou_and_taxes_location_window.py
-  data: .eu5-base/reference_game_files/game/in_game/gui/location_window.gui + .eu5-base/reference_mods_variants/eu5-towards-victory/3735059838/in_game/gui/location_window.gui
+  data: .eu5-base/reference_game_files/game/in_game/gui/location_window.gui + .eu5-base/reference_mods/3735059838/in_game/gui/location_window.gui
     + data/compat/mnt_location_window_1_4.patch
   output: submods/tv_meiou_and_taxes_compat/in_game/gui/location_window.gui
 - script: scripts/compat/gen_tv_standard_of_living_location_window.py
-  data: .eu5-base/reference_game_files/game/in_game/gui/location_window.gui + .eu5-base/reference_mods_variants/eu5-towards-victory/3698931463/in_game/gui/location_window.gui
-    + data/compat/sol_location_window_1_4.patch
+  data: ../eu5-modding-project/src/stable/in_game/gui/location_window.gui
   output: submods/tv_standard_of_living_compat/in_game/gui/location_window.gui
 - script: scripts/compat/gen_tv_prosper_or_perish_encyclopedia_lateralview.py
-  data: src/in_game/gui/encyclopedia_lateralview.gui + .eu5-base/reference_mods_variants/eu5-towards-victory/3613232232/in_game/gui/encyclopedia_lateralview.gui
+  data: src/in_game/gui/encyclopedia_lateralview.gui
+    + ../prosper-or-perish-upstream/mod/Prosper or Perish (Population Growth & Food Rework)/in_game/gui/encyclopedia_lateralview.gui
   output: submods/tv_prosper_or_perish_compat/in_game/gui/encyclopedia_lateralview.gui
 - script: scripts/compat/gen_compat_thumbnails.py
-  data: src/.metadata/thumbnail.png + .eu5-base/reference_mods_variants/eu5-towards-victory/3735059838/.metadata/thumbnail.png
+  data: src/.metadata/thumbnail.png + .eu5-base/reference_mods/3735059838/.metadata/thumbnail.png
   output: submods/tv_meiou_and_taxes_compat/.metadata/thumbnail.png
 - script: scripts/compat/gen_compat_thumbnails.py
-  data: src/.metadata/thumbnail.png + .eu5-base/reference_mods_variants/eu5-towards-victory/3698931463/.metadata/thumbnail.png
+  data: src/.metadata/thumbnail.png + ../eu5-modding-project/src/stable/.metadata/thumbnail.png
   output: submods/tv_standard_of_living_compat/.metadata/thumbnail.png
 - script: scripts/compat/gen_compat_thumbnails.py
-  data: src/.metadata/thumbnail.png + .eu5-base/reference_mods_variants/eu5-towards-victory/3613232232/.metadata/thumbnail.png
+  data: src/.metadata/thumbnail.png + ../prosper-or-perish-upstream/mod/Prosper or Perish (Population Growth & Food Rework)/.metadata/thumbnail.png
   output: submods/tv_prosper_or_perish_compat/.metadata/thumbnail.png
 - script: scripts_engineering_department/gen_wonder_editor_catalog.py
   data: data/cost_reward_units.yaml + .eu5-base/reference_game_files/game/in_game/events + .eu5-base/reference_game_files/game/main_menu/common/static_modifiers

@@ -17,6 +17,17 @@ from typing import Callable, Iterable
 from .artifacts import collect_artifacts, snapshot_artifacts, validate_artifact_contract
 from .platform import generated_outputs_by_script, repo_relative_path
 
+EXTERNAL_REFERENCE_ROOTS = frozenset({"prosper-or-perish-upstream", "eu5-modding-project"})
+
+
+def _external_reference_path(source: str, repo_root: Path) -> Path | None:
+    relative = Path(source)
+    if not relative.parts or relative.parts[0] != "..":
+        return None
+    resolved = (repo_root / relative).resolve()
+    allowed = tuple((repo_root.parent / name).resolve() for name in EXTERNAL_REFERENCE_ROOTS)
+    return resolved if any(resolved == root or root in resolved.parents for root in allowed) else None
+
 
 @dataclass(frozen=True)
 class GeneratorSpec:
@@ -153,6 +164,9 @@ def build_generation_plan(
                 base_root = (repo_root / ".eu5-base").resolve()
                 if not path.is_relative_to(base_root):
                     raise ValueError(f"Reference input escapes EU5 base: {source}")
+            elif Path(source).parts[:1] == ("..",):
+                if _external_reference_path(source, repo_root) is None:
+                    raise ValueError(f"External generator input is not an approved reference checkout: {source}")
             else:
                 repo_relative_path(path, repo_root)
             producers = [writer for writer in writers.get(path, ()) if writer != script]

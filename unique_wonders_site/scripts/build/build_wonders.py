@@ -36,7 +36,7 @@ from scripts_engineering_department.wonder_mechanics.schema import site_trigger_
 SITE_ROOT = REPO_ROOT / "unique_wonders_site"
 DEFAULT_LOCATIONS_INDEX = (
     REPO_ROOT
-    / ".eu5-base" / "reference_mods_variants" / "eu5-towards-victory"
+    / ".eu5-base" / "reference_mods"
     / "national_destinies_site"
     / "dist"
     / "data"
@@ -44,7 +44,7 @@ DEFAULT_LOCATIONS_INDEX = (
 )
 DEFAULT_REFERENCE_LOC = (
     REPO_ROOT
-    / ".eu5-base" / "reference_mods_variants" / "eu5-towards-victory"
+    / ".eu5-base" / "reference_mods"
     / "national_destinies_site"
     / "dist"
     / "data"

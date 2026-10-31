@@ -7,6 +7,8 @@ if hasattr(sys.stdout, "reconfigure"):
 from PIL import Image
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+PP_ROOT = REPO_ROOT.parent / "prosper-or-perish-upstream" / "mod" / "Prosper or Perish (Population Growth & Food Rework)"
+SOL_ROOT = REPO_ROOT.parent / "eu5-modding-project" / "src" / "stable"
 ED_THUMBNAIL = REPO_ROOT / "src" / ".metadata" / "thumbnail.png"
 OUTPUT_SIZE = (640, 640)
 # Steam Workshop rejects preview images over 1 MiB; keep real margin below that.
@@ -15,15 +17,15 @@ MAX_BYTES = 900_000
 # (external mod thumbnail, output submod thumbnail)
 TARGETS = [
     (
-        REPO_ROOT / ".eu5-base" / "reference_mods_variants" / "eu5-towards-victory" / "3735059838" / ".metadata" / "thumbnail.png",
+        REPO_ROOT / ".eu5-base" / "reference_mods" / "3735059838" / ".metadata" / "thumbnail.png",
         REPO_ROOT / "submods" / "tv_meiou_and_taxes_compat" / ".metadata" / "thumbnail.png",
     ),
     (
-        REPO_ROOT / ".eu5-base" / "reference_mods_variants" / "eu5-towards-victory" / "3698931463" / ".metadata" / "thumbnail.png",
+        SOL_ROOT / ".metadata" / "thumbnail.png",
         REPO_ROOT / "submods" / "tv_standard_of_living_compat" / ".metadata" / "thumbnail.png",
     ),
     (
-        REPO_ROOT / ".eu5-base" / "reference_mods_variants" / "eu5-towards-victory" / "3613232232" / ".metadata" / "thumbnail.png",
+        PP_ROOT / ".metadata" / "thumbnail.png",
         REPO_ROOT / "submods" / "tv_prosper_or_perish_compat" / ".metadata" / "thumbnail.png",
     ),
 ]

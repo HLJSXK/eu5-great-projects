@@ -230,7 +230,7 @@ WONDER_GENERATORS = (
         ),
         inputs=(
             "src/in_game/gui/encyclopedia_lateralview.gui",
-            ".eu5-base/reference_mods_variants/eu5-towards-victory/3613232232/in_game/gui/encyclopedia_lateralview.gui",
+            "../prosper-or-perish-upstream/mod/Prosper or Perish (Population Growth & Food Rework)/in_game/gui/encyclopedia_lateralview.gui",
         ),
     ),
     GeneratorSpec(
@@ -259,16 +259,13 @@ WONDER_GENERATORS = (
         depends_on=("scripts_engineering_department/in_game/gui/gen_location_window.py",),
         inputs=("src/in_game/gui/location_window.gui",
                 ".eu5-base/reference_game_files/game/in_game/gui/location_window.gui",
-                ".eu5-base/reference_mods_variants/eu5-towards-victory/3735059838/in_game/gui/location_window.gui",
+                ".eu5-base/reference_mods/3735059838/in_game/gui/location_window.gui",
                 "data/compat/mnt_location_window_1_4.patch"),
     ),
     GeneratorSpec(
         "scripts/compat/gen_tv_standard_of_living_location_window.py",
         depends_on=("scripts_engineering_department/in_game/gui/gen_location_window.py",),
-        inputs=("src/in_game/gui/location_window.gui",
-                ".eu5-base/reference_game_files/game/in_game/gui/location_window.gui",
-                ".eu5-base/reference_mods_variants/eu5-towards-victory/3698931463/in_game/gui/location_window.gui",
-                "data/compat/sol_location_window_1_4.patch"),
+        inputs=("../eu5-modding-project/src/stable/in_game/gui/location_window.gui",),
     ),
     GeneratorSpec("scripts_engineering_department/in_game/common/scripted_triggers/gen_tv_vw_vanilla_takeover_triggers.py", inputs=WONDER_LOADER_INPUTS + (".eu5-base/reference_game_files/game/in_game/events", ".eu5-base/reference_game_files/game/in_game/common", ".eu5-base/reference_game_files/game/main_menu/setup", ".eu5-base/reference_game_files/game/main_menu/common/static_modifiers"), input_groups=("wonders", "unique", "mechanics.buildings")),
     GeneratorSpec("scripts_engineering_department/in_game/common/scripted_effects/gen_tv_vw_vanilla_takeover_effects.py", inputs=WONDER_LOADER_INPUTS + (".eu5-base/reference_game_files/game/in_game/events", ".eu5-base/reference_game_files/game/in_game/common", ".eu5-base/reference_game_files/game/main_menu/setup", ".eu5-base/reference_game_files/game/main_menu/common/static_modifiers"), input_groups=("wonders", "unique", "mechanics.buildings")),

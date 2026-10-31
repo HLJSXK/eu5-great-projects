@@ -96,6 +96,27 @@ def test_plan_accepts_shared_base_inputs_and_rejects_paths_outside_base(tmp_path
         )
 
 
+def test_plan_accepts_only_named_parent_reference_checkouts(tmp_path):
+    _workspace(tmp_path, {'read.py': ''}, {'read.py': ['result.txt']})
+    allowed = tmp_path.parent / 'prosper-or-perish-upstream' / 'mod' / 'probe.txt'
+    denied = tmp_path.parent / 'unrelated-checkout' / 'probe.txt'
+    allowed.parent.mkdir(parents=True)
+    denied.parent.mkdir(parents=True)
+    allowed.write_text('allowed')
+    denied.write_text('denied')
+
+    plan = build_generation_plan(
+        (GeneratorSpec('read.py', inputs=('../prosper-or-perish-upstream/mod/probe.txt',)),),
+        ('read.py',), repo_root=tmp_path,
+    )
+    assert plan.steps[0].spec.inputs == ('../prosper-or-perish-upstream/mod/probe.txt',)
+    with pytest.raises(ValueError, match='not an approved reference checkout'):
+        build_generation_plan(
+            (GeneratorSpec('read.py', inputs=('../unrelated-checkout/probe.txt',)),),
+            ('read.py',), repo_root=tmp_path,
+        )
+
+
 
 
 @pytest.mark.parametrize('timeout', [0, -1, float('inf'), float('nan')])

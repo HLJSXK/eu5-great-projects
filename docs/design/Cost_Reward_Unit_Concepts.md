@@ -639,7 +639,7 @@ from the first wave's flat magnitudes.
 - `data/wonder_base_modifiers.yaml` — per-wonder-mechanic country-level modifier values (section 4).
 - `data/wonder_final_buildings.yaml` — per-wonder-mechanic `final_local`/`final_maintenance`/`final_attributes`
   values (section 5).
-- `.eu5-base/reference_mods_variants/eu5-towards-victory/3599735023/` — reference source for the 353 added numeric country modifier keys:
+- `.eu5-base/reference_mods/3599735023/` — reference source for the 353 added numeric country modifier keys:
   retain only current vanilla-supported `Country` keys in its country blocks, resolve vanilla script
   values, then use the smallest nonzero absolute value for each key; exclude modifier types added
   by that reference mod itself.

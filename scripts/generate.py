@@ -11,6 +11,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 STAGED_DIRECTORIES = ('scripts', 'scripts_engineering_department', 'data', 'src', 'submods', 'great_projects_editor_web')
+EXTERNAL_REFERENCE_ROOTS = ('prosper-or-perish-upstream', 'eu5-modding-project')
 
 
 def stage_registered_inputs(stage: Path, registry: dict) -> None:
@@ -19,8 +20,20 @@ def stage_registered_inputs(stage: Path, registry: dict) -> None:
               for part in row.get('data', '').split('+') if part.strip()}
     for value in sorted(inputs):
         relative = Path(value)
-        if relative.is_absolute() or '..' in relative.parts:
+        if relative.is_absolute():
             raise ValueError(f'Registered input must be workspace-relative: {value}')
+        if '..' in relative.parts:
+            resolved = (ROOT / relative).resolve()
+            allowed = tuple((ROOT.parent / name).resolve() for name in EXTERNAL_REFERENCE_ROOTS)
+            if not any(resolved == root or root in resolved.parents for root in allowed):
+                raise ValueError(f'Registered external input is not an approved reference checkout: {value}')
+            source, target = ROOT / relative, stage / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if source.is_dir():
+                shutil.copytree(source, target, dirs_exist_ok=True)
+            else:
+                shutil.copy2(source, target)
+            continue
         if relative.parts[0] in (*STAGED_DIRECTORIES, '.eu5-base'):
             continue
         source, target = ROOT / relative, stage / relative
@@ -76,7 +89,9 @@ def check() -> int:
     base = (ROOT / '.eu5-base').resolve()
     (ROOT / 'tmp').mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='freshness-', dir=ROOT / 'tmp') as directory:
-        stage = Path(directory)
+        sandbox = Path(directory)
+        stage = sandbox / 'workspace'
+        stage.mkdir()
         for name in STAGED_DIRECTORIES:
             shutil.copytree(ROOT / name, stage / name, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
         stage_registered_inputs(stage, registry)

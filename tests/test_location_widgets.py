@@ -77,7 +77,7 @@ def test_all_window_hosts_reference_one_copy_of_each_widget_and_close_before_que
         assert actions[1].startswith('[LocationView.OpenConstructionQueue(')
         assert len(actions) == 2
         queues += 1
-    expected_queues = (0 if mod == 'src' else 6)
+    expected_queues = (6 if mod == 'submods/tv_meiou_and_taxes_compat' else 0)
     assert queues == expected_queues
     assert not expander.log
 

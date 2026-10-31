@@ -20,7 +20,7 @@
   第二棒的 420/416 是包含重复出现项的数量；两种计数都满足严格超集关系。
 - 两个共享 loader 分别实跑 TV、GP 的 migration coverage：TV 本地 24 条，GP 本地 32 条，共享 369 条；
   GP 的 12 条迁入规则全部被要求存在，两个工作区均未遮蔽共享 ID。
-- GP 开发代码的 TV 名称引用落在 `.eu5-base/reference_mods_variants/eu5-towards-victory` 参考快照内。
+- GP 开发代码的 TV 名称引用落在 `.eu5-base/reference_mods` 参考快照内。
   真实 freshness 构建在只复制 GP 的 scripts/data/src/submods/editor 并连接 base 的临时目录中通过，无 TV checkout 输入。
 
 ## 已补全
