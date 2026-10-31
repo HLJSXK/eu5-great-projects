@@ -151,7 +151,17 @@ def validate_artifact_contract(
                     raise ValueError("invalid DDS header")
                 report["height"], report["width"] = struct.unpack_from("<II", data, 12)
                 fourcc = data[84:88].decode("ascii", errors="replace").strip("\x00")
-                if fourcc not in {"DXT1", "DXT5"}:
+                if not fourcc:
+                    pixel_format = struct.unpack_from('<8I', data, 76)
+                    # Native GUI illustrations also ship uncompressed RGBA.
+                    # Accept only this exact 32-bit format with a full payload.
+                    if pixel_format != (32, 65, 0, 32, 0xFF0000, 0xFF00, 0xFF, 0xFF000000):
+                        raise ValueError('unsupported uncompressed DDS pixel format')
+                    width, height = report['width'], report['height']
+                    if min(width, height) <= 0 or len(data) != 128 + width * height * 4:
+                        raise ValueError('invalid uncompressed DDS dimensions or payload')
+                    fourcc = 'RGBA32'
+                elif fourcc not in {"DXT1", "DXT5"}:
                     raise ValueError(f"unsupported DDS format {fourcc!r}")
                 report["dds_format"] = fourcc
             elif suffix == ".json":

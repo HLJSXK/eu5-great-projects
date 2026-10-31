@@ -8897,7 +8897,6 @@
     TV_WONDER_RITUAL_PLAIN: Inaugurate plainly
     TV_WONDER_RITUAL_CANCEL: Cancel rededication
     TV_WONDER_RITUAL_TERMS: "Duration: [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_duration_months').GetValue|0] months. Estate satisfaction is settled when you confirm."
-    TV_WONDER_RITUAL_ESTATES_SETTLED: Estate satisfaction was settled when the ritual began.
     TV_WONDER_RITUAL_DIRECTION_LEFT: ← Dedication favors the left value
     TV_WONDER_RITUAL_DIRECTION_RIGHT: Dedication favors the right value →
     TV_WONDER_RITUAL_ACK: Understood.
@@ -17848,7 +17847,6 @@
     TV_WONDER_RITUAL_PLAIN: 以朴素方式落成
     TV_WONDER_RITUAL_CANCEL: 取消重新仪式化
     TV_WONDER_RITUAL_TERMS: "历时[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_duration_months').GetValue|0]个月。确认时结算阶层满意度。"
-    TV_WONDER_RITUAL_ESTATES_SETTLED: 阶层满意度已在举行仪式时结算。
     TV_WONDER_RITUAL_DIRECTION_LEFT: ← 仪式倾向左端价值观
     TV_WONDER_RITUAL_DIRECTION_RIGHT: 仪式倾向右端价值观 →
     TV_WONDER_RITUAL_ACK: 知道了。

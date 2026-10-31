@@ -289,7 +289,7 @@ tv_wonder_great_port_ritual_3_grant_effect = {
 }
 
 tv_wonder_great_port_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_3_ritual_3_location_tooltip_effect = {
@@ -298,7 +298,7 @@ tv_wonder_display_3_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_3_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -306,7 +306,7 @@ tv_wonder_display_3_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_great_port_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -729,7 +729,7 @@ tv_wonder_mining_city_ritual_3_grant_effect = {
 }
 
 tv_wonder_mining_city_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_7_ritual_3_location_tooltip_effect = {
@@ -738,7 +738,7 @@ tv_wonder_display_7_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_7_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -746,7 +746,7 @@ tv_wonder_display_7_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_mining_city_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -3813,7 +3813,7 @@ tv_wonder_royal_mint_system_ritual_3_grant_effect = {
 }
 
 tv_wonder_royal_mint_system_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_35_ritual_3_location_tooltip_effect = {
@@ -3822,7 +3822,7 @@ tv_wonder_display_35_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_35_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -3830,7 +3830,7 @@ tv_wonder_display_35_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_royal_mint_system_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -4146,7 +4146,7 @@ tv_wonder_giant_workshop_complex_ritual_3_grant_effect = {
 }
 
 tv_wonder_giant_workshop_complex_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_38_ritual_3_location_tooltip_effect = {
@@ -4155,7 +4155,7 @@ tv_wonder_display_38_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_38_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -4163,7 +4163,7 @@ tv_wonder_display_38_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_giant_workshop_complex_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -5252,7 +5252,7 @@ tv_wonder_colonial_trade_company_ritual_3_grant_effect = {
 }
 
 tv_wonder_colonial_trade_company_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_48_ritual_3_location_tooltip_effect = {
@@ -5261,7 +5261,7 @@ tv_wonder_display_48_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_48_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -5269,7 +5269,7 @@ tv_wonder_display_48_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_colonial_trade_company_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -7811,7 +7811,7 @@ tv_wonder_unique_malacca_port_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_malacca_port_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_115_ritual_3_location_tooltip_effect = {
@@ -7820,7 +7820,7 @@ tv_wonder_display_115_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_115_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -7828,7 +7828,7 @@ tv_wonder_display_115_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_malacca_port_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -12811,7 +12811,7 @@ tv_wonder_unique_jingdezhen_imperial_kilns_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_jingdezhen_imperial_kilns_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_160_ritual_3_location_tooltip_effect = {
@@ -12820,7 +12820,7 @@ tv_wonder_display_160_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_160_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -12828,7 +12828,7 @@ tv_wonder_display_160_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_jingdezhen_imperial_kilns_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -13927,7 +13927,7 @@ tv_wonder_unique_carrara_marble_quarries_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_carrara_marble_quarries_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_170_ritual_3_location_tooltip_effect = {
@@ -13936,7 +13936,7 @@ tv_wonder_display_170_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_170_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -13944,7 +13944,7 @@ tv_wonder_display_170_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_carrara_marble_quarries_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -14039,7 +14039,7 @@ tv_wonder_unique_east_india_company_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_east_india_company_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_171_ritual_3_location_tooltip_effect = {
@@ -14048,7 +14048,7 @@ tv_wonder_display_171_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_171_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -14056,7 +14056,7 @@ tv_wonder_display_171_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_east_india_company_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -14711,7 +14711,7 @@ tv_wonder_unique_calicut_port_city_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_calicut_port_city_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_177_ritual_3_location_tooltip_effect = {
@@ -14720,7 +14720,7 @@ tv_wonder_display_177_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_177_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -14728,7 +14728,7 @@ tv_wonder_display_177_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_calicut_port_city_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -14823,7 +14823,7 @@ tv_wonder_unique_wieliczka_salt_mine_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_wieliczka_salt_mine_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_178_ritual_3_location_tooltip_effect = {
@@ -14832,7 +14832,7 @@ tv_wonder_display_178_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_178_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -14840,7 +14840,7 @@ tv_wonder_display_178_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_wieliczka_salt_mine_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -15155,7 +15155,7 @@ tv_wonder_unique_gdansk_port_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_gdansk_port_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_181_ritual_3_location_tooltip_effect = {
@@ -15164,7 +15164,7 @@ tv_wonder_display_181_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_181_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -15172,7 +15172,7 @@ tv_wonder_display_181_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_gdansk_port_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -16603,7 +16603,7 @@ tv_wonder_unique_bordeaux_port_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_bordeaux_port_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_194_ritual_3_location_tooltip_effect = {
@@ -16612,7 +16612,7 @@ tv_wonder_display_194_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_194_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -16620,7 +16620,7 @@ tv_wonder_display_194_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_bordeaux_port_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -16715,7 +16715,7 @@ tv_wonder_unique_marseille_old_port_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_marseille_old_port_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_195_ritual_3_location_tooltip_effect = {
@@ -16724,7 +16724,7 @@ tv_wonder_display_195_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_195_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -16732,7 +16732,7 @@ tv_wonder_display_195_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_marseille_old_port_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -16827,7 +16827,7 @@ tv_wonder_unique_lyon_silk_workshops_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_lyon_silk_workshops_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_196_ritual_3_location_tooltip_effect = {
@@ -16836,7 +16836,7 @@ tv_wonder_display_196_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_196_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -16844,7 +16844,7 @@ tv_wonder_display_196_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_lyon_silk_workshops_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -18951,7 +18951,7 @@ tv_wonder_unique_munich_royal_brewery_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_munich_royal_brewery_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_216_ritual_3_location_tooltip_effect = {
@@ -18960,7 +18960,7 @@ tv_wonder_display_216_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_216_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -18968,7 +18968,7 @@ tv_wonder_display_216_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_munich_royal_brewery_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }
@@ -20735,7 +20735,7 @@ tv_wonder_unique_bursa_imperial_mint_ritual_3_grant_effect = {
 }
 
 tv_wonder_unique_bursa_imperial_mint_ritual_3_settle_effect = {
-	add_gold = 10000
+	change_gold_effect = { scale = 20 }
 }
 
 tv_wonder_display_232_ritual_3_location_tooltip_effect = {
@@ -20744,7 +20744,7 @@ tv_wonder_display_232_ritual_3_location_tooltip_effect = {
 
 tv_wonder_display_232_ritual_3_completion_effect = {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 }
 
@@ -20752,7 +20752,7 @@ tv_wonder_display_232_ritual_3_catalogue_effect = {
 	add_country_modifier = { modifier = tv_wonder_unique_bursa_imperial_mint_ritual_3_modifier years = -1 mode = replace }
 	capital ?= {
 	owner ?= {
-		add_gold = 10000
+		change_gold_effect = { scale = 20 }
 	}
 	}
 }

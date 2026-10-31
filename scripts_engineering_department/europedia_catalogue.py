@@ -33,6 +33,7 @@ REWARDS = {
     'navy_tradition': ('Navy tradition', '海军传统', False, True),
     'diplomats': ('Diplomats', '外交官', False, True),
     'gold': ('Gold', '金币', False, True),
+    'scaled_gold': ('Gold (scaled to economy)', '金币（按经济规模缩放）', False, True),
     'government_power': ('Government power', '政府权力值', False, True),
     'inflation': ('Inflation', '通货膨胀', True, False),
     'manpower': ('Manpower', '人力', False, True),

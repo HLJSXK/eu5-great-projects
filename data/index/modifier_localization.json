@@ -36523,7 +36523,7 @@
       "decimals": 2,
       "en": {
         "description": "Modifies the gold cost to build this workshop.",
-        "name": "Workshop Cost"
+        "name": "Building-Material Workshop Cost"
       },
       "value_kind": "percent",
       "zh": {

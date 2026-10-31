@@ -9,6 +9,7 @@ from scripts_engineering_department.in_game.gui import gen_location_window as so
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / '.eu5-base/ai_gui_assessment/renderer'))
+sys.path.insert(0, str(ROOT / 'scripts/compat'))
 from eu5_gui_renderer.gui import Expander, GuiDB
 from eu5_gui_renderer.pdx import parse
 
@@ -77,7 +78,7 @@ def test_all_window_hosts_reference_one_copy_of_each_widget_and_close_before_que
         assert actions[1].startswith('[LocationView.OpenConstructionQueue(')
         assert len(actions) == 2
         queues += 1
-    expected_queues = (6 if mod == 'submods/tv_meiou_and_taxes_compat' else 0)
+    expected_queues = (6 if mod in {'src', 'submods/tv_meiou_and_taxes_compat'} else 0)
     assert queues == expected_queues
     assert not expander.log
 
@@ -100,6 +101,41 @@ def test_widget_output_has_one_owner_and_preserves_all_gallery_actions():
 def test_sol_insertion_rejects_ambiguous_or_missing_host_slots():
     with pytest.raises(RuntimeError, match='Expected one SOL button insertion point'):
         source.inject_sol_button('widget = {}')
-    glorp = source.GLORP_LOCATION_WINDOW_FILE.read_text(encoding='utf-8-sig')
+    vanilla = source.VANILLA_LOCATION_WINDOW_FILE.read_text(encoding='utf-8-sig')
     with pytest.raises(RuntimeError, match='found 2'):
-        source.inject_sol_button(glorp + glorp)
+        source.inject_sol_button(vanilla + vanilla)
+
+
+@pytest.mark.parametrize('mod', ['src', 'submods/tv_meiou_and_taxes_compat',
+                                'submods/tv_standard_of_living_compat'])
+def test_levy_pie_bindings_match_current_vanilla(mod):
+    game_gui = (ROOT / '.eu5-base/reference_game_files/game/in_game/gui/location_window.gui').read_text(encoding='utf-8-sig')
+    gui = (ROOT / mod / 'in_game/gui/location_window.gui').read_text(encoding='utf-8-sig')
+    for branch in ('Army', 'Navy'):
+        old = f'Get{branch}LevyPercentage'
+        current = f'{old}ForCountry(LocationView.GetPlayer)'
+        assert f'{old})' not in gui
+        for expression in (f'FixedPointToFloat(LocationView.GetLocation.GetProvince.{current})',
+                           f"Subtract_float('(float)1.0', FixedPointToFloat(LocationView.GetLocation.GetProvince.{current}))"):
+            assert f'value = "[{expression}]"' in game_gui
+            assert gui.count(f'value = "[{expression}]"') == 1
+
+
+def test_sol_host_regenerates_from_workspace_and_base_only():
+    import gen_tv_standard_of_living_location_window as sol
+
+    assert sol.BASE_FILE.is_relative_to(ROOT / '.eu5-base')
+    assert sol.OUT_FILE.read_text(encoding='utf-8-sig') == sol.generate()
+    assert source.OUT_FILE.read_text(encoding='utf-8-sig') == source.generate()
+
+
+def test_location_window_is_injected_from_vanilla_base():
+    generated = source.OUT_FILE.read_text(encoding='utf-8-sig')
+    vanilla = source.VANILLA_LOCATION_WINDOW_FILE.read_text(encoding='utf-8-sig')
+    assert source.DATA_REL.endswith('.eu5-base/reference_game_files/game/in_game/gui/location_window.gui')
+    assert 'glorp_shared_types' not in generated
+    assert generated.count('header_action_button_left_uber') == vanilla.count('header_action_button_left_uber')
+    assert generated.count('tv_location_wonders_button = {}') == 1
+    assert generated.count('tv_location_wonders_panel = {}') == 1
+    assert 'types LocationWindowTypes' in vanilla
+    assert generated.count('types LocationWindowTypes') == 1

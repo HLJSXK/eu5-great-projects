@@ -44,7 +44,16 @@ def test_each_wonder_has_its_own_rewards_level_interface_and_result_notices(wond
     assert [child(child(o, "ai_chance").children, "factor").value for o in (preserve, plunder)] == ["80", "20"]
     assert contains(preserve, "add_prestige", "5")
     assert not contains(preserve, "add_gold")
-    assert contains(plunder, "add_gold", str({"small": 2000, "medium": 4000, "large": 6000}[wonder["size"]]))
+    assert not contains(preserve, "tv_sell_goods_with_temporary_supply_effect")
+    assert not contains(plunder, "add_gold")
+    # The sale must run in country scope, inside the stale-choice guard, using the site's market.
+    sale = child(child(plunder, "if").children, "tv_sell_goods_with_temporary_supply_effect").children
+    assert {n.key: n.value for n in sale} == {
+        "market": "scope:tv_wonder_ownership_site.market",
+        "goods": "goods:tv_wonder_materials",
+        "amount": "20",
+        "time": str({"small": 10, "medium": 20, "large": 30}[wonder["size"]]),
+    }
     effect = "tv_wonder_lower_unique_level_effect" if wonder.get("is_unique") else "tv_wonder_lower_generic_level_effect"
     lowering = [n for n in walk(plunder) if n.key == effect]
     assert len(lowering) == 1
@@ -113,7 +122,7 @@ def choice_branch(wonder, *, choice, owner="new", level=1, revision=1, former_ow
                     run(n.children)
             elif n.key == "save_scope_value_as":
                 calls.append(("result", child(n.children, "value").value))
-            elif n.key in {"add_gold", "add_prestige", "trigger_event_non_silently"} or n.key.startswith("tv_wonder_lower_"):
+            elif n.key in {"tv_sell_goods_with_temporary_supply_effect", "add_prestige", "trigger_event_non_silently"} or n.key.startswith("tv_wonder_lower_"):
                 calls.append((n.key, n.value))
             elif n.key not in {"name", "ai_chance"}:
                 raise AssertionError(f"Unhandled ownership effect: {n}")
@@ -130,7 +139,7 @@ def choice_branch(wonder, *, choice, owner="new", level=1, revision=1, former_ow
 ))
 def test_open_event_revalidates_before_rewards_and_always_notifies(choice, level, owner, revision, valid):
     calls = choice_branch(WONDERS[0], choice=choice, level=level, owner=owner, revision=revision)
-    rewards = [key for key, _ in calls if key in {"add_gold", "add_prestige"}]
+    rewards = [key for key, _ in calls if key in {"tv_sell_goods_with_temporary_supply_effect", "add_prestige"}]
     lowerings = [key for key, _ in calls if key.startswith("tv_wonder_lower_")]
     assert len(rewards) == int(valid)
     assert len(lowerings) == int(valid and choice == 1)
@@ -140,5 +149,5 @@ def test_open_event_revalidates_before_rewards_and_always_notifies(choice, level
 
 def test_an_ownerless_origin_does_not_require_a_notification_target():
     calls = choice_branch(WONDERS[0], choice=1, former_owner=False)
-    assert any(key == "add_gold" for key, _ in calls)
+    assert any(key == "tv_sell_goods_with_temporary_supply_effect" for key, _ in calls)
     assert not any(key == "trigger_event_non_silently" for key, _ in calls)

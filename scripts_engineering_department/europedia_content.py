@@ -13,7 +13,12 @@ A card is a dict:
 
         {"kind": "text",    "title": (en, zh), "icon": texture, "body": (en, zh)}
         {"kind": "flow",    "title": ..., "icon": ..., "steps": [step, ...], "sign": (en, zh) | None}
-        {"kind": "cycle",   "title": ..., "icon": ..., "steps": [five clockwise steps]}
+        {"kind": "cycle",   "title": ..., "icon": ..., "note": (en, zh) | None,
+                            "steps": [{"icon": texture, "link": raw link, "title": (en, zh),
+                                       "text": (en, zh)}, ...]}
+        {"kind": "guide",   "title": ..., "icon": ..., "body": (en, zh),
+                            "anatomy": one of europedia_render.ANATOMY_PANEL_TITLES,
+                            "rows": [{"mock": mock | None, "title": (en, zh), "text": (en, zh)}]}
         {"kind": "scale",   "title": ..., "icon": ..., "steps": [{"medallion": widget_fn, "label": (en, zh)}],
                             "body": (en, zh) | None}
         {"kind": "panels",  "title": ..., "icon": ..., "panels": [panel, panel], "sign": (en, zh)}
@@ -21,6 +26,23 @@ A card is a dict:
         {"kind": "row",     "title": ..., "icon": ..., "label": (en, zh), "items": [item, ...], "body": ...}
 
     step   {"icon": texture, "link": raw link text, "title": (en, zh), "text": (en, zh)}
+
+    A guide row's "mock" names the panel control it draws and freezes one example state. Every
+    label inside a mock is an existing panel key, so no mock text is translated twice:
+        None                                   nothing drawn, the note stands alone
+        ("status", key)                        the header status strip
+        ("portrait", key)                      the empty chief portrait with its prompt
+        ("button", key, colour)                one button, colour in regular|green|yellow|red
+        ("buttons", [(key, colour), ...])      a stack of buttons
+        ("pills", [key, ...], active_key)      the three size labels, one picked
+        ("bar", key, value, text[, captions])  a labelled bar frozen at value/100
+        ("demands",)                           one demand row per estate and its three answers
+        ("triplet",)                           the survey's three competence readings
+        ("stats",) / ("stats_goods",)          stat tiles; the input goods table
+        ("equation",)                          the monthly settlement sum
+        ("parts",)                             the four construction parts with unit pips
+        ("stat", label_a, value_a, label_b, value_b_key) two stat tiles, values can be keys
+        ("styles", [key, ...])                 the ceremony style picker
     panel  {"title": (en, zh), "text": (en, zh), "items": [item, ...], "arrows": bool}
     entry  {"icons": [widget_fn, ...], "title": (en, zh), "text": (en, zh)}
     item   {"icon": texture, "link": raw link text, "alpha": float | None}
@@ -125,31 +147,40 @@ CARDS: list[dict] = [
         "id": "overview",
         "filter": "overview",
         "icon": ICON_BOOK,
-        "title": _t("Great Projects", "大工程"),
+        "title": _t("Great Projects", "伟大工程"),
         "lead": _t(
-            "A Great Project raises a wonder: one country, one monument, one engineer who has to "
-            "talk three estates into paying for it and one surveyor who has to admit the ground is "
-            "only so good. Nothing here is built by decree. It is conceived, argued over, measured, "
-            "built in four parts at once, and finally dedicated, and every one of those steps can "
-            "stall.",
-            "大工程是为一国建造一座奇观：一位总工程师必须说服三个阶层为此出钱，一位勘测师必须承认地基"
-            "的好坏有其上限。这里没有凭一道敕令就能建成的东西。它要先构想、被争论、被丈量、四个部件同时"
-            "动工，最后才得以落成；每一个环节都可能停滞。",
+            "#F Leave a monument of your own on your city's skyline. Appoint a Great Engineer, "
+            "persuade nobles, burghers and clergy, survey your site, and raise your wonder toward "
+            "the clouds, brick by brick and stone by stone.#!",
+            "#F 在城市的天际线上留下属于你的丰碑吧。任命一位总工程师，说服贵族、市民与教士，勘测选址，"
+            "一砖一石把奇观垒向云端。#!",
         ),
         "sections": [
             {
                 "kind": "cycle",
                 "title": _t("The Whole Project at a Glance", "全流程一览"),
                 "icon": ICON_IDEA,
+                "note": _t(
+                    "Seven steps in order, linked clockwise. The lessons below follow the same order.",
+                    "七步依次推进，沿圆环顺时针排列。下面的教程也按这个顺序展开。",
+                ),
                 "steps": [
+                    {
+                        "icon": ICON_ENGINEER,
+                        "link": LINK_ENGINEER,
+                        "title": _t("Appoint", "任命"),
+                        "text": _t(
+                            "An empty office blocks everything.",
+                            "职位空着，什么都别想开始。",
+                        ),
+                    },
                     {
                         "icon": ICON_IDEA,
                         "link": LINK_CONCEPT,
-                        "title": _t("Conception", "构想"),
+                        "title": _t("Conceive", "构想"),
                         "text": _t(
-                            "The engineer works out what can be built. Their Administrative skill "
-                            "sets the pace.",
-                            "总工程师构思能建什么。行政能力决定进度。",
+                            "The engineer proposes; you accept one of three.",
+                            "工程师提案，你从三选一。",
                         ),
                     },
                     {
@@ -157,9 +188,8 @@ CARDS: list[dict] = [
                         "link": LINK_DEBATE,
                         "title": _t("Debate", "辩论"),
                         "text": _t(
-                            "The estates name their price. Domestic Support has to reach 100 before "
-                            "anything is measured.",
-                            "各阶层开出价码。国内支持度达到 100 才能开始勘测。",
+                            "The estates name their price. Support must reach 100.",
+                            "各阶层开价，支持度要够 100。",
                         ),
                     },
                     {
@@ -167,70 +197,443 @@ CARDS: list[dict] = [
                         "link": LINK_SURVEY,
                         "title": _t("Survey", "勘测"),
                         "text": _t(
-                            "The chosen ground is read for scale, organization and logistics: the "
-                            "ceiling on everything that follows.",
-                            "对选定的地基丈量规模、组织与后勤：它决定此后一切的上限。",
+                            "The ground is read: the ceiling on all that follows.",
+                            "丈量地基：此后一切的上限。",
+                        ),
+                    },
+                    {
+                        "icon": ICON_LABOR,
+                        "link": LINK_ORG + " / " + LINK_LOG,
+                        "title": _t("Organize", "组织"),
+                        "text": _t(
+                            "Worksites supply the labour, logistics its pace.",
+                            "工地出劳力，物流定快慢。",
                         ),
                     },
                     {
                         "icon": ICON_BUILD,
                         "link": LINK_CONSTRUCTION,
-                        "title": _t("Construction", "施工"),
+                        "title": _t("Build", "施工"),
                         "text": _t(
-                            "Four parts rise together in a labor camp. The slowest one holds the "
-                            "level back.",
-                            "四个部件在劳工营中同时推进，最慢的一个决定整体等级。",
+                            "One part at a time; the weakest sets the level.",
+                            "一次推一个部件，最弱那个定等级。",
                         ),
                     },
                     {
                         "icon": ICON_CROWN,
                         "link": LINK_CEREMONY,
-                        "title": _t("Dedication", "落成"),
+                        "title": _t("Dedicate", "落成"),
                         "text": _t(
-                            "The wonder is dedicated, or merely opened. This is what the monument "
-                            "does for the rest of the game.",
-                            "奇观或郑重落成、或草草启用。此后整局游戏它都将如此发挥作用。",
+                            "A ceremony, or a plain opening. This is its permanent character.",
+                            "郑重仪式或朴素启用，此后永久生效。",
                         ),
                     },
                 ],
             },
             {
-                "kind": "text",
-                "title": _t("Where to Begin", "从哪里开始"),
-                "icon": ICON_ED,
+                "kind": "guide",
+                "title": _t("Step 1  Appoint a Great Engineer", "第一步 任命大工程师"),
+                "anatomy": "appointment",
+                "icon": ICON_ENGINEER,
                 "body": _t(
-                    "#T Start here:#! appoint a [tv_great_engineer|e] in the [tv_engineering_department|e] "
-                    "panel. Without one, nothing below ever starts moving. Then read the Conception card; "
-                    "the rest of these pages can wait until you reach them.\n\n"
-                    "$BULLET$ Everything a project spends is a real good or a real coin out of a real "
-                    "market. Nothing is granted.\n"
-                    "$BULLET$ Every stage can be watched in the department panel, and every number that "
-                    "follows has a tooltip there.\n"
-                    "$BULLET$ A project that stalls stays stalled: an abandoned or failed project leaves "
-                    "its worked stones behind as a candidate to be finished later.",
-                    "#T 从这里开始：#! 在[tv_engineering_department|e]面板任命一位[tv_great_engineer|e]。"
-                    "没有他，下面的一切都不会开始运转。然后读「构想」一页；其余几页可以等到走到那一步再看。\n\n"
-                    "$BULLET$ 工程花掉的每一样东西，都是真实市场里的真实货物或真实金币。没有凭空赠予。\n"
-                    "$BULLET$ 每个阶段都能在部门面板里看到，紧随其后的每一个数字在那里都有提示。\n"
-                    "$BULLET$ 停滞的工程会一直停着：放弃或失败的工程会留下已砌好的石料，成为日后续建的对象。",
+                    "Open the [tv_engineering_department|e] panel, click 'Appoint Great Engineer' in the "
+                    "header, and choose a [character|e] to serve as [tv_great_engineer|e]. While this office "
+                    "is vacant, both [tv_wonder_concept|e] and [tv_wonder_survey|e] stop.",
+                    "打开[tv_engineering_department|e]面板，在页眉点击「任命大工程师」，选一位[character|e]"
+                    "担任[tv_great_engineer|e]。这个职位空着的时候，[tv_wonder_concept|e]和[tv_wonder_survey|e]都会停下。",
                 ),
+                # The player's first sight of the panel: an empty portrait slot with a +
+                # over it, and the header saying why nothing can start.
+                "rows": [
+                    {
+                        "mock": ("status", "TV_ENGINEERING_HEADER_STATUS_NO_ENGINEER", None),
+                        "title": _t("The header says why", "页眉先告诉你卡在哪"),
+                        "text": _t(
+                            "Until an engineer is appointed, the panel shows this status and the next "
+                            "step reads 'Appoint engineer.' Everything else stays locked.",
+                            "在任命之前，面板就显示这一状态，下一步提示写着「任命工程师」。其余功能全部锁住。",
+                        ),
+                    },
+                    {
+                        "mock": ("portrait", "TV_IO_HEADER_APPOINT_CHIEF_PROMPT", None),
+                        "title": _t("The empty portrait is the button", "空头像就是按钮"),
+                        "text": _t(
+                            "Click the empty portrait in the header. The game offers characters; "
+                            "whoever you pick holds the post until you replace or dismiss them.",
+                            "点页眉里那个空头像，游戏会让你挑人。选中的角色一直担任此职，直到你换人或免职。",
+                        ),
+                    },
+                    {
+                        "mock": ("buttons", [("TV_ENGINEERING_CHANGE_LEADER_SHORT", "yellow"),
+                                             ("TV_ENGINEERING_REMOVE_LEADER_SHORT", "red")], None),
+                        "title": _t("Changing your mind costs nothing here", "换人和免职都不花钱"),
+                        "text": _t(
+                            "Once appointed, the same header offers change and remove. Both are free, "
+                            "but a project already under way keeps its progress.",
+                            "任命之后，页眉会出现「更换」和「免职」两个按钮，都不花钱，但已经开工的工程进度会保留。",
+                        ),
+                    },
+                ],
             },
             {
-                "kind": "text",
-                "title": _t("Two Kinds of Wonder", "两类奇观"),
-                "icon": ICON_CULTURE,
+                "kind": "guide",
+                "title": _t("Step 2  Conceive and Accept a Proposal", "第二步 构想并接受提案"),
+                "anatomy": "conception",
+                "icon": ICON_IDEA,
                 "body": _t(
-                    "#T A [tv_wonder_generic|e]#! belongs to no place. Your engineer proposes it and you "
-                    "choose where it goes, so long as the ground allows it. Small ones can be raised "
-                    "again somewhere else, which makes them a renewable source of the same reward.\n"
-                    "#T A [tv_wonder_unique|e]#! belongs to one place in the world. Only whoever holds "
-                    "that place can build it, and it will exist once. In exchange for being hard to get, "
-                    "it is usually worth more.",
-                    "#T [tv_wonder_generic|e]#! 不专属于任何地方。由总工程师提出，你在许可的地基上选择位置。"
-                    "小型通用奇观还能在别处再造一次，从而重复领取同一套奖励。\n"
-                    "#T [tv_wonder_unique|e]#! 属于世界上唯一的某地。只有控制该地者才能建造，且全图仅此一座。"
-                    "作为难度的回报，它通常更值钱。",
+                    "Each month, conception progress increases by 0.2 times the Great Engineer's [adm|e]. "
+                    "At 100, three proposals appear. Use 'View First Proposal' and the other proposal buttons "
+                    "to read their briefs, then click 'Accept Proposal' to lock in the wonder and its size "
+                    "([tv_wonder_small|e], [tv_wonder_medium|e] or [tv_wonder_large|e]). "
+                    "If none of the three suits you, either option below gives you a new set.",
+                    "每个月构想进度增加大工程师[adm|e]的 0.2 倍，满 100 后会出现三项提案。"
+                    "点「查看第一提案」等按钮可以阅读简报，选好后点「接受提案」，就锁定了奇观和它的规模"
+                    "（[tv_wonder_small|e]、[tv_wonder_medium|e]或[tv_wonder_large|e]）。三项都不满意的话，可以用以下方式换一组新提案。",
                 ),
+                "rows": [
+                    {
+                        "mock": ("bar", "TV_ENGINEERING_CONCEPT_CARD_TITLE", 100, "100 / 100"),
+                        "title": _t("The bar is the appointment's pay-off", "这条进度是任命的回报"),
+                        "text": _t(
+                            "The bar fills only while a [tv_great_engineer|e] holds office, at 0.2 times "
+                            "their [adm|e] a month. A better administrator conceives faster; nothing else "
+                            "in the game moves it.",
+                            "只有[tv_great_engineer|e]在任时这条进度才会走，每月涨其[adm|e]的 0.2 倍。"
+                            "行政能力越高构想越快，除此之外没有任何东西能推动它。",
+                        ),
+                    },
+                    {
+                        "mock": ("buttons", [("TV_ENGINEERING_PROPOSAL_BUTTON_SKY_DOME", "yellow"),
+                                             ("TV_ENGINEERING_PROPOSAL_BUTTON_TOWER_TEMPLE", "yellow"),
+                                             ("TV_ENGINEERING_PROPOSAL_BUTTON_STAR_FORTRESS", "yellow")], None),
+                        "title": _t("Three proposals, one choice", "三项提案，只能选一项"),
+                        "text": _t(
+                            "At 100 the bar is replaced by three proposal buttons. Hover one to read its "
+                            "levels, effects and size before committing.",
+                            "满 100 后进度条会换成三个提案按钮。提交之前先悬停读一读它的等级、效果和规模。",
+                        ),
+                    },
+                    {
+                        "mock": ("buttons", [("TV_ENGINEERING_ACCEPT_BUTTON", "green"),
+                                             ("TV_ENGINEERING_REFUTE_BUTTON", "red"),
+                                             ("TV_ENGINEERING_BRIBE_BUTTON", "yellow")], None),
+                        "title": _t("Accept locks it in; the other two only reroll", "接受才锁定，另外两个只是重抽"),
+                        "text": _t(
+                            "Accept fixes the wonder and its size for the whole project. Refute spends "
+                            "10 [prestige|e] and Fund spends a scaled [gold|e] for a fresh set of three.",
+                            "「接受」把奇观和规模定死，整局工程都按它来。「驳倒」花 10 [prestige|e]、"
+                            "「拨款」花一笔缩放[gold|e]，都是换一组新的三个提案。",
+                        ),
+                    },
+                    {
+                        "mock": ("pills", ["TV_ENGINEERING_WONDER_SIZE_SMALL_LABEL",
+                                           "TV_ENGINEERING_WONDER_SIZE_MEDIUM_LABEL",
+                                           "TV_ENGINEERING_WONDER_SIZE_LARGE_LABEL"], "TV_ENGINEERING_WONDER_SIZE_SMALL_LABEL"),
+                        "title": _t("Size is part of the proposal", "规模写在提案里"),
+                        "text": _t(
+                            "Each proposal carries its own size. It sets the [tv_wonder_construction|e] "
+                            "cost, the number of units per part, and the ritual price later.",
+                            "每项提案自带规模。规模决定[tv_wonder_construction|e]造价、每个部件的单元数，"
+                            "以及之后仪式的价钱。",
+                        ),
+                    },
+                ],
+            },
+            {
+                "kind": "guide",
+                "title": _t("Step 3  Win the Debate", "第三步 赢得辩论"),
+                "anatomy": "debate",
+                "icon": ICON_ESTATE,
+                "body": _t(
+                    "During [tv_wonder_debate|e], [ShowEstateTypeName('nobles_estate')], "
+                    "[ShowEstateTypeName('burghers_estate')] and [ShowEstateTypeName('clergy_estate')] each "
+                    "present one demand. Each demand has three responses.",
+                    "[tv_wonder_debate|e]阶段，[ShowEstateTypeName('nobles_estate')]、"
+                    "[ShowEstateTypeName('burghers_estate')]和[ShowEstateTypeName('clergy_estate')]"
+                    "会各提一项诉求。每项诉求有三种处理方式。",
+                ),
+                "rows": [
+                    {
+                        "mock": ("bar", "TV_ENGINEERING_DOMESTIC_SUPPORT_LABEL", 135, "135 / 100",
+                                 ("TV_ENGINEERING_SUPPORT_BASE_LABEL", "TV_ENGINEERING_SUPPORT_RESERVE_LABEL")),
+                        "title": _t("One number to reach, one you may bank", "一个要够，一个可以存"),
+                        "text": _t(
+                            "The upper bar is [tv_wonder_domestic_support|e] against its target of 100. "
+                            "The lower caption is the reserve the debate allows you to carry to 200, so a "
+                            "surplus of 100 is worth keeping.",
+                            "上面那条是[tv_wonder_domestic_support|e]，目标 100。下面的小字写的是辩论允许你囤到的上限 200，"
+                            "所以超出 100 的部分不要白扔。",
+                        ),
+                    },
+                    {
+                        "mock": ("demands", None, None),
+                        "title": _t("Three estates, three demands", "三个阶层，三项诉求"),
+                        "text": _t(
+                            "Each estate posts one demand with its own price. Reading all three before "
+                            "acting is free and tells you which responses are cheapest this round.",
+                            "每个阶层提一项诉求，各带各的价码。先读三项再动手不花钱，也能看出这轮哪种回应最便宜。",
+                        ),
+                    },
+                    {
+                        "mock": ("buttons", [("TV_ENGINEERING_ACCEPT_SHORT_BUTTON", "green"),
+                                             ("TV_ENGINEERING_REFUTE_SHORT_BUTTON", "red"),
+                                             ("TV_ENGINEERING_BRIBE_SHORT_BUTTON", "yellow")], None),
+                        "title": _t("Accept, refute or bribe", "接受、驳倒或贿赂"),
+                        "text": _t(
+                            "Accept gains 20 [tv_wonder_domestic_support|e] and pays the demand's price. "
+                            "Refute spends 10 [prestige|e] and Bribe spends scaled [gold|e] to replace the "
+                            "demand with another, so they only reroll the price.",
+                            "「接受」拿 20 点[tv_wonder_domestic_support|e]，同时付清诉求的代价。"
+                            "「驳倒」花 10 [prestige|e]、「贿赂」花缩放[gold|e]，都只是把这一项换成别的，也就是重摇价码。",
+                        ),
+                    },
+                    {
+                        "mock": ("button", "TV_ENGINEERING_END_DEBATE_BUTTON", "green", None),
+                        "title": _t("Closing the debate is a button, not automatic", "结束辩论要手动点"),
+                        "text": _t(
+                            "Support does not close the debate on its own. At 100 and above, click this bar.",
+                            "支持度够了不会自动结束辩论。到 100 以上之后，点这条按钮。",
+                        ),
+                    },
+                ],
+            },
+            {
+                "kind": "guide",
+                "title": _t("Step 4  Survey and Lock In the Site", "第四步 测绘并锁定工地"),
+                "anatomy": "survey",
+                "icon": ICON_MAP,
+                "body": _t(
+                    "Click 'Assign Survey Site' and choose one of your country's [location|e]s. Each month, "
+                    "survey progress increases by 0.1 times the Great Engineer's [mil|e]. At 100, the survey "
+                    "produces three readings.",
+                    "点「指派测绘地点」，选一处本国[location|e]。每个月测绘进度增加大工程师[mil|e]的 0.1 倍，"
+                    "满 100 后会得出三项读数。",
+                ),
+                "rows": [
+                    {
+                        "mock": ("bar", "TV_ENGINEERING_SURVEY_PROGRESS_LABEL", 100, "100 / 100"),
+                        "title": _t("Survey progress is the second meter", "测绘进度是第二条进度"),
+                        "text": _t(
+                            "It fills from the engineer's [mil|e], not their [adm|e], at 0.1 a month per point. "
+                            "The site you name does not change the pace, only the readings.",
+                            "它由大工程师的[mil|e]推动，与[adm|e]无关，每点每月 0.1。你选的工地不改变速度，只改变读数。",
+                        ),
+                    },
+                    {
+                        "mock": ("buttons", [("TV_ENGINEERING_SELECT_SURVEY_SITE_BUTTON", "yellow"),
+                                             ("TV_ENGINEERING_RERUN_SURVEY_BUTTON", "yellow")], None),
+                        "title": _t("Name a site, then ask again", "先指地方，不满意再测一次"),
+                        "text": _t(
+                            "Set Survey Site opens the location picker. Rerun Survey discards the readings "
+                            "and starts a fresh survey, which costs the same time again.",
+                            "「指派测绘地点」打开地图选点。「重新执行测绘」会丢掉这次读数重来一遍，时间照样要再花一次。",
+                        ),
+                    },
+                    {
+                        "mock": ("triplet", None, None),
+                        "title": _t("The three readings", "三项读数"),
+                        "text": _t(
+                            "[tv_wonder_scale_competence|e] sets the wonder's maximum level, with bands at "
+                            "20, 40, 60, 80 and 100; level 6 needs a full 100. "
+                            "[tv_wonder_organization_competence|e] sets the worksite level cap. "
+                            "[tv_wonder_logistics_competence|e] sets the construction speed multiplier.",
+                            "[tv_wonder_scale_competence|e]决定奇观最高能建到几级，以 20、40、60、80、100 分档，6 级需要满 100；"
+                            "[tv_wonder_organization_competence|e]决定工地等级上限；"
+                            "[tv_wonder_logistics_competence|e]决定施工速度乘数。",
+                        ),
+                    },
+                    {
+                        "mock": ("button", "TV_ENGINEERING_CONFIRM_SURVEY_SITE_BUTTON", "green", None),
+                        "title": _t("Confirming is irreversible", "确认之后不可更改"),
+                        "text": _t(
+                            "Until you click it the readings are a preview. After it, they are the "
+                            "project's permanent ceiling, so compare all three before committing.",
+                            "在点之前，读数只是预览；点了之后，它们就是这项工程永久的上限。所以提交前把三项都看一遍。",
+                        ),
+                    },
+                ],
+            },
+            {
+                "kind": "guide",
+                "title": _t("Step 5  Organization and Logistics", "第五步 组织和物流"),
+                "anatomy": "organization_logistics",
+                "icon": ICON_LABOR,
+                "body": _t(
+                    "Confirming the site unlocks the 'Organization and Logistics' card in the panel.",
+                    "选址确认后，面板上的「组织和物流」卡解锁。",
+                ),
+                "rows": [
+                    {
+                        "mock": ("bar", "TV_ENGINEERING_ORGANIZATION_COMPETENCE_LABEL", 62, "7 / 12"),
+                        "title": _t("Organization decides how many worksites", "组织决定能建几座工地"),
+                        "text": _t(
+                            "[tv_wonder_organization_competence|e] is the level cap. Level that many "
+                            "[ShowBuildingTypeName('tv_wonder_labor_camp')]s in the site's [market|e] and no "
+                            "more; each operating level supplies 1000 progress a month.",
+                            "[tv_wonder_organization_competence|e]就是等级上限。在工地所在[market|e]里最多修这么多级"
+                            "[ShowBuildingTypeName('tv_wonder_labor_camp')]，每级正常运转每月提供 1000 点进度。",
+                        ),
+                    },
+                    {
+                        "mock": ("stats", None, None),
+                        "title": _t("Four numbers on the worksite card", "工地卡上的四个数"),
+                        "text": _t(
+                            "Base progress is what the worksites produce. Employment is how much of their "
+                            "workforce is filled, from local [ShowPopTypeName('laborers')]; vacancies cut "
+                            "progress in proportion. Maintenance is the monthly cost.",
+                            "「基础进度」是工地能产出的量；「雇佣」是岗位填满的比例，靠当地[ShowPopTypeName('laborers')]，"
+                            "空缺按比例削减进度；「总维护费」是每月开支。",
+                        ),
+                    },
+                    {
+                        "mock": ("stats_goods", None, None),
+                        "title": _t("Two goods, two numbers each", "两种物资，各看两个数"),
+                        "text": _t(
+                            "The worksite consumes [ShowGoodsName('tools')] and "
+                            "[ShowGoodsName('tv_wonder_materials')] every month. Demand over supply is the "
+                            "figure to watch; when supply falls short, imports or a "
+                            "[ShowBuildingTypeName('tv_wonder_material_dispatch_point')] close the gap.",
+                            "工地每月消耗[ShowGoodsName('tools')]和[ShowGoodsName('tv_wonder_materials')]。"
+                            "要盯的是「需求 / 供给」这一栏，供给不够时靠进口或"
+                            "[ShowBuildingTypeName('tv_wonder_material_dispatch_point')]补上。",
+                        ),
+                    },
+                    {
+                        "mock": ("equation", None, None),
+                        "title": _t("The multiplication at the bottom", "底部的连乘式"),
+                        "text": _t(
+                            "Monthly progress = Worksite progress × Material efficiency × "
+                            "[tv_wonder_logistics_competence|e] multiplier (50% to 150%). The bottom of the "
+                            "card spells the same sum out with your own figures.",
+                            "每月进度 = 工地进度 × 物资效率 × [tv_wonder_logistics_competence|e]乘数（50% 到 150%）。"
+                            "卡片底部会用你自己的数字把同一道算式列出来。",
+                        ),
+                    },
+                    {
+                        "mock": ("button", "TV_ENGINEERING_BUILD_WORKSITE_BUTTON", "yellow", None),
+                        "title": _t("Building is a separate step", "建工地是另一步"),
+                        "text": _t(
+                            "The card only reports. Click this button to actually construct the worksites; "
+                            "until you do, every progress figure stays at zero.",
+                            "卡片只负责汇报。要真的把工地建起来得点这条按钮，在此之前所有进度数字都是零。",
+                        ),
+                    },
+                ],
+            },
+            {
+                "kind": "guide",
+                "title": _t("Step 6  Construction", "第六步 建设"),
+                "anatomy": "construction",
+                "icon": ICON_BUILD,
+                "body": _t(
+                    "Only one [tv_wonder_construction_part|e] advances at a time. By default, the part with "
+                    "the least progress is selected automatically. You can also switch manually with the "
+                    "four buttons below, but switching resets progress on the current unit to zero.",
+                    "同一时间只推进一个[tv_wonder_construction_part|e]，默认自动选进度最落后的那个。"
+                    "你也可以点「建设基础」「建设主体」「建设功能」「建设封顶装饰」手动切换，但切换会清零当前这一单元的进度。",
+                ),
+                "rows": [
+                    {
+                        "mock": ("parts", None, None),
+                        "title": _t("Four rows, each with its units", "四行部件，各有各的单元"),
+                        "text": _t(
+                            "Every part is a row of unit buttons. Green is finished, yellow is the unit "
+                            "being built now, red is still waiting. Only the yellow row is moving.",
+                            "每个部件都是一排单元按钮：绿色是已完成，黄色是正在建的那个，红色是还排着的。只有黄色那一行在动。",
+                        ),
+                    },
+                    {
+                        "mock": ("buttons", [("TV_ENGINEERING_CONSTRUCTION_PART_FOUNDATION", "yellow"),
+                                             ("TV_ENGINEERING_CONSTRUCTION_PART_BODY", "yellow"),
+                                             ("TV_ENGINEERING_CONSTRUCTION_PART_FUNCTION", "yellow"),
+                                             ("TV_ENGINEERING_CONSTRUCTION_PART_DECORATION", "yellow")], None),
+                        "title": _t("Switch parts by hand, at a price", "手动切换要付代价"),
+                        "text": _t(
+                            "The four switches override the automatic choice. The current unit's progress "
+                            "resets to zero, so switch only when the order actually matters.",
+                            "这四个切换按钮会覆盖自动选择，代价是当前单元的进度清零。所以只有顺序真的重要时才手动切。",
+                        ),
+                    },
+                    {
+                        "mock": ("stat", "TV_ENGINEERING_WONDER_LEVEL_LABEL", "2",
+                                 "TV_ENGINEERING_ACTIVE_PART_LABEL", "TV_ENGINEERING_ACTIVE_PART_BODY"),
+                        "title": _t("The level is the weakest part", "等级取最弱的那个部件"),
+                        "text": _t(
+                            "The wonder's level equals its least advanced part, which is why the switches "
+                            "matter at all. Building only one part perfectly raises nothing.",
+                            "奇观等级等于最落后的那个部件，这正是切换按钮存在的理由。只把一个部件做到极致，等级不会升。",
+                        ),
+                    },
+                    {
+                        "mock": ("button", "TV_ENGINEERING_FINISH_CONSTRUCTION_BUTTON", "green", None),
+                        "title": _t("Finished means one level higher", "完工的定义是涨了一级"),
+                        "text": _t(
+                            "The button unlocks once the level is at least one above where it stood when "
+                            "construction began. Clicking it ends the construction stage for good.",
+                            "只有等级比开工时至少高一级，这条按钮才会亮。点下去，建设阶段就永久结束。",
+                        ),
+                    },
+                ],
+            },
+            {
+                "kind": "guide",
+                "title": _t("Step 7  Ceremony", "第七步 仪式"),
+                "anatomy": "ceremony",
+                "icon": ICON_CEREMONY,
+                "body": _t(
+                    "After construction, the project enters [tv_wonder_ceremony|e]. You have two choices.",
+                    "建成后进入[tv_wonder_ceremony|e]阶段，有两种选择。",
+                ),
+                "rows": [
+                    {
+                        "mock": ("styles", ["TV_WONDER_RITUAL_NAME_1_1", "TV_WONDER_RITUAL_NAME_2_1",
+                                            "TV_WONDER_RITUAL_NAME_3_1"], None),
+                        "title": _t("Three styles, free to compare", "三种风格，免费比较"),
+                        "text": _t(
+                            "The style buttons above the detail panel are previews. Clicking one costs "
+                            "nothing and changes no state, so try them all and read the expected effects "
+                            "before you commit. Styles are specific to the wonder: Royal Sacrifice, "
+                            "Meditation Ceremony and Divine Investiture are only the first project's.",
+                            "详情面板上方的风格按钮只是预览。点它们不花钱、也不改变任何状态，"
+                            "所以尽管挨个点开，把预期效果念完再决定。风格是按奇观定的："
+                            "「王室献祭」「冥想典礼」「神圣授职」只是第一座工程的选项。",
+                        ),
+                    },
+                    {
+                        "mock": ("stats", None, None),
+                        "title": _t("What the preview tells you", "预览里能看到什么"),
+                        "text": _t(
+                            "Each style lists its rewards and which estates support or oppose it. Supporting "
+                            "estates receive +0.10 [estate_satisfaction|e]; the others receive −0.05. The "
+                            "settlement happens when you confirm, not month by month.",
+                            "每种风格列出它的奖励，以及哪些阶层支持、哪些反对。支持的阶层[estate_satisfaction|e] +0.10，其余 −0.05。"
+                            "这些在确认时一次性结算，不是逐月变化。",
+                        ),
+                    },
+                    {
+                        "mock": ("buttons", [("TV_WONDER_RITUAL_CONFIRM", "green"),
+                                             ("TV_WONDER_RITUAL_PLAIN", "yellow")], None),
+                        "title": _t("Two ways to finish, one is free", "两种收尾，一种免费"),
+                        "text": _t(
+                            "Hold Ceremony costs 2, 3 or 5 times scaled [gold|e] for a small, medium or "
+                            "large project and dedicates after 24 months. Inaugurate plainly completes at "
+                            "once for nothing, at −0.05 satisfaction and into the [tv_wonder_plain|e] state.",
+                            "「举行仪式」按小、中、大规模支付 2、3、5 倍缩放[gold|e]，24 个月后落成。"
+                            "「以朴素方式落成」立刻完成且不花钱，代价是 −0.05 满意度，并进入[tv_wonder_plain|e]状态。",
+                        ),
+                    },
+                    {
+                        "mock": None,
+                        "title": _t("A plain wonder is not a dead end", "朴素落成不是死路"),
+                        "text": _t(
+                            "A plain wonder can receive a ceremony later. During conception, use the "
+                            "'Rededicate a Wonder' [decision|e], or click 'Hold a New Ceremony for This "
+                            "Project' in the location panel.",
+                            "朴素奇观以后还能补办仪式：在构想阶段使用[decision|e]「重新奉献奇观」，"
+                            "或者在地点面板点「为此工程重新举行仪式」。",
+                        ),
+                    },
+                ],
             },
         ],
     },

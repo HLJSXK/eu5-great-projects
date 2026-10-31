@@ -85,7 +85,7 @@ def style_row(n, mechanics, pending):
         f'''vbox = {{ name = "tv_wonder_ritual_style_{n}" visible = "[Or({pending}, {choice})]"
 layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking ignoreinvisible = yes spacing = 4''',
         choice_card(n, route(f'TV_WONDER_RITUAL_NAME_{n}_'), choice, pending, icons, raw=True),
-        supporting_estates(n), '}'])
+        supporting_estates(n, pending), '}'])
 
 
 def supporter_tooltip(estate):
@@ -105,10 +105,10 @@ blockoverride "tooltip_content" {{
 }} }}'''
 
 
-def supporting_estates(style):
+def supporting_estates(style, pending):
     # At most seven icons fit in one row; hidden estates leave no gaps.
     # Native flowcontainer supports spacing but rejects size; children set its bounds.
-    out = [f'''flowcontainer = {{ name = "tv_wonder_ritual_supporters_{style}"
+    out = [f'''flowcontainer = {{ name = "tv_wonder_ritual_supporters_{style}" visible = "[{pending}]"
 layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking maximumsize = {{ 438 -1 }}
 direction = horizontal wrap_count = 7 spacing = 10 margin = {{ 10 0 }} ignoreinvisible = yes''']
     for estate in ESTATES:
@@ -146,7 +146,6 @@ raw_text = "{route('TV_WONDER_RITUAL_DESC_', dynamic_style=True)}" }}''')
             f'''progressbar = {{ size = {{ 438 14 }} min = 0 max = 100
 progresstexture = "gfx/interface/progressbars/progress_bar_goldish.dds" noprogresstexture = "gfx/interface/progressbars/slider_default_bg.dds"
 value = "[{variable('tv_wonder_ritual_progress_pct')}.GetValue]" }}''',
-            text('TV_WONDER_RITUAL_ESTATES_SETTLED', size=13),
             '''button_regular = { size = { 438 28 } text = "TV_WONDER_RITUAL_TOGGLE_DETAILS" tooltip = "TV_WONDER_RITUAL_TOGGLE_DETAILS"
 onclick = "[GetVariableSystem.Toggle('tv_wonder_ritual_details_open')]" }''', '}']
     requirements = [text('TV_WONDER_RITUAL_TERMS', f"And(Not({plain}), Not({variable('tv_wonder_cmm_skip_ceremony')}.IsSet))", size=14),

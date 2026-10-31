@@ -3,7 +3,7 @@
 
 # Country scope; market/goods are typed scopes, amount/time are scalar script values.
 # Example: tv_sell_goods_with_temporary_supply_effect = { market = capital.market goods = goods:medicaments amount = 15 time = 6 }
-# Pays amount * price ONCE; offsets amount demand for time months. No inventory is added.
+# Pays amount * price * time ONCE; offsets amount demand for time months. No inventory is added.
 # Internal tv_market_supply_* saved scopes are reserved for this synchronous call.
 tv_sell_goods_with_temporary_supply_effect = {
 	if = {
@@ -484,19 +484,15 @@ tv_sell_goods_with_temporary_supply_apply_effect = {
 		text = tv_sell_goods_with_temporary_supply_description
 		subject = this
 		object = scope:tv_market_supply_market
-		value = {
-			value = "scope:tv_market_supply_goods.price_in_market(scope:tv_market_supply_market)"
-			multiply = scope:tv_market_supply_amount
-		}
+		value = tv_market_supply_payout_value
 		add_gold = {
-			value = "scope:tv_market_supply_goods.price_in_market(scope:tv_market_supply_market)"
-			multiply = scope:tv_market_supply_amount
+			value = tv_market_supply_payout_value
 		}
 		scope:tv_market_supply_market = {
 			add_temporary_demand = {
 				type = demand:$demand$
 				scale = { value = scope:tv_market_supply_amount }
-				months = { value = scope:tv_market_supply_months }
+				months = scope:tv_market_supply_months
 			}
 		}
 	}

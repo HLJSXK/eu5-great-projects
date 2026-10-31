@@ -200,7 +200,7 @@ def run_generation(
         report["artifacts"] = [artifact.payload() for artifact in artifacts]
         report["missing_outputs"] = [repo_relative_path(path, plan.repo_root)
                                      for path in plan.outputs if path not in after]
-        report["output_validation"] = validate_artifact_contract(plan.repo_root, artifacts, ("txt", "gui", "yml", "yaml"))
+        report["output_validation"] = validate_artifact_contract(plan.repo_root, artifacts, ("txt", "gui", "yml", "yaml", "dds", "json"))
 
     log(f"\n[regen {report['operation_id']}] Starting {len(plan.steps)} generators\n")
     try:
@@ -237,7 +237,7 @@ def run_generation(
                 result["missing_outputs"] = [repo_relative_path(path, plan.repo_root)
                                              for path in step.outputs if path not in after]
                 artifacts = collect_artifacts(plan.repo_root, {}, after)
-                result["output_validation"] = validate_artifact_contract(plan.repo_root, artifacts, ("txt", "gui", "yml", "yaml"))
+                result["output_validation"] = validate_artifact_contract(plan.repo_root, artifacts, ("txt", "gui", "yml", "yaml", "dds", "json"))
                 if process.returncode:
                     raise RuntimeError(f"{step.spec.script} exited with {process.returncode}. See log for details.")
                 if result["missing_outputs"]:

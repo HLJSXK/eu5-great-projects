@@ -7,6 +7,14 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 VANILLA_FILE = REPO_ROOT / ".eu5-base/reference_game_files/game/in_game/gui/location_window.gui"
 
 
+def port_levy_bindings(gui: str) -> str:
+    """Use the EU5 1.4 country-specific province levy percentages."""
+    return re.sub(
+        r"\b(GetArmyLevyPercentage|GetNavyLevyPercentage)\b",
+        r"\1ForCountry(LocationView.GetPlayer)", gui,
+    )
+
+
 def normalized_lines(text: str) -> list[str]:
     return [line.strip() for line in text.splitlines()]
 

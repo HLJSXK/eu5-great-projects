@@ -9,6 +9,7 @@ PP_ROOT = REPO_ROOT.parent / "prosper-or-perish-upstream" / "mod" / "Prosper or 
 sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
 
 from wonder_mechanics.render import render_header
+from vanilla_takeover.parse import parse, walk
 
 TV_FILE = REPO_ROOT / "src" / "in_game" / "gui" / "encyclopedia_lateralview.gui"
 PP_FILE = (
@@ -57,14 +58,6 @@ SHARED_SET_PP = f"GetVariableSystem.Set('{SHARED_VAR}', 'pp')"
 # match) always resolves to the nav-list one.
 NAV_SCROLLBOX_ANCHOR = "                        scrollbox = {"
 
-# PP's own tab button hbox ("# Prosper or Perish -- sibling of scrollbox") -- 1-indexed
-# lines 62-87 of the PP source file.
-PP_TAB_BUTTON_RANGE = (61, 87)
-# PP's own Mod Content vbox ("# Mod Content -- filter buttons and cards...") -- 1-indexed
-# lines 350-1469 of the PP source file.
-PP_MOD_CONTENT_RANGE = (349, 1469)
-
-
 def replace_exact(text: str, old: str, new: str, expected_count: int) -> str:
     actual = text.count(old)
     if actual != expected_count:
@@ -90,17 +83,37 @@ def pp_lines() -> list[str]:
     return PP_FILE.read_text(encoding="utf-8-sig").splitlines()
 
 
+def pp_block(lines: list[str], *, tab_button: bool) -> str:
+    """Extract one complete source block without depending on upstream line numbers."""
+    text = "\n".join(lines)
+    matches = []
+    for root in parse(text):
+        for node, ancestors in walk(root):
+            if tab_button:
+                if node.scalar("name") != "pp_select_page":
+                    continue
+                if not ancestors or ancestors[-1].key != "hbox":
+                    raise RuntimeError("PP page button must be a direct child of an hbox")
+                matches.append(ancestors[-1])
+            elif node.key == "vbox" and node.scalar("visible") == f"[{PP_HASVALUE}]":
+                matches.append(node)
+    if len(matches) != 1:
+        label = "tab button" if tab_button else "Mod Content"
+        raise RuntimeError(f"Expected one PP {label} block, found {len(matches)}")
+    node = matches[0]
+    start = text.rfind("\n", 0, node.start) + 1
+    return text[start:node.end]
+
+
 def pp_tab_button_block(lines: list[str]) -> list[str]:
-    start, end = PP_TAB_BUTTON_RANGE
-    block = "\n".join(lines[start:end])
+    block = pp_block(lines, tab_button=True)
     block = replace_exact(block, PP_SET, SHARED_SET_PP, 1)
     block = replace_exact(block, PP_HASVALUE, SHARED_HASVALUE_PP, 1)
     return block.splitlines()
 
 
 def pp_mod_content_block(lines: list[str]) -> list[str]:
-    start, end = PP_MOD_CONTENT_RANGE
-    block = "\n".join(lines[start:end])
+    block = pp_block(lines, tab_button=False)
     block = replace_exact(block, PP_HASVALUE, SHARED_HASVALUE_PP, 1)
     # 1.4 renamed the vanilla scroll section and its content override.
     block = block.replace("TooltipListScrollArea", "TooltipScrolledContentSection")

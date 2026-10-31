@@ -27,6 +27,8 @@
   data: .eu5-base/reference_game_files/game/in_game/common/goods + src/in_game/common/goods
   output: src/in_game/common/goods_demand/tv_market_supply.txt
 - script: scripts_engineering_department/gen_market_supply_effects.py
+  output: src/in_game/common/script_values/tv_market_supply_values.txt
+- script: scripts_engineering_department/gen_market_supply_effects.py
   output: src/in_game/common/effect_localization/tv_market_supply_effects.txt
 - script: scripts_engineering_department/gen_market_supply_effects.py
   data: .eu5-base/reference_game_files/game/in_game/common/goods + src/in_game/common/goods + .eu5-base/reference_game_files/game/main_menu/localization/english/effects_l_english.yml
@@ -46,6 +48,10 @@
   output: assets/generated_icons/tv_wonder_arrow_restart.png
 - script: scripts_engineering_department/gen_location_wonder_arrows.py
   output: src/main_menu/gfx/interface/icons/location_icons/tv_wonder_arrow_restart.dds
+- script: scripts_engineering_department/gen_europedia_cycle.py
+  output: assets/generated_icons/tv_europedia_cycle.png
+- script: scripts_engineering_department/gen_europedia_cycle.py
+  output: src/main_menu/gfx/interface/illustrations/tv_europedia_cycle.dds
 - script: scripts_engineering_department/gen_wonder_level_medallions.py
   output: assets/generated_icons/tv_wonder_level_0.png
 - script: scripts_engineering_department/gen_wonder_level_medallions.py
@@ -194,8 +200,7 @@
     + data/wonder_site_rules.yaml + data/unique_wonders.yaml + data/wonder_societal_axes.yaml + data/wonder_ritual_rules.yaml
   output: data/generated_fragments/tv_engineering_department_wonder_mechanics.gui
 - script: scripts_engineering_department/in_game/gui/gen_location_window.py
-  data: data/unique_wonders.yaml + .eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui
-    + .eu5-base/reference_mods/3601047146/in_game/gui/glorpUI_shared_types.gui + .eu5-base/reference_mods/3601047146/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui
+  data: data/unique_wonders.yaml + .eu5-base/reference_game_files/game/in_game/gui/location_window.gui
   output: src/in_game/gui/location_window.gui
 - script: scripts_engineering_department/in_game/gui/gen_location_window.py
   data: data/unique_wonders.yaml
@@ -229,7 +234,7 @@
     + data/compat/mnt_location_window_1_4.patch
   output: submods/tv_meiou_and_taxes_compat/in_game/gui/location_window.gui
 - script: scripts/compat/gen_tv_standard_of_living_location_window.py
-  data: ../eu5-modding-project/src/stable/in_game/gui/location_window.gui
+  data: .eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui + data/compat/sol_glorp_location_window.patch
   output: submods/tv_standard_of_living_compat/in_game/gui/location_window.gui
 - script: scripts/compat/gen_tv_prosper_or_perish_encyclopedia_lateralview.py
   data: src/in_game/gui/encyclopedia_lateralview.gui

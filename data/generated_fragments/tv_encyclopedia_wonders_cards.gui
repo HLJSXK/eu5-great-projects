@@ -60,79 +60,1921 @@ vbox = {
 				blockoverride "section_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/advances.dds" }
 				blockoverride "section_title" { text = "TV_EU_OVERVIEW_S1_TITLE" }
 			}
-			widget = {
-				name = "tv_eu_overview_cycle"
-				size = { 1370 764 }
+			hbox = {
 				margin = { 40 0 }
-				icon = { size = { 1370 764 } texture = "gfx/interface/illustrations/tv_europedia_cycle.dds" alwaystransparent = yes }
+				widget = {
+				name = "tv_eu_overview_cycle"
+				size = { 1370 960 }
+				icon = { size = { 1370 960 } texture = "gfx/interface/illustrations/tv_europedia_cycle.dds" alwaystransparent = yes }
 				text_single = {
-					position = { 565 390 }
+					position = { 565 460 }
 					size = { 240 40 }
-					autoresize = no
-					align = center
-					using = Font_Type_Headers
-					fontsize = 26
-					default_format = "#yellow_titles"
-					text = "TV_EU_OVERVIEW_TITLE"
+					autoresize = no align = center
+					using = Font_Type_Headers fontsize = 26
+					default_format = "#yellow_titles" text = "TV_EU_OVERVIEW_TITLE"
 				}
 				tv_eu_cycle_step = {
 					name = "tv_eu_overview_cycle_step_1"
-					position = { 553 12 }
+					position = { 553 0 }
 					size = { 264 196 }
-					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/advances.dds" }
-					blockoverride "step_link" { raw_text = "[tv_wonder_concept|e]" }
+					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/government.dds" }
+					blockoverride "step_link" { raw_text = "[tv_great_engineer|e]" }
 					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P1_TITLE" }
 					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P1_TEXT" }
 				}
 				tv_eu_cycle_step = {
 					name = "tv_eu_overview_cycle_step_2"
-					position = { 838 219 }
+					position = { 852 144 }
 					size = { 264 196 }
-					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/estates/estates.dds" }
-					blockoverride "step_link" { raw_text = "[tv_wonder_debate|e]" }
+					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/advances.dds" }
+					blockoverride "step_link" { raw_text = "[tv_wonder_concept|e]" }
 					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P2_TITLE" }
 					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P2_TEXT" }
 				}
 				tv_eu_cycle_step = {
 					name = "tv_eu_overview_cycle_step_3"
-					position = { 729 555 }
+					position = { 925 467 }
 					size = { 264 196 }
-					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/mapmodes.dds" }
-					blockoverride "step_link" { raw_text = "[tv_wonder_survey|e]" }
+					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/estates/estates.dds" }
+					blockoverride "step_link" { raw_text = "[tv_wonder_debate|e]" }
 					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P3_TITLE" }
 					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P3_TEXT" }
 				}
 				tv_eu_cycle_step = {
 					name = "tv_eu_overview_cycle_step_4"
-					position = { 377 555 }
+					position = { 719 726 }
 					size = { 264 196 }
-					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/building_panel/build.dds" }
-					blockoverride "step_link" { raw_text = "[tv_wonder_construction|e]" }
+					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/mapmodes.dds" }
+					blockoverride "step_link" { raw_text = "[tv_wonder_survey|e]" }
 					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P4_TITLE" }
 					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P4_TEXT" }
 				}
 				tv_eu_cycle_step = {
 					name = "tv_eu_overview_cycle_step_5"
-					position = { 268 219 }
+					position = { 387 726 }
 					size = { 264 196 }
-					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/hre_parliament.dds" }
-					blockoverride "step_link" { raw_text = "[tv_wonder_ceremony|e]" }
+					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/estates_enrichment.dds" }
+					blockoverride "step_link" { raw_text = "[tv_wonder_organization_competence|e] / [tv_wonder_logistics_competence|e]" }
 					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P5_TITLE" }
 					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P5_TEXT" }
 				}
+				tv_eu_cycle_step = {
+					name = "tv_eu_overview_cycle_step_6"
+					position = { 181 467 }
+					size = { 264 196 }
+					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/building_panel/build.dds" }
+					blockoverride "step_link" { raw_text = "[tv_wonder_construction|e]" }
+					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P6_TITLE" }
+					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P6_TEXT" }
+				}
+				tv_eu_cycle_step = {
+					name = "tv_eu_overview_cycle_step_7"
+					position = { 254 144 }
+					size = { 264 196 }
+					blockoverride "step_icon" { texture = "gfx/interface/icons/flat_icons/hre_parliament.dds" }
+					blockoverride "step_link" { raw_text = "[tv_wonder_ceremony|e]" }
+					blockoverride "step_title" { text = "TV_EU_OVERVIEW_S1_P7_TITLE" }
+					blockoverride "step_text" { text = "TV_EU_OVERVIEW_S1_P7_TEXT" }
+				}
+				}
 			}
+			tv_eu_text = { min_width = 1370 max_width = 1370 text = "TV_EU_OVERVIEW_S1_NOTE" }
 
+vbox = { name = "tv_eu_overview_guide_1"
+minimumsize = { 1450 -1 } maximumsize = { 1450 -1 } layoutpolicy_horizontal = expanding spacing = 10
 			tv_eu_section = {
-				blockoverride "section_icon" { texture = "gfx/interface/icons/international_organizations/tv_engineering_department.dds" }
+				blockoverride "section_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/government.dds" }
 				blockoverride "section_title" { text = "TV_EU_OVERVIEW_S2_TITLE" }
 			}
-			tv_eu_text = { text = "TV_EU_OVERVIEW_S2_BODY" }
+			tv_eu_text = { min_width = 1370 max_width = 1370 text = "TV_EU_OVERVIEW_S2_BODY" }
+tv_eu_anatomy = {
+	blockoverride "anatomy_header_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/government.dds" }
+	blockoverride "anatomy_title" { text = "TV_ENGINEERING_GREAT_ENGINEER_CARD_TITLE" }
+	blockoverride "anatomy_rows" {
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			spacing = 10
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "1" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							minimumsize = { 360 32 }
+							maximumsize = { 560 32 }
+							layoutpolicy_horizontal = expanding
+							using = bg_text_mask_container_dark_blue
+							text_single = {
+								size = { 100% 100% }
+								align = center|nobaseline
+								autoresize = no
+								default_format = "#high"
+								text = "TV_ENGINEERING_HEADER_STATUS_NO_ENGINEER"
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S2_R1_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S2_R1_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "2" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 250 150 }
+							using = bg_text_mask_container_dark_blue
+							vbox = {
+								size = { 250 150 }
+								spacing = 2
+								expand = {}
+								text_single = {
+									size = { 250 44 }
+									raw_text = "+"
+									fontsize = 34
+									align = center|nobaseline
+									default_format = "#yellow_titles"
+								}
+								text_single = {
+									size = { 250 20 }
+									fontsize = 14
+									align = center|nobaseline
+									default_format = "#high"
+									text = "TV_IO_HEADER_APPOINT_CHIEF_PROMPT"
+								}
+								expand = {}
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S2_R2_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S2_R2_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				margin_bottom = 0
+				blockoverride "row_number" { raw_text = "3" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_CHANGE_LEADER_SHORT" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_red = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_REMOVE_LEADER_SHORT" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S2_R3_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S2_R3_TEXT"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+}
 
+vbox = { name = "tv_eu_overview_guide_2"
+minimumsize = { 1450 -1 } maximumsize = { 1450 -1 } layoutpolicy_horizontal = expanding spacing = 10
 			tv_eu_section = {
-				blockoverride "section_icon" { texture = "gfx/interface/icons/flat_icons/cultural_tradition.dds" }
+				blockoverride "section_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/advances.dds" }
 				blockoverride "section_title" { text = "TV_EU_OVERVIEW_S3_TITLE" }
 			}
-			tv_eu_text = { text = "TV_EU_OVERVIEW_S3_BODY" }
+			tv_eu_text = { min_width = 1370 max_width = 1370 text = "TV_EU_OVERVIEW_S3_BODY" }
+tv_eu_anatomy = {
+	blockoverride "anatomy_header_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/advances.dds" }
+	blockoverride "anatomy_title" { text = "TV_ENGINEERING_CONCEPT_CARD_TITLE" }
+	blockoverride "anatomy_rows" {
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			spacing = 10
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "1" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						tv_eu_mock_bar = {
+							blockoverride "mock_label" { text = "TV_ENGINEERING_CONCEPT_CARD_TITLE" }
+							blockoverride "mock_bar_text" { raw_text = "100 / 100" }
+							blockoverride "mock_bar_value" { value = 100 }
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S3_R1_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S3_R1_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "2" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_PROPOSAL_BUTTON_SKY_DOME" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_PROPOSAL_BUTTON_TOWER_TEMPLE" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_PROPOSAL_BUTTON_STAR_FORTRESS" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S3_R2_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S3_R2_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "3" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_green = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_ACCEPT_BUTTON" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_red = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_REFUTE_BUTTON" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_BRIBE_BUTTON" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S3_R3_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S3_R3_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				margin_bottom = 0
+				blockoverride "row_number" { raw_text = "4" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						hbox = {
+							spacing = 8
+							widget = {
+								size = { 180 32 }
+								tv_eu_mock_button_yellow = {
+									blockoverride "mock_text" { text = "TV_ENGINEERING_WONDER_SIZE_SMALL_LABEL" }
+								}
+							}
+							widget = {
+								size = { 180 32 }
+								tv_eu_mock_button = {
+									blockoverride "mock_text" { text = "TV_ENGINEERING_WONDER_SIZE_MEDIUM_LABEL" }
+								}
+							}
+							widget = {
+								size = { 180 32 }
+								tv_eu_mock_button = {
+									blockoverride "mock_text" { text = "TV_ENGINEERING_WONDER_SIZE_LARGE_LABEL" }
+								}
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S3_R4_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S3_R4_TEXT"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+}
+
+vbox = { name = "tv_eu_overview_guide_3"
+minimumsize = { 1450 -1 } maximumsize = { 1450 -1 } layoutpolicy_horizontal = expanding spacing = 10
+			tv_eu_section = {
+				blockoverride "section_icon" { texture = "gfx/interface/icons/flat_icons/estates/estates.dds" }
+				blockoverride "section_title" { text = "TV_EU_OVERVIEW_S4_TITLE" }
+			}
+			tv_eu_text = { min_width = 1370 max_width = 1370 text = "TV_EU_OVERVIEW_S4_BODY" }
+tv_eu_anatomy = {
+	blockoverride "anatomy_header_icon" { texture = "gfx/interface/icons/flat_icons/estates/estates.dds" }
+	blockoverride "anatomy_title" { text = "TV_ENGINEERING_STATUS_CARD_TITLE" }
+	blockoverride "anatomy_rows" {
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			spacing = 10
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "1" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						tv_eu_mock_bar = {
+							blockoverride "mock_label" { text = "TV_ENGINEERING_DOMESTIC_SUPPORT_LABEL" }
+							blockoverride "mock_bar_text" { raw_text = "135 / 100" }
+							blockoverride "mock_bar_value" { value = 135 }
+						}
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							text_single = {
+								layoutpolicy_horizontal = expanding
+								autoresize = yes
+								fontsize = 12
+								default_format = "#weak"
+								text = "TV_ENGINEERING_SUPPORT_BASE_LABEL"
+							}
+							text_single = {
+								layoutpolicy_horizontal = expanding
+								autoresize = yes
+								fontsize = 12
+								default_format = "#weak"
+								text = "TV_ENGINEERING_SUPPORT_RESERVE_LABEL"
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S4_R1_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S4_R1_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "2" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							minimumsize = { 560 44 }
+							maximumsize = { 560 44 }
+							using = bg_text_mask_container_dark_blue
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								margin = { 6 4 }
+								spacing = 6
+								text_single = {
+									size = { 26 22 }
+									align = center|nobaseline
+									fontsize = 15
+									raw_text = "[ShowEstateTypeName('nobles_estate')]"
+								}
+								text_multi = {
+									min_width = 380
+									max_width = 380
+									autoresize = yes
+									fontsize = 12
+									text = "TV_ENGINEERING_DEMAND_NOBLES_1"
+								}
+								widget = {
+									size = { 28 24 }
+									tv_eu_mock_button_green = {
+										blockoverride "mock_text" { raw_text = "@trigger_yes!" }
+									}
+								}
+								widget = {
+									size = { 28 24 }
+									tv_eu_mock_button_red = {
+										blockoverride "mock_text" { raw_text = "@trigger_no!" }
+									}
+								}
+								widget = {
+									size = { 28 24 }
+									tv_eu_mock_button_yellow = {
+										blockoverride "mock_text" { raw_text = "@gold!" }
+									}
+								}
+							}
+						}
+						widget = {
+							minimumsize = { 560 44 }
+							maximumsize = { 560 44 }
+							using = bg_text_mask_container_dark_blue
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								margin = { 6 4 }
+								spacing = 6
+								text_single = {
+									size = { 26 22 }
+									align = center|nobaseline
+									fontsize = 15
+									raw_text = "[ShowEstateTypeName('burghers_estate')]"
+								}
+								text_multi = {
+									min_width = 380
+									max_width = 380
+									autoresize = yes
+									fontsize = 12
+									text = "TV_ENGINEERING_DEMAND_BURGHERS_1"
+								}
+								widget = {
+									size = { 28 24 }
+									tv_eu_mock_button_green = {
+										blockoverride "mock_text" { raw_text = "@trigger_yes!" }
+									}
+								}
+								widget = {
+									size = { 28 24 }
+									tv_eu_mock_button_red = {
+										blockoverride "mock_text" { raw_text = "@trigger_no!" }
+									}
+								}
+								widget = {
+									size = { 28 24 }
+									tv_eu_mock_button_yellow = {
+										blockoverride "mock_text" { raw_text = "@gold!" }
+									}
+								}
+							}
+						}
+						widget = {
+							minimumsize = { 560 44 }
+							maximumsize = { 560 44 }
+							using = bg_text_mask_container_dark_blue
+							hbox = {
+								layoutpolicy_horizontal = expanding
+								margin = { 6 4 }
+								spacing = 6
+								text_single = {
+									size = { 26 22 }
+									align = center|nobaseline
+									fontsize = 15
+									raw_text = "[ShowEstateTypeName('clergy_estate')]"
+								}
+								text_multi = {
+									min_width = 380
+									max_width = 380
+									autoresize = yes
+									fontsize = 12
+									text = "TV_ENGINEERING_DEMAND_CLERGY_1"
+								}
+								widget = {
+									size = { 28 24 }
+									tv_eu_mock_button_green = {
+										blockoverride "mock_text" { raw_text = "@trigger_yes!" }
+									}
+								}
+								widget = {
+									size = { 28 24 }
+									tv_eu_mock_button_red = {
+										blockoverride "mock_text" { raw_text = "@trigger_no!" }
+									}
+								}
+								widget = {
+									size = { 28 24 }
+									tv_eu_mock_button_yellow = {
+										blockoverride "mock_text" { raw_text = "@gold!" }
+									}
+								}
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S4_R2_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S4_R2_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "3" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_green = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_ACCEPT_SHORT_BUTTON" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_red = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_REFUTE_SHORT_BUTTON" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_BRIBE_SHORT_BUTTON" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S4_R3_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S4_R3_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				margin_bottom = 0
+				blockoverride "row_number" { raw_text = "4" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_green = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_END_DEBATE_BUTTON" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S4_R4_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S4_R4_TEXT"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+}
+
+vbox = { name = "tv_eu_overview_guide_4"
+minimumsize = { 1450 -1 } maximumsize = { 1450 -1 } layoutpolicy_horizontal = expanding spacing = 10
+			tv_eu_section = {
+				blockoverride "section_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/mapmodes.dds" }
+				blockoverride "section_title" { text = "TV_EU_OVERVIEW_S5_TITLE" }
+			}
+			tv_eu_text = { min_width = 1370 max_width = 1370 text = "TV_EU_OVERVIEW_S5_BODY" }
+tv_eu_anatomy = {
+	blockoverride "anatomy_header_icon" { texture = "gfx/interface/icons/flat_icons/tabicons/mapmodes.dds" }
+	blockoverride "anatomy_title" { text = "TV_ENGINEERING_SURVEY_CARD_TITLE" }
+	blockoverride "anatomy_rows" {
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			spacing = 10
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "1" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						tv_eu_mock_bar = {
+							blockoverride "mock_label" { text = "TV_ENGINEERING_SURVEY_PROGRESS_LABEL" }
+							blockoverride "mock_bar_text" { raw_text = "100 / 100" }
+							blockoverride "mock_bar_value" { value = 100 }
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S5_R1_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S5_R1_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "2" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_SELECT_SURVEY_SITE_BUTTON" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_RERUN_SURVEY_BUTTON" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S5_R2_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S5_R2_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "3" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						tv_eu_mock_bar = {
+							blockoverride "mock_label" { text = "TV_ENGINEERING_SCALE_COMPETENCE_LABEL" }
+							blockoverride "mock_bar_text" { raw_text = "70%" }
+							blockoverride "mock_bar_value" { value = 70 }
+						}
+						text_single = {
+							size = { 560 16 }
+							autoresize = yes
+							fontsize = 12
+							default_format = "#weak"
+							text = "TV_ENGINEERING_SURVEY_SCALE_EFFECT_LABEL"
+						}
+						tv_eu_mock_bar = {
+							blockoverride "mock_label" { text = "TV_ENGINEERING_ORGANIZATION_COMPETENCE_LABEL" }
+							blockoverride "mock_bar_text" { raw_text = "65%" }
+							blockoverride "mock_bar_value" { value = 65 }
+						}
+						text_single = {
+							size = { 560 16 }
+							autoresize = yes
+							fontsize = 12
+							default_format = "#weak"
+							text = "TV_ENGINEERING_SURVEY_ORGANIZATION_EFFECT_LABEL"
+						}
+						tv_eu_mock_bar = {
+							blockoverride "mock_label" { text = "TV_ENGINEERING_LOGISTICS_COMPETENCE_LABEL" }
+							blockoverride "mock_bar_text" { raw_text = "55%" }
+							blockoverride "mock_bar_value" { value = 55 }
+						}
+						text_single = {
+							size = { 560 16 }
+							autoresize = yes
+							fontsize = 12
+							default_format = "#weak"
+							text = "TV_ENGINEERING_SURVEY_LOGISTICS_EFFECT_LABEL"
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S5_R3_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S5_R3_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				margin_bottom = 0
+				blockoverride "row_number" { raw_text = "4" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_green = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_CONFIRM_SURVEY_SITE_BUTTON" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S5_R4_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S5_R4_TEXT"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+}
+
+vbox = { name = "tv_eu_overview_guide_5"
+minimumsize = { 1450 -1 } maximumsize = { 1450 -1 } layoutpolicy_horizontal = expanding spacing = 10
+			tv_eu_section = {
+				blockoverride "section_icon" { texture = "gfx/interface/icons/flat_icons/estates_enrichment.dds" }
+				blockoverride "section_title" { text = "TV_EU_OVERVIEW_S6_TITLE" }
+			}
+			tv_eu_text = { min_width = 1370 max_width = 1370 text = "TV_EU_OVERVIEW_S6_BODY" }
+tv_eu_anatomy = {
+	blockoverride "anatomy_header_icon" { texture = "gfx/interface/icons/flat_icons/estates_enrichment.dds" }
+	blockoverride "anatomy_title" { text = "TV_ENGINEERING_ORG_LOG_CARD_TITLE" }
+	blockoverride "anatomy_rows" {
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			spacing = 10
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "1" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						tv_eu_mock_bar = {
+							blockoverride "mock_label" { text = "TV_ENGINEERING_ORGANIZATION_COMPETENCE_LABEL" }
+							blockoverride "mock_bar_text" { raw_text = "7 / 12" }
+							blockoverride "mock_bar_value" { value = 62 }
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S6_R1_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S6_R1_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "2" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						tv_eu_mock_stats = {
+							blockoverride "mock_stats" {
+								hbox = {
+									spacing = 6
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_BASE_PROGRESS" }
+										blockoverride "mock_stat_value" { raw_text = "7000 /mo" }
+									}
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_EMPLOYMENT" }
+										blockoverride "mock_stat_value" { raw_text = "12040 / 14000" }
+									}
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_CAMP_PROGRESS" }
+										blockoverride "mock_stat_value" { raw_text = "6020 /mo" }
+									}
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_MAINTENANCE" }
+										blockoverride "mock_stat_value" { raw_text = "1172.50 @gold!" }
+									}
+								}
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S6_R2_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S6_R2_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "3" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							spacing = 8
+							size = { -1 16 }
+						text_single = {
+							size = { 196 16 }
+							align = left|nobaseline
+							autoresize = yes
+							fontsize = 11
+							default_format = "#weak"
+							text = "TV_OL_INPUT_GOODS"
+						}
+						text_single = {
+							size = { 120 16 }
+							align = right|nobaseline
+							autoresize = yes
+							fontsize = 11
+							default_format = "#weak"
+							text = "TV_OL_LOCAL_PRICE"
+						}
+						text_single = {
+							size = { 176 16 }
+							align = right|nobaseline
+							autoresize = yes
+							fontsize = 11
+							default_format = "#weak"
+							text = "TV_OL_DEMAND_SUPPLY"
+						}
+						}
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							spacing = 8
+							size = { -1 26 }
+							icon = { size = { 26 26 } texture = "gfx/interface/icons/flat_icons/estates/estates.dds" }
+							text_single = {
+								layoutpolicy_horizontal = expanding
+								autoresize = yes
+								raw_text = "[ShowGoodsName('tools')]"
+							}
+							text_single = {
+								size = { 110 26 }
+								align = right|nobaseline
+								autoresize = yes
+								raw_text = "1.35 @gold!"
+							}
+							text_single = {
+								size = { 150 26 }
+								align = right|nobaseline
+								autoresize = yes
+								raw_text = "#R 150.0 / 120.0#!"
+							}
+						}
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							spacing = 8
+							size = { -1 26 }
+							icon = { size = { 26 26 } texture = "gfx/interface/icons/flat_icons/estates/estates.dds" }
+							text_single = {
+								layoutpolicy_horizontal = expanding
+								autoresize = yes
+								raw_text = "[ShowGoodsName('tv_wonder_materials')]"
+							}
+							text_single = {
+								size = { 110 26 }
+								align = right|nobaseline
+								autoresize = yes
+								raw_text = "6.20 @gold!"
+							}
+							text_single = {
+								size = { 150 26 }
+								align = right|nobaseline
+								autoresize = yes
+								raw_text = "#R 140.0 / 117.6#!"
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S6_R3_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S6_R3_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "4" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							minimumsize = { 560 30 }
+							maximumsize = { 560 30 }
+							using = bg_text_mask_container_dark_blue
+							text_single = {
+								size = { 100% 100% }
+								align = center|nobaseline
+								autoresize = no
+								text = "TV_OL_CHAIN"
+							}
+						}
+						tv_eu_mock_stats = {
+							blockoverride "mock_stats" {
+								hbox = {
+									spacing = 6
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_BASE_PROGRESS" }
+										blockoverride "mock_stat_value" { raw_text = "6020 /mo" }
+									}
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_INPUT" }
+										blockoverride "mock_stat_value" { raw_text = "82%" }
+									}
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_LOG_FACTOR" }
+										blockoverride "mock_stat_value" { raw_text = "98%" }
+									}
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_RESULT" }
+										blockoverride "mock_stat_value" { raw_text = "4837 /mo" }
+									}
+								}
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S6_R4_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S6_R4_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				margin_bottom = 0
+				blockoverride "row_number" { raw_text = "5" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_BUILD_WORKSITE_BUTTON" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S6_R5_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S6_R5_TEXT"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+}
+
+vbox = { name = "tv_eu_overview_guide_6"
+minimumsize = { 1450 -1 } maximumsize = { 1450 -1 } layoutpolicy_horizontal = expanding spacing = 10
+			tv_eu_section = {
+				blockoverride "section_icon" { texture = "gfx/interface/icons/flat_icons/building_panel/build.dds" }
+				blockoverride "section_title" { text = "TV_EU_OVERVIEW_S7_TITLE" }
+			}
+			tv_eu_text = { min_width = 1370 max_width = 1370 text = "TV_EU_OVERVIEW_S7_BODY" }
+tv_eu_anatomy = {
+	blockoverride "anatomy_header_icon" { texture = "gfx/interface/icons/flat_icons/building_panel/build.dds" }
+	blockoverride "anatomy_title" { text = "TV_ENGINEERING_CONSTRUCTION_CARD_TITLE" }
+	blockoverride "anatomy_rows" {
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			spacing = 10
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "1" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							spacing = 6
+							size = { -1 28 }
+							text_single = {
+								size = { 96 28 }
+								autoresize = yes
+								text = "TV_ENGINEERING_CONSTRUCTION_PART_FOUNDATION"
+							}
+							tv_eu_mock_pips = {
+								blockoverride "mock_pips" {
+									hbox = {
+										spacing = 4
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_green
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "1"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_green
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "2"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_green
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "3"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_green
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "4"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_green
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "5"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_green
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "6"
+											}
+										}
+									}
+								}
+							}
+						}
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							spacing = 6
+							size = { -1 28 }
+							text_single = {
+								size = { 96 28 }
+								autoresize = yes
+								text = "TV_ENGINEERING_CONSTRUCTION_PART_BODY"
+							}
+							tv_eu_mock_pips = {
+								blockoverride "mock_pips" {
+									hbox = {
+										spacing = 4
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_yellow
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "1"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_yellow
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "2"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_yellow
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "3"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_yellow
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "4"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_red
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "5"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "6"
+											}
+										}
+									}
+								}
+							}
+						}
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							spacing = 6
+							size = { -1 28 }
+							text_single = {
+								size = { 96 28 }
+								autoresize = yes
+								text = "TV_ENGINEERING_CONSTRUCTION_PART_FUNCTION"
+							}
+							tv_eu_mock_pips = {
+								blockoverride "mock_pips" {
+									hbox = {
+										spacing = 4
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_red
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "1"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_red
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "2"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "3"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "4"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "5"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "6"
+											}
+										}
+									}
+								}
+							}
+						}
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							spacing = 6
+							size = { -1 28 }
+							text_single = {
+								size = { 96 28 }
+								autoresize = yes
+								text = "TV_ENGINEERING_CONSTRUCTION_PART_DECORATION"
+							}
+							tv_eu_mock_pips = {
+								blockoverride "mock_pips" {
+									hbox = {
+										spacing = 4
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture_alt_red
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "1"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "2"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "3"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "4"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "5"
+											}
+										}
+										widget = {
+											size = { 30 26 }
+											using = button_regular_texture
+											text_single = {
+												size = { 100% 100% }
+												align = center|nobaseline
+												autoresize = no
+												fontsize = 12
+												raw_text = "6"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S7_R1_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S7_R1_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "2" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_CONSTRUCTION_PART_FOUNDATION" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_CONSTRUCTION_PART_BODY" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_CONSTRUCTION_PART_FUNCTION" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_CONSTRUCTION_PART_DECORATION" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S7_R2_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S7_R2_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "3" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						tv_eu_mock_stats = {
+							blockoverride "mock_stats" {
+								hbox = {
+									spacing = 6
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_ENGINEERING_WONDER_LEVEL_LABEL" }
+										blockoverride "mock_stat_value" { raw_text = "2" }
+									}
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_ENGINEERING_ACTIVE_PART_LABEL" }
+										blockoverride "mock_stat_value" { text = "TV_ENGINEERING_ACTIVE_PART_BODY" }
+									}
+								}
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S7_R3_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S7_R3_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				margin_bottom = 0
+				blockoverride "row_number" { raw_text = "4" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_green = {
+								blockoverride "mock_text" { text = "TV_ENGINEERING_FINISH_CONSTRUCTION_BUTTON" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S7_R4_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S7_R4_TEXT"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+}
+
+vbox = { name = "tv_eu_overview_guide_7"
+minimumsize = { 1450 -1 } maximumsize = { 1450 -1 } layoutpolicy_horizontal = expanding spacing = 10
+			tv_eu_section = {
+				blockoverride "section_icon" { texture = "gfx/interface/icons/flat_icons/hre_parliament.dds" }
+				blockoverride "section_title" { text = "TV_EU_OVERVIEW_S8_TITLE" }
+			}
+			tv_eu_text = { min_width = 1370 max_width = 1370 text = "TV_EU_OVERVIEW_S8_BODY" }
+tv_eu_anatomy = {
+	blockoverride "anatomy_header_icon" { texture = "gfx/interface/icons/flat_icons/hre_parliament.dds" }
+	blockoverride "anatomy_title" { text = "TV_ENGINEERING_CEREMONY_CARD_TITLE" }
+	blockoverride "anatomy_rows" {
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			spacing = 10
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "1" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 438 36 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_WONDER_RITUAL_NAME_1_1" }
+							}
+						}
+						widget = {
+							size = { 438 36 }
+							tv_eu_mock_button = {
+								blockoverride "mock_text" { text = "TV_WONDER_RITUAL_NAME_2_1" }
+							}
+						}
+						widget = {
+							size = { 438 36 }
+							tv_eu_mock_button = {
+								blockoverride "mock_text" { text = "TV_WONDER_RITUAL_NAME_3_1" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S8_R1_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S8_R1_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "2" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						tv_eu_mock_stats = {
+							blockoverride "mock_stats" {
+								hbox = {
+									spacing = 6
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_BASE_PROGRESS" }
+										blockoverride "mock_stat_value" { raw_text = "7000 /mo" }
+									}
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_EMPLOYMENT" }
+										blockoverride "mock_stat_value" { raw_text = "12040 / 14000" }
+									}
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_CAMP_PROGRESS" }
+										blockoverride "mock_stat_value" { raw_text = "6020 /mo" }
+									}
+									tv_eu_mock_stat = {
+										blockoverride "mock_stat_label" { text = "TV_OL_MAINTENANCE" }
+										blockoverride "mock_stat_value" { raw_text = "1172.50 @gold!" }
+									}
+								}
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S8_R2_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S8_R2_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				blockoverride "row_number" { raw_text = "3" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_green = {
+								blockoverride "mock_text" { text = "TV_WONDER_RITUAL_CONFIRM" }
+							}
+						}
+						widget = {
+							size = { 400 32 }
+							tv_eu_mock_button_yellow = {
+								blockoverride "mock_text" { text = "TV_WONDER_RITUAL_PLAIN" }
+							}
+						}
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S8_R3_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S8_R3_TEXT"
+						}
+					}
+				}
+			}
+			tv_eu_anatomy_row = {
+				margin_bottom = 0
+				blockoverride "row_number" { raw_text = "4" }
+				blockoverride "row_control" {
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						spacing = 4
+					}
+				}
+				blockoverride "row_note" {
+					vbox = {
+						spacing = 3
+						text_single = {
+							layoutpolicy_horizontal = expanding
+							autoresize = yes
+							using = Font_Type_Headers
+							fontsize = 16
+							default_format = "#yellow_titles"
+							text = "TV_EU_OVERVIEW_S8_R4_TITLE"
+						}
+						text_multi = {
+							min_width = 700
+							max_width = 700
+							autoresize = yes
+							text = "TV_EU_OVERVIEW_S8_R4_TEXT"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+}
 				}
 			}
 		}

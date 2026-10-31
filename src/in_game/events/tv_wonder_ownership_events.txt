@@ -58,7 +58,12 @@ tv_engineering_department.8001 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = sacred_mountain }
 			}
@@ -130,7 +135,12 @@ tv_engineering_department.8002 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = triumphal_axis }
 			}
@@ -202,7 +212,12 @@ tv_engineering_department.8003 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_port }
 			}
@@ -274,7 +289,12 @@ tv_engineering_department.8004 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_necropolis }
 			}
@@ -346,7 +366,12 @@ tv_engineering_department.8005 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_lighthouse }
 			}
@@ -418,7 +443,12 @@ tv_engineering_department.8006 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = hydraulic_workshop }
 			}
@@ -490,7 +520,12 @@ tv_engineering_department.8007 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = mining_city }
 			}
@@ -562,7 +597,12 @@ tv_engineering_department.8008 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_observatory }
 			}
@@ -634,7 +674,12 @@ tv_engineering_department.8009 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = palace_of_nations }
 			}
@@ -706,7 +751,12 @@ tv_engineering_department.8010 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = university_city }
 			}
@@ -778,7 +828,12 @@ tv_engineering_department.8011 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = sky_dome_grand_temple }
 			}
@@ -850,7 +905,12 @@ tv_engineering_department.8012 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_tower_temple }
 			}
@@ -922,7 +982,12 @@ tv_engineering_department.8013 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = river_extension }
 			}
@@ -994,7 +1059,12 @@ tv_engineering_department.8014 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = national_shipyard }
 			}
@@ -1066,7 +1136,12 @@ tv_engineering_department.8015 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = star_fortress_city }
 			}
@@ -1138,7 +1213,12 @@ tv_engineering_department.8016 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_wall }
 			}
@@ -1210,7 +1290,12 @@ tv_engineering_department.8017 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_armory }
 			}
@@ -1282,7 +1367,12 @@ tv_engineering_department.8018 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = library_of_nation }
 			}
@@ -1354,7 +1444,12 @@ tv_engineering_department.8019 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = large_canal_system }
 			}
@@ -1426,7 +1521,12 @@ tv_engineering_department.8020 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = mountain_terrace_network }
 			}
@@ -1498,7 +1598,12 @@ tv_engineering_department.8021 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_dam_project }
 			}
@@ -1570,7 +1675,12 @@ tv_engineering_department.8022 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = royal_granary_system }
 			}
@@ -1642,7 +1752,12 @@ tv_engineering_department.8023 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = imperial_post_road_network }
 			}
@@ -1714,7 +1829,12 @@ tv_engineering_department.8024 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = canal_hub_city }
 			}
@@ -1786,7 +1906,12 @@ tv_engineering_department.8025 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = frontier_colonization_belt }
 			}
@@ -1858,7 +1983,12 @@ tv_engineering_department.8026 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = coastal_beacon_network }
 			}
@@ -1930,7 +2060,12 @@ tv_engineering_department.8027 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = knightly_fortress_order }
 			}
@@ -2002,7 +2137,12 @@ tv_engineering_department.8028 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = war_college_system }
 			}
@@ -2074,7 +2214,12 @@ tv_engineering_department.8029 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_clock_bell_system }
 			}
@@ -2146,7 +2291,12 @@ tv_engineering_department.8030 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = royal_art_district }
 			}
@@ -2218,7 +2368,12 @@ tv_engineering_department.8031 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = grand_theater_festival_district }
 			}
@@ -2290,7 +2445,12 @@ tv_engineering_department.8032 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = world_embassy_quarter }
 			}
@@ -2362,7 +2522,12 @@ tv_engineering_department.8033 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = law_code_stele_project }
 			}
@@ -2434,7 +2599,12 @@ tv_engineering_department.8034 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = world_market }
 			}
@@ -2506,7 +2676,12 @@ tv_engineering_department.8035 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = royal_mint_system }
 			}
@@ -2578,7 +2753,12 @@ tv_engineering_department.8036 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = guild_alliance }
 			}
@@ -2650,7 +2830,12 @@ tv_engineering_department.8037 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = maritime_trade_station_network }
 			}
@@ -2722,7 +2907,12 @@ tv_engineering_department.8038 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_workshop_complex }
 			}
@@ -2794,7 +2984,12 @@ tv_engineering_department.8039 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = world_monument_group }
 			}
@@ -2866,7 +3061,12 @@ tv_engineering_department.8040 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = city_expansion_project }
 			}
@@ -2938,7 +3138,12 @@ tv_engineering_department.8041 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = megalithic_circle }
 			}
@@ -3010,7 +3215,12 @@ tv_engineering_department.8042 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = grand_cathedral }
 			}
@@ -3082,7 +3292,12 @@ tv_engineering_department.8043 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_monastery }
 			}
@@ -3154,7 +3369,12 @@ tv_engineering_department.8044 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = city_great_tower }
 			}
@@ -3226,7 +3446,12 @@ tv_engineering_department.8045 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_sculpture_group }
 			}
@@ -3298,7 +3523,12 @@ tv_engineering_department.8046 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = coastal_defense_cannon }
 			}
@@ -3370,7 +3600,12 @@ tv_engineering_department.8047 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = naval_school }
 			}
@@ -3442,7 +3677,12 @@ tv_engineering_department.8048 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = colonial_trade_company }
 			}
@@ -3514,7 +3754,12 @@ tv_engineering_department.8049 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_assembly_hall }
 			}
@@ -3586,7 +3831,12 @@ tv_engineering_department.8050 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = mobile_fortress }
 			}
@@ -3658,7 +3908,12 @@ tv_engineering_department.8051 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = ancient_city_ruins }
 			}
@@ -3730,7 +3985,12 @@ tv_engineering_department.8052 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = summer_palace }
 			}
@@ -3802,7 +4062,12 @@ tv_engineering_department.8053 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = national_bank }
 			}
@@ -3874,7 +4139,12 @@ tv_engineering_department.8054 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = pirate_port }
 			}
@@ -3946,7 +4216,12 @@ tv_engineering_department.8055 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = grand_garden_complex }
 			}
@@ -4018,7 +4293,12 @@ tv_engineering_department.8056 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = state_examination_complex }
 			}
@@ -4090,7 +4370,12 @@ tv_engineering_department.8101 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_pharos_lighthouse }
 			}
@@ -4162,7 +4447,12 @@ tv_engineering_department.8102 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_hagia_sophia }
 			}
@@ -4234,7 +4524,12 @@ tv_engineering_department.8103 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_dome_of_the_rock }
 			}
@@ -4306,7 +4601,12 @@ tv_engineering_department.8104 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_angkor_wat }
 			}
@@ -4378,7 +4678,12 @@ tv_engineering_department.8105 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_potala_palace }
 			}
@@ -4450,7 +4755,12 @@ tv_engineering_department.8106 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_alhambra }
 			}
@@ -4522,7 +4832,12 @@ tv_engineering_department.8107 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_machu_picchu }
 			}
@@ -4594,7 +4909,12 @@ tv_engineering_department.8108 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_himeji_castle }
 			}
@@ -4666,7 +4986,12 @@ tv_engineering_department.8109 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_taj_mahal }
 			}
@@ -4738,7 +5063,12 @@ tv_engineering_department.8110 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_forbidden_city }
 			}
@@ -4810,7 +5140,12 @@ tv_engineering_department.8111 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_topkapi_palace }
 			}
@@ -4882,7 +5217,12 @@ tv_engineering_department.8112 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_st_peters_basilica }
 			}
@@ -4954,7 +5294,12 @@ tv_engineering_department.8113 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_lalibela_churches }
 			}
@@ -5026,7 +5371,12 @@ tv_engineering_department.8114 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_venetian_arsenal }
 			}
@@ -5098,7 +5448,12 @@ tv_engineering_department.8115 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_malacca_port }
 			}
@@ -5170,7 +5525,12 @@ tv_engineering_department.8116 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_red_fort_delhi }
 			}
@@ -5242,7 +5602,12 @@ tv_engineering_department.8117 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_versailles_palace }
 			}
@@ -5314,7 +5679,12 @@ tv_engineering_department.8118 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_tenochtitlan_causeways }
 			}
@@ -5386,7 +5756,12 @@ tv_engineering_department.8119 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_amsterdam_canal_ring }
 			}
@@ -5458,7 +5833,12 @@ tv_engineering_department.8120 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_mecca_haram_expansion }
 			}
@@ -5530,7 +5910,12 @@ tv_engineering_department.8121 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_ming_great_wall }
 			}
@@ -5602,7 +5987,12 @@ tv_engineering_department.8122 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_bank_of_saint_george }
 			}
@@ -5674,7 +6064,12 @@ tv_engineering_department.8123 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_cahokia_mounds }
 			}
@@ -5746,7 +6141,12 @@ tv_engineering_department.8124 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_great_zimbabwe }
 			}
@@ -5818,7 +6218,12 @@ tv_engineering_department.8125 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_isfahan_square }
 			}
@@ -5890,7 +6295,12 @@ tv_engineering_department.8126 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_grand_canal }
 			}
@@ -5962,7 +6372,12 @@ tv_engineering_department.8127 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_inca_royal_road }
 			}
@@ -6034,7 +6449,12 @@ tv_engineering_department.8128 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_roman_aqueducts }
 			}
@@ -6106,7 +6526,12 @@ tv_engineering_department.8129 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_suez_ancient_canal }
 			}
@@ -6178,7 +6603,12 @@ tv_engineering_department.8130 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_kremlin }
 			}
@@ -6250,7 +6680,12 @@ tv_engineering_department.8131 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_teotihuacan }
 			}
@@ -6322,7 +6757,12 @@ tv_engineering_department.8132 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_angkor_hydraulic_system }
 			}
@@ -6394,7 +6834,12 @@ tv_engineering_department.8133 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_dutch_polders }
 			}
@@ -6466,7 +6911,12 @@ tv_engineering_department.8134 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_machu_picchu_terraces }
 			}
@@ -6538,7 +6988,12 @@ tv_engineering_department.8135 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_british_navy_dockyards }
 			}
@@ -6610,7 +7065,12 @@ tv_engineering_department.8136 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_spanish_silver_fleet }
 			}
@@ -6682,7 +7142,12 @@ tv_engineering_department.8137 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_ottoman_hajj_road }
 			}
@@ -6754,7 +7219,12 @@ tv_engineering_department.8138 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_persian_qanat }
 			}
@@ -6826,7 +7296,12 @@ tv_engineering_department.8139 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_longjiang_shipyard }
 			}
@@ -6898,7 +7373,12 @@ tv_engineering_department.8140 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_jerusalem_holy_city }
 			}
@@ -6970,7 +7450,12 @@ tv_engineering_department.8141 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_stonehenge }
 			}
@@ -7042,7 +7527,12 @@ tv_engineering_department.8142 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_tower_of_london }
 			}
@@ -7114,7 +7604,12 @@ tv_engineering_department.8143 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_notre_dame_de_paris }
 			}
@@ -7186,7 +7681,12 @@ tv_engineering_department.8144 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_st_basils_cathedral }
 			}
@@ -7258,7 +7758,12 @@ tv_engineering_department.8145 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_trinity_lavra }
 			}
@@ -7330,7 +7835,12 @@ tv_engineering_department.8146 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_winter_palace }
 			}
@@ -7402,7 +7912,12 @@ tv_engineering_department.8147 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_gyeongbokgung }
 			}
@@ -7474,7 +7989,12 @@ tv_engineering_department.8148 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_changbai_mountain_altar }
 			}
@@ -7546,7 +8066,12 @@ tv_engineering_department.8149 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_belgrade_fortress }
 			}
@@ -7618,7 +8143,12 @@ tv_engineering_department.8150 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_meteora_monasteries }
 			}
@@ -7690,7 +8220,12 @@ tv_engineering_department.8151 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_belem_tower }
 			}
@@ -7762,7 +8297,12 @@ tv_engineering_department.8152 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_iberian_inquisition }
 			}
@@ -7834,7 +8374,12 @@ tv_engineering_department.8153 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_santa_maria_del_fiore }
 			}
@@ -7906,7 +8451,12 @@ tv_engineering_department.8154 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_leaning_tower_of_pisa }
 			}
@@ -7978,7 +8528,12 @@ tv_engineering_department.8155 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_milan_cathedral }
 			}
@@ -8050,7 +8605,12 @@ tv_engineering_department.8156 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_vatican_archives }
 			}
@@ -8122,7 +8682,12 @@ tv_engineering_department.8157 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_temple_of_heaven }
 			}
@@ -8194,7 +8759,12 @@ tv_engineering_department.8158 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_dujiangyan }
 			}
@@ -8266,7 +8836,12 @@ tv_engineering_department.8159 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_porcelain_tower_of_nanjing }
 			}
@@ -8338,7 +8913,12 @@ tv_engineering_department.8160 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_jingdezhen_imperial_kilns }
 			}
@@ -8410,7 +8990,12 @@ tv_engineering_department.8161 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_mogao_caves }
 			}
@@ -8482,7 +9067,12 @@ tv_engineering_department.8162 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_canton_thirteen_factories }
 			}
@@ -8554,7 +9144,12 @@ tv_engineering_department.8163 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_dardanelles_fortress }
 			}
@@ -8626,7 +9221,12 @@ tv_engineering_department.8164 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_escorial_monastery }
 			}
@@ -8698,7 +9298,12 @@ tv_engineering_department.8165 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_toledo_armory }
 			}
@@ -8770,7 +9375,12 @@ tv_engineering_department.8166 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_camino_de_santiago }
 			}
@@ -8842,7 +9452,12 @@ tv_engineering_department.8167 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_sagres_navigation_school }
 			}
@@ -8914,7 +9529,12 @@ tv_engineering_department.8168 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_milan_arsenal }
 			}
@@ -8986,7 +9606,12 @@ tv_engineering_department.8169 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_university_of_bologna }
 			}
@@ -9058,7 +9683,12 @@ tv_engineering_department.8170 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_carrara_marble_quarries }
 			}
@@ -9130,7 +9760,12 @@ tv_engineering_department.8171 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_east_india_company }
 			}
@@ -9202,7 +9837,12 @@ tv_engineering_department.8172 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_peacock_throne }
 			}
@@ -9274,7 +9914,12 @@ tv_engineering_department.8173 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_varanasi_ghats }
 			}
@@ -9346,7 +9991,12 @@ tv_engineering_department.8174 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_brihadishvara_temple }
 			}
@@ -9418,7 +10068,12 @@ tv_engineering_department.8175 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_konark_sun_temple }
 			}
@@ -9490,7 +10145,12 @@ tv_engineering_department.8176 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_fatehpur_sikri }
 			}
@@ -9562,7 +10222,12 @@ tv_engineering_department.8177 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_calicut_port_city }
 			}
@@ -9634,7 +10299,12 @@ tv_engineering_department.8178 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_wieliczka_salt_mine }
 			}
@@ -9706,7 +10376,12 @@ tv_engineering_department.8179 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_wawel_castle }
 			}
@@ -9778,7 +10453,12 @@ tv_engineering_department.8180 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_zamosc_ideal_city }
 			}
@@ -9850,7 +10530,12 @@ tv_engineering_department.8181 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_gdansk_port }
 			}
@@ -9922,7 +10607,12 @@ tv_engineering_department.8182 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_malbork_castle }
 			}
@@ -9994,7 +10684,12 @@ tv_engineering_department.8183 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_brest_synagogue_quarter }
 			}
@@ -10066,7 +10761,12 @@ tv_engineering_department.8184 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_vilnius_university }
 			}
@@ -10138,7 +10838,12 @@ tv_engineering_department.8185 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_cave_monastery }
 			}
@@ -10210,7 +10915,12 @@ tv_engineering_department.8186 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_zaporizhian_sich }
 			}
@@ -10282,7 +10992,12 @@ tv_engineering_department.8187 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_registan_square }
 			}
@@ -10354,7 +11069,12 @@ tv_engineering_department.8188 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_khiva_old_city }
 			}
@@ -10426,7 +11146,12 @@ tv_engineering_department.8189 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_bukhara_kalyan_minaret }
 			}
@@ -10498,7 +11223,12 @@ tv_engineering_department.8190 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_ferghana_palace }
 			}
@@ -10570,7 +11300,12 @@ tv_engineering_department.8191 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_tashkent_old_bazaar }
 			}
@@ -10642,7 +11377,12 @@ tv_engineering_department.8192 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_louvre_palace }
 			}
@@ -10714,7 +11454,12 @@ tv_engineering_department.8193 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_fontainebleau_palace }
 			}
@@ -10786,7 +11531,12 @@ tv_engineering_department.8194 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_bordeaux_port }
 			}
@@ -10858,7 +11608,12 @@ tv_engineering_department.8195 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_marseille_old_port }
 			}
@@ -10930,7 +11685,12 @@ tv_engineering_department.8196 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_lyon_silk_workshops }
 			}
@@ -11002,7 +11762,12 @@ tv_engineering_department.8197 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_mont_saint_michel }
 			}
@@ -11074,7 +11839,12 @@ tv_engineering_department.8199 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_carcassonne_castle }
 			}
@@ -11146,7 +11916,12 @@ tv_engineering_department.8200 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_brest_naval_port }
 			}
@@ -11218,7 +11993,12 @@ tv_engineering_department.8201 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_colmar_old_town }
 			}
@@ -11290,7 +12070,12 @@ tv_engineering_department.8202 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_house_of_wisdom }
 			}
@@ -11362,7 +12147,12 @@ tv_engineering_department.8203 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_echmiadzin_cathedral }
 			}
@@ -11434,7 +12224,12 @@ tv_engineering_department.8204 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_narikala_fortress }
 			}
@@ -11506,7 +12301,12 @@ tv_engineering_department.8205 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_baku_ateshgah }
 			}
@@ -11578,7 +12378,12 @@ tv_engineering_department.8206 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_sanaa_old_city }
 			}
@@ -11650,7 +12455,12 @@ tv_engineering_department.8207 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_schoenbrunn_palace }
 			}
@@ -11722,7 +12532,12 @@ tv_engineering_department.8208 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_electoral_conference_hall }
 			}
@@ -11794,7 +12609,12 @@ tv_engineering_department.8209 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_aachen_cathedral }
 			}
@@ -11866,7 +12686,12 @@ tv_engineering_department.8210 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_nuremberg_imperial_castle }
 			}
@@ -11938,7 +12763,12 @@ tv_engineering_department.8211 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_augsburg_bank }
 			}
@@ -12010,7 +12840,12 @@ tv_engineering_department.8212 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_cologne_cathedral }
 			}
@@ -12082,7 +12917,12 @@ tv_engineering_department.8213 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_hanseatic_kontor }
 			}
@@ -12154,7 +12994,12 @@ tv_engineering_department.8214 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_hanseatic_town_hall }
 			}
@@ -12226,7 +13071,12 @@ tv_engineering_department.8215 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_dresden_art_gallery }
 			}
@@ -12298,7 +13148,12 @@ tv_engineering_department.8216 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_munich_royal_brewery }
 			}
@@ -12370,7 +13225,12 @@ tv_engineering_department.8217 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_heidelberg_university }
 			}
@@ -12442,7 +13302,12 @@ tv_engineering_department.8218 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_fez_old_city }
 			}
@@ -12514,7 +13379,12 @@ tv_engineering_department.8219 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_kairouan_holy_city }
 			}
@@ -12586,7 +13456,12 @@ tv_engineering_department.8220 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_algiers_pirate_port }
 			}
@@ -12658,7 +13533,12 @@ tv_engineering_department.8221 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_sankore_university }
 			}
@@ -12730,7 +13610,12 @@ tv_engineering_department.8222 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_great_mosque_of_djenne }
 			}
@@ -12802,7 +13687,12 @@ tv_engineering_department.8223 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_walls_of_benin }
 			}
@@ -12874,7 +13764,12 @@ tv_engineering_department.8224 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_suzhou_classical_gardens }
 			}
@@ -12946,7 +13841,12 @@ tv_engineering_department.8225 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_fin_garden }
 			}
@@ -13018,7 +13918,12 @@ tv_engineering_department.8226 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_jiangnan_examination_hall }
 			}
@@ -13090,7 +13995,12 @@ tv_engineering_department.8227 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_thang_long_temple_of_literature }
 			}
@@ -13162,7 +14072,12 @@ tv_engineering_department.8228 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_maragheh_observatory }
 			}
@@ -13234,7 +14149,12 @@ tv_engineering_department.8229 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_xian_bell_and_drum_towers }
 			}
@@ -13306,7 +14226,12 @@ tv_engineering_department.8230 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_behistun_inscription }
 			}
@@ -13378,7 +14303,12 @@ tv_engineering_department.8231 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_beijing_imperial_granaries }
 			}
@@ -13450,7 +14380,12 @@ tv_engineering_department.8232 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_bursa_imperial_mint }
 			}
@@ -13522,7 +14457,12 @@ tv_engineering_department.8233 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_enderun_palace_school }
 			}
@@ -13594,7 +14534,12 @@ tv_engineering_department.8234 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_ayutthaya_foreign_quarters }
 			}
@@ -13666,7 +14611,12 @@ tv_engineering_department.8235 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_yunnan_weisuo_colonies }
 			}
@@ -13738,7 +14688,12 @@ tv_engineering_department.8236 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_zhoushan_beacon_network }
 			}
@@ -13810,7 +14765,12 @@ tv_engineering_department.8237 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_amber_room }
 			}
@@ -13882,7 +14842,12 @@ tv_engineering_department.8238 = {
 					}
 				}
 			}
-			add_gold = 4000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 20
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_parthenon }
 			}
@@ -13954,7 +14919,12 @@ tv_engineering_department.8239 = {
 					}
 				}
 			}
-			add_gold = 6000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 30
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_bangkok_grand_palace }
 			}
@@ -14026,7 +14996,12 @@ tv_engineering_department.8240 = {
 					}
 				}
 			}
-			add_gold = 2000
+			tv_sell_goods_with_temporary_supply_effect = {
+				market = scope:tv_wonder_ownership_site.market
+				goods = goods:tv_wonder_materials
+				amount = 20
+				time = 10
+			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_wat_arun }
 			}

@@ -838,7 +838,7 @@ icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetP
 icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_1').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_1').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_right.dds" alwaystransparent = yes }
 text_single = { position = { 52 9 } size = { 374 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_1_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
 }
-flowcontainer = { name = "tv_wonder_ritual_supporters_1"
+flowcontainer = { name = "tv_wonder_ritual_supporters_1" visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]"
 layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking maximumsize = { 438 -1 }
 direction = horizontal wrap_count = 7 spacing = 10 margin = { 10 0 } ignoreinvisible = yes
 tv_wonder_ritual_supporter = { name = "nobles_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, '(CFixedPoint)1.0'))]"
@@ -1051,7 +1051,7 @@ icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetP
 icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_2').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_2').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_right.dds" alwaystransparent = yes }
 text_single = { position = { 52 9 } size = { 374 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_2_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
 }
-flowcontainer = { name = "tv_wonder_ritual_supporters_2"
+flowcontainer = { name = "tv_wonder_ritual_supporters_2" visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]"
 layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking maximumsize = { 438 -1 }
 direction = horizontal wrap_count = 7 spacing = 10 margin = { 10 0 } ignoreinvisible = yes
 tv_wonder_ritual_supporter = { name = "nobles_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, '(CFixedPoint)2.0'))]"
@@ -1264,7 +1264,7 @@ icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetP
 icon = { visible = "[And(EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_axis_3').GetValue, '(CFixedPoint)17.0'), EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_display_dir_3').GetValue, '(CFixedPoint)1.0'))]" position = { 10 5 } size = { 32 32 } texture = "gfx/interface/icons/societal_values/latinization_vs_hellenization_right.dds" alwaystransparent = yes }
 text_single = { position = { 52 9 } size = { 374 24 } autoresize = no fontsize = 17 raw_text = "[Localize(Concatenate('TV_WONDER_RITUAL_NAME_3_', ToString_int32(FixedPointToInt(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_locked').GetValue))))]" align = nobaseline|left alwaystransparent = yes }
 }
-flowcontainer = { name = "tv_wonder_ritual_supporters_3"
+flowcontainer = { name = "tv_wonder_ritual_supporters_3" visible = "[Not(Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_in_progress').IsSet, Or(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_completed').IsSet, InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_finalized').IsSet)))]"
 layoutpolicy_horizontal = expanding layoutpolicy_vertical = shrinking maximumsize = { 438 -1 }
 direction = horizontal wrap_count = 7 spacing = 10 margin = { 10 0 } ignoreinvisible = yes
 tv_wonder_ritual_supporter = { name = "nobles_estate" visible = "[And(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').IsSet, EqualTo_CFixedPoint(InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_estate_pref_nobles_estate').GetValue, '(CFixedPoint)3.0'))]"
@@ -1453,8 +1453,6 @@ max_width = 438 autoresize = yes fontsize = 15 text = "TV_WONDER_RITUAL_PROGRESS
 progressbar = { size = { 438 14 } min = 0 max = 100
 progresstexture = "gfx/interface/progressbars/progress_bar_goldish.dds" noprogresstexture = "gfx/interface/progressbars/slider_default_bg.dds"
 value = "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_ritual_progress_pct').GetValue]" }
-text_multi = {  layoutpolicy_horizontal = expanding minimumsize = { 438 -1 }
-max_width = 438 autoresize = yes fontsize = 13 text = "TV_WONDER_RITUAL_ESTATES_SETTLED" align = nobaseline|left }
 button_regular = { size = { 438 28 } text = "TV_WONDER_RITUAL_TOGGLE_DETAILS" tooltip = "TV_WONDER_RITUAL_TOGGLE_DETAILS"
 onclick = "[GetVariableSystem.Toggle('tv_wonder_ritual_details_open')]" }
 }

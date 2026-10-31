@@ -28,8 +28,8 @@
         direction: capital_economy
       reward:
         one_shot:
-        - type: gold
-          value: 10000
+        - type: scaled_gold
+          value: 20
   great_assembly_hall:
     estate_preferences:
       clergy_estate: random
@@ -245,8 +245,8 @@
         direction: free_trade
       reward:
         one_shot:
-        - type: gold
-          value: 10000
+        - type: scaled_gold
+          value: 20
   giant_necropolis:
     estate_preferences:
       clergy_estate: 2
@@ -369,8 +369,8 @@
         direction: innovative
       reward:
         one_shot:
-        - type: gold
-          value: 10000
+        - type: scaled_gold
+          value: 20
   giant_observatory:
     estate_preferences:
       nobles_estate: 1
@@ -1240,8 +1240,8 @@
         direction: quality
       reward:
         one_shot:
-        - type: gold
-          value: 10000
+        - type: scaled_gold
+          value: 20
   guild_alliance:
     estate_preferences:
       nobles_estate: 1
@@ -1333,8 +1333,8 @@
         direction: mercantilism
       reward:
         one_shot:
-        - type: gold
-          value: 10000
+        - type: scaled_gold
+          value: 20
   world_monument_group:
     estate_preferences:
       clergy_estate: 2

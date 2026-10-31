@@ -25,6 +25,8 @@ class Sale:
         self.scopes = {"target_market": self.market, "target_goods": "goods:medicaments"}
         self.descriptions = []
         self.source = (ROOT / generator.EFFECT_PATH).read_text(encoding="utf-8-sig")
+        self.script_values = {node.key: node.value for node in parse(
+            (ROOT / generator.VALUES_PATH).read_text(encoding="utf-8-sig"))}
 
     def value(self, token, current):
         if isinstance(token, tuple):
@@ -51,6 +53,8 @@ class Sale:
             raise AssertionError("The effect must use the supplied target market")
         if token in current:
             return current[token]
+        if token in self.script_values:
+            return self.value(self.script_values[token], current)
         return float(token)
 
     def condition(self, nodes, current):
@@ -80,6 +84,8 @@ class Sale:
             elif node.key == "save_scope_as":
                 self.scopes[node.value] = current
             elif node.key == "custom_description":
+                # This slot parses a value target, unlike add_gold's arithmetic.
+                assert isinstance(child(node.children, "value").value, str)
                 self.descriptions.append(self.value(child(node.children, "value").value, current))
                 metadata = {"text", "subject", "object", "value"}
                 self.run(tuple(n for n in node.children if n.key not in metadata), current)
@@ -88,6 +94,7 @@ class Sale:
                 current["gold"] += self.value(node.value, current)
             elif node.key == "add_temporary_demand":
                 assert current is self.market, "Demand must go to the target market"
+                assert isinstance(child(node.children, "months").value, str)
                 current["demands"].append({n.key: (n.value if n.key == "type" else self.value(n.value, current)) for n in node.children})
             elif node.key == "tv_sell_goods_with_temporary_supply_apply_effect":
                 demand = child(node.children, "demand").value
@@ -110,8 +117,8 @@ def test_each_good_pays_once_and_offsets_only_its_own_demand(good):
     sale = Sale()
     sale.scopes["target_goods"] = f"goods:{good}"
     sale.call()
-    assert sale.country["gold"] == pytest.approx(152.5)
-    assert sale.descriptions == [pytest.approx(52.5)]
+    assert sale.country["gold"] == pytest.approx(415)
+    assert sale.descriptions == [pytest.approx(315)]
     assert sale.market["demands"] == [{"type": f"demand:tv_market_supply_{good}", "scale": 12.5, "months": 6}]
     demand = child(parse((ROOT / generator.DEMAND_PATH).read_text(encoding="utf-8-sig")), f"tv_market_supply_{good}")
     assert [(n.key, n.value) for n in demand.children if n.key not in {"hidden", "category"}] == [(good, "-1")]
@@ -120,15 +127,28 @@ def test_each_good_pays_once_and_offsets_only_its_own_demand(good):
 def test_price_is_read_on_each_call_and_inputs_are_captured_before_gold_changes():
     sale = Sale()
     sale.call(amount="gold", time="gold")
-    assert sale.country["gold"] == pytest.approx(520)
+    assert sale.country["gold"] == pytest.approx(42100)
     assert sale.market["demands"][0]["scale"] == 100
     assert sale.market["demands"][0]["months"] == 100
     sale.market["prices"]["medicaments"] = 2
     sale.call(amount="3", time="2")
-    assert sale.country["gold"] == pytest.approx(526)
-    assert sale.descriptions == [pytest.approx(420), pytest.approx(6)]
+    assert sale.country["gold"] == pytest.approx(42112)
+    assert sale.descriptions == [pytest.approx(42000), pytest.approx(12)]
     assert sale.market["demands"][1]["scale"] == 3
     assert sale.market["demands"][1]["months"] == 2
+
+
+@pytest.mark.parametrize("months,payout", [(10, 1000), (20, 2000), (30, 3000)])
+def test_plunder_pays_full_term_upfront_without_scaling_monthly_supply(months, payout):
+    sale = Sale()
+    sale.scopes["target_goods"] = "goods:tv_wonder_materials"
+    sale.market["prices"]["tv_wonder_materials"] = 5
+    sale.call(amount="20", time=str(months))
+    assert sale.country["gold"] == 100 + payout
+    assert sale.descriptions == [payout]
+    assert sale.market["demands"] == [{
+        "type": "demand:tv_market_supply_tv_wonder_materials", "scale": 20, "months": months,
+    }]
 
 
 @pytest.mark.parametrize("amount,time", [("0", "6"), ("-1", "6"), ("15", "0"), ("15", "-1")])
@@ -169,7 +189,7 @@ def test_sale_wording_matches_vanilla_in_all_perspectives(language):
     # sentence including tense, perspective, icons, spacing and amount format.
     bindings = {
         "$VALUE|2$": "$GOLD$",
-        "[SCOPE.GetValue('tv_market_supply_amount')|+=2]": "$AMOUNT|+=2$",
+        "[Multiply_CFixedPoint(SCOPE.GetValue('tv_market_supply_amount'), SCOPE.GetValue('tv_market_supply_months'))|+=2]": "$AMOUNT|+=2$",
         "[SCOPE.sGoods('tv_market_supply_goods').GetName]": "$GOODS$",
         "[SCOPE.sCountry('tv_market_supply_country').GetName]": "[COUNTRY.GetName]",
         "[SCOPE.sMarket('tv_market_supply_market').GetName]": "[TARGET_MARKET.GetName]",
@@ -193,5 +213,6 @@ def test_one_custom_description_wraps_the_actual_effects():
     assert child(description.children, "subject").value == "this"
     assert child(description.children, "object").value == "scope:tv_market_supply_market"
     # No native-sale preview that could use a different price or add stockpile goods.
-    assert child(description.children, "value").children == child(description.children, "add_gold").children
+    assert child(description.children, "value").value == generator.PAYOUT_VALUE
+    assert child(child(description.children, "add_gold").children, "value").value == generator.PAYOUT_VALUE
     assert "sell_goods_to_market" not in {node.key for node in description.children}

@@ -12,16 +12,7 @@ from wonder_mechanics.render import render_header
 from wonder_mechanics.naming import WONDER_SIZE_IDS
 from wonder_identity import image_expression
 
-GLORP_LOCATION_WINDOW_FILE = REPO_ROOT / ".eu5-base" / "reference_mods" / "3601047146" / "in_game" / "gui" / "location_window.gui"
-GLORP_SHARED_TYPES_FILE = REPO_ROOT / ".eu5-base" / "reference_mods" / "3601047146" / "in_game" / "gui" / "glorpUI_shared_types.gui"
-GLORP_VANILLA_TYPES_FILE = (
-    REPO_ROOT
-    / ".eu5-base" / "reference_mods" / "3601047146"
-    / "in_game"
-    / "gui"
-    / "vanilla"
-    / "cmfg_location_window_vanilla_types.gui"
-)
+VANILLA_LOCATION_WINDOW_FILE = REPO_ROOT / ".eu5-base" / "reference_game_files" / "game" / "in_game" / "gui" / "location_window.gui"
 OUT_FILE = REPO_ROOT / "src" / "in_game" / "gui" / "location_window.gui"
 WIDGETS_FILE = REPO_ROOT / "src/in_game/gui/tv_location_wonder_widgets.gui"
 CM_GUI_SOURCE = REPO_ROOT / ".eu5-base/reference_mods/3601047146/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt"
@@ -30,9 +21,7 @@ SITE_CONDITIONS_GUI_OUTPUT = REPO_ROOT / "src/in_game/common/scripted_guis/tv_wo
 SCRIPT_REL = "scripts_engineering_department/in_game/gui/gen_location_window.py"
 DATA_REL = (
     "data/unique_wonders.yaml + "
-    ".eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui + "
-    ".eu5-base/reference_mods/3601047146/in_game/gui/glorpUI_shared_types.gui + "
-    ".eu5-base/reference_mods/3601047146/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui"
+    ".eu5-base/reference_game_files/game/in_game/gui/location_window.gui"
 )
 T = "\t"
 UI_SCALE = 0.75
@@ -99,30 +88,6 @@ SIZE_BADGE_SIZE = 26
 TOOLTIP_IMAGE_NAME_WIDTH = 205 - SIZE_BADGE_SIZE - 4
 # 48 displayed pixels at UI_SCALE, matching the medallion asset design range.
 LEVEL_MEDALLION_SIZE = 64
-
-
-def extract_top_level_block(text: str, start_marker: str) -> str:
-    start = text.find(start_marker)
-    if start == -1:
-        raise RuntimeError(f"Could not find {start_marker!r} in Glorp UI shared types")
-    depth = 0
-    for index, char in enumerate(text[start:], start=start):
-        if char == "{":
-            depth += 1
-        elif char == "}":
-            depth -= 1
-            if depth == 0:
-                return text[start : index + 1].rstrip()
-    raise RuntimeError(f"Could not find matching closing brace for {start_marker!r}")
-
-
-def render_glorp_shared_types() -> str:
-    glorp_shared_types = GLORP_SHARED_TYPES_FILE.read_text(encoding="utf-8-sig")
-    # Import only the shared Glorp type that location_window.gui actually uses.
-    shared = extract_top_level_block(glorp_shared_types, "types glorp_shared_types {")
-    # Glorp's old snapshot carries this removed 1.3 input property on the
-    # shared zoom button; do not copy it into an active EU5 1.4 target.
-    return shared.replace("\n        use_global_input_instance = yes", "")
 
 
 def location_var(name: str) -> str:
@@ -745,17 +710,14 @@ def inject_overlay(vanilla: str) -> str:
     marker = "\n\t\t\t\tvbox = {\n\t\t\t\t\texpand = {}\n"
     replacement = "\n" + render_scene_overlay() + marker
     if vanilla.count(marker) != 1:
-        raise RuntimeError("Could not find location scene overlay insertion point in Glorp UI location_window.gui")
+        raise RuntimeError("Could not find location scene overlay insertion point in vanilla location_window.gui")
     return inject_wonder_panel(vanilla.replace(marker, replacement, 1))
 
 
 def generate() -> str:
-    glorp_vanilla_types = GLORP_VANILLA_TYPES_FILE.read_text(encoding="utf-8-sig")
-    glorp_location_window = GLORP_LOCATION_WINDOW_FILE.read_text(encoding="utf-8-sig")
+    vanilla_location_window = VANILLA_LOCATION_WINDOW_FILE.read_text(encoding="utf-8-sig")
     lines = render_header(SCRIPT_REL, DATA_REL)
-    lines.append(render_glorp_shared_types())
-    lines.append(glorp_vanilla_types)
-    lines.append(inject_overlay(inject_sol_button(glorp_location_window)))
+    lines.append(inject_overlay(inject_sol_button(vanilla_location_window)))
     return "\n".join(line.rstrip() for line in "\n".join(lines).splitlines()).rstrip() + "\n"
 
 

@@ -201,6 +201,37 @@ def test_intermediate_gui_fragment_does_not_require_bom(tmp_path):
     assert report['valid']
 
 
+@pytest.mark.parametrize('damage', [None, 'truncated', 'masks'])
+def test_uncompressed_ui_dds_contract_checks_pixels_and_payload(tmp_path, damage):
+    from PIL import Image
+    image = tmp_path / 'reference.dds'
+    Image.new('RGBA', (18, 23), (90, 120, 180, 255)).save(image, format='DDS')
+    content = bytearray(image.read_bytes())
+    if damage == 'truncated':
+        content = content[:-4]
+    elif damage == 'masks':
+        content[92:96] = b'\x00' * 4
+    image.write_bytes(content)
+    artifacts = collect_artifacts(tmp_path, {}, snapshot_artifacts((image,)))
+    report, = validate_artifact_contract(tmp_path, artifacts, ('dds',))
+    assert report['valid'] == (damage is None)
+    if damage is None:
+        assert report['dds_format'] == 'RGBA32'
+        assert (report['width'], report['height']) == (18, 23)
+
+
+def test_generation_plan_validates_ui_images_and_manifest(tmp_path):
+    _workspace(tmp_path, {'reference.py':
+        "from pathlib import Path\nfrom PIL import Image\n"
+        "Image.new('RGBA', (18, 23)).save('reference.dds', format='DDS')\n"
+        "Path('reference.json').write_text('{\"width\":18}')\n"},
+        {'reference.py': ['reference.dds', 'reference.json']})
+    plan = build_generation_plan((GeneratorSpec('reference.py'),), ('reference.py',), repo_root=tmp_path)
+    report = run_generation(plan, log=lambda _: None)
+    assert report['status'] == 'succeeded'
+    assert all(item['valid'] for item in report['output_validation'])
+
+
 def test_real_wonder_plan_dependencies_and_current_artifacts():
     root = Path(__file__).resolve().parents[1]
     plan = wonder_generation_plan({'mechanics': True}, repo_root=root)
@@ -222,7 +253,7 @@ def test_real_wonder_plan_dependencies_and_current_artifacts():
     )
     artifacts = collect_artifacts(root, {}, snapshot_artifacts(plan.outputs))
     assert len(artifacts) == len(plan.outputs)
-    assert all(item['valid'] for item in validate_artifact_contract(root, artifacts, ('txt', 'gui', 'yml', 'yaml')))
+    assert all(item['valid'] for item in validate_artifact_contract(root, artifacts, ('txt', 'gui', 'yml', 'yaml', 'dds', 'json')))
     assert not wonder_generation_plan({'mechanics': True}, repo_root=root, regenerate=False).steps
 
 
@@ -295,16 +326,14 @@ def test_real_wonder_regeneration_matches_current_outputs(tmp_path):
                 destination = tmp_path / source.relative_to(root)
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(source, destination)
-    # The static catalogue reads DDS geometry only; preserve real headers while
-    # avoiding a copy/decode of the full painting corpus in this text regression.
+    # Teaching UI illustrations render real artwork as well as reading geometry.
     artwork = Path('src/main_menu/gfx/interface/icons/towards_victory/wonders')
     (tmp_path/artwork).mkdir(parents=True, exist_ok=True)
     for source in (root/artwork).glob('*.dds'):
-        with source.open('rb') as image:
-            (tmp_path/artwork/source.name).write_bytes(image.read(128))
+        shutil.copyfile(source, tmp_path/artwork/source.name)
     references = {'.eu5-base/reference_game_files/game/main_menu/gui/shared/font_icons.gui'}
     references.update(source for step in original_plan.steps for source in step.spec.inputs
-                      if source.startswith('.eu5-base/reference_'))
+                      if source.startswith(('.eu5-base/', 'ai_gui_assessment/')))
     for relative in references:
         destination = tmp_path / relative
         if (root / relative).is_dir():
@@ -312,6 +341,16 @@ def test_real_wonder_regeneration_matches_current_outputs(tmp_path):
         else:
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(root / relative, destination)
+
+    # Compatibility generators also declare read-only inputs in sibling reference
+    # checkouts. Preserve their relative layout inside the test's temporary tree.
+    external_references = {source for step in original_plan.steps for source in step.spec.inputs
+                           if Path(source).parts[:1] == ('..',)}
+    for relative in external_references:
+        destination = (tmp_path / relative).resolve()
+        assert destination.is_relative_to(tmp_path.parent.resolve())
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(root / relative, destination)
 
     # Compare with the working tree, not HEAD: uncommitted data edits with their
     # regenerated outputs are consistent, and checkout newline conversion is not drift.

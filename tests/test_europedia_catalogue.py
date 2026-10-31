@@ -1,14 +1,109 @@
 """Static catalogue contract: current data, no load-time effect evaluation."""
 import re
+import json
 from pathlib import Path
 
 import pytest
 
 from scripts_engineering_department.europedia_render import Catalogue
+from scripts_engineering_department.europedia_content import CARDS
 from scripts_engineering_department.wonder_mechanics.io import load_all_wonder_mechanics_data
 from scripts_engineering_department.vanilla_takeover.parse import parse
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+@pytest.mark.parametrize('card', CARDS, ids=lambda card: card['id'])
+def test_each_teaching_card_is_a_complete_gui_block(card):
+    from great_projects_editor_web.services.artifacts import _validate_script
+    from scripts_engineering_department.europedia_render import render_content_card
+
+    lines, _ = render_content_card(card)
+    text = '\n'.join(lines)
+    _validate_script(text.encode('utf-8-sig'), Path('card.gui'))
+    nodes = parse(text)
+    assert len(nodes) == 1
+    assert nodes[0].key == 'vbox'
+
+
+def test_getting_started_teaches_with_native_anatomy_rows():
+    """Getting Started draws the panel's controls natively, one numbered row per sentence.
+
+    The tab used to show baked screenshots of the panel. Those are gone: a bitmap cannot follow
+    a translation, and it cannot point at the control it is explaining. Each step now carries a
+    numbered anatomy block instead, so this test pins that structure and the rules that make it
+    safe -- every mock label is a shipped panel key, and nothing in the tab fires an action.
+    """
+    from scripts_engineering_department.europedia_content import CARDS
+    from scripts_engineering_department.europedia_render import ANATOMY_PANEL_TITLES
+
+    # The shapes europedia_render.render_mock knows how to draw.
+    mock_kinds = {
+        'status', 'portrait', 'button', 'buttons', 'pills', 'bar', 'demands', 'triplet',
+        'stats', 'stats_goods', 'equation', 'parts', 'stat', 'styles',
+    }
+
+    card = CARDS[0]
+    guides = [section for section in card['sections'] if section['kind'] == 'guide']
+    assert len(guides) == 7
+    for section in guides:
+        assert section['anatomy'] in ANATOMY_PANEL_TITLES
+        assert section['body']
+        rows = section['rows']
+        assert rows, section['title']
+        # A step is a teaching device only if most of it is a control, not prose.
+        asserted = [row for row in rows if row.get('mock') is not None]
+        assert len(asserted) >= len(rows) - 1, section['title']
+        for row in rows:
+            assert row['title'] and row['text']
+            mock = row.get('mock')
+            if mock is not None:
+                assert isinstance(mock, tuple) and mock[0] in mock_kinds, (section['title'], mock)
+
+    def language_keys(language: str) -> set[str]:
+        """Every key the language ships, wherever the file lives: panel keys are not Europedia keys."""
+        folder = ROOT / 'src/main_menu/localization' / language
+        return {
+            match.group(1)
+            for path in folder.rglob('*.yml')
+            for line in path.read_text(encoding='utf-8-sig').splitlines()
+            if (match := re.match(r'^\s*([\w.\-]+):\d*\s+"', line))
+        }
+
+    shipped = {language: language_keys(language) for language in ('english', 'german')}
+
+    for relative in (
+        'data/generated_fragments/tv_encyclopedia_wonders_cards.gui',
+        'src/in_game/gui/encyclopedia_lateralview.gui',
+        'submods/tv_prosper_or_perish_compat/in_game/gui/encyclopedia_lateralview.gui',
+    ):
+        gui = (ROOT / relative).read_text(encoding='utf-8-sig')
+        overview = gui.split('name = "tv_eu_overview_guide_1"', 1)[1].split('TV_EU_DEPARTMENT_TITLE', 1)[0]
+        # One anatomy block per step, each with its numbered rows.
+        assert overview.count('tv_eu_anatomy = {') == 7
+        assert overview.count('tv_eu_anatomy_row = {') == sum(len(s['rows']) for s in guides)
+        for number in range(1, 8):
+            assert f'name = "tv_eu_overview_guide_{number}"' in gui
+        # The seven project steps follow a clockwise ring; detailed lessons stay below it.
+        assert 'name = "tv_eu_overview_cycle"' in gui
+        assert gui.count('tv_eu_cycle_step = {') == 7
+        assert 'tv_eu_overview_index' not in gui
+        assert 'tv_eu_index_step = {' not in gui
+        assert 'gfx/interface/illustrations/tv_europedia_cycle.dds' in gui
+        assert (ROOT/'src/main_menu/gfx/interface/illustrations/tv_europedia_cycle.dds').is_file()
+        assert 'europedia_ui/' not in gui
+        # The tab explains the panel; it never calls into it or evaluates game state.
+        assert 'scripted_action_tooltip' not in overview
+        assert 'InternationalOrganizationsView' not in overview
+        assert 'ShowScriptedEffectForScope' not in overview
+        assert 'ShowTriggerConditionsForScope' not in overview
+        assert 'tv_eu_choice = {' not in overview
+        assert 'TV_EU_GUIDE_UI_LANGUAGE' not in overview
+        # Every mock label is a panel key that already ships in all 11 languages, so a mock can
+        # never introduce English-only prose into the middle of a translated page.
+        for mock_key in set(re.findall(r'text = "(TV_[A-Z0-9_]+)"', overview)):
+            for language, keys in shipped.items():
+                assert mock_key in keys, f'{language} is missing panel key {mock_key}'
 
 
 @pytest.fixture(scope='module')

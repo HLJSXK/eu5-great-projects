@@ -10,10 +10,14 @@
 #   tv_eu_panel     two side-by-side comparison panels with a tv_eu_sign between them
 #   tv_eu_entry     a paper strip: a fixed icon column on the left, a gold title and text right
 #   tv_eu_goods_row a fixed label, then tv_eu_item icons in a row
+#   tv_eu_anatomy   the Getting Started teaching block: a numbered row of a real control
+#                   imitation (tv_eu_mock) and the sentence that explains it
+#   tv_eu_index     the Getting Started step index: seven numbered chips across the card
 #
 # Every icon that names a thing carries a hoverable game link under it (tv_eu_link): the blue
 # or golden text a player already knows to hover. Only headings, arrows, medallions and the
-# header stand without one.
+# header stand without one. Anatomy rows are inert: nothing inside tv_eu_anatomy is clickable
+# except the concept links their own labels already carry.
 #
 # This file adds a new types group; it does not override a vanilla file, so it cannot conflict
 # with another mod.
@@ -434,5 +438,310 @@ types tv_europedia_style
 	}
 	type tv_eu_icon = icon {
 		size = { 52 52 }
+	}
+
+	# ---------------------------------------------------------------- getting started ----
+	#
+	# The Getting Started tab does not show screenshots. Each step is one tv_eu_anatomy block:
+	# the real control, laid out from the same widgets the Engineering Department panel uses,
+	# with a gold number on its left and the sentence that explains it on its right. The player
+	# reads "this is the bar, this is what it measures" in one glance instead of cross-reading a
+	# picture against a paragraph. Nothing inside the block is clickable; the concept links the
+	# labels already carry are the only interactive parts.
+
+	# One numbered anatomy row: a gold number, a fixed control column, then the explanation.
+	# The control column is 560 wide so the widest mock (a 470-wide list row plus margin) fits;
+	# the explanation takes the remaining 700 of the 1370 body width.
+	# Override "row_number", "row_control" (any widget, see tv_eu_mock_*) and "row_note" (a
+	# container: each note is a gold title over its sentence, so the slot must be a vbox and not
+	# a text line -- a blockoverride in a text widget cannot hold child widgets).
+	type tv_eu_anatomy_row = hbox {
+		layoutpolicy_horizontal = expanding
+		spacing = 16
+		margin = { 24 0 }
+
+		text_single = {
+			size = { 30 30 }
+			alwaystransparent = yes
+			background = {
+				using = bg_round_corners_frame_alt_texture
+				modify_texture = {
+					using = color_intense_bg_blue_texture
+					blend_mode = multiply
+				}
+			}
+			align = center|nobaseline
+			using = Font_Type_Headers
+			fontsize = 17
+			default_format = "#yellow_titles"
+			block "row_number" { raw_text = "" }
+		}
+
+		vbox = {
+			minimumsize = { 560 -1 }
+			maximumsize = { 560 -1 }
+			spacing = 6
+			block "row_control" {}
+		}
+
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			maximumsize = { 700 -1 }
+			spacing = 3
+			block "row_note" {}
+		}
+	}
+
+	# The frame a step's controls sit in: the same paper sheet and header strip as a card, at
+	# 1370 wide so it lines up with the body text above it. Override "anatomy_title" (a text
+	# key) and "anatomy_header_icon".
+	type tv_eu_anatomy = vbox {
+		minimumsize = { 1370 -1 }
+		maximumsize = { 1370 -1 }
+		layoutpolicy_horizontal = expanding
+		spacing = 4
+		margin = { 40 6 }
+		using = bg_paper_card
+		blockoverride "card_color" {
+			using = color_intense_bg_blue_texture
+			blend_mode = multiply
+		}
+
+		widget = {
+			layoutpolicy_horizontal = expanding
+			size = { -1 30 }
+			background = {
+				using = button_main_tab_texture
+				frame = 4
+				modify_texture = {
+					using = color_intense_bg_blue_texture
+					blend_mode = multiply
+				}
+			}
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 40 0 }
+				margin_top = 5
+				spacing = 8
+
+				icon = {
+					size = { 20 20 }
+					block "anatomy_header_icon" {
+						texture = "gfx/interface/icons/flat_icons/tabicons/europedia_flat_icon.dds"
+					}
+				}
+				text_single = {
+					layoutpolicy_horizontal = expanding
+					using = Font_Type_Headers
+					fontsize = 15
+					autoresize = yes
+					default_format = "#yellow_titles"
+					block "anatomy_title" { text = "" }
+				}
+			}
+		}
+		# The rows size the panel. An expanding vertical policy here would let the frame take a
+		# neighbour's height instead, clipping the last row; the tips below are dropped instead.
+		vbox = {
+			layoutpolicy_horizontal = expanding
+			spacing = 2
+			margin = { 8 8 }
+			block "anatomy_rows" {}
+		}
+	}
+
+	# A control imitation, sized like the real thing. These are not buttons: they are the shape
+	# of a button with the panel's own label on it, so a player recognises it on sight. The
+	# caller supplies the text, always an existing panel localization key rather than new prose,
+	# so every language already has it. A concept popup is added at the call site as a sibling
+	# tooltipmeta, not here: an empty tooltipmeta block would still open an empty tooltip.
+	# Override "mock_text".
+	type tv_eu_mock_button = button {
+		using = button_regular_texture
+
+		text_single = {
+			size = { 100% 100% }
+			align = center|nobaseline
+			autoresize = no
+			fontsize = 14
+			default_format = "#color_white"
+			block "mock_text" { text = "" }
+		}
+	}
+
+	# The same button in the panel's green (confirm) and yellow (active/attention) variants.
+	type tv_eu_mock_button_green = button {
+		minimumsize = { 240 32 }
+		maximumsize = { 560 32 }
+		layoutpolicy_horizontal = expanding
+		using = button_regular_texture_alt_green
+
+		text_single = {
+			size = { 100% 100% }
+			align = center|nobaseline
+			autoresize = no
+			fontsize = 14
+			default_format = "#color_white"
+			block "mock_text" { text = "" }
+		}
+	}
+
+	type tv_eu_mock_button_yellow = button {
+		minimumsize = { 240 32 }
+		maximumsize = { 560 32 }
+		layoutpolicy_horizontal = expanding
+		using = button_regular_texture_alt_yellow
+
+		text_single = {
+			size = { 100% 100% }
+			align = center|nobaseline
+			autoresize = no
+			fontsize = 14
+			default_format = "#color_white"
+			block "mock_text" { text = "" }
+		}
+	}
+
+	type tv_eu_mock_button_red = button {
+		minimumsize = { 240 32 }
+		maximumsize = { 560 32 }
+		layoutpolicy_horizontal = expanding
+		using = button_regular_texture_alt_red
+
+		text_single = {
+			size = { 100% 100% }
+			align = center|nobaseline
+			autoresize = no
+			fontsize = 14
+			default_format = "#color_white"
+			block "mock_text" { text = "" }
+		}
+	}
+
+	# A labelled bar with a fixed value: the shape of a panel progress bar, frozen at the
+	# example value in the step text. Override "mock_label", "mock_bar_value", "mock_bar_text"
+	# and optionally "mock_bar_progresstexture".
+	type tv_eu_mock_bar = vbox {
+		layoutpolicy_horizontal = expanding
+		spacing = 4
+
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			text_single = {
+				layoutpolicy_horizontal = expanding
+				autoresize = yes
+				block "mock_label" { text = "" }
+			}
+			text_single = {
+				autoresize = yes
+				default_format = "#yellow_titles"
+				block "mock_bar_text" { raw_text = "" }
+			}
+		}
+		progressbar = {
+			size = { -1 16 }
+			using = progress_bar_blue_alt
+			block "mock_bar_progresstexture" {}
+			min = 0
+			max = 100
+			block "mock_bar_value" { value = 0 }
+		}
+	}
+
+	# A row of short stat tiles, the shape the Organization and Logistics card uses.
+	# Override "mock_stats" with tv_eu_mock_stat cells.
+	type tv_eu_mock_stats = hbox {
+		layoutpolicy_horizontal = expanding
+		spacing = 6
+		block "mock_stats" {}
+	}
+
+	type tv_eu_mock_stat = vbox {
+		minimumsize = { 134 -1 }
+		maximumsize = { 134 -1 }
+		margin = { 6 5 }
+		spacing = 1
+		using = bg_text_mask_container_dark_blue
+
+		text_multi = {
+			min_width = 122
+			max_width = 122
+			autoresize = yes
+			fontsize = 11
+			default_format = "#weak"
+			block "mock_stat_label" { text = "" }
+		}
+		text_single = {
+			size = { 122 20 }
+			autoresize = yes
+			fontsize = 15
+			block "mock_stat_value" { raw_text = "" }
+		}
+	}
+
+	# A row of small pip buttons, the shape the four construction parts use for their units.
+	# Override "mock_pips" with tv_eu_mock_pip cells.
+	type tv_eu_mock_pips = hbox {
+		spacing = 4
+		block "mock_pips" {}
+	}
+
+	type tv_eu_mock_pip = button {
+		size = { 32 26 }
+		using = button_regular_texture_alt_green
+		text_single = {
+			size = { 100% 100% }
+			align = center|nobaseline
+			autoresize = no
+			fontsize = 12
+			default_format = "#color_white"
+			block "mock_pip_text" { raw_text = "" }
+		}
+	}
+
+	# The step index across the top of Getting Started: seven numbered chips. Override
+	# "index_number", "index_icon", "index_title" and "index_link".
+	type tv_eu_index_step = vbox {
+		minimumsize = { 186 -1 }
+		maximumsize = { 186 -1 }
+		margin = { 10 8 }
+		spacing = 3
+		using = bg_paper_card
+		blockoverride "card_color" {
+			using = color_intense_bg_blue_texture
+			blend_mode = multiply
+		}
+
+		hbox = {
+			spacing = 6
+			icon = {
+				size = { 26 26 }
+				block "index_icon" {
+					texture = "gfx/interface/icons/flat_icons/tabicons/europedia_flat_icon.dds"
+				}
+			}
+			text_single = {
+				layoutpolicy_horizontal = expanding
+				using = Font_Type_Headers
+				fontsize = 14
+				autoresize = yes
+				default_format = "#yellow_titles"
+				block "index_number" { raw_text = "" }
+			}
+		}
+		text_single = {
+			size = { 166 20 }
+			autoresize = yes
+			fontsize = 13
+			block "index_title" { text = "" }
+		}
+		text_multi = {
+			min_width = 166
+			max_width = 166
+			autoresize = yes
+			fontsize = 12
+			block "index_link" { raw_text = "" }
+		}
+		expand = {}
 	}
 }

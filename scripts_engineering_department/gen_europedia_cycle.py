@@ -6,9 +6,9 @@ from math import cos, sin, radians
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-CYCLE_SIZE = (1370, 764)
-CYCLE_CENTER = (685, 410)
-RADIUS = 300
+CYCLE_SIZE = (1370, 960)
+CYCLE_CENTER = (685, 480)
+RADIUS = 382
 STEP_SIZE = (264, 196)
 TEXTURE = "gfx/interface/illustrations/tv_europedia_cycle.dds"
 
@@ -19,21 +19,21 @@ def point(angle: float, radius: float = RADIUS) -> tuple[float, float]:
             CYCLE_CENTER[1] + radius * sin(angle))
 
 
-def step_positions(count: int = 5) -> list[tuple[int, int]]:
-    if count != 5:
-        raise ValueError("The overview circle requires five stages")
+def step_positions(count: int = 7) -> list[tuple[int, int]]:
+    if count < 3:
+        raise ValueError("The overview circle requires at least three stages")
     return [(round(x - STEP_SIZE[0] / 2), round(y - STEP_SIZE[1] / 2))
-            for x, y in (point(-90 + index * 72) for index in range(count))]
+            for x, y in (point(-90 + index * 360 / count) for index in range(count))]
 
 
-def draw_connectors():
+def draw_connectors(count: int = 7):
     from PIL import Image, ImageDraw
 
     scale = 3
     image = Image.new("RGBA", tuple(value * scale for value in CYCLE_SIZE))
     draw = ImageDraw.Draw(image)
     boxes = [(x - 14, y - 14, x + STEP_SIZE[0] + 14, y + STEP_SIZE[1] + 14)
-             for x, y in step_positions()]
+             for x, y in step_positions(count)]
 
     def scaled(points):
         return [(round(x * scale), round(y * scale)) for x, y in points]
@@ -43,9 +43,9 @@ def draw_connectors():
         return not any(left <= x <= right and top <= y <= bottom
                        for left, top, right, bottom in boxes)
 
-    for index in range(5):
-        start = -90 + index * 72
-        angles = [start + tick / 4 for tick in range(289)
+    for index in range(count):
+        start = -90 + index * 360 / count
+        angles = [start + tick / 4 for tick in range(round(360 * 4 / count) + 1)
                   if clear(point(start + tick / 4))]
         end = angles[-1]
         arc = [point(angle) for angle in angles if angle <= end - 3]
