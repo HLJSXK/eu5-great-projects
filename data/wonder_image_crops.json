@@ -3391,6 +3391,74 @@
         "width": 1.0,
         "height": 0.61111111
       }
+    },
+    "tv_wonder_national_bank": {
+      "source": "assets/generated_wonders/tv_wonder_national_bank.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 199.1111,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_pirate_port": {
+      "source": "assets/generated_wonders/tv_wonder_pirate_port.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 199.1111,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_grand_garden_complex": {
+      "source": "assets/generated_wonders/tv_wonder_grand_garden_complex.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 199.1111,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
+    },
+    "tv_wonder_state_examination_complex": {
+      "source": "assets/generated_wonders/tv_wonder_state_examination_complex.png",
+      "source_width": 1536,
+      "source_height": 1024,
+      "rect": {
+        "x": 0.0,
+        "y": 199.1111,
+        "width": 1536.0,
+        "height": 625.7778
+      },
+      "normalized": {
+        "x": 0.0,
+        "y": 0.19444444,
+        "width": 1.0,
+        "height": 0.61111111
+      }
     }
   }
 }
