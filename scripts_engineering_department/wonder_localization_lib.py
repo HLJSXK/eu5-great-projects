@@ -118,6 +118,37 @@ ENGINEERING_DEPARTMENT_WONDER_MECHANICS_FINALIZATION_HINTS = {
     "simp_chinese": "\n\n#weak 奇观的建设已经完成，最终建筑即将落成：可前往工程部或该地点查看其效果。#!",
 }
 ENGINEERING_DEPARTMENT_WONDER_MECHANICS_FINALIZATION_VISIBLE_DESC_PREFIX = "tv_engineering_department.500.d"
+WORLD_NEWS_DESC_PREFIX = "tv_engineering_department.600.d_"
+WORLD_NEWS_EXPANSION_SUFFIX = "_expansion_news"
+WORLD_NEWS_EXPANSION_INTROS = {
+    "english": "News arrives from {country}: {wonder} has been expanded to level {level} at {site}.",
+    "simp_chinese": "来自{country}的消息传来：{wonder}已在{site}扩建至第{level}级。",
+    "french": "Des nouvelles arrivent de {country} : {wonder} a été agrandi au niveau {level} à {site}.",
+    "german": "Aus {country} kommt die Nachricht: {wonder} wurde in {site} auf Stufe {level} erweitert.",
+    "spanish": "Llegan noticias de {country}: {wonder} se ha ampliado al nivel {level} en {site}.",
+    "russian": "Из {country} пришли новости: {wonder} был расширен до уровня {level} в {site}.",
+    "polish": "Nadchodzą wieści z {country}: {wonder} został rozbudowany do poziomu {level} w {site}.",
+    "japanese": "{country}から知らせが届きました。{site}の{wonder}はレベル{level}まで拡張されました。",
+    "korean": "{country}에서 소식이 전해졌습니다. {site}의 {wonder}이 레벨 {level}까지 확장되었습니다.",
+    "braz_por": "Chegam notícias de {country}: {wonder} foi ampliado ao nível {level} em {site}.",
+    "turkish": "{country}'ten haberler geldi: {site} bölgesindeki {wonder}, {level} seviyeye genişletildi.",
+}
+WORLD_NEWS_LEVEL_SUFFIXES = {
+    "english": " (level {level})",
+    "simp_chinese": "（第{level}级）",
+    "french": " (niveau {level})",
+    "german": " (Stufe {level})",
+    "spanish": " (nivel {level})",
+    "russian": " (уровень {level})",
+    "polish": " (poziom {level})",
+    "japanese": "（レベル{level}）",
+    "korean": " (레벨 {level})",
+    "braz_por": " (nível {level})",
+    "turkish": " (seviye {level})",
+}
+WORLD_NEWS_LINK_RE = re.compile(r"\[(tv_wonder_[A-Za-z0-9_]+\|E)\]")
+WORLD_NEWS_SITE_LINK = "[SCOPE.sLocation('tv_wonder_completed_site').GetName]"
+WORLD_NEWS_LEVEL_LINK = "[SCOPE.GetValue('tv_wonder_news_level')|0]"
 
 
 # libyaml parses the multi-megabyte sources about ten times faster than the pure-Python loader.
@@ -679,7 +710,7 @@ def engineering_department_wonder_mechanics_localization_map(
     if language not in LANGUAGES:
         raise ValueError(f"Unsupported localization language: {language}")
     finalization_hint = ENGINEERING_DEPARTMENT_WONDER_MECHANICS_FINALIZATION_HINTS[language]
-    return {
+    result = {
         key: (
             value + finalization_hint
             if key.startswith(ENGINEERING_DEPARTMENT_WONDER_MECHANICS_FINALIZATION_VISIBLE_DESC_PREFIX) and '_identity_' not in key
@@ -688,6 +719,57 @@ def engineering_department_wonder_mechanics_localization_map(
         for key, value in localization.items()
         if key not in ENGINEERING_DEPARTMENT_WONDER_MECHANICS_EXCLUDED_LOC_KEYS
     }
+    for key, value in localization.items():
+        if not key.startswith(WORLD_NEWS_DESC_PREFIX) or key.endswith(WORLD_NEWS_EXPANSION_SUFFIX):
+            continue
+        result[key] = world_news_level_description(language, value)
+        result[f"{key}{WORLD_NEWS_EXPANSION_SUFFIX}"] = expansion_world_news_description(language, value)
+    return result
+
+
+def world_news_level_description(language: str, description: str) -> str:
+    """Add the completed wonder level to the existing opening news sentence."""
+    if language not in WORLD_NEWS_LEVEL_SUFFIXES:
+        raise ValueError(f"Unsupported world-news language: {language}")
+    if WORLD_NEWS_LEVEL_LINK in description:
+        return description
+    site_end = description.find(WORLD_NEWS_SITE_LINK)
+    if site_end < 0:
+        raise ValueError(f"World-news description lacks site link: {description[:100]}")
+    site_end += len(WORLD_NEWS_SITE_LINK)
+    punctuation = re.search(r"[.!?。！？]", description[site_end:])
+    if punctuation is None:
+        raise ValueError(f"World-news description lacks an opening sentence terminator: {description[:100]}")
+    sentence_end = site_end + punctuation.start()
+    suffix = WORLD_NEWS_LEVEL_SUFFIXES[language].format(level=WORLD_NEWS_LEVEL_LINK)
+    return description[:sentence_end] + suffix + description[sentence_end:]
+
+
+def expansion_world_news_description(language: str, description: str) -> str:
+    """Keep each wonder's news flavor while making expansion completion explicit."""
+    if language not in WORLD_NEWS_EXPANSION_INTROS:
+        raise ValueError(f"Unsupported expansion news language: {language}")
+    level_suffix = WORLD_NEWS_LEVEL_SUFFIXES[language].format(level=WORLD_NEWS_LEVEL_LINK)
+    description = description.replace(level_suffix, "")
+    description = description.replace(f"({WORLD_NEWS_LEVEL_LINK}. seviye)", WORLD_NEWS_LEVEL_LINK)
+    wonder_match = WORLD_NEWS_LINK_RE.search(description)
+    site_end = description.find(WORLD_NEWS_SITE_LINK)
+    if wonder_match is None or site_end < 0:
+        raise ValueError(f"World-news description lacks wonder/site links: {description[:100]}")
+    site_end += len(WORLD_NEWS_SITE_LINK)
+    level_end = description.find(WORLD_NEWS_LEVEL_LINK, site_end)
+    sentence_tail_start = level_end + len(WORLD_NEWS_LEVEL_LINK) if level_end >= 0 else site_end
+    punctuation = re.search(r"[.!?。！？]", description[sentence_tail_start:])
+    if punctuation is None:
+        raise ValueError(f"World-news description lacks an opening sentence terminator: {description[:100]}")
+    sentence_end = sentence_tail_start + punctuation.end()
+    intro = WORLD_NEWS_EXPANSION_INTROS[language].format(
+        country="[SCOPE.sCountry('tv_wonder_builder_country').GetName]",
+        wonder=wonder_match.group(0),
+        site=WORLD_NEWS_SITE_LINK,
+        level=WORLD_NEWS_LEVEL_LINK,
+    )
+    return intro + description[sentence_end:]
 
 
 def apply_localization_values(text: str, localization: dict[str, str]) -> str:

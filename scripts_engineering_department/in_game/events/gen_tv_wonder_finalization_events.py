@@ -27,6 +27,7 @@ from wonder_mechanics.naming import (
     wonder_image_name,
 )
 from wonder_mechanics.render import render_header
+from wonder_localization_lib import WORLD_NEWS_EXPANSION_SUFFIX
 from wonder_image_crop_lib import cropped_wonder_image_name
 
 OUT_FILE = REPO_ROOT / "src" / "in_game" / "events" / "tv_wonder_finalization_events.txt"
@@ -148,7 +149,7 @@ def append_world_news_event(
     lines.append(f"{T}type = country_event")
     lines.append(f"{T}title = tv_engineering_department.600.t")
     desc_key = (
-        "TV_WONDER_EXPANSION_COMPLETE_DESC"
+        f"{world_desc_key(wonder, loc_keys)}{WORLD_NEWS_EXPANSION_SUFFIX}"
         if expansion
         else world_desc_key(wonder, loc_keys)
     )

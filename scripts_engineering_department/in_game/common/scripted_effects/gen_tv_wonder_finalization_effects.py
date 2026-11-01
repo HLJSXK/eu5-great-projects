@@ -235,6 +235,7 @@ def append_destroy_intermediate_buildings_effect(lines: list[str], wonder: dict)
 def append_broadcast_effect(lines: list[str], wonder: dict) -> None:
     lines.append(f"{broadcast_effect_name(wonder)} = {{")
     lines.append(f"{T}save_scope_as = tv_wonder_builder_country")
+    lines.append(f"{T}save_scope_value_as = {{ name = tv_wonder_news_level value = var:tv_wonder_level }}")
     lines.append(f"{T}if = {{")
     lines.append(f"{T}{T}limit = {{ tv_wonder_construction_site_selected_trigger = yes }}")
     lines.append(f"{T}{T}var:tv_wonder_site ?= {{ save_scope_as = tv_wonder_completed_site }}")

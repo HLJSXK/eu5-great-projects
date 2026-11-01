@@ -9782,7 +9782,7 @@ tv_engineering_department.6240 = {
 tv_engineering_department.6501 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_sacred_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_sacred_mountain_cropped.dds"
 	outcome = neutral
 
@@ -9794,7 +9794,7 @@ tv_engineering_department.6501 = {
 tv_engineering_department.6502 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_axis_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_triumphal_axis_cropped.dds"
 	outcome = neutral
 
@@ -9806,7 +9806,7 @@ tv_engineering_department.6502 = {
 tv_engineering_department.6503 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_port_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_great_port_cropped.dds"
 	outcome = neutral
 
@@ -9818,7 +9818,7 @@ tv_engineering_department.6503 = {
 tv_engineering_department.6504 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_necropolis_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_giant_necropolis_cropped.dds"
 	outcome = neutral
 
@@ -9830,7 +9830,7 @@ tv_engineering_department.6504 = {
 tv_engineering_department.6505 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_lighthouse_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_great_lighthouse_cropped.dds"
 	outcome = neutral
 
@@ -9842,7 +9842,7 @@ tv_engineering_department.6505 = {
 tv_engineering_department.6506 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_hydraulic_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_hydraulic_workshop_cropped.dds"
 	outcome = neutral
 
@@ -9854,7 +9854,7 @@ tv_engineering_department.6506 = {
 tv_engineering_department.6507 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_mining_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_mining_city_cropped.dds"
 	outcome = neutral
 
@@ -9866,7 +9866,7 @@ tv_engineering_department.6507 = {
 tv_engineering_department.6508 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_observatory_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_giant_observatory_cropped.dds"
 	outcome = neutral
 
@@ -9878,7 +9878,7 @@ tv_engineering_department.6508 = {
 tv_engineering_department.6509 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_palace_of_nations_cropped.dds"
 	outcome = neutral
 
@@ -9890,7 +9890,7 @@ tv_engineering_department.6509 = {
 tv_engineering_department.6510 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_university_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_university_city_cropped.dds"
 	outcome = neutral
 
@@ -9902,7 +9902,7 @@ tv_engineering_department.6510 = {
 tv_engineering_department.6511 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_sky_dome_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_sky_dome_grand_temple_cropped.dds"
 	outcome = neutral
 
@@ -9914,7 +9914,7 @@ tv_engineering_department.6511 = {
 tv_engineering_department.6512 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_tower_temple_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_giant_tower_temple_cropped.dds"
 	outcome = neutral
 
@@ -9926,7 +9926,7 @@ tv_engineering_department.6512 = {
 tv_engineering_department.6513 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_river_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_river_extension_cropped.dds"
 	outcome = neutral
 
@@ -9938,7 +9938,7 @@ tv_engineering_department.6513 = {
 tv_engineering_department.6514 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_shipyard_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_national_shipyard_cropped.dds"
 	outcome = neutral
 
@@ -9950,7 +9950,7 @@ tv_engineering_department.6514 = {
 tv_engineering_department.6515 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_star_fortress_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_star_fortress_city_cropped.dds"
 	outcome = neutral
 
@@ -9962,7 +9962,7 @@ tv_engineering_department.6515 = {
 tv_engineering_department.6516 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_great_wall_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_great_wall_cropped.dds"
 	outcome = neutral
 
@@ -9974,7 +9974,7 @@ tv_engineering_department.6516 = {
 tv_engineering_department.6517 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_armory_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_giant_armory_cropped.dds"
 	outcome = neutral
 
@@ -9986,7 +9986,7 @@ tv_engineering_department.6517 = {
 tv_engineering_department.6518 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_library_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_library_of_nation_cropped.dds"
 	outcome = neutral
 
@@ -9998,7 +9998,7 @@ tv_engineering_department.6518 = {
 tv_engineering_department.6519 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_large_canal_system_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_large_canal_system_cropped.dds"
 	outcome = neutral
 
@@ -10010,7 +10010,7 @@ tv_engineering_department.6519 = {
 tv_engineering_department.6520 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_mountain_terrace_network_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_mountain_terrace_network_cropped.dds"
 	outcome = neutral
 
@@ -10022,7 +10022,7 @@ tv_engineering_department.6520 = {
 tv_engineering_department.6521 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_giant_dam_project_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_giant_dam_project_cropped.dds"
 	outcome = neutral
 
@@ -10034,7 +10034,7 @@ tv_engineering_department.6521 = {
 tv_engineering_department.6522 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_royal_granary_system_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_royal_granary_system_cropped.dds"
 	outcome = neutral
 
@@ -10046,7 +10046,7 @@ tv_engineering_department.6522 = {
 tv_engineering_department.6523 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_imperial_post_road_network_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_imperial_post_road_network_cropped.dds"
 	outcome = neutral
 
@@ -10058,7 +10058,7 @@ tv_engineering_department.6523 = {
 tv_engineering_department.6524 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_canal_hub_city_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_canal_hub_city_cropped.dds"
 	outcome = neutral
 
@@ -10070,7 +10070,7 @@ tv_engineering_department.6524 = {
 tv_engineering_department.6525 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_frontier_colonization_belt_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_frontier_colonization_belt_cropped.dds"
 	outcome = neutral
 
@@ -10082,7 +10082,7 @@ tv_engineering_department.6525 = {
 tv_engineering_department.6526 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_coastal_beacon_network_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_coastal_beacon_network_cropped.dds"
 	outcome = neutral
 
@@ -10094,7 +10094,7 @@ tv_engineering_department.6526 = {
 tv_engineering_department.6527 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_knightly_fortress_order_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_knightly_fortress_order_cropped.dds"
 	outcome = neutral
 
@@ -10106,7 +10106,7 @@ tv_engineering_department.6527 = {
 tv_engineering_department.6528 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_war_college_system_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_war_college_system_cropped.dds"
 	outcome = neutral
 
@@ -10118,7 +10118,7 @@ tv_engineering_department.6528 = {
 tv_engineering_department.6529 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_great_clock_bell_system_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_great_clock_bell_system_cropped.dds"
 	outcome = neutral
 
@@ -10130,7 +10130,7 @@ tv_engineering_department.6529 = {
 tv_engineering_department.6530 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_royal_art_district_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_royal_art_district_cropped.dds"
 	outcome = neutral
 
@@ -10142,7 +10142,7 @@ tv_engineering_department.6530 = {
 tv_engineering_department.6531 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_grand_theater_festival_district_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_grand_theater_festival_district_cropped.dds"
 	outcome = neutral
 
@@ -10154,7 +10154,7 @@ tv_engineering_department.6531 = {
 tv_engineering_department.6532 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_world_embassy_quarter_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_world_embassy_quarter_cropped.dds"
 	outcome = neutral
 
@@ -10166,7 +10166,7 @@ tv_engineering_department.6532 = {
 tv_engineering_department.6533 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_law_code_stele_project_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_law_code_stele_project_cropped.dds"
 	outcome = neutral
 
@@ -10178,7 +10178,7 @@ tv_engineering_department.6533 = {
 tv_engineering_department.6534 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_world_market_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_world_market_cropped.dds"
 	outcome = neutral
 
@@ -10190,7 +10190,7 @@ tv_engineering_department.6534 = {
 tv_engineering_department.6535 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_royal_mint_system_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_royal_mint_system_cropped.dds"
 	outcome = neutral
 
@@ -10202,7 +10202,7 @@ tv_engineering_department.6535 = {
 tv_engineering_department.6536 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_guild_alliance_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_guild_alliance_cropped.dds"
 	outcome = neutral
 
@@ -10214,7 +10214,7 @@ tv_engineering_department.6536 = {
 tv_engineering_department.6537 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_maritime_trade_station_network_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_maritime_trade_station_network_cropped.dds"
 	outcome = neutral
 
@@ -10226,7 +10226,7 @@ tv_engineering_department.6537 = {
 tv_engineering_department.6538 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_giant_workshop_complex_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_giant_workshop_complex_cropped.dds"
 	outcome = neutral
 
@@ -10238,7 +10238,7 @@ tv_engineering_department.6538 = {
 tv_engineering_department.6539 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_world_monument_group_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_world_monument_group_cropped.dds"
 	outcome = neutral
 
@@ -10250,7 +10250,7 @@ tv_engineering_department.6539 = {
 tv_engineering_department.6540 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_city_expansion_project_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_city_expansion_project_cropped.dds"
 	outcome = neutral
 
@@ -10262,7 +10262,7 @@ tv_engineering_department.6540 = {
 tv_engineering_department.6541 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_megalithic_circle_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_megalithic_circle_cropped.dds"
 	outcome = neutral
 
@@ -10274,7 +10274,7 @@ tv_engineering_department.6541 = {
 tv_engineering_department.6542 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_grand_cathedral_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_grand_cathedral_cropped.dds"
 	outcome = neutral
 
@@ -10286,7 +10286,7 @@ tv_engineering_department.6542 = {
 tv_engineering_department.6543 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_great_monastery_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_great_monastery_cropped.dds"
 	outcome = neutral
 
@@ -10298,7 +10298,7 @@ tv_engineering_department.6543 = {
 tv_engineering_department.6544 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_city_great_tower_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_city_great_tower_cropped.dds"
 	outcome = neutral
 
@@ -10310,7 +10310,7 @@ tv_engineering_department.6544 = {
 tv_engineering_department.6545 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_great_sculpture_group_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_great_sculpture_group_cropped.dds"
 	outcome = neutral
 
@@ -10322,7 +10322,7 @@ tv_engineering_department.6545 = {
 tv_engineering_department.6546 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_coastal_defense_cannon_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_coastal_defense_cannon_cropped.dds"
 	outcome = neutral
 
@@ -10334,7 +10334,7 @@ tv_engineering_department.6546 = {
 tv_engineering_department.6547 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_naval_school_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_naval_school_cropped.dds"
 	outcome = neutral
 
@@ -10346,7 +10346,7 @@ tv_engineering_department.6547 = {
 tv_engineering_department.6548 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_colonial_trade_company_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_colonial_trade_company_cropped.dds"
 	outcome = neutral
 
@@ -10358,7 +10358,7 @@ tv_engineering_department.6548 = {
 tv_engineering_department.6549 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_great_assembly_hall_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_great_assembly_hall_cropped.dds"
 	outcome = neutral
 
@@ -10370,7 +10370,7 @@ tv_engineering_department.6549 = {
 tv_engineering_department.6550 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_mobile_fortress_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_mobile_fortress_cropped.dds"
 	outcome = neutral
 
@@ -10382,7 +10382,7 @@ tv_engineering_department.6550 = {
 tv_engineering_department.6551 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_ancient_city_ruins_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_ancient_city_ruins_cropped.dds"
 	outcome = neutral
 
@@ -10394,7 +10394,7 @@ tv_engineering_department.6551 = {
 tv_engineering_department.6552 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_summer_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_summer_palace_cropped.dds"
 	outcome = neutral
 
@@ -10406,7 +10406,7 @@ tv_engineering_department.6552 = {
 tv_engineering_department.6553 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_national_bank_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_national_bank_cropped.dds"
 	outcome = neutral
 
@@ -10418,7 +10418,7 @@ tv_engineering_department.6553 = {
 tv_engineering_department.6554 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_pirate_port_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_pirate_port_cropped.dds"
 	outcome = neutral
 
@@ -10430,7 +10430,7 @@ tv_engineering_department.6554 = {
 tv_engineering_department.6555 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_grand_garden_complex_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_grand_garden_complex_cropped.dds"
 	outcome = neutral
 
@@ -10442,7 +10442,7 @@ tv_engineering_department.6555 = {
 tv_engineering_department.6556 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_state_examination_complex_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_state_examination_complex_cropped.dds"
 	outcome = neutral
 
@@ -10454,7 +10454,7 @@ tv_engineering_department.6556 = {
 tv_engineering_department.6601 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_pharos_lighthouse_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_pharos_lighthouse_cropped.dds"
 	outcome = neutral
 
@@ -10466,7 +10466,7 @@ tv_engineering_department.6601 = {
 tv_engineering_department.6602 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_hagia_sophia_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hagia_sophia_cropped.dds"
 	outcome = neutral
 
@@ -10478,7 +10478,7 @@ tv_engineering_department.6602 = {
 tv_engineering_department.6603 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_dome_of_the_rock_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dome_of_the_rock_cropped.dds"
 	outcome = neutral
 
@@ -10490,7 +10490,7 @@ tv_engineering_department.6603 = {
 tv_engineering_department.6604 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_angkor_wat_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_angkor_wat_cropped.dds"
 	outcome = neutral
 
@@ -10502,7 +10502,7 @@ tv_engineering_department.6604 = {
 tv_engineering_department.6605 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_potala_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_potala_palace_cropped.dds"
 	outcome = neutral
 
@@ -10514,7 +10514,7 @@ tv_engineering_department.6605 = {
 tv_engineering_department.6606 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_alhambra_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_alhambra_cropped.dds"
 	outcome = neutral
 
@@ -10526,7 +10526,7 @@ tv_engineering_department.6606 = {
 tv_engineering_department.6607 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_machu_picchu_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_machu_picchu_cropped.dds"
 	outcome = neutral
 
@@ -10538,7 +10538,7 @@ tv_engineering_department.6607 = {
 tv_engineering_department.6608 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_himeji_castle_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_himeji_castle_cropped.dds"
 	outcome = neutral
 
@@ -10550,7 +10550,7 @@ tv_engineering_department.6608 = {
 tv_engineering_department.6609 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_taj_mahal_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_taj_mahal_cropped.dds"
 	outcome = neutral
 
@@ -10562,7 +10562,7 @@ tv_engineering_department.6609 = {
 tv_engineering_department.6610 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_forbidden_city_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_forbidden_city_cropped.dds"
 	outcome = neutral
 
@@ -10574,7 +10574,7 @@ tv_engineering_department.6610 = {
 tv_engineering_department.6611 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_topkapi_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_topkapi_palace_cropped.dds"
 	outcome = neutral
 
@@ -10586,7 +10586,7 @@ tv_engineering_department.6611 = {
 tv_engineering_department.6612 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_st_peters_basilica_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_st_peters_basilica_cropped.dds"
 	outcome = neutral
 
@@ -10598,7 +10598,7 @@ tv_engineering_department.6612 = {
 tv_engineering_department.6613 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_lalibela_churches_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_lalibela_churches_cropped.dds"
 	outcome = neutral
 
@@ -10610,7 +10610,7 @@ tv_engineering_department.6613 = {
 tv_engineering_department.6614 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_venetian_arsenal_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_venetian_arsenal_cropped.dds"
 	outcome = neutral
 
@@ -10622,7 +10622,7 @@ tv_engineering_department.6614 = {
 tv_engineering_department.6615 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_malacca_port_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_malacca_port_cropped.dds"
 	outcome = neutral
 
@@ -10634,7 +10634,7 @@ tv_engineering_department.6615 = {
 tv_engineering_department.6616 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_red_fort_delhi_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_red_fort_delhi_cropped.dds"
 	outcome = neutral
 
@@ -10646,7 +10646,7 @@ tv_engineering_department.6616 = {
 tv_engineering_department.6617 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_versailles_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_versailles_palace_cropped.dds"
 	outcome = neutral
 
@@ -10658,7 +10658,7 @@ tv_engineering_department.6617 = {
 tv_engineering_department.6618 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_tenochtitlan_causeways_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tenochtitlan_causeways_cropped.dds"
 	outcome = neutral
 
@@ -10670,7 +10670,7 @@ tv_engineering_department.6618 = {
 tv_engineering_department.6619 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_amsterdam_canal_ring_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_amsterdam_canal_ring_cropped.dds"
 	outcome = neutral
 
@@ -10682,7 +10682,7 @@ tv_engineering_department.6619 = {
 tv_engineering_department.6620 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_mecca_haram_expansion_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mecca_haram_expansion_cropped.dds"
 	outcome = neutral
 
@@ -10694,7 +10694,7 @@ tv_engineering_department.6620 = {
 tv_engineering_department.6621 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_ming_great_wall_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ming_great_wall_cropped.dds"
 	outcome = neutral
 
@@ -10706,7 +10706,7 @@ tv_engineering_department.6621 = {
 tv_engineering_department.6622 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_bank_of_saint_george_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bank_of_saint_george_cropped.dds"
 	outcome = neutral
 
@@ -10718,7 +10718,7 @@ tv_engineering_department.6622 = {
 tv_engineering_department.6623 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_cahokia_mounds_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cahokia_mounds_cropped.dds"
 	outcome = neutral
 
@@ -10730,7 +10730,7 @@ tv_engineering_department.6623 = {
 tv_engineering_department.6624 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_great_zimbabwe_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_great_zimbabwe_cropped.dds"
 	outcome = neutral
 
@@ -10742,7 +10742,7 @@ tv_engineering_department.6624 = {
 tv_engineering_department.6625 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_isfahan_square_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_isfahan_square_cropped.dds"
 	outcome = neutral
 
@@ -10754,7 +10754,7 @@ tv_engineering_department.6625 = {
 tv_engineering_department.6626 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_grand_canal_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_grand_canal_cropped.dds"
 	outcome = neutral
 
@@ -10766,7 +10766,7 @@ tv_engineering_department.6626 = {
 tv_engineering_department.6627 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_inca_royal_road_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_inca_royal_road_cropped.dds"
 	outcome = neutral
 
@@ -10778,7 +10778,7 @@ tv_engineering_department.6627 = {
 tv_engineering_department.6628 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_roman_aqueducts_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_roman_aqueducts_cropped.dds"
 	outcome = neutral
 
@@ -10790,7 +10790,7 @@ tv_engineering_department.6628 = {
 tv_engineering_department.6629 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_suez_ancient_canal_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_suez_ancient_canal_cropped.dds"
 	outcome = neutral
 
@@ -10802,7 +10802,7 @@ tv_engineering_department.6629 = {
 tv_engineering_department.6630 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_kremlin_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_kremlin_cropped.dds"
 	outcome = neutral
 
@@ -10814,7 +10814,7 @@ tv_engineering_department.6630 = {
 tv_engineering_department.6631 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_teotihuacan_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_teotihuacan_cropped.dds"
 	outcome = neutral
 
@@ -10826,7 +10826,7 @@ tv_engineering_department.6631 = {
 tv_engineering_department.6632 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_angkor_hydraulic_system_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_angkor_hydraulic_system_cropped.dds"
 	outcome = neutral
 
@@ -10838,7 +10838,7 @@ tv_engineering_department.6632 = {
 tv_engineering_department.6633 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_dutch_polders_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dutch_polders_cropped.dds"
 	outcome = neutral
 
@@ -10850,7 +10850,7 @@ tv_engineering_department.6633 = {
 tv_engineering_department.6634 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_machu_picchu_terraces_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_machu_picchu_terraces_cropped.dds"
 	outcome = neutral
 
@@ -10862,7 +10862,7 @@ tv_engineering_department.6634 = {
 tv_engineering_department.6635 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_british_navy_dockyards_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_british_navy_dockyards_cropped.dds"
 	outcome = neutral
 
@@ -10874,7 +10874,7 @@ tv_engineering_department.6635 = {
 tv_engineering_department.6636 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_spanish_silver_fleet_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_spanish_silver_fleet_cropped.dds"
 	outcome = neutral
 
@@ -10886,7 +10886,7 @@ tv_engineering_department.6636 = {
 tv_engineering_department.6637 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_ottoman_hajj_road_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ottoman_hajj_road_cropped.dds"
 	outcome = neutral
 
@@ -10898,7 +10898,7 @@ tv_engineering_department.6637 = {
 tv_engineering_department.6638 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_persian_qanat_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_persian_qanat_cropped.dds"
 	outcome = neutral
 
@@ -10910,7 +10910,7 @@ tv_engineering_department.6638 = {
 tv_engineering_department.6639 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_longjiang_shipyard_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_longjiang_shipyard_cropped.dds"
 	outcome = neutral
 
@@ -10922,7 +10922,7 @@ tv_engineering_department.6639 = {
 tv_engineering_department.6640 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_jerusalem_holy_city_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jerusalem_holy_city_cropped.dds"
 	outcome = neutral
 
@@ -10934,7 +10934,7 @@ tv_engineering_department.6640 = {
 tv_engineering_department.6641 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_stonehenge_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_stonehenge_cropped.dds"
 	outcome = neutral
 
@@ -10946,7 +10946,7 @@ tv_engineering_department.6641 = {
 tv_engineering_department.6642 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_tower_of_london_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tower_of_london_cropped.dds"
 	outcome = neutral
 
@@ -10958,7 +10958,7 @@ tv_engineering_department.6642 = {
 tv_engineering_department.6643 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_notre_dame_de_paris_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_notre_dame_de_paris_cropped.dds"
 	outcome = neutral
 
@@ -10970,7 +10970,7 @@ tv_engineering_department.6643 = {
 tv_engineering_department.6644 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_st_basils_cathedral_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_st_basils_cathedral_cropped.dds"
 	outcome = neutral
 
@@ -10982,7 +10982,7 @@ tv_engineering_department.6644 = {
 tv_engineering_department.6645 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_trinity_lavra_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_trinity_lavra_cropped.dds"
 	outcome = neutral
 
@@ -10994,7 +10994,7 @@ tv_engineering_department.6645 = {
 tv_engineering_department.6646 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_winter_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_winter_palace_cropped.dds"
 	outcome = neutral
 
@@ -11006,7 +11006,7 @@ tv_engineering_department.6646 = {
 tv_engineering_department.6647 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_gyeongbokgung_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_gyeongbokgung_cropped.dds"
 	outcome = neutral
 
@@ -11018,7 +11018,7 @@ tv_engineering_department.6647 = {
 tv_engineering_department.6648 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_changbai_mountain_altar_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_changbai_mountain_altar_cropped.dds"
 	outcome = neutral
 
@@ -11030,7 +11030,7 @@ tv_engineering_department.6648 = {
 tv_engineering_department.6649 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_belgrade_fortress_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_belgrade_fortress_cropped.dds"
 	outcome = neutral
 
@@ -11042,7 +11042,7 @@ tv_engineering_department.6649 = {
 tv_engineering_department.6650 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_meteora_monasteries_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_meteora_monasteries_cropped.dds"
 	outcome = neutral
 
@@ -11054,7 +11054,7 @@ tv_engineering_department.6650 = {
 tv_engineering_department.6651 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_belem_tower_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_belem_tower_cropped.dds"
 	outcome = neutral
 
@@ -11066,7 +11066,7 @@ tv_engineering_department.6651 = {
 tv_engineering_department.6652 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_iberian_inquisition_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_iberian_inquisition_cropped.dds"
 	outcome = neutral
 
@@ -11078,7 +11078,7 @@ tv_engineering_department.6652 = {
 tv_engineering_department.6653 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_santa_maria_del_fiore_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_santa_maria_del_fiore_cropped.dds"
 	outcome = neutral
 
@@ -11090,7 +11090,7 @@ tv_engineering_department.6653 = {
 tv_engineering_department.6654 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_leaning_tower_of_pisa_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_leaning_tower_of_pisa_cropped.dds"
 	outcome = neutral
 
@@ -11102,7 +11102,7 @@ tv_engineering_department.6654 = {
 tv_engineering_department.6655 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_milan_cathedral_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_milan_cathedral_cropped.dds"
 	outcome = neutral
 
@@ -11114,7 +11114,7 @@ tv_engineering_department.6655 = {
 tv_engineering_department.6656 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_vatican_archives_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_vatican_archives_cropped.dds"
 	outcome = neutral
 
@@ -11126,7 +11126,7 @@ tv_engineering_department.6656 = {
 tv_engineering_department.6657 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_temple_of_heaven_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_temple_of_heaven_cropped.dds"
 	outcome = neutral
 
@@ -11138,7 +11138,7 @@ tv_engineering_department.6657 = {
 tv_engineering_department.6658 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_dujiangyan_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dujiangyan_cropped.dds"
 	outcome = neutral
 
@@ -11150,7 +11150,7 @@ tv_engineering_department.6658 = {
 tv_engineering_department.6659 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_porcelain_tower_of_nanjing_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_porcelain_tower_of_nanjing_cropped.dds"
 	outcome = neutral
 
@@ -11162,7 +11162,7 @@ tv_engineering_department.6659 = {
 tv_engineering_department.6660 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_jingdezhen_imperial_kilns_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jingdezhen_imperial_kilns_cropped.dds"
 	outcome = neutral
 
@@ -11174,7 +11174,7 @@ tv_engineering_department.6660 = {
 tv_engineering_department.6661 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_mogao_caves_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mogao_caves_cropped.dds"
 	outcome = neutral
 
@@ -11186,7 +11186,7 @@ tv_engineering_department.6661 = {
 tv_engineering_department.6662 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_canton_thirteen_factories_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_canton_thirteen_factories_cropped.dds"
 	outcome = neutral
 
@@ -11198,7 +11198,7 @@ tv_engineering_department.6662 = {
 tv_engineering_department.6663 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_dardanelles_fortress_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dardanelles_fortress_cropped.dds"
 	outcome = neutral
 
@@ -11210,7 +11210,7 @@ tv_engineering_department.6663 = {
 tv_engineering_department.6664 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_escorial_monastery_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_escorial_monastery_cropped.dds"
 	outcome = neutral
 
@@ -11222,7 +11222,7 @@ tv_engineering_department.6664 = {
 tv_engineering_department.6665 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_toledo_armory_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_toledo_armory_cropped.dds"
 	outcome = neutral
 
@@ -11234,7 +11234,7 @@ tv_engineering_department.6665 = {
 tv_engineering_department.6666 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_camino_de_santiago_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_camino_de_santiago_cropped.dds"
 	outcome = neutral
 
@@ -11246,7 +11246,7 @@ tv_engineering_department.6666 = {
 tv_engineering_department.6667 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_sagres_navigation_school_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sagres_navigation_school_cropped.dds"
 	outcome = neutral
 
@@ -11258,7 +11258,7 @@ tv_engineering_department.6667 = {
 tv_engineering_department.6668 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_milan_arsenal_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_milan_arsenal_cropped.dds"
 	outcome = neutral
 
@@ -11270,7 +11270,7 @@ tv_engineering_department.6668 = {
 tv_engineering_department.6669 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_university_of_bologna_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_university_of_bologna_cropped.dds"
 	outcome = neutral
 
@@ -11282,7 +11282,7 @@ tv_engineering_department.6669 = {
 tv_engineering_department.6670 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_carrara_marble_quarries_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_carrara_marble_quarries_cropped.dds"
 	outcome = neutral
 
@@ -11294,7 +11294,7 @@ tv_engineering_department.6670 = {
 tv_engineering_department.6671 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_east_india_company_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_east_india_company_cropped.dds"
 	outcome = neutral
 
@@ -11306,7 +11306,7 @@ tv_engineering_department.6671 = {
 tv_engineering_department.6672 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_peacock_throne_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_peacock_throne_cropped.dds"
 	outcome = neutral
 
@@ -11318,7 +11318,7 @@ tv_engineering_department.6672 = {
 tv_engineering_department.6673 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_varanasi_ghats_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_varanasi_ghats_cropped.dds"
 	outcome = neutral
 
@@ -11330,7 +11330,7 @@ tv_engineering_department.6673 = {
 tv_engineering_department.6674 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_brihadishvara_temple_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brihadishvara_temple_cropped.dds"
 	outcome = neutral
 
@@ -11342,7 +11342,7 @@ tv_engineering_department.6674 = {
 tv_engineering_department.6675 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_konark_sun_temple_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_konark_sun_temple_cropped.dds"
 	outcome = neutral
 
@@ -11354,7 +11354,7 @@ tv_engineering_department.6675 = {
 tv_engineering_department.6676 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_fatehpur_sikri_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fatehpur_sikri_cropped.dds"
 	outcome = neutral
 
@@ -11366,7 +11366,7 @@ tv_engineering_department.6676 = {
 tv_engineering_department.6677 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_calicut_port_city_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_calicut_port_city_cropped.dds"
 	outcome = neutral
 
@@ -11378,7 +11378,7 @@ tv_engineering_department.6677 = {
 tv_engineering_department.6678 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_wieliczka_salt_mine_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wieliczka_salt_mine_cropped.dds"
 	outcome = neutral
 
@@ -11390,7 +11390,7 @@ tv_engineering_department.6678 = {
 tv_engineering_department.6679 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_wawel_castle_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wawel_castle_cropped.dds"
 	outcome = neutral
 
@@ -11402,7 +11402,7 @@ tv_engineering_department.6679 = {
 tv_engineering_department.6680 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_zamosc_ideal_city_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zamosc_ideal_city_cropped.dds"
 	outcome = neutral
 
@@ -11414,7 +11414,7 @@ tv_engineering_department.6680 = {
 tv_engineering_department.6681 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_gdansk_port_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_gdansk_port_cropped.dds"
 	outcome = neutral
 
@@ -11426,7 +11426,7 @@ tv_engineering_department.6681 = {
 tv_engineering_department.6682 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_malbork_castle_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_malbork_castle_cropped.dds"
 	outcome = neutral
 
@@ -11438,7 +11438,7 @@ tv_engineering_department.6682 = {
 tv_engineering_department.6683 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_brest_synagogue_quarter_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brest_synagogue_quarter_cropped.dds"
 	outcome = neutral
 
@@ -11450,7 +11450,7 @@ tv_engineering_department.6683 = {
 tv_engineering_department.6684 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_vilnius_university_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_vilnius_university_cropped.dds"
 	outcome = neutral
 
@@ -11462,7 +11462,7 @@ tv_engineering_department.6684 = {
 tv_engineering_department.6685 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_cave_monastery_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cave_monastery_cropped.dds"
 	outcome = neutral
 
@@ -11474,7 +11474,7 @@ tv_engineering_department.6685 = {
 tv_engineering_department.6686 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_zaporizhian_sich_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zaporizhian_sich_cropped.dds"
 	outcome = neutral
 
@@ -11486,7 +11486,7 @@ tv_engineering_department.6686 = {
 tv_engineering_department.6687 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_registan_square_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_registan_square_cropped.dds"
 	outcome = neutral
 
@@ -11498,7 +11498,7 @@ tv_engineering_department.6687 = {
 tv_engineering_department.6688 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_khiva_old_city_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_khiva_old_city_cropped.dds"
 	outcome = neutral
 
@@ -11510,7 +11510,7 @@ tv_engineering_department.6688 = {
 tv_engineering_department.6689 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_bukhara_kalyan_minaret_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bukhara_kalyan_minaret_cropped.dds"
 	outcome = neutral
 
@@ -11522,7 +11522,7 @@ tv_engineering_department.6689 = {
 tv_engineering_department.6690 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_ferghana_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ferghana_palace_cropped.dds"
 	outcome = neutral
 
@@ -11534,7 +11534,7 @@ tv_engineering_department.6690 = {
 tv_engineering_department.6691 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_tashkent_old_bazaar_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_tashkent_old_bazaar_cropped.dds"
 	outcome = neutral
 
@@ -11546,7 +11546,7 @@ tv_engineering_department.6691 = {
 tv_engineering_department.6692 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_louvre_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_louvre_palace_cropped.dds"
 	outcome = neutral
 
@@ -11558,7 +11558,7 @@ tv_engineering_department.6692 = {
 tv_engineering_department.6693 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_fontainebleau_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fontainebleau_palace_cropped.dds"
 	outcome = neutral
 
@@ -11570,7 +11570,7 @@ tv_engineering_department.6693 = {
 tv_engineering_department.6694 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_bordeaux_port_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bordeaux_port_cropped.dds"
 	outcome = neutral
 
@@ -11582,7 +11582,7 @@ tv_engineering_department.6694 = {
 tv_engineering_department.6695 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_marseille_old_port_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_marseille_old_port_cropped.dds"
 	outcome = neutral
 
@@ -11594,7 +11594,7 @@ tv_engineering_department.6695 = {
 tv_engineering_department.6696 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_lyon_silk_workshops_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_lyon_silk_workshops_cropped.dds"
 	outcome = neutral
 
@@ -11606,7 +11606,7 @@ tv_engineering_department.6696 = {
 tv_engineering_department.6697 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_mont_saint_michel_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_mont_saint_michel_cropped.dds"
 	outcome = neutral
 
@@ -11618,7 +11618,7 @@ tv_engineering_department.6697 = {
 tv_engineering_department.6699 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_carcassonne_castle_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_carcassonne_castle_cropped.dds"
 	outcome = neutral
 
@@ -11630,7 +11630,7 @@ tv_engineering_department.6699 = {
 tv_engineering_department.6700 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_brest_naval_port_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_brest_naval_port_cropped.dds"
 	outcome = neutral
 
@@ -11642,7 +11642,7 @@ tv_engineering_department.6700 = {
 tv_engineering_department.6701 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_colmar_old_town_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_colmar_old_town_cropped.dds"
 	outcome = neutral
 
@@ -11654,7 +11654,7 @@ tv_engineering_department.6701 = {
 tv_engineering_department.6702 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_house_of_wisdom_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_house_of_wisdom_cropped.dds"
 	outcome = neutral
 
@@ -11666,7 +11666,7 @@ tv_engineering_department.6702 = {
 tv_engineering_department.6703 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_echmiadzin_cathedral_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_echmiadzin_cathedral_cropped.dds"
 	outcome = neutral
 
@@ -11678,7 +11678,7 @@ tv_engineering_department.6703 = {
 tv_engineering_department.6704 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_narikala_fortress_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_narikala_fortress_cropped.dds"
 	outcome = neutral
 
@@ -11690,7 +11690,7 @@ tv_engineering_department.6704 = {
 tv_engineering_department.6705 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_baku_ateshgah_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_baku_ateshgah_cropped.dds"
 	outcome = neutral
 
@@ -11702,7 +11702,7 @@ tv_engineering_department.6705 = {
 tv_engineering_department.6706 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_sanaa_old_city_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sanaa_old_city_cropped.dds"
 	outcome = neutral
 
@@ -11714,7 +11714,7 @@ tv_engineering_department.6706 = {
 tv_engineering_department.6707 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_schoenbrunn_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_schoenbrunn_palace_cropped.dds"
 	outcome = neutral
 
@@ -11726,7 +11726,7 @@ tv_engineering_department.6707 = {
 tv_engineering_department.6708 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_electoral_conference_hall_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_electoral_conference_hall_cropped.dds"
 	outcome = neutral
 
@@ -11738,7 +11738,7 @@ tv_engineering_department.6708 = {
 tv_engineering_department.6709 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_aachen_cathedral_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_aachen_cathedral_cropped.dds"
 	outcome = neutral
 
@@ -11750,7 +11750,7 @@ tv_engineering_department.6709 = {
 tv_engineering_department.6710 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_nuremberg_imperial_castle_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_nuremberg_imperial_castle_cropped.dds"
 	outcome = neutral
 
@@ -11762,7 +11762,7 @@ tv_engineering_department.6710 = {
 tv_engineering_department.6711 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_augsburg_bank_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_augsburg_bank_cropped.dds"
 	outcome = neutral
 
@@ -11774,7 +11774,7 @@ tv_engineering_department.6711 = {
 tv_engineering_department.6712 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_cologne_cathedral_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_cologne_cathedral_cropped.dds"
 	outcome = neutral
 
@@ -11786,7 +11786,7 @@ tv_engineering_department.6712 = {
 tv_engineering_department.6713 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_hanseatic_kontor_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hanseatic_kontor_cropped.dds"
 	outcome = neutral
 
@@ -11798,7 +11798,7 @@ tv_engineering_department.6713 = {
 tv_engineering_department.6714 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_hanseatic_town_hall_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_hanseatic_town_hall_cropped.dds"
 	outcome = neutral
 
@@ -11810,7 +11810,7 @@ tv_engineering_department.6714 = {
 tv_engineering_department.6715 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_dresden_art_gallery_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_dresden_art_gallery_cropped.dds"
 	outcome = neutral
 
@@ -11822,7 +11822,7 @@ tv_engineering_department.6715 = {
 tv_engineering_department.6716 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_munich_royal_brewery_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_munich_royal_brewery_cropped.dds"
 	outcome = neutral
 
@@ -11834,7 +11834,7 @@ tv_engineering_department.6716 = {
 tv_engineering_department.6717 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_heidelberg_university_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_heidelberg_university_cropped.dds"
 	outcome = neutral
 
@@ -11846,7 +11846,7 @@ tv_engineering_department.6717 = {
 tv_engineering_department.6718 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_fez_old_city_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fez_old_city_cropped.dds"
 	outcome = neutral
 
@@ -11858,7 +11858,7 @@ tv_engineering_department.6718 = {
 tv_engineering_department.6719 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_kairouan_holy_city_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_kairouan_holy_city_cropped.dds"
 	outcome = neutral
 
@@ -11870,7 +11870,7 @@ tv_engineering_department.6719 = {
 tv_engineering_department.6720 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_algiers_pirate_port_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_algiers_pirate_port_cropped.dds"
 	outcome = neutral
 
@@ -11882,7 +11882,7 @@ tv_engineering_department.6720 = {
 tv_engineering_department.6721 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_sankore_university_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_sankore_university_cropped.dds"
 	outcome = neutral
 
@@ -11894,7 +11894,7 @@ tv_engineering_department.6721 = {
 tv_engineering_department.6722 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_great_mosque_of_djenne_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_great_mosque_of_djenne_cropped.dds"
 	outcome = neutral
 
@@ -11906,7 +11906,7 @@ tv_engineering_department.6722 = {
 tv_engineering_department.6723 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_walls_of_benin_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_walls_of_benin_cropped.dds"
 	outcome = neutral
 
@@ -11918,7 +11918,7 @@ tv_engineering_department.6723 = {
 tv_engineering_department.6724 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_suzhou_classical_gardens_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_suzhou_classical_gardens_cropped.dds"
 	outcome = neutral
 
@@ -11930,7 +11930,7 @@ tv_engineering_department.6724 = {
 tv_engineering_department.6725 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_fin_garden_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_fin_garden_cropped.dds"
 	outcome = neutral
 
@@ -11942,7 +11942,7 @@ tv_engineering_department.6725 = {
 tv_engineering_department.6726 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_jiangnan_examination_hall_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_jiangnan_examination_hall_cropped.dds"
 	outcome = neutral
 
@@ -11954,7 +11954,7 @@ tv_engineering_department.6726 = {
 tv_engineering_department.6727 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_thang_long_temple_of_literature_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_thang_long_temple_of_literature_cropped.dds"
 	outcome = neutral
 
@@ -11966,7 +11966,7 @@ tv_engineering_department.6727 = {
 tv_engineering_department.6728 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_maragheh_observatory_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_maragheh_observatory_cropped.dds"
 	outcome = neutral
 
@@ -11978,7 +11978,7 @@ tv_engineering_department.6728 = {
 tv_engineering_department.6729 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_xian_bell_and_drum_towers_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_xian_bell_and_drum_towers_cropped.dds"
 	outcome = neutral
 
@@ -11990,7 +11990,7 @@ tv_engineering_department.6729 = {
 tv_engineering_department.6730 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_behistun_inscription_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_behistun_inscription_cropped.dds"
 	outcome = neutral
 
@@ -12002,7 +12002,7 @@ tv_engineering_department.6730 = {
 tv_engineering_department.6731 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_beijing_imperial_granaries_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_beijing_imperial_granaries_cropped.dds"
 	outcome = neutral
 
@@ -12014,7 +12014,7 @@ tv_engineering_department.6731 = {
 tv_engineering_department.6732 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_bursa_imperial_mint_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bursa_imperial_mint_cropped.dds"
 	outcome = neutral
 
@@ -12026,7 +12026,7 @@ tv_engineering_department.6732 = {
 tv_engineering_department.6733 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_enderun_palace_school_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_enderun_palace_school_cropped.dds"
 	outcome = neutral
 
@@ -12038,7 +12038,7 @@ tv_engineering_department.6733 = {
 tv_engineering_department.6734 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_ayutthaya_foreign_quarters_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_ayutthaya_foreign_quarters_cropped.dds"
 	outcome = neutral
 
@@ -12050,7 +12050,7 @@ tv_engineering_department.6734 = {
 tv_engineering_department.6735 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_yunnan_weisuo_colonies_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_yunnan_weisuo_colonies_cropped.dds"
 	outcome = neutral
 
@@ -12062,7 +12062,7 @@ tv_engineering_department.6735 = {
 tv_engineering_department.6736 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_zhoushan_beacon_network_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_zhoushan_beacon_network_cropped.dds"
 	outcome = neutral
 
@@ -12074,7 +12074,7 @@ tv_engineering_department.6736 = {
 tv_engineering_department.6737 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_amber_room_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_amber_room_cropped.dds"
 	outcome = neutral
 
@@ -12086,7 +12086,7 @@ tv_engineering_department.6737 = {
 tv_engineering_department.6738 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_parthenon_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_parthenon_cropped.dds"
 	outcome = neutral
 
@@ -12098,7 +12098,7 @@ tv_engineering_department.6738 = {
 tv_engineering_department.6739 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_bangkok_grand_palace_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_bangkok_grand_palace_cropped.dds"
 	outcome = neutral
 
@@ -12110,7 +12110,7 @@ tv_engineering_department.6739 = {
 tv_engineering_department.6740 = {
 	type = country_event
 	title = tv_engineering_department.600.t
-	desc = TV_WONDER_EXPANSION_COMPLETE_DESC
+	desc = tv_engineering_department.600.d_unique_wat_arun_expansion_news
 	image = "gfx/interface/icons/towards_victory/wonders/tv_wonder_unique_wat_arun_cropped.dds"
 	outcome = neutral
 

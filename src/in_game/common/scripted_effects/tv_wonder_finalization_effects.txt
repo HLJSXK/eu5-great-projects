@@ -1158,6 +1158,7 @@ tv_wonder_sacred_mountain_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_sacred_mountain_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -1375,6 +1376,7 @@ tv_wonder_triumphal_axis_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_triumphal_axis_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -1592,6 +1594,7 @@ tv_wonder_great_port_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_great_port_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -1809,6 +1812,7 @@ tv_wonder_giant_necropolis_destroy_finalization_intermediate_buildings_effect = 
 
 tv_wonder_giant_necropolis_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -2026,6 +2030,7 @@ tv_wonder_great_lighthouse_destroy_finalization_intermediate_buildings_effect = 
 
 tv_wonder_great_lighthouse_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -2243,6 +2248,7 @@ tv_wonder_hydraulic_workshop_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_hydraulic_workshop_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -2460,6 +2466,7 @@ tv_wonder_mining_city_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_mining_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -2677,6 +2684,7 @@ tv_wonder_giant_observatory_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_giant_observatory_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -2894,6 +2902,7 @@ tv_wonder_palace_of_nations_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_palace_of_nations_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -3111,6 +3120,7 @@ tv_wonder_university_city_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_university_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -3328,6 +3338,7 @@ tv_wonder_sky_dome_grand_temple_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_sky_dome_grand_temple_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -3545,6 +3556,7 @@ tv_wonder_giant_tower_temple_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_giant_tower_temple_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -3762,6 +3774,7 @@ tv_wonder_river_extension_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_river_extension_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -3979,6 +3992,7 @@ tv_wonder_national_shipyard_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_national_shipyard_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -4196,6 +4210,7 @@ tv_wonder_star_fortress_city_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_star_fortress_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -4413,6 +4428,7 @@ tv_wonder_great_wall_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_great_wall_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -4630,6 +4646,7 @@ tv_wonder_giant_armory_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_giant_armory_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -4847,6 +4864,7 @@ tv_wonder_library_of_nation_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_library_of_nation_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -5064,6 +5082,7 @@ tv_wonder_large_canal_system_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_large_canal_system_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -5281,6 +5300,7 @@ tv_wonder_mountain_terrace_network_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_mountain_terrace_network_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -5498,6 +5518,7 @@ tv_wonder_giant_dam_project_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_giant_dam_project_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -5715,6 +5736,7 @@ tv_wonder_royal_granary_system_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_royal_granary_system_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -5932,6 +5954,7 @@ tv_wonder_imperial_post_road_network_destroy_finalization_intermediate_buildings
 
 tv_wonder_imperial_post_road_network_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -6149,6 +6172,7 @@ tv_wonder_canal_hub_city_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_canal_hub_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -6366,6 +6390,7 @@ tv_wonder_frontier_colonization_belt_destroy_finalization_intermediate_buildings
 
 tv_wonder_frontier_colonization_belt_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -6583,6 +6608,7 @@ tv_wonder_coastal_beacon_network_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_coastal_beacon_network_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -6800,6 +6826,7 @@ tv_wonder_knightly_fortress_order_destroy_finalization_intermediate_buildings_ef
 
 tv_wonder_knightly_fortress_order_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -7017,6 +7044,7 @@ tv_wonder_war_college_system_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_war_college_system_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -7234,6 +7262,7 @@ tv_wonder_great_clock_bell_system_destroy_finalization_intermediate_buildings_ef
 
 tv_wonder_great_clock_bell_system_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -7451,6 +7480,7 @@ tv_wonder_royal_art_district_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_royal_art_district_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -7668,6 +7698,7 @@ tv_wonder_grand_theater_festival_district_destroy_finalization_intermediate_buil
 
 tv_wonder_grand_theater_festival_district_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -7885,6 +7916,7 @@ tv_wonder_world_embassy_quarter_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_world_embassy_quarter_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -8102,6 +8134,7 @@ tv_wonder_law_code_stele_project_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_law_code_stele_project_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -8319,6 +8352,7 @@ tv_wonder_world_market_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_world_market_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -8536,6 +8570,7 @@ tv_wonder_royal_mint_system_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_royal_mint_system_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -8753,6 +8788,7 @@ tv_wonder_guild_alliance_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_guild_alliance_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -8970,6 +9006,7 @@ tv_wonder_maritime_trade_station_network_destroy_finalization_intermediate_build
 
 tv_wonder_maritime_trade_station_network_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -9187,6 +9224,7 @@ tv_wonder_giant_workshop_complex_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_giant_workshop_complex_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -9404,6 +9442,7 @@ tv_wonder_world_monument_group_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_world_monument_group_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -9621,6 +9660,7 @@ tv_wonder_city_expansion_project_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_city_expansion_project_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -9838,6 +9878,7 @@ tv_wonder_megalithic_circle_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_megalithic_circle_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -10055,6 +10096,7 @@ tv_wonder_grand_cathedral_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_grand_cathedral_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -10272,6 +10314,7 @@ tv_wonder_great_monastery_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_great_monastery_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -10489,6 +10532,7 @@ tv_wonder_city_great_tower_destroy_finalization_intermediate_buildings_effect = 
 
 tv_wonder_city_great_tower_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -10706,6 +10750,7 @@ tv_wonder_great_sculpture_group_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_great_sculpture_group_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -10923,6 +10968,7 @@ tv_wonder_coastal_defense_cannon_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_coastal_defense_cannon_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -11140,6 +11186,7 @@ tv_wonder_naval_school_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_naval_school_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -11357,6 +11404,7 @@ tv_wonder_colonial_trade_company_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_colonial_trade_company_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -11574,6 +11622,7 @@ tv_wonder_great_assembly_hall_destroy_finalization_intermediate_buildings_effect
 
 tv_wonder_great_assembly_hall_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -11791,6 +11840,7 @@ tv_wonder_mobile_fortress_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_mobile_fortress_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -12008,6 +12058,7 @@ tv_wonder_ancient_city_ruins_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_ancient_city_ruins_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -12225,6 +12276,7 @@ tv_wonder_summer_palace_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_summer_palace_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -12442,6 +12494,7 @@ tv_wonder_national_bank_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_national_bank_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -12659,6 +12712,7 @@ tv_wonder_pirate_port_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_pirate_port_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -12876,6 +12930,7 @@ tv_wonder_grand_garden_complex_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_grand_garden_complex_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -13093,6 +13148,7 @@ tv_wonder_state_examination_complex_destroy_finalization_intermediate_buildings_
 
 tv_wonder_state_examination_complex_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -13310,6 +13366,7 @@ tv_wonder_unique_pharos_lighthouse_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_pharos_lighthouse_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -13527,6 +13584,7 @@ tv_wonder_unique_hagia_sophia_destroy_finalization_intermediate_buildings_effect
 
 tv_wonder_unique_hagia_sophia_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -13744,6 +13802,7 @@ tv_wonder_unique_dome_of_the_rock_destroy_finalization_intermediate_buildings_ef
 
 tv_wonder_unique_dome_of_the_rock_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -13961,6 +14020,7 @@ tv_wonder_unique_angkor_wat_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_unique_angkor_wat_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -14178,6 +14238,7 @@ tv_wonder_unique_potala_palace_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_potala_palace_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -14395,6 +14456,7 @@ tv_wonder_unique_alhambra_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_unique_alhambra_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -14612,6 +14674,7 @@ tv_wonder_unique_machu_picchu_destroy_finalization_intermediate_buildings_effect
 
 tv_wonder_unique_machu_picchu_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -14829,6 +14892,7 @@ tv_wonder_unique_himeji_castle_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_himeji_castle_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -15046,6 +15110,7 @@ tv_wonder_unique_taj_mahal_destroy_finalization_intermediate_buildings_effect = 
 
 tv_wonder_unique_taj_mahal_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -15263,6 +15328,7 @@ tv_wonder_unique_forbidden_city_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_forbidden_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -15480,6 +15546,7 @@ tv_wonder_unique_topkapi_palace_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_topkapi_palace_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -15697,6 +15764,7 @@ tv_wonder_unique_st_peters_basilica_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_st_peters_basilica_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -15914,6 +15982,7 @@ tv_wonder_unique_lalibela_churches_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_lalibela_churches_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -16131,6 +16200,7 @@ tv_wonder_unique_venetian_arsenal_destroy_finalization_intermediate_buildings_ef
 
 tv_wonder_unique_venetian_arsenal_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -16348,6 +16418,7 @@ tv_wonder_unique_malacca_port_destroy_finalization_intermediate_buildings_effect
 
 tv_wonder_unique_malacca_port_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -16565,6 +16636,7 @@ tv_wonder_unique_red_fort_delhi_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_red_fort_delhi_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -16782,6 +16854,7 @@ tv_wonder_unique_versailles_palace_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_versailles_palace_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -16999,6 +17072,7 @@ tv_wonder_unique_tenochtitlan_causeways_destroy_finalization_intermediate_buildi
 
 tv_wonder_unique_tenochtitlan_causeways_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -17216,6 +17290,7 @@ tv_wonder_unique_amsterdam_canal_ring_destroy_finalization_intermediate_building
 
 tv_wonder_unique_amsterdam_canal_ring_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -17433,6 +17508,7 @@ tv_wonder_unique_mecca_haram_expansion_destroy_finalization_intermediate_buildin
 
 tv_wonder_unique_mecca_haram_expansion_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -17650,6 +17726,7 @@ tv_wonder_unique_ming_great_wall_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_unique_ming_great_wall_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -17867,6 +17944,7 @@ tv_wonder_unique_bank_of_saint_george_destroy_finalization_intermediate_building
 
 tv_wonder_unique_bank_of_saint_george_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -18084,6 +18162,7 @@ tv_wonder_unique_cahokia_mounds_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_cahokia_mounds_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -18301,6 +18380,7 @@ tv_wonder_unique_great_zimbabwe_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_great_zimbabwe_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -18518,6 +18598,7 @@ tv_wonder_unique_isfahan_square_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_isfahan_square_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -18735,6 +18816,7 @@ tv_wonder_unique_grand_canal_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_unique_grand_canal_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -18952,6 +19034,7 @@ tv_wonder_unique_inca_royal_road_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_unique_inca_royal_road_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -19169,6 +19252,7 @@ tv_wonder_unique_roman_aqueducts_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_unique_roman_aqueducts_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -19386,6 +19470,7 @@ tv_wonder_unique_suez_ancient_canal_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_suez_ancient_canal_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -19603,6 +19688,7 @@ tv_wonder_unique_kremlin_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_unique_kremlin_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -19820,6 +19906,7 @@ tv_wonder_unique_teotihuacan_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_unique_teotihuacan_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -20037,6 +20124,7 @@ tv_wonder_unique_angkor_hydraulic_system_destroy_finalization_intermediate_build
 
 tv_wonder_unique_angkor_hydraulic_system_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -20254,6 +20342,7 @@ tv_wonder_unique_dutch_polders_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_dutch_polders_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -20471,6 +20560,7 @@ tv_wonder_unique_machu_picchu_terraces_destroy_finalization_intermediate_buildin
 
 tv_wonder_unique_machu_picchu_terraces_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -20688,6 +20778,7 @@ tv_wonder_unique_british_navy_dockyards_destroy_finalization_intermediate_buildi
 
 tv_wonder_unique_british_navy_dockyards_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -20905,6 +20996,7 @@ tv_wonder_unique_spanish_silver_fleet_destroy_finalization_intermediate_building
 
 tv_wonder_unique_spanish_silver_fleet_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -21122,6 +21214,7 @@ tv_wonder_unique_ottoman_hajj_road_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_ottoman_hajj_road_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -21339,6 +21432,7 @@ tv_wonder_unique_persian_qanat_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_persian_qanat_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -21556,6 +21650,7 @@ tv_wonder_unique_longjiang_shipyard_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_longjiang_shipyard_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -21773,6 +21868,7 @@ tv_wonder_unique_jerusalem_holy_city_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_jerusalem_holy_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -21990,6 +22086,7 @@ tv_wonder_unique_stonehenge_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_unique_stonehenge_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -22207,6 +22304,7 @@ tv_wonder_unique_tower_of_london_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_unique_tower_of_london_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -22424,6 +22522,7 @@ tv_wonder_unique_notre_dame_de_paris_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_notre_dame_de_paris_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -22641,6 +22740,7 @@ tv_wonder_unique_st_basils_cathedral_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_st_basils_cathedral_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -22858,6 +22958,7 @@ tv_wonder_unique_trinity_lavra_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_trinity_lavra_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -23075,6 +23176,7 @@ tv_wonder_unique_winter_palace_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_winter_palace_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -23292,6 +23394,7 @@ tv_wonder_unique_gyeongbokgung_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_gyeongbokgung_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -23509,6 +23612,7 @@ tv_wonder_unique_changbai_mountain_altar_destroy_finalization_intermediate_build
 
 tv_wonder_unique_changbai_mountain_altar_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -23726,6 +23830,7 @@ tv_wonder_unique_belgrade_fortress_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_belgrade_fortress_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -23943,6 +24048,7 @@ tv_wonder_unique_meteora_monasteries_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_meteora_monasteries_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -24160,6 +24266,7 @@ tv_wonder_unique_belem_tower_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_unique_belem_tower_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -24377,6 +24484,7 @@ tv_wonder_unique_iberian_inquisition_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_iberian_inquisition_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -24594,6 +24702,7 @@ tv_wonder_unique_santa_maria_del_fiore_destroy_finalization_intermediate_buildin
 
 tv_wonder_unique_santa_maria_del_fiore_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -24811,6 +24920,7 @@ tv_wonder_unique_leaning_tower_of_pisa_destroy_finalization_intermediate_buildin
 
 tv_wonder_unique_leaning_tower_of_pisa_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -25028,6 +25138,7 @@ tv_wonder_unique_milan_cathedral_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_unique_milan_cathedral_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -25245,6 +25356,7 @@ tv_wonder_unique_vatican_archives_destroy_finalization_intermediate_buildings_ef
 
 tv_wonder_unique_vatican_archives_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -25462,6 +25574,7 @@ tv_wonder_unique_temple_of_heaven_destroy_finalization_intermediate_buildings_ef
 
 tv_wonder_unique_temple_of_heaven_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -25679,6 +25792,7 @@ tv_wonder_unique_dujiangyan_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_unique_dujiangyan_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -25896,6 +26010,7 @@ tv_wonder_unique_porcelain_tower_of_nanjing_destroy_finalization_intermediate_bu
 
 tv_wonder_unique_porcelain_tower_of_nanjing_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -26113,6 +26228,7 @@ tv_wonder_unique_jingdezhen_imperial_kilns_destroy_finalization_intermediate_bui
 
 tv_wonder_unique_jingdezhen_imperial_kilns_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -26330,6 +26446,7 @@ tv_wonder_unique_mogao_caves_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_unique_mogao_caves_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -26547,6 +26664,7 @@ tv_wonder_unique_canton_thirteen_factories_destroy_finalization_intermediate_bui
 
 tv_wonder_unique_canton_thirteen_factories_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -26764,6 +26882,7 @@ tv_wonder_unique_dardanelles_fortress_destroy_finalization_intermediate_building
 
 tv_wonder_unique_dardanelles_fortress_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -26981,6 +27100,7 @@ tv_wonder_unique_escorial_monastery_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_escorial_monastery_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -27198,6 +27318,7 @@ tv_wonder_unique_toledo_armory_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_toledo_armory_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -27415,6 +27536,7 @@ tv_wonder_unique_camino_de_santiago_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_camino_de_santiago_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -27632,6 +27754,7 @@ tv_wonder_unique_sagres_navigation_school_destroy_finalization_intermediate_buil
 
 tv_wonder_unique_sagres_navigation_school_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -27849,6 +27972,7 @@ tv_wonder_unique_milan_arsenal_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_milan_arsenal_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -28066,6 +28190,7 @@ tv_wonder_unique_university_of_bologna_destroy_finalization_intermediate_buildin
 
 tv_wonder_unique_university_of_bologna_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -28283,6 +28408,7 @@ tv_wonder_unique_carrara_marble_quarries_destroy_finalization_intermediate_build
 
 tv_wonder_unique_carrara_marble_quarries_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -28500,6 +28626,7 @@ tv_wonder_unique_east_india_company_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_east_india_company_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -28717,6 +28844,7 @@ tv_wonder_unique_peacock_throne_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_peacock_throne_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -28934,6 +29062,7 @@ tv_wonder_unique_varanasi_ghats_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_varanasi_ghats_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -29151,6 +29280,7 @@ tv_wonder_unique_brihadishvara_temple_destroy_finalization_intermediate_building
 
 tv_wonder_unique_brihadishvara_temple_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -29368,6 +29498,7 @@ tv_wonder_unique_konark_sun_temple_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_konark_sun_temple_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -29585,6 +29716,7 @@ tv_wonder_unique_fatehpur_sikri_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_fatehpur_sikri_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -29802,6 +29934,7 @@ tv_wonder_unique_calicut_port_city_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_calicut_port_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -30019,6 +30152,7 @@ tv_wonder_unique_wieliczka_salt_mine_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_wieliczka_salt_mine_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -30236,6 +30370,7 @@ tv_wonder_unique_wawel_castle_destroy_finalization_intermediate_buildings_effect
 
 tv_wonder_unique_wawel_castle_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -30453,6 +30588,7 @@ tv_wonder_unique_zamosc_ideal_city_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_zamosc_ideal_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -30670,6 +30806,7 @@ tv_wonder_unique_gdansk_port_destroy_finalization_intermediate_buildings_effect 
 
 tv_wonder_unique_gdansk_port_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -30887,6 +31024,7 @@ tv_wonder_unique_malbork_castle_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_malbork_castle_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -31104,6 +31242,7 @@ tv_wonder_unique_brest_synagogue_quarter_destroy_finalization_intermediate_build
 
 tv_wonder_unique_brest_synagogue_quarter_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -31321,6 +31460,7 @@ tv_wonder_unique_vilnius_university_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_vilnius_university_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -31538,6 +31678,7 @@ tv_wonder_unique_cave_monastery_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_cave_monastery_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -31755,6 +31896,7 @@ tv_wonder_unique_zaporizhian_sich_destroy_finalization_intermediate_buildings_ef
 
 tv_wonder_unique_zaporizhian_sich_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -31972,6 +32114,7 @@ tv_wonder_unique_registan_square_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_unique_registan_square_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -32189,6 +32332,7 @@ tv_wonder_unique_khiva_old_city_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_khiva_old_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -32406,6 +32550,7 @@ tv_wonder_unique_bukhara_kalyan_minaret_destroy_finalization_intermediate_buildi
 
 tv_wonder_unique_bukhara_kalyan_minaret_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -32623,6 +32768,7 @@ tv_wonder_unique_ferghana_palace_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_unique_ferghana_palace_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -32840,6 +32986,7 @@ tv_wonder_unique_tashkent_old_bazaar_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_tashkent_old_bazaar_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -33057,6 +33204,7 @@ tv_wonder_unique_louvre_palace_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_louvre_palace_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -33274,6 +33422,7 @@ tv_wonder_unique_fontainebleau_palace_destroy_finalization_intermediate_building
 
 tv_wonder_unique_fontainebleau_palace_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -33491,6 +33640,7 @@ tv_wonder_unique_bordeaux_port_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_bordeaux_port_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -33708,6 +33858,7 @@ tv_wonder_unique_marseille_old_port_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_marseille_old_port_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -33925,6 +34076,7 @@ tv_wonder_unique_lyon_silk_workshops_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_lyon_silk_workshops_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -34142,6 +34294,7 @@ tv_wonder_unique_mont_saint_michel_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_mont_saint_michel_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -34359,6 +34512,7 @@ tv_wonder_unique_carcassonne_castle_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_carcassonne_castle_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -34576,6 +34730,7 @@ tv_wonder_unique_brest_naval_port_destroy_finalization_intermediate_buildings_ef
 
 tv_wonder_unique_brest_naval_port_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -34793,6 +34948,7 @@ tv_wonder_unique_colmar_old_town_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_unique_colmar_old_town_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -35010,6 +35166,7 @@ tv_wonder_unique_house_of_wisdom_destroy_finalization_intermediate_buildings_eff
 
 tv_wonder_unique_house_of_wisdom_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -35227,6 +35384,7 @@ tv_wonder_unique_echmiadzin_cathedral_destroy_finalization_intermediate_building
 
 tv_wonder_unique_echmiadzin_cathedral_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -35444,6 +35602,7 @@ tv_wonder_unique_narikala_fortress_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_narikala_fortress_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -35661,6 +35820,7 @@ tv_wonder_unique_baku_ateshgah_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_baku_ateshgah_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -35878,6 +36038,7 @@ tv_wonder_unique_sanaa_old_city_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_sanaa_old_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -36095,6 +36256,7 @@ tv_wonder_unique_schoenbrunn_palace_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_schoenbrunn_palace_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -36312,6 +36474,7 @@ tv_wonder_unique_electoral_conference_hall_destroy_finalization_intermediate_bui
 
 tv_wonder_unique_electoral_conference_hall_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -36529,6 +36692,7 @@ tv_wonder_unique_aachen_cathedral_destroy_finalization_intermediate_buildings_ef
 
 tv_wonder_unique_aachen_cathedral_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -36746,6 +36910,7 @@ tv_wonder_unique_nuremberg_imperial_castle_destroy_finalization_intermediate_bui
 
 tv_wonder_unique_nuremberg_imperial_castle_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -36963,6 +37128,7 @@ tv_wonder_unique_augsburg_bank_destroy_finalization_intermediate_buildings_effec
 
 tv_wonder_unique_augsburg_bank_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -37180,6 +37346,7 @@ tv_wonder_unique_cologne_cathedral_destroy_finalization_intermediate_buildings_e
 
 tv_wonder_unique_cologne_cathedral_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -37397,6 +37564,7 @@ tv_wonder_unique_hanseatic_kontor_destroy_finalization_intermediate_buildings_ef
 
 tv_wonder_unique_hanseatic_kontor_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -37614,6 +37782,7 @@ tv_wonder_unique_hanseatic_town_hall_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_hanseatic_town_hall_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -37831,6 +38000,7 @@ tv_wonder_unique_dresden_art_gallery_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_dresden_art_gallery_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -38048,6 +38218,7 @@ tv_wonder_unique_munich_royal_brewery_destroy_finalization_intermediate_building
 
 tv_wonder_unique_munich_royal_brewery_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -38265,6 +38436,7 @@ tv_wonder_unique_heidelberg_university_destroy_finalization_intermediate_buildin
 
 tv_wonder_unique_heidelberg_university_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -38482,6 +38654,7 @@ tv_wonder_unique_fez_old_city_destroy_finalization_intermediate_buildings_effect
 
 tv_wonder_unique_fez_old_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -38699,6 +38872,7 @@ tv_wonder_unique_kairouan_holy_city_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_kairouan_holy_city_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -38916,6 +39090,7 @@ tv_wonder_unique_algiers_pirate_port_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_algiers_pirate_port_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -39133,6 +39308,7 @@ tv_wonder_unique_sankore_university_destroy_finalization_intermediate_buildings_
 
 tv_wonder_unique_sankore_university_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -39350,6 +39526,7 @@ tv_wonder_unique_great_mosque_of_djenne_destroy_finalization_intermediate_buildi
 
 tv_wonder_unique_great_mosque_of_djenne_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -39567,6 +39744,7 @@ tv_wonder_unique_walls_of_benin_destroy_finalization_intermediate_buildings_effe
 
 tv_wonder_unique_walls_of_benin_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -39784,6 +39962,7 @@ tv_wonder_unique_suzhou_classical_gardens_destroy_finalization_intermediate_buil
 
 tv_wonder_unique_suzhou_classical_gardens_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -40001,6 +40180,7 @@ tv_wonder_unique_fin_garden_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_unique_fin_garden_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -40218,6 +40398,7 @@ tv_wonder_unique_jiangnan_examination_hall_destroy_finalization_intermediate_bui
 
 tv_wonder_unique_jiangnan_examination_hall_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -40435,6 +40616,7 @@ tv_wonder_unique_thang_long_temple_of_literature_destroy_finalization_intermedia
 
 tv_wonder_unique_thang_long_temple_of_literature_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -40652,6 +40834,7 @@ tv_wonder_unique_maragheh_observatory_destroy_finalization_intermediate_building
 
 tv_wonder_unique_maragheh_observatory_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -40869,6 +41052,7 @@ tv_wonder_unique_xian_bell_and_drum_towers_destroy_finalization_intermediate_bui
 
 tv_wonder_unique_xian_bell_and_drum_towers_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -41086,6 +41270,7 @@ tv_wonder_unique_behistun_inscription_destroy_finalization_intermediate_building
 
 tv_wonder_unique_behistun_inscription_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -41303,6 +41488,7 @@ tv_wonder_unique_beijing_imperial_granaries_destroy_finalization_intermediate_bu
 
 tv_wonder_unique_beijing_imperial_granaries_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -41520,6 +41706,7 @@ tv_wonder_unique_bursa_imperial_mint_destroy_finalization_intermediate_buildings
 
 tv_wonder_unique_bursa_imperial_mint_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -41737,6 +41924,7 @@ tv_wonder_unique_enderun_palace_school_destroy_finalization_intermediate_buildin
 
 tv_wonder_unique_enderun_palace_school_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -41954,6 +42142,7 @@ tv_wonder_unique_ayutthaya_foreign_quarters_destroy_finalization_intermediate_bu
 
 tv_wonder_unique_ayutthaya_foreign_quarters_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -42171,6 +42360,7 @@ tv_wonder_unique_yunnan_weisuo_colonies_destroy_finalization_intermediate_buildi
 
 tv_wonder_unique_yunnan_weisuo_colonies_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -42388,6 +42578,7 @@ tv_wonder_unique_zhoushan_beacon_network_destroy_finalization_intermediate_build
 
 tv_wonder_unique_zhoushan_beacon_network_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -42605,6 +42796,7 @@ tv_wonder_unique_amber_room_destroy_finalization_intermediate_buildings_effect =
 
 tv_wonder_unique_amber_room_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -42822,6 +43014,7 @@ tv_wonder_unique_parthenon_destroy_finalization_intermediate_buildings_effect = 
 
 tv_wonder_unique_parthenon_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -43039,6 +43232,7 @@ tv_wonder_unique_bangkok_grand_palace_destroy_finalization_intermediate_building
 
 tv_wonder_unique_bangkok_grand_palace_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }
@@ -43256,6 +43450,7 @@ tv_wonder_unique_wat_arun_destroy_finalization_intermediate_buildings_effect = {
 
 tv_wonder_unique_wat_arun_broadcast_finalization_completion_event_effect = {
 	save_scope_as = tv_wonder_builder_country
+	save_scope_value_as = { name = tv_wonder_news_level value = var:tv_wonder_level }
 	if = {
 		limit = { tv_wonder_construction_site_selected_trigger = yes }
 		var:tv_wonder_site ?= { save_scope_as = tv_wonder_completed_site }

@@ -18,6 +18,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
 SOURCE_DIR = (
     REPO_ROOT
     / "src"
@@ -994,20 +995,81 @@ def fill_missing_keys(language: str, source_files: list[Path]) -> int:
     source/usage audit, and remain visible to the union-based coverage validator.
     """
     output_dir = OUTPUT_ROOT / language
-    existing = {
-        match.group("key")
-        for path in output_dir.rglob("*.yml")
-        for line in path.read_text(encoding="utf-8-sig").splitlines()
-        if (match := LOCALIZATION_LINE_RE.match(line))
-    }
+    from wonder_localization_lib import expansion_world_news_description, world_news_level_description
+
+    language_files = list(output_dir.rglob("*.yml"))
+    existing_values = {}
+    for path in language_files:
+        for line in path.read_text(encoding="utf-8-sig").splitlines():
+            match = LOCALIZATION_LINE_RE.match(line)
+            if match is not None:
+                existing_values[match.group("key")] = parse_localization_value(match.group("value"))
+    existing = set(existing_values)
+    expansion_rows: dict[str, str] = {}
+    world_news_rows: dict[str, str] = {}
+    for source_file in source_files:
+        for line in source_file.read_text(encoding="utf-8-sig").splitlines():
+            match = LOCALIZATION_LINE_RE.match(line)
+            if match is None:
+                continue
+            key = match.group("key")
+            if key.startswith("tv_engineering_department.600.d_") and not key.endswith("_expansion_news"):
+                description = existing_values.get(key)
+                if description is not None:
+                    world_news_rows[key] = (
+                        f'{match.group("indent")}{key}:{match.group("version") or ""} '
+                        f'"{escape_localization_value(world_news_level_description(language, description))}"'
+                    )
+            if not (key.startswith("tv_engineering_department.600.d_") and key.endswith("_expansion_news")):
+                continue
+            description = existing_values.get(key.removesuffix("_expansion_news"))
+            if description is not None:
+                expansion_rows[key] = (
+                    f'{match.group("indent")}{key}:{match.group("version") or ""} '
+                    f'"{escape_localization_value(expansion_world_news_description(language, description))}"'
+                )
+    output_file = OUTPUT_ROOT / language / f"tv_engineering_department_wonder_mechanics_l_{language}.yml"
+    updates = {**world_news_rows, **expansion_rows}
+    if updates and output_file.exists():
+        content = output_file.read_bytes().decode("utf-8-sig")
+        lines = content.splitlines()
+        updated = []
+        seen = set()
+        for raw_line in lines:
+            match = LOCALIZATION_LINE_RE.match(raw_line)
+            key = match.group("key") if match else None
+            if key in updates:
+                updated.append(updates[key])
+                seen.add(key)
+            else:
+                updated.append(raw_line)
+        if seen != updates.keys():
+            missing = sorted(updates.keys() - seen)
+            raise ValueError(f"Missing world-news rows in {output_file}: {missing[:5]}")
+        if updated != lines:
+            newline = "\r\n" if "\r\n" in content else "\n"
+            output_file.write_bytes((newline.join(updated).rstrip() + newline).encode("utf-8-sig"))
     added = 0
     for source_file in source_files:
         rows = []
         for line in source_file.read_text(encoding="utf-8-sig").splitlines():
             match = LOCALIZATION_LINE_RE.match(line)
-            if match and match.group("key") not in existing:
+            if match is None:
+                continue
+            key = match.group("key")
+            if key in world_news_rows:
+                if key not in existing:
+                    rows.append(world_news_rows[key])
+                    existing.add(key)
+                continue
+            if key in expansion_rows:
+                if key not in existing:
+                    rows.append(expansion_rows[key])
+                    existing.add(key)
+                continue
+            if key not in existing:
                 rows.append(line)
-                existing.add(match.group("key"))
+                existing.add(key)
         if not rows:
             continue
         output_file = output_dir / translated_file_name(source_file, language)
