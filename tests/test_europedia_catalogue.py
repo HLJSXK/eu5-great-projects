@@ -106,6 +106,16 @@ def test_getting_started_teaches_with_native_anatomy_rows():
                 assert mock_key in keys, f'{language} is missing panel key {mock_key}'
 
 
+def test_teaching_controls_keep_native_button_rendering():
+    """Static teaching controls must retain the Engineering Department button skins."""
+    style = (ROOT / 'src/in_game/gui/shared/tv_europedia_style.gui').read_text(encoding='utf-8-sig')
+    for control in ('tv_eu_mock_button', 'tv_eu_mock_button_green',
+                    'tv_eu_mock_button_yellow', 'tv_eu_mock_button_red',
+                    'tv_eu_mock_pip'):
+        assert re.search(rf'type {control} = button\s*\{{', style), control
+        assert not re.search(rf'type {control} = widget\s*\{{', style), control
+
+
 @pytest.fixture(scope='module')
 def source():
     return Catalogue(), *load_all_wonder_mechanics_data()
