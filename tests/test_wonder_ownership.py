@@ -52,7 +52,7 @@ def test_each_wonder_has_its_own_rewards_level_interface_and_result_notices(wond
         "market": "scope:tv_wonder_ownership_site.market",
         "goods": "goods:tv_wonder_materials",
         "amount": "20",
-        "time": str({"small": 10, "medium": 20, "large": 30}[wonder["size"]]),
+        "scale": str({"small": 1, "medium": 2, "large": 3}[wonder["size"]]),
     }
     effect = "tv_wonder_lower_unique_level_effect" if wonder.get("is_unique") else "tv_wonder_lower_generic_level_effect"
     lowering = [n for n in walk(plunder) if n.key == effect]

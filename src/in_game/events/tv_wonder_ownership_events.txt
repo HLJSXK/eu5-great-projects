@@ -62,7 +62,7 @@ tv_engineering_department.8001 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = sacred_mountain }
@@ -139,7 +139,7 @@ tv_engineering_department.8002 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = triumphal_axis }
@@ -216,7 +216,7 @@ tv_engineering_department.8003 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_port }
@@ -293,7 +293,7 @@ tv_engineering_department.8004 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_necropolis }
@@ -370,7 +370,7 @@ tv_engineering_department.8005 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_lighthouse }
@@ -447,7 +447,7 @@ tv_engineering_department.8006 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = hydraulic_workshop }
@@ -524,7 +524,7 @@ tv_engineering_department.8007 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = mining_city }
@@ -601,7 +601,7 @@ tv_engineering_department.8008 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_observatory }
@@ -678,7 +678,7 @@ tv_engineering_department.8009 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = palace_of_nations }
@@ -755,7 +755,7 @@ tv_engineering_department.8010 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = university_city }
@@ -832,7 +832,7 @@ tv_engineering_department.8011 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = sky_dome_grand_temple }
@@ -909,7 +909,7 @@ tv_engineering_department.8012 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_tower_temple }
@@ -986,7 +986,7 @@ tv_engineering_department.8013 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = river_extension }
@@ -1063,7 +1063,7 @@ tv_engineering_department.8014 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = national_shipyard }
@@ -1140,7 +1140,7 @@ tv_engineering_department.8015 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = star_fortress_city }
@@ -1217,7 +1217,7 @@ tv_engineering_department.8016 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_wall }
@@ -1294,7 +1294,7 @@ tv_engineering_department.8017 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_armory }
@@ -1371,7 +1371,7 @@ tv_engineering_department.8018 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = library_of_nation }
@@ -1448,7 +1448,7 @@ tv_engineering_department.8019 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = large_canal_system }
@@ -1525,7 +1525,7 @@ tv_engineering_department.8020 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = mountain_terrace_network }
@@ -1602,7 +1602,7 @@ tv_engineering_department.8021 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_dam_project }
@@ -1679,7 +1679,7 @@ tv_engineering_department.8022 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = royal_granary_system }
@@ -1756,7 +1756,7 @@ tv_engineering_department.8023 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = imperial_post_road_network }
@@ -1833,7 +1833,7 @@ tv_engineering_department.8024 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = canal_hub_city }
@@ -1910,7 +1910,7 @@ tv_engineering_department.8025 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = frontier_colonization_belt }
@@ -1987,7 +1987,7 @@ tv_engineering_department.8026 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = coastal_beacon_network }
@@ -2064,7 +2064,7 @@ tv_engineering_department.8027 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = knightly_fortress_order }
@@ -2141,7 +2141,7 @@ tv_engineering_department.8028 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = war_college_system }
@@ -2218,7 +2218,7 @@ tv_engineering_department.8029 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_clock_bell_system }
@@ -2295,7 +2295,7 @@ tv_engineering_department.8030 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = royal_art_district }
@@ -2372,7 +2372,7 @@ tv_engineering_department.8031 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = grand_theater_festival_district }
@@ -2449,7 +2449,7 @@ tv_engineering_department.8032 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = world_embassy_quarter }
@@ -2526,7 +2526,7 @@ tv_engineering_department.8033 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = law_code_stele_project }
@@ -2603,7 +2603,7 @@ tv_engineering_department.8034 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = world_market }
@@ -2680,7 +2680,7 @@ tv_engineering_department.8035 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = royal_mint_system }
@@ -2757,7 +2757,7 @@ tv_engineering_department.8036 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = guild_alliance }
@@ -2834,7 +2834,7 @@ tv_engineering_department.8037 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = maritime_trade_station_network }
@@ -2911,7 +2911,7 @@ tv_engineering_department.8038 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = giant_workshop_complex }
@@ -2988,7 +2988,7 @@ tv_engineering_department.8039 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = world_monument_group }
@@ -3065,7 +3065,7 @@ tv_engineering_department.8040 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = city_expansion_project }
@@ -3142,7 +3142,7 @@ tv_engineering_department.8041 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = megalithic_circle }
@@ -3219,7 +3219,7 @@ tv_engineering_department.8042 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = grand_cathedral }
@@ -3296,7 +3296,7 @@ tv_engineering_department.8043 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_monastery }
@@ -3373,7 +3373,7 @@ tv_engineering_department.8044 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = city_great_tower }
@@ -3450,7 +3450,7 @@ tv_engineering_department.8045 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_sculpture_group }
@@ -3527,7 +3527,7 @@ tv_engineering_department.8046 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = coastal_defense_cannon }
@@ -3604,7 +3604,7 @@ tv_engineering_department.8047 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = naval_school }
@@ -3681,7 +3681,7 @@ tv_engineering_department.8048 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = colonial_trade_company }
@@ -3758,7 +3758,7 @@ tv_engineering_department.8049 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = great_assembly_hall }
@@ -3835,7 +3835,7 @@ tv_engineering_department.8050 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = mobile_fortress }
@@ -3912,7 +3912,7 @@ tv_engineering_department.8051 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = ancient_city_ruins }
@@ -3989,7 +3989,7 @@ tv_engineering_department.8052 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = summer_palace }
@@ -4066,7 +4066,7 @@ tv_engineering_department.8053 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = national_bank }
@@ -4143,7 +4143,7 @@ tv_engineering_department.8054 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = pirate_port }
@@ -4220,7 +4220,7 @@ tv_engineering_department.8055 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = grand_garden_complex }
@@ -4297,7 +4297,7 @@ tv_engineering_department.8056 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_generic_level_effect = { wonder = state_examination_complex }
@@ -4374,7 +4374,7 @@ tv_engineering_department.8101 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_pharos_lighthouse }
@@ -4451,7 +4451,7 @@ tv_engineering_department.8102 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_hagia_sophia }
@@ -4528,7 +4528,7 @@ tv_engineering_department.8103 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_dome_of_the_rock }
@@ -4605,7 +4605,7 @@ tv_engineering_department.8104 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_angkor_wat }
@@ -4682,7 +4682,7 @@ tv_engineering_department.8105 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_potala_palace }
@@ -4759,7 +4759,7 @@ tv_engineering_department.8106 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_alhambra }
@@ -4836,7 +4836,7 @@ tv_engineering_department.8107 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_machu_picchu }
@@ -4913,7 +4913,7 @@ tv_engineering_department.8108 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_himeji_castle }
@@ -4990,7 +4990,7 @@ tv_engineering_department.8109 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_taj_mahal }
@@ -5067,7 +5067,7 @@ tv_engineering_department.8110 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_forbidden_city }
@@ -5144,7 +5144,7 @@ tv_engineering_department.8111 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_topkapi_palace }
@@ -5221,7 +5221,7 @@ tv_engineering_department.8112 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_st_peters_basilica }
@@ -5298,7 +5298,7 @@ tv_engineering_department.8113 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_lalibela_churches }
@@ -5375,7 +5375,7 @@ tv_engineering_department.8114 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_venetian_arsenal }
@@ -5452,7 +5452,7 @@ tv_engineering_department.8115 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_malacca_port }
@@ -5529,7 +5529,7 @@ tv_engineering_department.8116 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_red_fort_delhi }
@@ -5606,7 +5606,7 @@ tv_engineering_department.8117 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_versailles_palace }
@@ -5683,7 +5683,7 @@ tv_engineering_department.8118 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_tenochtitlan_causeways }
@@ -5760,7 +5760,7 @@ tv_engineering_department.8119 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_amsterdam_canal_ring }
@@ -5837,7 +5837,7 @@ tv_engineering_department.8120 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_mecca_haram_expansion }
@@ -5914,7 +5914,7 @@ tv_engineering_department.8121 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_ming_great_wall }
@@ -5991,7 +5991,7 @@ tv_engineering_department.8122 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_bank_of_saint_george }
@@ -6068,7 +6068,7 @@ tv_engineering_department.8123 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_cahokia_mounds }
@@ -6145,7 +6145,7 @@ tv_engineering_department.8124 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_great_zimbabwe }
@@ -6222,7 +6222,7 @@ tv_engineering_department.8125 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_isfahan_square }
@@ -6299,7 +6299,7 @@ tv_engineering_department.8126 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_grand_canal }
@@ -6376,7 +6376,7 @@ tv_engineering_department.8127 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_inca_royal_road }
@@ -6453,7 +6453,7 @@ tv_engineering_department.8128 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_roman_aqueducts }
@@ -6530,7 +6530,7 @@ tv_engineering_department.8129 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_suez_ancient_canal }
@@ -6607,7 +6607,7 @@ tv_engineering_department.8130 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_kremlin }
@@ -6684,7 +6684,7 @@ tv_engineering_department.8131 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_teotihuacan }
@@ -6761,7 +6761,7 @@ tv_engineering_department.8132 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_angkor_hydraulic_system }
@@ -6838,7 +6838,7 @@ tv_engineering_department.8133 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_dutch_polders }
@@ -6915,7 +6915,7 @@ tv_engineering_department.8134 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_machu_picchu_terraces }
@@ -6992,7 +6992,7 @@ tv_engineering_department.8135 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_british_navy_dockyards }
@@ -7069,7 +7069,7 @@ tv_engineering_department.8136 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_spanish_silver_fleet }
@@ -7146,7 +7146,7 @@ tv_engineering_department.8137 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_ottoman_hajj_road }
@@ -7223,7 +7223,7 @@ tv_engineering_department.8138 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_persian_qanat }
@@ -7300,7 +7300,7 @@ tv_engineering_department.8139 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_longjiang_shipyard }
@@ -7377,7 +7377,7 @@ tv_engineering_department.8140 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_jerusalem_holy_city }
@@ -7454,7 +7454,7 @@ tv_engineering_department.8141 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_stonehenge }
@@ -7531,7 +7531,7 @@ tv_engineering_department.8142 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_tower_of_london }
@@ -7608,7 +7608,7 @@ tv_engineering_department.8143 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_notre_dame_de_paris }
@@ -7685,7 +7685,7 @@ tv_engineering_department.8144 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_st_basils_cathedral }
@@ -7762,7 +7762,7 @@ tv_engineering_department.8145 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_trinity_lavra }
@@ -7839,7 +7839,7 @@ tv_engineering_department.8146 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_winter_palace }
@@ -7916,7 +7916,7 @@ tv_engineering_department.8147 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_gyeongbokgung }
@@ -7993,7 +7993,7 @@ tv_engineering_department.8148 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_changbai_mountain_altar }
@@ -8070,7 +8070,7 @@ tv_engineering_department.8149 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_belgrade_fortress }
@@ -8147,7 +8147,7 @@ tv_engineering_department.8150 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_meteora_monasteries }
@@ -8224,7 +8224,7 @@ tv_engineering_department.8151 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_belem_tower }
@@ -8301,7 +8301,7 @@ tv_engineering_department.8152 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_iberian_inquisition }
@@ -8378,7 +8378,7 @@ tv_engineering_department.8153 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_santa_maria_del_fiore }
@@ -8455,7 +8455,7 @@ tv_engineering_department.8154 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_leaning_tower_of_pisa }
@@ -8532,7 +8532,7 @@ tv_engineering_department.8155 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_milan_cathedral }
@@ -8609,7 +8609,7 @@ tv_engineering_department.8156 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_vatican_archives }
@@ -8686,7 +8686,7 @@ tv_engineering_department.8157 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_temple_of_heaven }
@@ -8763,7 +8763,7 @@ tv_engineering_department.8158 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_dujiangyan }
@@ -8840,7 +8840,7 @@ tv_engineering_department.8159 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_porcelain_tower_of_nanjing }
@@ -8917,7 +8917,7 @@ tv_engineering_department.8160 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_jingdezhen_imperial_kilns }
@@ -8994,7 +8994,7 @@ tv_engineering_department.8161 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_mogao_caves }
@@ -9071,7 +9071,7 @@ tv_engineering_department.8162 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_canton_thirteen_factories }
@@ -9148,7 +9148,7 @@ tv_engineering_department.8163 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_dardanelles_fortress }
@@ -9225,7 +9225,7 @@ tv_engineering_department.8164 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_escorial_monastery }
@@ -9302,7 +9302,7 @@ tv_engineering_department.8165 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_toledo_armory }
@@ -9379,7 +9379,7 @@ tv_engineering_department.8166 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_camino_de_santiago }
@@ -9456,7 +9456,7 @@ tv_engineering_department.8167 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_sagres_navigation_school }
@@ -9533,7 +9533,7 @@ tv_engineering_department.8168 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_milan_arsenal }
@@ -9610,7 +9610,7 @@ tv_engineering_department.8169 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_university_of_bologna }
@@ -9687,7 +9687,7 @@ tv_engineering_department.8170 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_carrara_marble_quarries }
@@ -9764,7 +9764,7 @@ tv_engineering_department.8171 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_east_india_company }
@@ -9841,7 +9841,7 @@ tv_engineering_department.8172 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_peacock_throne }
@@ -9918,7 +9918,7 @@ tv_engineering_department.8173 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_varanasi_ghats }
@@ -9995,7 +9995,7 @@ tv_engineering_department.8174 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_brihadishvara_temple }
@@ -10072,7 +10072,7 @@ tv_engineering_department.8175 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_konark_sun_temple }
@@ -10149,7 +10149,7 @@ tv_engineering_department.8176 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_fatehpur_sikri }
@@ -10226,7 +10226,7 @@ tv_engineering_department.8177 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_calicut_port_city }
@@ -10303,7 +10303,7 @@ tv_engineering_department.8178 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_wieliczka_salt_mine }
@@ -10380,7 +10380,7 @@ tv_engineering_department.8179 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_wawel_castle }
@@ -10457,7 +10457,7 @@ tv_engineering_department.8180 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_zamosc_ideal_city }
@@ -10534,7 +10534,7 @@ tv_engineering_department.8181 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_gdansk_port }
@@ -10611,7 +10611,7 @@ tv_engineering_department.8182 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_malbork_castle }
@@ -10688,7 +10688,7 @@ tv_engineering_department.8183 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_brest_synagogue_quarter }
@@ -10765,7 +10765,7 @@ tv_engineering_department.8184 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_vilnius_university }
@@ -10842,7 +10842,7 @@ tv_engineering_department.8185 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_cave_monastery }
@@ -10919,7 +10919,7 @@ tv_engineering_department.8186 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_zaporizhian_sich }
@@ -10996,7 +10996,7 @@ tv_engineering_department.8187 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_registan_square }
@@ -11073,7 +11073,7 @@ tv_engineering_department.8188 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_khiva_old_city }
@@ -11150,7 +11150,7 @@ tv_engineering_department.8189 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_bukhara_kalyan_minaret }
@@ -11227,7 +11227,7 @@ tv_engineering_department.8190 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_ferghana_palace }
@@ -11304,7 +11304,7 @@ tv_engineering_department.8191 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_tashkent_old_bazaar }
@@ -11381,7 +11381,7 @@ tv_engineering_department.8192 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_louvre_palace }
@@ -11458,7 +11458,7 @@ tv_engineering_department.8193 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_fontainebleau_palace }
@@ -11535,7 +11535,7 @@ tv_engineering_department.8194 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_bordeaux_port }
@@ -11612,7 +11612,7 @@ tv_engineering_department.8195 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_marseille_old_port }
@@ -11689,7 +11689,7 @@ tv_engineering_department.8196 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_lyon_silk_workshops }
@@ -11766,7 +11766,7 @@ tv_engineering_department.8197 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_mont_saint_michel }
@@ -11843,7 +11843,7 @@ tv_engineering_department.8199 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_carcassonne_castle }
@@ -11920,7 +11920,7 @@ tv_engineering_department.8200 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_brest_naval_port }
@@ -11997,7 +11997,7 @@ tv_engineering_department.8201 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_colmar_old_town }
@@ -12074,7 +12074,7 @@ tv_engineering_department.8202 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_house_of_wisdom }
@@ -12151,7 +12151,7 @@ tv_engineering_department.8203 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_echmiadzin_cathedral }
@@ -12228,7 +12228,7 @@ tv_engineering_department.8204 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_narikala_fortress }
@@ -12305,7 +12305,7 @@ tv_engineering_department.8205 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_baku_ateshgah }
@@ -12382,7 +12382,7 @@ tv_engineering_department.8206 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_sanaa_old_city }
@@ -12459,7 +12459,7 @@ tv_engineering_department.8207 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_schoenbrunn_palace }
@@ -12536,7 +12536,7 @@ tv_engineering_department.8208 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_electoral_conference_hall }
@@ -12613,7 +12613,7 @@ tv_engineering_department.8209 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_aachen_cathedral }
@@ -12690,7 +12690,7 @@ tv_engineering_department.8210 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_nuremberg_imperial_castle }
@@ -12767,7 +12767,7 @@ tv_engineering_department.8211 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_augsburg_bank }
@@ -12844,7 +12844,7 @@ tv_engineering_department.8212 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_cologne_cathedral }
@@ -12921,7 +12921,7 @@ tv_engineering_department.8213 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_hanseatic_kontor }
@@ -12998,7 +12998,7 @@ tv_engineering_department.8214 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_hanseatic_town_hall }
@@ -13075,7 +13075,7 @@ tv_engineering_department.8215 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_dresden_art_gallery }
@@ -13152,7 +13152,7 @@ tv_engineering_department.8216 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_munich_royal_brewery }
@@ -13229,7 +13229,7 @@ tv_engineering_department.8217 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_heidelberg_university }
@@ -13306,7 +13306,7 @@ tv_engineering_department.8218 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_fez_old_city }
@@ -13383,7 +13383,7 @@ tv_engineering_department.8219 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_kairouan_holy_city }
@@ -13460,7 +13460,7 @@ tv_engineering_department.8220 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_algiers_pirate_port }
@@ -13537,7 +13537,7 @@ tv_engineering_department.8221 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_sankore_university }
@@ -13614,7 +13614,7 @@ tv_engineering_department.8222 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_great_mosque_of_djenne }
@@ -13691,7 +13691,7 @@ tv_engineering_department.8223 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_walls_of_benin }
@@ -13768,7 +13768,7 @@ tv_engineering_department.8224 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_suzhou_classical_gardens }
@@ -13845,7 +13845,7 @@ tv_engineering_department.8225 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_fin_garden }
@@ -13922,7 +13922,7 @@ tv_engineering_department.8226 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_jiangnan_examination_hall }
@@ -13999,7 +13999,7 @@ tv_engineering_department.8227 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_thang_long_temple_of_literature }
@@ -14076,7 +14076,7 @@ tv_engineering_department.8228 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_maragheh_observatory }
@@ -14153,7 +14153,7 @@ tv_engineering_department.8229 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_xian_bell_and_drum_towers }
@@ -14230,7 +14230,7 @@ tv_engineering_department.8230 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_behistun_inscription }
@@ -14307,7 +14307,7 @@ tv_engineering_department.8231 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_beijing_imperial_granaries }
@@ -14384,7 +14384,7 @@ tv_engineering_department.8232 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_bursa_imperial_mint }
@@ -14461,7 +14461,7 @@ tv_engineering_department.8233 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_enderun_palace_school }
@@ -14538,7 +14538,7 @@ tv_engineering_department.8234 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_ayutthaya_foreign_quarters }
@@ -14615,7 +14615,7 @@ tv_engineering_department.8235 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_yunnan_weisuo_colonies }
@@ -14692,7 +14692,7 @@ tv_engineering_department.8236 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_zhoushan_beacon_network }
@@ -14769,7 +14769,7 @@ tv_engineering_department.8237 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_amber_room }
@@ -14846,7 +14846,7 @@ tv_engineering_department.8238 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 20
+				scale = 2
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_parthenon }
@@ -14923,7 +14923,7 @@ tv_engineering_department.8239 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 30
+				scale = 3
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_bangkok_grand_palace }
@@ -15000,7 +15000,7 @@ tv_engineering_department.8240 = {
 				market = scope:tv_wonder_ownership_site.market
 				goods = goods:tv_wonder_materials
 				amount = 20
-				time = 10
+				scale = 1
 			}
 			scope:tv_wonder_ownership_site = {
 				tv_wonder_lower_unique_level_effect = { wonder = unique_wat_arun }

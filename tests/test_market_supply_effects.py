@@ -20,7 +20,7 @@ import gen_market_supply_effects as generator
 
 class Sale:
     def __init__(self):
-        self.country = {"gold": 100, "shipment_size": 12.5, "shipment_months": 6}
+        self.country = {"gold": 100, "shipment_size": 12.5, "shipment_scale": 1}
         self.market = {"prices": {g: 4.2 for g in generator.goods_ids()}, "demands": []}
         self.scopes = {"target_market": self.market, "target_goods": "goods:medicaments"}
         self.descriptions = []
@@ -94,7 +94,8 @@ class Sale:
                 current["gold"] += self.value(node.value, current)
             elif node.key == "add_temporary_demand":
                 assert current is self.market, "Demand must go to the target market"
-                assert isinstance(child(node.children, "months").value, str)
+                months = child(node.children, "months").value
+                assert months == str(generator.FIXED_SUPPLY_MONTHS)
                 current["demands"].append({n.key: (n.value if n.key == "type" else self.value(n.value, current)) for n in node.children})
             elif node.key == "tv_sell_goods_with_temporary_supply_apply_effect":
                 demand = child(node.children, "demand").value
@@ -105,9 +106,9 @@ class Sale:
             else:
                 raise AssertionError(f"Unexpected effect (including inventory mutation): {node}")
 
-    def call(self, amount="shipment_size", time="shipment_months"):
+    def call(self, amount="shipment_size", scale="shipment_scale"):
         source = self.source
-        for key, value in {"market": "scope:target_market", "goods": "scope:target_goods", "amount": amount, "time": time}.items():
+        for key, value in {"market": "scope:target_market", "goods": "scope:target_goods", "amount": amount, "scale": scale}.items():
             source = source.replace(f"${key}$", value)
         self.run(child(parse(source), "tv_sell_goods_with_temporary_supply_effect").children, self.country)
 
@@ -117,44 +118,44 @@ def test_each_good_pays_once_and_offsets_only_its_own_demand(good):
     sale = Sale()
     sale.scopes["target_goods"] = f"goods:{good}"
     sale.call()
-    assert sale.country["gold"] == pytest.approx(415)
-    assert sale.descriptions == [pytest.approx(315)]
-    assert sale.market["demands"] == [{"type": f"demand:tv_market_supply_{good}", "scale": 12.5, "months": 6}]
+    assert sale.country["gold"] == pytest.approx(625)
+    assert sale.descriptions == [pytest.approx(525)]
+    assert sale.market["demands"] == [{"type": f"demand:tv_market_supply_{good}", "scale": 12.5, "months": generator.FIXED_SUPPLY_MONTHS}]
     demand = child(parse((ROOT / generator.DEMAND_PATH).read_text(encoding="utf-8-sig")), f"tv_market_supply_{good}")
     assert [(n.key, n.value) for n in demand.children if n.key not in {"hidden", "category"}] == [(good, "-1")]
 
 
 def test_price_is_read_on_each_call_and_inputs_are_captured_before_gold_changes():
     sale = Sale()
-    sale.call(amount="gold", time="gold")
-    assert sale.country["gold"] == pytest.approx(42100)
-    assert sale.market["demands"][0]["scale"] == 100
-    assert sale.market["demands"][0]["months"] == 100
+    sale.call(amount="gold", scale="2")
+    assert sale.country["gold"] == pytest.approx(8500)
+    assert sale.market["demands"][0]["scale"] == 200
+    assert sale.market["demands"][0]["months"] == generator.FIXED_SUPPLY_MONTHS
     sale.market["prices"]["medicaments"] = 2
-    sale.call(amount="3", time="2")
-    assert sale.country["gold"] == pytest.approx(42112)
-    assert sale.descriptions == [pytest.approx(42000), pytest.approx(12)]
-    assert sale.market["demands"][1]["scale"] == 3
-    assert sale.market["demands"][1]["months"] == 2
+    sale.call(amount="3", scale="2")
+    assert sale.country["gold"] == pytest.approx(8620)
+    assert sale.descriptions == [pytest.approx(8400), pytest.approx(120)]
+    assert sale.market["demands"][1]["scale"] == 6
+    assert sale.market["demands"][1]["months"] == generator.FIXED_SUPPLY_MONTHS
 
 
-@pytest.mark.parametrize("months,payout", [(10, 1000), (20, 2000), (30, 3000)])
-def test_plunder_pays_full_term_upfront_without_scaling_monthly_supply(months, payout):
+@pytest.mark.parametrize("scale,payout,total_supply", [(1, 1000, 20), (2, 2000, 40), (3, 3000, 60)])
+def test_plunder_pays_full_term_upfront_with_fixed_duration(scale, payout, total_supply):
     sale = Sale()
     sale.scopes["target_goods"] = "goods:tv_wonder_materials"
     sale.market["prices"]["tv_wonder_materials"] = 5
-    sale.call(amount="20", time=str(months))
+    sale.call(amount="20", scale=str(scale))
     assert sale.country["gold"] == 100 + payout
     assert sale.descriptions == [payout]
     assert sale.market["demands"] == [{
-        "type": "demand:tv_market_supply_tv_wonder_materials", "scale": 20, "months": months,
+        "type": "demand:tv_market_supply_tv_wonder_materials", "scale": total_supply, "months": generator.FIXED_SUPPLY_MONTHS,
     }]
 
 
-@pytest.mark.parametrize("amount,time", [("0", "6"), ("-1", "6"), ("15", "0"), ("15", "-1")])
-def test_nonpositive_inputs_do_not_pay_or_add_demand(amount, time):
+@pytest.mark.parametrize("amount,scale", [("0", "1"), ("-1", "1"), ("15", "0"), ("15", "-1")])
+def test_nonpositive_inputs_do_not_pay_or_add_demand(amount, scale):
     sale = Sale()
-    sale.call(amount, time)
+    sale.call(amount, scale)
     assert sale.country["gold"] == 100
     assert sale.market["demands"] == []
 

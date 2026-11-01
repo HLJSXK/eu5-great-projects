@@ -25,7 +25,7 @@ OUT_FILE = REPO_ROOT / "src" / "in_game" / "events" / "tv_wonder_ownership_event
 SCRIPT_REL = "scripts_engineering_department/in_game/events/gen_tv_wonder_ownership_events.py"
 T = "\t"
 WONDER_IMAGE_DIR = "gfx/interface/icons/towards_victory/wonders"
-PLUNDER_SUPPLY_MONTHS = {"small": 10, "medium": 20, "large": 30}
+PLUNDER_SUPPLY_SCALE = {"small": 1, "medium": 2, "large": 3}
 
 
 def wonder_event_image(wonder: dict) -> str:
@@ -77,7 +77,7 @@ def append_ownership_gain_event(lines: list[str], wonder: dict) -> None:
             lines.append(f"{T}{T}{T}{T}market = scope:tv_wonder_ownership_site.market")
             lines.append(f"{T}{T}{T}{T}goods = goods:tv_wonder_materials")
             lines.append(f"{T}{T}{T}{T}amount = 20")
-            lines.append(f"{T}{T}{T}{T}time = {PLUNDER_SUPPLY_MONTHS[wonder['size']]}")
+            lines.append(f"{T}{T}{T}{T}scale = {PLUNDER_SUPPLY_SCALE[wonder['size']]}")
             lines.append(f"{T}{T}{T}}}")
             effect = (EXTERNAL_LOWER_UNIQUE_LEVEL_PUBLIC_EFFECT if wonder.get("is_unique")
                       else EXTERNAL_LOWER_GENERIC_LEVEL_PUBLIC_EFFECT)

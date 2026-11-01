@@ -1,4 +1,4 @@
-"""Generate a country sale effect backed by timed negative goods demand.
+"""Generate a country sale effect backed by fixed-duration negative goods demand.
 
 Public API (country scope)::
 
@@ -6,14 +6,15 @@ Public API (country scope)::
         market = capital.market
         goods = goods:medicaments
         amount = 15
-        time = 6
+        scale = 2
     }
 
-market/goods accept scope links; amount/time accept scalar script values evaluated
-in the calling country. Gold is paid once, amount * current target-market price * time,
-before applying -amount demand for time months. There are no recurring payments.
+market/goods accept scope links; amount/scale accept scalar script values evaluated
+in the calling country. Gold is paid once, amount * scale * current target-market
+price * 10, before applying -amount * scale demand for 10 months. There are no
+recurring payments.
 This offsets demand; it does not create stockpile goods or real production.
-Missing targets, unsupported goods, and nonpositive amount/time do nothing.
+Missing targets, unsupported goods, and nonpositive amount/scale do nothing.
 Repeated applications use the engine's add_temporary_demand lifecycle.
 The visible description preserves vanilla sell_goods_to_market wording in all
 six perspectives/tenses, adapting its native-only tokens to scripted bindings.
@@ -42,6 +43,7 @@ EFFECT_LOC_PATH = "src/in_game/common/effect_localization/tv_market_supply_effec
 VALUES_PATH = "src/in_game/common/script_values/tv_market_supply_values.txt"
 PAYOUT_VALUE = "tv_market_supply_payout_value"
 DESCRIPTION = "tv_sell_goods_with_temporary_supply_description"
+FIXED_SUPPLY_MONTHS = 10
 SALE_LOCALIZATIONS = {
     "global": "SELL_GOODS_TO_MARKET_EFFECT",
     "first": "FIRST_SELL_GOODS_TO_MARKET_EFFECT",
@@ -70,16 +72,16 @@ def goods_ids():
 
 def effects(goods):
     lines = [
-        "# Country scope; market/goods are typed scopes, amount/time are scalar script values.",
-        "# Example: tv_sell_goods_with_temporary_supply_effect = { market = capital.market goods = goods:medicaments amount = 15 time = 6 }",
-        "# Pays amount * price * time ONCE; offsets amount demand for time months. No inventory is added.",
+        "# Country scope; market/goods are typed scopes, amount/scale are scalar script values.",
+        "# Example: tv_sell_goods_with_temporary_supply_effect = { market = capital.market goods = goods:medicaments amount = 15 scale = 2 }",
+        "# Pays amount * scale * price * 10 ONCE; offsets amount * scale demand for 10 months. No inventory is added.",
         "# Internal tv_market_supply_* saved scopes are reserved for this synchronous call.",
         "tv_sell_goods_with_temporary_supply_effect = {",
         "\tif = {",
         "\t\tlimit = { exists = $market$ exists = $goods$ }",
-        "\t\t# Capture inputs in the caller before changing scope or granting gold.",
-        "\t\tsave_scope_value_as = { name = tv_market_supply_amount value = { value = $amount$ } }",
-        "\t\tsave_scope_value_as = { name = tv_market_supply_months value = { value = $time$ } }",
+        "\t\t# Capture the scaled monthly amount before changing scope or granting gold.",
+        "\t\tsave_scope_value_as = { name = tv_market_supply_amount value = { value = $amount$ multiply = $scale$ } }",
+        f"\t\tsave_scope_value_as = {{ name = tv_market_supply_months value = {FIXED_SUPPLY_MONTHS} }}",
         "\t\t$market$ = { save_scope_as = tv_market_supply_market }",
         "\t\t$goods$ = { save_scope_as = tv_market_supply_goods }",
         "\t\tif = {",
@@ -115,8 +117,8 @@ def effects(goods):
         "\t\t\tadd_temporary_demand = {",
         "\t\t\t\ttype = demand:$demand$",
         "\t\t\t\tscale = { value = scope:tv_market_supply_amount }",
-        # Duration fields accept a scalar; scale remains a script-value block.
-        "\t\t\t\tmonths = scope:tv_market_supply_months",
+        # add_temporary_demand parses months as a literal integer.
+        f"\t\t\t\tmonths = {FIXED_SUPPLY_MONTHS}",
         "\t\t\t}",
         "\t\t}",
         "\t}",
