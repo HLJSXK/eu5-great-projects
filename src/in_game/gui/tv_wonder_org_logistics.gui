@@ -501,34 +501,7 @@ types TVOrgLogistics {
 					}
 					using = bg_market_card
 					using = bg_loans_card_frame
-					text_single = {
-						position = {
-							8 6
-						}
-						size = {
-							116 22
-						}
-						autoresize = no
-						fontsize = 12
-						fontsize_min = 8
-						align = left|nobaseline
-						raw_text = "@gold! [Localize('TV_OL_MAINTENANCE')]"
-					}
-					text_single = {
-						name = maintenance_value
-						alwaystransparent = no
-						tooltip = "TV_OL_MAINTENANCE_HELP"
-						position = {
-							10 30
-						}
-						size = {
-							112 26
-						}
-						autoresize = no
-						fontsize = 16
-						fontsize_min = 8
-						align = left|nobaseline
-						text = "TV_OL_MAINTENANCE_VALUE"
+					tv_worksite_maintenance_content = {
 					}
 				}
 			}

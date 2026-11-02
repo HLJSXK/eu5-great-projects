@@ -3,7 +3,6 @@
 l_simp_chinese:
  TV_OL_ORG_READ:0 "[tv_wonder_organization_competence|E] [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_organization_competence').GetValue|0] @button_simple! 最大等级 [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_organization_site_level_cap').GetValue|0]"
  TV_OL_STAT_HELP:0 "工地等级 [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_levels').GetValue|0]\n劳工雇佣率 [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_employment').GetValue|0%]\n有效等级 [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_effective_worksite_levels').GetValue|2]"
- TV_OL_MAINTENANCE_HELP:0 "[ShowGoodsName('tools')] [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_tools_quantity').GetValue|1]/月 × [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_tools_price').GetValue|2] @gold!\n[ShowGoodsName('tv_wonder_materials')] [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_tv_wonder_materials_quantity').GetValue|1]/月 × [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_tv_wonder_materials_price').GetValue|2] @gold!"
  TV_OL_BASE_PROGRESS:0 "基础进度"
  TV_OL_BASE_PROGRESS_VALUE:0 "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_worksite_scale_monthly_construction_progress').GetValue|0] /月"
  TV_OL_EMPLOYMENT:0 "雇佣"
@@ -11,7 +10,7 @@ l_simp_chinese:
  TV_OL_CAMP_PROGRESS:0 "工地进度"
  TV_OL_CAMP_PROGRESS_VALUE:0 "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_camp_progress').GetValue|0] /月"
  TV_OL_MAINTENANCE:0 "总维护费"
- TV_OL_MAINTENANCE_VALUE:0 "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_maintenance').GetValue|2] @gold! /月"
+ TV_OL_MAINTENANCE_VALUE:0 "[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_worksite').GetBuilding.GetUpkeep|2] @gold! /月"
  TV_OL_INPUT_GOODS:0 "投入品"
  TV_OL_LOCAL_PRICE:0 "当地单价"
  TV_OL_DEMAND_SUPPLY:0 "需求 / 供给"
@@ -31,3 +30,4 @@ l_simp_chinese:
  TV_OL_SHORTAGE:0 "物资不足。补齐工具与建材后每月可增加 [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_ol_recoverable').GetValue|0] 进度。"
  TV_OL_SUPPLIED:0 "施工物资供应充足。"
  TV_OL_CAPACITY:0 "有效工坊 [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_effective_material_workshop_levels').GetValue|0] / 所需 [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_material_workshop_need').GetValue|0] 级"
+ TV_OL_MAINTENANCE_EMPTY_VALUE:0 "0.00 @gold! /月"

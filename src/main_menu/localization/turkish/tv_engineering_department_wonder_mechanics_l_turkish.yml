@@ -11333,7 +11333,6 @@
  TV_WONDER_RITUAL_PLAIN_COMPLETE:0 "Plain inauguration complete. During conception, use the Rededicate a Wonder decision to add a ritual."
  TV_WONDER_RITUAL_TOGGLE_DETAILS:0 "Show / hide ritual details"
  TV_WONDER_RITUAL_SKIP_TERMS:0 "Ritual skipping enabled: no ritual cost or waiting period."
- TV_ENGINEERING_CONSTRUCTION_FOLD:0 "Built · Level [InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_level').GetValue|0] · Show / hide construction"
  TV_ENGINEERING_HEADER_GUIDANCE_RITUAL_PROGRESS:0 "The ritual is underway. The style is locked; estate reactions have been settled."
  TV_ENGINEERING_HEADER_GUIDANCE_RERITUAL_READY:0 "Choose a dedication for this wonder. Rededication grants only the chosen ritual's rewards."
  TV_ENGINEERING_HEADER_GUIDANCE_RITUAL_COMPLETE:0 "The ritual is complete. Confirm the completion event if it is still open."

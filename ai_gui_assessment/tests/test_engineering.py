@@ -100,6 +100,53 @@ class EngineeringPreviewTests(unittest.TestCase):
                 self.assertFalse(missing, missing)
                 self.assertEqual(engine.ev.item_stack, [])
 
+    def test_all_card_variants_keep_width_and_expand_encyclopedia_help(self):
+        for name in engineering.STATE_NAMES:
+            with self.subTest(state=name):
+                root, engine, ev, log = self.page(name)
+                cards = [node for node in self.visible_nodes(root, engine)
+                         if node.typename == 'tv_engineering_department_card_common']
+                self.assertTrue(cards)
+                self.assertTrue(all(card.w == 500 for card in cards),
+                                [(card.x, card.w) for card in cards])
+                if engineering.STATE_TABS[name] == 'custom':
+                    self.assertEqual(len({(card.x, card.w) for card in cards}), 1)
+                for card in cards:
+                    nodes = list(self.visible_nodes(card, engine))
+                    title = next(node.props['text'] for node in nodes
+                                 if str(node.props.get('text', '')).endswith(('CARD_TITLE', 'ACTIONS_TITLE')))
+                    owners = [node for node in nodes
+                              if node.props.get('action_tooltip', {}).get('on_action') == "[OpenLateralView('encyclopedia')]"]
+                    self.assertEqual(len(owners), 1)
+                    owner = owners[0]
+                    self.assertIsNotNone(owner.tooltipwidget)
+                    popup = engine.ex.build_lazy(owner.tooltipwidget)
+                    pushed = engine.push(owner)
+                    # These buttons open the encyclopedia, without concept-link metadata.
+                    ev.item_stack.append({'__type__': 'PdxGuiWidget', 'HasTooltipMetaGameConcept': False})
+                    ev.item_stack.append({'__type__': 'ExtraTooltipInfo', 'GetTintColor': [1, 1, 1, 1],
+                                          'TooltipIsReady': True, 'HasUIAction': False, 'GetUIAction': None})
+                    try:
+                        width, height = engine.measure(popup, 570)['hint']
+                        engine.place(popup, 0, 0, width, height)
+                        labels = [node for node in self.visible_nodes(popup, engine)
+                                  if 'text' in node.props or 'raw_text' in node.props]
+                        keys = {node.props.get('text') for node in labels}
+                        self.assertIn(title, keys)
+                        self.assertNotIn('Card title header', keys)
+                        help_text = [node for node in labels
+                                     if '_HELP_' in str(node.props.get('text', ''))]
+                        self.assertTrue(help_text, title)
+                        self.assertTrue(all(node.w > 0 and node.h > 0 and engine.text_of(node)
+                                            for node in help_text))
+                    finally:
+                        ev.item_stack.pop()
+                        ev.item_stack.pop()
+                        engine.pop(pushed)
+                self.assertFalse(log, log)
+                self.assertFalse(engine.missing_text)
+                self.assertFalse(engine.unresolved_contexts)
+
     def test_survey_and_construction_tabs_preserve_panel_branches(self):
         for name, expected, absent in (
             ("survey", "TV_ENGINEERING_SURVEY_CARD_TITLE", "TV_ENGINEERING_CONCEPT_CARD_TITLE"),
@@ -114,8 +161,13 @@ class EngineeringPreviewTests(unittest.TestCase):
                 self.assertNotIn(absent, keys)
                 values = [engine.resolve(node.props.get("value")) for node in nodes if node.kind == "progressbar"]
                 if name == 'construction-complete':
-                    self.assertNotIn(100, values)  # Construction is folded during ritual selection.
-                    self.assertIn('TV_ENGINEERING_CONSTRUCTION_FOLD', keys)
+                    self.assertNotIn(100, values)  # Construction is over; only the summary remains.
+                    summary = [node.props.get("name") for node in nodes
+                               if node.props.get("name") == 'tv_wonder_construction_summary']
+                    self.assertEqual(['tv_wonder_construction_summary'], summary)
+                    self.assertNotIn('TV_ENGINEERING_CONSTRUCTION_FOLD', keys)
+                    self.assertFalse([node for node in nodes
+                                      if 'construction_details' in str(node.props.get('onclick', ''))])
                 else:
                     self.assertIn(45 if name == "survey" else 42, values)
 

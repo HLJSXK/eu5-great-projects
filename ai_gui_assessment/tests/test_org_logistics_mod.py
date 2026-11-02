@@ -20,14 +20,14 @@ class OrgLogisticsModTests(unittest.TestCase):
         from eu5_gui_renderer.preview import load_resources
         cls.resources = load_resources()
 
-    def page(self, state):
+    def page(self, state, extra_mocks=()):
         from eu5_gui_renderer.data import Evaluator
         from eu5_gui_renderer.engine import Engine
         from eu5_gui_renderer.gui import Expander
         r = self.resources
         ex = Expander(r.db)
         root = engineering.build(r.db, ex, state=state)
-        ev = Evaluator(engineering.mocks(state, r.loc), r.loc, ex.log)
+        ev = Evaluator([*extra_mocks, *engineering.mocks(state, r.loc)], r.loc, ex.log)
         engine = Engine(ex, ev, r.loc, r.formats, r.icons, 1)
         engine.place(root, 0, 0, 570, 3200)
         def walk(node):
@@ -108,10 +108,12 @@ class OrgLogisticsModTests(unittest.TestCase):
         for supplied, color in ((120, "#R"), (160, "#G")):
             with self.subTest(supply=supplied):
                 state = replace(base, player_variables={**base.player_variables,
-                    "tv_ol_camp_progress": 1234, "tv_ol_maintenance": 987.65,
+                    "tv_ol_camp_progress": 1234,
                     "tv_ol_tools_price": 6.35, "tv_ol_tools_demand": 150,
                     "tv_ol_tools_supply": supplied, "tv_ol_levels": 7,
-                    "tv_ol_input_efficiency": 0.42, "tv_wonder_logistics_progress_percent": 135})
+                    "tv_ol_input_efficiency": 0.42, "tv_wonder_logistics_progress_percent": 135},
+                    objects={**base.objects, "tv_ol_worksite.GetBuilding": {
+                        "__type__": "Building", "GetUpkeep": 987.65, "GetUpkeepInfo": ""}})
                 nodes, engine = self.page(state)
                 named = {n.props.get("name"): n for n in nodes if n.props.get("name")}
                 self.assertIn("1234", engine.text_of(named["camp_progress_value"]).replace(",", ""))
@@ -141,7 +143,7 @@ class OrgLogisticsModTests(unittest.TestCase):
         self.assertIn("2000", engine.text_of(named["base_progress_value"]).replace(",", ""))
         self.assertIn("1282 / 4000", engine.text_of(named["employment_value"]).replace(",", ""))
         self.assertIn("641", engine.text_of(named["camp_progress_value"]))
-        self.assertIn("369.74", engine.text_of(named["maintenance_value"]))
+        self.assertIn("23.70", engine.text_of(named["maintenance_value"]))
         row = named["worksite_calculation"]
         cards = [named[key] for key in ("base_progress_card", "employment_card", "camp_progress_card", "maintenance_card")]
         for card in cards:
@@ -153,6 +155,46 @@ class OrgLogisticsModTests(unittest.TestCase):
         self.assertLessEqual(row.y+row.h, named["resource_tools"].y)
         self.assertFalse(engine.missing_text)
         self.assertFalse(engine.missing_localizations)
+
+    def test_maintenance_uses_native_upkeep_and_handles_absent_worksite(self):
+        base = org_logistics.scenario("active", self.resources.loc)
+        for upkeep in (0, 32.70, 163.50):
+            with self.subTest(upkeep=upkeep):
+                state = replace(base, objects={**base.objects, "tv_ol_worksite.GetBuilding": {
+                    "__type__": "Building", "GetUpkeep": upkeep, "GetUpkeepInfo": ""}})
+                nodes, engine = self.page(state)
+                named = {n.props.get("name"): n for n in nodes if n.props.get("name")}
+                self.assertIn(f"{upkeep:.2f}", engine.text_of(named["maintenance_value"]))
+                self.assertNotIn("maintenance_empty_value", named)
+        state = replace(base, player_variables={**base.player_variables, "tv_ol_worksite": None},
+                        objects={k: v for k, v in base.objects.items() if k != "tv_ol_worksite.GetBuilding"})
+        nodes, engine = self.page(state)
+        named = {n.props.get("name"): n for n in nodes if n.props.get("name")}
+        self.assertNotIn("maintenance_value", named)
+        self.assertIn("0.00", engine.text_of(named["maintenance_empty_value"]))
+        self.assertFalse(engine.missing_text)
+
+    def test_meiou_widget_reads_its_own_treasury_cache_and_handles_missing_cache(self):
+        original = self.resources
+        self.resources = org_logistics.meiou_resources(original)
+        try:
+            base, mocks = org_logistics.meiou_sample(org_logistics.scenario("active", self.resources.loc))
+            for crown in (0, 20, 100):
+                with self.subTest(crown=crown):
+                    state = replace(base, player_variables={**base.player_variables, "tv_ol_mt_crown": crown})
+                    nodes, engine = self.page(state, mocks)
+                    named = {n.props.get("name"): n for n in nodes if n.props.get("name")}
+                    self.assertIn(f"{crown:.2f}", engine.text_of(named["maintenance_value"]))
+                    self.assertNotIn("maintenance_building", named)
+                    self.assertNotIn("maintenance_empty_value", named)
+                    self.assertFalse(engine.missing_localizations)
+            state = replace(base, player_variables={**base.player_variables, "tv_ol_mt_ready": None})
+            nodes, engine = self.page(state, mocks)
+            named = {n.props.get("name"): n for n in nodes if n.props.get("name")}
+            self.assertNotIn("maintenance_value", named)
+            self.assertIn("0.00", engine.text_of(named["maintenance_empty_value"]))
+        finally:
+            self.resources = original
 
 
 if __name__ == "__main__":

@@ -23,6 +23,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 PYTEST_FILES = (
     'tests/test_repository_boundaries.py',
+    'tests/test_engineering_card_contract.py',
 
     'tests/test_cost_reward_resource_contract.py',
     'tests/test_wonder_resource_contract.py',

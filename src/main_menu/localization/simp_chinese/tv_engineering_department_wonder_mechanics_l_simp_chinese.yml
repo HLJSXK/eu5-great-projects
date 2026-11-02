@@ -23,7 +23,6 @@
  TV_WONDER_RITUAL_PLAIN_COMPLETE:0 "已朴素落成。可在构思阶段使用重新举行仪式决议，为奇观补办仪式。"
  TV_WONDER_RITUAL_TOGGLE_DETAILS:0 "展开 / 收起仪式详情"
  TV_WONDER_RITUAL_SKIP_TERMS:0 "已启用跳过仪式：无需仪式费用与等待。"
- TV_ENGINEERING_CONSTRUCTION_FOLD:0 "已建成 · 等级[InternationalOrganizationsView.GetPlayer.MakeScope.GetVariable('tv_wonder_level').GetValue|0] · 展开 / 收起建设详情"
  TV_ENGINEERING_HEADER_GUIDANCE_RITUAL_PROGRESS:0 "仪式正在进行，风格已锁定，阶层满意度已结算。"
  TV_ENGINEERING_HEADER_GUIDANCE_RERITUAL_READY:0 "为这座奇观选择仪式。重新仪式化仅授予所选仪式的奖励。"
  TV_ENGINEERING_HEADER_GUIDANCE_RITUAL_COMPLETE:0 "仪式已完成。如落成事件仍在等待，请确认事件。"

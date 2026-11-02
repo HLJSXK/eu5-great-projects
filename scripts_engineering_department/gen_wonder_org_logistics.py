@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PM = ROOT / "src/in_game/common/production_methods/tv_engineering_department_production_methods.txt"
 PREFIX = "tv_ol_"
 PLAYER = "InternationalOrganizationsView.GetPlayer.MakeScope"
+WORKSITE = f"{PLAYER}.GetVariable('tv_ol_worksite')"
 LOC = {}
 # Vanilla market/status palette; state is a small marker, not a tinted card rim.
 STATUS_TEXTURES = {0: "color_red_texture", 1: "color_yellow_texture",
@@ -51,9 +52,8 @@ def inputs():
 def variables():
     maintenance, recipes, _ = inputs()
     goods = sorted(maintenance)
-    names = ["levels", "employed", "workers", "employment", "camp_progress", "input_efficiency", "maintenance", "recoverable", "materials_gap"]
+    names = ["levels", "employed", "workers", "employment", "camp_progress", "input_efficiency", "recoverable", "materials_gap"]
     names += [f"{g}_{suffix}" for g in goods for suffix in ("demand", "supply", "price", "ratio", "status", "premium")]
-    names += [f"{g}_quantity" for g in maintenance]
     return names
 
 
@@ -63,7 +63,8 @@ def effects():
     def assign(name, value):
         return f'set_variable = {{ name = {PREFIX}{name} value = {{ {value} }} }}'
     lines = ["tv_wonder_clear_org_logistics_display_effect = {"]
-    lines += [f"remove_variable = {PREFIX}{name}" for name in ["ready", "workshop_type", *variables()]]
+    lines += [f"remove_variable = {PREFIX}{name}" for name in ["ready", "workshop_type", "worksite", *variables()]]
+    lines += ["tv_wonder_clear_worksite_maintenance_display_effect = yes"]
     lines += ["}", "", "tv_wonder_update_org_logistics_display_effect = {",
               "tv_wonder_clear_org_logistics_display_effect = yes", "if = {", "limit = {",
               "tv_wonder_construction_site_selected_trigger = yes",
@@ -73,6 +74,7 @@ def effects():
     lines += [assign("levels", 'value = "var:tv_wonder_site.location_building_level(building_type:tv_wonder_labor_camp)"'),
               "var:tv_wonder_site ?= { every_buildings_in_location = {",
               "limit = { building_type = building_type:tv_wonder_labor_camp }",
+              "set_local_variable = { name = tv_ol_worksite value = this }",
               "scope:tv_ol_owner = {",
               "change_variable = { name = tv_ol_employed add = { value = prev.building_employed_amount } }",
               "change_variable = { name = tv_ol_workers add = { value = prev.building_employment_size_amount } }", "} } }",
@@ -92,10 +94,6 @@ def effects():
                   f"if = {{ limit = {{ var:{PREFIX}{good}_ratio ?= {{ this >= 1 }} }}", assign(f"{good}_status", "value = 2"),
                   f"}} else_if = {{ limit = {{ var:{PREFIX}{good}_ratio ?= {{ this >= 0.7 }} }}", assign(f"{good}_status", "value = 1"), "}",
                   assign(f"{good}_premium", f"value = var:{PREFIX}{good}_price divide = {prices[good]:g} subtract = 1")]
-    for good, quantity in maintenance.items():
-        # Name this nominal maintenance: the engine may scale actual building expenses.
-        lines += [assign(f"{good}_quantity", f"value = var:tv_ol_levels multiply = {quantity:g}"),
-                  f"change_variable = {{ name = tv_ol_maintenance add = {{ value = var:{PREFIX}{good}_quantity multiply = var:{PREFIX}{good}_price }} }}"]
     lines += [assign("materials_gap", "value = var:tv_ol_tv_wonder_materials_demand subtract = var:tv_ol_tv_wonder_materials_supply min = 0")]
     # Actions can preview this lifecycle before writes commit. Calculate in locals,
     # then publish once; never read a newly assigned persistent display variable.
@@ -104,11 +102,18 @@ def effects():
     source = re.sub(r"change_variable = \{ name = tv_ol_", "change_local_variable = { name = tv_ol_", source)
     source = source.replace("var:tv_ol_", "local_var:tv_ol_")
     source = re.sub(r"(local_var:tv_ol_\w+) \?= \{ this ([><=]+) ([\d.]+) \}", r"\1 \2 \3", source)
+    source += '\ntv_wonder_update_worksite_maintenance_display_effect = yes'
     for name in variables():
         source += f'\nset_variable = {{ name = {PREFIX}{name} value = {{ value = local_var:{PREFIX}{name} }} }}'
+    # Keep a typed building reference so the GUI uses the engine's upkeep and
+    # breakdown, including the active mod's country modifiers and expense setting.
+    source += '\nif = { limit = { has_local_variable = tv_ol_worksite } set_variable = { name = tv_ol_worksite value = local_var:tv_ol_worksite } }'
     source += '\nset_variable = { name = tv_ol_workshop_type value = building_type:tv_wonder_material_dispatch_point }'
     source += '\nset_variable = { name = tv_ol_ready value = 1 }\n}\n'
-    source += "\n".join(f"remove_local_variable = {PREFIX}{name}" for name in variables()) + "\n}"
+    source += "\n".join(f"remove_local_variable = {PREFIX}{name}" for name in [*variables(), "worksite"]) + "\n}"
+    # Compatibility mods replace only these display hooks, never the project
+    # settlement or the country's real maintenance ledger.
+    source += '\ntv_wonder_clear_worksite_maintenance_display_effect = {}\ntv_wonder_update_worksite_maintenance_display_effect = {}\n'
     return pretty(source)
 
 
@@ -334,15 +339,15 @@ def organization():
     progress_tip = loc("STAT_HELP",
         f'工地等级 {value("levels")}\n劳工雇佣率 {value("employment", "0%")}\n有效等级 {ov("effective_worksite_levels", "2")}',
         f'Worksite levels {value("levels")}\nEmployment {value("employment", "0%")}\nEffective levels {ov("effective_worksite_levels", "2")}')
-    cost_tip = loc("MAINTENANCE_HELP",
-        '\n'.join(f"[ShowGoodsName('{good}')] {value(good+'_quantity', '1')}/月 × {value(good+'_price', '2')} @gold!" for good in maintenance),
-        '\n'.join(f"[ShowGoodsName('{good}')] {value(good+'_quantity', '1')}/mo × {value(good+'_price', '2')} @gold!" for good in maintenance))
-    def metric(name, x, width, label, value_key, value_name, *, icon, tooltip=None, style="flow_card"):
+    def metric(name, x, width, label, value_key, value_name, *, icon, tooltip=None, style="flow_card", worksite=False):
         extra = f'name = {value_name}'
         if tooltip:
             extra += f' alwaystransparent = no tooltip = "{tooltip}"'
         content = raw(8, 6, width-16, f"@{icon}! [Localize('{label}')]", 12)
-        content += txt(10, 30, width-20, value_key, 16, h=26, extra=extra)
+        if worksite:
+            content = 'tv_worksite_maintenance_content = {}'
+        else:
+            content += txt(10, 30, width-20, value_key, 16, h=26, extra=extra)
         return box(name, x, 0, width, 64, content, style=style)
     calculation = metric("base_progress_card", 0, 90,
         loc("BASE_PROGRESS", "基础进度", "Base progress"),
@@ -363,8 +368,8 @@ def organization():
         "camp_progress_value", icon="construction", tooltip=progress_tip)
     calculation += metric("maintenance_card", 348, 132,
         loc("MAINTENANCE", "总维护费", "Total maintenance"),
-        loc("MAINTENANCE_VALUE", f'{value("maintenance", "2")} @gold! /月', f'{value("maintenance", "2")} @gold! /mo'),
-        "maintenance_value", icon="gold", tooltip=cost_tip, style="cost_card")
+        loc("MAINTENANCE_VALUE", f'[{WORKSITE}.GetBuilding.GetUpkeep|2] @gold! /月', f'[{WORKSITE}.GetBuilding.GetUpkeep|2] @gold! /mo'),
+        "maintenance_value", icon="gold", style="cost_card", worksite=True)
     body += f'widget = {{ name = worksite_calculation position = {{ 10 121 }} size = {{ 480 64 }} {calculation} }}'
     body += txt(18, 189, 170, loc("INPUT_GOODS", "投入品", "Inputs"), 11, h=20)
     body += txt(212, 189, 122, loc("LOCAL_PRICE", "当地单价", "Local price"), 11, "right", 20)
@@ -387,6 +392,18 @@ def organization():
     body += button("build_camp", 282, "TV_ENGINEERING_BUILD_WORKSITE_BUTTON", "uses_tv_wonder_materials", can_build,
                    market=site_market)
     return f'widget = {{ name = ol_organization_summary size = {{ 500 {ORGANIZATION_HEIGHT} }} {body} }}'
+
+
+def maintenance_gui():
+    """Small whole-file GUI override surface for maintenance compatibility."""
+    content = raw(8, 6, 116, "@gold! [Localize('TV_OL_MAINTENANCE')]", 12)
+    content += f'widget = {{ name = maintenance_building position = {{ 10 30 }} size = {{ 112 26 }} visible = "[{WORKSITE}.IsSet]" datacontext = "[{WORKSITE}.GetBuilding]"'
+    content += txt(0, 0, 112, "TV_OL_MAINTENANCE_VALUE", 16, h=26,
+                   extra='name = maintenance_value alwaystransparent = no tooltipwidget = { using = Building_upkeep_tooltip }') + '}'
+    empty = loc("MAINTENANCE_EMPTY_VALUE", '0.00 @gold! /月', '0.00 @gold! /mo')
+    content += txt(10, 30, 112, empty, 16, h=26,
+                   extra=f'name = maintenance_empty_value visible = "[Not({WORKSITE}.IsSet)]"')
+    return pretty(f'types TVWorksiteMaintenance {{ type tv_worksite_maintenance_content = widget {{ size = {{ 132 64 }} {content} }} }}')
 
 
 def gui():
@@ -476,6 +493,7 @@ def pretty(source):
 def outputs():
     LOC.clear()
     result = {"src/in_game/gui/tv_wonder_org_logistics.gui": gui(),
+              "src/in_game/gui/tv_wonder_worksite_maintenance.gui": maintenance_gui(),
               "src/in_game/common/scripted_effects/tv_wonder_org_logistics_display.txt": effects()}
     for folder in sorted((ROOT / "src/main_menu/localization").iterdir()):
         if not folder.is_dir(): continue

@@ -7,9 +7,15 @@
     "tv_wonder_worksite_scale_monthly_construction_progress": 2000,
     "tv_wonder_effective_worksite_levels": 0.641,
     "tv_ol_camp_progress": 641,
-    "tv_ol_maintenance": 369.74,
     "tv_wonder_organization_competence": 85,
     "tv_wonder_organization_site_level_cap": 17,
     "tv_wonder_organization_site_level_cap_display": 17
+  },
+  "objects": {
+    "tv_ol_worksite.GetBuilding": {
+      "__type__": "Building",
+      "GetUpkeep": 23.70,
+      "GetUpkeepInfo": ""
+    }
   }
 }

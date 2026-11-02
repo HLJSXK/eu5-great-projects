@@ -345,7 +345,7 @@ def mocks(state: ScenarioState, loc=None) -> list:
         result.append((_exact(f"InternationalOrganizationsView.GetInternationalOrganization.GetVariableText('{variable}')"), f"{value}/100"))
     if loc is not None:
         # Exact native-link display samples used by the production worksite panel.
-        for helper, keys in (("ShowBuildingTypeName", ("tv_wonder_labor_camp",)),
+        for helper, keys in (("ShowBuildingTypeName", ("tv_wonder_labor_camp", "tv_wonder_material_dispatch_point")),
                              ("ShowGoodsName", ("tools", "tv_wonder_materials"))):
             for key in keys:
                 name = loc.get(key)
@@ -378,7 +378,6 @@ def mocks(state: ScenarioState, loc=None) -> list:
     result.append((_exact("ShowScriptedEffectForScope('tv_wonder_ritual_pay_effect',InternationalOrganizationsView.GetPlayer.MakeScope.Self)"),
                    '(Sample) Native ritual gold cost' if LANGUAGE == 'english' else '【示例】原生仪式金币费用'))
     result.append((_exact("GetVariableSystem.Exists('tv_wonder_ritual_details_open')"), False))
-    result.append((_exact("GetVariableSystem.Exists('tv_wonder_construction_details_open')"), False))
     return result
 
 

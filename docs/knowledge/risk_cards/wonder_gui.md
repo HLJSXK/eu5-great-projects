@@ -102,6 +102,31 @@ GUI widgets.
     Do not mock the entire visibility predicate to a boolean in the preview;
     sample only its underlying data so unsupported expressions remain diagnostic.
 
+12. Preserve the frame and help contract when replacing any of the six ED cards.
+    Every locked/active variant retains its 500-unit width cap and a complete
+    `header_help_tooltip` override with the card's localized title and explanatory
+    body. The default `Card title header` and empty body are placeholders, not
+    working help. This includes the hand-maintained wrapper outside the generated
+    `TV_WONDER_RITUAL_CARD` segment; regenerating that segment cannot repair its host.
+    `tests/test_engineering_card_contract.py` checks all ten source variants without
+    game assets and runs in the editor's default fast suite. The engineering
+    preview suite checks actual placed widths and
+    lazily expands each visible card's encyclopedia tooltip across lifecycle presets.
+
+    Regression audit (2026-11-03, user screenshot): TV commit
+    `2dc31fa19a9e7e5bf23fea7c39534679a75d1603` (2026-10-23 16:20 +0800,
+    unified ritual rewrite) removed the active ceremony card's existing
+    `maximumsize = { 500 -1 }` and full `header_help_tooltip` while replacing its
+    bottom content. Both are present in its parent and absent immediately after.
+    GP's extraction commit `c90007e44bc3ecdafcd66b5e2dbce2ba37bb65d8` carried the
+    defect forward; `data/extraction_provenance.json` records the source checkpoint
+    `2cf4171b4e273c87efb8257baef895c7a6017ad6`. Existing checks covered ledger content,
+    branches and bindings, but did not compare card frames or expand these lazy
+    help tooltips. A clean preview diagnostic report therefore missed both defects.
+    Before repair, the new source checks fail precisely on these two omissions;
+    the other 18 variant checks pass. The offline active-card width was 520 units
+    against the construction card's 500. Keep these checks when changing the ledger.
+
 ## Validation
 
 Before confirmation, the ritual ledger has exactly three sibling sections in

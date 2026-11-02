@@ -1,7 +1,7 @@
 {
   "name": "[v1.4 beta] Great Projects",
   "id": "hades.towards_victory.great_project",
-  "version": "261102",
+  "version": "261103",
   "game_id": "eu5",
   "supported_game_version": "1.4.*",
   "short_description": "Standalone Engineering Department and Wonder Construction mechanic. Requires Community Mod Framework and Construction Manager; works with or without Towards Victory.",

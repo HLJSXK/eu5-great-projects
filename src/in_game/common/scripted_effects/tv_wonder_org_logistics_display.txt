@@ -3,13 +3,13 @@
 tv_wonder_clear_org_logistics_display_effect = {
 	remove_variable = tv_ol_ready
 	remove_variable = tv_ol_workshop_type
+	remove_variable = tv_ol_worksite
 	remove_variable = tv_ol_levels
 	remove_variable = tv_ol_employed
 	remove_variable = tv_ol_workers
 	remove_variable = tv_ol_employment
 	remove_variable = tv_ol_camp_progress
 	remove_variable = tv_ol_input_efficiency
-	remove_variable = tv_ol_maintenance
 	remove_variable = tv_ol_recoverable
 	remove_variable = tv_ol_materials_gap
 	remove_variable = tv_ol_tools_demand
@@ -24,8 +24,7 @@ tv_wonder_clear_org_logistics_display_effect = {
 	remove_variable = tv_ol_tv_wonder_materials_ratio
 	remove_variable = tv_ol_tv_wonder_materials_status
 	remove_variable = tv_ol_tv_wonder_materials_premium
-	remove_variable = tv_ol_tools_quantity
-	remove_variable = tv_ol_tv_wonder_materials_quantity
+	tv_wonder_clear_worksite_maintenance_display_effect = yes
 }
 tv_wonder_update_org_logistics_display_effect = {
 	tv_wonder_clear_org_logistics_display_effect = yes
@@ -69,12 +68,6 @@ tv_wonder_update_org_logistics_display_effect = {
 		}
 		set_local_variable = {
 			name = tv_ol_input_efficiency
-			value = {
-				value = 0
-			}
-		}
-		set_local_variable = {
-			name = tv_ol_maintenance
 			value = {
 				value = 0
 			}
@@ -164,18 +157,6 @@ tv_wonder_update_org_logistics_display_effect = {
 			}
 		}
 		set_local_variable = {
-			name = tv_ol_tools_quantity
-			value = {
-				value = 0
-			}
-		}
-		set_local_variable = {
-			name = tv_ol_tv_wonder_materials_quantity
-			value = {
-				value = 0
-			}
-		}
-		set_local_variable = {
 			name = tv_ol_levels
 			value = {
 				value = "var:tv_wonder_site.location_building_level(building_type:tv_wonder_labor_camp)"
@@ -185,6 +166,10 @@ tv_wonder_update_org_logistics_display_effect = {
 			every_buildings_in_location = {
 				limit = {
 					building_type = building_type:tv_wonder_labor_camp
+				}
+				set_local_variable = {
+					name = tv_ol_worksite
+					value = this
 				}
 				scope:tv_ol_owner = {
 					change_local_variable = {
@@ -384,34 +369,6 @@ tv_wonder_update_org_logistics_display_effect = {
 			}
 		}
 		set_local_variable = {
-			name = tv_ol_tools_quantity
-			value = {
-				value = local_var:tv_ol_levels
-				multiply = 10
-			}
-		}
-		change_local_variable = {
-			name = tv_ol_maintenance
-			add = {
-				value = local_var:tv_ol_tools_quantity
-				multiply = local_var:tv_ol_tools_price
-			}
-		}
-		set_local_variable = {
-			name = tv_ol_tv_wonder_materials_quantity
-			value = {
-				value = local_var:tv_ol_levels
-				multiply = 20
-			}
-		}
-		change_local_variable = {
-			name = tv_ol_maintenance
-			add = {
-				value = local_var:tv_ol_tv_wonder_materials_quantity
-				multiply = local_var:tv_ol_tv_wonder_materials_price
-			}
-		}
-		set_local_variable = {
 			name = tv_ol_materials_gap
 			value = {
 				value = local_var:tv_ol_tv_wonder_materials_demand
@@ -419,6 +376,7 @@ tv_wonder_update_org_logistics_display_effect = {
 				min = 0
 			}
 		}
+		tv_wonder_update_worksite_maintenance_display_effect = yes
 		set_variable = {
 			name = tv_ol_levels
 			value = {
@@ -453,12 +411,6 @@ tv_wonder_update_org_logistics_display_effect = {
 			name = tv_ol_input_efficiency
 			value = {
 				value = local_var:tv_ol_input_efficiency
-			}
-		}
-		set_variable = {
-			name = tv_ol_maintenance
-			value = {
-				value = local_var:tv_ol_maintenance
 			}
 		}
 		set_variable = {
@@ -545,16 +497,13 @@ tv_wonder_update_org_logistics_display_effect = {
 				value = local_var:tv_ol_tv_wonder_materials_premium
 			}
 		}
-		set_variable = {
-			name = tv_ol_tools_quantity
-			value = {
-				value = local_var:tv_ol_tools_quantity
+		if = {
+			limit = {
+				has_local_variable = tv_ol_worksite
 			}
-		}
-		set_variable = {
-			name = tv_ol_tv_wonder_materials_quantity
-			value = {
-				value = local_var:tv_ol_tv_wonder_materials_quantity
+			set_variable = {
+				name = tv_ol_worksite
+				value = local_var:tv_ol_worksite
 			}
 		}
 		set_variable = {
@@ -572,7 +521,6 @@ tv_wonder_update_org_logistics_display_effect = {
 	remove_local_variable = tv_ol_employment
 	remove_local_variable = tv_ol_camp_progress
 	remove_local_variable = tv_ol_input_efficiency
-	remove_local_variable = tv_ol_maintenance
 	remove_local_variable = tv_ol_recoverable
 	remove_local_variable = tv_ol_materials_gap
 	remove_local_variable = tv_ol_tools_demand
@@ -587,6 +535,9 @@ tv_wonder_update_org_logistics_display_effect = {
 	remove_local_variable = tv_ol_tv_wonder_materials_ratio
 	remove_local_variable = tv_ol_tv_wonder_materials_status
 	remove_local_variable = tv_ol_tv_wonder_materials_premium
-	remove_local_variable = tv_ol_tools_quantity
-	remove_local_variable = tv_ol_tv_wonder_materials_quantity
+	remove_local_variable = tv_ol_worksite
+}
+tv_wonder_clear_worksite_maintenance_display_effect = {
+}
+tv_wonder_update_worksite_maintenance_display_effect = {
 }

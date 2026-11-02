@@ -55,6 +55,20 @@ class OrgLogisticsSourceTests(unittest.TestCase):
         self.assertIn("using = production_method_simple", gui)
         self.assertNotIn("ChangeBuildingProductionMethod", gui)
 
+    def test_worksite_upkeep_uses_native_building_and_lifecycle_cleanup(self):
+        source = gen.effects()
+        self.assertRegex(source, r"name = tv_ol_worksite\s+value = this")
+        self.assertIn("has_local_variable = tv_ol_worksite", source)
+        self.assertRegex(source, r"name = tv_ol_worksite\s+value = local_var:tv_ol_worksite")
+        self.assertIn("remove_variable = tv_ol_worksite", source)
+        self.assertIn("remove_local_variable = tv_ol_worksite", source)
+        self.assertNotIn("name = tv_ol_maintenance", source)
+        outputs = gen.outputs()
+        gui = outputs["src/in_game/gui/tv_wonder_worksite_maintenance.gui"]
+        self.assertIn(".GetVariable('tv_ol_worksite').GetBuilding", gui)
+        self.assertIn("using = Building_upkeep_tooltip", gui)
+        self.assertIn(".GetVariable('tv_ol_worksite').GetBuilding.GetUpkeep|2]", outputs["src/main_menu/localization/english/tv_wonder_org_logistics_l_english.yml"])
+
 
 if __name__ == "__main__":
     unittest.main()
