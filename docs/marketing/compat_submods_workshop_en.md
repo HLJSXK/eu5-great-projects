@@ -19,6 +19,7 @@
 [list]
 [*] [b]Great Project[/b] and [b]MEIOU and Taxes[/b] both fully override [i]location_window.gui[/i] (the location panel). Enabling both without this patch means whichever mod loads last silently wins, and the other mod's location panel changes disappear — no error, no warning.
 [*] This submod merges the two: it takes M&T's own location window and adds Great Project's wonder badge and tooltip overlay on top, so both mods' location panel features work together.
+[*] It also adjusts Great Project's own [i]tv_wonder_materials[/i] market anchor from 5 to 2.5 to match M&T's lower price scale; production and goods identity are unchanged.
 [/list]
 
 [h2]How to use[/h2]

@@ -128,6 +128,25 @@ def test_sol_host_regenerates_from_workspace_and_base_only():
     assert source.OUT_FILE.read_text(encoding='utf-8-sig') == source.generate()
 
 
+def test_mnt_host_uses_current_reference_and_preserves_its_new_location_ui():
+    import gen_tv_meiou_and_taxes_location_window as mnt
+
+    assert mnt.BASE_FILE == ROOT / '.eu5-base/reference_mods/3735059838/in_game/gui/location_window.gui'
+    generated = mnt.generate()
+    assert mnt.OUT_FILE.read_text(encoding='utf-8-sig') == generated
+    for marker in (
+        'name = "mnt_owner_flag_centers"',
+        'mnt_center_slot_trade = { size = { 36 36 } }',
+        'mnt_center_slot_production = { size = { 36 36 } }',
+        'mnt_center_slot_culture = { size = { 36 36 } }',
+        'mnt_center_slot_education = { size = { 36 36 } }',
+        'tv_location_wonders_button = {}',
+        'tv_location_wonders_panel = {}',
+        'sol_location_living_standard_button = {}',
+    ):
+        assert marker in generated
+
+
 @pytest.mark.parametrize('mod', ['src', 'submods/tv_standard_of_living_compat'])
 def test_glorp_hosts_preserve_current_upstream_except_public_widget_insertions(mod):
     generated = (ROOT / mod / 'in_game/gui/location_window.gui').read_text(encoding='utf-8-sig')

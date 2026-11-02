@@ -12,7 +12,10 @@ or file type matches them.
   The main and SOL compatibility location panels are generated from the checked-in
   Glorp 1.4 snapshot (`.eu5-base/reference_mods/3601047146`, version `30.10.26`);
   shared GP/SOL controls are injected without legacy 1.3 migration patches.
-  The M&T compatibility panel keeps its separately reviewed base. CM upgrade callbacks,
+  The M&T compatibility panel uses the current 0.2.12/1.4 GUI snapshot directly from
+  `.eu5-base/reference_mods/3735059838`; do not apply the legacy 1.4 migration patch.
+  Preserve its owner-flag center slots and other upstream content when adding shared
+  controls. CM upgrade callbacks,
   auto-expand icon and town-rights map mode come from the separately declared
   Construction Manager dependency. Glorp's extracted location types and CM
   activity detector are included by the GP generator, so Glorp itself is not

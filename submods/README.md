@@ -40,7 +40,9 @@ Current submods:
 - `tv_meiou_and_taxes_compat`: compatibility for MEIOU and Taxes
   (`reference_mods/3735059838`, mod id `meiou_and_taxes`). It contains one game
   override, `in_game/gui/location_window.gui`, generated from the M&T file with
-  the wonder location overlay injected. Since the wonder overlay is owned by
+  the wonder location overlay injected, plus a goods override that lowers the
+  GP-owned `tv_wonder_materials` market anchor from 5 to 2.5 for M&T's price
+  scale without changing its production definition. Since the wonder overlay is owned by
   the standalone `src/` mod (see repo root), this
   submod declares a dependency on `hades.towards_victory.great_project`,
   not on the main `hades.towards_victory` mod — main `src/` no longer touches

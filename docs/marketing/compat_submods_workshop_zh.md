@@ -20,6 +20,7 @@
 [list]
 [*] [b]Great Project[/b] 和 [b]MEIOU and Taxes[/b] 都整份覆写了 [i]location_window.gui[/i]（位置面板）。如果不装这个补丁就同时启用两者，谁在加载顺序里靠后谁就会完全生效，另一个模组对位置面板的修改会直接消失——没有报错，也没有警告。
 [*] 本子模组把两者合并：以 M&T 自己的位置窗口为基础，叠加 Great Project 的奇观徽标与提示浮窗，让两个模组的位置面板功能同时生效。
+[*] 同时将 Great Project 自有的 [i]tv_wonder_materials[/i] 市场价格锚点从 5 调为 2.5，以匹配 M&T 的较低价格尺度；商品身份和生产方式不变。
 [/list]
 
 [h2]使用方法[/h2]

@@ -23,7 +23,7 @@
       "id": "meiou_and_taxes",
       "display_name": "MEIOU and Taxes",
       "resource_type": "mod",
-      "version": "0.1.*"
+      "version": "0.2.*"
     }
   ],
   "game_custom_data": {

@@ -257,9 +257,7 @@ WONDER_GENERATORS = (
         "scripts/compat/gen_tv_meiou_and_taxes_location_window.py",
         depends_on=("scripts_engineering_department/in_game/gui/gen_location_window.py",),
         inputs=("src/in_game/gui/location_window.gui",
-                ".eu5-base/reference_game_files/game/in_game/gui/location_window.gui",
-                ".eu5-base/reference_mods_variants/eu5-towards-victory/3735059838/in_game/gui/location_window.gui",
-                "data/compat/mnt_location_window_1_4.patch"),
+                ".eu5-base/reference_mods/3735059838/in_game/gui/location_window.gui"),
     ),
     GeneratorSpec(
         "scripts/compat/gen_tv_standard_of_living_location_window.py",
