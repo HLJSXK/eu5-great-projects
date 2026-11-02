@@ -12,7 +12,8 @@ from wonder_mechanics.render import render_header
 from wonder_mechanics.naming import WONDER_SIZE_IDS
 from wonder_identity import image_expression
 
-VANILLA_LOCATION_WINDOW_FILE = REPO_ROOT / ".eu5-base" / "reference_game_files" / "game" / "in_game" / "gui" / "location_window.gui"
+GLORP_LOCATION_WINDOW_FILE = REPO_ROOT / ".eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui"
+GLORP_LOCATION_TYPES_FILE = REPO_ROOT / ".eu5-base/reference_mods/3601047146/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui"
 OUT_FILE = REPO_ROOT / "src" / "in_game" / "gui" / "location_window.gui"
 WIDGETS_FILE = REPO_ROOT / "src/in_game/gui/tv_location_wonder_widgets.gui"
 CM_GUI_SOURCE = REPO_ROOT / ".eu5-base/reference_mods/3601047146/in_game/common/scripted_guis/glorpui_construction_manager_scripted_gui.txt"
@@ -21,7 +22,8 @@ SITE_CONDITIONS_GUI_OUTPUT = REPO_ROOT / "src/in_game/common/scripted_guis/tv_wo
 SCRIPT_REL = "scripts_engineering_department/in_game/gui/gen_location_window.py"
 DATA_REL = (
     "data/unique_wonders.yaml + "
-    ".eu5-base/reference_game_files/game/in_game/gui/location_window.gui"
+    ".eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui + "
+    ".eu5-base/reference_mods/3601047146/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui"
 )
 T = "\t"
 UI_SCALE = 0.75
@@ -706,18 +708,28 @@ def inject_wonder_panel(gui: str) -> str:
     return gui
 
 
-def inject_overlay(vanilla: str) -> str:
+def inject_overlay(base_gui: str) -> str:
     marker = "\n\t\t\t\tvbox = {\n\t\t\t\t\texpand = {}\n"
     replacement = "\n" + render_scene_overlay() + marker
-    if vanilla.count(marker) != 1:
-        raise RuntimeError("Could not find location scene overlay insertion point in vanilla location_window.gui")
-    return inject_wonder_panel(vanilla.replace(marker, replacement, 1))
+    if base_gui.count(marker) != 1:
+        raise RuntimeError("Could not find location scene overlay insertion point in location_window.gui")
+    return inject_wonder_panel(base_gui.replace(marker, replacement, 1))
+
+
+def generate_host_gui() -> str:
+    """Keep the current Glorp host intact and add the shared GP/SOL controls."""
+    base_gui = GLORP_LOCATION_WINDOW_FILE.read_text(encoding="utf-8-sig")
+    # Glorp extracts these definitions from its full-file override. Include
+    # them in our host so GP works without Glorp, and M&T can replace the whole
+    # host without leaving a second file of competing location definitions.
+    base_types = GLORP_LOCATION_TYPES_FILE.read_text(encoding="utf-8-sig")
+    return inject_overlay(inject_sol_button(base_gui)) + "\n" + base_types.replace(
+        "types LocationWindowTypes", "types GPGlorpLocationWindowBaseTypes", 1)
 
 
 def generate() -> str:
-    vanilla_location_window = VANILLA_LOCATION_WINDOW_FILE.read_text(encoding="utf-8-sig")
     lines = render_header(SCRIPT_REL, DATA_REL)
-    lines.append(inject_overlay(inject_sol_button(vanilla_location_window)))
+    lines.append(generate_host_gui())
     return "\n".join(line.rstrip() for line in "\n".join(lines).splitlines()).rstrip() + "\n"
 
 

@@ -6,23 +6,22 @@ if hasattr(sys.stdout, "reconfigure"):
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department"))
+sys.path.insert(0, str(REPO_ROOT / "scripts_engineering_department/in_game/gui"))
 from wonder_mechanics.render import render_header
-from location_window_1_4 import apply_reviewed_patch, port_levy_bindings
+import gen_location_window as tv_location_window
 
-BASE_FILE = REPO_ROOT / ".eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui"
-PATCH_FILE = REPO_ROOT / "data/compat/sol_glorp_location_window.patch"
+BASE_FILE = tv_location_window.GLORP_LOCATION_WINDOW_FILE
 OUT_FILE = REPO_ROOT / "submods" / "tv_standard_of_living_compat" / "in_game" / "gui" / "location_window.gui"
 SCRIPT_REL = "scripts/compat/gen_tv_standard_of_living_location_window.py"
 DATA_REL = (
     ".eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui + "
-    "data/compat/sol_glorp_location_window.patch"
+    ".eu5-base/reference_mods/3601047146/in_game/gui/vanilla/cmfg_location_window_vanilla_types.gui + "
+    "scripts_engineering_department/in_game/gui/gen_location_window.py"
 )
+
+
 def generate() -> str:
-    base_gui = BASE_FILE.read_text(encoding="utf-8-sig")
-    # Preserve the reviewed SOL host changes without reading another checkout.
-    base_gui = "\n".join(apply_reviewed_patch(
-        base_gui.splitlines(), PATCH_FILE.read_text(encoding="utf-8"))) + "\n"
-    base_gui = port_levy_bindings(base_gui)
+    base_gui = tv_location_window.generate_host_gui()
     for marker in (
         "tv_location_wonders_button = {}",
         "tv_location_wonders_panel = {}",

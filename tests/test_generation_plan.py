@@ -10,7 +10,7 @@ from great_projects_editor_web.services.artifacts import (
 from great_projects_editor_web.services.generation import (
     GenerationError, GeneratorSpec, build_generation_plan, run_generation,
 )
-from great_projects_editor_web.services.wonder_generation import wonder_generation_plan
+from great_projects_editor_web.services.wonder_generation import WONDER_GENERATORS, wonder_generation_plan
 
 
 def _workspace(root, scripts, outputs):
@@ -316,6 +316,25 @@ def test_real_wonder_regeneration_matches_current_outputs(tmp_path):
     """Execute current generators in isolation; compare bytes with current outputs."""
     root = Path(__file__).resolve().parents[1]
     original_plan = wonder_generation_plan({'mechanics': True}, repo_root=root)
+    _assert_real_regeneration(tmp_path, original_plan)
+
+
+def test_real_location_regeneration_uses_only_workspace_and_shared_references(tmp_path):
+    root = Path(__file__).resolve().parents[1]
+    scripts = {
+        'scripts_engineering_department/in_game/gui/gen_location_window.py',
+        'scripts/compat/gen_tv_meiou_and_taxes_location_window.py',
+        'scripts/compat/gen_tv_standard_of_living_location_window.py',
+    }
+    specs = tuple(spec for spec in WONDER_GENERATORS if spec.script in scripts)
+    plan = build_generation_plan(specs, scripts, repo_root=root)
+    assert len(plan.steps) == 3
+    assert all(not source.startswith('../') for step in plan.steps for source in step.spec.inputs)
+    _assert_real_regeneration(tmp_path, plan)
+
+
+def _assert_real_regeneration(tmp_path, original_plan):
+    root = original_plan.repo_root
     for directory in ('data', 'scripts', 'scripts_engineering_department'):
         shutil.copytree(root / directory, tmp_path / directory,
                         ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
@@ -364,7 +383,8 @@ def test_real_wonder_regeneration_matches_current_outputs(tmp_path):
         destination.write_bytes(current[relative])
 
     logs = []
-    plan = wonder_generation_plan({'mechanics': True}, repo_root=tmp_path)
+    specs = tuple(step.spec for step in original_plan.steps)
+    plan = build_generation_plan(specs, (spec.script for spec in specs), repo_root=tmp_path)
     try:
         report = run_generation(plan, log=logs.append)
     except GenerationError as exc:

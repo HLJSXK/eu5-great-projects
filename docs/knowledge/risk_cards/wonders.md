@@ -9,10 +9,14 @@ or file type matches them.
 - The Engineering Department / Wonder Construction subsystem is a standalone mod
   root at `src/`, with domain generators in `scripts_engineering_department/`.
   It depends on CMF 2.x and Construction Manager, not on the Towards Victory mod.
-  The location panel is generated from the checked-in vanilla 1.4 location window;
-  its wonder controls are injected into that base. CM upgrade callbacks,
-  auto-expand icon, town-rights map mode and the CM activity detector come from
-  the separately declared Construction Manager dependency.
+  The main and SOL compatibility location panels are generated from the checked-in
+  Glorp 1.4 snapshot (`.eu5-base/reference_mods/3601047146`, version `30.10.26`);
+  shared GP/SOL controls are injected without legacy 1.3 migration patches.
+  The M&T compatibility panel keeps its separately reviewed base. CM upgrade callbacks,
+  auto-expand icon and town-rights map mode come from the separately declared
+  Construction Manager dependency. Glorp's extracted location types and CM
+  activity detector are included by the GP generator, so Glorp itself is not
+  a runtime dependency.
 - The main Towards Victory mod depends on Engineering Department because
   Prosperity Victory calls `tv_engineering_department_create_effect`.
 - Wonder data remains in repo-root `data/`; generated source is emitted under

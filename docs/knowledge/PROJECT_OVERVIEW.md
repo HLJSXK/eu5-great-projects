@@ -18,6 +18,8 @@ CMF 2.x and Construction Manager remain runtime dependencies. TV consumes GP;
 GP never imports TV's checkout. Keep existing `tv_` runtime identifiers.
 
 Location windows reference SOL's optional `sol_location_living_standard_button`.
+The main and SOL compatibility windows use the current Glorp 1.4 snapshot in
+`.eu5-base/reference_mods/3601047146`; M&T keeps its separately reviewed base.
 GP exports its wonder button, root-level gallery panel and queue-close template
 through `in_game/gui/tv_location_wonder_widgets.gui`; the main window and both
 location compatibility submods use those shared definitions. Other window owners

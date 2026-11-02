@@ -78,8 +78,7 @@ def test_all_window_hosts_reference_one_copy_of_each_widget_and_close_before_que
         assert actions[1].startswith('[LocationView.OpenConstructionQueue(')
         assert len(actions) == 2
         queues += 1
-    expected_queues = (6 if mod in {'src', 'submods/tv_meiou_and_taxes_compat'} else 0)
-    assert queues == expected_queues
+    assert queues == 6
     assert not expander.log
 
 
@@ -101,9 +100,9 @@ def test_widget_output_has_one_owner_and_preserves_all_gallery_actions():
 def test_sol_insertion_rejects_ambiguous_or_missing_host_slots():
     with pytest.raises(RuntimeError, match='Expected one SOL button insertion point'):
         source.inject_sol_button('widget = {}')
-    vanilla = source.VANILLA_LOCATION_WINDOW_FILE.read_text(encoding='utf-8-sig')
+    base_gui = source.GLORP_LOCATION_WINDOW_FILE.read_text(encoding='utf-8-sig')
     with pytest.raises(RuntimeError, match='found 2'):
-        source.inject_sol_button(vanilla + vanilla)
+        source.inject_sol_button(base_gui + base_gui)
 
 
 @pytest.mark.parametrize('mod', ['src', 'submods/tv_meiou_and_taxes_compat',
@@ -129,13 +128,33 @@ def test_sol_host_regenerates_from_workspace_and_base_only():
     assert source.OUT_FILE.read_text(encoding='utf-8-sig') == source.generate()
 
 
-def test_location_window_is_injected_from_vanilla_base():
-    generated = source.OUT_FILE.read_text(encoding='utf-8-sig')
-    vanilla = source.VANILLA_LOCATION_WINDOW_FILE.read_text(encoding='utf-8-sig')
-    assert source.DATA_REL.endswith('.eu5-base/reference_game_files/game/in_game/gui/location_window.gui')
-    assert 'glorp_shared_types' not in generated
-    assert generated.count('header_action_button_left_uber') == vanilla.count('header_action_button_left_uber')
-    assert generated.count('tv_location_wonders_button = {}') == 1
-    assert generated.count('tv_location_wonders_panel = {}') == 1
-    assert 'types LocationWindowTypes' in vanilla
-    assert generated.count('types LocationWindowTypes') == 1
+@pytest.mark.parametrize('mod', ['src', 'submods/tv_standard_of_living_compat'])
+def test_glorp_hosts_preserve_current_upstream_except_public_widget_insertions(mod):
+    generated = (ROOT / mod / 'in_game/gui/location_window.gui').read_text(encoding='utf-8-sig')
+    upstream = source.GLORP_LOCATION_WINDOW_FILE.read_text(encoding='utf-8-sig')
+    upstream += '\n' + source.GLORP_LOCATION_TYPES_FILE.read_text(encoding='utf-8-sig').replace(
+        'types LocationWindowTypes', 'types GPGlorpLocationWindowBaseTypes', 1)
+    assert '.eu5-base/reference_mods/3601047146/in_game/gui/location_window.gui' in generated
+    additions = {
+        'tv_location_wonders_button = {}', 'tv_location_wonders_panel = {}',
+        'sol_location_living_standard_button = {}',
+        'using = tv_location_wonders_close_on_queue',
+        'name = "tv_location_city_appearance"',
+    }
+    def original_lines(text):
+        return [line.strip() for line in text.splitlines()
+                if line.strip() and not line.lstrip().startswith('#') and line.strip() not in additions]
+    assert original_lines(generated) == original_lines(upstream)
+    # Preserve Glorp's CM integration and map-mode hovers without a Glorp runtime dependency.
+    assert 'cm_is_auto_expand_on_icon = {}' in generated
+    assert generated.count("GetScriptedGui('cm_check_for_auto_expand_when_upgrading_building')") == 3
+    assert "PdxGuiWidget.PushMapModeOverride('control')" in generated
+
+
+def test_glorp_host_includes_split_types_without_duplicate_definitions():
+    nodes = list(walk(parse(source.generate_host_gui())))
+    definitions = [node.key for node in nodes if node.key.startswith(('type:', 'template:'))]
+    assert len(definitions) == len(set(definitions))
+    for key in ('type:location_building_levels_piechart', 'type:garrison_sortie_button',
+                'template:location_background', 'template:location_card_core'):
+        assert key in definitions
