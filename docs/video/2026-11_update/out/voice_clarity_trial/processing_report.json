@@ -1,0 +1,33 @@
+{
+  "purpose": "Consonant-preserving listening trial; not phoneme correction",
+  "source": "assets\\1030-movie\\音频 1_2.wav",
+  "filter_chain": "highpass=f=75:poles=2,afftdn=nf=-50:nr=9:tn=1,equalizer=f=280:t=q:w=0.9:g=-1.5,equalizer=f=2200:t=q:w=0.8:g=1.5,equalizer=f=4200:t=q:w=1.0:g=1.0,acompressor=threshold=-20dB:ratio=1.7:attack=18:release=160:makeup=1,loudnorm=I=-16:TP=-1.5:LRA=11:linear=true:measured_I=-22.41:measured_TP=-1.40:measured_LRA=4.70:measured_thresh=-33.07:offset=0.53,aresample=48000,atrim=end_sample=6056400",
+  "samples": 6056400,
+  "sample_rate": 48000,
+  "current": {
+    "input_i": "-15.82",
+    "input_tp": "-0.75",
+    "input_lra": "4.10",
+    "input_thresh": "-26.50",
+    "output_i": "-15.84",
+    "output_tp": "-1.50",
+    "output_lra": "3.80",
+    "output_thresh": "-26.49",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.16"
+  },
+  "trial": {
+    "input_i": "-16.18",
+    "input_tp": "-1.48",
+    "input_lra": "4.30",
+    "input_thresh": "-26.83",
+    "output_i": "-15.88",
+    "output_tp": "-1.50",
+    "output_lra": "3.90",
+    "output_thresh": "-26.51",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.12"
+  },
+  "ab_order": "A: current 17-38.9s; 0.8s silence; B: trial same excerpt",
+  "subjective_listening_verified": false
+}

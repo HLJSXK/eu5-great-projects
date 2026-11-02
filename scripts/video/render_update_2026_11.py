@@ -1,24 +1,35 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""伟大工程 · 1.4 更新视频 —— 纯截图版渲染器。
+"""伟大工程 · 1.4 更新视频 —— 暖纸编辑风 · 逐帧动画渲染器（v3）。
 
-内容依据 docs/video/2026-11_update/导演设计.md 的分镜表与口播稿。
-输出两条轨：内容轨（1920x1080 / 30fps / 无音轨）与字幕轨（SRT）。
+内容依据 docs/video/2026-11_update/ 的分镜与口播稿。
+输出三条轨：纯内容（1920x1080 / 30fps / 无音轨）、字幕（SRT）、合成。
+
+v3 相对 v2 的改动：
+  * 视觉：去掉灰色页眉条，改成暖纸底 + 细金线 + 衬线标题的编辑版式；
+    页脚有细进度条与页码，全片像一本会翻页的册子。
+  * 动画：v2 每镜头只组合一帧复用；v3 逐帧重绘，用「淡入上浮 / 描线 /
+    扫高亮 / 数字滚动 / 曲线生长」这类示意性动作说明内容，不动图片素材本身
+    （图片只做淡入与极小的位移，不做滤镜、不做裁块放大）。
+  * 转场：镜头之间 8 帧交叉溶解，页眉不动、内容变化，切换不生硬。
+  * 时长微调：T00/S01/S04/S06/S07/S10/S11/S13/S14 各调 ±1s 给动画留落点，
+    总长仍为 123s，字幕时间轴由同一张表派生。
 
 用法：
-    python3 render_update_2026_11.py --probe    # 每镜头抽静帧供检查
-    python3 render_update_2026_11.py --render   # 出片
+    python3 render_update_2026_11.py --probe        # 每镜头抽三帧静帧供检查
+    python3 render_update_2026_11.py --render       # 出片
+    python3 render_update_2026_11.py --render --fresh
 """
 from __future__ import annotations
 
 import argparse
 import json
 import math
-import shutil
 import subprocess
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+import numpy as np
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 # ---------------------------------------------------------------- 基本参数
 W, H, FPS = 1920, 1080, 30
@@ -28,24 +39,57 @@ VIDEO_DIR = REPO / "docs" / "video" / "2026-11_update"
 BUILD = VIDEO_DIR / "build"
 OUT = VIDEO_DIR / "out"
 
-FONT_R = "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"
-FONT_B = "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"
+_FONT_DIR = "/usr/share/fonts/opentype/noto"
+FONT_R = f"{_FONT_DIR}/NotoSansCJK-Regular.ttc"
+FONT_B = f"{_FONT_DIR}/NotoSansCJK-Bold.ttc"
+SERIF_R = f"{_FONT_DIR}/NotoSerifCJK-Regular.ttc"
+SERIF_B = f"{_FONT_DIR}/NotoSerifCJK-Bold.ttc"
 SC = 2  # .ttc 内的简体中文字面
 
-RED = (200, 40, 40)
-BLUE = (30, 90, 180)
-INK = (32, 32, 34)
-GREY = (128, 128, 132)
-PAGE = (255, 255, 255)
-BAR = (237, 237, 239)
+# ---- 暖纸编辑风配色 ----
+PAPER = (246, 242, 233)
+CARD = (252, 250, 245)
+INK = (26, 24, 22)
+MUTED = (124, 116, 104)
+FAINT = (168, 160, 148)
+RED = (176, 40, 32)
+GOLD = (166, 130, 62)
+HAIR = (221, 212, 196)
+BLUE = (44, 84, 140)
+DARK = (32, 30, 28)
+
+# ---- 统一版式常量：所有页面共用，改这里就等于改全片 ----
+HEADER_H = 152          # 页眉高度（细线落在这里）
+TOPBAR_BOTTOM = HEADER_H + 46
+MARGIN = 96             # 左右页边距
+CONTENT_W = W - 2 * MARGIN            # 1728
+CONTENT_BOTTOM = H - 132
+AVAIL_H = CONTENT_BOTTOM - TOPBAR_BOTTOM   # 750
+
+NOTE_W = 486            # 右侧说明栏宽度
+NOTE_GAP = 76
+IMG_W = CONTENT_W - NOTE_W - NOTE_GAP  # 1166
+
+XFADE = 8               # 转场交叉溶解帧数
 
 _font_cache: dict[tuple, ImageFont.FreeTypeFont] = {}
 
 
+def _ttf(path: str, size: int) -> ImageFont.FreeTypeFont:
+    return ImageFont.truetype(path, size, index=SC)
+
+
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
-    key = (size, bold)
+    key = ("s", size, bold)
     if key not in _font_cache:
-        _font_cache[key] = ImageFont.truetype(FONT_B if bold else FONT_R, size, index=SC)
+        _font_cache[key] = _ttf(FONT_B if bold else FONT_R, size)
+    return _font_cache[key]
+
+
+def serif(size: int, bold: bool = True) -> ImageFont.FreeTypeFont:
+    key = ("f", size, bold)
+    if key not in _font_cache:
+        _font_cache[key] = _ttf(SERIF_B if bold else SERIF_R, size)
     return _font_cache[key]
 
 
@@ -60,164 +104,523 @@ def load(rel: str) -> Image.Image:
     return Image.open(asset(rel)).convert("RGB")
 
 
-# ---------------------------------------------------------------- 图像工具
-def cover(im: Image.Image, w: int, h: int) -> Image.Image:
-    s = max(w / im.width, h / im.height)
-    nw, nh = max(w, int(im.width * s + 0.5)), max(h, int(im.height * s + 0.5))
-    r = im.resize((nw, nh), Image.LANCZOS)
-    x, y = (nw - w) // 2, (nh - h) // 2
-    return r.crop((x, y, x + w, y + h))
-
-
-def contain(im: Image.Image, w: int, h: int) -> Image.Image:
-    s = min(w / im.width, h / im.height)
-    return im.resize((max(1, int(im.width * s + 0.5)), max(1, int(im.height * s + 0.5))), Image.LANCZOS)
-
-
-def blur_fill(im: Image.Image, w: int, h: int, dark: float = 0.45) -> tuple[Image.Image, Image.Image]:
-    """模糊铺底 + 等比完整前景。"""
-    bg = cover(im, w, h).filter(ImageFilter.GaussianBlur(42))
-    bg = Image.eval(bg, lambda v: int(v * dark))
-    return bg, contain(im, w, h)
-
-
-def label_band(im: Image.Image, height: int = 96, alpha: int = 150) -> Image.Image:
-    out = im.convert("RGBA")
-    out.alpha_composite(Image.new("RGBA", (im.width, height), (0, 0, 0, alpha)), (0, im.height - height))
-    return out.convert("RGB")
-
-
-class Push:
-    """单帧缓推：预放大一次，逐帧裁窗后回缩。"""
-
-    def __init__(self, im: Image.Image, zmax: float, ox: float = 0.5, oy: float = 0.5):
-        self.big = cover(im, W, H).resize((int(W * zmax), int(H * zmax)), Image.LANCZOS)
-        self.zmax, self.ox, self.oy = zmax, ox, oy
-
-    def frame(self, z: float) -> Image.Image:
-        z = max(1.0001, min(z, self.zmax))
-        cw, ch = int(W * self.zmax / z), int(H * self.zmax / z)
-        bx = int((self.big.width - cw) * self.ox)
-        by = int((self.big.height - ch) * self.oy)
-        return self.big.crop((bx, by, bx + cw, by + ch)).resize((W, H), Image.LANCZOS)
-
-
-def crop_zoom(im: Image.Image, box, sharpen: float = 1.0) -> Image.Image:
-    out = cover(im.crop(box), W, H)
-    if sharpen > 1.0:
-        out = out.filter(ImageFilter.UnsharpMask(radius=2, percent=int(60 * (sharpen - 1)), threshold=2))
-    return out
-
-
-def dashed_rect(d: ImageDraw.ImageDraw, box, color=RED, width=4, dash=16, gap=10):
-    x0, y0, x1, y1 = box
-    for x in range(x0, x1, dash + gap):
-        d.line([(x, y0), (min(x + dash, x1), y0)], fill=color, width=width)
-        d.line([(x, y1), (min(x + dash, x1), y1)], fill=color, width=width)
-    for y in range(y0, y1, dash + gap):
-        d.line([(x0, y), (x0, min(y + dash, y1))], fill=color, width=width)
-        d.line([(x1, y), (x1, min(y + dash, y1))], fill=color, width=width)
+# ---------------------------------------------------------------- 基础工具
+def clamp(x: float, lo: float = 0.0, hi: float = 1.0) -> float:
+    return lo if x < lo else hi if x > hi else x
 
 
 def ease(t: float) -> float:
-    t = max(0.0, min(1.0, t))
+    t = clamp(t)
     return t * t * (3 - 2 * t)
 
 
-def caption(im: Image.Image, text: str) -> Image.Image:
-    out = im.convert("RGBA")
-    d = ImageDraw.Draw(out)
-    d.rectangle((0, 964, W, H), fill=(12, 12, 14, 205))
-    d.text((96, 1022), text, font=font(42), fill=(240, 240, 242), anchor="lm")
-    return out.convert("RGB")
+def ease_out(t: float) -> float:
+    t = clamp(t)
+    return 1 - (1 - t) ** 3
 
 
-# ---------------------------------------------------------------- 口播与时长
-SCENE_DUR = [
-    ("T00", 4), ("S01", 11), ("S02", 7), ("S03", 9), ("S04", 11), ("S05", 9),
-    ("S06", 13), ("S07", 6), ("S08", 15), ("S09", 8), ("S10", 11), ("S11", 7),
-    ("S12", 9), ("S13", 12), ("S14", 14), ("S15", 9), ("S16", 9),
+def prog(t: float, start: float, dur: float) -> float:
+    """t 在 [start, start+dur] 上的线性进度。"""
+    if dur <= 0:
+        return 1.0 if t >= start else 0.0
+    return clamp((t - start) / dur)
+
+
+def lerp(c1, c2, a: float):
+    a = clamp(a)
+    return tuple(int(round(c1[i] + (c2[i] - c1[i]) * a)) for i in range(3))
+
+
+def contain(im: Image.Image, w: int, h: int, up: float = 1.0) -> Image.Image:
+    """等比缩放到 (w,h) 之内；up 为允许的最大放大倍数（默认只缩不放）。"""
+    s = min(w / im.width, h / im.height, up)
+    return im.resize((max(1, int(im.width * s + 0.5)), max(1, int(im.height * s + 0.5))),
+                     Image.LANCZOS)
+
+
+_SHADOW_CACHE: dict[tuple, Image.Image] = {}
+
+
+def soft_shadow(w: int, h: int, blur: int = 18, alpha: int = 46) -> Image.Image:
+    """同一尺寸的投影只算一次（高斯模糊很贵）。"""
+    key = (w, h, blur, alpha)
+    if key not in _SHADOW_CACHE:
+        pad = blur * 2
+        sh = Image.new("RGBA", (w + pad * 2, h + pad * 2), (0, 0, 0, 0))
+        ImageDraw.Draw(sh).rectangle((pad, pad + 6, pad + w, pad + h + 6),
+                                     fill=(0, 0, 0, alpha))
+        _SHADOW_CACHE[key] = sh.filter(ImageFilter.GaussianBlur(blur))
+    return _SHADOW_CACHE[key]
+
+
+def card(img: Image.Image, *, border=True, shadow=True) -> Image.Image:
+    """把一张图包成“压在纸上的照片”：投影 + 发丝边，返回带透明留白的 RGBA 块。
+
+    块必须是透明的：相邻的块、后画的文字都可能落在留白里，填纸色会盖掉它们。
+    这里只缓存投影；图像内容每帧都不同，缓存整块会把动画冻在第一帧。
+    """
+    pad = CARD_PAD
+    out = Image.new("RGBA", (img.width + pad * 2, img.height + pad * 2), (0, 0, 0, 0))
+    if shadow:
+        sh = soft_shadow(img.width, img.height)
+        out.alpha_composite(sh, (pad - sh.width // 2 + img.width // 2,
+                                 pad - sh.height // 2 + img.height // 2))
+    out.paste(img.convert("RGB"), (pad, pad))
+    if border:
+        ImageDraw.Draw(out).rectangle((pad, pad, pad + img.width - 1, pad + img.height - 1),
+                                      outline=HAIR + (255,), width=1)
+    return out
+
+
+CARD_PAD = 40
+
+
+def paste_card(im: Image.Image, blk: Image.Image, x: int, y: int, alpha: float = 1.0):
+    """落位一张 card() 产生的块；x,y 是图片本身的目标坐标。"""
+    pos = (x - CARD_PAD, y - CARD_PAD)
+    tile = blk if alpha >= 0.999 else _fade_rgba(blk, alpha)
+    im.paste(tile, pos, tile)
+
+
+def _fade_rgba(im: Image.Image, alpha: float) -> Image.Image:
+    out = im.convert("RGBA").copy()
+    out.putalpha(out.getchannel("A").point(lambda v: int(v * clamp(alpha))))
+    return out
+
+
+def tracked(d, xy, s, size, fill, *, track=3, bold=False, use_serif=False,
+            anchor="la", alpha=1.0, bg=PAPER) -> int:
+    """带字距的文本（小标签用）。返回总宽度。"""
+    f = serif(size, bold) if use_serif else font(size, bold)
+    if not s:
+        return 0
+    widths = [d.textlength(ch, font=f) for ch in s]
+    total = sum(widths) + track * (len(s) - 1)
+    x, y = xy
+    if anchor[0] == "m":
+        x -= total / 2
+    elif anchor[0] == "r":
+        x -= total
+    col = lerp(bg, fill, alpha)
+    for ch, w in zip(s, widths):
+        if ch != " ":
+            d.text((x, y), ch, font=f, fill=col, anchor="l" + anchor[1])
+        x += w + track
+    return int(total)
+
+
+def wrap(d, txt: str, f, width: int) -> list[str]:
+    """按像素宽度折行（中文没有空格，逐字累加；避免单字孤行）。"""
+    lines, cur = [], ""
+    for ch in txt:
+        if d.textlength(cur + ch, font=f) > width and cur:
+            lines.append(cur)
+            cur = ch
+        else:
+            cur += ch
+    if cur:
+        lines.append(cur)
+    # 修孤字：末行只有一个字时，从上一行挪一个字下来
+    if len(lines) >= 2 and len(lines[-1]) == 1 and len(lines[-2]) > 2:
+        lines[-1] = lines[-2][-1] + lines[-1]
+        lines[-2] = lines[-2][:-1]
+    return lines
+
+
+def line_at(d, p0, p1, f, fill, width=3):
+    f = clamp(f)
+    if f <= 0:
+        return
+    d.line([p0, (p0[0] + (p1[0] - p0[0]) * f, p0[1] + (p1[1] - p0[1]) * f)],
+           fill=fill, width=width)
+
+
+def arrow(im, p0, p1, f, fill, width=4, head=20):
+    """画一支逐渐长出来的箭头（不透明度随进度）。"""
+    f = ease_out(f)
+    if f <= 0.01:
+        return
+    x0, y0 = p0
+    x1, y1 = (p0[0] + (p1[0] - p0[0]) * f, p0[1] + (p1[1] - p0[1]) * f)
+    d = ImageDraw.Draw(im)
+    d.line([(x0, y0), (x1, y1)], fill=fill, width=width)
+    ang = math.atan2(y1 - y0, x1 - x0)
+    for s in (+1, -1):
+        a = ang + math.pi + s * 0.44
+        d.line([(x1, y1), (x1 + head * math.cos(a), y1 + head * math.sin(a))],
+               fill=fill, width=width)
+
+
+def brackets(im, box, color=RED, width=4, arm=28, alpha=1.0, grow=1.0):
+    """四角括号式选取框，比整圈红框轻。"""
+    x0, y0, x1, y1 = box
+    arm = max(6, int(arm * clamp(grow)))
+    tile = Image.new("RGBA", (x1 - x0 + width * 2 + 2, y1 - y0 + width * 2 + 2), (0, 0, 0, 0))
+    d = ImageDraw.Draw(tile)
+    ox = oy = width + 1
+    col = color + (255,)
+    L = [(x0, y0, x0 + arm, y0), (x0, y0, x0, y0 + arm),
+         (x1, y0, x1 - arm, y0), (x1, y0, x1, y0 + arm),
+         (x0, y1, x0 + arm, y1), (x0, y1, x0, y1 - arm),
+         (x1, y1, x1 - arm, y1), (x1, y1, x1, y1 - arm)]
+    for ax, ay, bx, by in L:
+        d.line([(ax - x0 + ox, ay - y0 + oy), (bx - x0 + ox, by - y0 + oy)],
+               fill=col, width=width)
+    if alpha < 0.999:
+        tile.putalpha(tile.getchannel("A").point(lambda v: int(v * clamp(alpha))))
+    im.paste(tile, (x0 - ox, y0 - oy), tile)
+
+
+def badge(im, xy, n, r=20, fill=RED, alpha=1.0, scale=1.0, bg=PAPER, ring=4):
+    """圆形编号徽标，带 pop 缩放。外圈留一圈纸色，压在截图上也不糊成一团。"""
+    s = clamp(scale, 0.01, 2.0)
+    r2 = int(r * s)
+    pad = 6 + ring
+    tile = Image.new("RGBA", (r2 * 2 + pad * 2, r2 * 2 + pad * 2), (0, 0, 0, 0))
+    d = ImageDraw.Draw(tile)
+    c = (r2 + pad, r2 + pad)
+    if ring:
+        d.ellipse((c[0] - r2 - ring, c[1] - r2 - ring, c[0] + r2 + ring, c[1] + r2 + ring),
+                  fill=bg + (255,))
+    d.ellipse((c[0] - r2, c[1] - r2, c[0] + r2, c[1] + r2), fill=fill + (255,))
+    d.text((c[0], c[1] + 1), str(n), font=serif(int(r2 * 1.25), True),
+           fill=(252, 248, 240, 255), anchor="mm")
+    if alpha < 0.999:
+        tile.putalpha(tile.getchannel("A").point(lambda v: int(v * clamp(alpha))))
+    im.paste(tile, (int(xy[0]) - c[0], int(xy[1]) - c[1]), tile)
+
+
+def pop(t: float, start: float, dur: float = 0.45) -> float:
+    """0→1 的弹性 pop：略微过冲。"""
+    p = prog(t, start, dur)
+    if p <= 0:
+        return 0.0
+    s = 1.70158
+    return 1 + (s + 1) * (p - 1) ** 3 + s * (p - 1) ** 2
+
+
+def sweep(im, box, f, color=(255, 248, 236), strength=0.30):
+    """在方块内扫过一条高光带（悬停示意）。"""
+    x0, y0, x1, y1 = [int(v) for v in box]
+    if f <= 0 or x1 <= x0 or y1 <= y0:
+        return
+    w = x1 - x0
+    bw = max(24, int(w * 0.45))
+    cx = x0 + int((w + bw) * ease_out(f)) - bw
+    a0, a1 = max(x0, cx), min(x1, cx + bw)
+    if a1 <= a0:
+        return
+    region = im.crop((a0, y0, a1, y1))
+    im.paste(Image.blend(region, Image.new("RGB", region.size, color), strength), (a0, y0))
+
+
+def _map(box, rect, src_w, src_h):
+    """把原图坐标上的框换算到图片实际落位。
+
+    src_w/src_h 必须是**原图**尺寸（图片文件本身的宽高），不是 contain() 之后的结果。
+    传缩放后的尺寸会让框按错误比例放大并飘出图片——S05 的圈就是这么跑到天空上的。
+    """
+    sx, sy = rect[2] / src_w, rect[3] / src_h
+    return (rect[0] + int(box[0] * sx), rect[1] + int(box[1] * sy),
+            rect[0] + int(box[2] * sx), rect[1] + int(box[3] * sy))
+
+
+# ---------------------------------------------------------------- 纸张与页眉
+_PAPER: Image.Image | None = None
+
+
+def paper() -> Image.Image:
+    """暖纸底：极轻的暗角 + 一点纸纹噪声，整片复用同一张。"""
+    global _PAPER
+    if _PAPER is None:
+        rng = np.random.default_rng(20261101)
+        y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+        cx, cy = W * 0.5, H * 0.42
+        r = np.sqrt(((x - cx) / W) ** 2 + ((y - cy) / H) ** 2)
+        vig = 1.0 - 0.055 * np.clip(r * 1.55, 0, 1) ** 2
+        noise = rng.normal(0.0, 1.9, (H, W)).astype(np.float32)
+        base = np.array(PAPER, dtype=np.float32)[None, None, :]
+        arr = base * vig[..., None] + noise[..., None]
+        _PAPER = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), "RGB")
+    return _PAPER.copy()
+
+
+_ICON: Image.Image | None = None
+
+
+def icon() -> Image.Image:
+    """右上角圆形图标（一次生成，全片复用）。"""
+    global _ICON
+    if _ICON is None:
+        src = Image.open(asset("assets/cover/ED.png")).convert("RGBA")
+        s = 78
+        src = src.resize((s, s), Image.LANCZOS)
+        mask = Image.new("L", (s * 4, s * 4), 0)
+        ImageDraw.Draw(mask).ellipse((0, 0, s * 4 - 1, s * 4 - 1), fill=255)
+        mask = mask.resize((s, s), Image.LANCZOS)
+        out = Image.new("RGBA", (s, s), (0, 0, 0, 0))
+        out.paste(src, (0, 0), mask)
+        ring = ImageDraw.Draw(out)
+        ring.ellipse((0, 0, s - 1, s - 1), outline=(214, 200, 176, 255), width=2)
+        _ICON = out
+    return _ICON
+
+
+def header(im: Image.Image, tag: str, title: str) -> Image.Image:
+    """全片唯一的页眉：红色小竖标 + 字距小标签 + 衬线标题 + 右上圆图标 + 细线。"""
+    d = ImageDraw.Draw(im)
+    d.rectangle((MARGIN, 52, MARGIN + 5, 104), fill=RED)
+    tracked(d, (MARGIN + 26, 54), tag, 20, GOLD, track=4)
+    d.text((MARGIN + 24, 108), title, font=serif(50, True), fill=INK, anchor="lm")
+    ic = icon()
+    im.paste(ic, (W - MARGIN - ic.width, 46), ic)
+    d.line([(MARGIN, HEADER_H), (W - MARGIN, HEADER_H)], fill=HAIR, width=1)
+    d.line([(MARGIN, HEADER_H), (MARGIN + 148, HEADER_H)], fill=RED, width=3)
+    return im
+
+
+def page(tag: str, title: str) -> Image.Image:
+    return header(paper(), tag, title)
+
+
+def footer(im: Image.Image, idx: int, total: int, g: float) -> Image.Image:
+    """页脚：细进度条 + 页码 + 作品小字。"""
+    d = ImageDraw.Draw(im)
+    y = H - 32
+    d.line([(MARGIN, y), (W - MARGIN, y)], fill=(231, 223, 209), width=1)
+    n = int((W - 2 * MARGIN) * clamp(g))
+    if n > 0:
+        d.line([(MARGIN, y), (MARGIN + n, y)], fill=RED, width=2)
+    tracked(d, (MARGIN, H - 76), "伟大工程 · Towards Victory", 17, FAINT, track=2)
+    s = f"{idx:02d} / {total:02d}"
+    wpx = sum(d.textlength(c, font=font(17, False)) for c in s) + 2 * (len(s) - 1)
+    tracked(d, (W - MARGIN - wpx, H - 76), s, 17, FAINT, track=2)
+    return im
+
+
+# ---------------------------------------------------------------- 说明栏
+def _notes_plan(d, notes, panel_w: int, size: int, head: int):
+    """预算每条的高度，返回 [(kind, txt, font, lines, indent, block_h)]。"""
+    plan, n = [], 0
+    for kind, txt in notes:
+        if kind == "h":
+            f, indent = serif(head, True), 0
+            lh = int(head * 1.5)
+        else:
+            n += 1
+            f = font(size, True) if kind in ("r", "b") else font(size)
+            indent = 58
+            lh = int(size * 1.46)
+        lines = wrap(d, txt, f, panel_w - indent)
+        gap = 30 if kind == "h" else 20
+        plan.append((kind, txt, f, lines, indent, lh * len(lines) + gap, lh, n))
+    return plan
+
+
+def side_notes(im, notes, *, x=None, top=None, w=None, size=34, head=42,
+               center_on=None, t=0.0, t0=1.0, step=0.42, fade=0.5) -> Image.Image:
+    """右侧说明栏。每条按 t0 + i*step 依次淡入上浮。"""
+    panel_w = w or NOTE_W
+    px = x if x is not None else (W - MARGIN - panel_w)
+    d = ImageDraw.Draw(im)
+    plan = _notes_plan(d, notes, panel_w, size, head)
+    total_h = sum(p[5] for p in plan)
+    if center_on is not None:
+        y = center_on[1] + (center_on[3] - total_h) // 2
+    else:
+        y = top if top is not None else TOPBAR_BOTTOM + 90
+    for i, (kind, txt, f, lines, indent, bh, lh, num) in enumerate(plan):
+        a = ease(prog(t, t0 + i * step, fade))
+        if a <= 0:
+            y += bh
+            continue
+        dy = int(14 * (1 - a))
+        col = {"h": INK, "r": RED, "b": BLUE, "g": MUTED}.get(kind, INK)
+        if kind == "h":
+            d.text((px, y + dy), lines[0], font=f, fill=lerp(PAPER, INK, a), anchor="la")
+            for k, ln in enumerate(lines[1:], 1):
+                d.text((px, y + dy + k * lh), ln, font=f, fill=lerp(PAPER, INK, a), anchor="la")
+            # 标题下的短线
+            line_at(d, (px, y + dy + lh * len(lines) + 2),
+                    (px + 54, y + dy + lh * len(lines) + 2), ease(prog(t, t0 + i * step, 0.5)),
+                    lerp(PAPER, GOLD, a), width=2)
+        else:
+            r = 19
+            badge(im, (px + r, y + dy + lh // 2), num, r=r,
+                  fill={"r": RED, "b": BLUE, "g": MUTED}.get(kind, INK),
+                  alpha=a, scale=0.7 + 0.3 * a)
+            for k, ln in enumerate(lines):
+                d.text((px + indent, y + dy + k * lh), ln, font=f,
+                       fill=lerp(PAPER, col, a), anchor="la")
+        y += bh
+    return im
+
+
+def caption(im, text, xy=None, *, size=28, color=MUTED, alpha=1.0, anchor="mm"):
+    d = ImageDraw.Draw(im)
+    if xy is None:
+        xy = (W // 2, H - 96)
+    d.text(xy, text, font=font(size), fill=lerp(PAPER, color, alpha), anchor=anchor)
+    return im
+
+
+def big_line(im, x, y, w, f, color=RED, thick=4):
+    d = ImageDraw.Draw(im)
+    line_at(d, (x, y), (x + w, y), f, color, width=thick)
+    return im
+
+
+# ---------------------------------------------------------------- 音轨与时间轴
+# v4：音轨由 assets/1030-movie/音频 1_2.wav 做后处理后得到（见 build_audio_chain()），
+# 长 126.175s。下面所有时间点都来自该音轨的**词级时间戳**，不是估算。
+AUDIO_SRC = "assets/1030-movie/音频 1_2.wav"
+AUDIO_WAV = OUT / "great_projects_1.4_audio.wav"
+AUDIO_DUR = 126.175
+
+# 降噪链：高通去低频轰鸣 → afftdn 自适应降噪 → anlmdn 抹残余宽带嘶声
+# → 320Hz 减一点箱音、3kHz 提一点清晰度 → de-esser 压齿音
+# → 轻压缩收动态 → EBU R128 归一到 -16 LUFS → 限幅。
+def build_audio_chain() -> str:
+    return ",".join([
+        "highpass=f=85:poles=2",
+        "afftdn=nf=-55:nr=30:tn=1",
+        "anlmdn=s=7:p=0.002:r=0.002:m=15",
+        "equalizer=f=320:t=q:w=1.0:g=-1.5",
+        "equalizer=f=3000:t=q:w=1.2:g=1.0",
+        "deesser=i=0.35",
+        "acompressor=threshold=-20dB:ratio=2.5:attack=12:release=180:makeup=1.5",
+        f"loudnorm=I=-16:TP=-1.5:LRA=11:linear=true",
+        "alimiter=limit=0.94",
+    ])
+
+
+# ---- 镜头边界：全部落在语音段落的静音处（帧号，30fps） ----
+# 顺序与画面内容不变，只调切换点，让每一页盖住它对应的那段口播。
+SCENE_FRAMES = [
+    ("T00", 195),   # 0.00   片头 · 大家好 / 更到 1.4 了
+    ("S01", 315),   # 6.50   评论区点名要的 + 三件事
+    ("S02", 276),   # 17.00  界面：旧版铺满
+    ("S04", 393),   # 26.20  界面：新版按钮 / 面板 / 悬停
+    ("S05", 195),   # 39.30  原画：凭空生成、不够精细
+    ("S06", 277),   # 45.80  原画：真实素材 → 油画卡通
+    ("S07", 263),   # 55.03  五座新工程
+    ("S08", 180),   # 63.80  机制：移民吸引力 2 → 1
+    ("S09", 283),   # 69.80  扩建自选 / 朴素落成 / 重选
+    ("S10", 228),   # 79.23  八步抉择删掉
+    ("S11", 286),   # 86.83  倾向由仪式决定
+    ("S12", 225),   # 96.37  落成后能换 / 淡忘
+    ("S13", 452),   # 103.87 AI 自己会建奇观
+    ("S14", 217),   # 118.93 结尾
 ]
-TOTAL = sum(d for _, d in SCENE_DUR)
+SCENE_DUR = [(s, round(n / FPS, 4)) for s, n in SCENE_FRAMES]
+TOTAL = sum(n for _, n in SCENE_FRAMES) / FPS   # 精确值，避免取整后断言不过
 START: dict[str, float] = {}
 _t = 0.0
-for _s, _d in SCENE_DUR:
+for _s, _n in SCENE_FRAMES:
     START[_s] = _t
-    _t += _d
+    _t += _n / FPS
 
-SCRIPT = {
-    "S01": ["各位观众朋友们，大家好。", "伟大工程又更了一版，",
-            "这一版里，大半是评论区点名要的。", "这期不放录屏，全部用截图说话。"],
-    "S02": ["一共三件事：", "地点界面重做，", "原画全部重绘，", "机制按反馈改了一批。"],
-    "S03": ["先说界面。", "以前鼠标往奇观上一放，弹出来的框里，",
-            "每座奇观的条件、国家修正、本地修正，全给你铺开。"],
-    "S04": ["现在改成一个按钮：点一下，右边挂出一块面板，",
-            "每座奇观占一行，原画、名字、等级，一目了然。", "再点一下，整块收回去。"],
-    "S05": ["一行就是一座。", "想看它有什么效果，把鼠标放到旁边的仪式名上，",
-            "只展开这一份，不会再铺满整个屏幕。"],
-    "S06": ["面板关着的时候，这一整块根本不绘制；",
-            "开着了，也只是每座一行，而不是每座的完整效果表。", "奇观多、窗口开得久的地方，体感最明显。"],
-    "S07": ["第二件事，原画。", "旧的那一批是凭空生成的，好看，但经不起细看。"],
-    "S08": ["新的一批，每一张都从一张真实素材开始：", "一张近代照片，一幅雕版，或者一幅历史绘画。",
-            "构图、机位、建筑形制都照着来，只换画风。", "所以它看着像画，画的却是一座真房子。"],
-    "S09": ["压色、勾线、加纸纹——换的是画法，不是建筑。", "这一批一共一百九十多张，一张一张过的。"],
-    "S10": ["第三件事，机制。先加内容：", "这一版新增了五座伟大工程，",
-            "有新拆出来的通用原型，也有绑定真实历史地点的独特奇观。"],
-    "S11": ["施工期间的移民吸引力，从正二收到正一。", "施工该吸人，但以前吸得有点过。"],
-    "S12": ["扩建以前是随机给你一个方向，", "现在三种风格加朴素落成，四个自己挑，", "扩建完还能重新选。"],
-    "S13": ["仪式阶段那串一步一停的抉择，删了。",
-            "以前每个阶段都要选一次：掏钱硬上，还是先放一放。", "现在整段仪式一次确认，二十四个月走完。"],
-    "S14": ["倾向改由仪式决定：选哪个风格，就往那个方向长期推，每月零点一。",
-            "轴还没出现的时候，它就只是不带价值观的一个风格，", "不想选也可以跳过，之后再说。"],
-    "S15": ["已经落成的也能换，走一遍重新仪式化就行。", "不过仪式会淡忘，一百年过去，它就只是座漂亮房子了。"],
-    "S16": ["模组已经在创意工坊更新，奇观图鉴网站也同步了。", "有问题欢迎留言，或者加群找我。谢谢大家。"],
-}
+# ---- 字幕：时间取自词级时间戳，文本按语义校正后人工定稿 ----
+# (start, end, text)。end 已留 0.15s 左右余量，避免字幕贴脸切换。
+SUBTITLES = [
+    (1.12, 2.70, "各位观众朋友们，大家好。"),
+    (3.14, 6.45, "我们伟大工程模组，也是更到 1.4 了。"),
+    (6.80, 7.95, "这次更新，"),
+    (8.04, 11.10, "主要就是把评论区点名要的做了一下。"),
+    (11.90, 15.45, "主要就是界面、原画和机制三个方面。"),
+    (17.00, 18.05, "先说界面吧。"),
+    (18.54, 21.30, "以前呢，这个是展开的。"),
+    (21.48, 24.95, "每个奇观的条件、修正什么的，都是铺满的。"),
+    (25.02, 26.18, "这个其实不是很好看。"),
+    (26.22, 28.32, "现在是改成一个按钮。"),
+    (28.36, 29.75, "你点一下，"),
+    (30.98, 33.18, "就可以切换右边是否显示具体的面板。"),
+    (33.24, 36.70, "那你要看效果，就停在等级和仪式名上，"),
+    (36.78, 38.85, "就只展开对应奇观的版本。"),
+    (39.32, 41.18, "第二件是原画。"),
+    (41.24, 43.42, "就那一批是凭空生成的，"),
+    (43.46, 45.74, "这 AI 画得不够精细。"),
+    (45.78, 46.95, "现在这一批，"),
+    (47.06, 49.20, "每一张都是从一张真实素材开始的。"),
+    (49.32, 52.45, "然后把它的风格"),
+    (52.92, 54.32, "改成油画卡通的风格。"),
+    (55.04, 57.20, "这一版新增了五座伟大工程。"),
+    (57.30, 58.98, "有的是通用的，"),
+    (59.12, 62.66, "剩下四个是独特的。"),
+    (63.78, 65.26, "第三件是机制方面。"),
+    (65.38, 68.02, "那移民吸引力也是从二改成一了。"),
+    (68.08, 69.62, "以前那个有点太夸张。"),
+    (69.78, 73.66, "那扩建现在也是仪式可以自己挑了，"),
+    (74.24, 75.80, "所以还加了一个朴素落成，"),
+    (75.84, 77.40, "可以不用等时间，直接完成。"),
+    (77.54, 78.54, "扩建完了也可以重选。"),
+    (79.22, 82.10, "那仪式以前那个八步的"),
+    (82.14, 83.44, "抉择也删掉了，"),
+    (83.46, 85.05, "因为这个没有什么意思。"),
+    (85.18, 86.20, "很多人也抱怨。"),
+    (86.82, 89.94, "最后就是倾向，改成由仪式决定了。"),
+    (90.00, 93.08, "选每个风格，国家的价值观就往那边倾向。"),
+    (93.16, 95.70, "不想选也可以选朴素，也可以省时间。"),
+    (96.34, 99.16, "最后呢，已经落成的仪式也可以随时更换。"),
+    (99.82, 102.14, "但是呢，如果你一个既有的仪式，"),
+    (102.18, 103.40, "一百年是会被淡忘的。"),
+    (103.84, 104.75, "最后就是 AI。"),
+    (104.86, 107.62, "这一版给 AI 补上了自己建奇观的逻辑。"),
+    (107.66, 109.92, "一局五百多年，"),
+    (110.44, 114.14, "AI 世界里的奇观从 66 座变成了 257 座。"),
+    (114.62, 116.45, "那么进攻 AI、夺取奇观，"),
+    (116.48, 118.90, "也真正成为了一种策略。"),
+    (118.92, 121.52, "模组已经在创意工坊更新了。"),
+    (121.54, 125.70, "大家有什么问题，欢迎留言，也欢迎加群来告诉我。"),
+]
+
+# 分镜头：一个场景一个镜头，时长与 SCENE_FRAMES 一致。
+SHOT_PLAN = [(s, n / FPS, s) for s, n in SCENE_FRAMES]
+
+_CUT_FRAME: list[int] = []
+_f = 0
+for _s, _n in SCENE_FRAMES:
+    _CUT_FRAME.append(_f)
+    _f += _n
 
 
-def _clean_len(s: str) -> int:
-    return sum(1 for c in s if c.isalnum())
+def _snap(a: float, b: float) -> tuple[float, float]:
+    """把字幕首尾收进同一页画面。
 
-
-MIN_CUE = 1.2   # 字幕可读下限（秒，不含换行间隙）
-GAP = 0.25      # 每条字幕末尾留白，避免贴脸切换
-
-
-def _fit_slots(weights, total, min_slot, gap):
-    """按权重分配时长，并保证每格不低于 min_slot；总量严格守恒。"""
-    n = len(weights)
-    if min_slot * n > total:            # 极端情况：平均分配
-        return [total / n] * n
-    fixed = [False] * n
-    for _ in range(n):
-        free = [i for i in range(n) if not fixed[i]]
-        free_total = total - min_slot * sum(fixed)
-        wsum = sum(weights[i] for i in free)
-        slots = [0.0] * n
-        for i in range(n):
-            slots[i] = min_slot if fixed[i] else free_total * weights[i] / wsum
-        newly = [i for i in free if slots[i] < min_slot]
-        if not newly:
-            return slots
-        for i in newly:
-            fixed[i] = True
-    return slots
+    镜头之间是 8 帧交叉溶解，旧页在切换点之前就已经淡掉了；所以：
+      * 结尾只溢进切换点后 <=0.30s（溶解期）→ 拉回切换点；
+      * 开头比切换点早 <=0.35s（还没轮到它说话）→ 推到切换点。
+    超过这个范围说明字幕横跨了两页，属于切分问题，不该硬修。
+    判断一律换算成帧号，避免 79.233 与 79.23333 这类浮点误差。
+    """
+    edges = [n for n in _CUT_FRAME]
+    fa, fb = round(a * FPS), round(b * FPS)
+    for e in edges:
+        if 0 < fb - e <= round(0.30 * FPS):
+            fb = e
+        if 0 < e - fa <= round(0.35 * FPS):
+            fa = e
+    return fa / FPS, fb / FPS
 
 
 def build_subs():
     subs = []
-    for scene, dur in SCENE_DUR:
-        lines = SCRIPT.get(scene)
-        if not lines:
-            continue
-        weights = [_clean_len(ln) / 4.6 + GAP for ln in lines]
-        # 槽内含间隙，故下限要抬到 MIN_CUE + GAP，才能保证显示时长不低于 MIN_CUE
-        slots = _fit_slots(weights, dur, MIN_CUE + GAP, GAP)
-        t = START[scene]
-        for i, (ln, slot) in enumerate(zip(lines, slots)):
-            end = t + slot - GAP
-            subs.append({"scene": scene, "start": t, "end": end, "text": ln})
-            t += slot
+    for a, b, t in SUBTITLES:
+        a, b = _snap(a, b)
+        subs.append({"start": round(a, 3), "end": round(b, 3), "text": t})
     return subs
+
+
+def _check_subs():
+    """字幕不许重叠、不许超出镜头时间轴、每条都要读得完。"""
+    prev_end = -1.0
+    for a, b, t in SUBTITLES:
+        assert b > a, f"时长倒挂：{t}"
+        assert a >= prev_end - 1e-6, f"与前一条重叠：{t}"
+        assert b <= AUDIO_DUR + 1e-6, f"超出音轨：{t}"
+        assert b - a >= 0.65, f"太短，读不完：{t}"
+        prev_end = b
+    assert abs(SUBTITLES[-1][1] - AUDIO_DUR) < 1.5, "末条字幕与音轨结尾差太多"
 
 
 def ts(sec: float) -> str:
@@ -229,394 +632,785 @@ def ts(sec: float) -> str:
 
 
 def write_srt(subs, path: Path):
-    out = [f"{i}\n{ts(s['start'])} --> {ts(s['end'])}\n{s['text']}\n" for i, s in enumerate(subs, 1)]
+    out = [f"{i}\n{ts(s['start'])} --> {ts(s['end'])}\n{s['text']}\n"
+           for i, s in enumerate(subs, 1)]
     path.write_text("\n".join(out), encoding="utf-8")
-
-
-# ---------------------------------------------------------------- 白底页
-def page(bar_text: str | None = None) -> Image.Image:
-    im = Image.new("RGB", (W, H), PAGE)
-    d = ImageDraw.Draw(im)
-    d.rectangle((0, 0, W, 130), fill=BAR)
-    d.rectangle((0, 130, W, 136), fill=RED)
-    icon = Image.open(asset("assets/cover/ED.png")).convert("RGBA").resize((92, 92), Image.LANCZOS)
-    im.paste(icon, (W - 72 - 92, 19), icon)
-    if bar_text:
-        d.text((72, 65), bar_text, font=font(60, True), fill=INK, anchor="lm")
-    return im
 
 
 # ---------------------------------------------------------------- 镜头表
 SHOTS: list[dict] = []
+_BASE: dict[str, Image.Image] = {}
+
+
+def base(sid: str, build) -> Image.Image:
+    """每个镜头的静态底板只构建一次（纸、页眉、图片、不动文字）。"""
+    if sid not in _BASE:
+        _BASE[sid] = build()
+    return _BASE[sid]
 
 
 def shot(sid: str, dur: float, scene: str | None, fn):
-    SHOTS.append({"id": sid, "dur": dur, "scene": scene, "fn": fn, "frames": int(round(dur * FPS))})
+    SHOTS.append({"id": sid, "dur": dur, "scene": scene, "fn": fn,
+                  "frames": int(round(dur * FPS))})
+
+
+def _g(sid: str, t: float) -> float:
+    """全局进度 0..1，用于页脚进度条。"""
+    return clamp((START[sid] + t) / TOTAL)
 
 
 # --- T00 片头 -------------------------------------------------------------
 def t00(t, dur):
-    base = t00.push.frame(1.00 + 0.04 * (t / dur)).convert("RGBA")
-    base.alpha_composite(Image.new("RGBA", (W, H), (8, 12, 18, 150)))
-    d = ImageDraw.Draw(base)
-    d.text((W // 2, 448), "伟大工程", font=font(132, True), fill=(255, 255, 255), anchor="mm",
-           stroke_width=3, stroke_fill=(0, 0, 0))
-    d.line([(W // 2 - 132, 534), (W // 2 + 132, 534)], fill=RED, width=5)
-    d.text((W // 2, 604), "1.4 更新", font=font(76, True), fill=(255, 236, 232), anchor="mm",
-           stroke_width=2, stroke_fill=(0, 0, 0))
-    return base.convert("RGB")
+    im = page("序 · PROLOGUE", "伟大工程 · 1.4 更新")
+    im = footer(im, 1, len(SHOTS), _g("T00", t))
 
+    art = load("assets/generated_wonders/tv_wonder_unique_suzhou_classical_gardens.png")
+    art = contain(art, 1080, 700)
+    # 图上压一层暗色衬底，让标题跳出来；衬底与图一起淡入
+    scrim = Image.new("RGB", art.size, (14, 16, 20))
+    art = Image.blend(art, scrim, 0.52)
+    blk = card(art)
+    ax = (W - art.width) // 2
+    ay = TOPBAR_BOTTOM + (AVAIL_H - art.height) // 2 - 6
+    a = ease(prog(t, 0.15, 1.1))
+    paste_card(im, blk, ax, ay, alpha=a)
+    if a < 0.999:
+        return im
 
-# --- 白底页 ---------------------------------------------------------------
-def p01(t, dur):
-    im = page()
     d = ImageDraw.Draw(im)
-    d.text((140, 358), "评论区点名要的", font=font(96, True), fill=INK, anchor="la")
-    d.text((140, 486), "这次都做了。", font=font(96, True), fill=RED, anchor="la")
-    d.line([(146, 626), (466, 626)], fill=RED, width=5)
-    d.text((140, 678), "本期全部为截图", font=font(48), fill=GREY, anchor="la")
+    cx, cy = ax + art.width // 2, ay + art.height // 2
+    # 标题：字距拉开，逐字升起
+    ta = ease(prog(t, 0.9, 0.9))
+    if ta > 0:
+        d.text((cx + 8, cy - 96 + int(18 * (1 - ta))), "伟大工程", font=serif(126, True),
+               fill=(252, 248, 240), anchor="mm")
+    rw = ease_out(prog(t, 0.6, 0.8))
+    if rw > 0:
+        half = int(150 * rw)
+        d.line([(cx - half, cy + 4), (cx + half, cy + 4)], fill=RED, width=5)
+    sa = ease(prog(t, 1.5, 0.8))
+    if sa > 0:
+        d.text((cx, cy + 74 + int(14 * (1 - sa))), "1.4 更新", font=serif(62, True),
+               fill=(255, 226, 218), anchor="mm")
+    ca = ease(prog(t, 2.3, 0.8))
+    if ca > 0:
+        d.text((cx, cy + 172), "界面 · 原画 · 机制", font=font(34),
+               fill=lerp((16, 16, 16), (208, 190, 176), ca), anchor="mm")
     return im
 
 
-def p02(t, dur):
-    im = page("本次更新")
+# --- S01 开场 + 三件事 ----------------------------------------------------
+S01_ROWS = [("01", "界面", "点开才挂出，一座一行", RED),
+            ("02", "原画", "一百九十多张，全部重绘", GOLD),
+            ("03", "机制", "扩建自选、仪式重做、AI 主动建", BLUE)]
+
+
+def _s01_base() -> Image.Image:
+    im = page("总览 · OVERVIEW", "伟大工程 · 1.4 更新")
     d = ImageDraw.Draw(im)
-    rows = [("01", "界面", "点开才挂出，一座一行"),
-            ("02", "原画", "一百九十多张，全部重绘"),
-            ("03", "机制", "扩建自选、仪式重做")]
-    y = 268
-    for num, name, desc in rows:
-        d.text((150, y), num, font=font(64, True), fill=RED, anchor="la")
-        d.text((300, y - 6), name, font=font(76, True), fill=INK, anchor="la")
-        d.text((570, y + 18), desc, font=font(46), fill=GREY, anchor="la")
-        y += 214
+    # 左右分栏的竖向细线
+    d.line([(W // 2 - 44, TOPBAR_BOTTOM + 70), (W // 2 - 44, CONTENT_BOTTOM - 40)],
+           fill=HAIR, width=1)
     return im
 
 
-def p03(t, dur):
-    im = page("界面 · 开销")
+def s01(t, dur):
+    im = base("S01", _s01_base).copy()
+    im = footer(im, 2, len(SHOTS), _g("S01", t))
     d = ImageDraw.Draw(im)
-    d.text((W // 2, 516), "关着不绘制", font=font(96, True), fill=INK, anchor="mm")
-    d.text((W // 2, 648), "一座只画一行", font=font(96, True), fill=RED, anchor="mm")
+
+    x = MARGIN + 8
+    y = TOPBAR_BOTTOM + 170
+    a1 = ease(prog(t, 0.2, 0.7))
+    if a1 > 0:
+        d.text((x, y + int(16 * (1 - a1))), "评论区点名要的", font=serif(84, True),
+               fill=lerp(PAPER, INK, a1), anchor="la")
+    a2 = ease(prog(t, 0.75, 0.7))
+    if a2 > 0:
+        d.text((x, y + 132 + int(16 * (1 - a2))), "这次都做了。", font=serif(84, True),
+               fill=lerp(PAPER, RED, a2), anchor="la")
+    line_at(d, (x + 6, y + 268), (x + 306, y + 268), ease_out(prog(t, 1.4, 0.7)), RED, width=5)
+    a3 = ease(prog(t, 1.8, 0.6))
+    if a3 > 0:
+        d.text((x, y + 312), "本期全部为实机截图", font=font(32),
+               fill=lerp(PAPER, MUTED, a3), anchor="la")
+
+    xr = W // 2 + 8
+    y0 = TOPBAR_BOTTOM + 118
+    for i, (num, name, desc, col) in enumerate(S01_ROWS):
+        st = 2.2 + i * 0.55
+        a = ease(prog(t, st, 0.55))
+        if a <= 0:
+            continue
+        yy = y0 + i * 176 + int(18 * (1 - a))
+        line_at(d, (xr, yy), (xr + 700, yy), ease_out(prog(t, st - 0.1, 0.6)),
+                lerp(PAPER, HAIR, a), width=1)
+        d.text((xr, yy + 34), num, font=serif(30, True), fill=lerp(PAPER, FAINT, a), anchor="la")
+        d.text((xr + 84, yy + 24), name, font=serif(58, True), fill=lerp(PAPER, INK, a), anchor="la")
+        d.text((xr + 250, yy + 46), desc, font=font(30), fill=lerp(PAPER, MUTED, a), anchor="la")
+        d.rectangle((xr, yy + 96, xr + 60 + int(120 * a), yy + 99), fill=lerp(PAPER, col, a * 0.9))
+    line_at(d, (xr, y0 + 3 * 176), (xr + 700, y0 + 3 * 176), ease_out(prog(t, 3.9, 0.7)),
+            HAIR, width=1)
     return im
 
 
-def p04(t, dur):
-    im = page("伟大工程 · 1.4 更新")
-    art = cover(load("assets/generated_wonders/tv_wonder_unique_suzhou_classical_gardens.png"), 660, 800)
-    im.paste(art, (1188, 196))
-    d = ImageDraw.Draw(im)
-    d.rectangle((1188, 196, 1847, 995), outline=(214, 214, 216), width=2)
-    rows = [
-        ("创意工坊", "steamcommunity.com/sharedfiles/filedetails/?id=3766375743"),
-        ("奇观图鉴", "hljsxk.github.io/eu5-towards-victory"),
-        ("QQ 群", "1070041687　·　qm.qq.com/q/Yc2QwEsCgC"),
-    ]
-    y = 292
-    for name, val in rows:
-        d.text((150, y), name, font=font(46, True), fill=RED, anchor="la")
-        d.text((150, y + 62), val, font=font(32), fill=INK, anchor="la")
-        y += 198
+# --- S02 界面：旧版 -------------------------------------------------------
+LOC = "docs/marketing/assets/location_zh.jpg"
+LOC_BOX = (845, 645, 1200, 745)   # 国家修正 / 本地修正 两列（原图坐标）
+
+
+def _s02_base():
+    im = page("界面 · UI", "旧版：悬停就铺开")
+    src = load(LOC)
+    src = contain(src, IMG_W, AVAIL_H)
+    rect = (MARGIN, TOPBAR_BOTTOM + (AVAIL_H - src.height) // 2, src.width, src.height)
+    paste_card(im, card(src), rect[0], rect[1])
+    return im, rect, src.size
+
+
+def s02(t, dur):
+    blk, rect, _ = base("S02", _s02_base)
+    im = blk.copy()
+    im = footer(im, 3, len(SHOTS), _g("S02", t))
+    box = _map(LOC_BOX, rect, 1305, 955)
+    g = ease_out(prog(t, 0.7, 0.8))
+    brackets(im, box, RED, width=4, arm=30, alpha=g, grow=0.35 + 0.65 * g)
+    s = pop(t, 1.4)
+    if s > 0:
+        badge(im, (box[0] - 30, box[1] - 22), 1, r=21, alpha=clamp(s), scale=s)
+    side_notes(im, [
+        ("h", "悬停就铺开"),
+        ("r", "一屏摊满"),
+        ("g", "每座的条件、国家修正、本地修正全给你铺开"),
+        ("g", "奇观一多，既看不清，也没法横向比较"),
+    ], center_on=rect, t=t, t0=1.8, step=0.75)
     return im
 
 
-# --- S03 界面·旧 ----------------------------------------------------------
-SZ = dict(w=1476.0, h=1080.0, x=222.0)   # location_zh.jpg (1305x955) 在画布中的落位
-S03_BOXES = [(845, 645, 1200, 745)]      # 国家修正 / 本地修正 两列
+# --- S04 界面：新版 -------------------------------------------------------
+C01 = "assets/1030-movie/C01.png"
+C02 = "assets/1030-movie/C02.png"
+C03 = "assets/1030-movie/C03.png"
+C04 = "assets/1030-movie/C04.png"
+C05 = "assets/1030-movie/C05.png"
+
+PNL = (568, 288, 987, 772)      # 面板整体（原图坐标 1920x1080）
+ROW = (568, 292, 987, 450)      # 托普卡帕宫那一行
 
 
-def _loc_canvas() -> Image.Image:
-    bg, fg = blur_fill(load("docs/marketing/assets/location_zh.jpg"), W, H, dark=0.30)
-    bg.paste(fg, (int(SZ["x"]), 0))
-    return bg
+def _s04_base():
+    im = page("界面 · UI", "新版：一座一行")
+    src = load(C02)
+    src = contain(src, IMG_W, AVAIL_H)
+    rect = (MARGIN, TOPBAR_BOTTOM + (AVAIL_H - src.height) // 2, src.width, src.height)
+    paste_card(im, card(src), rect[0], rect[1])
+    return im, rect
 
 
-def _loc_map(box):
-    sx, sy = SZ["w"] / 1305.0, SZ["h"] / 955.0
-    x0, y0, x1, y1 = box
-    return (int(SZ["x"] + x0 * sx), int(y0 * sy), int(SZ["x"] + x1 * sx), int(y1 * sy))
+def s04(t, dur):
+    blk, rect = base("S04", _s04_base)
+    im = blk.copy()
+    im = footer(im, 4, len(SHOTS), _g("S04", t))
+    pnl = _map(PNL, rect, 1920, 1080)
+    row = _map(ROW, rect, 1920, 1080)
+
+    g = ease_out(prog(t, 0.6, 0.8))
+    brackets(im, pnl, RED, width=4, arm=30, alpha=g, grow=0.35 + 0.65 * g)
+    s = pop(t, 1.3)
+    if s > 0:
+        badge(im, (pnl[0] - 34, pnl[1] + 40), 1, r=21, alpha=clamp(s), scale=s)
+
+    # 悬停：这一行亮一下，然后收束
+    sweep(im, row, prog(t, 4.6, 1.2), strength=0.22)
+    g2 = ease_out(prog(t, 5.4, 0.7))
+    brackets(im, row, BLUE, width=4, arm=24, alpha=g2, grow=0.5 + 0.5 * g2)
+    s2 = pop(t, 5.9)
+    if s2 > 0:
+        badge(im, (row[0] - 34, row[3] - 34), 2, r=21, fill=BLUE,
+              alpha=clamp(s2), scale=s2)
+
+    side_notes(im, [
+        ("h", "点一下，挂出这块面板"),
+        ("r", "一座一行"),
+        ("g", "原画、名字、等级都在这一行里"),
+        ("b", "悬停仪式名，只展开这一份"),
+    ], center_on=rect, t=t, t0=1.7, step=1.35)
+    return im
 
 
-def s03(t, dur):
-    base = s03.base.convert("RGBA")
-    out = base.copy()
-    out.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, 158)))
-    for b in S03_BOXES:
-        cb = _loc_map(b)
-        cb = (cb[0] - 12, cb[1] - 12, cb[2] + 12, cb[3] + 12)
-        out.paste(base.crop(cb), cb[:2])
-    d = ImageDraw.Draw(out)
-    for b in S03_BOXES:
-        cb = _loc_map(b)
-        dashed_rect(d, (cb[0] - 12, cb[1] - 12, cb[2] + 12, cb[3] + 12), width=4)
-    return out.convert("RGB")
+# --- S05 原画：旧版 -------------------------------------------------------
+PISA_OLD = "assets/historical/review/original_ai/tv_wonder_unique_leaning_tower_of_pisa.png"
 
 
-# --- S04 界面·新 ----------------------------------------------------------
-def _c01():
-    out = load("assets/1030-movie/C01.png").convert("RGBA")
-    out.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, 80)))
-    d = ImageDraw.Draw(out)
-    d.rounded_rectangle((424, 279, 571, 334), radius=8, outline=RED, width=5)
-    return out.convert("RGB")
+def _s05_base():
+    im = page("原画 · ART", "旧版：凭空生成的")
+    art = load(PISA_OLD)
+    src_size = art.size                 # 原图尺寸：给 _map 换算用
+    art = contain(art, IMG_W, AVAIL_H)
+    rect = (MARGIN, TOPBAR_BOTTOM + (AVAIL_H - art.height) // 2, art.width, art.height)
+    paste_card(im, card(art), rect[0], rect[1])
+    return im, rect, src_size
 
 
-def _c02():
-    return load("assets/1030-movie/C02.png")
+def s05(t, dur):
+    blk, rect, size = base("S05", _s05_base)
+    im = blk.copy()
+    im = footer(im, 5, len(SHOTS), _g("S05", t))
+    d = ImageDraw.Draw(im)
+    ring = _map((1082, 196, 1352, 664), rect, size[0], size[1])
+    f = ease_out(prog(t, 0.8, 1.4))
+    if f > 0:
+        d.arc([ring[0], ring[1], ring[2], ring[3]], start=-90, end=-90 + int(360 * f),
+              fill=RED, width=5)
+    s = pop(t, 2.1)
+    if s > 0:
+        badge(im, (ring[0] - 4, ring[1] + 96), 1, r=21, alpha=clamp(s), scale=s)
+    side_notes(im, [
+        ("h", "好看，但经不起细看"),
+        ("r", "拱廊层数对不上"),
+        ("g", "这类错误，只有真素材才能杜绝"),
+    ], center_on=rect, t=t, t0=1.2, step=1.0)
+    return im
 
 
-def s04a(t, dur):
-    return Push(_c01(), 1.02).frame(1.0 + 0.015 * (t / dur))
+# --- S06 原画：素材 → 成品 ------------------------------------------------
+PISA_PHOTO = "assets/historical/比萨斜塔.jpg"
+PISA_NEW = "assets/historical/processed/比萨斜塔_ai_cartoon.png"
 
 
-def s04b(t, dur):
-    return Push(_c02(), 1.05).frame(1.0 + 0.035 * (t / dur))
+def _s06_base():
+    im = page("原画 · ART", "从一张真素材开始")
+    slots = [(MARGIN, 430), (MARGIN + 430 + 84, 430), (MARGIN + 430 * 2 + 84 * 2 + 40, 660)]
+    return im, slots
 
 
-def s04c(t, dur):
-    return Push(_c01(), 1.02).frame(1.02 - 0.015 * (t / dur))
+def s06(t, dur):
+    blk, slots = base("S06", _s06_base)
+    im = blk.copy()
+    im = footer(im, 6, len(SHOTS), _g("S06", t))
+    d = ImageDraw.Draw(im)
+    items = [(PISA_PHOTO, "① 真实照片", "起点", INK),
+             (PISA_NEW, "② 同机位重绘", "只换画风，不换建筑", RED),
+             (PISA_OLD, "③ 旧版", "凭空生成", MUTED)]
+    heights = [566, 566, 420]
+    placed = []
+    for i, ((rel, label, note, col), (sx, sw), hh) in enumerate(zip(items, slots, heights)):
+        art = load(rel)
+        art = contain(art, sw, hh)
+        x = sx + (sw - art.width) // 2
+        y = TOPBAR_BOTTOM + 34 + (566 - art.height) // 2
+        a = ease(prog(t, 0.1 + i * 0.55, 0.75))
+        if a > 0:
+            paste_card(im, card(art), x, y + int(26 * (1 - a)), alpha=a)
+        placed.append((x, y, art.width, art.height))
+
+    # 箭头的两个落点：卡 1 右侧 → 卡 2 左侧
+    if placed[1][2] > 0:
+        p0 = (placed[0][0] + placed[0][2] + 10, placed[0][1] + placed[0][3] // 2)
+        p1 = (placed[1][0] - 14, p0[1])
+        arrow(im, p0, p1, prog(t, 1.5, 0.8), GOLD, width=4, head=16)
+
+    # 卡 3 上的红叉
+    x, y, aw, ah = placed[2]
+    f = ease_out(prog(t, 2.4, 0.55))
+    if f > 0:
+        cx, cy = x + aw // 2, y + ah // 2
+        rr = int(min(aw, ah) * 0.16)
+        d = ImageDraw.Draw(im)
+        line_at(d, (cx - rr, cy - rr), (cx + rr, cy + rr), f, RED, width=7)
+        line_at(d, (cx + rr, cy - rr), (cx - rr, cy + rr), f, RED, width=7)
+
+    # 标签
+    for i, ((rel, label, note, col), (sx, sw)) in enumerate(zip(items, slots)):
+        a = ease(prog(t, 0.5 + i * 0.55, 0.6))
+        if a <= 0:
+            continue
+        x, y, aw, ah = placed[i]
+        cx = x + aw // 2
+        by = TOPBAR_BOTTOM + 34 + 566 + 50
+        d.text((cx, by), label, font=font(34, True),
+               fill=lerp(PAPER, col, a), anchor="mm")
+        d.text((cx, by + 44), note, font=font(26),
+               fill=lerp(PAPER, MUTED, a), anchor="mm")
+    return im
 
 
-# --- S05 一行里有什么 -----------------------------------------------------
-S05_ROW = (503, 588, 930, 828)     # C02：原画 + 名称 + 等级 + 右侧仪式名
-S05_TT = (957, 660, 1393, 906)     # C03：悬停效果提示
+# --- S07 五座新工程 -------------------------------------------------------
+NEW_WONDERS = [
+    ("assets/generated_wonders/tv_wonder_grand_garden_complex.png", "园林群", "通用原型"),
+    ("assets/generated_wonders/tv_wonder_unique_amber_room.png", "琥珀宫", "独特奇观"),
+    ("assets/generated_wonders/tv_wonder_unique_parthenon.png", "帕特农神庙", "独特奇观"),
+    ("assets/generated_wonders/tv_wonder_unique_bangkok_grand_palace.png", "曼谷大皇宫", "独特奇观"),
+    ("assets/generated_wonders/tv_wonder_unique_wat_arun.png", "郑王庙", "独特奇观"),
+]
+GAP7, CELLW7, CELLH7 = 52, 512, 268
 
 
-def s05a(t, dur):
-    return crop_zoom(_c02(), S05_ROW, sharpen=1.5)
-
-
-def s05b(t, dur):
-    return crop_zoom(load("assets/1030-movie/C03.png"), S05_TT, sharpen=1.5)
-
-
-# --- S06 开销 -------------------------------------------------------------
-def _c04_marked():
-    out = load("assets/1030-movie/C04.png").convert("RGBA")
-    out.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, 60)))
-    d = ImageDraw.Draw(out)
-    d.rounded_rectangle((497, 288, 936, 772), radius=6, outline=RED, width=5)
-    return out.convert("RGB")
-
-
-def s06a(t, dur):
-    return p03(t, dur)
-
-
-def s06b(t, dur):
-    return Push(_c04_marked(), 1.03).frame(1.0 + 0.02 * (t / dur))
-
-
-def s06c(t, dur):
-    base = s06c.base.convert("RGBA")
-    p = ease(min(1.0, t / (dur * 0.86)))
-    reg = _loc_map((520, 300, 1290, 800))
-    gray = ImageOps.grayscale(base.crop(reg).convert("RGB")).convert("RGBA")
-    cut = int(reg[3] * p)
-    if cut > 0:
-        base.paste(gray.crop((0, 0, reg[2] - reg[0], cut)), (reg[0], reg[1]))
-    return base.convert("RGB")
-
-
-# --- S07 原画·旧 ----------------------------------------------------------
-S07_OLD = "assets/historical/review/original_ai/tv_wonder_unique_leaning_tower_of_pisa.png"
-S07_RING = (1236, 150, 1516, 950)   # 塔身拱廊：这版多出好几层
+def _s07_base():
+    return page("机制 · MECHANICS", "新增五座伟大工程")
 
 
 def s07(t, dur):
-    im = s07.push.frame(1.00 + 0.05 * (t / dur)).convert("RGBA")
-    a = ease((t - 2.6) / 0.8) if t > 2.6 else 0.0
+    im = base("S07", _s07_base).copy()
+    im = footer(im, 7, len(SHOTS), _g("S07", t))
+    d = ImageDraw.Draw(im)
+    rows = [NEW_WONDERS[:3], NEW_WONDERS[3:]]
+    y = TOPBAR_BOTTOM + 12
+    k = 0
+    for row in rows:
+        total_w = CELLW7 * len(row) + GAP7 * (len(row) - 1)
+        x0 = (W - total_w) // 2
+        for i, (rel, name, kind) in enumerate(row):
+            art = load(rel)
+            art = contain(art, CELLW7, CELLH7)
+            x = x0 + i * (CELLW7 + GAP7) + (CELLW7 - art.width) // 2
+            yy = y + (CELLH7 - art.height) // 2
+            a = ease(prog(t, 0.15 + k * 0.28, 0.7))
+            if a > 0:
+                paste_card(im, card(art), x, yy + int(22 * (1 - a)), alpha=a)
+                cx = x + art.width // 2
+                d.text((cx, y + CELLH7 + 38), name, font=serif(34, True),
+                       fill=lerp(PAPER, INK, a), anchor="mm")
+                col = RED if kind == "通用原型" else FAINT
+                tracked(d, (cx, y + CELLH7 + 66), kind, 17, col, track=2, anchor="ma", alpha=a)
+            k += 1
+        y += CELLH7 + 108
+    a = ease(prog(t, 2.4, 0.7))
     if a > 0:
-        lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        ImageDraw.Draw(lay).ellipse(S07_RING, outline=(255, 60, 60, int(255 * a)), width=7)
-        im.alpha_composite(lay)
-    return im.convert("RGB")
+        d.text((W // 2, H - 96), "通用原型可复用；独特奇观绑定真实历史地点",
+               font=font(27), fill=lerp(PAPER, MUTED, a), anchor="mm")
+    return im
 
 
-# --- S08 原画·源素材 ------------------------------------------------------
-S08_A = "assets/historical/比萨斜塔.jpg"
-S08_C = "assets/historical/processed/比萨斜塔_ai_cartoon.png"
-S08_ZOOM = (255, 270, 605, 1020)
+# --- S08 施工期移民吸引力 -------------------------------------------------
+def _s08_base():
+    im = page("机制 · MECHANICS", "施工期吸引力")
+    src = contain(load(C05), IMG_W, AVAIL_H)
+    rect = (MARGIN, TOPBAR_BOTTOM + (AVAIL_H - src.height) // 2, src.width, src.height)
+    paste_card(im, card(src), rect[0], rect[1])
+    return im, rect
 
 
-def _s08_frame(src, cap, t, dur):
-    bg, fg = blur_fill(src, W, H, dark=0.34)
-    bg.paste(fg, ((W - fg.width) // 2, (H - fg.height) // 2))
-    return Push(bg, 1.03).frame(1.0 + 0.025 * (t / dur))
+def s08(t, dur):
+    blk, rect = base("S08", _s08_base)
+    im = blk.copy()
+    im = footer(im, 8, len(SHOTS), _g("S08", t))
+    box = _map((455, 600, 985, 900), rect, 1920, 1080)
+    g = ease_out(prog(t, 0.5, 0.7))
+    brackets(im, box, RED, width=4, arm=26, alpha=g, grow=0.4 + 0.6 * g)
+    s = pop(t, 1.1)
+    if s > 0:
+        badge(im, (box[0] - 28, box[1] - 20), 1, r=21, alpha=clamp(s), scale=s)
+
+    # 右栏：+2 划掉 → +1
+    d = ImageDraw.Draw(im)
+    px = W - MARGIN - NOTE_W
+    y = TOPBAR_BOTTOM + 96
+    tracked(d, (px, y), "施工期移民吸引力", 17, GOLD, track=3)
+    d.text((px, y + 40), "地点修正", font=serif(40, True), fill=INK, anchor="la")
+
+    a2 = ease(prog(t, 1.2, 0.5))
+    if a2 > 0:
+        d.text((px, y + 118), "+2", font=serif(104, True), fill=lerp(PAPER, (196, 190, 180), a2),
+               anchor="la")
+        strike = ease_out(prog(t, 1.9, 0.55))
+        if strike > 0:
+            line_at(d, (px - 6, y + 168), (px + 138, y + 168), strike, RED, width=5)
+    a1 = ease(prog(t, 2.6, 0.6))
+    if a1 > 0:
+        d.text((px + 210, y + 118), "+1", font=serif(104, True), fill=lerp(PAPER, RED, a1),
+               anchor="la")
+        d.text((px + 214, y + 236), "现在", font=font(24), fill=lerp(PAPER, MUTED, a1), anchor="la")
+    side_notes(im, [
+        ("h", "施工该吸人"),
+        ("g", "以前吸得有点过：+2 → +1"),
+        ("b", "落成后另有一份落成加成"),
+    ], x=px, top=y + 320, t=t, t0=2.9, step=0.85)
+    return im
 
 
-def s08a(t, dur):
-    return _s08_frame(s08.a, "真实照片 · 游客与脚手架都留着", t, dur)
+# --- S09 扩建自选 ---------------------------------------------------------
+CER = "ai_gui_assessment/images/engineering/simp_chinese/ceremony-ready.png"
+CER_BOX = (28, 495, 542, 942)        # 四行风格 + 风味文本
+CER_ROWS = [(574, 650), (656, 732), (742, 818), (822, 878)]
 
 
-def s08b(t, dur):
-    return _s08_frame(s08.b, "局部：先看真实建筑形制", t, dur)
+def _crop(rel: str, box) -> Image.Image:
+    return load(rel).crop(box)
 
 
-def s08c(t, dur):
-    return _s08_frame(s08.c, "同机位重绘 · 只换画风", t, dur)
+def _s09_base():
+    im = page("机制 · MECHANICS", "扩建自己挑")
+    card_img = contain(_crop(CER, CER_BOX), IMG_W - 60, AVAIL_H - 40, up=1.55)
+    rect = (MARGIN + 30, TOPBAR_BOTTOM + (AVAIL_H - card_img.height) // 2, card_img.width,
+            card_img.height)
+    paste_card(im, card(card_img), rect[0], rect[1])
+    return im, rect
 
 
-# --- S09 对照表 -----------------------------------------------------------
-S09_TBL = "assets/historical/review/comparison_01.jpg"
-S09_ROW = (0, 0, 1600, 300)
+def s09(t, dur):
+    blk, rect = base("S09", _s09_base)
+    im = blk.copy()
+    im = footer(im, 9, len(SHOTS), _g("S09", t))
+    d = ImageDraw.Draw(im)
+    sy = rect[3] / (CER_BOX[3] - CER_BOX[1])
+    x0, x1 = rect[0] + 10, rect[0] + rect[2] - 10
+    lit = -1
+    for i, (y0, y1) in enumerate(CER_ROWS):
+        st = 0.9 + i * 1.15
+        yy0 = rect[1] + int((y0 - CER_BOX[1]) * sy)
+        yy1 = rect[1] + int((y1 - CER_BOX[1]) * sy)
+        p = prog(t, st, 0.55)
+        if p <= 0:
+            continue
+        a = ease_out(p)
+        # 选中条从左侧拉出
+        line_at(d, (x0, yy1), (x0 + (x1 - x0) * 0.16, yy1), a, RED, width=3)
+        brackets(im, (x0, yy0, x1, yy1), RED if i < 3 else GOLD, width=3, arm=22,
+                 alpha=a * 0.9, grow=0.6 + 0.4 * a)
+        badge(im, (x0 - 16, (yy0 + yy1) // 2), i + 1, r=18, alpha=a, scale=0.75 + 0.25 * a)
+        lit = i
+    side_notes(im, [
+        ("h", "四个自己挑"),
+        ("r", "三种风格"),
+        ("b", "朴素落成"),
+        ("g", "扩建完还能重新选"),
+    ], center_on=rect, t=t, t0=1.1, step=1.15)
+    return im
 
 
-def s09a(t, dur):
-    return Push(s09.a, 1.03).frame(1.0 + 0.02 * (t / dur))
+# --- S10 仪式一次确认 -----------------------------------------------------
+RITUAL = "ai_gui_assessment/images/engineering/engineering_ceremony-stages.png"
+RITUAL_BOX = (28, 660, 542, 1215)
 
 
-def s09b(t, dur):
-    """四栏对照表的一行：等比贴在深色画布上，保留表头列名。"""
-    strip = s09.a.crop(S09_ROW)
-    scale = 1720 / strip.width
-    strip = strip.resize((1720, int(strip.height * scale)), Image.LANCZOS)
-    canvas = Image.new("RGB", (W, H), (26, 27, 30))
-    canvas.paste(strip, ((W - strip.width) // 2, (H - strip.height) // 2 - 30))
-    d = ImageDraw.Draw(canvas)
-    d.rectangle(((W - strip.width) // 2, (H - strip.height) // 2 - 30,
-                 (W + strip.width) // 2, (H + strip.height) // 2 - 30), outline=(90, 92, 96), width=2)
-    return canvas
-
-
-# --- S10 五座新工程 -------------------------------------------------------
-S10_ITEMS = [
-    ("assets/generated_wonders/tv_wonder_grand_garden_complex.png", "园林群", "small", "通用原型"),
-    ("assets/generated_wonders/tv_wonder_unique_amber_room.png", "琥珀宫", "large", "独特奇观"),
-    ("assets/generated_wonders/tv_wonder_unique_parthenon.png", "帕特农神庙", "medium", "独特奇观"),
-    ("assets/generated_wonders/tv_wonder_unique_bangkok_grand_palace.png", "曼谷大皇宫", "large", "独特奇观"),
-    ("assets/generated_wonders/tv_wonder_unique_wat_arun.png", "郑王庙", "small", "独特奇观"),
-]
-
-
-def _s10_card(item) -> Image.Image:
-    rel, name, size, kind = item
-    out = cover(load(rel), W, H).convert("RGBA")
-    ov = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    dd = ImageDraw.Draw(ov)
-    for i in range(300):
-        dd.line([(0, H - 300 + i), (W, H - 300 + i)], fill=(0, 0, 0, int(185 * (i / 300) ** 1.4)))
-    out.alpha_composite(ov)
-    d = ImageDraw.Draw(out)
-    badge = Image.open(asset(f"assets/generated_icons/tv_project_size_{size}.png")).convert("RGBA")
-    badge = badge.resize((104, 104), Image.LANCZOS)
-    out.paste(badge, (W - 120 - 104, 72), badge)
-    d.text((120, H - 152), name, font=font(96, True), fill=(255, 255, 255), anchor="ls",
-           stroke_width=5, stroke_fill=(0, 0, 0))
-    d.text((120, H - 92), kind, font=font(40), fill=(228, 228, 230), anchor="ls",
-           stroke_width=3, stroke_fill=(0, 0, 0))
-    return out.convert("RGB")
+def _s10_base():
+    im = page("机制 · MECHANICS", "仪式一次确认")
+    card_img = contain(_crop(RITUAL, RITUAL_BOX), IMG_W - 120, AVAIL_H - 30, up=1.5)
+    rect = (MARGIN + 40, TOPBAR_BOTTOM + (AVAIL_H - card_img.height) // 2, card_img.width,
+            card_img.height)
+    paste_card(im, card(card_img), rect[0], rect[1])
+    return im, rect
 
 
 def s10(t, dur):
-    n = len(S10_ITEMS)
-    per = dur / n
-    idx = min(n - 1, int(t / per))
-    lt = (t - idx * per) / per
-    out = Push(s10.cards[idx], 1.04).frame(1.0 + 0.035 * lt)
-    fade = ease(min(1.0, lt * 6))
-    if fade < 1.0 and idx > 0:
-        prev = Push(s10.cards[idx - 1], 1.04).frame(1.035)
-        out = Image.blend(prev, out, fade)
-    return out
+    blk, rect = base("S10", _s10_base)
+    im = blk.copy()
+    im = footer(im, 10, len(SHOTS), _g("S10", t))
+    d = ImageDraw.Draw(im)
+    px = W - MARGIN - NOTE_W
+    y = TOPBAR_BOTTOM + 62
+    tracked(d, (px, y), "以前", 17, GOLD, track=3)
+    chips = ["① 掏钱硬上？", "② 还是先放一放？", "③ 再选一次？"]
+    for i, s in enumerate(chips):
+        st = 0.7 + i * 0.55
+        a = ease(prog(t, st, 0.45))
+        if a <= 0:
+            continue
+        yy = y + 36 + i * 66
+        d.rounded_rectangle((px, yy, px + NOTE_W - 60, yy + 48), radius=6,
+                            outline=lerp(PAPER, HAIR, a), width=2,
+                            fill=lerp(PAPER, CARD, a))
+        d.text((px + 18, yy + 24), s, font=font(27), fill=lerp(PAPER, MUTED, a), anchor="lm")
+        st2 = ease_out(prog(t, 1.9 + i * 0.35, 0.5))
+        if st2 > 0:
+            tw = d.textlength(s, font=font(27)) + 4
+            line_at(d, (px + 14, yy + 24), (px + 18 + tw, yy + 24), st2, RED, width=3)
+
+    a = ease(prog(t, 3.4, 0.6))
+    if a > 0:
+        yy = y + 36 + 3 * 66 + 18
+        d.rounded_rectangle((px, yy, px + NOTE_W, yy + 62), radius=8, fill=lerp(PAPER, RED, a))
+        d.text((px + 22, yy + 31), "一次确认 · 二十四个月", font=font(30, True),
+               fill=lerp(RED, (255, 250, 244), a), anchor="lm")
+    side_notes(im, [
+        ("g", "以前每个阶段都要选一次"),
+        ("b", "现在整段仪式，一次确认"),
+    ], x=px, top=y + 36 + 3 * 66 + 110, t=t, t0=4.1, step=0.8)
+    return im
 
 
-# --- S11 施工期吸引力 -----------------------------------------------------
-S11_TT = (455, 600, 985, 900)
+# --- S11 倾向 -------------------------------------------------------------
+def _s11_base():
+    im = page("机制 · MECHANICS", "倾向由仪式决定")
+    y0, y1 = 938, 1200
+    card_img = contain(_crop(CER, (28, y0, 542, y1)), IMG_W - 150, 486, up=1.9)
+    rect = (MARGIN + 40, TOPBAR_BOTTOM + 44, card_img.width, card_img.height)
+    paste_card(im, card(card_img), rect[0], rect[1])
+    return im, rect, (y0, y1)
 
 
 def s11(t, dur):
-    return crop_zoom(load("assets/1030-movie/C05.png"), S11_TT, sharpen=1.5)
-
-
-# --- 画中画白底页 ---------------------------------------------------------
-def pip_page(crop_img: Image.Image, lines, *, card_w=820, title=None, strike=False):
-    im = page(title)
-    cw = card_w
-    ch = int(crop_img.height * cw / crop_img.width)
-    card = crop_img.resize((cw, ch), Image.LANCZOS)
-    if strike:
-        card = ImageOps.grayscale(card).convert("RGB")
-    x, y = 110, (H - ch) // 2
-    shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    ImageDraw.Draw(shadow).rectangle((x + 8, y + 10, x + cw + 8, y + ch + 10), fill=(0, 0, 0, 46))
-    im = im.convert("RGBA")
-    im.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(14)))
-    im.paste(card, (x, y))
+    blk, rect, (y0, y1) = base("S11", _s11_base)
+    im = blk.copy()
+    im = footer(im, 11, len(SHOTS), _g("S11", t))
     d = ImageDraw.Draw(im)
-    d.rectangle((x, y, x + cw, y + ch), outline=(206, 206, 210), width=2)
-    if strike:
-        d.line([(x + 26, y + 26), (x + cw - 26, y + ch - 26)], fill=(210, 40, 40, 235), width=14)
-        d.line([(x + cw - 26, y + 26), (x + 26, y + ch - 26)], fill=(210, 40, 40, 235), width=14)
-    tx, yy = x + cw + 84, 244
-    for kind, txt in lines:
-        f = font(50, True) if kind in ("h", "r", "b") else (font(38) if kind == "g" else font(44))
-        col = {"h": INK, "r": RED, "b": BLUE, "g": GREY}.get(kind, INK)
-        d.text((tx, yy), txt, font=f, fill=col, anchor="la")
-        yy += 78 if kind == "g" else 98
-    return im.convert("RGB")
+    sy = rect[3] / (y1 - y0)
+    hl = (rect[0] + 6, rect[1] + int((1008 - y0) * sy),
+          rect[0] + rect[2] - 6, rect[1] + int((1056 - y0) * sy))
+    g = ease_out(prog(t, 0.8, 0.7))
+    brackets(im, hl, RED, width=3, arm=20, alpha=g, grow=0.5 + 0.5 * g)
+    s = pop(t, 1.4)
+    if s > 0:
+        badge(im, (hl[0] + 14, (hl[1] + hl[3]) // 2), 1, r=17, alpha=clamp(s), scale=s)
+
+    # 下方的倾向轴：指针随时间右移。轴长跟卡片同宽，别缩成一小段
+    ax0, ax1 = rect[0] + 66, rect[0] + rect[2] - 66
+    ay = rect[1] + rect[3] + 116
+    fa = ease(prog(t, 2.2, 0.6))
+    if fa > 0:
+        d.line([(ax0, ay), (ax0 + (ax1 - ax0) * fa, ay)], fill=lerp(PAPER, HAIR, fa), width=3)
+        for k in range(5):
+            xx = ax0 + (ax1 - ax0) * k / 4
+            if xx <= ax0 + (ax1 - ax0) * fa:
+                d.line([(xx, ay - 7), (xx, ay + 7)], fill=lerp(PAPER, HAIR, fa), width=2)
+        d.text((ax0, ay + 26), "传统", font=font(22), fill=lerp(PAPER, FAINT, fa), anchor="la")
+        d.text((ax1, ay + 26), "革新", font=font(22), fill=lerp(PAPER, FAINT, fa), anchor="ra")
+    fp = ease(prog(t, 2.9, 3.2))
+    if fp > 0:
+        mx = ax0 + (ax1 - ax0) * (0.18 + 0.34 * fp)
+        d.ellipse((mx - 9, ay - 9, mx + 9, ay + 9), fill=RED)
+        tracked(d, (mx + 18, ay - 34), "+0.1 / 月", 22, RED, track=1)
+    side_notes(im, [
+        ("h", "选哪个风格，就往那个方向推"),
+        ("g", "落成时一次性推一把，之后每月继续推"),
+        ("g", "轴还没出现时：只是不带价值观的风格"),
+        ("g", "不想选也可以跳过，之后再说"),
+    ], x=W - MARGIN - NOTE_W + 40, top=TOPBAR_BOTTOM + 90, w=440, size=32,
+        t=t, t0=1.0, step=1.1)
+    return im
 
 
-# ceremony-ready.png 986..      ：四行风格 + 风味文本（示例行之上）
-S12_CROP = (28, 495, 542, 942)
-S14_CROP_B = (26, 1062, 550, 1170)   # 价值观一节（示例行之下）
-S15_A_CROP = (20, 452, 556, 684)     # finalized：黄金拍卖 + 仪式已完成 · 永久生效
-S15_B_CROP = (28, 490, 542, 822)     # reritual-ready：顶部横幅 + 取消 + 风格行
-S13_CROP = (28, 660, 542, 1215)      # 旧版八阶段仪式
+# --- S12 重仪式化 / 淡忘 --------------------------------------------------
+FIN = "ai_gui_assessment/images/engineering/simp_chinese/finalized.png"
+RER = "ai_gui_assessment/images/engineering/simp_chinese/reritual-ready.png"
+
+
+def _s12_base():
+    return page("机制 · MECHANICS", "落成之后也能换")
 
 
 def s12(t, dur):
-    return pip_page(s12.img, [
-        ("h", "扩建方向：四个自己挑"),
-        ("g", "以前：随机给一个方向"),
-        ("b", "现在：三风格 + 朴素落成"),
-        ("", "扩建完还能重新选"),
-    ], title="机制 · 扩建")
+    im = base("S12", _s12_base).copy()
+    im = footer(im, 12, len(SHOTS), _g("S12", t))
+    d = ImageDraw.Draw(im)
+    a = contain(_crop(FIN, (20, 452, 556, 684)), 700, 330, up=1.5)
+    b = contain(_crop(RER, (28, 490, 542, 822)), 560, 330, up=1.5)
+    gap = 150
+    total = a.width + gap + b.width
+    x0 = (W - total) // 2
+    y0 = TOPBAR_BOTTOM + 60
+    for i, imgs in enumerate([a, b]):
+        a_ = ease(prog(t, 0.15 + i * 0.7, 0.7))
+        if a_ <= 0:
+            continue
+        x = x0 if i == 0 else x0 + a.width + gap
+        y = y0 + int(24 * (1 - a_))
+        paste_card(im, card(imgs), x, y, alpha=a_)
+
+    arrow(im, (x0 + a.width + 14, y0 + 165), (x0 + a.width + gap - 18, y0 + 165),
+          prog(t, 1.6, 0.8), GOLD, width=4, head=18)
+    for i, label in enumerate(["已落成 · 永久生效", "重新仪式化 · 再走一遍"]):
+        al = ease(prog(t, 2.1 + i * 0.5, 0.6))
+        if al <= 0:
+            continue
+        cx = x0 + (a.width // 2 if i == 0 else a.width + gap + b.width // 2)
+        d.text((cx, y0 + 380), label, font=serif(33, True), fill=lerp(PAPER, INK, al),
+               anchor="mm")
+
+    al = ease(prog(t, 3.4, 0.7))
+    if al > 0:
+        wln = ease_out(prog(t, 3.4, 0.9))
+        cy = y0 + 452
+        line_at(d, (x0 + 30, cy), (x0 + total - 30, cy), wln, lerp(PAPER, RED, al * 0.75), width=2)
+        d.text((W // 2, cy + 44), "一百年不做，仪式就淡忘了 —— 只剩座漂亮房子",
+               font=font(34, True), fill=lerp(PAPER, RED, al), anchor="mm")
+    return im
+
+
+# --- S13 AI 自己会建奇观 --------------------------------------------------
+def _ai_series():
+    import csv
+    rows = []
+    with open(REPO / "docs/technical/observer_8fb6/snapshots.csv", encoding="utf-8-sig") as f:
+        for r in csv.DictReader(f):
+            rows.append({
+                "year": float(str(r["date"]).split(".")[0]),
+                "final": int(float(r["final_count"] or 0)),
+                "generic": int(float(r["generic_final_count"] or 0)),
+            })
+    return rows
+
+
+def _s13_base():
+    im = page("机制 · MECHANICS", "AI 自己会建奇观")
+    return im
+
+
+CW, CH = 1166, 700
+_PL, _PR, _PT, _PB = 108, CW - 62, 196, 556
+_YMAX = 280
+
+
+def _chart_static(rows) -> Image.Image:
+    """图表的静态部分（表头、网格、坐标、图例）：整段只画一次。"""
+    cv = Image.new("RGB", (CW, CH), CARD)
+    d = ImageDraw.Draw(cv)
+    d.rectangle((0, 0, CW, 92), fill=DARK)
+    d.text((36, 46), "AI 建成的伟大工程", font=serif(34, True), fill=(250, 246, 238), anchor="lm")
+    tracked(d, (CW - 40, 38), "1338–1840 · 52 个年度快照", 19, (176, 170, 160), track=1,
+            anchor="ra", bg=DARK)
+    pl, pr, pt, pb = _PL, _PR, _PT, _PB
+    ymax = _YMAX
+    yrs = [r["year"] for r in rows]
+    x0, x1 = min(yrs), max(yrs)
+    for v in range(0, ymax + 1, 70):
+        y = pb - (pb - pt) * v / ymax
+        d.line([(pl, y), (pr, y)], fill=(233, 229, 221), width=1)
+        d.text((pl - 16, y), str(v), font=font(20), fill=(146, 140, 130), anchor="rm")
+    d.line([(pl, pb), (pr, pb)], fill=(206, 200, 190), width=2)
+    for yr in range(1350, 1801, 50):
+        x = pl + (pr - pl) * (yr - x0) / (x1 - x0)
+        d.line([(x, pb), (x, pb + 7)], fill=(206, 200, 190), width=2)
+        d.text((x, pb + 22), str(yr), font=font(19), fill=(146, 140, 130), anchor="mm")
+    lg = CH - 34
+    d.line([(pl, lg), (pl + 42, lg)], fill=BLUE, width=5)
+    d.text((pl + 56, lg), "AI 建成总数", font=font(21), fill=(96, 90, 82), anchor="lm")
+    d.line([(pl + 232, lg), (pl + 274, lg)], fill=RED, width=5)
+    d.text((pl + 288, lg), "其中通用奇观", font=font(21), fill=(96, 90, 82), anchor="lm")
+    return cv
+
+
+def _chart(rows, t, t_draw=0.0):
+    """在静态底图上叠动态部分：两条生长曲线、前端点、滚动数字、年份读数。"""
+    cv = base("S13CHART", lambda: _chart_static(rows)).copy()
+    d = ImageDraw.Draw(cv)
+    pl, pr, pt, pb = _PL, _PR, _PT, _PB
+    x0 = min(r["year"] for r in rows)
+    x1 = max(r["year"] for r in rows)
+
+    def xy(r, key):
+        return (pl + (pr - pl) * (r["year"] - x0) / (x1 - x0),
+                pb - (pb - pt) * r[key] / _YMAX)
+
+    def head(f):
+        k = clamp(f) * (len(rows) - 1)
+        i = int(k)
+        frac = k - i
+        pts = [xy(r, key) for r in rows[:i + 1]]
+        if i + 1 < len(rows) and frac > 0:
+            a, b = rows[i], rows[i + 1]
+            pa, pb_ = xy(a, key), xy(b, key)
+            pts.append((pa[0] + (pb_[0] - pa[0]) * frac, pa[1] + (pb_[1] - pa[1]) * frac))
+        return i, frac, pts
+
+    fa = ease(prog(t, t_draw + 0.2, 8.0))
+    key = "final"
+    if fa > 0:
+        i, frac, pts = head(fa)
+        if len(pts) >= 2:
+            d.polygon([(pl, pb)] + pts + [(pts[-1][0], pb)], fill=(232, 238, 248))
+            d.line(pts, fill=BLUE, width=5, joint="curve")
+        hy = pts[-1]
+        d.ellipse((hy[0] - 8, hy[1] - 8, hy[0] + 8, hy[1] + 8), fill=BLUE,
+                  outline=(255, 255, 255), width=2)
+
+    fg = ease(prog(t, t_draw + 1.0, 7.2))
+    key = "generic"
+    if fg > 0:
+        i, frac, pts = head(fg)
+        if len(pts) >= 2:
+            d.line(pts, fill=RED, width=5, joint="curve")
+        hy = pts[-1]
+        d.ellipse((hy[0] - 7, hy[1] - 7, hy[0] + 7, hy[1] + 7), fill=RED,
+                  outline=(255, 255, 255), width=2)
+
+    def val_at(k, f):
+        j = clamp(f) * (len(rows) - 1)
+        i = int(j)
+        frac = j - i
+        a = rows[i][k]
+        b = rows[min(i + 1, len(rows) - 1)][k]
+        return int(round(a + (b - a) * frac))
+
+    d.text((pl + 4, 100), str(val_at("final", fa)), font=serif(60, True), fill=BLUE, anchor="la")
+    d.text((pl + 4, 170), "AI 建成总数", font=font(20), fill=(150, 144, 134), anchor="la")
+    d.text((pl + 250, 118), str(val_at("generic", fg)), font=serif(44, True), fill=RED, anchor="la")
+    d.text((pl + 250, 170), "其中通用奇观", font=font(20), fill=(150, 144, 134), anchor="la")
+
+    if fa > 0.02:
+        hx = pl + (pr - pl) * clamp(fa)
+        d.line([(hx, pt - 10), (hx, pb)], fill=(222, 216, 206), width=1)
+        d.text((pl + 470, 132), f"{int(round(x0 + (x1 - x0) * clamp(fa)))} 年",
+               font=serif(26, True), fill=DARK, anchor="la")
+    if fa > 0.985:
+        fp = xy(rows[-1], "final")
+        d.text((fp[0] - 16, fp[1] - 22), f"{rows[-1]['final']} 座", font=serif(28, True),
+               fill=BLUE, anchor="rs")
+    return cv
+
+
+def _s13_layout():
+    return _chart(AI.rows, 0.0)
 
 
 def s13(t, dur):
-    return pip_page(s13.img, [
-        ("h", "一步一停的抉择"),
-        ("r", "旧版 · 已删除"),
-        ("g", "以前每阶段选一次：掏钱硬上 / 先放一放"),
-        ("b", "现在：一次确认，24 个月走完"),
-    ], title="机制 · 仪式", strike=True, card_w=760)
+    im = base("S13", _s13_base).copy()
+    im = footer(im, 13, len(SHOTS), _g("S13", t))
+    ch = _chart(AI.rows, t, t_draw=0.6)
+    x, y = MARGIN - 40 + CARD_PAD, TOPBAR_BOTTOM + (AVAIL_H - ch.height) // 2
+    a = ease(prog(t, 0.1, 0.8))
+    paste_card(im, card(ch), x, y, alpha=a)
+    side_notes(im, [
+        ("h", "进攻 AI 有了新理由"),
+        ("g", "一局五百多年，AI 世界的奇观"),
+        ("b", "66 座 → 257 座"),
+        ("r", "新建成的大半是通用奇观"),
+        ("g", "夺奇观，从此是一种策略"),
+    ], center_on=(x, y, ch.width, ch.height), t=t, t0=1.2, step=2.4)
+    return im
 
 
-def s14a(t, dur):
-    return pip_page(s14a.img, [
-        ("h", "选哪个风格，就往那个方向长期推"),
-        ("b", "每月 +0.1"),
-        ("", "轴未出现时：只是不带价值观的风格"),
-        ("g", "不想选也可以跳过，之后再说"),
-    ], title="机制 · 倾向")
+# --- S14 结尾 -------------------------------------------------------------
+def _s14_base():
+    return page("尾声 · OUTRO", "伟大工程 · 1.4 更新")
 
 
-def s14b(t, dur):
-    return pip_page(s14b.img, [
-        ("h", "轴出现之前"),
-        ("", "它只是一套画风，不带价值观"),
-        ("b", "倾向由仪式慢慢累积"),
-        ("g", "可以跳过，之后再说"),
-    ], title="机制 · 倾向")
+def s14(t, dur):
+    im = base("S14", _s14_base).copy()
+    im = footer(im, 14, len(SHOTS), _g("S14", t))
+    d = ImageDraw.Draw(im)
+    rows = [("创意工坊", "steamcommunity.com/sharedfiles/filedetails/?id=3766375743"),
+            ("奇观图鉴", "hljsxk.github.io/eu5-towards-victory"),
+            ("QQ 群", "1070041687　·　qm.qq.com/q/Yc2QwEsCgC")]
+    y = TOPBAR_BOTTOM + 96
+    for i, (name, val) in enumerate(rows):
+        st = 0.2 + i * 0.5
+        a = ease(prog(t, st, 0.6))
+        if a <= 0:
+            continue
+        dx = int(24 * (1 - a))
+        line_at(d, (MARGIN + 8, y), (MARGIN + 640, y), ease_out(prog(t, st - 0.1, 0.6)),
+                lerp(PAPER, HAIR, a), width=1)
+        d.text((MARGIN + 8 + dx, y + 26), name, font=serif(42, True), fill=lerp(PAPER, RED, a),
+               anchor="la")
+        d.text((MARGIN + 8 + dx, y + 96), val, font=font(29), fill=lerp(PAPER, INK, a),
+               anchor="la")
+        y += 176
 
+    a = ease(prog(t, 2.0, 0.8))
+    if a > 0:
+        d.text((MARGIN + 8, y + 26), "有问题欢迎留言，或者加群找我。谢谢大家。",
+               font=font(32), fill=lerp(PAPER, MUTED, a), anchor="la")
 
-def s15a(t, dur):
-    return pip_page(s15a.img, [
-        ("h", "已落成的也能换"),
-        ("b", "走一遍重新仪式化"),
-        ("", "仅授予仪式加成与 10 威望"),
-        ("g", "不用推倒重来"),
-    ], title="机制 · 重仪式化")
-
-
-def s15b(t, dur):
-    return pip_page(s15b.img, [
-        ("h", "不过仪式会淡忘"),
-        ("r", "100 年后"),
-        ("", "它就只是座漂亮房子了"),
-        ("g", "记得回来再做一次"),
-    ], title="机制 · 重仪式化")
+    art = load("assets/generated_wonders/tv_wonder_unique_suzhou_classical_gardens.png")
+    art = contain(art, 560, 620)
+    px = W - MARGIN - art.width - CARD_PAD + CARD_PAD
+    py = TOPBAR_BOTTOM + (AVAIL_H - art.height) // 2
+    aa = ease(prog(t, 0.5, 0.9))
+    if aa > 0:
+        paste_card(im, card(art), W - MARGIN - art.width, py, alpha=aa)
+    return im
 
 
 # ---------------------------------------------------------------- 预计算
@@ -624,111 +1418,85 @@ class _NS:
     """镜头素材的挂载点。"""
 
 
-s08 = _NS()
-s09 = _NS()
+AI = _NS()          # 注意：不要用 sXX 这类名字，会和同名镜头函数撞车
 
 
 def prepare():
     BUILD.mkdir(parents=True, exist_ok=True)
     OUT.mkdir(parents=True, exist_ok=True)
-
-    t00.push = Push(load("assets/generated_wonders/tv_wonder_unique_suzhou_classical_gardens.png"), 1.06)
-    s03.base = _loc_canvas()
-    s06c.base = _loc_canvas()
-
-    s07.push = Push(load(S07_OLD), 1.06)
-
-    s08.a = load(S08_A)
-    s08.b = s08.a.crop(S08_ZOOM)
-    s08.c = load(S08_C)
-
-    s09.a = load(S09_TBL)
-
-    s10.cards = [_s10_card(it) for it in S10_ITEMS]
-
-    s12.img = load("ai_gui_assessment/images/engineering/simp_chinese/ceremony-ready.png").crop(S12_CROP)
-    s13.img = load("ai_gui_assessment/images/engineering/engineering_ceremony-stages.png").crop(S13_CROP)
-    s14a.img = s12.img
-    s14b.img = load("ai_gui_assessment/images/engineering/simp_chinese/ceremony-ready.png").crop(S14_CROP_B)
-    s15a.img = load("ai_gui_assessment/images/engineering/simp_chinese/finalized.png").crop(S15_A_CROP)
-    s15b.img = load("ai_gui_assessment/images/engineering/simp_chinese/reritual-ready.png").crop(S15_B_CROP)
+    AI.rows = _ai_series()
 
 
 def build_shotlist():
     SHOTS.clear()
-    shot("T00", 4, None, t00)
-    shot("S01", 11, "S01", p01)
-    shot("S02", 7, "S02", p02)
-    shot("S03", 9, "S03", s03)
-    shot("S04a", 3.0, "S04", s04a)
-    shot("S04b", 6.5, "S04", s04b)
-    shot("S04c", 1.5, "S04", s04c)
-    shot("S05a", 4.5, "S05", s05a)
-    shot("S05b", 4.5, "S05", s05b)
-    shot("S06a", 5.5, "S06", s06a)
-    shot("S06b", 3.5, "S06", s06b)
-    shot("S06c", 4.0, "S06", s06c)
-    shot("S07", 6, "S07", s07)
-    shot("S08a", 5, "S08", s08a)
-    shot("S08b", 5, "S08", s08b)
-    shot("S08c", 5, "S08", s08c)
-    shot("S09a", 3, "S09", s09a)
-    shot("S09b", 5, "S09", s09b)
-    shot("S10", 11, "S10", s10)
-    shot("S11", 7, "S11", s11)
-    shot("S12", 9, "S12", s12)
-    shot("S13", 12, "S13", s13)
-    shot("S14a", 7, "S14", s14a)
-    shot("S14b", 7, "S14", s14b)
-    shot("S15a", 4, "S15", s15a)
-    shot("S15b", 5, "S15", s15b)
-    shot("S16", 9, "S16", p04)
+    fns = {"T00": t00, "S01": s01, "S02": s02, "S04": s04, "S05": s05,
+           "S06": s06, "S07": s07, "S08": s08, "S09": s09, "S10": s10, "S11": s11,
+           "S12": s12, "S13": s13, "S14": s14}
+    for sid, dur, scene in SHOT_PLAN:
+        shot(sid, dur, scene, fns[sid])
     total = sum(s["dur"] for s in SHOTS)
     assert abs(total - TOTAL) < 1e-6, f"镜头总时长 {total} 与分镜表 {TOTAL} 不符"
 
 
 # ---------------------------------------------------------------- 渲染
-def encode_segment(sh, path: Path):
+def _ffmpeg_writer(path: Path):
     cmd = ["ffmpeg", "-y", "-loglevel", "error",
            "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
            "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "18",
            "-pix_fmt", "yuv420p", "-g", "60", str(path)]
-    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
-    for i in range(sh["frames"]):
-        im = sh["fn"](i / FPS, sh["dur"])
+    return subprocess.Popen(cmd, stdin=subprocess.PIPE)
+
+
+def encode_segment(sh, path: Path, prev=None):
+    proc = _ffmpeg_writer(path)
+    n = sh["frames"]
+    for i in range(n):
+        t = i / FPS
+        im = sh["fn"](t, sh["dur"])
         if im.size != (W, H):
             im = im.resize((W, H), Image.LANCZOS)
-        proc.stdin.write(im.convert("RGB").tobytes())
+        im = im.convert("RGB")
+        if prev is not None and i < XFADE:
+            im = Image.blend(prev, im, (i + 1) / XFADE)
+        proc.stdin.write(im.tobytes())
     proc.stdin.close()
     if proc.wait() != 0:
         raise RuntimeError(f"编码失败：{sh['id']}")
 
 
-def cmd_probe():
+def _last_frame(sh) -> Image.Image:
+    im = sh["fn"](max(0.0, sh["dur"] - 1.0 / FPS), sh["dur"])
+    return im.convert("RGB")
+
+
+def cmd_probe(only: str | None = None):
     prepare()
     build_shotlist()
-    dst = BUILD / "probe"
+    dst = BUILD / "probe3"
     dst.mkdir(parents=True, exist_ok=True)
+    fr = [0.18, 0.52, 0.88]
     tiles = []
     for sh in SHOTS:
-        im = sh["fn"](sh["dur"] * 0.5, sh["dur"]).convert("RGB")
-        im.save(dst / f"{sh['id']}.png")
-        tiles.append((sh["id"], im))
-    cols, tw, th = 4, 480, 270
-    rows = math.ceil(len(tiles) / cols)
-    sheet = Image.new("RGB", (cols * tw, rows * (th + 26)), (24, 24, 26))
+        for k, f in enumerate(fr):
+            im = sh["fn"](sh["dur"] * f, sh["dur"]).convert("RGB")
+            p = dst / f"{sh['id']}_{k}.png"
+            im.save(p)
+            if k == 1:
+                tiles.append((sh["id"], im))
+    cols, tw, th = 3, 620, 349
+    rows_n = math.ceil(len(tiles) / cols)
+    sheet = Image.new("RGB", (cols * tw, rows_n * (th + 26)), (24, 24, 26))
     d = ImageDraw.Draw(sheet)
     for i, (sid, im) in enumerate(tiles):
         x, y = (i % cols) * tw, (i // cols) * (th + 26)
         sheet.paste(im.resize((tw, th), Image.LANCZOS), (x, y))
-        d.text((x + 6, y + th + 4), sid, font=font(16), fill=(230, 230, 230))
-    sheet.save(BUILD / "contact_sheet.png")
-    print(f"probe: {len(SHOTS)} shots -> {dst}")
-    print(f"contact sheet -> {BUILD / 'contact_sheet.png'}")
+        d.text((x + 8, y + th + 3), sid, font=font(18), fill=(230, 230, 230))
+    sheet.save(BUILD / "contact_sheet3.png")
+    print(f"probe: {len(SHOTS)} shots x {len(fr)} frames -> {dst}")
+    print(f"contact sheet -> {BUILD / 'contact_sheet3.png'}")
 
 
 def _probe_ok(path: Path, want_dur: float) -> bool:
-    """片段必须能被 ffprobe 读出，且时长接近预期，才算完成。"""
     if not path.exists() or path.stat().st_size < 10000:
         return False
     try:
@@ -737,35 +1505,70 @@ def _probe_ok(path: Path, want_dur: float) -> bool:
                              capture_output=True, text=True, timeout=20)
         if out.returncode != 0:
             return False
-        return abs(float(out.stdout.strip()) - want_dur) < 0.5
+        # 容差必须小于最小的镜头间差异，否则旧时长的片段会被误判为合格
+        return abs(float(out.stdout.strip()) - want_dur) < 0.05
     except Exception:
         return False
 
 
-def cmd_render(resume_override: bool = False, only: str | None = None):
+def build_audio(force: bool = False):
+    """从原始口播做降噪/均衡/响度，产出 48k 立体声 wav。"""
+    if AUDIO_WAV.exists() and not force:
+        print(f"audio 已存在，跳过：{AUDIO_WAV.name}", flush=True)
+        return
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(REPO / AUDIO_SRC),
+                    "-af", build_audio_chain(), "-ar", "48000", "-ac", "2",
+                    "-c:a", "pcm_s16le", str(AUDIO_WAV)], check=True)
+    print(f"audio -> {AUDIO_WAV}", flush=True)
+
+
+def cmd_render(resume_override: bool = False, only: str | None = None,
+               jobs: int = 1):
+    from concurrent.futures import ProcessPoolExecutor
+
     prepare()
     build_shotlist()
-    seg_dir = BUILD / "segments"
+    _check_subs()
+    assert abs(TOTAL - AUDIO_DUR) < 0.05, (
+        f"画面总长 {TOTAL}s 与音轨 {AUDIO_DUR}s 差得太多，检查 SCENE_FRAMES")
+    build_audio(force=resume_override)
+    seg_dir = BUILD / "segments_v3"
     seg_dir.mkdir(parents=True, exist_ok=True)
 
     lo, hi = 1, len(SHOTS)
     if only:
         a_, b_ = only.split("-")
         lo, hi = int(a_), int(b_)
+
+    todo = []
     for i, sh in enumerate(SHOTS, 1):
         if not (lo <= i <= hi):
             continue
-        p = seg_dir / f"{i:03d}_{sh['id']}.mp4"
-        # 断点续渲：可读且时长正确的片段直接跳过
+        p = seg_dir / f"{i - 1:03d}_{sh['id']}.mp4"
         if not resume_override and _probe_ok(p, sh["dur"]):
-            print(f"[{i}/{len(SHOTS)}] {sh['id']} 已存在，跳过", flush=True)
+            print(f"[{i + 1}/{len(SHOTS)}] {sh['id']} 已存在，跳过", flush=True)
             continue
-        encode_segment(sh, p)
-        print(f"[{i}/{len(SHOTS)}] {sh['id']} {sh['dur']}s", flush=True)
+        todo.append((i - 1, p))
 
-    segs = sorted(seg_dir.glob("*.mp4"))
-    expected = [f"{i:03d}_{sh['id']}.mp4" for i, sh in enumerate(SHOTS, 1)]
-    missing = [n for n, sh in zip(expected, SHOTS) if not _probe_ok(seg_dir / n, sh["dur"])]
+    if jobs > 1 and len(todo) > 1:
+        # 并行时每个进程自己做转场用的上一镜末帧
+        with ProcessPoolExecutor(max_workers=jobs) as ex:
+            futs = []
+            for i, p in todo:
+                prev = _last_frame(SHOTS[i - 1]) if i > 0 else None
+                sh = SHOTS[i]
+                futs.append((i, ex.submit(_render_one, i, str(p), prev)))
+            for i, f in futs:
+                f.result()
+                print(f"[{i + 1}/{len(SHOTS)}] {SHOTS[i]['id']} 完成", flush=True)
+    else:
+        for i, p in todo:
+            prev = _last_frame(SHOTS[i - 1]) if i > 0 else None
+            encode_segment(SHOTS[i], p, prev)
+            print(f"[{i + 1}/{len(SHOTS)}] {SHOTS[i]['id']} {SHOTS[i]['dur']}s", flush=True)
+
+    segs = [seg_dir / f"{i:03d}_{sh['id']}.mp4" for i, sh in enumerate(SHOTS)]
+    missing = [p.name for p, sh in zip(segs, SHOTS) if not _probe_ok(p, sh["dur"])]
     if missing:
         print(f"还有 {len(missing)} 段未完成，暂不拼接：{missing[:6]}…")
         return
@@ -774,8 +1577,9 @@ def cmd_render(resume_override: bool = False, only: str | None = None):
     lst.write_text("\n".join(f"file '{p.name}'" for p in segs), encoding="utf-8")
 
     content = OUT / "great_projects_1.4_content.mp4"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst),
-                    "-c", "copy", "-an", "-movflags", "+faststart", str(content)], check=True)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
+                    "-i", str(lst), "-c", "copy", "-an", "-movflags", "+faststart",
+                    str(content)], check=True)
 
     subs = build_subs()
     srt = OUT / "great_projects_1.4_subtitle.srt"
@@ -783,24 +1587,44 @@ def cmd_render(resume_override: bool = False, only: str | None = None):
 
     muxed = OUT / "great_projects_1.4_with_subs.mp4"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error",
-                    "-i", str(content), "-i", str(srt),
-                    "-c:v", "copy", "-c:s", "mov_text",
-                    "-metadata:s:s:0", "language=chi", "-movflags", "+faststart", str(muxed)], check=True)
+                    "-i", str(content), "-i", str(AUDIO_WAV), "-i", str(srt),
+                    "-map", "0:v:0", "-map", "1:a:0", "-map", "2:s:0",
+                    "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+                    "-c:s", "mov_text",
+                    "-metadata:s:s:0", "language=chi",
+                    "-metadata:s:a:0", "language=chi",
+                    "-movflags", "+faststart",
+                    str(muxed)], check=True)
+
+    # 字幕轨在多数播放器里默认不打开，另出一份烧进画面的预览版
+    burned = OUT / "great_projects_1.4_burned.mp4"
+    style = ("FontName=Noto Sans CJK SC,FontSize=22,PrimaryColour=&H00F8F4EC,"
+             "OutlineColour=&H00201410,BorderStyle=1,Outline=2.6,Shadow=0.6,"
+             "MarginV=26,Alignment=2")
+    esc = str(srt).replace("\\", "/").replace(":", "\\:")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error",
+                    "-i", str(muxed),
+                    "-vf", f"subtitles='{esc}':force_style='{style}'",
+                    "-c:v", "libx264", "-preset", "medium", "-crf", "19",
+                    "-pix_fmt", "yuv420p", "-c:a", "copy",
+                    "-movflags", "+faststart", str(burned)], check=True)
 
     (BUILD / "script.json").write_text(json.dumps(
-        {k: {"start": START[k], "dur": dict(SCENE_DUR)[k], "lines": v} for k, v in SCRIPT.items()},
-        ensure_ascii=False, indent=2), encoding="utf-8")
-    (BUILD / "shots.json").write_text(json.dumps(
-        [{"id": s["id"], "scene": s["scene"], "dur": s["dur"],
-          "zoom": "1.00→1.04", "focus": None, "crop": None} for s in SHOTS],
+        [{"start": a, "end": b, "text": t} for a, b, t in SUBTITLES],
         ensure_ascii=False, indent=2), encoding="utf-8")
     (BUILD / "edl.json").write_text(json.dumps(
-        [{"id": s["id"], "start": round(sum(x["dur"] for x in SHOTS[:i]), 3), "dur": s["dur"]}
-         for i, s in enumerate(SHOTS)], ensure_ascii=False, indent=2), encoding="utf-8")
+        [{"id": s["id"], "scene": s["scene"], "start": round(START[s["id"]], 3), "dur": s["dur"]}
+         for s in SHOTS], ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(f"content -> {content}")
     print(f"subtitle -> {srt}（{len(subs)} 条）")
     print(f"muxed   -> {muxed}")
+    print(f"burned  -> {burned}")
+
+
+def _render_one(i: int, path: str, prev):
+    encode_segment(SHOTS[i], Path(path), prev)
+    return i
 
 
 def main():
@@ -808,12 +1632,13 @@ def main():
     ap.add_argument("--probe", action="store_true")
     ap.add_argument("--render", action="store_true")
     ap.add_argument("--fresh", action="store_true", help="忽略已存在的片段，全部重渲")
-    ap.add_argument("--only", default=None, help="只渲指定片段，如 011-020")
+    ap.add_argument("--only", default=None, help="只渲指定片段，如 011-015")
+    ap.add_argument("--jobs", type=int, default=1)
     a = ap.parse_args()
     if a.probe:
         cmd_probe()
     elif a.render:
-        cmd_render(resume_override=a.fresh, only=a.only)
+        cmd_render(resume_override=a.fresh, only=a.only, jobs=a.jobs)
     else:
         ap.print_help()
 
